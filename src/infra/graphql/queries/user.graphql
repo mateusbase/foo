@@ -1,0 +1,28 @@
+query FindAllUsers {
+  findAllUsers {
+    id
+    email
+    name
+    posts {
+      id
+      title
+      content
+      published
+    }
+  }
+}
+
+query FindOneUser($findOneUserId: String!) {
+  LIXO(id: $findOneUserId) {
+    id
+    email
+    name
+    posts {
+      id
+      title
+      content
+      published
+      userId
+    }
+  }
+}

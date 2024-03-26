@@ -1,0 +1,20 @@
+query FindAllPostsFromUser($userId: String!) {
+  findAllPostsFromUser(userId: $userId) {
+    id
+    title
+    content
+    published
+    userId
+    createdAt
+  }
+}
+
+query FindOnePost($findOnePostId: String!) {
+  findOnePost(id: $findOnePostId) {
+    id
+    title
+    content
+    published
+    userId
+  }
+}
