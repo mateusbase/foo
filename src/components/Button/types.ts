@@ -1,12 +1,12 @@
-type ButtonRootProps = {
+import { ButtonProps } from "@nextui-org/react";
+
+export interface ButtonRootProps extends ButtonProps {
   className?: string;
   children: React.ReactNode;
   onClick?: () => void;
-};
+}
 
-type ButtonIconProps = {
+export interface ButtonIconProps {
   children?: React.ReactNode;
   loading?: boolean;
-};
-
-export type { ButtonRootProps, ButtonIconProps };
+}

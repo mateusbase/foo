@@ -8,7 +8,7 @@ export default function ButtonRoot({
   ...attributes
 }: ButtonRootProps): JSX.Element {
   return (
-    <Button {...attributes} className={className} onClick={onClick}>
+    <Button {...attributes} className={`${className} w-28`} onClick={onClick}>
       {children}
     </Button>
   );

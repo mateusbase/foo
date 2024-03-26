@@ -10,7 +10,11 @@ export default function ButtonIcon({
       {!loading ? (
         children
       ) : (
-        <CircularProgress size="sm" aria-label="Loading..." />
+        <CircularProgress
+          className="text-primary"
+          size="sm"
+          aria-label="Loading..."
+        />
       )}
     </div>
   );

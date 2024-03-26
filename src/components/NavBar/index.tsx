@@ -8,10 +8,10 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 import NavLink from "./NavLink";
 import { NavBarProps } from "./types";
+import { Button } from "../Button";
 
 const routes = [
   { label: "Início", pathname: "/" },
@@ -49,9 +49,9 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           <NavbarItem className="hidden lg:flex">
             <Link href="/">Login</Link>
           </NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
+          <Button.Root as={Link} color="primary" href="#" variant="flat">
             Sign Up
-          </Button>
+          </Button.Root>
         </NavbarContent>
 
         {isMenuOpen && (
