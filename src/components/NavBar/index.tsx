@@ -8,6 +8,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Link,
+  Image,
 } from "@nextui-org/react";
 import NavLink from "./NavLink";
 import { NavBarProps } from "./types";
@@ -34,8 +35,12 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="sm:hidden"
           />
-          <NavbarBrand>
-            <p className="font-bold text-inherit">ACME</p>
+          <NavbarBrand className="cursor-pointer">
+            <Image
+              src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
+              alt="Logo"
+              width={200}
+            />
           </NavbarBrand>
         </NavbarContent>
 
