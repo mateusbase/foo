@@ -27,7 +27,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
   return (
     <>
       <NextNavBar
-        className="absolute top-0 h-24"
+        className="absolute top-0 h-32"
         onMenuOpenChange={setIsMenuOpen}
       >
         <NavbarContent>
@@ -39,7 +39,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             <Image
               src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
               alt="Logo"
-              width={200}
+              width={300}
             />
           </NavbarBrand>
         </NavbarContent>
@@ -69,6 +69,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarMenu>
         )}
       </NextNavBar>
+
       <div className="bg-primary-50">
         <div className="flex min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 py-32 justify-center lg:justify-start">
           {children}
