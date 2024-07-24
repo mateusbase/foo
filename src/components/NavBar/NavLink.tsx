@@ -9,9 +9,9 @@ export default function NavLink({ route }: NavLinkProps): JSX.Element {
   return (
     <NavbarItem isActive={isSelected}>
       <Link
-        color="foreground"
+        color="success"
         href={route.pathname}
-        size="lg"
+        size="md"
         className={isSelected ? "font-bold" : ""}
       >
         {route.label}

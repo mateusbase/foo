@@ -15,10 +15,12 @@ import { NavBarProps } from "./types";
 import { Button } from "../Button";
 
 const routes = [
-  { label: "Início", pathname: "/" },
-  { label: "Sobre nós", pathname: "/sobre-nos" },
-  { label: "Serviços", pathname: "/servicos" },
-  { label: "Contato", pathname: "/contato" },
+  { label: "Pacientes", pathname: "/" },
+  { label: "Médicos", pathname: "/sobre-nos" },
+  { label: "Investidores", pathname: "/servicos" },
+  { label: "Instituto OC", pathname: "/contato" },
+  { label: "Notícias", pathname: "/contato" },
+  { label: "Entrar", pathname: "/contato" },
 ];
 
 export default function NavBar({ children }: NavBarProps): JSX.Element {
@@ -45,7 +47,10 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarBrand>
         </NavbarContent>
 
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarContent
+          className="hidden sm:flex gap-4 uppercase"
+          justify="center"
+        >
           {routes.map((route) => (
             <NavLink key={route.label} route={route} />
           ))}
