@@ -27,6 +27,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
   return (
     <>
       <NextNavBar
+        maxWidth="2xl"
         className="absolute top-0 h-32"
         onMenuOpenChange={setIsMenuOpen}
       >
@@ -71,7 +72,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
       </NextNavBar>
 
       <div className="bg-primary-50">
-        <div className="flex min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 py-32 justify-center lg:justify-start">
+        <div className="flex min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 py-36 justify-center lg:justify-start">
           {children}
         </div>
       </div>
