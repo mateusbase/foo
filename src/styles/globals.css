@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (min-width: 768px) {
+  header {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

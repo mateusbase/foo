@@ -3,16 +3,17 @@ import {
   Navbar as NextNavBar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
   Link,
   Image,
 } from "@nextui-org/react";
-import NavLink from "./NavLink";
+import NavLink from "./components/NavLink";
 import { NavBarProps } from "./types";
-import { Button } from "../Button";
+import { Calendar } from "lucide-react";
+import { useDeviceType } from "@/hooks/useDeviceType";
+import { DeviceType } from "@/utils/enums";
 
 const routes = [
   { label: "Pacientes", pathname: "/" },
@@ -25,12 +26,14 @@ const routes = [
 
 export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const deviceType = useDeviceType();
 
   return (
     <>
       <NextNavBar
-        maxWidth="2xl"
-        className="absolute top-0 h-32"
+        maxWidth="full"
+        height="120px"
+        className="absolute top-0 p-0 m-0 bg-white h-fit"
         onMenuOpenChange={setIsMenuOpen}
       >
         <NavbarContent>
@@ -38,7 +41,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="sm:hidden"
           />
-          <NavbarBrand className="cursor-pointer">
+          <NavbarBrand className="ml-16 cursor-pointer">
             <Image
               src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
               alt="Logo"
@@ -48,7 +51,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
         </NavbarContent>
 
         <NavbarContent
-          className="hidden sm:flex gap-4 uppercase"
+          className="hidden gap-4 uppercase sm:flex"
           justify="center"
         >
           {routes.map((route) => (
@@ -56,28 +59,33 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           ))}
         </NavbarContent>
 
-        <NavbarContent justify="end">
-          <NavbarItem className="hidden lg:flex">
-            <Link href="/">Login</Link>
-          </NavbarItem>
-          <Button.Root as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button.Root>
-        </NavbarContent>
+        {
+          deviceType !== DeviceType.MOBILE && (
+            <NavbarContent justify="end" className="items-stretch">
+              <div className="flex flex-row items-center h-full gap-2 p-6 font-semibold text-white bg-secondary">
+                <Calendar size={24} />
+                <Link className="text-white" href="/contato">Agende uma consulta ou exame</Link>
+              </div>
+            </NavbarContent>
+          )
+        }
 
-        {isMenuOpen && (
-          <NavbarMenu>
-            {routes.map((route) => (
-              <NavbarMenuItem key={route.label}>
-                <Link href={route.pathname}>{route.label}</Link>
-              </NavbarMenuItem>
-            ))}
-          </NavbarMenu>
-        )}
+        {isMenuOpen &&
+          routes.map((route) => (
+            <Link href={route.pathname}>
+              <NavbarMenu>
+                <NavbarMenuItem key={route.label}>
+                  {route.label}
+                </NavbarMenuItem>
+
+              </NavbarMenu>
+            </Link>
+          ))
+        }
       </NextNavBar>
 
       <div className="bg-primary-50">
-        <div className="flex min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 py-36 justify-center lg:justify-start">
+        <div className="flex justify-center min-h-screen px-4 py-36 sm:px-8 md:px-16 lg:justify-start lg:px-32">
           {children}
         </div>
       </div>

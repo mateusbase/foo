@@ -1,4 +1,5 @@
 {
+  
   "env": {
     "browser": true,
     "es6": true,
@@ -27,6 +28,12 @@
     "react-hooks",
     "@typescript-eslint",
     "prettier"
+  ],
+  "prettier/prettier": [
+    "error", 
+      {
+        "endOfLine": "off"
+      }
   ],
   "rules": {
     "camelcase": "off",
