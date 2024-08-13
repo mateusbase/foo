@@ -9,11 +9,10 @@ import {
   Link,
   Image,
 } from "@nextui-org/react";
-import NavLink from "./components/NavLink";
-import { NavBarProps } from "./types";
 import { Calendar } from "lucide-react";
 import { useDeviceType } from "@/hooks/useDeviceType";
 import { DeviceType } from "@/utils/enums";
+import NavLink from "../NavLink";
 
 const routes = [
   { label: "Pacientes", pathname: "/" },
@@ -32,7 +31,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
     <>
       <NextNavBar
         maxWidth="full"
-        height="120px"
+        height="96px"
         className="absolute top-0 p-0 m-0 bg-white h-fit"
         onMenuOpenChange={setIsMenuOpen}
       >
@@ -84,10 +83,8 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
         }
       </NextNavBar>
 
-      <div className="bg-primary-50">
-        <div className="flex justify-center min-h-screen px-4 py-36 sm:px-8 md:px-16 lg:justify-start lg:px-32">
-          {children}
-        </div>
+      <div className="mt-24">
+        {children}
       </div>
     </>
   );

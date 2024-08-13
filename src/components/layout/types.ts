@@ -1,3 +1,3 @@
-export type LayoutProps = {
+type LayoutProps = {
   children: React.ReactElement;
 };
