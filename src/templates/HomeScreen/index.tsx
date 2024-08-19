@@ -1,5 +1,6 @@
 import { Search } from 'lucide-react';
 import SearchInput from './components/SearchInput';
+import ServicesSection from '@/components/ServicesSection';
 
 export default function HomeScreen(): JSX.Element {
   return (
@@ -13,7 +14,9 @@ export default function HomeScreen(): JSX.Element {
         <div className="absolute inset-0 flex items-center justify-center">
           <SearchInput />
         </div>
+
       </div>
+      <ServicesSection />
     </main>
   );
 }

@@ -3,6 +3,7 @@ import Head from "next/head";
 import { ReactElement } from "react";
 import Layout from "@/components/layout";
 import { NextPageWithLayout } from "./_app";
+import ServicesSection from "@/components/ServicesSection";
 
 const Home: NextPageWithLayout = () => {
   return (
