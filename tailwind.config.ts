@@ -11,11 +11,13 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      sans: ["Laro", "Arial", "sans-serif"],
-    },
     container: {
       center: true
+    },
+    fontFamily: {
+      "lato-heavy": ["Lato Heavy", "Arial", "sans-serif"],
+      "lato-medium": ["Lato Medium", "Arial", "sans-serif"],
+      "lato-light": ["Lato Light", "Arial", "sans-serif"],
     },
     extend: {
       backgroundImage: {
@@ -27,6 +29,12 @@ const config: Config = {
         'sm': '640px',
         'md': '1024px',
       },
+      height: {
+        '260': '16.25rem',
+      },
+      width: {
+        '260': '16.25rem',
+      }
     },
   },
   darkMode: "class",
@@ -64,4 +72,5 @@ const config: Config = {
     }),
   ],
 };
+
 export default config;
