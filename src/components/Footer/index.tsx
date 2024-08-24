@@ -131,7 +131,7 @@ export default function Footer() {
             <p className="text-xs text-white">© 2024 Grupo Oncoclínicas - RT: Dra. Mariana Laloni - CRM-SP 102379</p>
           </div>
           <RadioGroup className="flex justify-center gap-8" color="default" orientation="horizontal">
-            <Radio className="text-white" value="pt-BR" checked>
+            <Radio className="text-white" value="pt-BR">
               <span className="font-medium text-white">Português</span>
             </Radio>
             <Radio className="text-white" value="en-US">
