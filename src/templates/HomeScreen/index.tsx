@@ -1,17 +1,15 @@
 import { IoIosCalendar } from "react-icons/io";
 import { FaUser, FaMapMarkerAlt, FaFile } from "react-icons/fa";
-
-import SearchInput from './components/SearchInput';
-import MainOptionsActions from '@/components/MainOptionsActions';
-import FAQSection from "@/components/FaqSection";
-import FaqSection from "@/components/FaqSection";
+import SearchInput from "./components/SearchInput";
+import MainOptionsActions from "@/components/MainOptionsActions";
+import NearbyUnits from "@/components/NearbyUnits";
 
 export default function HomeScreen(): JSX.Element {
   const options = [
-    { title: 'Agende uma consulta ou exame', icon: IoIosCalendar },
-    { title: 'Encontre uma unidade', icon: FaMapMarkerAlt },
-    { title: 'Encontre um médico', icon: FaUser },
-    { title: 'Resultado de Exames', icon: FaFile }
+    { title: "Agende uma consulta ou exame", icon: IoIosCalendar },
+    { title: "Encontre uma unidade", icon: FaMapMarkerAlt },
+    { title: "Encontre um médico", icon: FaUser },
+    { title: "Resultado de Exames", icon: FaFile },
   ];
 
   return (
@@ -20,17 +18,17 @@ export default function HomeScreen(): JSX.Element {
         <img
           src="https://placehold.co/1920x600/000000/FFF"
           alt=""
-          className="w-full h-auto"
+          className="h-auto w-full"
         />
-        <div className=" inset-0 flex items-center justify-center">
-          {/* <SearchInput /> */}
+        {/* <div className="absolute inset-0 flex items-center justify-center">
+          <SearchInput />
         </div>
 
         {/* <div className="inset-0 flex items-end justify-center">
           <MainOptionsActions options={options} />
         </div> */}
-        <FaqSection />
       </div>
+      <NearbyUnits />
     </main>
   );
 }
