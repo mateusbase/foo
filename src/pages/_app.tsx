@@ -7,6 +7,9 @@ import { CookiesProvider } from "react-cookie";
 import { NextUIProvider } from "@nextui-org/react";
 import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
+import { Lato } from "next/font/google";
+
+const lato = Lato({ subsets: ["latin"], weight: ["400", "700", "900"] });
 
 export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -30,7 +33,9 @@ export default function App({
         <ApolloProvider client={apolloClient}>
           {/* <AuthProvider> */}
           <ErrorBoundary>
-            {getLayout(<Component {...pageProps} />)}
+            <main className={lato.className}>
+              {getLayout(<Component {...pageProps} />)}
+            </main>
           </ErrorBoundary>
           {/* </AuthProvider> */}
         </ApolloProvider>
