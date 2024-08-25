@@ -33,7 +33,7 @@ export default function Footer() {
 
   return (
     <footer className="p-10 text-gray-400 bg-gray-600">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-3xl">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-start md:gap-0">
           <Image
             src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/footer/oncoclinicas.svg"
