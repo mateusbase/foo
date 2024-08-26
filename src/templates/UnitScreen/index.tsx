@@ -1,10 +1,13 @@
+import { Button, Input } from "@nextui-org/react";
 import {
   Activity,
+  CameraIcon,
   Clock,
   Heart,
   MapPin,
   MessageSquare,
   Phone,
+  Search,
   User,
 } from "lucide-react";
 
@@ -156,16 +159,292 @@ export default function UnitScreen(): JSX.Element {
                 </div>
 
               </div>
-
             </div>
 
             <div>
-              <h2
-                className="text-left font-bold mt-32"
-                style={{ fontSize: "42px", lineHeight: "50px", color: "#007D77" }}
-              >
-                Convênios atendidos nesta unidade
-              </h2>
+              <div className="flex justify-between items-center mt-32">
+                <h2
+                  className="font-bold"
+                  style={{ fontSize: "42px", lineHeight: "50px", color: "#007D77" }}
+                >
+                  Convênios atendidos nesta unidade
+                </h2>
+
+                <Input
+                  placeholder="Buscar convênio"
+                  size="lg"
+                  radius="full"
+                  variant="bordered"
+                  endContent={<Search className="text-2xl text-default-400" />}
+                  className="max-w-xs"
+                />
+              </div>
+
+              <div className="mt-20 grid grid-cols-3 gap-x-20 gap-y-4 font-bold">
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Amil Assistência Médica
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Assim Saúde
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Bradesco Seguros
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Central Nacional Unimed
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  (CNU) NotreDame Intermédica
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Prevent Sênior São Francisco
+                </div>
+
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Amil Assistência Médica
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Assim Saúde
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Bradesco Seguros
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Central Nacional Unimed
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  (CNU) NotreDame Intermédica
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Prevent Sênior São Francisco
+                </div>
+
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Amil Assistência Médica
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Assim Saúde
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Bradesco Seguros
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Central Nacional Unimed
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  (CNU) NotreDame Intermédica
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Prevent Sênior São Francisco
+                </div>
+
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Amil Assistência Médica
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Assim Saúde
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Bradesco Seguros
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Central Nacional Unimed
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  (CNU) NotreDame Intermédica
+                </div>
+                <div
+                  className="flex items-center"
+                  style={{ fontSize: "20px", color: "#5C5C5C" }}
+                >
+                  Prevent Sênior São Francisco
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex justify-between items-center mt-32">
+                <h2
+                  className="font-bold"
+                  style={{ fontSize: "42px", lineHeight: "50px", color: "#007D77" }}
+                >
+                  Corpo Clínico
+                </h2>
+
+                <div className="flex gap-5">
+                  <Input
+                    placeholder="Especialidade"
+                    size="lg"
+                    radius="full"
+                    variant="bordered"
+                    endContent={<Search className="text-2xl text-default-400" />}
+                    className="max-w-xs"
+                  />
+
+                  <Input
+                    placeholder="Buscar por nome ou CRM"
+                    size="lg"
+                    radius="full"
+                    variant="bordered"
+                    endContent={<Search className="text-2xl text-default-400" />}
+                    className="max-w-xs"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-10 flex justify-between">
+                <div
+                  className="w-[352px] h-[552px] border border-[#707070] rounded-bl-[30px] flex flex-col items-start"
+                  style={{ opacity: 1 }}
+                >
+                  <img
+                    src="https://img.freepik.com/fotos-premium/medico-alegre-um-rosto-feliz-na-profissao-medica-isolado-em-um-fundo-branco_94628-20220.jpg?w=1800"
+                    alt="Nome do Médico"
+                    className="w-full h-56 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-bold" style={{ fontSize: "24px", color: "#007D77" }}>
+                      Carla Lira
+                    </h3>
+                    <p className="font-bold text-gray-600 mt-1">CRM: 123456</p>
+                    <p className="text-gray-600 mt-2">Especialidade</p>
+                    <p className="mt-4" style={{ color: "#007D77", fontWeight: "bold" }}>
+                      RQE
+                    </p>
+                    <p className="text-gray-600 mt-1">12345</p>
+                    <p className="mt-4" style={{ color: "#007D77", fontWeight: "bold" }}>
+                      Local de Atendimento
+                    </p>
+                    <p className="text-gray-600 mt-1">Hospital XYZ</p>
+                  </div>
+                </div>
+
+                <div
+                  className="w-[352px] h-[552px] border border-[#707070] rounded-bl-[30px] flex flex-col items-start"
+                  style={{ opacity: 1 }}
+                >
+                  <img
+                    src="https://img.freepik.com/fotos-premium/a-presenca-iluminadora-da-enfermeira-isolada-em-um-fundo-branco-ai-generativo_94628-9638.jpg?w=1800"
+                    alt="Nome do Médico"
+                    className="w-full h-56 object-cover "
+                  />
+                  <div className="p-4">
+                    <h3 className="font-bold" style={{ fontSize: "24px", color: "#007D77" }}>
+                      Carla Lira
+                    </h3>
+                    <p className="font-bold text-gray-600 mt-1">CRM: 123456</p>
+                    <p className="text-gray-600 mt-2">Especialidade</p>
+                    <p className="mt-4" style={{ color: "#007D77", fontWeight: "bold" }}>
+                      RQE
+                    </p>
+                    <p className="text-gray-600 mt-1">12345</p>
+                    <p className="mt-4" style={{ color: "#007D77", fontWeight: "bold" }}>
+                      Local de Atendimento
+                    </p>
+                    <p className="text-gray-600 mt-1">Hospital XYZ</p>
+                  </div>
+                </div>
+
+                <div
+                  className="w-[352px] h-[552px] border border-[#707070] rounded-bl-[30px] flex flex-col items-start"
+                  style={{ opacity: 1 }}
+                >
+                  <img
+                    src="https://img.freepik.com/fotos-premium/mulher-prestadora-de-servicos-de-saude-em-scrub-wear-generative-ai_94628-7730.jpg?w=1800"
+                    alt="Nome do Médico"
+                    className="w-full h-56 object-cover "
+                  />
+                  <div className="p-4">
+                    <h3 className="font-bold" style={{ fontSize: "24px", color: "#007D77" }}>
+                      Carla Lira
+                    </h3>
+                    <p className="font-bold text-gray-600 mt-1">CRM: 123456</p>
+                    <p className="text-gray-600 mt-2">Especialidade</p>
+                    <p className="mt-4" style={{ color: "#007D77", fontWeight: "bold" }}>
+                      RQE
+                    </p>
+                    <p className="text-gray-600 mt-1">12345</p>
+                    <p className="mt-4" style={{ color: "#007D77", fontWeight: "bold" }}>
+                      Local de Atendimento
+                    </p>
+                    <p className="text-gray-600 mt-1">Hospital XYZ</p>
+                  </div>
+                </div>
+
+
+              </div>
+              <Button color="primary" variant="bordered" startContent={<CameraIcon />}>
+                Take a photo
+              </Button>
 
             </div>
           </div>
