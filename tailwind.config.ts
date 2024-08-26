@@ -28,7 +28,7 @@ const config: Config = {
         md: "1024px",
       },
       maxWidth: {
-        "3xl": "1900px",
+        "3xl": "1640px",
       },
     },
   },
