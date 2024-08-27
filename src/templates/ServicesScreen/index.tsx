@@ -118,7 +118,7 @@ export default function ServiceScreen(): JSX.Element {
         </div>
 
         {/*OC Diagnósticos*/}
-        <div className="mt-36">
+        <div className="mt-5">
           <div className="mt-20 flex justify-center">
             <div className="text-center">
               <h2 className="font-black text-[62px] leading-[74px] text-[#007D77] font-lato">
@@ -209,7 +209,7 @@ export default function ServiceScreen(): JSX.Element {
         </div>
 
         {/*Tratamentos Oncoclínicas*/}
-        <div className="mt-36">
+        <div className="mt-5">
           <div className="mt-20 flex justify-center">
             <div className="text-center">
               <h2 className="font-black text-[62px] leading-[74px] text-[#007D77] font-lato">
