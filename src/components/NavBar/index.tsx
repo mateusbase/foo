@@ -65,7 +65,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             <NavbarContent justify="end" className="items-center">
               <Link
                 href="/contato"
-                className="mr-16 flex items-center font-bold text-primary"
+                className="mr-14 ml-10 flex items-center font-bold text-primary"
               >
                 Entrar
                 <LogIn size={26} className="ml-2" />
