@@ -1,4 +1,3 @@
-import DoctorsScreen from "@/templates/DoctorsScreen";
 import Head from "next/head";
 import Layout from "@/components/layout";
 import { NextPageWithLayout } from "../_app";
