@@ -11,8 +11,13 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true
+    },
     fontFamily: {
-      sans: ["Laro", "Arial", "sans-serif"],
+      "lato-heavy": ["Lato Heavy", "Arial", "sans-serif"],
+      "lato-medium": ["Lato Medium", "Arial", "sans-serif"],
+      "lato-light": ["Lato Light", "Arial", "sans-serif"],
     },
     container: {
       center: true,
@@ -30,6 +35,12 @@ const config: Config = {
       maxWidth: {
         "3xl": "1640px",
       },
+      height: {
+        '260': '16.25rem',
+      },
+      width: {
+        '260': '16.25rem',
+      }
     },
   },
   darkMode: "class",
@@ -67,4 +78,5 @@ const config: Config = {
     }),
   ],
 };
+
 export default config;
