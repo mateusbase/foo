@@ -33,7 +33,7 @@ export default function Footer() {
 
   return (
     <footer className="p-10 text-gray-400 bg-gray-600">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-3xl">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-start md:gap-0">
           <Image
             src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/footer/oncoclinicas.svg"
@@ -131,7 +131,7 @@ export default function Footer() {
             <p className="text-xs text-white">© 2024 Grupo Oncoclínicas - RT: Dra. Mariana Laloni - CRM-SP 102379</p>
           </div>
           <RadioGroup className="flex justify-center gap-8" color="default" orientation="horizontal">
-            <Radio className="text-white" value="pt-BR" checked>
+            <Radio className="text-white" value="pt-BR">
               <span className="font-medium text-white">Português</span>
             </Radio>
             <Radio className="text-white" value="en-US">

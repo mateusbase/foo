@@ -19,6 +19,9 @@ const config: Config = {
       "lato-medium": ["Lato Medium", "Arial", "sans-serif"],
       "lato-light": ["Lato Light", "Arial", "sans-serif"],
     },
+    container: {
+      center: true,
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -26,8 +29,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       screens: {
-        'sm': '640px',
-        'md': '1024px',
+        sm: "640px",
+        md: "1024px",
+      },
+      maxWidth: {
+        "3xl": "1640px",
       },
       height: {
         '260': '16.25rem',
@@ -61,7 +67,7 @@ const config: Config = {
             default: {
               DEFAULT: "#FFFFFF",
               foreground: "#FFFFFF",
-            }
+            },
           },
         },
         dark: {
