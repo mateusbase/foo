@@ -14,7 +14,7 @@ const PageHeader = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-[-56.5px] right-0 flex h-[113px] w-[1256px] items-center justify-between rounded-l-[20px] bg-[#007D77] pl-6 pr-10 text-white">
+      <div className="absolute bottom-[-56.5px] right-0 flex h-[113px] w-[753px] items-center justify-between rounded-l-[20px] bg-[#007D77] pl-6 pr-10 text-white">
         <div className="flex items-center gap-8 text-[24px] font-medium ml-[30px]">
           <a href="#" className="flex items-center gap-2 hover:underline">
             Serviços
