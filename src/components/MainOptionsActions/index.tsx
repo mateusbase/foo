@@ -3,7 +3,7 @@ import { MainOptionsActionsProps } from "./types";
 
 export default function MainOptionsActions({ options }: MainOptionsActionsProps) {
   return (
-    <main className="bg-primary text-white p-10 flex justify-center gap-10 items-center">
+    <main className="bg-primary text-white p-10 flex justify-center gap-10 items-center rounded-3xl">
       {options.map((option, index) => (
         <>
           <div key={index} className="flex">
