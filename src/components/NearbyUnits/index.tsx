@@ -5,7 +5,7 @@ import { Select, SelectItem } from "@nextui-org/react";
 
 export default function NearbyUnits() {
   return (
-    <main className="container flex flex-col gap-14 p-8">
+    <main className="container flex flex-col gap-14 p-8 mt-10">
       <section className="flex items-center justify-between">
         <h1 className="text-4xl font-extralight text-primary">
           Encontre uma unidade Oncoclínicas próxima a você
@@ -46,7 +46,7 @@ export default function NearbyUnits() {
         </Button>
       </section>
 
-      <section className="flex justify-around">
+      <section className="flex justify-between">
         {unitsData.map((unit, index) => (
           <UnitsCard key={index} {...unit} />
         ))}
