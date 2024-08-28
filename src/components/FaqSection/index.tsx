@@ -1,21 +1,21 @@
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import { FaqHeader } from "./components/FaqHeader";
 
 export default function FaqSection() {
+  const title = "Descubra tudo o que você deseja saber sobre a Oncoclínicas";
   const defaultContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-
   const itemClasses = {
-    title: "text-primary",
+    title: "text-primary font-bold",
   };
 
   return (
-    <section className="flex flex-col justify-center items-center bg-background-foreground">
-      <div>
-        <h1>Descubra tudo o que você deseja saber sobre a Oncoclínicas</h1>
-      </div>
-      <div>
+    <section className="flex flex-col justify-center items-center bg-background-foreground py-28">
+
+      <FaqHeader titleHeader={title} />
+      <div className="flex flex-col justify-center items-center w-full max-w-5xl mx-auto">
         <Accordion
-          className="w-full max-w-[700px]"
+          className=""
           itemClasses={itemClasses}
           selectionMode="multiple"
         >

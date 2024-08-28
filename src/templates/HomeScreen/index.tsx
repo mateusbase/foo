@@ -4,6 +4,7 @@ import SearchInput from "./components/SearchInput";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import NearbyUnits from "@/components/NearbyUnits";
 import ServicesSection from "@/components/ServicesSection";
+import FaqSection from "@/components/FaqSection";
 
 export default function HomeScreen(): JSX.Element {
   const options = [
@@ -33,6 +34,7 @@ export default function HomeScreen(): JSX.Element {
       <section className="mt-10">
         <ServicesSection />
         <NearbyUnits />
+        <FaqSection />
       </section>
     </main>
   );
