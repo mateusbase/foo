@@ -12,16 +12,25 @@ const config: Config = {
   ],
   theme: {
     container: {
-      center: true
-    },
-    fontFamily: {
-      "lato-heavy": ["Lato Heavy", "Arial", "sans-serif"],
-      "lato-medium": ["Lato Medium", "Arial", "sans-serif"],
-      "lato-light": ["Lato Light", "Arial", "sans-serif"],
-    },
-    container: {
       center: true,
     },
+    fontFamily: {
+      "lato-thin": ["Lato", "sans-serif"],
+      "lato-light": ["Lato", "sans-serif"],
+      "lato-regular": ["Lato", "sans-serif"],
+      "lato-bold": ["Lato", "sans-serif"],
+      "lato-black": ["Lato", "sans-serif"],
+    },
+    // fontSize: {
+    //   sm: "0.8rem",
+    //   base: "1rem",
+    //   md: "1.5rem",
+    //   xl: "1.625rem",
+    //   "2xl": "1.563rem",
+    //   "3xl": "1.953rem",
+    //   "4xl": "2.5rem",
+    //   "5xl": "3.25rem",
+    // },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -36,11 +45,11 @@ const config: Config = {
         "3xl": "1640px",
       },
       height: {
-        '260': '16.25rem',
+        "260": "16.25rem",
       },
       width: {
-        '260': '16.25rem',
-      }
+        "260": "16.25rem",
+      },
     },
   },
   darkMode: "class",
@@ -55,7 +64,7 @@ const config: Config = {
           colors: {
             background: {
               DEFAULT: "#FFFFFF",
-              foreground: "#F0F0F0"
+              foreground: "#F0F0F0",
             },
             primary: {
               DEFAULT: "#007D77",
