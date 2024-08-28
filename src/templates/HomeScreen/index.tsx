@@ -4,6 +4,7 @@ import SearchInput from "./components/SearchInput";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import NearbyUnits from "@/components/NearbyUnits";
 import ServicesSection from "@/components/ServicesSection";
+import InformationSlider from "@/components/InformationSlider";
 
 export default function HomeScreen(): JSX.Element {
   const options = [
@@ -14,25 +15,35 @@ export default function HomeScreen(): JSX.Element {
   ];
 
   return (
-    <main className="flex flex-col gap-4 w-full">
-      <section className="w-full relative">
-        <img
-          src="https://placehold.co/1920x600/000000/FFF"
-          alt=""
-          className="h-auto w-full"
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <SearchInput />
-        </div>
+    <main>
+      <section className="flex flex-col gap-4 w-full">
+        <section className="w-full relative">
+          <img
+            src="https://placehold.co/1920x600/000000/FFF"
+            alt=""
+            className="h-auto w-full"
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <SearchInput />
+          </div>
 
-        <div className="absolute inset-0 flex items-end justify-center bottom-[-56.5px]">
-          <MainOptionsActions options={options} />
-        </div>
-      </section>
+          <div className="absolute inset-0 flex items-end justify-center bottom-[-56.5px]">
+            <MainOptionsActions options={options} />
+          </div>
+        </section>
 
-      <section className="mt-10">
-        <ServicesSection />
-        <NearbyUnits />
+        <section className="mt-10 container">
+          <ServicesSection />
+          <InformationSlider />
+          <NearbyUnits />
+        </section>
+
+        <section>
+          <MainOptionsActions
+            options={options}
+            rounded="rounded-none"
+          />
+        </section>
       </section>
     </main>
   );
