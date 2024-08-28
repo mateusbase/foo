@@ -1,6 +1,5 @@
 import MainOptionsActions from "@/components/MainOptionsActions";
 import ServicesSection from "@/components/ServicesSection";
-import NearbyUnits from "@/components/NearbyUnits";
 import { IoIosCalendar } from "react-icons/io";
 import { FaFile, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import UpcomingEventsSection from "@/components/UpcomingEvents";

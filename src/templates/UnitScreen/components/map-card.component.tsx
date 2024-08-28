@@ -1,6 +1,6 @@
 import { Clock, MapPin } from "lucide-react";
 
-const MapCard = () => {
+const MapCard = (): JSX.Element => {
   return (
     <div
       className="ml-8 flex h-[970px] w-[506px] flex-col rounded-[20px] bg-[#F0F0F0] p-10"
@@ -18,7 +18,7 @@ const MapCard = () => {
             </h3>
           </div>
           <p
-            className="text-[#5C5C5C] mt-2"
+            className="mt-2 text-[#5C5C5C]"
             style={{ fontSize: "18px", lineHeight: "30px", marginLeft: "40px" }}
           >
             Segunda a Sexta-feira - Das 8h às 18h
@@ -38,10 +38,11 @@ const MapCard = () => {
             </h3>
           </div>
           <p
-            className="text-[#5C5C5C] mt-2"
+            className="mt-2 text-[#5C5C5C]"
             style={{ fontSize: "18px", lineHeight: "30px", marginLeft: "40px" }}
           >
-            Avenida Brigadeiro Faria Lima, 4.300 - 6º e 10º Andar - Vila Olímpia São Paulo/SP
+            Avenida Brigadeiro Faria Lima, 4.300 - 6º e 10º Andar - Vila Olímpia
+            São Paulo/SP
           </p>
         </div>
       </div>
@@ -54,7 +55,7 @@ const MapCard = () => {
           style={{ border: 0, borderRadius: "20px" }}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+        />
       </div>
 
       <div className="mb-6">
@@ -64,7 +65,10 @@ const MapCard = () => {
         >
           Estrutura da Unidade
         </h3>
-        <p className="text-[#5C5C5C]" style={{ fontSize: "18px", lineHeight: "30px" }}>
+        <p
+          className="text-[#5C5C5C]"
+          style={{ fontSize: "18px", lineHeight: "30px" }}
+        >
           • 12 consultórios <br />
           • 17 leitos (7 suítes com vista) <br />
           • Sala de emergência <br />• Área arborizada
@@ -78,7 +82,10 @@ const MapCard = () => {
         >
           Composição da Equipe
         </h3>
-        <p className="text-[#5C5C5C]" style={{ fontSize: "18px", lineHeight: "30px" }}>
+        <p
+          className="text-[#5C5C5C]"
+          style={{ fontSize: "18px", lineHeight: "30px" }}
+        >
           • Nutricionistas <br />
           • Psicologos <br />• Massoterapeutas
         </p>

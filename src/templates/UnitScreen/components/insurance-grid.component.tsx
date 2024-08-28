@@ -1,7 +1,7 @@
 import { Input } from "@nextui-org/react";
 import { Search } from "lucide-react";
 
-const InsuranceGrid = () => {
+const InsuranceGrid = (): JSX.Element => {
   const insurances = [
     "Amil Assistência Médica",
     "Assim Saúde",
@@ -21,7 +21,7 @@ const InsuranceGrid = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mt-32 pt-2">
+      <div className="mt-32 flex items-center justify-between pt-2">
         <h2
           className="font-bold"
           style={{ fontSize: "42px", lineHeight: "50px", color: "#007D77" }}
@@ -35,11 +35,11 @@ const InsuranceGrid = () => {
           radius="full"
           variant="bordered"
           endContent={<Search className="text-2xl text-default-400" />}
-          className="w-[280px] h-[50px]"
+          className="h-[50px] w-[280px]"
         />
       </div>
 
-      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-4 font-bold">
+      <div className="mt-20 grid grid-cols-1 gap-x-20 gap-y-4 font-bold sm:grid-cols-2 lg:grid-cols-3">
         {insurances.map((insurance, index) => (
           <div
             key={index}
