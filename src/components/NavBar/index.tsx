@@ -30,6 +30,10 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
 
   const isMedicoPage = router.pathname === "/medicos";
 
+  const handleLogoClick = () => {
+    router.push('/');
+  };
+
   return (
     <>
       <div className="flex justify-center px-5">
@@ -44,7 +48,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className="sm:hidden"
             />
-            <NavbarBrand className="cursor-pointer">
+            <NavbarBrand className="cursor-pointer" onClick={(handleLogoClick)}>
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
                 alt="Logo"
@@ -65,7 +69,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             <NavbarContent justify="end" className="items-center">
               <Link
                 href="/contato"
-                className="mr-16 flex items-center font-bold text-primary"
+                className="mr-14 ml-10 flex items-center font-bold text-primary"
               >
                 Entrar
                 <LogIn size={26} className="ml-2" />

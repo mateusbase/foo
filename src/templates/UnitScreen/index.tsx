@@ -1,73 +1,33 @@
 import {
   Activity,
-  Clock,
   Heart,
-  MapPin,
-  MessageSquare,
-  Phone,
   User,
 } from "lucide-react";
+import { FaUser, FaMapMarkerAlt, FaFile } from "react-icons/fa";
+import { IoIosCalendar } from "react-icons/io";
+import ClinicalBody from "./components/clinical-body.component";
+import MapCard from "./components/map-card.component";
+import Breadcrumb from "./components/breadcrumb.component";
+import InsuranceGrid from "./components/insurance-grid.component";
+import PageHeader from "./components/page-header.component";
+import MainOptionsActions from "@/components/MainOptionsActions";
 
 export default function UnitScreen(): JSX.Element {
+  const options = [
+    { title: "Agende uma consulta ou exame", icon: IoIosCalendar },
+    { title: "Encontre uma unidade", icon: FaMapMarkerAlt },
+    { title: "Encontre um médico", icon: FaUser },
+    { title: "Resultado de Exames", icon: FaFile },
+  ];
+
   return (
     <main>
-      <div
-        className="relative h-[343px] w-full bg-gradient-to-r from-[#00B6AD] to-[#BA99E7]"
-        style={{ height: "343px", opacity: 1 }}
-      >
-        <div className="absolute inset-0 flex justify-center">
-          <div className="flex w-full max-w-screen-2xl flex-col justify-center">
-            <h1
-              className="font-bold text-white"
-              style={{ fontSize: "60px", lineHeight: "72px" }}
-            >
-              Oncoclínicas Faria Lima
-            </h1>
-            <p
-              className="mt-4 text-white"
-              style={{
-                fontSize: "18px",
-                lineHeight: "24px",
-                fontWeight: "500",
-              }}
-            >
-              Avenida Brigadeiro Faria Lima, 4.300 - 6º e 10º Andar - Vila
-              Olímpia São Paulo/SP
-            </p>
-          </div>
-        </div>
-
-        <div
-          className="absolute bottom-[-56.5px] right-0 flex h-[113px] w-[1256px] items-center justify-between rounded-l-[20px] bg-[#007D77] pl-6 pr-10 text-white"
-          style={{ borderRadius: "20px 0px 0px 20px", opacity: 1 }}
-        >
-          <div
-            className="flex items-center gap-8 text-lg font-medium"
-            style={{ fontSize: "24px", marginLeft: "30px" }}
-          >
-            <a href="#" className="flex items-center gap-2 hover:underline">
-              <MessageSquare size={24} /> Fale por WhatsApp
-            </a>
-            <span>|</span>
-            <a href="#" className="flex items-center gap-2 hover:underline">
-              <Phone size={24} /> Ligar na central de atendimento
-            </a>
-            <span>|</span>
-            <a href="#" className="flex items-center gap-2 hover:underline">
-              <MapPin size={24} /> Mostrar no mapa
-            </a>
-          </div>
-        </div>
-      </div>
+      <PageHeader />
 
       <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col justify-between py-28">
-        <div className="font-mono z-10 items-start justify-between text-sm lg:flex">
-          <h1 className="text-left">
-            Home &gt; Unidades &gt; São Paulo &gt; Oncoclínicas Faria Lima
-          </h1>
-        </div>
+        <Breadcrumb />
 
-        <div className="mt-5 flex">
+        <div className="mt-20 flex">
           <div className="flex-1">
             <div>
               <h2
@@ -156,112 +116,63 @@ export default function UnitScreen(): JSX.Element {
                 </div>
 
               </div>
-
             </div>
+
+            <InsuranceGrid />
+
+            <ClinicalBody />
 
             <div>
               <h2
-                className="text-left font-bold mt-32"
-                style={{ fontSize: "42px", lineHeight: "50px", color: "#007D77" }}
+                className="text-left font-bold mt-32 text-[42px] leading-[50px] text-[#007D77]"
               >
-                Convênios atendidos nesta unidade
+                Sobre a unidade Faria Lima
               </h2>
 
+              <div className="mt-10">
+                <p className="text-left font-medium text-[18px] leading-[28px] font-lato text-[#5C5C5C] mb-4">
+                  Fundado há mais de três décadas, o Centro Paulista de Oncologia (CPO) passou a integrar o Grupo Oncoclínicas em 2013. A clínica oferece cuidado integral e individualizado ao paciente oncológico, com consultas médicas, tratamento oncológico ambulatorial (quimioterapia, hormonioterapia, drogas alvo, imunoterapia), medicamentos de suporte, acompanhamento médico durante internações hospitalares e uma equipe médica para suporte de emergências disponível 24 horas por dia.
+                </p>
+                <p className="text-left font-medium text-[18px] leading-[28px] font-lato text-[#5C5C5C] mb-4">
+                  Nosso corpo clínico é composto por profissionais especializados em oncologia clínica e hematologia, cuidadosamente selecionados por sua qualidade técnica e ética de trabalho, além de médicos especialistas em oncologia nas áreas de cardiologia, dermatologia, genética e medicina integrativa. Em conjunto com a equipe administrativa, somos mais de 120 colaboradores e 50 médicos trabalhando pela missão de cuidar integralmente do paciente, com excelência, humanidade e ética.
+                </p>
+                <p className="text-left font-medium text-[18px] leading-[28px] font-lato text-[#5C5C5C] mb-4">
+                  O OC Oncoclínicas CPO oferece a todos os pacientes em tratamento ambulatorial uma equipe de enfermagem com experiência e capacitações técnicas e, ainda, farmácia clínica, psicologia, nutrição e reflexologia, complementando os cuidados necessários durante o tratamento.
+                </p>
+                <p className="text-left font-medium text-[18px] leading-[28px] font-lato text-[#5C5C5C] mb-4">
+                  Atualmente, a Oncoclínicas CPO conta com duas unidades localizadas nos bairros Vila Olímpia e Higienópolis.
+                </p>
+                <p className="text-left font-medium text-[18px] leading-[28px] font-lato text-[#5C5C5C] mb-4">
+                  Responsável Técnico da Unidade: Daniel Luiz Gimenes | CRM SP 75953.
+                </p>
+              </div>
+
+              <div className="flex gap-4 mt-8">
+                <img
+                  src="https://via.placeholder.com/352x198"
+                  alt="Imagem 1"
+                  className="w-[352px] h-[198px] object-cover rounded"
+                />
+                <img
+                  src="https://via.placeholder.com/352x198"
+                  alt="Imagem 2"
+                  className="w-[352px] h-[198px] object-cover rounded"
+                />
+                <img
+                  src="https://via.placeholder.com/352x198"
+                  alt="Imagem 3"
+                  className="w-[352px] h-[198px] object-cover rounded"
+                />
+              </div>
+
             </div>
           </div>
 
-          <div
-            className="ml-8 flex h-[970px] w-[506px] flex-col rounded-[20px] bg-[#F0F0F0] p-10"
-            style={{ borderRadius: "20px", opacity: 1 }}
-          >
-            <div className="mb-6">
-              <div className="mb-2">
-                <div className="flex items-center gap-2">
-                  <Clock size={34} className="text-[#007D77]" />
-                  <h3
-                    className="font-bold text-[#007D77]"
-                    style={{ fontSize: "20px", lineHeight: "26px" }}
-                  >
-                    Horário de funcionamento
-                  </h3>
-                </div>
-                <p
-                  className="text-[#5C5C5C] mt-2"
-                  style={{ fontSize: "18px", lineHeight: "30px", marginLeft: "40px" }}
-                >
-                  Segunda a Sexta-feira - Das 8h às 18h
-                </p>
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <div className="mb-2">
-                <div className="flex items-center gap-2">
-                  <MapPin size={34} className="text-[#007D77]" />
-                  <h3
-                    className="font-bold text-[#007D77]"
-                    style={{ fontSize: "20px", lineHeight: "26px" }}
-                  >
-                    Endereço
-                  </h3>
-                </div>
-                <p
-                  className="text-[#5C5C5C] mt-2"
-                  style={{ fontSize: "18px", lineHeight: "30px", marginLeft: "40px" }}
-                >
-                  Avenida Brigadeiro Faria Lima, 4.300 - 6º e 10º Andar - Vila Olímpia São
-                  Paulo/SP
-                </p>
-              </div>
-            </div>
-
-            <div className="mb-6 max-w-full">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.7558529423423!2d-46.69341978502346!3d-23.569239884679595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce573e7920f963%3A0x183c9f1d5287695d!2sAv.%20Brigadeiro%20Faria%20Lima%2C%204300%20-%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004527-120%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1692616753152!5m2!1spt-BR!2sus"
-                width="100%"
-                height="250"
-                style={{ border: 0, borderRadius: "20px" }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-
-            <div className="mb-6">
-              <h3
-                className="mb-2 font-bold text-[#007D77]"
-                style={{ fontSize: "20px", lineHeight: "26px" }}
-              >
-                Estrutura da Unidade
-              </h3>
-              <p
-                className="text-[#5C5C5C]"
-                style={{ fontSize: "18px", lineHeight: "30px" }}
-              >
-                • 12 consultórios <br />
-                • 17 leitos (7 suítes com vista) <br />
-                • Sala de emergência <br />• Área arborizada
-              </p>
-            </div>
-
-            <div>
-              <h3
-                className="mb-2 font-bold text-[#007D77]"
-                style={{ fontSize: "20px", lineHeight: "26px" }}
-              >
-                Composição da Equipe
-              </h3>
-              <p
-                className="text-[#5C5C5C]"
-                style={{ fontSize: "18px", lineHeight: "30px" }}
-              >
-                • Nutricionistas <br />
-                • Psicologos <br />• Massoterapeutas
-              </p>
-            </div>
-          </div>
+          <MapCard />
         </div>
-
       </div>
+
+      <MainOptionsActions options={options} />
     </main>
   );
 }

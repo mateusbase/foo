@@ -1,26 +1,27 @@
+import DoctorsScreen from "@/templates/DoctorsScreen";
 import Head from "next/head";
 import Layout from "@/components/layout";
 import { NextPageWithLayout } from "../_app";
-import UnitScreen from "@/templates/UnitScreen";
+import ServiceScreen from "@/templates/ServicesScreen";
 
-const Unit: NextPageWithLayout = () => {
+const Service: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>Unidade</title>
-        <meta name="description" content="Unidade" />
+        <title>Serviços</title>
+        <meta name="description" content="Serviços" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <UnitScreen />
+        <ServiceScreen />
       </main>
     </>
   );
 };
 
-Unit.getLayout = function getLayout(page) {
+Service.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
 
-export default Unit;
+export default Service;
