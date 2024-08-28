@@ -32,7 +32,7 @@ export default function Footer(): JSX.Element {
   ];
 
   return (
-    <footer className="bg-gray-600 p-10 text-gray-400">
+    <footer className="bg-[#5C5C5C] p-10 text-white">
       <div className="mx-auto max-w-3xl">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-start md:gap-0">
           <Image
