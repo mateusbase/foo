@@ -44,8 +44,8 @@ export default function Footer(): JSX.Element {
           <div className="flex flex-col items-center gap-4 md:flex-row">
             <h1 className="font-semibold text-white">Nossos Canais</h1>
             <div className="flex gap-4">
-              {icons.map(({ src, path, alt }, index) => (
-                <Link key={index} href={path}>
+              {icons.map(({ src, path, alt }) => (
+                <Link key={src} href={path}>
                   <Image src={src} width={32} height={32} alt={alt} />
                 </Link>
               ))}

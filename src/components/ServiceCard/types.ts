@@ -1,4 +1,4 @@
 interface ServiceCardProps {
-  title: string,
-  icon: string,
+  title: string;
+  icon: string;
 }

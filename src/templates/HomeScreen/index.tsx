@@ -7,10 +7,10 @@ import SearchInput from "./components/SearchInput";
 
 export default function HomeScreen(): JSX.Element {
   const options = [
-    { title: "Agende uma consulta ou exame", icon: IoIosCalendar },
-    { title: "Encontre uma unidade", icon: FaMapMarkerAlt },
-    { title: "Encontre um médico", icon: FaUser },
-    { title: "Resultado de Exames", icon: FaFile },
+    { id: 1, title: "Agende uma consulta ou exame", icon: IoIosCalendar },
+    { id: 2, title: "Encontre uma unidade", icon: FaMapMarkerAlt },
+    { id: 3, title: "Encontre um médico", icon: FaUser },
+    { id: 4, title: "Resultado de Exames", icon: FaFile },
   ];
 
   return (

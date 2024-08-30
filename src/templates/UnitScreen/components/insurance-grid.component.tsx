@@ -3,20 +3,20 @@ import { Search } from "lucide-react";
 
 const InsuranceGrid = (): JSX.Element => {
   const insurances = [
-    "Amil Assistência Médica",
-    "Assim Saúde",
-    "Bradesco Seguros",
-    "Central Nacional Unimed",
-    "(CNU) NotreDame Intermédica",
-    "Prevent Sênior São Francisco",
-    "Assim Saúde",
-    "Central Nacional Unimed",
-    "(CNU) NotreDame Intermédica",
-    "Amil Assistência Médica",
-    "Assim Saúde",
-    "Central Nacional Unimed",
-    "Bradesco Seguros",
-    "Prevent Sênior São Francisco",
+    { id: 1, name: "Amil Assistência Médica" },
+    { id: 2, name: "Assim Saúde" },
+    { id: 3, name: "Bradesco Seguros" },
+    { id: 4, name: "Central Nacional Unimed" },
+    { id: 5, name: "(CNU) NotreDame Intermédica" },
+    { id: 6, name: "Prevent Sênior São Francisco" },
+    { id: 7, name: "Assim Saúde" },
+    { id: 8, name: "Central Nacional Unimed" },
+    { id: 9, name: "(CNU) NotreDame Intermédica" },
+    { id: 10, name: "Amil Assistência Médica" },
+    { id: 11, name: "Assim Saúde" },
+    { id: 12, name: "Central Nacional Unimed" },
+    { id: 13, name: "Bradesco Seguros" },
+    { id: 14, name: "Prevent Sênior São Francisco" },
   ];
 
   return (
@@ -40,13 +40,13 @@ const InsuranceGrid = (): JSX.Element => {
       </div>
 
       <div className="mt-20 grid grid-cols-1 gap-x-20 gap-y-4 font-bold sm:grid-cols-2 lg:grid-cols-3">
-        {insurances.map((insurance, index) => (
+        {insurances.map((insurance) => (
           <div
-            key={index}
+            key={insurance.id}
             className="flex items-center"
             style={{ fontSize: "20px", color: "#5C5C5C" }}
           >
-            {insurance}
+            {insurance.name}
           </div>
         ))}
       </div>
