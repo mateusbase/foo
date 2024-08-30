@@ -1,18 +1,10 @@
-import { IoIosCalendar } from "react-icons/io";
-import { FaUser, FaMapMarkerAlt, FaFile } from "react-icons/fa";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import NearbyUnits from "@/components/NearbyUnits";
 import ServicesSection from "@/components/ServicesSection";
+import { options } from "@/utils/objectUtils";
 import SearchInput from "./components/SearchInput";
 
 export default function HomeScreen(): JSX.Element {
-  const options = [
-    { title: "Agende uma consulta ou exame", icon: IoIosCalendar },
-    { title: "Encontre uma unidade", icon: FaMapMarkerAlt },
-    { title: "Encontre um médico", icon: FaUser },
-    { title: "Resultado de Exames", icon: FaFile },
-  ];
-
   return (
     <main className="flex w-full flex-col gap-4">
       <section className="relative w-full">

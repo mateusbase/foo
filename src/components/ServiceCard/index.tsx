@@ -1,8 +1,15 @@
-export default function ServiceCard({ title, icon }: ServiceCardProps): JSX.Element {
+export default function ServiceCard({
+  title,
+  icon,
+}: ServiceCardProps): JSX.Element {
   return (
-    <div className="flex flex-col items-center justify-center w-full sm:w-48 md:w-260 h-full sm:h-48 md:h-260 border-2 border-primary rounded-2xl p-4 opacity-100">
-      <img src={icon} alt={title} className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-cover mb-4" />
-      <h3 className="text-primary text-xl font-bold text-center">{title}</h3>
+    <div className="flex h-full w-full flex-col items-center justify-center rounded-2xl border-2 border-primary p-4 opacity-100 sm:h-48 sm:w-48 md:h-260 md:w-260">
+      <img
+        src={icon}
+        alt={title}
+        className="mb-4 h-8 w-8 object-cover sm:h-10 sm:w-10 md:h-12 md:w-12"
+      />
+      <h3 className="text-center text-xl font-bold text-primary">{title}</h3>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { Select, SelectItem } from "@nextui-org/react";
 import UnitsCard from "./components/UnitsCard";
 import { unitsData } from "./components/utils";
 
-export default function NearbyUnits() {
+export default function NearbyUnits(): JSX.Element {
   return (
     <main className="container mt-10 flex flex-col gap-14 p-8">
       <section className="flex items-center justify-between">
@@ -47,8 +47,8 @@ export default function NearbyUnits() {
       </section>
 
       <section className="flex justify-between">
-        {unitsData.map((unit, index) => (
-          <UnitsCard key={index} {...unit} />
+        {unitsData.map((unit) => (
+          <UnitsCard key={unit.id} {...unit} />
         ))}
       </section>
     </main>

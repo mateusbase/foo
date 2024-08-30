@@ -4,6 +4,7 @@ import { Search, Plus } from "lucide-react";
 const ClinicalBody = (): JSX.Element => {
   const doctors = [
     {
+      id: 1,
       name: "Carla Lira",
       crm: "123456",
       specialty: "Especialidade",
@@ -13,6 +14,7 @@ const ClinicalBody = (): JSX.Element => {
         "https://img.freepik.com/fotos-premium/medico-alegre-um-rosto-feliz-na-profissao-medica-isolado-em-um-fundo-branco_94628-20220.jpg?w=1800",
     },
     {
+      id: 2,
       name: "Carla Lira",
       crm: "123456",
       specialty: "Especialidade",
@@ -22,6 +24,7 @@ const ClinicalBody = (): JSX.Element => {
         "https://img.freepik.com/fotos-premium/a-presenca-iluminadora-da-enfermeira-isolada-em-um-fundo-branco-ai-generativo_94628-9638.jpg?w=1800",
     },
     {
+      id: 3,
       name: "Carla Lira",
       crm: "123456",
       specialty: "Especialidade",
@@ -61,9 +64,9 @@ const ClinicalBody = (): JSX.Element => {
       </div>
 
       <div className="mt-10 flex justify-between">
-        {doctors.map((doctor, index) => (
+        {doctors.map((doctor) => (
           <div
-            key={index}
+            key={doctor.id}
             className="flex h-[552px] w-[352px] flex-col items-start rounded-bl-[30px] border border-[#707070]"
           >
             <img

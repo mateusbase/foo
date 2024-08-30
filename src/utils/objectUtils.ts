@@ -1,3 +1,6 @@
+import { FaFile, FaMapMarkerAlt, FaUser } from "react-icons/fa";
+import { IoIosCalendar } from "react-icons/io";
+
 /* eslint-disable prettier/prettier */
 export const clone = <T extends object>(obj: T): T => {
   return JSON.parse(JSON.stringify(obj));
@@ -31,7 +34,14 @@ export const hasTypename = (value: unknown): value is HasTypename => {
 
 export function getObjectKeyByValue(
   object: Record<string, unknown>,
-  value: string
+  value: string,
 ): string | undefined {
   return Object.keys(object).find((key) => object[key] === value);
 }
+
+export const options = [
+  { id: 1, title: "Agende uma consulta ou exame", icon: IoIosCalendar },
+  { id: 2, title: "Encontre uma unidade", icon: FaMapMarkerAlt },
+  { id: 3, title: "Encontre um médico", icon: FaUser },
+  { id: 4, title: "Resultado de Exames", icon: FaFile },
+];
