@@ -12,17 +12,21 @@ export default function AlphabetSelector(): JSX.Element {
 
   return (
     <div className="mt-28 flex items-center justify-between">
-      <div className="flex items-center justify-center gap-[12px]">
+      <div className="flex items-center justify-center gap-[4px]">
         {alphabet.map((letter: string) => (
           <Button
             key={letter}
             onClick={() => handleLetterClick(letter)}
-            // eslint-disable-next-line prettier/prettier
-            className={`font-lato flex h-[32px] w-[32px] items-center justify-center rounded-full text-[18px] font-black leading-[22px] ${selectedLetter === letter
-              ? "bg-[#007D77] text-white"
-              : "text-[#007D77]"
-              // eslint-disable-next-line prettier/prettier
+            className={`font-lato flex h-[32px] w-[32px] items-center justify-center rounded-full p-0 text-[18px] font-black leading-[22px] ${selectedLetter === letter
+                ? "bg-[#007D77] text-white"
+                : "text-[#007D77]"
               }`}
+            style={{
+              height: "32px",
+              width: "32px",
+              minWidth: "32px",
+              padding: "0",
+            }}
           >
             {letter}
           </Button>
