@@ -1,27 +1,11 @@
 import MainOptionsActions from "@/components/MainOptionsActions";
 import ServicesSection from "@/components/ServicesSection";
-import { IoIosCalendar } from "react-icons/io";
-import { FaFile, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import UpcomingEventsSection from "@/components/UpcomingEvents";
+import { options } from "@/utils/objectUtils";
 import SearchInput from "../HomeScreen/components/SearchInput";
 
 export default function DoctorsScreen(): JSX.Element {
-  const options = [
-    { id: 1, title: "Agende uma consulta ou exame", icon: IoIosCalendar },
-    { id: 2, title: "Encontre uma unidade", icon: FaMapMarkerAlt },
-    { id: 3, title: "Encontre um médico", icon: FaUser },
-    { id: 4, title: "Resultado de Exames", icon: FaFile },
-  ];
-
   return (
-    // <main>
-    //   <div className="flex min-h-screen flex-col items-center justify-between p-24 bg-primary-50">
-    //     <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-    //       <h1>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</h1>
-    //     </div>
-    //   </div>
-    // </main>
-
     <main className="flex w-full flex-col gap-4">
       <section className="relative w-full">
         <img
