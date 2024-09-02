@@ -2,10 +2,10 @@ import ServiceCard from "../ServiceCard";
 
 export default function ServicesSection(): JSX.Element {
   const services = [
-    { title: "Tratamentos", icon: "/favicon.ico" },
-    { title: "Diagnósticos", icon: "/favicon.ico" },
-    { title: "Serviços", icon: "/favicon.ico" },
-    { title: "Tudo sobre o câncer", icon: "/favicon.ico" },
+    { id: 1, title: "Tratamentos", icon: "/favicon.ico" },
+    { id: 2, title: "Diagnósticos", icon: "/favicon.ico" },
+    { id: 3, title: "Serviços", icon: "/favicon.ico" },
+    { id: 4, title: "Tudo sobre o câncer", icon: "/favicon.ico" },
   ];
 
   return (
@@ -23,8 +23,8 @@ export default function ServicesSection(): JSX.Element {
       </div>
 
       <div className="mt-8 flex flex-wrap justify-center gap-3">
-        {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
+        {services.map((service) => (
+          <ServiceCard key={service.id} {...service} />
         ))}
       </div>
     </section>

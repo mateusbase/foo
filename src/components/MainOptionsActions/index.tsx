@@ -1,3 +1,4 @@
+import React from "react"; // Import React para usar React.Fragment
 import { MainOptionsActionsProps } from "./types";
 
 export default function MainOptionsActions({
@@ -6,9 +7,9 @@ export default function MainOptionsActions({
   return (
     <main className="flex items-center justify-center gap-10 rounded-3xl bg-primary p-10 text-white">
       {options.map((option, index) => (
-        <>
-          <div key={option.id} className="flex">
-            <button className="flex items-center space-x-2">
+        <React.Fragment key={option.id}>
+          <div className="flex">
+            <button type="button" className="flex items-center space-x-2">
               <option.icon className="h-6 w-6" />
               <span className="text-2xl">{option.title}</span>
             </button>
@@ -18,7 +19,7 @@ export default function MainOptionsActions({
               <span className="mx-4 border-y-large border-l border-white" />
             )}
           </section>
-        </>
+        </React.Fragment>
       ))}
     </main>
   );

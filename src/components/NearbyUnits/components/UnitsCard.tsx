@@ -2,8 +2,10 @@ import { HiOutlineMapPin } from "react-icons/hi2";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { TbCodePlus } from "react-icons/tb";
 import { Button } from "@nextui-org/button";
+import { UnitsCardProps } from "./types";
 
 export default function UnitsCard({
+  id,
   unitName,
   address,
   complement,
@@ -33,7 +35,7 @@ export default function UnitsCard({
 
         <section className="mt-8 text-primary">
           {specialties.map((specialty) => (
-            <div className="flex items-center">
+            <div key={id} className="flex items-center">
               <RiArrowRightSLine />
               <p>{specialty}</p>
             </div>
