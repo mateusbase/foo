@@ -1,21 +1,32 @@
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-
-export default function InformationSlider(): JSX.Element {
+export default function InformationSlider({
+  title,
+  description,
+  image,
+}: InformationSliderProps): JSX.Element {
   return (
-    <section className="w-full h-[536px] text-white flex justify-between">
-      <section className="w-1/2 rounded-bl-[100px] py-10 px-20 gap-2 flex flex-col justify-between bg-gradient-to-r from-[#00B6AD] to-[#BA99E7] bg-no-repeat bg-padding-box h-full">
-
+    <section className="flex h-[536px] w-full justify-between text-white">
+      <section className="bg-padding-box flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-r from-[#00B6AD] to-[#BA99E7] bg-no-repeat px-20 py-10">
         <div className="">
           <p className="font-">Medicina de Precisão</p>
         </div>
 
         <div>
-          <p className="text-6xl font-extralight">Descubra os benefícios da medicina de precisão</p>
+          <p className="text-6xl font-extralight">
+            Descubra os benefícios da medicina de precisão
+          </p>
         </div>
 
         <div>
-          <p className="text-2xl">Perguntas e respostas para você entender como identificar, autoavaliar e muitas vezes até previnir o aparecimento do câncer em sua família.</p>
+          <p className="text-2xl">
+            Perguntas e respostas para você entender como identificar,
+            autoavaliar e muitas vezes até previnir o aparecimento do câncer em
+            sua família.
+          </p>
         </div>
 
         <div className="flex gap-2">
@@ -24,14 +35,13 @@ export default function InformationSlider(): JSX.Element {
         </div>
       </section>
 
-      <section className="w-1/2 h-full">
+      <section className="h-full w-1/2">
         <img
           src="https://via.placeholder.com/352x198"
           alt="Imagem 1"
-          className="w-full h-full"
+          className="h-full w-full"
         />
       </section>
-
     </section>
-  )
+  );
 }

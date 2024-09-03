@@ -1,4 +1,3 @@
-import { Button } from "@nextui-org/react";
 import { MainOptionsActionsProps } from "./types";
 
 export default function MainOptionsActions({
@@ -12,10 +11,10 @@ export default function MainOptionsActions({
       {options.map((option, index) => (
         <>
           <div key={option.id} className="flex">
-            <Button className="flex items-center space-x-2">
+            <button type="button" className="flex items-center space-x-2">
               <option.icon className="h-6 w-6" />
               <span className="text-2xl">{option.title}</span>
-            </Button>
+            </button>
           </div>
           <section>
             {index < options.length - 1 && (
