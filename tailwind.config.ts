@@ -12,15 +12,12 @@ const config: Config = {
   ],
   theme: {
     container: {
-      center: true
+      center: true,
     },
     fontFamily: {
       "lato-heavy": ["Lato Heavy", "Arial", "sans-serif"],
       "lato-medium": ["Lato Medium", "Arial", "sans-serif"],
       "lato-light": ["Lato Light", "Arial", "sans-serif"],
-    },
-    container: {
-      center: true,
     },
     extend: {
       backgroundImage: {
@@ -36,11 +33,11 @@ const config: Config = {
         "3xl": "1640px",
       },
       height: {
-        '260': '16.25rem',
+        "260": "16.25rem",
       },
       width: {
-        '260': '16.25rem',
-      }
+        "260": "16.25rem",
+      },
     },
   },
   darkMode: "class",
