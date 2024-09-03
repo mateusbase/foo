@@ -1,17 +1,21 @@
+import { Button } from "@nextui-org/react";
 import { MainOptionsActionsProps } from "./types";
 
 export default function MainOptionsActions({
   options,
+  rounded = "rounded-3xl",
 }: MainOptionsActionsProps): JSX.Element {
   return (
-    <main className="flex items-center justify-center gap-10 rounded-3xl bg-primary p-10 text-white">
+    <main
+      className={`flex justify-center gap-10 bg-primary p-10 text-white ${rounded}`}
+    >
       {options.map((option, index) => (
         <>
           <div key={option.id} className="flex">
-            <button className="flex items-center space-x-2">
+            <Button className="flex items-center space-x-2">
               <option.icon className="h-6 w-6" />
               <span className="text-2xl">{option.title}</span>
-            </button>
+            </Button>
           </div>
           <section>
             {index < options.length - 1 && (
