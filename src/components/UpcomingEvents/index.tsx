@@ -3,11 +3,13 @@ import EventComponent from "./components/EventComponent";
 import { eventMocks } from "./eventMocks";
 
 export default function UpcomingEventsSection(): JSX.Element {
+  const quantityEvent = eventMocks.length;
+
   return (
     <section className="container flex flex-row items-start justify-center py-16">
       <div className="container flex max-w-[536px] flex-col">
         <div className="text-left">
-          <h2 className="text-6xl font-thin text-primary">
+          <h2 className="text-5xl font-thin text-primary">
             Olá dr(a). Conheça a agenda dos próximos eventos Oncoclínicas
           </h2>
           <p className="mt-8 max-w-sm text-base text-gray-600">
@@ -20,7 +22,7 @@ export default function UpcomingEventsSection(): JSX.Element {
         </div>
       </div>
 
-      <div className="flex w-[1050px] flex-row justify-center">
+      <div className="flex w-[1052px] flex-row justify-center">
         <Carousel>
           {eventMocks.map((event) => (
             <EventComponent

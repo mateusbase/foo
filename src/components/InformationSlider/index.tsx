@@ -37,7 +37,7 @@ export default function InformationSlider({
 
       <section className="h-full w-1/2">
         <img
-          src="https://via.placeholder.com/352x198"
+          src="https://placehold.co/768x536/000000/FFFF"
           alt="Imagem 1"
           className="h-full w-full"
         />
