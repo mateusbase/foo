@@ -3,9 +3,12 @@ import { MainOptionsActionsProps } from "./types";
 
 export default function MainOptionsActions({
   options,
+  rounded = "rounded-3xl",
 }: MainOptionsActionsProps): JSX.Element {
   return (
-    <main className="flex items-center justify-center gap-10 rounded-3xl bg-primary p-10 text-white">
+    <main
+      className={`flex justify-center gap-10 bg-primary p-10 text-white ${rounded}`}
+    >
       {options.map((option, index) => (
         <React.Fragment key={option.id}>
           <div className="flex">
