@@ -15,7 +15,7 @@ export default function ServicesSection(): JSX.Element {
           <h2 className="text-5xl font-light text-primary">
             Descubra como ajudamos você.
           </h2>
-          <p className="mt-4 text-xl font-medium text-gray-600">
+          <p className="mt-4 text-xl text-gray-600">
             A Oncoclínicas oferece os principais tratamentos para o câncer, com
             diagnósticos precisos e um cuidado mais humano aos pacientes.
           </p>
