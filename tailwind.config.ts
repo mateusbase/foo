@@ -15,9 +15,11 @@ const config: Config = {
       center: true,
     },
     fontFamily: {
-      "lato-heavy": ["Lato Heavy", "Arial", "sans-serif"],
-      "lato-medium": ["Lato Medium", "Arial", "sans-serif"],
-      "lato-light": ["Lato Light", "Arial", "sans-serif"],
+      "lato-thin": ["Lato", "sans-serif"],
+      "lato-light": ["Lato", "sans-serif"],
+      "lato-regular": ["Lato", "sans-serif"],
+      "lato-bold": ["Lato", "sans-serif"],
+      "lato-black": ["Lato", "sans-serif"],
     },
     extend: {
       backgroundImage: {
@@ -52,6 +54,7 @@ const config: Config = {
           colors: {
             background: {
               DEFAULT: "#FFFFFF",
+              foreground: "#F0F0F0",
             },
             primary: {
               DEFAULT: "#007D77",

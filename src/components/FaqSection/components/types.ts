@@ -1,0 +1,3 @@
+interface FaqHeaderProps {
+  titleHeader: string;
+}
