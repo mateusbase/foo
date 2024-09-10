@@ -1,0 +1,26 @@
+import Head from "next/head";
+import Layout from "@/components/layout";
+import { NextPageWithLayout } from "../_app";
+import BlogScreen from "@/templates/BlogScreen";
+
+const Blog: NextPageWithLayout = () => {
+  return (
+    <>
+      <Head>
+        <title>Blog</title>
+        <meta name="description" content="Blog" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <BlogScreen />
+      </main>
+    </>
+  );
+};
+
+Blog.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
+export default Blog;

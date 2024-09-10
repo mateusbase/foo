@@ -12,8 +12,8 @@ import {
 import { Calendar, Stethoscope, LogIn } from "lucide-react";
 import { useDeviceType } from "@/hooks/useDeviceType";
 import { DeviceType } from "@/utils/enums";
-import NavLink from "../NavLink";
 import { useRouter } from "next/router";
+import NavLink from "../NavLink";
 
 const routes = [
   { label: "Pacientes", pathname: "/" },
@@ -30,25 +30,25 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
 
   const isMedicoPage = router.pathname === "/medicos";
 
-  const handleLogoClick = () => {
-    router.push('/');
+  const handleLogoClick = (): void => {
+    router.push("/");
   };
 
   return (
     <>
-      <div className="flex justify-center px-5">
+      <div className="flex justify-center">
         <NextNavBar
           maxWidth="full"
           height="96px"
-          className="m-0 h-fit mx-auto w-full max-w-3xl bg-white p-0"
+          className="m-0 mx-auto h-fit w-full bg-white p-0"
           onMenuOpenChange={setIsMenuOpen}
         >
-          <NavbarContent>
+          <NavbarContent className="md:ml-32">
             <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className="sm:hidden"
             />
-            <NavbarBrand className="cursor-pointer" onClick={(handleLogoClick)}>
+            <NavbarBrand className="cursor-pointer" onClick={handleLogoClick}>
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
                 alt="Logo"
@@ -58,7 +58,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarContent>
 
           <NavbarContent
-            className={`hidden gap-8 font-bold uppercase sm:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
+            className={`hidden gap-8 font-bold uppercase sm:flex ${isMedicoPage ? "justify-center" : "justify-center"} md:mr-32`}
           >
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />
@@ -69,15 +69,13 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             <NavbarContent justify="end" className="items-center">
               <Link
                 href="/contato"
-                className="mr-14 ml-10 flex items-center font-bold text-primary"
+                className="ml-10 mr-14 flex items-center font-bold text-primary"
               >
                 Entrar
                 <LogIn size={26} className="ml-2" />
               </Link>
 
-              <div
-                className={`flex h-full w-96 flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white`}
-              >
+              <div className="flex h-full w-96 flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white">
                 <Link
                   className="flex w-full items-center justify-center text-lg text-white"
                   href="/contato"
@@ -91,9 +89,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
 
           {isMedicoPage && deviceType !== DeviceType.MOBILE && (
             <NavbarContent justify="center" className="items-center">
-              <div
-                className={`flex h-full w-96 flex-row items-center justify-center gap-2 bg-gray-600 p-6 font-semibold text-gray-500`}
-              >
+              <div className="flex h-full w-96 flex-row items-center justify-center gap-2 bg-gray-600 p-6 font-semibold text-gray-500">
                 <Link
                   className="flex w-full items-center justify-center text-lg text-white"
                   href="/contato"

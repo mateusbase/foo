@@ -1,5 +1,6 @@
 export const unitsData = [
   {
+    id: 1,
     unitName: "Oc Faria Lima",
     address: "Avenida Brigadeiro Faria Lima, 4.300",
     complement: "6º e 10º Andar - Vila Olímpia",
@@ -15,6 +16,7 @@ export const unitsData = [
     ],
   },
   {
+    id: 2,
     unitName: "Oc Precision Medicine",
     address: "Rua Natividade, 139",
     complement: "Vila Nova Conceição",
@@ -23,6 +25,7 @@ export const unitsData = [
     specialties: ["Anatomia Patológica", "Genômica"],
   },
   {
+    id: 3,
     unitName: "Oc Higienópolis",
     address: "Rua Mato Grosso, 306",
     complement: "2º e 8º Andar - Higienópolis",

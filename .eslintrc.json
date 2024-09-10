@@ -1,5 +1,4 @@
 {
-  
   "env": {
     "browser": true,
     "es6": true,
@@ -28,12 +27,6 @@
     "react-hooks",
     "@typescript-eslint",
     "prettier"
-  ],
-  "prettier/prettier": [
-    "error", 
-      {
-        "endOfLine": "off"
-      }
   ],
   "rules": {
     "camelcase": "off",
@@ -71,9 +64,8 @@
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/no-empty-function": "off",
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error"
-    ],
+    "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
@@ -97,7 +89,9 @@
   },
   "overrides": [
     {
-      "files": ["src/infra/graphql/generated/graphql.ts"],
+      "files": [
+        "src/infra/graphql/generated/graphql.ts"
+      ],
       "rules": {
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/explicit-function-return-type": "off",

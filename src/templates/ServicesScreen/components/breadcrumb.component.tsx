@@ -1,4 +1,4 @@
-const Breadcrumb = () => {
+const Breadcrumb = (): JSX.Element => {
   return (
     <div className="font-mono z-10 items-start justify-between text-sm lg:flex">
       <h1 className="text-left">

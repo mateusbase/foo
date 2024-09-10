@@ -2,7 +2,7 @@ import { Divider, Radio, RadioGroup } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   const icons = [
     {
       src: "https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/footer/facebook.svg",
@@ -32,7 +32,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="p-10 text-gray-400 bg-gray-600">
+    <footer className="bg-[#5C5C5C] p-10 text-white">
       <div className="mx-auto max-w-3xl">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-start md:gap-0">
           <Image
@@ -44,14 +44,9 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-4 md:flex-row">
             <h1 className="font-semibold text-white">Nossos Canais</h1>
             <div className="flex gap-4">
-              {icons.map(({ src, path, alt }, index) => (
-                <Link key={index} href={path}>
-                  <Image
-                    src={src}
-                    width={32}
-                    height={32}
-                    alt={alt}
-                  />
+              {icons.map(({ src, path, alt }) => (
+                <Link key={src} href={path}>
+                  <Image src={src} width={32} height={32} alt={alt} />
                 </Link>
               ))}
             </div>
@@ -60,77 +55,193 @@ export default function Footer() {
 
         <Divider className="mt-8 bg-gray-500" />
 
-        <div className="grid grid-cols-1 gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <h4 className="mb-4 font-bold text-white">Sobre a Oncoclínicas</h4>
             <ul>
-              <li><Link href="#" className="hover:text-white">Quem somos</Link></li>
-              <li><Link href="#" className="hover:text-white">OC Medicina de Precisão</Link></li>
-              <li><Link href="#" className="hover:text-white">Investidores</Link></li>
-              <li><Link href="#" className="hover:text-white">Instituto OC</Link></li>
-              <li><Link href="#" className="hover:text-white">Imprensa</Link></li>
-              <li><Link href="#" className="hover:text-white">Fale conosco</Link></li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Quem somos
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  OC Medicina de Precisão
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Investidores
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Instituto OC
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Imprensa
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Fale conosco
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="mb-4 font-bold text-white">Pacientes</h4>
             <ul>
-              <li><Link href="#" className="hover:text-white">Serviços</Link></li>
-              <li><Link href="#" className="hover:text-white">Tratamentos</Link></li>
-              <li><Link href="#" className="hover:text-white">Diagnóstico</Link></li>
-              <li><Link href="#" className="hover:text-white">Tudo sobre o câncer</Link></li>
-              <li><Link href="#" className="hover:text-white">OC ACESSO</Link></li>
-              <li><Link href="#" className="hover:text-white">Vacinas</Link></li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Serviços
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Tratamentos
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Diagnóstico
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Tudo sobre o câncer
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  OC ACESSO
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Vacinas
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="mb-4 font-bold text-white">Transparência</h4>
             <ul>
-              <li><Link href="#" className="hover:text-white" />Política de Privacidade</li>
-              <li><Link href="#" className="hover:text-white" />Política de Segurança</li>
-              <li><Link href="#" className="hover:text-white" />Ética e Compliance</li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Política de Privacidade
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Política de Segurança
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Ética e Compliance
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="mb-4 font-bold text-white">Médicos</h4>
             <ul>
-              <li><Link href="#" className="hover:text-white">Pesquisa clínica</Link></li>
-              <li><Link href="#" className="hover:text-white">Eventos</Link></li>
-              <li><Link href="#" className="hover:text-white">OC Academia</Link></li>
-              <li><Link href="#" className="hover:text-white">OC Journal</Link></li>
-              <li><Link href="#" className="hover:text-white">Acesso do médico</Link></li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Pesquisa clínica
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Eventos
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  OC Academia
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  OC Journal
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Acesso do médico
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
+            <h4 className="mb-4 font-bold text-white">
+              Baixe o app Oncoclínicas
+            </h4>
+            <div className="flex flex-col">
+              <Link href="#">
+                <img
+                  src="/apple-store-logo.png"
+                  alt="App Store"
+                  className="h-10"
+                />
+              </Link>
+              <Link href="#">
+                <img
+                  src="/google-play-logo.png"
+                  alt="Google Play"
+                  className="h-10"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
             <h4 className="mb-4 font-bold text-white">Notícias</h4>
             <ul>
-              <li><Link href="#" className="hover:text-white">Publicações Oncoclínicas</Link></li>
-              <li><Link href="#" className="hover:text-white">Reportagens e artigos</Link></li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Publicações Oncoclínicas
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Reportagens e artigos
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="mb-4 font-bold text-white">OC Carreiras</h4>
             <ul>
-              <li><Link href="#" className="hover:text-white" />Trabalhe Conosco</li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Trabalhe Conosco
+                </Link>
+              </li>
             </ul>
-          </div>
-          <div className="order-last lg:order-none">
-            <h4 className="mb-4 font-bold text-white">Baixe o app Oncoclínicas</h4>
-            <div className="flex flex-col">
-              <Link href="#"><img src="/apple-store-logo.png" alt="App Store" className="h-10" /></Link>
-              <Link href="#"><img src="/google-play-logo.png" alt="Google Play" className="h-10" /></Link>
-            </div>
           </div>
         </div>
 
         <Divider className="mt-8 bg-gray-500" />
 
-        <div className="flex flex-row items-center justify-between mt-8 text-center">
+        <div className="mt-8 flex flex-row items-center justify-between text-center">
           <div>
-            <p className="text-xs text-white">© 2024 Grupo Oncoclínicas - RT: Dra. Mariana Laloni - CRM-SP 102379</p>
+            <p className="text-xs text-white">
+              © 2024 Grupo Oncoclínicas - RT: Dra. Mariana Laloni - CRM-SP
+              102379
+            </p>
           </div>
-          <RadioGroup className="flex justify-center gap-8" color="default" orientation="horizontal">
+          <RadioGroup
+            className="flex justify-center gap-8"
+            color="default"
+            orientation="horizontal"
+          >
             <Radio className="text-white" value="pt-BR">
               <span className="font-medium text-white">Português</span>
             </Radio>

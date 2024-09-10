@@ -1,9 +1,10 @@
 import { Input, Button } from "@nextui-org/react";
 import { Search, Plus } from "lucide-react";
 
-const ClinicalBody = () => {
+const ClinicalBody = (): JSX.Element => {
   const doctors = [
     {
+      id: 1,
       name: "Carla Lira",
       crm: "123456",
       specialty: "Especialidade",
@@ -13,6 +14,7 @@ const ClinicalBody = () => {
         "https://img.freepik.com/fotos-premium/medico-alegre-um-rosto-feliz-na-profissao-medica-isolado-em-um-fundo-branco_94628-20220.jpg?w=1800",
     },
     {
+      id: 2,
       name: "Carla Lira",
       crm: "123456",
       specialty: "Especialidade",
@@ -22,6 +24,7 @@ const ClinicalBody = () => {
         "https://img.freepik.com/fotos-premium/a-presenca-iluminadora-da-enfermeira-isolada-em-um-fundo-branco-ai-generativo_94628-9638.jpg?w=1800",
     },
     {
+      id: 3,
       name: "Carla Lira",
       crm: "123456",
       specialty: "Especialidade",
@@ -34,8 +37,8 @@ const ClinicalBody = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mt-32">
-        <h2 className="font-bold text-[#007D77] text-[42px] leading-[50px]">
+      <div className="mt-32 flex items-center justify-between">
+        <h2 className="text-[42px] font-bold leading-[50px] text-[#007D77]">
           Corpo Clínico
         </h2>
 
@@ -46,7 +49,7 @@ const ClinicalBody = () => {
             radius="full"
             variant="bordered"
             endContent={<Search className="text-2xl text-default-400" />}
-            className="w-[280px] h-[50px]"
+            className="h-[50px] w-[280px]"
           />
 
           <Input
@@ -55,32 +58,34 @@ const ClinicalBody = () => {
             radius="full"
             variant="bordered"
             endContent={<Search className="text-2xl text-default-400" />}
-            className="w-[280px] h-[50px]"
+            className="h-[50px] w-[280px]"
           />
         </div>
       </div>
 
       <div className="mt-10 flex justify-between">
-        {doctors.map((doctor, index) => (
+        {doctors.map((doctor) => (
           <div
-            key={index}
-            className="w-[352px] h-[552px] border border-[#707070] rounded-bl-[30px] flex flex-col items-start"
+            key={doctor.id}
+            className="flex h-[552px] w-[352px] flex-col items-start rounded-bl-[30px] border border-[#707070]"
           >
             <img
               src={doctor.imgSrc}
               alt={`Foto de ${doctor.name}`}
-              className="w-full h-56 object-cover"
+              className="h-56 w-full object-cover"
             />
             <div className="p-4">
-              <h3 className="font-bold text-[24px] text-[#007D77]">
+              <h3 className="text-[24px] font-bold text-[#007D77]">
                 {doctor.name}
               </h3>
-              <p className="font-bold text-gray-600 mt-1">CRM: {doctor.crm}</p>
-              <p className="text-gray-600 mt-2">{doctor.specialty}</p>
+              <p className="mt-1 font-bold text-gray-600">CRM: {doctor.crm}</p>
+              <p className="mt-2 text-gray-600">{doctor.specialty}</p>
               <p className="mt-4 font-bold text-[#007D77]">RQE</p>
-              <p className="text-gray-600 mt-1">{doctor.rqe}</p>
-              <p className="mt-4 font-bold text-[#007D77]">Local de Atendimento</p>
-              <p className="text-gray-600 mt-1">{doctor.location}</p>
+              <p className="mt-1 text-gray-600">{doctor.rqe}</p>
+              <p className="mt-4 font-bold text-[#007D77]">
+                Local de Atendimento
+              </p>
+              <p className="mt-1 text-gray-600">{doctor.location}</p>
             </div>
           </div>
         ))}
@@ -91,7 +96,7 @@ const ClinicalBody = () => {
         variant="bordered"
         radius="sm"
         startContent={<Plus />}
-        className="w-[176px] h-[50px] text-left font-black text-[18px] leading-[22px] text-[#007D77] pl-3 mt-8"
+        className="mt-8 h-[50px] w-[176px] pl-3 text-left text-[18px] font-black leading-[22px] text-[#007D77]"
       >
         Ver todos
       </Button>
