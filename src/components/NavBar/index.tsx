@@ -30,20 +30,20 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
 
   const isMedicoPage = router.pathname === "/medicos";
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (): void => {
     router.push("/");
   };
 
   return (
     <>
-      <div className="flex justify-center px-5">
+      <div className="flex justify-center">
         <NextNavBar
           maxWidth="full"
           height="96px"
-          className="m-0 mx-auto h-fit w-full max-w-3xl bg-white p-0"
+          className="m-0 mx-auto h-fit w-full bg-white p-0"
           onMenuOpenChange={setIsMenuOpen}
         >
-          <NavbarContent>
+          <NavbarContent className="md:ml-32">
             <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className="sm:hidden"
@@ -58,7 +58,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarContent>
 
           <NavbarContent
-            className={`hidden gap-8 font-bold uppercase sm:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
+            className={`hidden gap-8 font-bold uppercase sm:flex ${isMedicoPage ? "justify-center" : "justify-center"} md:mr-32`}
           >
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />

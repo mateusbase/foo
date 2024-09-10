@@ -3,8 +3,6 @@ import EventComponent from "./components/EventComponent";
 import { eventMocks } from "./eventMocks";
 
 export default function UpcomingEventsSection(): JSX.Element {
-  const quantityEvent = eventMocks.length;
-
   return (
     <section className="container flex flex-row items-start justify-center py-16">
       <div className="container flex max-w-[536px] flex-col">
