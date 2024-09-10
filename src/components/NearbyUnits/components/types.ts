@@ -1,4 +1,5 @@
-interface UnitsCardProps {
+export interface UnitsCardProps {
+  id: number;
   unitName: string;
   address: string;
   complement: string;

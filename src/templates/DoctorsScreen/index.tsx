@@ -2,6 +2,7 @@ import MainOptionsActions from "@/components/MainOptionsActions";
 import ServicesSection from "@/components/ServicesSection";
 import UpcomingEventsSection from "@/components/UpcomingEvents";
 import { options } from "@/utils/objectUtils";
+import FaqSection from "@/components/FaqSection";
 import SearchInput from "../HomeScreen/components/SearchInput";
 
 export default function DoctorsScreen(): JSX.Element {
@@ -25,6 +26,7 @@ export default function DoctorsScreen(): JSX.Element {
       <section className="mt-10">
         <ServicesSection />
         <UpcomingEventsSection />
+        <FaqSection />
       </section>
     </main>
   );
