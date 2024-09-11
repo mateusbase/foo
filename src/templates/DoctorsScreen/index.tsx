@@ -14,7 +14,7 @@ export default function DoctorsScreen(): JSX.Element {
           alt=""
           className="h-auto w-full"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
           <SearchInput />
         </div>
 
@@ -27,6 +27,10 @@ export default function DoctorsScreen(): JSX.Element {
         <ServicesSection />
         <UpcomingEventsSection />
         <FaqSection />
+      </section>
+
+      <section>
+        <MainOptionsActions options={options} rounded="rounded-none" />
       </section>
     </main>
   );

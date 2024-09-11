@@ -1,8 +1,8 @@
 import DoctorsScreen from "@/templates/DoctorsScreen";
 import Head from "next/head";
 import Layout from "@/components/layout";
-import { NextPageWithLayout } from "../_app";
 import ServiceScreen from "@/templates/ServicesScreen";
+import { NextPageWithLayout } from "../_app";
 
 const Service: NextPageWithLayout = () => {
   return (

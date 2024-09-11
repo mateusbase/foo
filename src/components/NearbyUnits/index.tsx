@@ -46,7 +46,7 @@ export default function NearbyUnits(): JSX.Element {
         </Button>
       </section>
 
-      <section className="flex justify-between">
+      <section className="mb-10 flex justify-between">
         {unitsData.map((unit) => (
           <UnitsCard key={unit.id} {...unit} />
         ))}

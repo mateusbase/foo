@@ -3,6 +3,7 @@ import NearbyUnits from "@/components/NearbyUnits";
 import ServicesSection from "@/components/ServicesSection";
 import { options } from "@/utils/objectUtils";
 import InformationSlider from "@/components/InformationSlider";
+import FaqSection from "@/components/FaqSection";
 import SearchInput from "./components/SearchInput";
 
 export default function HomeScreen(): JSX.Element {
@@ -15,7 +16,7 @@ export default function HomeScreen(): JSX.Element {
             alt=""
             className="h-auto w-full"
           />
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 z-10 flex items-center justify-center">
             <SearchInput />
           </div>
 
@@ -28,6 +29,7 @@ export default function HomeScreen(): JSX.Element {
           <ServicesSection />
           <InformationSlider />
           <NearbyUnits />
+          <FaqSection />
         </section>
 
         <section>
