@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "@/components/layout";
-import { NextPageWithLayout } from "../_app";
 import BlogScreen from "@/templates/BlogScreen";
+import { NextPageWithLayout } from "../_app";
 
 const Blog: NextPageWithLayout = () => {
   return (

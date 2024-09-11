@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "@/components/layout";
-import { NextPageWithLayout } from "../_app";
 import UnitScreen from "@/templates/UnitScreen";
+import { NextPageWithLayout } from "../_app";
 
 const Unit: NextPageWithLayout = () => {
   return (
