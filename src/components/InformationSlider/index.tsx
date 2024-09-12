@@ -10,7 +10,7 @@ export default function InformationSlider({
 }: InformationSliderProps): JSX.Element {
   return (
     <section className="flex h-[536px] w-full justify-between text-white">
-      <section className="bg-padding-box flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-r from-[#00B6AD] to-[#BA99E7] bg-no-repeat px-20 py-10">
+      <section className="bg-padding-box flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-r from-primary-foreground to-secondary-foreground bg-no-repeat px-20 py-10">
         <div className="">
           <p className="font-">Medicina de Precisão</p>
         </div>
@@ -37,7 +37,7 @@ export default function InformationSlider({
 
       <section className="h-full w-1/2">
         <img
-          src="https://placehold.co/768x536/000000/FFFF"
+          src="https://placehold.co/760x536/000000/FFFF"
           alt="Imagem 1"
           className="h-full w-full"
         />

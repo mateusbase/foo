@@ -18,8 +18,8 @@ export default function AlphabetSelector(): JSX.Element {
             key={letter}
             onClick={() => handleLetterClick(letter)}
             className={`font-lato flex h-[32px] w-[32px] items-center justify-center rounded-full p-0 text-[18px] font-black leading-[22px] ${selectedLetter === letter
-                ? "bg-[#007D77] text-white"
-                : "text-[#007D77]"
+                ? "bg-primary text-white"
+                : "text-primary"
               }`}
             style={{
               height: "32px",
@@ -38,9 +38,11 @@ export default function AlphabetSelector(): JSX.Element {
           placeholder="Buscar serviço"
           size="lg"
           radius="full"
-          variant="bordered"
-          endContent={<Search className="text-2xl text-default-400" />}
-          className="h-[50px] w-[280px]"
+          variant="faded"
+          endContent={<Search className="text-2xl text-primary" />}
+          classNames={{
+            inputWrapper: ["border-primary", "h-[50px]", "w-[280px]"],
+          }}
         />
       </div>
     </div>
