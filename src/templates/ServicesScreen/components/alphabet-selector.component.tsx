@@ -38,7 +38,8 @@ export default function AlphabetSelector(): JSX.Element {
           placeholder="Buscar serviço"
           size="lg"
           radius="full"
-          variant="faded"
+          variant="bordered"
+          color="primary"
           endContent={<Search className="text-2xl text-primary" />}
           classNames={{
             inputWrapper: ["border-primary", "h-[50px]", "w-[280px]"],

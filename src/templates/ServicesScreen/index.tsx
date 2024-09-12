@@ -3,9 +3,11 @@ import { FaUser, FaMapMarkerAlt, FaFile } from "react-icons/fa";
 import { IoIosCalendar } from "react-icons/io";
 import { Button } from "@nextui-org/react";
 import MainOptionsActions from "@/components/MainOptionsActions";
+import MedicalServiceCard from "@/components/MedicalServiceCard";
 import Breadcrumb from "./components/breadcrumb.component";
 import PageHeader from "./components/page-header.component";
 import AlphabetSelector from "./components/alphabet-selector.component";
+import SectionHeader from "./components/SectionHeader";
 
 export default function ServiceScreen(): JSX.Element {
   const options = [
@@ -27,17 +29,11 @@ export default function ServiceScreen(): JSX.Element {
 
         {/* Serviços Oncoclínicas */}
         <div>
-          <div className="mt-20 flex justify-center">
-            <div className="text-center">
-              <h2 className="font-lato text-[62px] font-black leading-[74px] text-primary">
-                Serviços Oncoclínicas
-              </h2>
-              <p className="font-lato text-darkGray mt-4 text-[26px] font-medium leading-[32px]">
-                Comodidade e priorização da vida em toda a jornada do tratamento
-                do câncer. Conheça nossos serviços.
-              </p>
-            </div>
-          </div>
+          <SectionHeader
+            title="Serviços Oncoclínicas"
+            description="Comodidade e priorização da vida em toda a jornada do tratamento
+                do câncer. Conheça nossos serviços."
+          />
 
           <AlphabetSelector />
 
@@ -45,7 +41,7 @@ export default function ServiceScreen(): JSX.Element {
             {[...Array(8)].map((_, index) => (
               <div
                 key={index}
-                className="border-lightGray flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border bg-white p-6"
+                className="flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6"
               >
                 <div className="flex items-center">
                   <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary">
@@ -58,7 +54,7 @@ export default function ServiceScreen(): JSX.Element {
                   </div>
                 </div>
 
-                <p className="text-darkGray mt-4 h-[66px] w-[312px] text-left text-[18px] font-medium leading-[22px]">
+                <p className="mt-4 h-[66px] w-[312px] text-left text-[18px] font-medium leading-[22px] text-darkGray">
                   Técnica responsável pela análise de células e tecidos com
                   alterações oncológicas.
                 </p>
@@ -82,57 +78,18 @@ export default function ServiceScreen(): JSX.Element {
 
           <div className="mt-28 grid grid-cols-3 gap-[26px]">
             {[...Array(3)].map((_, index) => (
-              <div
-                key={index}
-                className="flex h-[891px] w-[536px] flex-col overflow-hidden rounded-bl-[100px] border bg-white"
-              >
-                <div
-                  className="h-[376px] bg-cover bg-no-repeat"
-                  style={{
-                    backgroundImage:
-                      "url('https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg')",
-                  }}
-                />
-                <div className="flex h-[515px] flex-col items-center justify-between rounded-bl-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground p-8">
-                  <Button
-                    className="flex h-[71px] w-[371px] items-center justify-start rounded-[12px] border-2 border-white bg-transparent pl-4 text-left text-[24px] font-black leading-[60px] text-white"
-                    startContent={<Plus size={24} className="mr-4" />}
-                  >
-                    Exclusividade Oncoclínicas
-                  </Button>
-
-                  <div className="mt-8 text-left">
-                    <h3 className="text-[62px] font-black leading-[60px] text-white">
-                      OC Acesso
-                    </h3>
-                    <p className="mt-4 w-[427px] text-[24px] font-bold leading-[30px] text-white">
-                      A solução da Oncoclínicas que surgiu para facilitar o
-                      acesso dos pacientes a um tratamento de excelência.
-                    </p>
-                  </div>
-
-                  <div className="mt-8 flex h-[29px] w-[29px] items-center justify-center rounded-full bg-white">
-                    <Circle className="text-primary-foreground" size={16} />
-                  </div>
-                </div>
-              </div>
+              <MedicalServiceCard key={index} />
             ))}
           </div>
         </div>
 
         {/* OC Diagnósticos */}
         <div className="mt-5">
-          <div className="mt-20 flex justify-center">
-            <div className="text-center">
-              <h2 className="font-lato text-[62px] font-black leading-[74px] text-primary">
-                OC Diagnósticos
-              </h2>
-              <p className="font-lato text-darkGray mt-4 text-[26px] font-medium leading-[32px]">
-                Corpo clínico altamente especializado e os mais variados tipos
-                de exames. Conheça a OC Diagnóstico.
-              </p>
-            </div>
-          </div>
+          <SectionHeader
+            title="OC Diagnósticos"
+            description="Corpo clínico altamente especializado e os mais variados tipos
+                de exames. Conheça a OC Diagnóstico."
+          />
 
           <AlphabetSelector />
 
@@ -140,7 +97,7 @@ export default function ServiceScreen(): JSX.Element {
             {[...Array(8)].map((_, index) => (
               <div
                 key={index}
-                className="border-lightGray flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border bg-white p-6"
+                className="flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6"
               >
                 <div className="flex items-center">
                   <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary">
@@ -177,57 +134,18 @@ export default function ServiceScreen(): JSX.Element {
 
           <div className="mt-28 grid grid-cols-3 gap-[26px]">
             {[...Array(3)].map((_, index) => (
-              <div
-                key={index}
-                className="flex h-[891px] w-[536px] flex-col overflow-hidden rounded-bl-[100px] border bg-white"
-              >
-                <div
-                  className="h-[376px] bg-cover bg-no-repeat"
-                  style={{
-                    backgroundImage:
-                      "url('https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg')",
-                  }}
-                />
-                <div className="flex h-[515px] flex-col items-center justify-between rounded-bl-[100px] bg-gradient-to-br from-primary-foreground to-[#B799E6] p-8">
-                  <Button
-                    className="flex h-[71px] w-[371px] items-center justify-start rounded-[12px] border-2 border-white bg-transparent pl-4 text-left text-[24px] font-black leading-[60px] text-white"
-                    startContent={<Plus size={24} className="mr-4" />}
-                  >
-                    Exclusividade Oncoclínicas
-                  </Button>
-
-                  <div className="mt-8 text-left">
-                    <h3 className="text-[62px] font-black leading-[60px] text-white">
-                      OC Acesso
-                    </h3>
-                    <p className="mt-4 w-[427px] text-[24px] font-bold leading-[30px] text-white">
-                      A solução da Oncoclínicas que surgiu para facilitar o
-                      acesso dos pacientes a um tratamento de excelência.
-                    </p>
-                  </div>
-
-                  <div className="mt-8 flex h-[29px] w-[29px] items-center justify-center rounded-full bg-white">
-                    <Circle className="text-primary-foreground" size={16} />
-                  </div>
-                </div>
-              </div>
+              <MedicalServiceCard key={index} />
             ))}
           </div>
         </div>
 
         {/* Tratamentos Oncoclínicas */}
         <div className="mt-5">
-          <div className="mt-20 flex justify-center">
-            <div className="text-center">
-              <h2 className="font-lato text-[62px] font-black leading-[74px] text-primary">
-                Tratamentos Oncoclínicas
-              </h2>
-              <p className="font-lato mt-4 text-[26px] font-medium leading-[32px] text-[#5C5C5C]">
-                As terapias mais eficazes para o tratamento do câncer. Conheça
-                nossos métodos.
-              </p>
-            </div>
-          </div>
+          <SectionHeader
+            title="Tratamentos Oncoclínicas"
+            description="As terapias mais eficazes para o tratamento do câncer. Conheça
+                nossos métodos."
+          />
 
           <AlphabetSelector />
 
@@ -235,7 +153,7 @@ export default function ServiceScreen(): JSX.Element {
             {[...Array(8)].map((_, index) => (
               <div
                 key={index}
-                className="border-lightGray flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border bg-white p-6"
+                className="flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6"
               >
                 <div className="flex items-center">
                   <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary">
@@ -248,7 +166,7 @@ export default function ServiceScreen(): JSX.Element {
                   </div>
                 </div>
 
-                <p className="text-darkGray mt-4 h-[66px] w-[312px] text-left text-[18px] font-medium leading-[22px]">
+                <p className="mt-4 h-[66px] w-[312px] text-left text-[18px] font-medium leading-[22px] text-darkGray">
                   Técnica responsável pela análise de células e tecidos com
                   alterações oncológicas.
                 </p>
