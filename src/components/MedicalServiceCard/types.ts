@@ -1,7 +1,7 @@
 interface MedicalServiceCard {
-  title?: string;
-  description?: string;
-  buttonText?: string;
-  icon?: JSX.Element;
-  backgroundUrl?: string;
+  serviceTitle?: string;
+  serviceDescription?: string;
+  actionButtonText?: string;
+  serviceIcon?: JSX.Element;
+  backgroundImageUrl?: string;
 }

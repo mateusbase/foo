@@ -4,6 +4,8 @@ import { IoIosCalendar } from "react-icons/io";
 import { Button } from "@nextui-org/react";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
+import HealthServiceCard from "@/components/HealthServiceCard";
+import { TbCodePlus } from "react-icons/tb";
 import Breadcrumb from "./components/breadcrumb.component";
 import PageHeader from "./components/page-header.component";
 import AlphabetSelector from "./components/alphabet-selector.component";
@@ -11,10 +13,10 @@ import SectionHeader from "./components/SectionHeader";
 
 export default function ServiceScreen(): JSX.Element {
   const options = [
-    { title: "Agende uma consulta ou exame", icon: IoIosCalendar },
-    { title: "Encontre uma unidade", icon: FaMapMarkerAlt },
-    { title: "Encontre um médico", icon: FaUser },
-    { title: "Resultado de Exames", icon: FaFile },
+    { id: 1, title: "Agende uma consulta ou exame", icon: IoIosCalendar },
+    { id: 2, title: "Encontre uma unidade", icon: FaMapMarkerAlt },
+    { id: 3, title: "Encontre um médico", icon: FaUser },
+    { id: 4, title: "Resultado de Exames", icon: FaFile },
   ];
 
   return (
@@ -39,30 +41,11 @@ export default function ServiceScreen(): JSX.Element {
 
           <div className="mt-10 grid grid-cols-4 gap-[26px]">
             {[...Array(8)].map((_, index) => (
-              <div
+              <HealthServiceCard
                 key={index}
-                className="flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6"
-              >
-                <div className="flex items-center">
-                  <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary">
-                    <Circle className="text-white" size={32} />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-[26px] font-black leading-[32px] text-primary">
-                      Análise Patológica
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="mt-4 h-[66px] w-[312px] text-left text-[18px] font-medium leading-[22px] text-darkGray">
-                  Técnica responsável pela análise de células e tecidos com
-                  alterações oncológicas.
-                </p>
-
-                <div className="flex h-[29px] w-[29px] items-center justify-center rounded-full bg-primary">
-                  <Circle className="text-white" size={16} />
-                </div>
-              </div>
+                serviceTitle="Análise Patológica"
+                serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
+              />
             ))}
           </div>
 
@@ -70,7 +53,7 @@ export default function ServiceScreen(): JSX.Element {
             color="primary"
             variant="bordered"
             radius="sm"
-            startContent={<Plus />}
+            startContent={<TbCodePlus size={24} />}
             className="mt-8 h-[50px] w-[176px] pl-3 text-left text-[18px] font-black leading-[22px] text-primary"
           >
             Ver todos
@@ -78,7 +61,12 @@ export default function ServiceScreen(): JSX.Element {
 
           <div className="mt-28 grid grid-cols-3 gap-[26px]">
             {[...Array(3)].map((_, index) => (
-              <MedicalServiceCard key={index} />
+              <MedicalServiceCard
+                key={index}
+                serviceTitle="OC Acesso"
+                serviceDescription="A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência."
+                actionButtonText="Exclusividade Oncoclínicas"
+              />
             ))}
           </div>
         </div>
@@ -95,30 +83,11 @@ export default function ServiceScreen(): JSX.Element {
 
           <div className="mt-10 grid grid-cols-4 gap-[26px]">
             {[...Array(8)].map((_, index) => (
-              <div
+              <HealthServiceCard
                 key={index}
-                className="flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6"
-              >
-                <div className="flex items-center">
-                  <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary">
-                    <Circle className="text-white" size={32} />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-[26px] font-black leading-[32px] text-primary">
-                      Análise Patológica
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="mt-4 h-[66px] w-[312px] text-left text-[18px] font-medium leading-[22px] text-[#5C5C5C]">
-                  Técnica responsável pela análise de células e tecidos com
-                  alterações oncológicas.
-                </p>
-
-                <div className="flex h-[29px] w-[29px] items-center justify-center rounded-full bg-primary">
-                  <Circle className="text-white" size={16} />
-                </div>
-              </div>
+                serviceTitle="Cuidados Paliativos"
+                serviceDescription="Serviços realizados por equipe multidisciplinar para pacientes, familiares e cuidadores."
+              />
             ))}
           </div>
 
@@ -126,7 +95,7 @@ export default function ServiceScreen(): JSX.Element {
             color="primary"
             variant="bordered"
             radius="sm"
-            startContent={<Plus />}
+            startContent={<TbCodePlus size={24} />}
             className="mt-8 h-[50px] w-[176px] pl-3 text-left text-[18px] font-black leading-[22px] text-primary"
           >
             Ver todos
@@ -134,7 +103,12 @@ export default function ServiceScreen(): JSX.Element {
 
           <div className="mt-28 grid grid-cols-3 gap-[26px]">
             {[...Array(3)].map((_, index) => (
-              <MedicalServiceCard key={index} />
+              <MedicalServiceCard
+                key={index}
+                serviceTitle="Terapia Celular"
+                serviceDescription="Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer."
+                actionButtonText="Personalização"
+              />
             ))}
           </div>
         </div>
@@ -151,30 +125,11 @@ export default function ServiceScreen(): JSX.Element {
 
           <div className="mt-10 grid grid-cols-4 gap-[26px]">
             {[...Array(8)].map((_, index) => (
-              <div
+              <HealthServiceCard
                 key={index}
-                className="flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6"
-              >
-                <div className="flex items-center">
-                  <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary">
-                    <Circle className="text-white" size={32} />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-[26px] font-black leading-[32px] text-primary">
-                      Análise Patológica
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="mt-4 h-[66px] w-[312px] text-left text-[18px] font-medium leading-[22px] text-darkGray">
-                  Técnica responsável pela análise de células e tecidos com
-                  alterações oncológicas.
-                </p>
-
-                <div className="flex h-[29px] w-[29px] items-center justify-center rounded-full bg-primary">
-                  <Circle className="text-white" size={16} />
-                </div>
-              </div>
+                serviceTitle="Jornada Molecular"
+                serviceDescription="Testes moleculares para a escolha do melhor tratamento em cada paciente."
+              />
             ))}
           </div>
 
@@ -182,7 +137,7 @@ export default function ServiceScreen(): JSX.Element {
             color="primary"
             variant="bordered"
             radius="sm"
-            startContent={<Plus />}
+            startContent={<TbCodePlus size={24} />}
             className="mt-8 h-[50px] w-[176px] pl-3 text-left text-[18px] font-black leading-[22px] text-primary"
           >
             Ver todos
@@ -190,46 +145,18 @@ export default function ServiceScreen(): JSX.Element {
 
           <div className="mt-28 grid grid-cols-3 gap-[26px]">
             {[...Array(3)].map((_, index) => (
-              <div
+              <MedicalServiceCard
                 key={index}
-                className="flex h-[891px] w-[536px] flex-col overflow-hidden rounded-bl-[100px] border bg-white"
-              >
-                <div
-                  className="h-[376px] bg-cover bg-no-repeat"
-                  style={{
-                    backgroundImage:
-                      "url('https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg')",
-                  }}
-                />
-                <div className="flex h-[515px] flex-col items-center justify-between rounded-bl-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground p-8">
-                  <Button
-                    className="flex h-[71px] w-[371px] items-center justify-start rounded-[12px] border-2 border-white bg-transparent pl-4 text-left text-[24px] font-black leading-[60px] text-white"
-                    startContent={<Plus size={24} className="mr-4" />}
-                  >
-                    Exclusividade Oncoclínicas
-                  </Button>
-
-                  <div className="mt-8 text-left">
-                    <h3 className="text-[62px] font-black leading-[60px] text-white">
-                      OC Acesso
-                    </h3>
-                    <p className="mt-4 w-[427px] text-[24px] font-bold leading-[30px] text-white">
-                      A solução da Oncoclínicas que surgiu para facilitar o
-                      acesso dos pacientes a um tratamento de excelência.
-                    </p>
-                  </div>
-
-                  <div className="mt-8 flex h-[29px] w-[29px] items-center justify-center rounded-full bg-white">
-                    <Circle className="text-primary-foreground" size={16} />
-                  </div>
-                </div>
-              </div>
+                serviceTitle="Testes Germinativos"
+                serviceDescription="Os testes germinativos analisam genes associados a predisposição hereditária a diversos tipos de câncer."
+                actionButtonText="Genômica"
+              />
             ))}
           </div>
         </div>
       </div>
 
-      <MainOptionsActions options={options} />
+      <MainOptionsActions options={options} rounded="rounded-none" />
     </main>
   );
 }
