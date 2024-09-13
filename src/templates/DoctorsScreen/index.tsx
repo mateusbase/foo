@@ -7,7 +7,7 @@ import SearchInput from "../HomeScreen/components/SearchInput";
 
 export default function DoctorsScreen(): JSX.Element {
   return (
-    <main className="flex w-full flex-col gap-4">
+    <main className="flex w-full flex-col">
       <section className="relative w-full">
         <img
           src="https://placehold.co/1920x600/000000/FFF"
@@ -26,8 +26,8 @@ export default function DoctorsScreen(): JSX.Element {
       <section className="mt-10">
         <ServicesSection />
         <UpcomingEventsSection />
-        <FaqSection />
       </section>
+      <FaqSection />
 
       <section>
         <MainOptionsActions options={options} rounded="rounded-none" />

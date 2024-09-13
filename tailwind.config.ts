@@ -40,6 +40,10 @@ const config: Config = {
       width: {
         "260": "16.25rem",
       },
+      colors: {
+        darkGray: "#5C5C5C",
+        lightGray: "#707070",
+      },
     },
   },
   darkMode: "class",

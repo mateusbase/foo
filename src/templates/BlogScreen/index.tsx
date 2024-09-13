@@ -5,7 +5,7 @@ export default function BlogScreen(): JSX.Element {
   return (
     <main className="mx-auto max-w-3xl">
       <div className="flex h-[536px]">
-        <div className="flex h-full w-1/2 flex-col items-start justify-center bg-gradient-to-r from-[#00B6AD] via-[#B799E6] to-[#BA99E7] pl-[65px]">
+        <div className="flex h-full w-1/2 flex-col items-start justify-center bg-gradient-to-r from-primary-foreground via-secondary-foreground to-secondary-foreground pl-[65px]">
           <Button
             color="primary"
             variant="bordered"
@@ -42,7 +42,7 @@ export default function BlogScreen(): JSX.Element {
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="flex h-full w-1/2 flex-col items-start justify-center bg-gradient-to-r from-[#00B6AD] via-[#B799E6] to-[#BA99E7] pl-[65px]">
+        <div className="flex h-full w-1/2 flex-col items-start justify-center bg-gradient-to-r from-primary-foreground via-secondary-foreground to-secondary-foreground pl-[65px]">
           <Button
             color="primary"
             variant="bordered"
@@ -64,7 +64,7 @@ export default function BlogScreen(): JSX.Element {
       </div>
 
       <div className="mb-10 flex h-[536px]">
-        <div className="flex h-full w-1/2 flex-col items-start justify-center rounded-bl-[80px] bg-[#5C5C5C] pl-[65px]">
+        <div className="bg-darkGray flex h-full w-1/2 flex-col items-start justify-center rounded-bl-[80px] pl-[65px]">
           <Button
             color="primary"
             variant="bordered"
