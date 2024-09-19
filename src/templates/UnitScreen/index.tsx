@@ -2,11 +2,11 @@ import { Activity, Heart, User } from "lucide-react";
 import { FaUser, FaMapMarkerAlt, FaFile } from "react-icons/fa";
 import { IoIosCalendar } from "react-icons/io";
 import MainOptionsActions from "@/components/MainOptionsActions";
+import PageHeader from "@/components/PageHeader/page-header.component";
 import ClinicalBody from "./components/clinical-body.component";
 import MapCard from "./components/map-card.component";
 import Breadcrumb from "./components/breadcrumb.component";
 import InsuranceGrid from "./components/insurance-grid.component";
-import PageHeader from "./components/page-header.component";
 
 export default function UnitScreen(): JSX.Element {
   const options = [
@@ -18,7 +18,20 @@ export default function UnitScreen(): JSX.Element {
 
   return (
     <main>
-      <PageHeader />
+      <PageHeader
+        title="Oncoclínicas Faria Lima"
+        address="Avenida Brigadeiro Faria Lima, 4.300 - 6º e 10º Andar - Vila Olímpia São Paulo/SP"
+        buttonText="Botão"
+        showContactSection
+        contactLinks={{
+          whatsappText: "Fale por WhatsApp",
+          whatsappLink: "#",
+          phoneText: "Ligar na central de atendimento",
+          phoneLink: "#",
+          mapText: "Mostrar no mapa",
+          mapLink: "#",
+        }}
+      />
 
       <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col justify-between py-28">
         <Breadcrumb />

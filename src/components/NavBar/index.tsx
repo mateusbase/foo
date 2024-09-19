@@ -17,7 +17,7 @@ import NavLink from "../NavLink";
 
 const routes = [
   { label: "Pacientes", pathname: "/" },
-  { label: "Médicos", pathname: "/medicos" },
+  { label: "Médicos", pathname: "/medico/Dra. Ana Caroline Z. Gelatti" },
   { label: "Investidores", pathname: "/servicos" },
   { label: "Instituto OC", pathname: "/contato" },
   { label: "Notícias", pathname: "/contato" },
@@ -36,14 +36,14 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="">
         <NextNavBar
-          maxWidth="full"
+          maxWidth="2xl"
           height="96px"
           className="m-0 mx-auto h-fit w-full bg-white p-0"
           onMenuOpenChange={setIsMenuOpen}
         >
-          <NavbarContent className="md:ml-32">
+          <NavbarContent>
             <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className="sm:hidden"
@@ -58,7 +58,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarContent>
 
           <NavbarContent
-            className={`hidden gap-8 font-bold uppercase sm:flex ${isMedicoPage ? "justify-center" : "justify-center"} md:mr-32`}
+            className={`hidden gap-8 font-bold uppercase sm:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
           >
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />

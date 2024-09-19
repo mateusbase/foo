@@ -1,0 +1,26 @@
+import Head from "next/head";
+import Layout from "@/components/layout";
+import DoctorScreen from "@/templates/DoctorScreen";
+import { NextPageWithLayout } from "../_app";
+
+const Doctor: NextPageWithLayout = () => {
+  return (
+    <>
+      <Head>
+        <title>Medico</title>
+        <meta name="description" content="Medico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <DoctorScreen />
+      </main>
+    </>
+  );
+};
+
+Doctor.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
+export default Doctor;
