@@ -1,26 +1,18 @@
 import { Activity, Heart, User } from "lucide-react";
-import { FaUser, FaMapMarkerAlt, FaFile } from "react-icons/fa";
-import { IoIosCalendar } from "react-icons/io";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import PageHeader from "@/components/PageHeader/page-header.component";
+import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
+import { options } from "@/utils/objectUtils";
 import ClinicalBody from "./components/clinical-body.component";
 import MapCard from "./components/map-card.component";
-import Breadcrumb from "./components/breadcrumb.component";
 import InsuranceGrid from "./components/insurance-grid.component";
 
 export default function UnitScreen(): JSX.Element {
-  const options = [
-    { title: "Agende uma consulta ou exame", icon: IoIosCalendar },
-    { title: "Encontre uma unidade", icon: FaMapMarkerAlt },
-    { title: "Encontre um médico", icon: FaUser },
-    { title: "Resultado de Exames", icon: FaFile },
-  ];
-
   return (
     <main>
       <PageHeader
         title="Oncoclínicas Faria Lima"
-        address="Avenida Brigadeiro Faria Lima, 4.300 - 6º e 10º Andar - Vila Olímpia São Paulo/SP"
+        subtitle="Avenida Brigadeiro Faria Lima, 4.300 - 6º e 10º Andar - Vila Olímpia São Paulo/SP"
         buttonText="Botão"
         showContactSection
         contactLinks={{
@@ -39,99 +31,55 @@ export default function UnitScreen(): JSX.Element {
         <div className="mt-20 flex">
           <div className="flex-1">
             <div>
-              <h2
-                className="text-left font-bold"
-                style={{
-                  fontSize: "42px",
-                  lineHeight: "50px",
-                  color: "#007D77",
-                }}
-              >
+              <h2 className="text-left text-[42px] font-bold leading-[50px] text-primary">
                 Especialidades e Serviços Oncoclínicas Faria Lima
               </h2>
 
               <div className="mt-20 grid grid-cols-3 gap-20">
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
+                <div className="flex items-center gap-2 text-[20px] text-primary">
                   <Heart size={60} className="text-primary" /> Cardiologia
                   Oncológica
                 </div>
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
+                <div className="flex items-center gap-2 text-[20px] text-primary">
                   <User size={60} className="text-primary" /> Dermatologia
                 </div>
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
+                <div className="flex items-center gap-2 text-[20px] text-primary">
                   <Activity size={60} className="text-primary" /> Genética
                   Médica
                 </div>
 
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
+                <div className="flex items-center gap-2 text-[20px] text-primary">
                   <Heart size={60} className="text-primary" /> Hematologia
                 </div>
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
+                <div className="flex items-center gap-2 text-[20px] text-primary">
                   <User size={60} className="text-primary" /> Medicina Paliativa
                 </div>
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
+                <div className="flex items-center gap-2 text-[20px] text-primary">
                   <Activity size={60} className="text-primary" /> Oncologia
                   Clínica
                 </div>
 
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
+                <div className="flex items-center gap-2 text-[20px] text-primary">
                   <Activity size={60} className="text-primary" /> Crioterapia
                 </div>
               </div>
             </div>
 
             <div>
-              <h2
-                className="mt-32 text-left font-bold"
-                style={{
-                  fontSize: "42px",
-                  lineHeight: "50px",
-                  color: "#007D77",
-                }}
-              >
+              <h2 className="mt-32 text-left text-[42px] font-bold leading-[50px] text-primary">
                 Facilidades e comodidades
               </h2>
 
               <div className="mt-20 grid grid-cols-3 gap-20">
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
-                  <Heart size={60} className="text-primary" /> Estacionemento
+                <div className="flex items-center gap-2 text-[20px] text-primary">
+                  <Heart size={60} className="text-primary" /> Estacionamento
                 </div>
 
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
+                <div className="flex items-center gap-2 text-[20px] text-primary">
                   <User size={60} className="text-primary" /> Wi-fi
                 </div>
 
-                <div
-                  className="flex items-center gap-2"
-                  style={{ fontSize: "20px", color: "#007D77" }}
-                >
+                <div className="flex items-center gap-2 text-[20px] text-primary">
                   <Activity size={60} className="text-primary" /> Lanche para
                   paciente
                 </div>
@@ -143,12 +91,12 @@ export default function UnitScreen(): JSX.Element {
             <ClinicalBody />
 
             <div>
-              <h2 className="mt-32 text-left text-[42px] font-bold leading-[50px] text-[#007D77]">
+              <h2 className="mt-32 text-left text-[42px] font-bold leading-[50px] text-primary">
                 Sobre a unidade Faria Lima
               </h2>
 
               <div className="mt-10">
-                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-[#5C5C5C]">
+                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-darkGray">
                   Fundado há mais de três décadas, o Centro Paulista de
                   Oncologia (CPO) passou a integrar o Grupo Oncoclínicas em
                   2013. A clínica oferece cuidado integral e individualizado ao
@@ -159,7 +107,7 @@ export default function UnitScreen(): JSX.Element {
                   equipe médica para suporte de emergências disponível 24 horas
                   por dia.
                 </p>
-                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-[#5C5C5C]">
+                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-darkGray">
                   Nosso corpo clínico é composto por profissionais
                   especializados em oncologia clínica e hematologia,
                   cuidadosamente selecionados por sua qualidade técnica e ética
@@ -170,18 +118,13 @@ export default function UnitScreen(): JSX.Element {
                   de cuidar integralmente do paciente, com excelência,
                   humanidade e ética.
                 </p>
-                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-[#5C5C5C]">
-                  O OC Oncoclínicas CPO oferece a todos os pacientes em
-                  tratamento ambulatorial uma equipe de enfermagem com
-                  experiência e capacitações técnicas e, ainda, farmácia
-                  clínica, psicologia, nutrição e reflexologia, complementando
-                  os cuidados necessários durante o tratamento.
+                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-darkGray">
+                  O OC Oncoclínicas CPO oferece a todos os pacientes...
                 </p>
-                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-[#5C5C5C]">
-                  Atualmente, a Oncoclínicas CPO conta com duas unidades
-                  localizadas nos bairros Vila Olímpia e Higienópolis.
+                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-darkGray">
+                  Atualmente, a Oncoclínicas CPO conta com duas unidades...
                 </p>
-                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-[#5C5C5C]">
+                <p className="font-lato mb-4 text-left text-[18px] font-medium leading-[28px] text-darkGray">
                   Responsável Técnico da Unidade: Daniel Luiz Gimenes | CRM SP
                   75953.
                 </p>
@@ -211,7 +154,7 @@ export default function UnitScreen(): JSX.Element {
         </div>
       </div>
 
-      <MainOptionsActions options={options} />
+      <MainOptionsActions options={options} rounded="rounded-none" />
     </main>
   );
 }

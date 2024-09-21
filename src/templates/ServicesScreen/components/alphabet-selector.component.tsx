@@ -1,14 +1,17 @@
-import { useState } from "react";
+/* eslint-disable prettier/prettier */
 import { Button, Input } from "@nextui-org/react";
 import { Search } from "lucide-react";
 
-export default function AlphabetSelector(): JSX.Element {
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-  const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
+interface AlphabetSelectorProps {
+  selectedLetter: string;
+  onLetterSelect: (letter: string) => void;
+}
 
-  const handleLetterClick = (letter: string): void => {
-    setSelectedLetter(letter);
-  };
+export default function AlphabetSelector({
+  selectedLetter,
+  onLetterSelect,
+}: AlphabetSelectorProps): JSX.Element {
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   return (
     <div className="mt-28 flex items-center justify-between">
@@ -16,10 +19,10 @@ export default function AlphabetSelector(): JSX.Element {
         {alphabet.map((letter: string) => (
           <Button
             key={letter}
-            onClick={() => handleLetterClick(letter)}
+            onClick={() => onLetterSelect(letter)}
             className={`font-lato flex h-[32px] w-[32px] items-center justify-center rounded-full p-0 text-[18px] font-black leading-[22px] ${selectedLetter === letter
-                ? "bg-primary text-white"
-                : "text-primary"
+              ? "bg-primary text-white"
+              : "text-primary"
               }`}
             style={{
               height: "32px",

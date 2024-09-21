@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import PageHeader from "@/components/PageHeader/page-header.component";
-import Breadcrumb from "../UnitScreen/components/breadcrumb.component";
+import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 
 export default function DoctorScreen(): JSX.Element {
   const router = useRouter();
@@ -11,7 +11,7 @@ export default function DoctorScreen(): JSX.Element {
     <main>
       <PageHeader
         title={medico ? decodeURIComponent(medico as string) : "Nome do Médico"}
-        address="Oncologia clínica"
+        subtitle="Oncologia clínica"
         showContactSection={false}
       />
 

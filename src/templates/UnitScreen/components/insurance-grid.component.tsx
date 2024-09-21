@@ -22,10 +22,7 @@ const InsuranceGrid = (): JSX.Element => {
   return (
     <div>
       <div className="mt-32 flex items-center justify-between pt-2">
-        <h2
-          className="font-bold"
-          style={{ fontSize: "42px", lineHeight: "50px", color: "#007D77" }}
-        >
+        <h2 className="text-[42px] font-bold leading-[50px] text-primary">
           Convênios atendidos nesta unidade
         </h2>
 
@@ -39,13 +36,9 @@ const InsuranceGrid = (): JSX.Element => {
         />
       </div>
 
-      <div className="mt-20 grid grid-cols-1 gap-x-20 gap-y-4 font-bold sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-20 grid grid-cols-1 gap-x-20 gap-y-4 text-[20px] font-bold text-darkGray sm:grid-cols-2 lg:grid-cols-3">
         {insurances.map((insurance) => (
-          <div
-            key={insurance.id}
-            className="flex items-center"
-            style={{ fontSize: "20px", color: "#5C5C5C" }}
-          >
+          <div key={insurance.id} className="flex items-center">
             {insurance.name}
           </div>
         ))}

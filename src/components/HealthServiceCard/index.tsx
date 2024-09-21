@@ -1,13 +1,21 @@
 import { IoIosArrowDropright } from "react-icons/io";
 import { RiMentalHealthLine } from "react-icons/ri";
 
+interface HealthServiceCardProps {
+  serviceTitle: string;
+  serviceDescription: string;
+  serviceIcon?: JSX.Element;
+  showButton?: boolean;
+}
+
 export default function HealthServiceCard({
   serviceTitle,
   serviceDescription,
   serviceIcon = <RiMentalHealthLine size={34} color="white" />,
+  showButton = true,
 }: HealthServiceCardProps): JSX.Element {
   return (
-    <div className="flex h-[284px] w-[398px] flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6">
+    <div className="flex h-auto w-[398px] flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6">
       <div className="flex items-center">
         <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary-foreground">
           {serviceIcon}
@@ -23,9 +31,11 @@ export default function HealthServiceCard({
         {serviceDescription}
       </p>
 
-      <div className="flex items-center justify-start rounded-full">
-        <IoIosArrowDropright size={29} className="text-primary-foreground" />
-      </div>
+      {showButton && (
+        <div className="mt-10 flex items-center justify-start rounded-full">
+          <IoIosArrowDropright size={29} className="text-primary-foreground" />
+        </div>
+      )}
     </div>
   );
 }

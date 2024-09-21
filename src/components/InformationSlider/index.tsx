@@ -37,7 +37,7 @@ export default function InformationSlider({
 
       <section className="h-full w-1/2">
         <img
-          src="https://placehold.co/760x536/000000/FFFF"
+          src="https://i.postimg.cc/HkRNyWfZ/Captura-de-tela-2024-09-21-110740.png"
           alt="Imagem 1"
           className="h-full w-full"
         />

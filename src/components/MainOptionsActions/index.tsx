@@ -1,4 +1,5 @@
-import React from "react"; // Import React para usar React.Fragment
+import React from "react";
+import Link from "next/link";
 import { MainOptionsActionsProps } from "./types";
 
 export default function MainOptionsActions({
@@ -12,10 +13,12 @@ export default function MainOptionsActions({
       {options.map((option, index) => (
         <React.Fragment key={option.id}>
           <div className="flex">
-            <button type="button" className="flex items-center space-x-2">
-              <option.icon className="h-6 w-6" />
-              <span className="text-2xl">{option.title}</span>
-            </button>
+            <Link href={option.link || "#"} passHref>
+              <button type="button" className="flex items-center space-x-2">
+                <option.icon className="h-6 w-6" />
+                <span className="text-2xl">{option.title}</span>
+              </button>
+            </Link>
           </div>
           <section>
             {index < options.length - 1 && (

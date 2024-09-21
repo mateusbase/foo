@@ -1,3 +1,4 @@
+import { CardDoctor } from "@/components/CardDoctors";
 import { Input, Button } from "@nextui-org/react";
 import { Search, Plus } from "lucide-react";
 
@@ -38,7 +39,7 @@ const ClinicalBody = (): JSX.Element => {
   return (
     <div>
       <div className="mt-32 flex items-center justify-between">
-        <h2 className="text-[42px] font-bold leading-[50px] text-[#007D77]">
+        <h2 className="text-[42px] font-bold leading-[50px] text-primary">
           Corpo Clínico
         </h2>
 
@@ -65,29 +66,7 @@ const ClinicalBody = (): JSX.Element => {
 
       <div className="mt-10 flex justify-between">
         {doctors.map((doctor) => (
-          <div
-            key={doctor.id}
-            className="flex h-[552px] w-[352px] flex-col items-start rounded-bl-[30px] border border-[#707070]"
-          >
-            <img
-              src={doctor.imgSrc}
-              alt={`Foto de ${doctor.name}`}
-              className="h-56 w-full object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-[24px] font-bold text-[#007D77]">
-                {doctor.name}
-              </h3>
-              <p className="mt-1 font-bold text-gray-600">CRM: {doctor.crm}</p>
-              <p className="mt-2 text-gray-600">{doctor.specialty}</p>
-              <p className="mt-4 font-bold text-[#007D77]">RQE</p>
-              <p className="mt-1 text-gray-600">{doctor.rqe}</p>
-              <p className="mt-4 font-bold text-[#007D77]">
-                Local de Atendimento
-              </p>
-              <p className="mt-1 text-gray-600">{doctor.location}</p>
-            </div>
-          </div>
+          <CardDoctor key={doctor.id} doctor={doctor} />
         ))}
       </div>
 
@@ -96,7 +75,7 @@ const ClinicalBody = (): JSX.Element => {
         variant="bordered"
         radius="sm"
         startContent={<Plus />}
-        className="mt-8 h-[50px] w-[176px] pl-3 text-left text-[18px] font-black leading-[22px] text-[#007D77]"
+        className="mt-8 h-[50px] w-[176px] pl-3 text-left text-[18px] font-black leading-[22px] text-primary"
       >
         Ver todos
       </Button>

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Divider, Radio, RadioGroup } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
@@ -60,7 +61,7 @@ export default function Footer(): JSX.Element {
             <h4 className="mb-4 font-bold text-white">Sobre a Oncoclínicas</h4>
             <ul>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="quem-somos" className="hover:text-white">
                   Quem somos
                 </Link>
               </li>
@@ -95,22 +96,25 @@ export default function Footer(): JSX.Element {
             <h4 className="mb-4 font-bold text-white">Pacientes</h4>
             <ul>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="servicos" className="hover:text-white">
                   Serviços
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="servicos#tratamentos" className="hover:text-white">
                   Tratamentos
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="servicos#diagnósticos" className="hover:text-white">
                   Diagnóstico
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link
+                  href="para-sua-saude/tudo-sobre-o-cancer"
+                  className="hover:text-white"
+                >
                   Tudo sobre o câncer
                 </Link>
               </li>

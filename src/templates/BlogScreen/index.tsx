@@ -64,7 +64,7 @@ export default function BlogScreen(): JSX.Element {
       </div>
 
       <div className="mb-10 flex h-[536px]">
-        <div className="bg-darkGray flex h-full w-1/2 flex-col items-start justify-center rounded-bl-[80px] pl-[65px]">
+        <div className="flex h-full w-1/2 flex-col items-start justify-center rounded-bl-[80px] bg-darkGray pl-[65px]">
           <Button
             color="primary"
             variant="bordered"

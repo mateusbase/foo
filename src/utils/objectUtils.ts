@@ -40,8 +40,23 @@ export function getObjectKeyByValue(
 }
 
 export const options = [
-  { id: 1, title: "Agende uma consulta ou exame", icon: IoIosCalendar },
-  { id: 2, title: "Encontre uma unidade", icon: FaMapMarkerAlt },
-  { id: 3, title: "Encontre um médico", icon: FaUser },
-  { id: 4, title: "Resultado de Exames", icon: FaFile },
+  {
+    id: 1,
+    title: "Agende uma consulta ou exame",
+    icon: IoIosCalendar,
+    link: "/agenda",
+  },
+  {
+    id: 2,
+    title: "Encontre uma unidade",
+    icon: FaMapMarkerAlt,
+    link: "/unidades",
+  },
+  {
+    id: 3,
+    title: "Encontre um médico",
+    icon: FaUser,
+    link: "/encontre-um-medico",
+  },
+  { id: 4, title: "Resultado de Exames", icon: FaFile, link: "/resultados" },
 ];

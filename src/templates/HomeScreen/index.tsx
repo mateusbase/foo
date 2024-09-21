@@ -11,9 +11,9 @@ export default function HomeScreen(): JSX.Element {
     <main className="flex w-full flex-col">
       <section className="relative w-full">
         <img
-          src="https://placehold.co/1920x600/000000/FFF"
+          src="https://i.postimg.cc/859dysm9/mother-daughter-reading-book-outdoors.jpg"
           alt=""
-          className="h-auto w-full"
+          className="h-[600px] w-full"
         />
         <div className="absolute inset-0 z-10 flex items-center justify-center">
           <SearchInput />
@@ -26,7 +26,9 @@ export default function HomeScreen(): JSX.Element {
 
       <section className="container mt-10">
         <ServicesSection />
+
         <InformationSlider />
+
         <NearbyUnits />
       </section>
       <FaqSection />
