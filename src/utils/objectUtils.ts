@@ -44,13 +44,13 @@ export const options = [
     id: 1,
     title: "Agende uma consulta ou exame",
     icon: IoIosCalendar,
-    link: "/agenda",
+    link: "/agende-sua-consulta",
   },
   {
     id: 2,
     title: "Encontre uma unidade",
     icon: FaMapMarkerAlt,
-    link: "/unidades",
+    link: "/encontre-uma-unidade",
   },
   {
     id: 3,

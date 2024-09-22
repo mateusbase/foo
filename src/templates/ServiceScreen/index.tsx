@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import PageHeader from "@/components/PageHeader/page-header.component";
 import { useState } from "react";
 import MainOptionsActions from "@/components/MainOptionsActions";
-import { IoIosArrowDropright } from "react-icons/io";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
+import MenuItem from "@/components/MenuItem";
 
 export default function ServiceScreen(): JSX.Element {
   const router = useRouter();
@@ -41,20 +41,15 @@ export default function ServiceScreen(): JSX.Element {
         <div className="mt-14 flex">
           <div className="w-[398px] text-white">
             {menuItems.map((item, index) => (
-              <div
+              <MenuItem
                 key={item.id}
-                className={`flex h-[79px] cursor-pointer items-center justify-between bg-primary px-10 ${activeItem === item.id
-                  ? "bg-primary-foreground"
-                  : "hover:bg-primary-foreground"
-                  } ${index === 0 ? "rounded-tl-xl rounded-tr-xl" : ""} ${index === menuItems.length - 1
-                    ? "rounded-bl-xl rounded-br-xl"
-                    : "border-b border-white"
-                  }`}
-                onClick={() => setActiveItem(item.id)}
-              >
-                <span className="text-xl">{item.name}</span>
-                <IoIosArrowDropright size={29} className="text-white" />
-              </div>
+                id={item.id}
+                name={item.name}
+                isActive={activeItem === item.id}
+                isFirst={index === 0}
+                isLast={index === menuItems.length - 1}
+                onClick={setActiveItem}
+              />
             ))}
           </div>
 

@@ -1,4 +1,5 @@
-interface MedicalServiceCard {
+export interface MedicalServiceCardProps {
+  subtitle?: string;
   serviceTitle?: string;
   serviceDescription?: string;
   actionButtonText?: string;

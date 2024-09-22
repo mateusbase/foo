@@ -7,7 +7,10 @@ const Unit: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>Unidade</title>
+        <title>
+          Oncoclínicas - Referência em tratamento oncológico | Referência em
+          tratamento oncológico - Encontre um Médico
+        </title>
         <meta name="description" content="Unidade" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

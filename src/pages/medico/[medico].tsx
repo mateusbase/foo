@@ -7,7 +7,10 @@ const Doctor: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>Medico</title>
+        <title>
+          Oncoclínicas - Referência em tratamento oncológico | Referência em
+          tratamento oncológico - Encontre um Médico
+        </title>
         <meta name="description" content="Medico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

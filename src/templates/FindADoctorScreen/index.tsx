@@ -113,27 +113,34 @@ export default function FindADoctorScreen(): JSX.Element {
 
   return (
     <main>
+      <div className="block bg-gray-200 p-6 md:hidden">
+        <Breadcrumb />
+      </div>
+
       <PageHeader
         title="Encontre um médico"
         subtitle="Conheça os médicos Oncoclínicas em todo o Brasil"
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
-        <Breadcrumb />
+      <div className="mx-auto flex w-full max-w-3xl flex-col py-0 md:py-20">
+        <div className="hidden px-10 md:block md:px-8">
+          <Breadcrumb />
+        </div>
 
-        <div className="mt-14">
-          <h1 className="font-lato text-4xl leading-[48px] text-primary">
-            Encontre uma unidade Oncoclínicas próxima a você
+        <div className="mt-14 px-10 md:px-8">
+          <h1 className="font-lato hidden text-4xl leading-[48px] text-primary md:block">
+            Encontre um médico Oncoclínicas próximo a você
           </h1>
 
-          <div className="mt-14 flex items-center justify-between">
+          <div className="mt-0 flex flex-col gap-5 md:mt-14 md:flex-col lg:flex-row lg:items-center lg:justify-center">
             <Select
               color="primary"
               variant="bordered"
               label="UF"
-              className="max-w-[122px]"
+              className="w-full md:max-w-full lg:max-w-[122px]"
               radius="full"
+              size="sm"
             >
               <SelectItem key={1} value="1">
                 SP
@@ -147,8 +154,9 @@ export default function FindADoctorScreen(): JSX.Element {
               color="primary"
               variant="bordered"
               label="Cidade"
-              className="max-w-xs"
+              className="w-full md:max-w-full lg:max-w-xs"
               radius="full"
+              size="sm"
             >
               <SelectItem key={1} value="1">
                 São Paulo
@@ -161,48 +169,59 @@ export default function FindADoctorScreen(): JSX.Element {
             <Select
               color="primary"
               variant="bordered"
-              label="Cidade"
-              className="max-w-xs"
+              label="Especialidade"
+              className="w-full md:max-w-full lg:max-w-xs"
               radius="full"
+              size="sm"
             >
               <SelectItem key={1} value="1">
-                São Paulo
+                Oncologia
               </SelectItem>
               <SelectItem key={2} value="2">
-                Ibituruna
+                Cardiologia
               </SelectItem>
             </Select>
 
             <Input
-              placeholder="Buscar convênio"
+              placeholder="Nome ou CRM"
               size="lg"
               radius="full"
               variant="bordered"
-              className="h-[50px] w-[280px]"
+              className="h-[50px] w-full"
             />
 
-            <BaseButton color="primary" className="text-white">
-              Buscar Médicos
-            </BaseButton>
+            <div className="flex w-full flex-col items-center gap-4 md:flex-row lg:flex-row lg:gap-4">
+              <BaseButton
+                color="primary"
+                className="w-full text-white lg:w-auto"
+                width="100% lg:w-[322px]"
+              >
+                Buscar Médicos
+              </BaseButton>
 
-            <BaseButton
-              className="font-bold"
-              color="primary"
-              variant="bordered"
-              startContent={<TbCodePlus size={20} />}
-              width="322px"
-            >
-              Buscar próximos a mim
-            </BaseButton>
+              <BaseButton
+                className="w-full font-bold lg:w-auto"
+                color="primary"
+                variant="bordered"
+                startContent={<TbCodePlus size={20} />}
+                width="100% lg:w-[322px]"
+              >
+                Buscar próximos a mim
+              </BaseButton>
+            </div>
           </div>
 
           <p className="font-lato mt-20 text-[20px] font-normal leading-[26px] text-darkGray">
             Sua pesquisa encontrou 23 médicos
           </p>
 
-          <div className="mt-10 grid grid-cols-4 gap-5">
+          <div className="mb-10 mt-10 grid grid-cols-1 justify-items-center gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {doctors.map((doctor) => (
-              <CardDoctor key={doctor.id} doctor={doctor} width="w-[398px]" />
+              <CardDoctor
+                key={doctor.id}
+                doctor={doctor}
+                width="max-w-[398px]"
+              />
             ))}
           </div>
         </div>

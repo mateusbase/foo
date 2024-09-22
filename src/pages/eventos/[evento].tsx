@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Layout from "@/components/layout";
-import WhoWeArecreen from "@/templates/WhoWeAreScreen";
+import EventScreen from "@/templates/EventScreen";
 import { NextPageWithLayout } from "../_app";
 
-const WhoWeAre: NextPageWithLayout = () => {
+const Doctor: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -11,19 +11,19 @@ const WhoWeAre: NextPageWithLayout = () => {
           Oncoclínicas - Referência em tratamento oncológico | Referência em
           tratamento oncológico - Encontre um Médico
         </title>
-        <meta name="description" content="Serviço" />
+        <meta name="description" content="Medico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <WhoWeArecreen />
+        <EventScreen />
       </main>
     </>
   );
 };
 
-WhoWeAre.getLayout = function getLayout(page) {
+Doctor.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
 
-export default WhoWeAre;
+export default Doctor;

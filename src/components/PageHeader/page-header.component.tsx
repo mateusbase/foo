@@ -11,7 +11,7 @@ const PageHeader = ({
   contactLinks,
 }: PageHeaderProps): JSX.Element => {
   return (
-    <div className="relative h-[343px] w-full bg-gradient-to-r from-primary-foreground to-secondary-foreground">
+    <div className="relative h-[243px] w-full bg-gradient-to-r from-primary-foreground to-secondary-foreground md:h-[343px]">
       <div className="absolute inset-0 flex justify-center">
         <div className="ml-0 flex w-full max-w-screen-2xl flex-col items-center justify-center lg:ml-24 lg:items-start">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between lg:items-start lg:justify-start">

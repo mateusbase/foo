@@ -10,14 +10,12 @@ import {
   Image,
 } from "@nextui-org/react";
 import { Calendar, Stethoscope, LogIn } from "lucide-react";
-import { useDeviceType } from "@/hooks/useDeviceType";
-import { DeviceType } from "@/utils/enums";
 import { useRouter } from "next/router";
 import NavLink from "../NavLink";
 
 const routes = [
   { label: "Pacientes", pathname: "/" },
-  { label: "Médicos", pathname: "/medico/Dra. Ana Caroline Z. Gelatti" },
+  { label: "Médicos", pathname: "/medicos" },
   { label: "Investidores", pathname: "/servicos" },
   { label: "Instituto OC", pathname: "/contato" },
   { label: "Notícias", pathname: "/contato" },
@@ -25,7 +23,6 @@ const routes = [
 
 export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const deviceType = useDeviceType();
   const router = useRouter();
 
   const isMedicoPage = router.pathname === "/medicos";
@@ -36,59 +33,57 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
 
   return (
     <>
-      <div className="">
+      <div className="w-full bg-white">
         <NextNavBar
           maxWidth="full"
           height="96px"
-          className="m-0 mx-auto h-fit w-full max-w-3xl bg-white p-0"
+          className="mx-auto flex h-fit w-full max-w-3xl p-0 md:pl-5 lg:p-0"
           onMenuOpenChange={setIsMenuOpen}
         >
           <NavbarContent>
             <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              className="sm:hidden"
+              className="lg:hidden"
             />
             <NavbarBrand className="cursor-pointer" onClick={handleLogoClick}>
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
                 alt="Logo"
-                width={300}
+                className="w-[250px] max-w-none lg:w-[300px]"
               />
             </NavbarBrand>
           </NavbarContent>
 
           <NavbarContent
-            className={`hidden gap-8 font-bold uppercase sm:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
+            className={`hidden gap-8 font-bold uppercase lg:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
           >
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />
             ))}
           </NavbarContent>
 
-          {!isMedicoPage && deviceType !== DeviceType.MOBILE && (
-            <NavbarContent justify="end" className="items-center">
-              <Link
-                href="/contato"
-                className="ml-10 mr-14 flex items-center font-bold text-primary"
-              >
-                Entrar
-                <LogIn size={26} className="ml-2" />
-              </Link>
-
-              <div className="flex h-full w-96 flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white">
+          <NavbarContent justify="end" className="hidden items-center sm:flex">
+            {!isMedicoPage ? (
+              <>
                 <Link
-                  className="flex w-full items-center justify-center text-lg text-white"
                   href="/contato"
+                  className="ml-10 mr-14 hidden items-center font-bold text-primary lg:flex"
                 >
-                  <Calendar size={24} className="mr-2 text-white" />
-                  Agende uma consulta ou exame
+                  Entrar
+                  <LogIn size={26} className="ml-2" />
                 </Link>
-              </div>
-            </NavbarContent>
-          )}
 
-          {isMedicoPage && deviceType !== DeviceType.MOBILE && (
-            <NavbarContent justify="center" className="items-center">
+                <div className="flex h-full w-96 flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white">
+                  <Link
+                    className="flex w-full items-center justify-center text-lg text-white"
+                    href="/agende-sua-consulta"
+                  >
+                    <Calendar size={24} className="mr-2 text-white" />
+                    Agende uma consulta ou exame
+                  </Link>
+                </div>
+              </>
+            ) : (
               <div className="flex h-full w-96 flex-row items-center justify-center gap-2 bg-gray-600 p-6 font-semibold text-gray-500">
                 <Link
                   className="flex w-full items-center justify-center text-lg text-white"
@@ -98,17 +93,22 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                   Acesso médico
                 </Link>
               </div>
-            </NavbarContent>
-          )}
+            )}
+          </NavbarContent>
 
-          {isMenuOpen &&
-            routes.map((route) => (
-              <Link href={route.pathname} key={route.label}>
-                <NavbarMenu>
-                  <NavbarMenuItem>{route.label}</NavbarMenuItem>
-                </NavbarMenu>
-              </Link>
-            ))}
+          {isMenuOpen && (
+            <div className="sm:hidden">
+              <NavbarMenu>
+                {routes.map((route) => (
+                  <NavbarMenuItem key={route.label}>
+                    <Link href={route.pathname} className="block py-2">
+                      {route.label}
+                    </Link>
+                  </NavbarMenuItem>
+                ))}
+              </NavbarMenu>
+            </div>
+          )}
         </NextNavBar>
       </div>
 

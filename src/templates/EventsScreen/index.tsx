@@ -1,0 +1,140 @@
+import PageHeader from "@/components/PageHeader/page-header.component";
+import MainOptionsActions from "@/components/MainOptionsActions";
+import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
+import { options } from "@/utils/objectUtils";
+import InformationSlider from "@/components/InformationSlider";
+import { Select, SelectItem } from "@nextui-org/react";
+import BaseButton from "@/components/Button";
+import { IoIosArrowDown } from "react-icons/io";
+import EventCard from "@/components/EventsCard";
+
+export default function EventsScreen(): JSX.Element {
+  const events = [
+    {
+      title: "11º Congresso Internacional Oncoclínicas DANA-FARBER",
+      date: "23/09/2023 a 07/10/2023",
+      location: "WTC Event Center São Paulo",
+      address: "Av. das Nações Unidas, 12551 - Brooklin Novo, São Paulo - SP",
+      time: "Das 9h às 19h",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex id sem ullamcorper.",
+      imageUrl:
+        "https://www.fundacao1demaio.org.br/media/2021/10/outrubro_Rosa.png",
+    },
+    {
+      title: "Simpósio de Oncologia e Inovações Tecnológicas",
+      date: "15/10/2023",
+      location: "Centro de Convenções Rebouças",
+      address: "Av. Rebouças, 600 - Pinheiros, São Paulo - SP",
+      time: "Das 8h às 18h",
+      description:
+        "Simpósio focado nas inovações tecnológicas no tratamento oncológico. Participe deste importante evento científico.",
+      imageUrl:
+        "https://www.fundacao1demaio.org.br/media/2021/10/outrubro_Rosa.png",
+    },
+    {
+      title: "Workshop: Cuidados Paliativos na Oncologia",
+      date: "05/11/2023",
+      location: "Hospital das Clínicas",
+      address: "Rua Dr. Enéas de Carvalho Aguiar, 255 - Cerqueira César, SP",
+      time: "Das 14h às 17h",
+      description:
+        "Uma abordagem prática e multidisciplinar sobre os cuidados paliativos em pacientes oncológicos. Vagas limitadas!",
+      imageUrl:
+        "https://www.fundacao1demaio.org.br/media/2021/10/outrubro_Rosa.png",
+    },
+    {
+      title: "Workshop: Cuidados Paliativos na Oncologia",
+      date: "05/11/2023",
+      location: "Hospital das Clínicas",
+      address: "Rua Dr. Enéas de Carvalho Aguiar, 255 - Cerqueira César, SP",
+      time: "Das 14h às 17h",
+      description:
+        "Uma abordagem prática e multidisciplinar sobre os cuidados paliativos em pacientes oncológicos. Vagas limitadas!",
+      imageUrl:
+        "https://www.fundacao1demaio.org.br/media/2021/10/outrubro_Rosa.png",
+    },
+    {
+      title: "Workshop: Cuidados Paliativos na Oncologia",
+      date: "05/11/2023",
+      location: "Hospital das Clínicas",
+      address: "Rua Dr. Enéas de Carvalho Aguiar, 255 - Cerqueira César, SP",
+      time: "Das 14h às 17h",
+      description:
+        "Uma abordagem prática e multidisciplinar sobre os cuidados paliativos em pacientes oncológicos. Vagas limitadas!",
+      imageUrl:
+        "https://www.fundacao1demaio.org.br/media/2021/10/outrubro_Rosa.png",
+    },
+  ];
+
+  return (
+    <main>
+      <PageHeader
+        title="Eventos Oncoclínicas"
+        subtitle="Congressos, palestras, simpósios e muito mais."
+        showContactSection={false}
+      />
+
+      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+        <Breadcrumb />
+
+        <div className="mt-20">
+          <InformationSlider />
+        </div>
+
+        <div className="mt-28 flex flex-col gap-4 border-b border-gray-300 px-8 pb-4 md:flex-row md:items-center md:justify-between md:px-0">
+          <div className="flex flex-col items-center gap-4 sm:flex-row">
+            <Select
+              color="primary"
+              variant="bordered"
+              label="Tipo de evento"
+              radius="full"
+              size="sm"
+              className="w-full sm:w-[280px]"
+            >
+              <SelectItem key={1} value="1">
+                SP
+              </SelectItem>
+              <SelectItem key={2} value="2">
+                RJ
+              </SelectItem>
+            </Select>
+
+            <Select
+              color="primary"
+              variant="bordered"
+              label="Tema"
+              radius="full"
+              size="sm"
+              className="w-full sm:w-[280px]"
+            >
+              <SelectItem key={1} value="1">
+                São Paulo
+              </SelectItem>
+              <SelectItem key={2} value="2">
+                Rio de Janeiro
+              </SelectItem>
+            </Select>
+
+            <BaseButton color="primary" className="w-full text-white sm:w-auto">
+              Buscar
+            </BaseButton>
+          </div>
+
+          <div className="flex cursor-pointer items-center justify-end gap-2 sm:justify-start">
+            <span className="text-lg text-primary">Mais Relevantes</span>
+            <IoIosArrowDown size={20} className="text-primary" />
+          </div>
+        </div>
+
+        <div className="mt-24 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {events.map((event) => (
+            <EventCard key={event.title} event={event} />
+          ))}
+        </div>
+      </div>
+
+      <MainOptionsActions options={options} rounded="rounded-none" />
+    </main>
+  );
+}

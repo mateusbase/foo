@@ -2,9 +2,9 @@
 import PageHeader from "@/components/PageHeader/page-header.component";
 import { useState } from "react";
 import MainOptionsActions from "@/components/MainOptionsActions";
-import { IoIosArrowDropright, IoIosCalendar } from "react-icons/io";
-import { FaFile, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
+import { options } from "@/utils/objectUtils";
+import MenuItem from "@/components/MenuItem";
 
 export default function WhoWeArecreen(): JSX.Element {
   const [activeItem, setActiveItem] = useState<number | null>(null);
@@ -19,13 +19,6 @@ export default function WhoWeArecreen(): JSX.Element {
     { id: 7, name: "Segurança" },
     { id: 8, name: "Compliance" },
     { id: 9, name: "Carreiras" },
-  ];
-
-  const options = [
-    { id: 1, title: "Agende uma consulta ou exame", icon: IoIosCalendar },
-    { id: 2, title: "Encontre uma unidade", icon: FaMapMarkerAlt },
-    { id: 3, title: "Encontre um médico", icon: FaUser },
-    { id: 4, title: "Resultado de Exames", icon: FaFile },
   ];
 
   return (
@@ -43,20 +36,15 @@ export default function WhoWeArecreen(): JSX.Element {
         <div className="mt-14 flex">
           <div className="w-[398px] text-white">
             {menuItems.map((item, index) => (
-              <div
+              <MenuItem
                 key={item.id}
-                className={`flex h-[79px] cursor-pointer items-center justify-between bg-primary px-10 ${activeItem === item.id
-                  ? "bg-primary-foreground"
-                  : "hover:bg-primary-foreground"
-                  } ${index === 0 ? "rounded-tl-xl rounded-tr-xl" : ""} ${index === menuItems.length - 1
-                    ? "rounded-bl-xl rounded-br-xl"
-                    : "border-b border-white"
-                  }`}
-                onClick={() => setActiveItem(item.id)}
-              >
-                <span className="text-xl">{item.name}</span>
-                <IoIosArrowDropright size={29} className="text-white" />
-              </div>
+                id={item.id}
+                name={item.name}
+                isActive={activeItem === item.id}
+                isFirst={index === 0}
+                isLast={index === menuItems.length - 1}
+                onClick={setActiveItem}
+              />
             ))}
           </div>
 

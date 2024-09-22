@@ -1,4 +1,3 @@
-import DoctorsScreen from "@/templates/DoctorsScreen";
 import Head from "next/head";
 import Layout from "@/components/layout";
 import ServiceScreen from "@/templates/ServicesScreen";
@@ -8,7 +7,10 @@ const Service: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>Serviços</title>
+        <title>
+          Oncoclínicas - Referência em tratamento oncológico | Referência em
+          tratamento oncológico - Encontre um Médico
+        </title>
         <meta name="description" content="Serviços" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

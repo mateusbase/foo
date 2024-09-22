@@ -8,7 +8,7 @@ export default function MainOptionsActions({
 }: MainOptionsActionsProps): JSX.Element {
   return (
     <main
-      className={`flex justify-center gap-10 bg-primary p-10 text-white ${rounded}`}
+      className={`flex justify-center gap-10 bg-primary p-10 text-white ${rounded} hidden md:flex`}
     >
       {options.map((option, index) => (
         <React.Fragment key={option.id}>

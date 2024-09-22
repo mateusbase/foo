@@ -13,7 +13,7 @@ export default function HomeScreen(): JSX.Element {
         <img
           src="https://i.postimg.cc/859dysm9/mother-daughter-reading-book-outdoors.jpg"
           alt=""
-          className="h-[600px] w-full"
+          className="w-full"
         />
         <div className="absolute inset-0 z-10 flex items-center justify-center">
           <SearchInput />
