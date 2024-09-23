@@ -24,6 +24,7 @@ export default function UpcomingEventsSection(): JSX.Element {
         <Carousel>
           {eventMocks.map((event) => (
             <EventComponent
+              key={event.id}
               eventTitle={event.eventTitle}
               dateEvent={event.dateEvent}
               address={event.address}

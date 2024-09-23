@@ -7,9 +7,7 @@ export default function MainOptionsActions({
   rounded = "rounded-3xl",
 }: MainOptionsActionsProps): JSX.Element {
   return (
-    <main
-      className={`flex justify-center gap-10 bg-primary p-10 text-white ${rounded} hidden md:flex`}
-    >
+    <main className="flex hidden justify-center gap-10 rounded-3xl bg-primary p-10 text-white md:flex">
       {options.map((option, index) => (
         <React.Fragment key={option.id}>
           <div className="flex">
@@ -22,7 +20,7 @@ export default function MainOptionsActions({
           </div>
           <section>
             {index < options.length - 1 && (
-              <span className="mx-4 border-y-large border-l border-white" />
+              <span className="mx-12 border-y-large border-l border-white" />
             )}
           </section>
         </React.Fragment>
