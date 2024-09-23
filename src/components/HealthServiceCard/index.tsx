@@ -15,7 +15,7 @@ export default function HealthServiceCard({
   showButton = true,
 }: HealthServiceCardProps): JSX.Element {
   return (
-    <div className="flex h-auto w-[398px] flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6">
+    <div className="flex h-auto w-auto flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6">
       <div className="flex items-center">
         <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary-foreground">
           {serviceIcon}

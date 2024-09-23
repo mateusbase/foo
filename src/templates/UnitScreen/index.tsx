@@ -3,6 +3,7 @@ import MainOptionsActions from "@/components/MainOptionsActions";
 import PageHeader from "@/components/PageHeader/page-header.component";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
+import BaseContainer from "@/components/Container";
 import ClinicalBody from "./components/clinical-body.component";
 import MapCard from "./components/map-card.component";
 import InsuranceGrid from "./components/insurance-grid.component";
@@ -25,7 +26,7 @@ export default function UnitScreen(): JSX.Element {
         }}
       />
 
-      <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col justify-between py-28">
+      <BaseContainer className="flex min-h-screen w-full flex-col justify-between py-20">
         <Breadcrumb />
 
         <div className="mt-20 flex">
@@ -152,7 +153,7 @@ export default function UnitScreen(): JSX.Element {
 
           <MapCard />
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

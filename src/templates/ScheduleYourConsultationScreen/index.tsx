@@ -4,6 +4,7 @@ import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import { Input, Select, SelectItem } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
+import BaseContainer from "@/components/Container";
 
 export default function ScheduleYourConsultationScreen(): JSX.Element {
   return (
@@ -14,7 +15,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20 flex flex-col gap-10 lg:flex-row">
@@ -118,7 +119,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             </p>
           </div>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

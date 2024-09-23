@@ -5,6 +5,7 @@ import { IoIosCalendar, IoIosMap, IoIosTime } from "react-icons/io";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { Input } from "@nextui-org/react";
 import { options } from "@/utils/objectUtils";
+import BaseContainer from "@/components/Container";
 
 export default function EventScreen(): JSX.Element {
   return (
@@ -15,7 +16,7 @@ export default function EventScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex min-h-screen w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-14">
@@ -151,7 +152,7 @@ export default function EventScreen(): JSX.Element {
             </h1>
           </div>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

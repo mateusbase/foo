@@ -2,6 +2,7 @@ import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import PageHeader from "@/components/PageHeader/page-header.component";
 import { options } from "@/utils/objectUtils";
+import BaseContainer from "@/components/Container";
 import ServiceSection from "./components/service.component";
 
 export default function ServiceScreen(): JSX.Element {
@@ -118,7 +119,7 @@ export default function ServiceScreen(): JSX.Element {
         contactLinks={headerProps.contactLinks}
       />
 
-      <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col py-28">
+      <BaseContainer className="flex min-h-screen w-full flex-col py-20">
         <div className="flex justify-start">
           <Breadcrumb />
         </div>
@@ -146,7 +147,7 @@ export default function ServiceScreen(): JSX.Element {
           healthServices={healthServices1}
           medicalServices={medicalServices1}
         />
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

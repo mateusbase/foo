@@ -7,6 +7,7 @@ import { Select, SelectItem } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 import EventCard from "@/components/EventsCard";
+import BaseContainer from "@/components/Container";
 
 export default function EventsScreen(): JSX.Element {
   const events = [
@@ -75,7 +76,7 @@ export default function EventsScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20">
@@ -132,7 +133,7 @@ export default function EventsScreen(): JSX.Element {
             <EventCard key={event.title} event={event} />
           ))}
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

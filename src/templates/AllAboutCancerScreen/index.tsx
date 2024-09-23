@@ -6,6 +6,7 @@ import HealthServiceCard from "@/components/HealthServiceCard";
 import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import { options } from "@/utils/objectUtils";
+import BaseContainer from "@/components/Container";
 
 export default function AllAboutCancerScreen(): JSX.Element {
   const router = useRouter();
@@ -25,7 +26,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20 flex justify-center">
@@ -178,7 +179,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
             actionButtonText="Exclusividade Oncoclínicas"
           />
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

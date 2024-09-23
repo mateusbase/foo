@@ -7,6 +7,7 @@ import InformationSlider from "@/components/InformationSlider";
 import { Select, SelectItem } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
+import BaseContainer from "@/components/Container";
 
 export default function OcJournalScreen(): JSX.Element {
   return (
@@ -17,7 +18,7 @@ export default function OcJournalScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20">
@@ -95,7 +96,7 @@ export default function OcJournalScreen(): JSX.Element {
             </div>
           </div>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

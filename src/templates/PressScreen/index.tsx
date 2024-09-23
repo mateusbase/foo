@@ -5,6 +5,7 @@ import { options } from "@/utils/objectUtils";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import { Input, Textarea } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
+import BaseContainer from "@/components/Container";
 
 export default function PresScreen(): JSX.Element {
   return (
@@ -15,7 +16,7 @@ export default function PresScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20 flex gap-5">
@@ -31,7 +32,7 @@ export default function PresScreen(): JSX.Element {
             serviceDescription="Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet"
           />
         </div>
-      </div>
+      </BaseContainer>
 
       <div className="w-full bg-gray-200 py-20">
         <div className="mx-auto w-full max-w-screen-lg text-center">

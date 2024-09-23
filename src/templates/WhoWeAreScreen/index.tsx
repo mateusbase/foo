@@ -5,6 +5,7 @@ import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import MenuItem from "@/components/MenuItem";
+import BaseContainer from "@/components/Container";
 
 export default function WhoWeArecreen(): JSX.Element {
   const [activeItem, setActiveItem] = useState<number | null>(null);
@@ -30,7 +31,7 @@ export default function WhoWeArecreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-14 flex">
@@ -105,7 +106,7 @@ export default function WhoWeArecreen(): JSX.Element {
             <br />
           </div>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>
