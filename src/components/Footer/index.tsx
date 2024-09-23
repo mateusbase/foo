@@ -170,7 +170,7 @@ export default function Footer(): JSX.Element {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="oc-journal" className="hover:text-white">
                   OC Journal
                 </Link>
               </li>
