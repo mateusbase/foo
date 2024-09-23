@@ -10,7 +10,7 @@ export default function DoctorsScreen(): JSX.Element {
     <main className="flex w-full flex-col">
       <section className="relative w-full">
         <img
-          src="https://placehold.co/1920x600/000000/FFF"
+          src="https://i.postimg.cc/SKjfR1hd/DESK-Home-M-dicos-image-1.png"
           alt=""
           className="h-auto w-full"
         />
