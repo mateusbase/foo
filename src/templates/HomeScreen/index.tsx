@@ -11,7 +11,7 @@ export default function HomeScreen(): JSX.Element {
     <main className="flex w-full flex-col">
       <section className="relative w-full">
         <img
-          src="https://i.postimg.cc/859dysm9/mother-daughter-reading-book-outdoors.jpg"
+          src="https://i.postimg.cc/8kf6xnCK/banner.png"
           alt=""
           className="w-full"
         />
