@@ -53,6 +53,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
             <h1 className="max-w-unit-8xl text-6xl font-extralight text-primary">
               Pesquisa Clínica Oncoclínicas
             </h1>
+
             <p className="mt-8 max-w-unit-8xl text-lg text-darkGray">
               Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas
               vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada

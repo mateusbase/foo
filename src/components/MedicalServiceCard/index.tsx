@@ -50,7 +50,7 @@ export default function MedicalServiceCard({
         )}
 
         <div className="text-left">
-          <h3 className="text-[62px] font-black leading-[60px] text-white">
+          <h3 className="text-title-xl font-black leading-[60px] text-white">
             {serviceTitle}
           </h3>
 

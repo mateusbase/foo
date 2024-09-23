@@ -31,7 +31,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
         <div className="mt-20 flex justify-center">
           <div className="text-center">
-            <h2 className="font-lato text-[62px] font-black leading-[74px] text-primary">
+            <h2 className="font-lato text-title-xl font-black leading-[74px] text-primary">
               O que é o câncer?
             </h2>
 
@@ -100,7 +100,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
         <div className="mt-32 flex justify-center">
           <div className="text-center">
-            <h2 className="font-lato text-[62px] font-black leading-[74px] text-primary">
+            <h2 className="font-lato text-title-xl font-black leading-[74px] text-primary">
               Confira os tipos de câncer mais comuns no Brasil
             </h2>
 

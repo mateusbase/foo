@@ -22,6 +22,9 @@ const config: Config = {
       "lato-black": ["Lato", "sans-serif"],
     },
     extend: {
+      fontSize: {
+        "title-xl": "3.875rem",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
