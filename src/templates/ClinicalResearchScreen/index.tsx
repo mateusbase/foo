@@ -1,4 +1,3 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
@@ -6,6 +5,7 @@ import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import InformationSlider from "@/components/InformationSlider";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function ClinicalResearchScreen(): JSX.Element {
   const services = [

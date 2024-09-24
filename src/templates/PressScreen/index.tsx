@@ -1,11 +1,12 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
-import { Input, Textarea } from "@nextui-org/react";
+import { Textarea } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
+import BaseInput from "@/components/Input";
 
 export default function PresScreen(): JSX.Element {
   return (
@@ -48,7 +49,7 @@ export default function PresScreen(): JSX.Element {
           </p>
 
           <div className="mt-10 space-y-6">
-            <Input
+            <BaseInput
               label="Nome"
               placeholder="Seu nome"
               size="lg"
@@ -57,7 +58,7 @@ export default function PresScreen(): JSX.Element {
               className="w-full overflow-hidden rounded-full bg-white"
             />
 
-            <Input
+            <BaseInput
               label="Email"
               placeholder="Seu email"
               size="lg"

@@ -1,4 +1,3 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { Input, Select, SelectItem } from "@nextui-org/react";
@@ -7,6 +6,7 @@ import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";
 import { CardDoctor } from "@/components/CardDoctors";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function FindADoctorScreen(): JSX.Element {
   const doctors = [

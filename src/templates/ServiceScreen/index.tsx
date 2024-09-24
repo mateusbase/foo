@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import { useRouter } from "next/router";
-import PageHeader from "@/components/PageHeader/page-header.component";
 import { useState } from "react";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import MenuItem from "@/components/MenuItem";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function ServiceScreen(): JSX.Element {
   const router = useRouter();

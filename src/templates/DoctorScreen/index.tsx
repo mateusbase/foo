@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
-import PageHeader from "@/components/PageHeader/page-header.component";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import BaseButton from "@/components/Button";
 import { IoIosCalendar } from "react-icons/io";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function DoctorScreen(): JSX.Element {
   const router = useRouter();

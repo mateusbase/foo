@@ -1,4 +1,3 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { Input, Select, SelectItem } from "@nextui-org/react";
@@ -8,6 +7,7 @@ import BaseButton from "@/components/Button";
 import { unitsData } from "@/components/NearbyUnits/components/utils";
 import UnitsCard from "@/components/NearbyUnits/components/UnitsCard";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function FindAUnitScreen(): JSX.Element {
   return (

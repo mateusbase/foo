@@ -39,6 +39,7 @@ const config: Config = {
       colors: {
         darkGray: "#5C5C5C",
         lightGray: "#707070",
+        primary: "#007D77",
       },
     },
   },

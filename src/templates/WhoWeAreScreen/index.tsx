@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
-import PageHeader from "@/components/PageHeader/page-header.component";
 import { useState } from "react";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import MenuItem from "@/components/MenuItem";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function WhoWeArecreen(): JSX.Element {
   const [activeItem, setActiveItem] = useState<number | null>(null);

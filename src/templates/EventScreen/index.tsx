@@ -1,4 +1,3 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import BaseButton from "@/components/Button";
 import { IoIosCalendar, IoIosMap, IoIosTime } from "react-icons/io";
@@ -6,6 +5,7 @@ import MainOptionsActions from "@/components/MainOptionsActions";
 import { Input } from "@nextui-org/react";
 import { options } from "@/utils/objectUtils";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function EventScreen(): JSX.Element {
   return (

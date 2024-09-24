@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import HealthServiceCard from "@/components/HealthServiceCard";
@@ -7,6 +6,7 @@ import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import { options } from "@/utils/objectUtils";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function AllAboutCancerScreen(): JSX.Element {
   const router = useRouter();
