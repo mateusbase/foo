@@ -1,6 +1,7 @@
 {
-  "name": "nextjs-apollo-graphql-boilerplate",
-  "version": "0.1.0",
+  "name": "oncoclinicas-institutional",
+  "author": "Cloudigniter",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +10,10 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "codegen": "graphql-codegen --config codegen.yml",
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "release:patch": "yarn version --patch && git push origin main --tags",
+    "release:minor": "yarn version --minor && git push origin main --tags",
+    "release:major": "yarn version --major && git push origin main --tags"
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
