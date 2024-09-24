@@ -1,18 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Button } from "@nextui-org/react";
-
-interface BaseButtonProps {
-  color?: "primary" | "secondary" | "success" | "warning" | "danger" | "default";
-  size?: "sm" | "md" | "lg";
-  variant?: "solid" | "bordered" | "ghost";
-  className?: string;
-  onClick?: () => void;
-  children: React.ReactNode;
-  disabled?: boolean;
-  width?: string;
-  startContent?: React.ReactNode;
-  endContent?: React.ReactNode;
-}
+import { BaseButtonProps } from "./types";
 
 export default function BaseButton({
   color = "primary",
@@ -22,7 +10,7 @@ export default function BaseButton({
   onClick,
   children,
   disabled = false,
-  width = "200px",
+  width = "100%",
   startContent,
   endContent,
 }: BaseButtonProps): JSX.Element {
@@ -31,7 +19,7 @@ export default function BaseButton({
       color={color}
       size={size}
       variant={variant}
-      className={`${className} w-[${width}]`}
+      className={className}
       onClick={onClick}
       disabled={disabled}
       style={{ width }}

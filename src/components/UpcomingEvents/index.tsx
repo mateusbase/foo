@@ -1,16 +1,26 @@
-import Carousel from "./components/Carousel";
-import EventComponent from "./components/EventComponent";
-import { eventMocks } from "./eventMocks";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useRef } from "react";
+import { NavigationOptions } from "swiper/types";
+import EventCard from "../EventsCard";
+import { events } from "./eventMocks";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export default function UpcomingEventsSection(): JSX.Element {
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+
   return (
-    <section className="container flex flex-row items-start justify-center py-16">
-      <div className="container flex max-w-[536px] flex-col">
+    <section className="container flex flex-col items-start justify-center gap-8 px-4 py-16 md:flex-row">
+      <div className="max-w-[536px]">
         <div className="text-left">
           <h2 className="text-5xl font-thin text-primary">
             Olá dr(a). Conheça a agenda dos próximos eventos Oncoclínicas
           </h2>
-          <p className="mt-8 max-w-sm text-base text-gray-600">
+          <p className="mt-8 text-base text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             hendrerit magna sit amet ultricies porttitor. Quisque fringilla ut
             orci a venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -20,21 +30,69 @@ export default function UpcomingEventsSection(): JSX.Element {
         </div>
       </div>
 
-      <div className="flex w-[1052px] flex-row justify-center">
-        <Carousel>
-          {eventMocks.map((event) => (
-            <EventComponent
-              eventTitle={event.eventTitle}
-              dateEvent={event.dateEvent}
-              address={event.address}
-              location={event.location}
-              eventHour={event.eventHour}
-              city={event.city}
-              hours={event.hours}
-              description={event.description}
-            />
+      <div className="relative w-full max-w-[1052px]">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={30}
+          slidesPerView={2}
+          loop
+          navigation={{
+            nextEl: nextRef.current,
+            prevEl: prevRef.current,
+          }}
+          onInit={(swiper) => {
+            if (swiper.params.navigation) {
+              // eslint-disable-next-line prettier/prettier
+              const navigationParams = swiper.params.navigation as NavigationOptions;
+              navigationParams.prevEl = prevRef.current;
+              navigationParams.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+          }}
+        >
+          {events.map((event) => (
+            <SwiperSlide key={event.title}>
+              <EventCard event={event} />
+            </SwiperSlide>
           ))}
-        </Carousel>
+        </Swiper>
+
+        <div className="mt-4 flex justify-end space-x-4">
+          <button
+            ref={prevRef}
+            type="button"
+            className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+            aria-label="Previous"
+          >
+            <IoIosArrowBack
+              className="text-primary dark:text-gray-800"
+              size={35}
+            />
+          </button>
+
+          <button
+            ref={nextRef}
+            type="button"
+            className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+            aria-label="Next"
+          >
+            <IoIosArrowForward
+              className="text-primary dark:text-gray-800"
+              size={35}
+            />
+          </button>
+        </div>
       </div>
     </section>
   );

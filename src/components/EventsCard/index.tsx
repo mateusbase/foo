@@ -1,6 +1,8 @@
-import { Calendar, MapPin, Clock, PlusCircle, Bookmark } from "lucide-react";
+import { Calendar, MapPin, Clock } from "lucide-react";
 import Link from "next/link";
-import BaseButton from "../Button";
+import { FiCheckSquare } from "react-icons/fi";
+import { IoIosCalendar } from "react-icons/io";
+import { Button } from "@nextui-org/react";
 
 export default function EventCard({
   event,
@@ -19,7 +21,7 @@ export default function EventCard({
 
   return (
     <Link href={`/eventos/${eventSlug}`}>
-      <div className="flex h-full w-full max-w-[514px] flex-col justify-between rounded-md p-6">
+      <div className="flex h-full min-h-[798px] w-full max-w-[514px] flex-col justify-between rounded-md p-6">
         <img
           src={event.imageUrl}
           alt={event.title}
@@ -27,56 +29,54 @@ export default function EventCard({
         />
 
         <div className="mt-6 flex flex-1 flex-col justify-between space-y-6">
-          <h3 className="text-left text-[24px] font-extrabold leading-[32px] text-primary md:text-[30px] md:leading-[36px]">
+          <h3 className="text-left text-2xl font-normal leading-[32px] text-primary md:text-3xl md:leading-[36px]">
             {event.title}
           </h3>
 
           <div className="space-y-4">
-            <div className="flex items-center text-[18px] font-extrabold text-darkGray md:text-[20px]">
-              <Calendar className="mr-2" />
+            <div className="flex items-center text-lg font-normal text-darkGray md:text-xl">
+              <Calendar className="mr-2 text-primary" />
               <span>{event.date}</span>
             </div>
 
-            <div className="flex items-center text-[18px] font-extrabold text-darkGray md:text-[20px]">
-              <MapPin className="mr-2" />
+            <div className="flex items-center text-[18px] font-normal text-darkGray md:text-xl">
+              <MapPin className="mr-2 text-primary" />
               <span>{event.location}</span>
             </div>
 
-            <div className="ml-7 text-[18px] font-extrabold text-darkGray md:text-[20px]">
+            <div className="ml-7 text-[18px] font-normal text-darkGray md:text-xl">
               <span>{event.address}</span>
             </div>
 
-            <div className="flex items-center text-[18px] font-extrabold text-darkGray md:text-[20px]">
-              <Clock className="mr-2" />
+            <div className="flex items-center text-[18px] font-normal text-darkGray md:text-xl">
+              <Clock className="mr-2 text-primary" />
               <span>{event.time}</span>
             </div>
           </div>
 
-          <p className="text-left text-[16px] font-medium leading-[24px] text-lightGray md:text-[20px] md:leading-[28px]">
+          <p className="text-left text-base font-medium leading-[24px] text-lightGray md:text-xl md:leading-[28px]">
             {event.description}
           </p>
 
           <div className="flex flex-col gap-4 md:flex-row">
-            <BaseButton
+            <Button
+              className="font-bold text-white"
               color="primary"
-              size="lg"
-              startContent={<PlusCircle size={24} className="mr-2" />}
-              className="w-full text-white md:w-auto"
-              width="100%"
+              variant="solid"
+              radius="sm"
+              startContent={<FiCheckSquare size={23} />}
             >
               Quero me inscrever
-            </BaseButton>
-
-            <BaseButton
+            </Button>
+            <Button
+              className="font-bold"
               color="primary"
               variant="bordered"
-              size="lg"
-              startContent={<Bookmark size={24} className="mr-2" />}
-              className="w-full border-primary text-primary md:w-auto"
-              width="100%"
+              radius="sm"
+              startContent={<IoIosCalendar size={23} />}
             >
-              Adicionar à agenda
-            </BaseButton>
+              Adicionar a agenda
+            </Button>
           </div>
         </div>
       </div>
