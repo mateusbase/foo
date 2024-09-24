@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 export enum WindowTypeBreakpoints {
   MOBILE = 640,
   TABLET = 1024,

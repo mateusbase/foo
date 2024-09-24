@@ -1,5 +1,6 @@
-interface InformationSliderProps {
-  title?: string;
-  description?: string;
-  image?: string;
+export interface InformationSliderProps {
+  subtitle?: string;
+  title: string;
+  description: string;
+  image: string;
 }

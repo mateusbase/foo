@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ServiceCardProps } from "./types";
 
 export default function ServiceCard({
   title,

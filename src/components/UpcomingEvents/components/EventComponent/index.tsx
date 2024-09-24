@@ -10,10 +10,8 @@ export default function EventComponent({
   eventTitle,
   address,
   location,
-  city,
   dateEvent,
   eventHour,
-  hours,
   description,
 }: EventComponentProps): JSX.Element {
   return (

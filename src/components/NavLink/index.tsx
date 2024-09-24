@@ -1,5 +1,6 @@
 import { Link, NavbarItem } from "@nextui-org/react";
 import { useRouter } from "next/router";
+import { NavLinkProps } from "./types";
 
 export default function NavLink({ route }: NavLinkProps): JSX.Element {
   const router = useRouter();
