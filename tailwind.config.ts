@@ -22,13 +22,13 @@ const config: Config = {
       "lato-black": ["Lato", "sans-serif"],
     },
     extend: {
+      fontSize: {
+        "title-xl": "3.875rem",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      maxWidth: {
-        "3xl": "1640px",
       },
       height: {
         "260": "16.25rem",
@@ -39,6 +39,7 @@ const config: Config = {
       colors: {
         darkGray: "#5C5C5C",
         lightGray: "#707070",
+        primary: "#007D77",
       },
     },
   },

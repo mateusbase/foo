@@ -1,10 +1,11 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import InformationSlider from "@/components/InformationSlider";
+import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function ClinicalResearchScreen(): JSX.Element {
   const services = [
@@ -44,7 +45,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20 flex w-full justify-between gap-10">
@@ -52,6 +53,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
             <h1 className="max-w-unit-8xl text-6xl font-extralight text-primary">
               Pesquisa Clínica Oncoclínicas
             </h1>
+
             <p className="mt-8 max-w-unit-8xl text-lg text-darkGray">
               Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas
               vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada
@@ -77,7 +79,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="mx-auto mt-20 grid w-full max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-20 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <MedicalServiceCard
               key={service.subtitle}
@@ -92,7 +94,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
         <div className="mt-20">
           <InformationSlider />
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

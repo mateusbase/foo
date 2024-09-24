@@ -1,4 +1,3 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { Input, Select, SelectItem } from "@nextui-org/react";
@@ -7,6 +6,8 @@ import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";
 import { unitsData } from "@/components/NearbyUnits/components/utils";
 import UnitsCard from "@/components/NearbyUnits/components/UnitsCard";
+import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function FindAUnitScreen(): JSX.Element {
   return (
@@ -17,7 +18,7 @@ export default function FindAUnitScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-14">
@@ -91,7 +92,7 @@ export default function FindAUnitScreen(): JSX.Element {
             ))}
           </section>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

@@ -3,7 +3,7 @@ import { Plus } from "lucide-react";
 
 export default function BlogScreen(): JSX.Element {
   return (
-    <main className="mx-auto max-w-3xl">
+    <main className="mx-auto max-w-2xl">
       <div className="flex h-[536px]">
         <div className="flex h-full w-1/2 flex-col items-start justify-center bg-gradient-to-r from-primary-foreground via-secondary-foreground to-secondary-foreground pl-[65px]">
           <Button
@@ -16,7 +16,7 @@ export default function BlogScreen(): JSX.Element {
             Prática de Esportes
           </Button>
 
-          <h1 className="mt-4 text-left text-[62px] font-black leading-[60px] text-white">
+          <h1 className="text-title-xl mt-4 text-left font-black leading-[60px] text-white">
             Benefícios da corrida
           </h1>
           <p className="mt-4 max-w-[625px] text-left text-white">
@@ -52,7 +52,7 @@ export default function BlogScreen(): JSX.Element {
           >
             Saúde e Bem-Estar
           </Button>
-          <h1 className="mt-4 text-left text-[62px] font-black leading-[60px] text-white">
+          <h1 className="text-title-xl mt-4 text-left font-black leading-[60px] text-white">
             Título
           </h1>
           <p className="mt-4 max-w-[625px] text-left text-white">
@@ -74,7 +74,7 @@ export default function BlogScreen(): JSX.Element {
           >
             Prática de Esportes
           </Button>
-          <h1 className="mt-4 text-left text-[62px] font-black leading-[60px] text-white">
+          <h1 className="text-title-xl mt-4 text-left font-black leading-[60px] text-white">
             Uso de IA na medicina
           </h1>
           <p className="mt-4 max-w-[625px] text-left text-white">

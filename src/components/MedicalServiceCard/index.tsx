@@ -17,7 +17,7 @@ export default function MedicalServiceCard({
 
   return (
     <div
-      className={`flex w-[536px] flex-col overflow-hidden rounded-bl-[100px] border bg-white ${hasActionButton ? "h-[891px]" : "h-[700px]" /* Ajusta a altura */
+      className={`flex w-auto flex-col overflow-hidden rounded-bl-[100px] border bg-white ${hasActionButton ? "h-[891px]" : "h-[700px]"
         } `}
     >
       <div
@@ -50,7 +50,7 @@ export default function MedicalServiceCard({
         )}
 
         <div className="text-left">
-          <h3 className="text-[62px] font-black leading-[60px] text-white">
+          <h3 className="text-title-xl font-black leading-[60px] text-white">
             {serviceTitle}
           </h3>
 

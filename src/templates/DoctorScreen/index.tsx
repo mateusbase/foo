@@ -1,10 +1,11 @@
 import { useRouter } from "next/router";
-import PageHeader from "@/components/PageHeader/page-header.component";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import BaseButton from "@/components/Button";
 import { IoIosCalendar } from "react-icons/io";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
+import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function DoctorScreen(): JSX.Element {
   const router = useRouter();
@@ -24,7 +25,7 @@ export default function DoctorScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex min-h-screen w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-14">
@@ -95,7 +96,7 @@ export default function DoctorScreen(): JSX.Element {
             </h1>
           </div>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

@@ -1,10 +1,12 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
-import { Input, Textarea } from "@nextui-org/react";
+import { Textarea } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
+import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
+import BaseInput from "@/components/Input";
 
 export default function PresScreen(): JSX.Element {
   return (
@@ -15,7 +17,7 @@ export default function PresScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20 flex gap-5">
@@ -31,7 +33,7 @@ export default function PresScreen(): JSX.Element {
             serviceDescription="Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet"
           />
         </div>
-      </div>
+      </BaseContainer>
 
       <div className="w-full bg-gray-200 py-20">
         <div className="mx-auto w-full max-w-screen-lg text-center">
@@ -47,7 +49,7 @@ export default function PresScreen(): JSX.Element {
           </p>
 
           <div className="mt-10 space-y-6">
-            <Input
+            <BaseInput
               label="Nome"
               placeholder="Seu nome"
               size="lg"
@@ -56,7 +58,7 @@ export default function PresScreen(): JSX.Element {
               className="w-full overflow-hidden rounded-full bg-white"
             />
 
-            <Input
+            <BaseInput
               label="Email"
               placeholder="Seu email"
               size="lg"

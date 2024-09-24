@@ -1,4 +1,3 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { Input, Select, SelectItem } from "@nextui-org/react";
@@ -6,6 +5,8 @@ import { options } from "@/utils/objectUtils";
 import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";
 import { CardDoctor } from "@/components/CardDoctors";
+import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function FindADoctorScreen(): JSX.Element {
   const doctors = [
@@ -123,7 +124,7 @@ export default function FindADoctorScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-0 md:py-20">
+      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
         <div className="hidden px-10 md:block md:px-8">
           <Breadcrumb />
         </div>
@@ -225,7 +226,7 @@ export default function FindADoctorScreen(): JSX.Element {
             ))}
           </div>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

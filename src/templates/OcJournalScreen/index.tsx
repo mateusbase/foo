@@ -1,12 +1,12 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
-
 import InformationSlider from "@/components/InformationSlider";
-import { Select, SelectItem } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
+import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
+import BaseSelect from "@/components/Select";
 
 export default function OcJournalScreen(): JSX.Element {
   return (
@@ -17,7 +17,7 @@ export default function OcJournalScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20">
@@ -26,21 +26,20 @@ export default function OcJournalScreen(): JSX.Element {
 
         <div className="mt-28 flex flex-col gap-4 border-b border-gray-300 px-8 pb-4 md:flex-row md:items-center md:justify-between md:px-0">
           <div className="flex flex-col items-center gap-4 sm:flex-row">
-            <Select
-              color="primary"
-              variant="bordered"
-              label="Especialidade"
-              radius="full"
-              size="sm"
-              className="w-full sm:w-[280px]"
-            >
-              <SelectItem key={1} value="1">
-                SP
-              </SelectItem>
-              <SelectItem key={2} value="2">
-                RJ
-              </SelectItem>
-            </Select>
+            <div className="w-full sm:w-[280px]">
+              <BaseSelect
+                label="Especialidade"
+                color="primary"
+                variant="bordered"
+                radius="full"
+                size="sm"
+                className="w-full"
+                options={[
+                  { key: 1, value: "1", label: "SP" },
+                  { key: 2, value: "2", label: "RJ" },
+                ]}
+              />
+            </div>
 
             <BaseButton
               color="primary"
@@ -95,7 +94,7 @@ export default function OcJournalScreen(): JSX.Element {
             </div>
           </div>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

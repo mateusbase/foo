@@ -35,8 +35,11 @@ export function AuthProvider({ children }: AuthProviderProps): JSX.Element {
       router.push("/login");
     } else {
       const decodedToken = jwt.decode(accessToken) as { exp: number };
+
       const tokenExpiration = decodedToken.exp * 1000;
+
       const currentTime = Date.now();
+
       if (tokenExpiration < currentTime) {
         signOut();
         router.push("/login");

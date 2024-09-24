@@ -37,7 +37,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
         <NextNavBar
           maxWidth="full"
           height="96px"
-          className="mx-auto flex h-fit w-full max-w-3xl p-0 md:pl-5 lg:p-0"
+          className="mx-auto flex h-fit w-full max-w-screen-2xl p-0 md:pl-5 lg:p-0"
           onMenuOpenChange={setIsMenuOpen}
         >
           <NavbarContent>

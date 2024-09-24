@@ -1,9 +1,11 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
-import { Input, Select, SelectItem } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
+import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
+import BaseSelect from "@/components/Select";
+import BaseInput from "@/components/Input";
 
 export default function ScheduleYourConsultationScreen(): JSX.Element {
   return (
@@ -14,7 +16,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20 flex flex-col gap-10 lg:flex-row">
@@ -27,7 +29,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             </p>
 
             <div className="mt-10">
-              <Input
+              <BaseInput
                 placeholder="Nome da unidade"
                 size="lg"
                 radius="full"
@@ -36,7 +38,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             </div>
 
             <div className="mt-6">
-              <Input
+              <BaseInput
                 placeholder="Nome da unidade"
                 size="lg"
                 radius="full"
@@ -45,52 +47,43 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             </div>
 
             <div className="mt-6 flex gap-4">
-              <Select
+              <BaseSelect
                 color="primary"
                 variant="bordered"
                 label="UF"
                 radius="full"
                 size="sm"
-              >
-                <SelectItem key={1} value="1">
-                  SP
-                </SelectItem>
-                <SelectItem key={2} value="2">
-                  RJ
-                </SelectItem>
-              </Select>
+                options={[
+                  { key: 1, value: "1", label: "SP" },
+                  { key: 2, value: "2", label: "RJ" },
+                ]}
+              />
 
-              <Select
+              <BaseSelect
                 color="primary"
                 variant="bordered"
                 label="UF"
                 radius="full"
                 size="sm"
-              >
-                <SelectItem key={1} value="1">
-                  SP
-                </SelectItem>
-                <SelectItem key={2} value="2">
-                  RJ
-                </SelectItem>
-              </Select>
+                options={[
+                  { key: 1, value: "1", label: "SP" },
+                  { key: 2, value: "2", label: "RJ" },
+                ]}
+              />
             </div>
 
             <div className="mt-6">
-              <Select
+              <BaseSelect
                 color="primary"
                 variant="bordered"
                 label="UF"
                 radius="full"
                 size="sm"
-              >
-                <SelectItem key={1} value="1">
-                  SP
-                </SelectItem>
-                <SelectItem key={2} value="2">
-                  RJ
-                </SelectItem>
-              </Select>
+                options={[
+                  { key: 1, value: "1", label: "SP" },
+                  { key: 2, value: "2", label: "RJ" },
+                ]}
+              />
             </div>
 
             <div className="mt-6">
@@ -118,7 +111,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             </p>
           </div>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

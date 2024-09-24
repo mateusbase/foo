@@ -1,11 +1,12 @@
 /* eslint-disable prettier/prettier */
 import { useRouter } from "next/router";
-import PageHeader from "@/components/PageHeader/page-header.component";
 import { useState } from "react";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import MenuItem from "@/components/MenuItem";
+import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function ServiceScreen(): JSX.Element {
   const router = useRouter();
@@ -35,7 +36,7 @@ export default function ServiceScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-14 flex">
@@ -127,7 +128,7 @@ export default function ServiceScreen(): JSX.Element {
             <br />
           </div>
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>

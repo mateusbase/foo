@@ -2,6 +2,7 @@ import HomeScreen from "@/templates/HomeScreen";
 import Head from "next/head";
 import { ReactElement } from "react";
 import Layout from "@/components/layout";
+import VLibras from "vlibras-nextjs";
 import { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {
@@ -10,18 +11,19 @@ const Home: NextPageWithLayout = () => {
       <Head>
         <title>
           Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Encontre um Médico
+          tratamento oncológico
         </title>
         <meta
           name="description"
           content="Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Encontre um Médico"
+          tratamento oncológico"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="relative">
         <HomeScreen />
+        {process.env.NODE_ENV === "production" && <VLibras forceOnload />}
       </main>
     </>
   );

@@ -19,9 +19,11 @@ const PageHeader = ({
               <p className="mt-2 max-w-unit-9xl text-[15px] leading-[20px] text-white sm:text-[16px] sm:leading-[22px] lg:mt-4 lg:text-[18px] lg:leading-[24px]">
                 {preTitle}
               </p>
-              <h1 className="text-[26px] font-bold leading-[32px] text-white sm:text-[48px] sm:leading-[56px] lg:text-[60px] lg:leading-[72px]">
+
+              <h1 className="lg:text-title-xl text-[26px] font-bold leading-[32px] text-white sm:text-[48px] sm:leading-[56px] lg:leading-[72px]">
                 {title}
               </h1>
+
               <div className="w-[272px] lg:w-full">
                 <p className="mt-2 max-w-unit-9xl text-[15px] leading-[20px] text-white sm:text-[16px] sm:leading-[22px] lg:mt-4 lg:text-[18px] lg:leading-[24px]">
                   {subtitle}

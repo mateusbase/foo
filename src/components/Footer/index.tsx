@@ -2,6 +2,7 @@
 import { Divider, Radio, RadioGroup } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
+import BaseContainer from "../Container";
 
 export default function Footer(): JSX.Element {
   const icons = [
@@ -34,7 +35,7 @@ export default function Footer(): JSX.Element {
 
   return (
     <footer className="bg-[#5C5C5C] p-10 text-white">
-      <div className="mx-auto max-w-3xl">
+      <BaseContainer className="flex w-full flex-col">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-start md:gap-0">
           <Image
             src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/footer/oncoclinicas.svg"
@@ -257,7 +258,7 @@ export default function Footer(): JSX.Element {
             </Radio>
           </RadioGroup>
         </div>
-      </div>
+      </BaseContainer>
     </footer>
   );
 }

@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import HealthServiceCard from "@/components/HealthServiceCard";
 import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import { options } from "@/utils/objectUtils";
+import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function AllAboutCancerScreen(): JSX.Element {
   const router = useRouter();
@@ -25,12 +26,12 @@ export default function AllAboutCancerScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <div className="mx-auto flex w-full max-w-3xl flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-20">
         <Breadcrumb />
 
         <div className="mt-20 flex justify-center">
           <div className="text-center">
-            <h2 className="font-lato text-[62px] font-black leading-[74px] text-primary">
+            <h2 className="font-lato text-title-xl font-black leading-[74px] text-primary">
               O que é o câncer?
             </h2>
 
@@ -99,7 +100,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
         <div className="mt-32 flex justify-center">
           <div className="text-center">
-            <h2 className="font-lato text-[62px] font-black leading-[74px] text-primary">
+            <h2 className="font-lato text-title-xl font-black leading-[74px] text-primary">
               Confira os tipos de câncer mais comuns no Brasil
             </h2>
 
@@ -178,7 +179,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
             actionButtonText="Exclusividade Oncoclínicas"
           />
         </div>
-      </div>
+      </BaseContainer>
 
       <MainOptionsActions options={options} rounded="rounded-none" />
     </main>
