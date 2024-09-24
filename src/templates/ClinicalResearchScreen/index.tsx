@@ -61,7 +61,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
             </p>
 
             <BaseButton
-              className="mt-16 font-bold text-white"
+              className="mt-16 w-80 font-bold text-white"
               color="primary"
               variant="solid"
               width="322px"

@@ -10,7 +10,6 @@ export default function BaseButton({
   onClick,
   children,
   disabled = false,
-  width = "100%",
   startContent,
   endContent,
 }: BaseButtonProps): JSX.Element {
@@ -22,7 +21,6 @@ export default function BaseButton({
       className={className}
       onClick={onClick}
       disabled={disabled}
-      style={{ width }}
       startContent={startContent}
       endContent={endContent}
     >
