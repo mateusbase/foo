@@ -1,3 +1,5 @@
+import { SectionHeaderProps } from "./types";
+
 export default function SectionHeader({
   title,
   description,

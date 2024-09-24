@@ -12,6 +12,7 @@ import {
 import { Calendar, Stethoscope, LogIn } from "lucide-react";
 import { useRouter } from "next/router";
 import NavLink from "../NavLink";
+import { NavBarProps } from "./types";
 
 const routes = [
   { label: "Pacientes", pathname: "/" },

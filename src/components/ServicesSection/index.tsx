@@ -1,4 +1,6 @@
 import ServiceCard from "../ServiceCard";
+import ServiceText from "./components/ServiceText";
+import ServiceTextMobile from "./components/ServiceTextMobile";
 
 export default function ServicesSection(): JSX.Element {
   const services = [
@@ -9,20 +11,18 @@ export default function ServicesSection(): JSX.Element {
   ];
 
   return (
-    <section className="container flex flex-row items-center justify-center py-8">
-      <div className="container flex max-w-md flex-col justify-center">
-        <div className="text-left">
-          <h2 className="hidden text-5xl font-light text-primary md:block">
-            Descubra como ajudamos você.
-          </h2>
-          <p className="mt-4 hidden text-xl text-gray-600 md:block">
-            A Oncoclínicas oferece os principais tratamentos para o câncer, com
-            diagnósticos precisos e um cuidado mais humano aos pacientes.
-          </p>
-        </div>
+    <section className="mt-10 flex flex-col items-center justify-center py-8 md:flex-row">
+      <ServiceText />
+
+      <ServiceTextMobile />
+
+      <div className="mt-8 hidden flex-wrap justify-center gap-3 md:flex">
+        {services.map((service) => (
+          <ServiceCard key={service.id} {...service} />
+        ))}
       </div>
 
-      <div className="mt-8 flex flex-wrap justify-center gap-3">
+      <div className="md:hidden">
         {services.map((service) => (
           <ServiceCard key={service.id} {...service} />
         ))}

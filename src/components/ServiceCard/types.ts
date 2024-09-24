@@ -1,4 +1,4 @@
-interface ServiceCardProps {
+export interface ServiceCardProps {
   title: string;
   icon: string;
 }

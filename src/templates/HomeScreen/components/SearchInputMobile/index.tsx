@@ -1,6 +1,5 @@
 import { Search } from "lucide-react";
 import React from "react";
-import { FaMicrophone } from "react-icons/fa";
 
 const SearchInput = (): JSX.Element => {
   return (
@@ -15,7 +14,6 @@ const SearchInput = (): JSX.Element => {
       </div>
 
       <Search className="text-primary" size={28} />
-      <FaMicrophone className="text-primary" size={20} />
     </div>
   );
 };

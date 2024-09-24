@@ -4,15 +4,12 @@ import ServicesSection from "@/components/ServicesSection";
 import { options } from "@/utils/objectUtils";
 import InformationSlider from "@/components/InformationSlider";
 import FaqSection from "@/components/FaqSection";
-import { useDeviceType } from "@/hooks/useDeviceType";
-import { DeviceType } from "@/utils/enums";
 import OptionsActionsCard from "@/components/OptionsActionsCard";
+import BaseContainer from "@/components/Container";
 import SearchInput from "./components/SearchInput";
 import SearchInputMobile from "./components/SearchInputMobile";
 
 export default function HomeScreen(): JSX.Element {
-  const deviceType = useDeviceType();
-
   return (
     <main className="flex w-full flex-col">
       <section className="relative w-full">
@@ -21,7 +18,6 @@ export default function HomeScreen(): JSX.Element {
           alt=""
           className="hidden w-full lg:block"
         />
-
         {/* Para desktop */}
         <div className="relative inset-0 z-10 flex hidden items-center justify-center md:flex lg:absolute">
           <SearchInput />
@@ -32,26 +28,34 @@ export default function HomeScreen(): JSX.Element {
           <SearchInputMobile />
         </div>
 
-        {/* Para desktop */}
-        <div className="relative inset-0 bottom-[-56.5px] hidden items-end justify-center md:flex lg:absolute">
-          <MainOptionsActions options={options} />
+        <div className="absolute inset-0 bottom-[-56.5px] hidden items-end justify-center md:flex">
+          <BaseContainer>
+            <MainOptionsActions options={options} />
+          </BaseContainer>
         </div>
 
-        {/* Para mobile */}
         <div className="relative inset-0 bottom-[-56.5px] flex items-end justify-center md:hidden lg:absolute">
           <OptionsActionsCard options={options} rounded="rounded-none" />
         </div>
       </section>
 
-      <section className="container mt-10">
-        <ServicesSection />
+      <BaseContainer>
+        <div className="">
+          <ServicesSection />
+        </div>
 
-        <InformationSlider />
+        <section className="mt-10">
+          <InformationSlider
+            title="Pesquisa Clínica Oncoclínicas"
+            description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
+            image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+          />
 
-        <NearbyUnits />
-      </section>
+          <NearbyUnits />
+        </section>
+      </BaseContainer>
+
       <FaqSection />
-
       <section>
         <MainOptionsActions options={options} rounded="rounded-none" />
       </section>

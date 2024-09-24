@@ -16,7 +16,7 @@ export default function BlogScreen(): JSX.Element {
             Prática de Esportes
           </Button>
 
-          <h1 className="text-title-xl mt-4 text-left font-black leading-[60px] text-white">
+          <h1 className="mt-4 text-left text-title-xl font-black leading-[60px] text-white">
             Benefícios da corrida
           </h1>
           <p className="mt-4 max-w-[625px] text-left text-white">
@@ -52,7 +52,7 @@ export default function BlogScreen(): JSX.Element {
           >
             Saúde e Bem-Estar
           </Button>
-          <h1 className="text-title-xl mt-4 text-left font-black leading-[60px] text-white">
+          <h1 className="mt-4 text-left text-title-xl font-black leading-[60px] text-white">
             Título
           </h1>
           <p className="mt-4 max-w-[625px] text-left text-white">
@@ -74,7 +74,7 @@ export default function BlogScreen(): JSX.Element {
           >
             Prática de Esportes
           </Button>
-          <h1 className="text-title-xl mt-4 text-left font-black leading-[60px] text-white">
+          <h1 className="mt-4 text-left text-title-xl font-black leading-[60px] text-white">
             Uso de IA na medicina
           </h1>
           <p className="mt-4 max-w-[625px] text-left text-white">
