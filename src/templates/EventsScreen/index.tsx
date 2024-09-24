@@ -1,4 +1,3 @@
-import PageHeader from "@/components/PageHeader/page-header.component";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
@@ -8,6 +7,7 @@ import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 import EventCard from "@/components/EventsCard";
 import BaseContainer from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 
 export default function EventsScreen(): JSX.Element {
   const events = [

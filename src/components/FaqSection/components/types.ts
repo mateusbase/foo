@@ -1,3 +1,3 @@
-interface FaqHeaderProps {
+export interface FaqHeaderProps {
   titleHeader: string;
 }

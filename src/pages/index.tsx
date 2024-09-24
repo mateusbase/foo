@@ -2,6 +2,7 @@ import HomeScreen from "@/templates/HomeScreen";
 import Head from "next/head";
 import { ReactElement } from "react";
 import Layout from "@/components/layout";
+import VLibras from "vlibras-nextjs";
 import { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {
@@ -22,6 +23,7 @@ const Home: NextPageWithLayout = () => {
       </Head>
       <main className="relative">
         <HomeScreen />
+        {process.env.NODE_ENV === "production" && <VLibras forceOnload />}
       </main>
     </>
   );
