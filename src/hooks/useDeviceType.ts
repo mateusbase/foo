@@ -5,7 +5,7 @@ export function useDeviceType(): DeviceType {
   const [deviceType, setDeviceType] = useState<DeviceType>(DeviceType.DESKTOP);
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = (): void => {
       if (window.innerWidth < WindowTypeBreakpoints.MOBILE) {
         setDeviceType(DeviceType.MOBILE);
       } else if (window.innerWidth < WindowTypeBreakpoints.TABLET) {
@@ -22,4 +22,4 @@ export function useDeviceType(): DeviceType {
   }, []);
 
   return deviceType;
-};
+}
