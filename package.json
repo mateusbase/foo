@@ -1,7 +1,7 @@
 {
   "name": "oncoclinicas-institutional",
   "author": "Cloudigniter",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,9 +11,9 @@
     "lint:fix": "next lint --fix",
     "codegen": "graphql-codegen --config codegen.yml",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "release:patch": "yarn version --patch && git push origin main --tags",
-    "release:minor": "yarn version --minor && git push origin main --tags",
-    "release:major": "yarn version --major && git push origin main --tags"
+    "release:patch": "yarn version --patch && git push origin dev --tags",
+    "release:minor": "yarn version --minor && git push origin dev --tags",
+    "release:major": "yarn version --major && git push origin dev --tags"
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
