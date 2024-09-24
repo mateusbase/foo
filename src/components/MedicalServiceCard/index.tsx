@@ -35,7 +35,7 @@ export default function MedicalServiceCard({
           } `}
       >
         {hasSubtitle && (
-          <p className="mt-4 w-[427px] text-[24px]  leading-[30px] text-white">
+          <p className="mt-4 w-[400px] text-[24px] leading-[30px] text-white">
             {subtitle}
           </p>
         )}
@@ -50,11 +50,11 @@ export default function MedicalServiceCard({
         )}
 
         <div className="text-left">
-          <h3 className="text-title-xl font-black leading-[60px] text-white">
+          <h3 className="text-4xl md:text-title-xl font-black leading-[60px] text-white">
             {serviceTitle}
           </h3>
 
-          <p className="mt-4 w-[427px] text-[24px] font-bold leading-[30px] text-white">
+          <p className="mt-4 w-[427px] text-xl md:text-2xl font-bold leading-[30px] text-white">
             {serviceDescription}
           </p>
         </div>
