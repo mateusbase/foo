@@ -13,19 +13,19 @@ const PageHeader = ({
   return (
     <div className="relative h-[243px] w-full bg-gradient-to-r from-primary-foreground to-secondary-foreground md:h-[343px]">
       <div className="absolute inset-0 flex justify-center">
-        <div className="ml-0 flex w-full max-w-screen-2xl flex-col items-center justify-center lg:ml-24 lg:items-start">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between lg:items-start lg:justify-start">
+        <div className="ml-0 flex w-full max-w-screen-2xl flex-col items-start justify-center px-4 lg:ml-24">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between lg:justify-start">
             <div className="sm:w-[272px] lg:w-full">
-              <p className="mt-2 max-w-unit-9xl text-[15px] leading-[20px] text-white sm:text-[16px] sm:leading-[22px] lg:mt-4 lg:text-[18px] lg:leading-[24px]">
+              <p className="mt-2 max-w-unit-9xl text-sm leading-[20px] text-white sm:text-base sm:leading-[22px] lg:mt-4 lg:text-lg lg:leading-[24px]">
                 {preTitle}
               </p>
 
-              <h1 className="text-[26px] font-bold leading-[32px] text-white sm:text-[48px] sm:leading-[56px] lg:text-title-xl lg:leading-[72px]">
+              <h1 className="text-3xl font-bold leading-[32px] text-white sm:text-5xl sm:leading-[56px] lg:text-title-xl lg:leading-[72px]">
                 {title}
               </h1>
 
               <div className="w-[272px] lg:w-full">
-                <p className="mt-2 max-w-unit-9xl text-[15px] leading-[20px] text-white sm:text-[16px] sm:leading-[22px] lg:mt-4 lg:text-[18px] lg:leading-[24px]">
+                <p className="mt-2 max-w-unit-9xl text-sm leading-[20px] text-white sm:text-base sm:leading-[22px] lg:mt-4 lg:text-lg lg:leading-[24px]">
                   {subtitle}
                 </p>
               </div>
