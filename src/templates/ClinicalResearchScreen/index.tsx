@@ -66,7 +66,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
           <Breadcrumb />
         </div>
 
-        <div className="mt-20 flex w-full flex-col-reverse justify-between gap-10 lg:flex-row">
+        <div className="mt-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 lg:flex-row">
           <div className="flex w-full flex-col">
             <h1 className="max-w-full text-4xl font-extralight text-primary lg:text-6xl">
               Pesquisa Clínica Oncoclínicas
@@ -88,7 +88,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
             </BaseButton>
           </div>
 
-          <div className="flex w-full flex-col items-center">
+          <div className="hidden w-full flex-col items-center md:flex">
             <img
               src="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
               alt="Imagem de consulta"
