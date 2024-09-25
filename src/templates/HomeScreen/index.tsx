@@ -21,7 +21,7 @@ export default function HomeScreen(): JSX.Element {
           alt=""
           className="hidden w-full md:flex"
         />
-        <div className="relative inset-0 z-10 flex hidden items-center justify-center md:absolute md:flex">
+        <div className="relative inset-0 z-10 hidden items-center justify-center md:absolute md:flex">
           <SearchInput />
         </div>
 
