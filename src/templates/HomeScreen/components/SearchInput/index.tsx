@@ -3,7 +3,7 @@ import React from "react";
 
 const SearchInputMobile = (): JSX.Element => {
   return (
-    <div className="flex h-28 w-[1104px] items-center justify-between rounded-full border border-solid border-primary bg-white px-10 font-semibold opacity-85">
+    <div className="flex h-28 w-3/4 items-center justify-between rounded-full border border-solid border-primary bg-white px-10 font-semibold opacity-85">
       <div className="flex w-full flex-col">
         <input
           type="text"
