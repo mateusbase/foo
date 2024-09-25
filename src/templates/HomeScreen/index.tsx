@@ -38,7 +38,7 @@ export default function HomeScreen(): JSX.Element {
         </div>
       </div>
 
-      <BaseContainer className="flex w-10/12 flex-col py-0 md:py-10">
+      <BaseContainer className="flex w-10/12 flex-col py-0 lg:py-10">
         <ServicesSection />
 
         <ServicesSectionMobile />
