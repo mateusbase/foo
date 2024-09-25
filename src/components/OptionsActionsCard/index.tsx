@@ -3,10 +3,9 @@ import { MainOptionsActionsProps } from "./types";
 
 export default function OptionsActionsCard({
   options,
-  rounded = "rounded-3xl",
 }: MainOptionsActionsProps): JSX.Element {
   return (
-    <div className="grid w-10/12 grid-cols-2 gap-3 p-4 text-white sm:grid-cols-4">
+    <div className="grid w-full grid-cols-2 gap-3 p-4 text-white md:grid-cols-4 lg:hidden">
       {options.map((option) => (
         <div
           key={option.id}

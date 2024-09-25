@@ -19,26 +19,22 @@ export default function HomeScreen(): JSX.Element {
         <img
           src="https://i.postimg.cc/8kf6xnCK/banner.png"
           alt=""
-          className="hidden w-full lg:block"
+          className="hidden w-full md:flex"
         />
-        <div className="relative inset-0 z-10 flex hidden items-center justify-center lg:absolute lg:flex">
+        <div className="relative inset-0 z-10 flex hidden items-center justify-center md:absolute md:flex">
           <SearchInput />
-        </div>
-
-        <div className="relative inset-0 z-10 mt-2 flex items-center justify-center lg:absolute lg:hidden">
-          <SearchInputMobile />
         </div>
 
         <div className="absolute inset-0 bottom-[-56.5px] hidden items-end justify-center lg:flex">
           <MainOptionsActions options={options} />
         </div>
-
-        <div className="relative inset-0 bottom-[-56.5px] flex items-end justify-center lg:absolute lg:hidden">
-          <OptionsActionsCard options={options} rounded="rounded-none" />
-        </div>
       </div>
 
-      <BaseContainer className="flex w-10/12 flex-col py-0 lg:py-10">
+      <BaseContainer className="flex w-full flex-col py-0 lg:py-10">
+        <SearchInputMobile />
+
+        <OptionsActionsCard options={options} rounded="rounded-none" />
+
         <ServicesSection />
 
         <ServicesSectionMobile />
