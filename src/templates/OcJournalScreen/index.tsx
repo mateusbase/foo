@@ -11,14 +11,20 @@ import BaseSelect from "@/components/Select";
 export default function OcJournalScreen(): JSX.Element {
   return (
     <main>
+      <div className="block bg-gray-200 p-6 md:hidden">
+        <Breadcrumb />
+      </div>
+
       <PageHeader
         title="Oc Journal"
         subtitle="A newsletter científica do Grupo Oncoclínicas"
         showContactSection={false}
       />
 
-      <BaseContainer className="flex w-full flex-col py-20">
-        <Breadcrumb />
+      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
+        <div className="hidden px-10 md:block md:px-0">
+          <Breadcrumb />
+        </div>
 
         <div className="mt-20">
           <InformationSlider

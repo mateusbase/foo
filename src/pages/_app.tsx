@@ -1,5 +1,8 @@
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { useApollo } from "@/hooks/useApollo";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "@/styles/globals.css";
 import { ApolloProvider } from "@apollo/client";
 import type { AppProps } from "next/app";

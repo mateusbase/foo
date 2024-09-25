@@ -9,9 +9,6 @@ import InformationSlider from "@/components/InformationSlider";
 import BaseContainer from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import { useRef } from "react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import { NavigationOptions } from "swiper/types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
