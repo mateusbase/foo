@@ -1,12 +1,6 @@
 import { IoIosArrowDropright } from "react-icons/io";
 import { RiMentalHealthLine } from "react-icons/ri";
-
-interface HealthServiceCardProps {
-  serviceTitle: string;
-  serviceDescription: string;
-  serviceIcon?: JSX.Element;
-  showButton?: boolean;
-}
+import { HealthServiceCardProps } from "./types";
 
 export default function HealthServiceCard({
   serviceTitle,

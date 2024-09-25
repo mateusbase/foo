@@ -115,13 +115,7 @@ export default function ServiceScreen(): JSX.Element {
         <Breadcrumb />
       </div>
 
-      <PageHeader
-        title={headerProps.title}
-        subtitle={headerProps.address}
-        buttonText={headerProps.buttonText}
-        showContactSection={headerProps.showContactSection}
-        contactLinks={headerProps.contactLinks}
-      />
+      <PageHeader title={headerProps.title} subtitle={headerProps.address} />
 
       <BaseContainer className="flex w-full flex-col py-0 md:py-20">
         <div className="hidden px-10 md:block md:px-0">
