@@ -16,13 +16,13 @@ export default function MainOptionsActions({
             <Link href={option.link || "#"} passHref>
               <button type="button" className="flex items-center space-x-2">
                 <option.icon className="h-6 w-6" />
-                <span className="text-2xl">{option.title}</span>
+                <span className="text-xl">{option.title}</span>
               </button>
             </Link>
           </div>
           <section>
             {index < options.length - 1 && (
-              <span className="mx-4 border-y-large border-l border-white" />
+              <span className="mx-7 border-y-large border-l border-white" />
             )}
           </section>
         </React.Fragment>

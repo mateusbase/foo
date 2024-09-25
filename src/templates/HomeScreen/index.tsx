@@ -4,7 +4,13 @@ import ServicesSection from "@/components/ServicesSection";
 import { options } from "@/utils/objectUtils";
 import InformationSlider from "@/components/InformationSlider";
 import FaqSection from "@/components/FaqSection";
+import OptionsActionsCard from "@/components/OptionsActionsCard";
+import BaseContainer from "@/components/Container";
+import ServicesSectionMobile from "@/components/ServicesSectionMobile";
+import InformationSliderMobile from "@/components/InformationSliderMobile";
+import NearbyUnitsMobile from "@/components/NearbyUnitsMobile";
 import SearchInput from "./components/SearchInput";
+import SearchInputMobile from "./components/SearchInputMobile";
 
 export default function HomeScreen(): JSX.Element {
   return (
@@ -13,21 +19,39 @@ export default function HomeScreen(): JSX.Element {
         <img
           src="https://i.postimg.cc/8kf6xnCK/banner.png"
           alt=""
-          className="w-full"
+          className="hidden w-full lg:block"
         />
-
-        <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <div className="relative inset-0 z-10 flex hidden items-center justify-center md:flex lg:absolute">
           <SearchInput />
         </div>
 
-        <div className="absolute inset-0 bottom-[-56.5px] flex items-end justify-center">
-          <MainOptionsActions options={options} />
+        <div className="relative inset-0 z-10 flex items-center justify-center md:hidden lg:absolute">
+          <SearchInputMobile />
+        </div>
+
+        <div className="absolute inset-0 bottom-[-56.5px] hidden items-end justify-center md:flex">
+          <BaseContainer>
+            <MainOptionsActions options={options} />
+          </BaseContainer>
+        </div>
+
+        <div className="relative inset-0 bottom-[-56.5px] flex items-end justify-center md:hidden lg:absolute">
+          <OptionsActionsCard options={options} rounded="rounded-none" />
         </div>
       </section>
-
-      <section className="container mt-10">
+      <BaseContainer className="hidden md:block">
         <ServicesSection />
+      </BaseContainer>
 
+      <div className="block px-20 md:hidden">
+        <ServicesSectionMobile />
+      </div>
+
+      <div className="justifiy-center block px-20 md:hidden">
+        <NearbyUnitsMobile />
+      </div>
+
+      <BaseContainer className="hidden md:block">
         <InformationSlider
           title="Pesquisa Clínica Oncoclínicas"
           description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
@@ -35,9 +59,13 @@ export default function HomeScreen(): JSX.Element {
         />
 
         <NearbyUnits />
-      </section>
-      <FaqSection />
+      </BaseContainer>
 
+      <div className="block md:hidden">
+        <InformationSliderMobile image="https://i.postimg.cc/8PkhLkj0/Captura-de-tela-2024-09-25-104009.png" />
+      </div>
+
+      <FaqSection />
       <section>
         <MainOptionsActions options={options} rounded="rounded-none" />
       </section>

@@ -6,11 +6,11 @@ export default function FaqSection(): JSX.Element {
   const defaultContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
   const itemClasses = {
-    title: "text-primary font-bold",
+    title: "text-primary text-sm md:text-lg md:font-bold",
   };
 
   return (
-    <section className="flex flex-col items-center justify-center bg-background-foreground py-28">
+    <section className="flex flex-col items-center justify-center bg-background-foreground px-8 py-28">
       <FaqHeader titleHeader={title} />
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center">
         <Accordion
