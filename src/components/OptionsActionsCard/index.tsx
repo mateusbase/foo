@@ -5,7 +5,7 @@ export default function OptionsActionsCard({
   options,
 }: MainOptionsActionsProps): JSX.Element {
   return (
-    <div className="grid w-full grid-cols-2 gap-3 p-4 text-white md:grid-cols-4 lg:hidden">
+    <div className="grid w-full grid-cols-2 gap-3 py-4 text-white md:grid-cols-4 lg:hidden">
       {options.map((option) => (
         <div
           key={option.id}
