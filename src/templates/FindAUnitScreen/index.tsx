@@ -8,6 +8,7 @@ import { unitsData } from "@/components/NearbyUnits/components/utils";
 import UnitsCard from "@/components/NearbyUnits/components/UnitsCard";
 import BaseContainer from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
+import UnitsCardMobile from "@/components/NearbyUnitsMobile/components/UnitsCard";
 
 export default function FindAUnitScreen(): JSX.Element {
   return (
@@ -98,9 +99,15 @@ export default function FindAUnitScreen(): JSX.Element {
             Sua pesquisa encontrou 223 unidades
           </p>
 
-          <div className="mx-auto mb-10 mt-20 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          <div className="mx-auto mb-10 mt-20 hidden w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid lg:grid-cols-3 xl:grid-cols-3">
             {unitsData.map((unit) => (
               <UnitsCard key={unit.id} {...unit} />
+            ))}
+          </div>
+
+          <div className="mx-auto mb-10 mt-10 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:hidden lg:grid-cols-3 xl:grid-cols-3">
+            {unitsData.map((unit) => (
+              <UnitsCardMobile key={unit.id} {...unit} />
             ))}
           </div>
         </div>

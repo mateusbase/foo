@@ -1,5 +1,3 @@
-import EventCard from "@/components/EventsCard";
-import ServiceCard from "@/components/ServiceCard";
 import { useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Navigation } from "swiper/modules";
