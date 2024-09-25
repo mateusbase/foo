@@ -15,53 +15,48 @@ import SearchInputMobile from "./components/SearchInputMobile";
 export default function HomeScreen(): JSX.Element {
   return (
     <main className="flex w-full flex-col">
-      <section className="relative w-full">
+      <div className="relative w-full">
         <img
           src="https://i.postimg.cc/8kf6xnCK/banner.png"
           alt=""
           className="hidden w-full lg:block"
         />
-        <div className="relative inset-0 z-10 flex hidden items-center justify-center md:flex lg:absolute">
+        <div className="relative inset-0 z-10 flex hidden items-center justify-center lg:absolute lg:flex">
           <SearchInput />
         </div>
 
-        <div className="relative inset-0 z-10 flex items-center justify-center md:hidden lg:absolute">
+        <div className="relative inset-0 z-10 mt-2 flex items-center justify-center lg:absolute lg:hidden">
           <SearchInputMobile />
         </div>
 
-        <div className="absolute inset-0 bottom-[-56.5px] hidden items-end justify-center md:flex">
-          <BaseContainer>
-            <MainOptionsActions options={options} />
-          </BaseContainer>
+        <div className="absolute inset-0 bottom-[-56.5px] hidden items-end justify-center lg:flex">
+          <MainOptionsActions options={options} />
         </div>
 
-        <div className="relative inset-0 bottom-[-56.5px] flex items-end justify-center md:hidden lg:absolute">
+        <div className="relative inset-0 bottom-[-56.5px] flex items-end justify-center lg:absolute lg:hidden">
           <OptionsActionsCard options={options} rounded="rounded-none" />
         </div>
-      </section>
-      <BaseContainer className="hidden md:block">
+      </div>
+
+      <BaseContainer className="flex w-10/12 flex-col py-0 lg:py-10">
         <ServicesSection />
-      </BaseContainer>
 
-      <div className="block px-20 md:hidden">
         <ServicesSectionMobile />
-      </div>
 
-      <div className="justifiy-center block px-20 md:hidden">
         <NearbyUnitsMobile />
-      </div>
 
-      <BaseContainer className="hidden md:block">
-        <InformationSlider
-          title="Pesquisa Clínica Oncoclínicas"
-          description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
-          image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
-        />
+        <div className="hidden lg:block">
+          <InformationSlider
+            title="Pesquisa Clínica Oncoclínicas"
+            description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
+            image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+          />
 
-        <NearbyUnits />
+          <NearbyUnits />
+        </div>
       </BaseContainer>
 
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         <InformationSliderMobile image="https://i.postimg.cc/8PkhLkj0/Captura-de-tela-2024-09-25-104009.png" />
       </div>
 

@@ -32,7 +32,7 @@ export default function ListNearbyUnitCardsMobile({
 
   return (
     <div className="">
-      <div className="relative max-w-[344px]">
+      <div className="relative w-full">
         <Swiper
           modules={[Navigation]}
           slidesPerView={1}
@@ -44,8 +44,8 @@ export default function ListNearbyUnitCardsMobile({
           }}
           onInit={(swiper) => {
             if (swiper.params.navigation) {
-              // eslint-disable-next-line prettier/prettier
-              const navigationParams = swiper.params.navigation as NavigationOptions;
+              const navigationParams = swiper.params
+                .navigation as NavigationOptions;
               navigationParams.prevEl = prevRef.current;
               navigationParams.nextEl = nextRef.current;
               swiper.navigation.init();
@@ -54,11 +54,11 @@ export default function ListNearbyUnitCardsMobile({
           }}
           breakpoints={{
             640: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 2,
               spaceBetween: 40,
             },
           }}
