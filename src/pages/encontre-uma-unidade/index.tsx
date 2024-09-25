@@ -9,9 +9,9 @@ const FindAUnit: NextPageWithLayout = () => {
       <Head>
         <title>
           Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Encontre um Médico
+          tratamento oncológico
         </title>
-        <meta name="description" content="Oncoclínicas - Encontre um Médico" />
+        <meta name="description" content="Oncoclínicas " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

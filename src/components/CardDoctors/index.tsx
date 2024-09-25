@@ -24,7 +24,7 @@ export function CardDoctor({
   return (
     <div
       onClick={handleDoctorClick}
-      className={`flex h-[552px] max-w-[336px] cursor-pointer ${width} flex-col items-start rounded-bl-[30px] border border-lightGray`}
+      className={`flex h-[552px] cursor-pointer ${width} w-full flex-col items-start rounded-bl-[30px] border border-lightGray sm:max-w-[400px]`}
     >
       <img
         src={doctor.imgSrc}

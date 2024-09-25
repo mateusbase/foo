@@ -129,7 +129,7 @@ export default function FindADoctorScreen(): JSX.Element {
           <Breadcrumb />
         </div>
 
-        <div className="mt-14 px-10 md:px-0">
+        <div className="mt-14 md:px-0">
           <h1 className="font-lato hidden text-4xl leading-[48px] text-primary md:block">
             Encontre um médico Oncoclínicas próximo a você
           </h1>

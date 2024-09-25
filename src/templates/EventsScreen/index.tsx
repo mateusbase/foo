@@ -70,16 +70,22 @@ export default function EventsScreen(): JSX.Element {
 
   return (
     <main>
+      <div className="block bg-gray-200 p-6 md:hidden">
+        <Breadcrumb />
+      </div>
+
       <PageHeader
         title="Eventos Oncoclínicas"
         subtitle="Congressos, palestras, simpósios e muito mais."
         showContactSection={false}
       />
 
-      <BaseContainer className="flex w-full flex-col py-20">
-        <Breadcrumb />
+      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
+        <div className="hidden px-10 md:block md:px-0">
+          <Breadcrumb />
+        </div>
 
-        <div className="mt-20">
+        <div className="mt-20 hidden md:flex">
           <InformationSlider
             title="Pesquisa Clínica Oncoclínicas"
             description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
@@ -87,7 +93,7 @@ export default function EventsScreen(): JSX.Element {
           />
         </div>
 
-        <div className="mt-28 flex flex-col gap-4 border-b border-gray-300 px-8 pb-4 md:flex-row md:items-center md:justify-between md:px-0">
+        <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-28 md:flex-row md:items-center md:justify-between md:px-0">
           <div className="flex flex-col items-center gap-4 sm:flex-row">
             <BaseSelect
               color="primary"
@@ -126,7 +132,7 @@ export default function EventsScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="mt-24 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-24 lg:grid-cols-3">
           {events.map((event) => (
             <EventCard key={event.title} event={event} />
           ))}
