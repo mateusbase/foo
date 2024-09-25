@@ -1,6 +1,5 @@
-import ServiceCard from "../ServiceCard";
+import ListServiceCards from "./components/ListServiceCards";
 import ServiceText from "./components/ServiceText";
-import ServiceTextMobile from "./components/ServiceTextMobile";
 
 export default function ServicesSection(): JSX.Element {
   const services = [
@@ -11,22 +10,10 @@ export default function ServicesSection(): JSX.Element {
   ];
 
   return (
-    <section className="mt-10 flex flex-col items-center justify-center py-8 md:flex-row">
+    <section className="mt-10 flex w-full items-center justify-center py-8 md:flex-row">
       <ServiceText />
 
-      <ServiceTextMobile />
-
-      <div className="mt-8 hidden flex-wrap justify-center gap-3 md:flex">
-        {services.map((service) => (
-          <ServiceCard key={service.id} {...service} />
-        ))}
-      </div>
-
-      <div className="md:hidden">
-        {services.map((service) => (
-          <ServiceCard key={service.id} {...service} />
-        ))}
-      </div>
+      <ListServiceCards services={services} />
     </section>
   );
 }

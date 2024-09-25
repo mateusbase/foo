@@ -5,7 +5,7 @@ import { unitsData } from "./components/utils";
 
 export default function NearbyUnits(): JSX.Element {
   return (
-    <main className="container mt-10 flex flex-col gap-14 p-8">
+    <main className="mt-10 flex flex-col gap-14 p-8">
       <section className="flex items-center justify-between">
         <h1 className="text-4xl font-extralight text-primary">
           Encontre uma unidade Oncoclínicas próxima a você

@@ -6,6 +6,8 @@ import InformationSlider from "@/components/InformationSlider";
 import FaqSection from "@/components/FaqSection";
 import OptionsActionsCard from "@/components/OptionsActionsCard";
 import BaseContainer from "@/components/Container";
+import ServicesSectionMobile from "@/components/ServicesSectionMobile";
+import InformationSliderMobile from "@/components/InformationSliderMobile";
 import SearchInput from "./components/SearchInput";
 import SearchInputMobile from "./components/SearchInputMobile";
 
@@ -18,12 +20,10 @@ export default function HomeScreen(): JSX.Element {
           alt=""
           className="hidden w-full lg:block"
         />
-        {/* Para desktop */}
         <div className="relative inset-0 z-10 flex hidden items-center justify-center md:flex lg:absolute">
           <SearchInput />
         </div>
 
-        {/* Para mobile */}
         <div className="relative inset-0 z-10 flex items-center justify-center md:hidden lg:absolute">
           <SearchInputMobile />
         </div>
@@ -39,23 +39,28 @@ export default function HomeScreen(): JSX.Element {
         </div>
       </section>
 
-      <BaseContainer>
-        <div className="">
-          <ServicesSection />
-        </div>
-
-        <section className="mt-10">
-          <InformationSlider
-            title="Pesquisa Clínica Oncoclínicas"
-            description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
-            image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
-          />
-
-          <NearbyUnits />
-        </section>
+      <BaseContainer className="hidden md:block">
+        <ServicesSection />
       </BaseContainer>
 
+      <div className="block md:hidden">
+        <ServicesSectionMobile />
+      </div>
+
+      <BaseContainer className="hidden md:block">
+        <InformationSlider
+          title="Pesquisa Clínica Oncoclínicas"
+          description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
+          image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+        />
+
+        <NearbyUnits />
+      </BaseContainer>
+
+      <InformationSliderMobile image="https://i.postimg.cc/8PkhLkj0/Captura-de-tela-2024-09-25-104009.png" />
+
       <FaqSection />
+
       <section>
         <MainOptionsActions options={options} rounded="rounded-none" />
       </section>
