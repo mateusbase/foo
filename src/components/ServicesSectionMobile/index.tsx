@@ -7,6 +7,7 @@ export default function ServicesSectionMobile(): JSX.Element {
     { id: 2, title: "Diagnósticos", icon: "/favicon.ico" },
     { id: 3, title: "Serviços", icon: "/favicon.ico" },
     { id: 4, title: "Tudo sobre o câncer", icon: "/favicon.ico" },
+    { id: 5, title: "Medicina de precisão", icon: "/favicon.ico" },
   ];
 
   return (
