@@ -15,19 +15,18 @@ export default function HealthServiceCard({
   showButton = true,
 }: HealthServiceCardProps): JSX.Element {
   return (
-    <div className="flex h-auto w-auto flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6">
-      <div className="flex items-center">
+    <div className="flex h-auto min-h-[280px] w-full flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6">
+      <div className="flex flex-col items-start sm:flex-row md:items-center">
         <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary-foreground">
           {serviceIcon}
         </div>
-        <div className="ml-4">
-          <h3 className="text-[26px] font-black leading-[32px] text-primary">
-            {serviceTitle}
-          </h3>
-        </div>
+
+        <h3 className="mt-2 text-[22px] font-black leading-[28px] text-primary sm:ml-4 sm:mt-0 sm:text-[26px] sm:leading-[32px]">
+          {serviceTitle}
+        </h3>
       </div>
 
-      <p className="mt-4 h-[66px] w-[312px] text-left text-[18px] font-medium leading-[22px] text-darkGray">
+      <p className="mt-4 text-left text-[16px] font-medium leading-[22px] text-darkGray sm:text-[18px] sm:leading-[24px]">
         {serviceDescription}
       </p>
 

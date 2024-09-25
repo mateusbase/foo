@@ -1,9 +1,10 @@
 import { useState, useMemo } from "react";
-import { Button } from "@nextui-org/react";
+import { Button, Input } from "@nextui-org/react";
 import { TbCodePlus } from "react-icons/tb";
 import HealthServiceCard from "@/components/HealthServiceCard";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import Link from "next/link";
+import { Search } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 import AlphabetSelector from "./alphabet-selector.component";
 import { ServiceSectionProps } from "../types";
@@ -27,12 +28,25 @@ export default function ServiceSection({
     <section id={id} className="pt-8">
       <SectionHeader title={title} description={description} />
 
-      <AlphabetSelector
-        selectedLetter={selectedLetter}
-        onLetterSelect={setSelectedLetter}
-      />
+      <div className="mt-10 flex w-full lg:hidden">
+        <Input
+          placeholder="Buscar serviço"
+          size="lg"
+          radius="full"
+          variant="bordered"
+          color="primary"
+          endContent={<Search className="text-2xl text-primary" />}
+        />
+      </div>
 
-      <div className="mt-10 grid grid-cols-4 gap-[26px]">
+      <div className="hidden lg:block">
+        <AlphabetSelector
+          selectedLetter={selectedLetter}
+          onLetterSelect={setSelectedLetter}
+        />
+      </div>
+
+      <div className="mt-10 grid grid-cols-2 gap-[26px] sm:grid-cols-2 md:grid-cols-4">
         {filteredHealthServices.map((service) => (
           <Link
             key={service.id}

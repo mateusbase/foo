@@ -111,6 +111,10 @@ export default function ServiceScreen(): JSX.Element {
 
   return (
     <main>
+      <div className="block bg-gray-200 p-6 md:hidden">
+        <Breadcrumb />
+      </div>
+
       <PageHeader
         title={headerProps.title}
         subtitle={headerProps.address}
@@ -119,7 +123,7 @@ export default function ServiceScreen(): JSX.Element {
         contactLinks={headerProps.contactLinks}
       />
 
-      <BaseContainer className="flex min-h-screen w-full flex-col py-20">
+      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
         <div className="hidden px-10 md:block md:px-0">
           <Breadcrumb />
         </div>

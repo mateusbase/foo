@@ -5,12 +5,12 @@ export default function SectionHeader({
   description,
 }: SectionHeaderProps): JSX.Element {
   return (
-    <div className="mt-20 flex justify-center">
-      <div className="text-center">
-        <h2 className="font-lato text-title-xl font-black leading-[74px] text-primary">
+    <div className="mt-10 flex justify-center md:mt-20">
+      <div className="w-full text-left lg:text-center">
+        <h2 className="text-2xl font-extralight text-primary lg:text-6xl lg:leading-[74px]">
           {title}
         </h2>
-        <p className="font-lato mt-4 text-[26px] font-medium leading-[32px] text-darkGray">
+        <p className="mt-4 text-base text-darkGray lg:text-2xl lg:leading-[32px]">
           {description}
         </p>
       </div>
