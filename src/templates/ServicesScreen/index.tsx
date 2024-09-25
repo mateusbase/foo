@@ -3,7 +3,7 @@ import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import BaseContainer from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
-import ServiceSection from "./components/service.component";
+import ServiceSection from "./components/ServiceSection";
 
 export default function ServiceScreen(): JSX.Element {
   const healthServices1 = [

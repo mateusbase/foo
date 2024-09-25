@@ -4,9 +4,9 @@ import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import BaseContainer from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
-import ClinicalBody from "./components/clinical-body.component";
-import MapCard from "./components/map-card.component";
-import InsuranceGrid from "./components/insurance-grid.component";
+import ClinicalBody from "./components/ClinicalBody";
+import MapCard from "./components/MapCard";
+import InsuranceGrid from "./components/InsuranceGrid";
 
 export default function UnitScreen(): JSX.Element {
   return (

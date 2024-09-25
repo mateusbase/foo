@@ -17,7 +17,7 @@ export default function MedicalServiceCard({
 
   return (
     <div
-      className={`flex w-auto flex-col overflow-hidden rounded-bl-[100px] border bg-white ${hasActionButton ? "h-[891px]" : "h-[700px]"
+      className={`flex w-auto flex-col overflow-hidden rounded-br-[100px] border bg-white ${hasActionButton ? "h-[891px]" : "h-[700px]"
         }`}
     >
       <div
@@ -29,7 +29,7 @@ export default function MedicalServiceCard({
         }}
       />
       <div
-        className={`flex flex-col justify-between rounded-bl-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground py-8 px-16 ${hasActionButton
+        className={`flex flex-col justify-between rounded-br-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground py-8 px-16 ${hasActionButton
           ? "h-[515px]"
           : "h-[400px]"
           }`}
