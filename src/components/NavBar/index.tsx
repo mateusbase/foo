@@ -17,7 +17,7 @@ import { NavBarProps } from "./types";
 const routes = [
   { label: "Pacientes", pathname: "/" },
   { label: "Médicos", pathname: "/medicos" },
-  { label: "Investidores", pathname: "/servicos" },
+  { label: "Investidores", pathname: "/relacao-com-investidor" },
   { label: "Instituto OC", pathname: "/contato" },
   { label: "Notícias", pathname: "/contato" },
 ];

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   MdKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
@@ -9,12 +10,18 @@ export default function InformationSlider({
   title,
   description,
   image,
+  backgroundType = "gradient",
 }: InformationSliderProps): JSX.Element {
   return (
     <section className="flex h-[536px] w-full justify-between text-white">
-      <section className="bg-padding-box flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-r from-primary-foreground to-secondary-foreground bg-no-repeat px-20 py-10">
-        <div className="">
-          <p className="font-">{subtitle}</p>
+      <section
+        className={`flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] px-20 py-10 ${backgroundType === "gradient"
+          ? "bg-gradient-to-r from-primary-foreground to-secondary-foreground"
+          : "bg-darkGray"
+          }`}
+      >
+        <div>
+          <p className="">{subtitle}</p>
         </div>
 
         <div>

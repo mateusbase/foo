@@ -3,4 +3,5 @@ export interface InformationSliderProps {
   title: string;
   description: string;
   image: string;
+  backgroundType?: "gradient" | "darkGray";
 }
