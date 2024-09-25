@@ -62,7 +62,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
       />
 
       <BaseContainer className="flex w-full flex-col py-0 md:py-20">
-        <div className="hidden px-10 md:block md:px-8">
+        <div className="hidden px-10 md:block md:px-0">
           <Breadcrumb />
         </div>
 

@@ -13,6 +13,10 @@ export default function DoctorScreen(): JSX.Element {
 
   return (
     <main>
+      <div className="block bg-gray-200 p-6 md:hidden">
+        <Breadcrumb />
+      </div>
+
       <PageHeader
         title={
           name ? `Dra. ${decodeURIComponent(name as string)}` : "Nome do Médico"
@@ -25,10 +29,12 @@ export default function DoctorScreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <BaseContainer className="flex min-h-screen w-full flex-col py-20">
-        <Breadcrumb />
+      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
+        <div className="hidden px-10 md:block md:px-0">
+          <Breadcrumb />
+        </div>
 
-        <div className="mt-14">
+        <div className="mt-14 hidden md:block">
           <img
             src="https://i2.wp.com/robertopestana.com.br/wp-content/uploads/2022/02/891351.png?w=750&quality=90&strip=all&ssl=1"
             alt="Imagem descritiva"
@@ -36,8 +42,8 @@ export default function DoctorScreen(): JSX.Element {
           />
         </div>
 
-        <div className="mt-10 flex justify-between">
-          <div className="relative bottom-48 left-5 flex flex-col items-center">
+        <div className="mt-10 flex flex-col items-center justify-center md:flex-row md:justify-between">
+          <div className="relative flex flex-col items-center md:bottom-48 md:left-5">
             <img
               src={
                 (imgSrc as string) ||
@@ -47,14 +53,17 @@ export default function DoctorScreen(): JSX.Element {
               className="h-[316px] w-[320px] rounded-2xl object-cover"
             />
 
-            <div className="mt-8 text-left">
+            <div className="mt-8 text-center md:text-left">
+              <h1 className="m-4 block text-3xl text-darkGray md:hidden">
+                {name ? `Dra. ${decodeURIComponent(name as string)}` : ""}
+              </h1>
+
               <p className="text-xl font-bold text-darkGray">CRM: {crm}</p>
               <p className="mt-2 text-lg text-darkGray">{specialty}</p>
 
               <BaseButton
                 color="secondary"
-                className="mt-8 text-white"
-                width="322px"
+                className="mt-8 w-full rounded-md text-white"
                 startContent={<IoIosCalendar size={24} className="mr-2" />}
               >
                 Agendar uma consulta
@@ -62,8 +71,8 @@ export default function DoctorScreen(): JSX.Element {
             </div>
           </div>
 
-          <div className="ml-52 flex-1">
-            <h1 className="text-[42px] text-primary">
+          <div className="mt-8 text-center md:ml-52 md:mt-0 md:flex-1 md:text-left">
+            <h1 className="hidden text-[42px] text-primary md:block">
               {name
                 ? `Dra. ${decodeURIComponent(name as string)}`
                 : "Dra. Nome do Médico"}
@@ -74,24 +83,13 @@ export default function DoctorScreen(): JSX.Element {
               Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit
               in. Fusce id ex id sem ullamcorper. Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Vestibulum pellentesque nunc lectus,
-              vitae lacinia ex hendrerit in. Fusce id ex id sem
-              ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex
-              hendrerit in. Fusce id ex id sem ullamcorper.Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Vestibulum pellentesque nunc
-              lectus, vitae lacinia ex hendrerit in. Fusce id ex id sem
-              ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex
-              hendrerit in. Fusce id ex id sem ullamcorper.Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Vestibulum pellentesque nunc
-              lectus, vitae lacinia ex hendrerit in. Fusce id ex id sem
-              ullamcorper.
+              vitae lacinia ex hendrerit in. Fusce id ex id sem ullamcorper.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit
+              in. Fusce id ex id sem ullamcorper.
             </p>
 
-            <br />
-            <br />
-
-            <h1 className="text-[42px] font-bold text-primary">
+            <h1 className="mt-8 text-[42px] font-bold text-primary">
               Locais de atendimento
             </h1>
           </div>

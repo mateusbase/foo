@@ -35,7 +35,7 @@ export default function Footer(): JSX.Element {
 
   return (
     <>
-      <footer className="bg-[#5C5C5C] p-10 text-white">
+      <footer className="bg-darkGray p-10 text-white">
         <BaseContainer className="flex w-full flex-col">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-start md:gap-0">
             <Image
