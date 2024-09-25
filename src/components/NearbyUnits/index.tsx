@@ -1,7 +1,7 @@
-import { Button } from "@nextui-org/react";
-import { Select, SelectItem } from "@nextui-org/react";
 import UnitsCard from "./components/UnitsCard";
 import { unitsData } from "./components/utils";
+import BaseSelect from "../Select";
+import BaseButton from "../Button";
 
 export default function NearbyUnits(): JSX.Element {
   return (
@@ -11,41 +11,34 @@ export default function NearbyUnits(): JSX.Element {
           Encontre uma unidade Oncoclínicas próxima a você
         </h1>
 
-        <Select
+        <BaseSelect
           color="primary"
           variant="bordered"
           label="UF"
           className="max-w-[122px]"
           radius="full"
-        >
-          <SelectItem key={1} value="1">
-            SP
-          </SelectItem>
-          <SelectItem key={2} value="2">
-            RJ
-          </SelectItem>
-        </Select>
+          options={[
+            { key: 1, value: "1", label: "SP" },
+            { key: 2, value: "2", label: "RJ" },
+          ]}
+        />
 
-        <Select
+        <BaseSelect
           color="primary"
           variant="bordered"
           label="Cidade"
           className="max-w-xs"
           radius="full"
-        >
-          <SelectItem key={1} value="1">
-            São Paulo
-          </SelectItem>
-          <SelectItem key={2} value="2">
-            Ibituruna
-          </SelectItem>
-        </Select>
+          options={[
+            { key: 1, value: "1", label: "São Paulo" },
+            { key: 2, value: "2", label: "Ibituruna" },
+          ]}
+        />
 
-        <Button color="primary" className="text-white">
+        <BaseButton color="primary" className="w-56 text-white">
           Buscar Unidades
-        </Button>
+        </BaseButton>
       </section>
-
       <section className="mb-10 flex justify-between">
         {unitsData.map((unit) => (
           <UnitsCard key={unit.id} {...unit} />

@@ -1,7 +1,7 @@
 import { HiOutlineMapPin } from "react-icons/hi2";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { TbCodePlus } from "react-icons/tb";
-import { Button } from "@nextui-org/button";
+import BaseButton from "@/components/Button";
 import { UnitsCardProps } from "./types";
 
 export default function UnitsCard({
@@ -17,7 +17,7 @@ export default function UnitsCard({
     <main className="flex flex-col justify-between gap-8">
       <section>
         <section className="flex items-center gap-1">
-          <HiOutlineMapPin color="#6328B4" className="-ml-2" size={40} />
+          <HiOutlineMapPin className="-ml-2 text-secondary" size={40} />
           <h1 className="text-2xl font-bold uppercase text-primary">
             {unitName}
           </h1>
@@ -44,17 +44,18 @@ export default function UnitsCard({
       </section>
 
       <section className="flex gap-2">
-        <Button className="text-white" color="primary">
+        <BaseButton className="w-64 text-white" color="primary">
           Agende uma consulta
-        </Button>
-        <Button
+        </BaseButton>
+
+        <BaseButton
           className="font-bold"
           color="primary"
           variant="bordered"
           startContent={<TbCodePlus size={20} />}
         >
           Informações
-        </Button>
+        </BaseButton>
       </section>
     </main>
   );

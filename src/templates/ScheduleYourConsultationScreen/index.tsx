@@ -10,16 +10,22 @@ import BaseInput from "@/components/Input";
 export default function ScheduleYourConsultationScreen(): JSX.Element {
   return (
     <main>
+      <div className="block bg-gray-200 p-6 md:hidden">
+        <Breadcrumb />
+      </div>
+
       <PageHeader
         title="Agende sua consulta"
         subtitle="Oncoclínicas"
         showContactSection={false}
       />
 
-      <BaseContainer className="flex w-full flex-col py-20">
-        <Breadcrumb />
+      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
+        <div className="hidden px-10 md:block md:px-0">
+          <Breadcrumb />
+        </div>
 
-        <div className="mt-20 flex flex-col gap-10 lg:flex-row">
+        <div className="mt-5 flex flex-col gap-10 md:mt-20 lg:flex-row">
           <div className="w-full lg:w-1/2">
             <h1 className="text-4xl font-extralight text-primary">
               Agende sua consulta ou exame
@@ -103,7 +109,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               alt="Imagem de consulta"
               className="w-full object-cover"
             />
-            <p className="mt-4 text-left text-gray-700">
+            <p className="mb-5 mt-4 text-left text-gray-700">
               Fusce ac ligula quis eros convallis rhoncus. Nam rutrum ligula at
               tellus tempor, at pharetra mauris dictum. Sed quis dolor
               consectetur, laoreet arcu ut, tempor est. Praesent bibendum

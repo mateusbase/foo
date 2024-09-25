@@ -24,6 +24,10 @@ export default function WhoWeArecreen(): JSX.Element {
 
   return (
     <main>
+      <div className="block bg-gray-200 p-6 md:hidden">
+        <Breadcrumb />
+      </div>
+
       <PageHeader
         preTitle="Conheça"
         title="Oncoclínicas&Co"
@@ -31,11 +35,13 @@ export default function WhoWeArecreen(): JSX.Element {
         showContactSection={false}
       />
 
-      <BaseContainer className="flex w-full flex-col py-20">
-        <Breadcrumb />
+      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
+        <div className="hidden px-10 md:block md:px-8">
+          <Breadcrumb />
+        </div>
 
         <div className="mt-14 flex">
-          <div className="w-[398px] text-white">
+          <div className="w-[398px] text-white hidden md:block">
             {menuItems.map((item, index) => (
               <MenuItem
                 key={item.id}
@@ -49,7 +55,7 @@ export default function WhoWeArecreen(): JSX.Element {
             ))}
           </div>
 
-          <div className="ml-16 flex-1">
+          <div className="ml-0 md:ml-16 flex-1">
             <h1 className="font-lato text-4xl font-bold leading-[48px] text-primary">
               A Oncoclínicas&Co é um dos maiores grupos de oncologia,
               hematologia e radioterapia da América Latina.

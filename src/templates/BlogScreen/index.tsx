@@ -1,9 +1,10 @@
+import BaseContainer from "@/components/Container";
 import { Button } from "@nextui-org/react";
 import { Plus } from "lucide-react";
 
 export default function BlogScreen(): JSX.Element {
   return (
-    <main className="mx-auto max-w-2xl">
+    <BaseContainer className="px-0">
       <div className="flex h-[536px]">
         <div className="flex h-full w-1/2 flex-col items-start justify-center bg-gradient-to-r from-primary-foreground via-secondary-foreground to-secondary-foreground pl-[65px]">
           <Button
@@ -91,6 +92,6 @@ export default function BlogScreen(): JSX.Element {
           />
         </div>
       </div>
-    </main>
+    </BaseContainer>
   );
 }

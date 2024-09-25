@@ -26,21 +26,28 @@ export default function ServiceScreen(): JSX.Element {
 
   return (
     <main>
+      <div className="block bg-gray-200 p-6 md:hidden">
+        <Breadcrumb />
+      </div>
+
       <PageHeader
         title={
           servico
             ? capitalizeFirstLetter(decodeURIComponent(servico as string))
-            : "Nome do Médico"
+            : " "
         }
         subtitle="Serviço Oncoclínicas"
         showContactSection={false}
       />
 
-      <BaseContainer className="flex w-full flex-col py-20">
-        <Breadcrumb />
+      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
+        <div className="hidden px-10 md:block md:px-0">
+          <Breadcrumb />
+        </div>
+
 
         <div className="mt-14 flex">
-          <div className="w-[398px] text-white">
+          <div className="w-[398px] text-white hidden md:block">
             {menuItems.map((item, index) => (
               <MenuItem
                 key={item.id}
@@ -54,7 +61,7 @@ export default function ServiceScreen(): JSX.Element {
             ))}
           </div>
 
-          <div className="ml-16 flex-1">
+          <div className="md:ml-16 flex-1">
             <h1 className="font-lato text-4xl font-bold leading-[48px] text-primary">
               O que é a laserterapia
             </h1>

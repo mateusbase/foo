@@ -5,7 +5,6 @@ import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
-import InformationSlider from "@/components/InformationSlider";
 import BaseContainer from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import { useRef } from "react";
@@ -15,34 +14,34 @@ import "swiper/css/navigation";
 import { NavigationOptions } from "swiper/types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-export default function ClinicalResearchScreen(): JSX.Element {
+export default function RelationshipWithInvestorScreen(): JSX.Element {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
   const services = [
     {
-      subtitle: "Saiba mais",
-      serviceTitle: "OC na mídia",
+      id: 1,
+      serviceTitle: "Comitê nacional de pesquisa",
       serviceDescription:
-        "Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Confira os profissionais que integram o Comitê Nacional de Pesquisa Clínica, Equipe de Abrangência Nacional.",
       actionButtonText: "Ver mais",
       backgroundImageUrl:
         "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
     },
     {
-      subtitle: "Saiba mais",
-      serviceTitle: "Serviço Oncológico",
+      id: 2,
+      serviceTitle: "Parcerias para ensino",
       serviceDescription:
-        "Acompanhe nossos serviços, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Conheça as instituições parceiras do Grupo para ensino, pesquisa, eventos, capacitação, treinamento e atualização de profissionais.",
       actionButtonText: "Descubra",
       backgroundImageUrl:
         "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
     },
     {
-      subtitle: "Novidades",
-      serviceTitle: "Tecnologias",
+      id: 3,
+      serviceTitle: "Estudos clínicos abertos",
       serviceDescription:
-        "Tecnologias avançadas, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Contribua com o desenvolvimento de soluções para a saúde e qualidade de vida de todos.",
       actionButtonText: "Ver detalhes",
       backgroundImageUrl:
         "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
@@ -56,8 +55,8 @@ export default function ClinicalResearchScreen(): JSX.Element {
       </div>
 
       <PageHeader
-        title="Pesquisa Clínica"
-        subtitle="Programa de Pesquisa Clínica do Grupo Oncoclínicas"
+        title="Investidores Oncoclínicas&Co"
+        subtitle="Baseado em seu compromisso com a ética e a transparência, a Oncoclínicas&Co. disponibiliza informações e documentos aos seus investidores."
         showContactSection={false}
       />
 
@@ -69,7 +68,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
         <div className="mt-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 lg:flex-row">
           <div className="flex w-full flex-col">
             <h1 className="max-w-full text-4xl font-extralight text-primary lg:text-6xl">
-              Pesquisa Clínica Oncoclínicas
+              Relações com investidores
             </h1>
 
             <p className="mt-8 max-w-full text-base text-darkGray lg:max-w-unit-8xl lg:text-lg">
@@ -84,7 +83,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
               variant="solid"
               width="322px"
             >
-              Como funciona
+              Acesse
             </BaseButton>
           </div>
 
@@ -101,16 +100,14 @@ export default function ClinicalResearchScreen(): JSX.Element {
           <div className="mx-auto mt-20 hidden w-full grid-cols-1 gap-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <MedicalServiceCard
-                key={service.subtitle}
-                subtitle={service.subtitle}
+                key={service.id}
                 serviceTitle={service.serviceTitle}
                 serviceDescription={service.serviceDescription}
-                actionButtonText={service.actionButtonText}
               />
             ))}
           </div>
 
-          <div className="relative mt-20 w-full sm:hidden">
+          <div className="relative mb-20 mt-10 w-full sm:hidden">
             <Swiper
               modules={[Navigation]}
               spaceBetween={30}
@@ -132,9 +129,8 @@ export default function ClinicalResearchScreen(): JSX.Element {
               }}
             >
               {services.map((service) => (
-                <SwiperSlide key={service.subtitle}>
+                <SwiperSlide key={service.id}>
                   <MedicalServiceCard
-                    subtitle={service.subtitle}
                     serviceTitle={service.serviceTitle}
                     serviceDescription={service.serviceDescription}
                   />
@@ -168,14 +164,6 @@ export default function ClinicalResearchScreen(): JSX.Element {
               </button>
             </div>
           </div>
-        </div>
-
-        <div className="mt-20">
-          <InformationSlider
-            title="Pesquisa Clínica Oncoclínicas"
-            description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
-            image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
-          />
         </div>
       </BaseContainer>
 

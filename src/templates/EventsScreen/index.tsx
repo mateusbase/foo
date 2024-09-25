@@ -2,12 +2,12 @@ import MainOptionsActions from "@/components/MainOptionsActions";
 import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import InformationSlider from "@/components/InformationSlider";
-import { Select, SelectItem } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 import EventCard from "@/components/EventsCard";
 import BaseContainer from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
+import BaseSelect from "@/components/Select";
 
 export default function EventsScreen(): JSX.Element {
   const events = [
@@ -89,37 +89,31 @@ export default function EventsScreen(): JSX.Element {
 
         <div className="mt-28 flex flex-col gap-4 border-b border-gray-300 px-8 pb-4 md:flex-row md:items-center md:justify-between md:px-0">
           <div className="flex flex-col items-center gap-4 sm:flex-row">
-            <Select
+            <BaseSelect
               color="primary"
               variant="bordered"
               label="Tipo de evento"
               radius="full"
               size="sm"
               className="w-full sm:w-[280px]"
-            >
-              <SelectItem key={1} value="1">
-                SP
-              </SelectItem>
-              <SelectItem key={2} value="2">
-                RJ
-              </SelectItem>
-            </Select>
+              options={[
+                { key: 1, value: "1", label: "SP" },
+                { key: 2, value: "2", label: "RJ" },
+              ]}
+            />
 
-            <Select
+            <BaseSelect
               color="primary"
               variant="bordered"
               label="Tema"
               radius="full"
               size="sm"
               className="w-full sm:w-[280px]"
-            >
-              <SelectItem key={1} value="1">
-                São Paulo
-              </SelectItem>
-              <SelectItem key={2} value="2">
-                Rio de Janeiro
-              </SelectItem>
-            </Select>
+              options={[
+                { key: 1, value: "1", label: "São Paulo" },
+                { key: 2, value: "2", label: "Rio de Janeiro" },
+              ]}
+            />
 
             <BaseButton color="primary" className="w-full text-white sm:w-auto">
               Buscar

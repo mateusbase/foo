@@ -120,7 +120,7 @@ export default function ServiceScreen(): JSX.Element {
       />
 
       <BaseContainer className="flex min-h-screen w-full flex-col py-20">
-        <div className="flex justify-start">
+        <div className="hidden px-10 md:block md:px-0">
           <Breadcrumb />
         </div>
 
