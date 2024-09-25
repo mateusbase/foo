@@ -30,9 +30,7 @@ export default function HomeScreen(): JSX.Element {
         </div>
 
         <div className="absolute inset-0 bottom-[-56.5px] hidden items-end justify-center lg:flex">
-          {/* <BaseContainer> */}
           <MainOptionsActions options={options} />
-          {/* </BaseContainer> */}
         </div>
 
         <div className="relative inset-0 bottom-[-56.5px] flex items-end justify-center lg:absolute lg:hidden">
@@ -40,16 +38,12 @@ export default function HomeScreen(): JSX.Element {
         </div>
       </div>
 
-      <BaseContainer className="flex w-10/12 flex-col py-0 md:py-20">
+      <BaseContainer className="flex w-10/12 flex-col py-0 md:py-10">
         <ServicesSection />
 
-        {/* <div className="block md:hidden"> */}
         <ServicesSectionMobile />
-        {/* </div> */}
 
-        <div className="justifiy-center block md:hidden">
-          <NearbyUnitsMobile />
-        </div>
+        <NearbyUnitsMobile />
 
         <div className="hidden lg:block">
           <InformationSlider
@@ -62,7 +56,7 @@ export default function HomeScreen(): JSX.Element {
         </div>
       </BaseContainer>
 
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         <InformationSliderMobile image="https://i.postimg.cc/8PkhLkj0/Captura-de-tela-2024-09-25-104009.png" />
       </div>
 

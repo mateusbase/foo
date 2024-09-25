@@ -4,7 +4,7 @@ import NearbyUnitTextMobile from "./components/NearbyUnitTextMobile";
 
 export default function NearbyUnitsMobile(): JSX.Element {
   return (
-    <div className="w-full py-2">
+    <div className="justifiy-center block w-full py-2 lg:hidden">
       <NearbyUnitTextMobile />
 
       <ListNearbyUnitCardsMobile units={unitsData} />
