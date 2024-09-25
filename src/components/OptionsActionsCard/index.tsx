@@ -6,11 +6,11 @@ export default function OptionsActionsCard({
   rounded = "rounded-3xl",
 }: MainOptionsActionsProps): JSX.Element {
   return (
-    <div className="grid grid-cols-2 gap-3 p-4 text-white">
+    <div className="grid w-10/12 grid-cols-2 gap-3 p-4 text-white sm:grid-cols-4">
       {options.map((option) => (
         <div
           key={option.id}
-          className={`h-24 w-40 flex-wrap items-start justify-center rounded-lg p-4 ${option.id === 1 ? "bg-secondary" : "bg-primary"
+          className={`flex min-h-24 min-w-28 items-start justify-center rounded-lg p-4 ${option.id === 1 ? "bg-secondary" : "bg-primary"
             }`}
         >
           <button type="button" className="flex flex-col items-start">

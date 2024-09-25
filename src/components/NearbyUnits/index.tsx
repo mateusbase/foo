@@ -6,7 +6,7 @@ import BaseButton from "../Button";
 export default function NearbyUnits(): JSX.Element {
   return (
     <main className="mt-10 flex flex-col gap-14 p-8">
-      <section className="flex items-center justify-between">
+      <section className="flex items-center justify-between gap-5">
         <h1 className="text-4xl font-extralight text-primary">
           Encontre uma unidade Oncoclínicas próxima a você
         </h1>
@@ -39,7 +39,7 @@ export default function NearbyUnits(): JSX.Element {
           Buscar Unidades
         </BaseButton>
       </section>
-      <section className="mb-10 flex justify-between">
+      <section className="mx-auto mb-10 mt-20 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {unitsData.map((unit) => (
           <UnitsCard key={unit.id} {...unit} />
         ))}

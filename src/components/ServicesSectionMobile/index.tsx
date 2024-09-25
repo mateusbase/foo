@@ -1,7 +1,7 @@
 import ListServiceCardsMobile from "./components/ListServiceCardsMobile";
 import ServiceTextMobile from "./components/ServiceTextMobile";
 
-export default function ServicesSection(): JSX.Element {
+export default function ServicesSectionMobile(): JSX.Element {
   const services = [
     { id: 1, title: "Tratamentos", icon: "/favicon.ico" },
     { id: 2, title: "Diagnósticos", icon: "/favicon.ico" },
@@ -10,7 +10,7 @@ export default function ServicesSection(): JSX.Element {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center py-2">
+    <section className="flex flex-col items-center justify-center lg:hidden">
       <ServiceTextMobile />
 
       <ListServiceCardsMobile services={services} />

@@ -26,8 +26,8 @@ export default function ListServiceCardsMobile({
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className="">
-      <div className="relative max-w-[314px]">
+    <div className="w-full justify-center border-2">
+      <div className="relative w-full max-w-[314px]">
         <Swiper
           modules={[Navigation]}
           slidesPerView={3}
