@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Layout from "@/components/layout";
-import OcJournalScreen from "@/templates/OcJournalScreen";
+import RelationshipWithInvestorScreen from "@/templates/RelationshipWithInvestorScreen";
 import { NextPageWithLayout } from "../_app";
 
-const OcJournal: NextPageWithLayout = () => {
+const RelationshipWithInvestor: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -16,14 +16,14 @@ const OcJournal: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <OcJournalScreen />
+        <RelationshipWithInvestorScreen />
       </main>
     </>
   );
 };
 
-OcJournal.getLayout = function getLayout(page) {
+RelationshipWithInvestor.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
 
-export default OcJournal;
+export default RelationshipWithInvestor;

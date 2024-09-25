@@ -42,7 +42,7 @@ const PageHeader = ({
       </div>
 
       {showContactSection && contactLinks && (
-        <div className="absolute bottom-[-56.5px] right-0 mx-auto hidden h-[113px] w-full max-w-[1256px] items-center justify-between rounded-l-[20px] bg-primary pl-6 pr-10 text-white lg:flex">
+        <div className="absolute bottom-[-56.5px] right-0 mx-auto hidden h-[113px] w-auto items-center justify-between rounded-l-[20px] bg-primary pl-6 pr-10 text-white lg:flex">
           <div className="ml-[30px] flex items-center gap-8 text-[24px] font-medium">
             <a
               href={contactLinks.whatsappLink}

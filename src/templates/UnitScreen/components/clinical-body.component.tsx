@@ -64,7 +64,7 @@ const ClinicalBody = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="mt-10 flex justify-between">
+      <div className="mt-10 flex justify-between gap-5">
         {doctors.map((doctor) => (
           <CardDoctor key={doctor.id} doctor={doctor} />
         ))}
