@@ -8,6 +8,7 @@ import OptionsActionsCard from "@/components/OptionsActionsCard";
 import BaseContainer from "@/components/Container";
 import ServicesSectionMobile from "@/components/ServicesSectionMobile";
 import InformationSliderMobile from "@/components/InformationSliderMobile";
+import NearbyUnitsMobile from "@/components/NearbyUnitsMobile";
 import SearchInput from "./components/SearchInput";
 import SearchInputMobile from "./components/SearchInputMobile";
 
@@ -38,13 +39,16 @@ export default function HomeScreen(): JSX.Element {
           <OptionsActionsCard options={options} rounded="rounded-none" />
         </div>
       </section>
-
       <BaseContainer className="hidden md:block">
         <ServicesSection />
       </BaseContainer>
 
-      <div className="block md:hidden">
+      <div className="block px-20 md:hidden">
         <ServicesSectionMobile />
+      </div>
+
+      <div className="justifiy-center block px-20 md:hidden">
+        <NearbyUnitsMobile />
       </div>
 
       <BaseContainer className="hidden md:block">
@@ -57,10 +61,11 @@ export default function HomeScreen(): JSX.Element {
         <NearbyUnits />
       </BaseContainer>
 
-      <InformationSliderMobile image="https://i.postimg.cc/8PkhLkj0/Captura-de-tela-2024-09-25-104009.png" />
+      <div className="block md:hidden">
+        <InformationSliderMobile image="https://i.postimg.cc/8PkhLkj0/Captura-de-tela-2024-09-25-104009.png" />
+      </div>
 
       <FaqSection />
-
       <section>
         <MainOptionsActions options={options} rounded="rounded-none" />
       </section>

@@ -9,7 +9,7 @@ export default function ServiceCard({
 
   return (
     <Link href={`/servicos#${formattedTitle}`}>
-      <div className="flex h-24 w-24 cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-primary p-4 opacity-100 md:h-60 md:w-60">
+      <div className="flex h-24 w-24 cursor-pointer flex-col items-center justify-center rounded-2xl border-1 border-primary p-4 opacity-100 md:h-60 md:w-60">
         <img
           src={icon}
           alt={title}

@@ -9,29 +9,34 @@ import { NavigationOptions } from "swiper/types";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import UnitsCardMobile from "../UnitsCard";
 
-interface Service {
+interface Units {
   id: number;
-  title: string;
-  icon: string;
+  unitName: string;
+  address: string;
+  complement: string;
+  city: string;
+  hours: string;
+  specialties: string[];
 }
 
 interface ListServiceCardsMobileProps {
-  services: Service[];
+  units: Units[];
 }
-export default function ListServiceCardsMobile({
-  services,
+export default function ListNearbyUnitCardsMobile({
+  units,
 }: ListServiceCardsMobileProps): JSX.Element {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div className="">
-      <div className="relative max-w-[314px]">
+      <div className="relative max-w-[344px]">
         <Swiper
           modules={[Navigation]}
-          slidesPerView={3}
-          spaceBetween={10}
+          slidesPerView={1}
+          spaceBetween={300}
           loop
           navigation={{
             nextEl: nextRef.current,
@@ -58,9 +63,9 @@ export default function ListServiceCardsMobile({
             },
           }}
         >
-          {services.map((service) => (
-            <SwiperSlide key={service.id}>
-              <ServiceCard key={service.id} {...service} />
+          {units.map((unit) => (
+            <SwiperSlide key={unit.id}>
+              <UnitsCardMobile key={unit.id} {...unit} />
             </SwiperSlide>
           ))}
         </Swiper>
