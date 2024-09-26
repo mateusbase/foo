@@ -1,29 +1,15 @@
 import PostScreen from "@/templates/PostScreen";
-import Head from "next/head";
-import Layout from "@/components/layout";
-import { NextPageWithLayout } from "../_app";
+import Page from "@/components/Page";
 
-const Posts: NextPageWithLayout = () => {
+const Posts = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Encontre um Médico
-        </title>
-        <meta name="description" content="Lista de posts" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <PostScreen />
-      </main>
-    </>
+    <Page
+      title="Oncoclínicas - Referência em tratamento oncológico | Encontre um Médico"
+      description="Lista de posts"
+    >
+      <PostScreen />
+    </Page>
   );
-};
-
-Posts.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export default Posts;

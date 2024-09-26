@@ -1,29 +1,15 @@
-import Head from "next/head";
-import Layout from "@/components/layout";
 import RelationshipWithInvestorScreen from "@/templates/RelationshipWithInvestorScreen";
-import { NextPageWithLayout } from "../_app";
+import Page from "@/components/Page";
 
-const RelationshipWithInvestor: NextPageWithLayout = () => {
+const RelationshipWithInvestor = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Oc Journal
-        </title>
-        <meta name="description" content="Oc Journal" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <RelationshipWithInvestorScreen />
-      </main>
-    </>
+    <Page
+      title="Oncoclínicas - Referência em tratamento oncológico | Relação com Investidores"
+      description="Informações sobre a relação com investidores da Oncoclínicas"
+    >
+      <RelationshipWithInvestorScreen />
+    </Page>
   );
-};
-
-RelationshipWithInvestor.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export default RelationshipWithInvestor;

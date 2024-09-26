@@ -1,29 +1,15 @@
-import Head from "next/head";
-import Layout from "@/components/layout";
-import ClinicalReseatchScreen from "@/templates/ClinicalResearchScreen";
-import { NextPageWithLayout } from "../_app";
+import Page from "@/components/Page";
+import ClinicalResearchScreen from "@/templates/ClinicalResearchScreen";
 
-const Doctors: NextPageWithLayout = () => {
+const Doctors = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Pesquisa Clínica
-        </title>
-        <meta name="description" content="Médicos" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <ClinicalReseatchScreen />
-      </main>
-    </>
+    <Page
+      title="Oncoclínicas - Referência em tratamento oncológico | Pesquisa Clínica"
+      description="Pesquisa Clínica"
+    >
+      <ClinicalResearchScreen />
+    </Page>
   );
-};
-
-Doctors.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export default Doctors;

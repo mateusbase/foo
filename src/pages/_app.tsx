@@ -34,13 +34,13 @@ export default function App({
     <NextUIProvider>
       <CookiesProvider>
         <ApolloProvider client={apolloClient}>
-          {/* <AuthProvider> */}
           <ErrorBoundary>
-            <main className={lato.className}>
-              {getLayout(<Component {...pageProps} />)}
-            </main>
+            {getLayout(
+              <main className={lato.className}>
+                <Component {...pageProps} />
+              </main>,
+            )}
           </ErrorBoundary>
-          {/* </AuthProvider> */}
         </ApolloProvider>
       </CookiesProvider>
     </NextUIProvider>

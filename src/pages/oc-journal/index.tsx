@@ -1,29 +1,15 @@
-import Head from "next/head";
-import Layout from "@/components/layout";
+import Page from "@/components/Page";
 import OcJournalScreen from "@/templates/OcJournalScreen";
-import { NextPageWithLayout } from "../_app";
 
-const OcJournal: NextPageWithLayout = () => {
+const OcJournal = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Oc Journal
-        </title>
-        <meta name="description" content="Oc Journal" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <OcJournalScreen />
-      </main>
-    </>
+    <Page
+      title="Oncoclínicas - Referência em tratamento oncológico | Oc Journal"
+      description="Oc Journal"
+    >
+      <OcJournalScreen />
+    </Page>
   );
-};
-
-OcJournal.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export default OcJournal;

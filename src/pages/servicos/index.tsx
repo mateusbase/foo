@@ -1,29 +1,15 @@
-import Head from "next/head";
-import Layout from "@/components/layout";
-import ServiceScreen from "@/templates/ServicesScreen";
-import { NextPageWithLayout } from "../_app";
+import ServicesScreen from "@/templates/ServicesScreen";
+import Page from "@/components/Page";
 
-const Service: NextPageWithLayout = () => {
+const Service = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Encontre um Médico
-        </title>
-        <meta name="description" content="Serviços" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <ServiceScreen />
-      </main>
-    </>
+    <Page
+      title="Oncoclínicas - Referência em tratamento oncológico | Serviços"
+      description="Serviços"
+    >
+      <ServicesScreen />
+    </Page>
   );
-};
-
-Service.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export default Service;

@@ -1,29 +1,15 @@
-import Head from "next/head";
-import Layout from "@/components/layout";
+import Page from "@/components/Page";
 import FindAUnitScreen from "@/templates/FindAUnitScreen";
-import { NextPageWithLayout } from "../_app";
 
-const FindAUnit: NextPageWithLayout = () => {
+const FindAUnit = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico
-        </title>
-        <meta name="description" content="Oncoclínicas " />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <FindAUnitScreen />
-      </main>
-    </>
+    <Page
+      title="Oncoclínicas - Referência em tratamento oncológico"
+      description="Oncoclínicas - Encontre uma Unidade"
+    >
+      <FindAUnitScreen />
+    </Page>
   );
-};
-
-FindAUnit.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export default FindAUnit;

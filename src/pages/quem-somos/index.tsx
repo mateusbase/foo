@@ -1,29 +1,15 @@
-import Head from "next/head";
-import Layout from "@/components/layout";
-import WhoWeArecreen from "@/templates/WhoWeAreScreen";
-import { NextPageWithLayout } from "../_app";
+import WhoWeAreScreen from "@/templates/WhoWeAreScreen";
+import Page from "@/components/Page";
 
-const WhoWeAre: NextPageWithLayout = () => {
+const WhoWeAre = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Encontre um Médico
-        </title>
-        <meta name="description" content="Serviço" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <WhoWeArecreen />
-      </main>
-    </>
+    <Page
+      title="Oncoclínicas - Referência em tratamento oncológico | Quem Somos"
+      description="Informações sobre quem somos na Oncoclínicas"
+    >
+      <WhoWeAreScreen />
+    </Page>
   );
-};
-
-WhoWeAre.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export default WhoWeAre;

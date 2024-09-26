@@ -1,29 +1,15 @@
-import Head from "next/head";
-import Layout from "@/components/layout";
+import Page from "@/components/Page";
 import FindADoctorScreen from "@/templates/FindADoctorScreen";
-import { NextPageWithLayout } from "../_app";
 
-const FindADoctor: NextPageWithLayout = () => {
+const FindADoctor = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Encontre um Médico
-        </title>
-        <meta name="description" content="Oncoclínicas - Encontre um Médico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <FindADoctorScreen />
-      </main>
-    </>
+    <Page
+      title="Encontre um Médico"
+      description="Oncoclínicas - Encontre um Médico"
+    >
+      <FindADoctorScreen />
+    </Page>
   );
-};
-
-FindADoctor.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export default FindADoctor;

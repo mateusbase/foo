@@ -1,29 +1,15 @@
-import Head from "next/head";
-import Layout from "@/components/layout";
 import UnitScreen from "@/templates/UnitScreen";
-import { NextPageWithLayout } from "../_app";
+import Page from "@/components/Page";
 
-const Unit: NextPageWithLayout = () => {
+const Unit = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico - Encontre um Médico
-        </title>
-        <meta name="description" content="Unidade" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <UnitScreen />
-      </main>
-    </>
+    <Page
+      title="Oncoclínicas - Referência em tratamento oncológico | Unidade"
+      description="Unidade"
+    >
+      <UnitScreen />
+    </Page>
   );
-};
-
-Unit.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export default Unit;
