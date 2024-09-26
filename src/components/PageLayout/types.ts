@@ -8,6 +8,7 @@ export interface PageLayoutProps {
   subtitle?: string;
   showContactSection?: boolean;
   mainOptions?: boolean;
+  showIcons?: boolean;
   contactLinks?: {
     whatsappText: string;
     whatsappLink: string;

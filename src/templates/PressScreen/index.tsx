@@ -48,7 +48,6 @@ export default function PresScreen(): JSX.Element {
 
           <div className="mt-10 space-y-6">
             <BaseInput
-              label="Nome"
               placeholder="Seu nome"
               size="lg"
               radius="full"
@@ -57,7 +56,6 @@ export default function PresScreen(): JSX.Element {
             />
 
             <BaseInput
-              label="Email"
               placeholder="Seu email"
               size="lg"
               radius="full"

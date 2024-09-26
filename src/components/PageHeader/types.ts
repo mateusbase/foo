@@ -4,6 +4,7 @@ export type PageHeaderProps = {
   subtitle?: string;
   buttonText?: string;
   showContactSection?: boolean;
+  showIcons?: boolean;
   contactLinks?: {
     whatsappText: string;
     whatsappLink: string;

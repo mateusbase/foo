@@ -9,6 +9,7 @@ const PageHeader = ({
   buttonText,
   showContactSection,
   contactLinks,
+  showIcons = true,
 }: PageHeaderProps): JSX.Element => {
   return (
     <div className="relative h-[243px] w-full bg-gradient-to-r from-primary-foreground to-secondary-foreground sm:h-[343px]">
@@ -48,21 +49,23 @@ const PageHeader = ({
               href={contactLinks.whatsappLink}
               className="flex items-center gap-2 hover:underline"
             >
-              <MessageSquare size={24} /> {contactLinks.whatsappText}
+              {showIcons && <MessageSquare size={24} />}{" "}
+              {contactLinks.whatsappText}
             </a>
             <span>|</span>
             <a
               href={contactLinks.phoneLink}
               className="flex items-center gap-2 hover:underline"
             >
-              <Phone size={24} /> {contactLinks.phoneText}
+              {showIcons && <Phone size={24} />} {contactLinks.phoneText}
             </a>
             <span>|</span>
             <a
               href={contactLinks.mapLink}
               className="flex items-center gap-2 hover:underline"
             >
-              <MapPin size={24} /> {contactLinks.mapText}
+              {showIcons && <MapPin size={24} />}
+              {contactLinks.mapText}
             </a>
           </div>
         </div>

@@ -97,16 +97,22 @@ export default function ServiceScreen(): JSX.Element {
     showContactSection: true,
     contactLinks: {
       whatsappLink: "https://wa.me/your-whatsapp-number",
-      whatsappText: "WhatsApp",
+      whatsappText: "Serviço",
       phoneLink: "tel:+123456789",
-      phoneText: "Ligue Agora",
+      phoneText: "Diagnósticos",
       mapLink: "https://maps.google.com",
-      mapText: "Localização",
+      mapText: "Tratamentos",
     },
   };
 
   return (
-    <PageLayout title={headerProps.title} subtitle={headerProps.address}>
+    <PageLayout
+      title={headerProps.title}
+      subtitle={headerProps.address}
+      showContactSection
+      contactLinks={headerProps.contactLinks}
+      showIcons={false}
+    >
       <ServiceSection
         id="servicos"
         title="Serviços Oncoclínicas"

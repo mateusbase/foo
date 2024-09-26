@@ -1,14 +1,34 @@
 import { Activity, Heart, User } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
+import { useRouter } from "next/router";
 import ClinicalBody from "./components/ClinicalBody";
 import MapCard from "./components/MapCard";
 import InsuranceGrid from "./components/InsuranceGrid";
 
 export default function UnitScreen(): JSX.Element {
+  const router = useRouter();
+  const { name, address, complement, city, specialties } = router.query;
+
+  const decodedUnitName = name
+    ? decodeURIComponent(name as string)
+    : "Oncoclínicas";
+  const decodedAddress = address
+    ? decodeURIComponent(address as string)
+    : "Endereço não disponível";
+  const decodedComplement = complement
+    ? decodeURIComponent(complement as string)
+    : "";
+  const decodedCity = city
+    ? decodeURIComponent(city as string)
+    : "Cidade não disponível";
+  const decodedSpecialties = specialties
+    ? (specialties as string).split(",")
+    : [];
+
   return (
     <PageLayout
-      title="Oncoclínicas Faria Lima"
-      subtitle="Avenida Brigadeiro Faria Lima, 4.300 - 6º e 10º Andar - Vila Olímpia São Paulo/SP"
+      title={`${decodedUnitName}`}
+      subtitle={`${decodedAddress}, ${decodedComplement}, ${decodedCity}`}
       showContactSection
       contactLinks={{
         whatsappText: "Fale por WhatsApp",
@@ -22,47 +42,20 @@ export default function UnitScreen(): JSX.Element {
       <div className="mt-10 flex flex-col gap-10 lg:flex-row">
         <div className="mb-10 flex-1">
           <div>
-            <h2 className="text-2xl font-extralight text-primary md:text-3xl md:font-black md:leading-[50px]">
-              Especialidades e Serviços Oncoclínicas Faria Lima
+            <h2 className="text-2xl font-extralight text-primary md:text-3xl md:leading-[50px]">
+              Especialidades e Serviços {decodedUnitName}
             </h2>
 
             <div className="mt-10 grid grid-cols-2 gap-10 sm:grid-cols-2">
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Heart size={40} className="text-primary sm:size-[60px]" />{" "}
-                Cardiologia Oncológica
-              </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <User size={40} className="text-primary sm:size-[60px]" />{" "}
-                Dermatologia
-              </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Activity size={40} className="text-primary sm:size-[60px]" />{" "}
-                Genética Médica
-              </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Heart size={40} className="text-primary sm:size-[60px]" />{" "}
-                Hematologia
-              </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <User size={40} className="text-primary sm:size-[60px]" />{" "}
-                Medicina Paliativa
-              </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Activity size={40} className="text-primary sm:size-[60px]" />{" "}
-                Oncologia Clínica
-              </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Activity size={40} className="text-primary sm:size-[60px]" />{" "}
-                Crioterapia
-              </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Heart size={40} className="text-primary sm:size-[60px]" />{" "}
-                Radioterapia
-              </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Activity size={40} className="text-primary sm:size-[60px]" />{" "}
-                Oncogenética
-              </div>
+              {decodedSpecialties.map((specialty) => (
+                <div
+                  key={specialty}
+                  className="flex items-center gap-2 text-base text-primary sm:text-[20px]"
+                >
+                  <Heart size={40} className="text-primary sm:size-[60px]" />{" "}
+                  {specialty}
+                </div>
+              ))}
             </div>
 
             <div className="mt-10 flex items-center justify-center md:hidden">
@@ -71,7 +64,7 @@ export default function UnitScreen(): JSX.Element {
           </div>
 
           <div>
-            <h2 className="mt-20 text-2xl font-extralight text-primary md:text-3xl md:font-black md:leading-[50px]">
+            <h2 className="mt-20 text-2xl font-extralight text-primary md:text-3xl md:leading-[50px]">
               Facilidades e Comodidades
             </h2>
 
@@ -95,8 +88,8 @@ export default function UnitScreen(): JSX.Element {
           <ClinicalBody />
 
           <div>
-            <h2 className="mt-20 text-2xl font-extralight text-primary md:text-3xl md:font-black md:leading-[50px]">
-              Sobre a unidade Faria Lima
+            <h2 className="mt-20 text-2xl font-extralight text-primary md:text-3xl md:leading-[50px]">
+              Sobre a unidade {decodedUnitName}
             </h2>
 
             <div className="mt-10 space-y-4">

@@ -61,7 +61,7 @@ export default function ServiceSection({
         {filteredHealthServices.map((service) => (
           <Link
             key={service.id}
-            href={`/servico/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
+            href={`/servicos/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
             passHref
           >
             <HealthServiceCard
@@ -145,7 +145,7 @@ export default function ServiceSection({
         {medicalServices.map((service) => (
           <Link
             key={service.id}
-            href={`/servico/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
+            href={`/servicos/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
             passHref
           >
             <MedicalServiceCard

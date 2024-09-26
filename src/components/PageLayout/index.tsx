@@ -15,6 +15,7 @@ export default function PageLayout({
   showContactSection = false,
   contactLinks,
   mainOptions = true,
+  showIcons = true,
 }: PageLayoutProps): JSX.Element {
   const router = useRouter();
   const pathSegments = router.asPath.split("/").filter(Boolean);
@@ -41,6 +42,7 @@ export default function PageLayout({
           subtitle={subtitle}
           showContactSection={showContactSection}
           contactLinks={contactLinks}
+          showIcons={showIcons}
         />
       )}
 

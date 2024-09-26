@@ -9,7 +9,7 @@ export function CardDoctor({
 
   const handleDoctorClick = (): void => {
     router.push({
-      pathname: `/medico/${doctor.name.replace(/\s+/g, "-").toLowerCase()}`,
+      pathname: `/encontre-um-medico/${doctor.name.replace(/\s+/g, "-").toLowerCase()}`,
       query: {
         name: doctor.name,
         crm: doctor.crm,

@@ -11,12 +11,22 @@ export default function UnitsCard({
   complement,
   city,
   hours,
-  specialties,
+  specialties = [],
 }: UnitsCardProps): JSX.Element {
   const router = useRouter();
 
-  const handleNavigation = (): void => {
-    router.push(`/unidade`);
+  const handleUnitClick = (): void => {
+    router.push({
+      pathname: `/encontre-uma-unidade/${unitName.replace(/\s+/g, "-").toLowerCase()}`,
+      query: {
+        name: unitName,
+        address,
+        complement,
+        city,
+        hours,
+        specialties: specialties.join(","),
+      },
+    });
   };
 
   return (
@@ -59,7 +69,7 @@ export default function UnitsCard({
           color="primary"
           variant="bordered"
           startContent={<TbCodePlus size={20} />}
-          onClick={handleNavigation}
+          onClick={handleUnitClick}
         >
           Informações
         </BaseButton>
