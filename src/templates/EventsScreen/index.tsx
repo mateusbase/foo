@@ -117,7 +117,7 @@ export default function EventsScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-24 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-10 lg:grid-cols-3">
         {events.map((event) => (
           <EventCard key={event.title} event={event} />
         ))}

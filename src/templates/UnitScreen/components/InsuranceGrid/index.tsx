@@ -21,8 +21,8 @@ const InsuranceGrid = (): JSX.Element => {
 
   return (
     <div>
-      <div className="mt-32 flex items-center justify-between pt-2">
-        <h2 className="text-[42px] font-bold leading-[50px] text-primary">
+      <div className="mt-20 flex flex-col justify-between gap-6 md:mt-32 md:flex-row">
+        <h2 className="text-2xl font-extralight text-primary md:text-3xl md:font-bold md:leading-[50px]">
           Convênios atendidos nesta unidade
         </h2>
 
@@ -32,11 +32,11 @@ const InsuranceGrid = (): JSX.Element => {
           radius="full"
           variant="bordered"
           endContent={<Search className="text-2xl text-default-400" />}
-          className="h-[50px] w-[280px]"
+          className="h-[50px] w-full md:w-[350px]"
         />
       </div>
 
-      <div className="mt-20 grid grid-cols-1 gap-x-20 gap-y-4 text-[20px] font-bold text-darkGray sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-4 text-base font-bold text-darkGray sm:grid-cols-2 lg:grid-cols-3">
         {insurances.map((insurance) => (
           <div key={insurance.id} className="flex items-center">
             {insurance.name}

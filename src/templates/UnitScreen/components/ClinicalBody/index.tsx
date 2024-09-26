@@ -38,19 +38,19 @@ const ClinicalBody = (): JSX.Element => {
 
   return (
     <div>
-      <div className="mt-32 flex items-center justify-between">
-        <h2 className="text-[42px] font-bold leading-[50px] text-primary">
+      <div className="mt-20 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between md:mt-32">
+        <h2 className="text-2xl font-extralight text-primary md:text-3xl md:font-bold md:leading-[50px]">
           Corpo Clínico
         </h2>
 
-        <div className="flex gap-5">
+        <div className="flex flex-col gap-5 sm:flex-row">
           <Input
             placeholder="Especialidade"
             size="lg"
             radius="full"
             variant="bordered"
             endContent={<Search className="text-2xl text-default-400" />}
-            className="h-[50px] w-[280px]"
+            className="w-full sm:w-[280px]"
           />
 
           <Input
@@ -59,12 +59,12 @@ const ClinicalBody = (): JSX.Element => {
             radius="full"
             variant="bordered"
             endContent={<Search className="text-2xl text-default-400" />}
-            className="h-[50px] w-[280px]"
+            className="w-full sm:w-[280px]"
           />
         </div>
       </div>
 
-      <div className="mt-10 flex justify-between gap-5">
+      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {doctors.map((doctor) => (
           <CardDoctor key={doctor.id} doctor={doctor} />
         ))}
@@ -75,7 +75,7 @@ const ClinicalBody = (): JSX.Element => {
         variant="bordered"
         radius="sm"
         startContent={<Plus />}
-        className="mt-8 h-[50px] w-[176px] pl-3 text-left text-[18px] font-black leading-[22px] text-primary"
+        className="mt-8 h-[50px] w-full pl-3 text-left text-[18px] font-black leading-[22px] text-primary sm:w-[176px]"
       >
         Ver todos
       </Button>

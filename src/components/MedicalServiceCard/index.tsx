@@ -17,8 +17,7 @@ export default function MedicalServiceCard({
 
   return (
     <div
-      className={`flex w-auto flex-col overflow-hidden rounded-br-[100px] border bg-white ${hasActionButton ? "h-[891px]" : "h-[700px]"
-        }`}
+      className="flex w-auto flex-col overflow-hidden rounded-br-[100px] border bg-white"
     >
       <div
         className="h-[376px] bg-cover bg-no-repeat"
@@ -29,10 +28,7 @@ export default function MedicalServiceCard({
         }}
       />
       <div
-        className={`flex flex-col justify-between rounded-br-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground py-8 px-16 ${hasActionButton
-          ? "h-[515px]"
-          : "h-[400px]"
-          }`}
+        className="flex flex-col gap-12 justify-between rounded-br-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground py-8 px-14"
       >
         {hasSubtitle && (
           <p className="mt-4 text-[24px] leading-[30px] text-white">
@@ -42,7 +38,7 @@ export default function MedicalServiceCard({
 
         {hasActionButton && (
           <Button
-            className="flex h-[71px] w-[371px] items-center justify-start rounded-[12px] border-2 border-white bg-transparent pl-4 text-left text-[24px] font-black leading-[60px] text-white"
+            className="flex py-7 items-center justify-start rounded-[12px] border-2 border-white bg-transparent pl-4 text-left text-xl font-black leading-[60px] text-white"
             startContent={serviceIcon}
           >
             {actionButtonText}
@@ -59,7 +55,7 @@ export default function MedicalServiceCard({
           </p>
         </div>
 
-        <div className="flex w-full items-start justify-start rounded-full">
+        <div className="flex w-full items-start justify-start rounded-full mt-20">
           <IoIosArrowDropright size={29} color="white" />
         </div>
       </div>

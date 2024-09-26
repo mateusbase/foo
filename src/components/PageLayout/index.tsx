@@ -13,6 +13,8 @@ export default function PageLayout({
   title,
   subtitle,
   showContactSection = false,
+  contactLinks,
+  mainOptions = true,
 }: PageLayoutProps): JSX.Element {
   const router = useRouter();
   const pathSegments = router.asPath.split("/").filter(Boolean);
@@ -36,8 +38,9 @@ export default function PageLayout({
       {showHeader && (
         <PageHeader
           title={pageTitle}
-          subtitle={subtitle || "Oncoclínicas"}
+          subtitle={subtitle}
           showContactSection={showContactSection}
+          contactLinks={contactLinks}
         />
       )}
 
@@ -50,7 +53,9 @@ export default function PageLayout({
         {children}
       </BaseContainer>
 
-      <MainOptionsActions options={options} rounded="rounded-none" />
+      {mainOptions && (
+        <MainOptionsActions options={options} rounded="rounded-none" />
+      )}
     </main>
   );
 }

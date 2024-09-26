@@ -2,7 +2,7 @@ import { Clock, MapPin } from "lucide-react";
 
 const MapCard = (): JSX.Element => {
   return (
-    <div className="ml-8 flex h-[970px] w-[506px] flex-col rounded-[20px] bg-gray-100 p-10">
+    <div className="flex h-[970px] w-[506px] flex-col rounded-[20px] bg-gray-100 p-10">
       <div className="mb-6">
         <div className="mb-2">
           <div className="flex items-center gap-2">

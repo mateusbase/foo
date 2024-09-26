@@ -1,42 +1,40 @@
 import MainOptionsActions from "@/components/MainOptionsActions";
-import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import { options } from "@/utils/objectUtils";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import { Textarea } from "@nextui-org/react";
 import BaseButton from "@/components/Button";
-import BaseContainer from "@/components/Container";
-import PageHeader from "@/components/PageHeader";
 import BaseInput from "@/components/Input";
+import PageLayout from "@/components/PageLayout";
+import Link from "next/link";
 
 export default function PresScreen(): JSX.Element {
   return (
     <main>
-      <PageHeader
-        title="Imprensa"
+      <PageLayout
         subtitle="O Grupo Oncoclínicas preza pela transparência e a informação precisa. Saiba como entrar em contato com a nossa assessoria de imprensa."
-        showContactSection={false}
-      />
+        mainOptions={false}
+      >
+        <div className="mb-10 mt-20 flex flex-col gap-5 md:flex-row">
+          <Link href="/clipping" passHref>
+            <MedicalServiceCard
+              subtitle="Saiba mais"
+              serviceTitle="Clipping"
+              serviceDescription="Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet"
+            />
+          </Link>
 
-      <BaseContainer className="flex w-full flex-col py-20">
-        <Breadcrumb />
-
-        <div className="mt-20 flex gap-5">
-          <MedicalServiceCard
-            subtitle="Saiba mais"
-            serviceTitle="OC na mídia"
-            serviceDescription="Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet"
-          />
-
-          <MedicalServiceCard
-            subtitle="Saiba mais"
-            serviceTitle="Releases"
-            serviceDescription="Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet"
-          />
+          <Link href="/releases" passHref>
+            <MedicalServiceCard
+              subtitle="Leia"
+              serviceTitle="Releases"
+              serviceDescription="Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet"
+            />
+          </Link>
         </div>
-      </BaseContainer>
+      </PageLayout>
 
       <div className="w-full bg-gray-200 py-20">
-        <div className="mx-auto w-full max-w-screen-lg text-center">
+        <div className="mx-auto w-full max-w-screen-lg px-4 text-center">
           <h2 className="text-4xl font-bold text-primary">
             Assessoria de imprensa
           </h2>
@@ -77,10 +75,9 @@ export default function PresScreen(): JSX.Element {
             />
 
             <BaseButton
-              className="font-bold text-white"
+              className="w-[322px] font-bold text-white"
               color="primary"
               variant="solid"
-              width="322px"
             >
               Enviar
             </BaseButton>

@@ -7,4 +7,13 @@ export interface PageLayoutProps {
   title?: string;
   subtitle?: string;
   showContactSection?: boolean;
+  mainOptions?: boolean;
+  contactLinks?: {
+    whatsappText: string;
+    whatsappLink: string;
+    phoneText: string;
+    phoneLink: string;
+    mapText: string;
+    mapLink: string;
+  };
 }

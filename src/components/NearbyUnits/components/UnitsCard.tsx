@@ -2,10 +2,10 @@ import { HiOutlineMapPin } from "react-icons/hi2";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";
+import { useRouter } from "next/router";
 import { UnitsCardProps } from "./types";
 
 export default function UnitsCard({
-  id,
   unitName,
   address,
   complement,
@@ -13,6 +13,12 @@ export default function UnitsCard({
   hours,
   specialties,
 }: UnitsCardProps): JSX.Element {
+  const router = useRouter();
+
+  const handleNavigation = (): void => {
+    router.push(`/unidade`);
+  };
+
   return (
     <main className="flex flex-col justify-between gap-8">
       <section>
@@ -35,7 +41,7 @@ export default function UnitsCard({
 
         <section className="mt-8 text-primary">
           {specialties.map((specialty) => (
-            <div key={id} className="flex items-center">
+            <div key={specialty} className="flex items-center">
               <RiArrowRightSLine />
               <p>{specialty}</p>
             </div>
@@ -53,6 +59,7 @@ export default function UnitsCard({
           color="primary"
           variant="bordered"
           startContent={<TbCodePlus size={20} />}
+          onClick={handleNavigation}
         >
           Informações
         </BaseButton>

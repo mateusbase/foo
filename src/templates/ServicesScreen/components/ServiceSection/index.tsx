@@ -149,9 +149,9 @@ export default function ServiceSection({
             passHref
           >
             <MedicalServiceCard
+              subtitle="Exclusividade Oncoclínicas"
               serviceTitle={service.serviceTitle}
               serviceDescription={service.serviceDescription}
-              actionButtonText={service.actionButtonText}
             />
           </Link>
         ))}
