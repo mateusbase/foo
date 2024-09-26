@@ -68,7 +68,7 @@ export default function Footer(): JSX.Element {
               </h4>
               <ul>
                 <li>
-                  <Link href="quem-somos" className="hover:text-white">
+                  <Link href="/quem-somos" className="hover:text-white">
                     Quem somos
                   </Link>
                 </li>
@@ -79,7 +79,7 @@ export default function Footer(): JSX.Element {
                 </li>
                 <li>
                   <Link
-                    href="relacao-com-investidor"
+                    href="/relacao-com-investidor"
                     className="hover:text-white"
                   >
                     Investidores
@@ -91,7 +91,7 @@ export default function Footer(): JSX.Element {
                   </Link>
                 </li>
                 <li>
-                  <Link href="imprensa" className="hover:text-white">
+                  <Link href="/imprensa" className="hover:text-white">
                     Imprensa
                   </Link>
                 </li>
@@ -106,13 +106,13 @@ export default function Footer(): JSX.Element {
               <h4 className="mb-4 font-bold text-white">Pacientes</h4>
               <ul>
                 <li>
-                  <Link href="servicos" className="hover:text-white">
+                  <Link href="/servicos" className="hover:text-white">
                     Serviços
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="servicos#tratamentos"
+                    href="/servicos#tratamentos"
                     className="hover:text-white"
                   >
                     Tratamentos
@@ -120,7 +120,7 @@ export default function Footer(): JSX.Element {
                 </li>
                 <li>
                   <Link
-                    href="servicos#diagnósticos"
+                    href="/servicos#diagnósticos"
                     className="hover:text-white"
                   >
                     Diagnóstico
@@ -128,7 +128,7 @@ export default function Footer(): JSX.Element {
                 </li>
                 <li>
                   <Link
-                    href="para-sua-saude/tudo-sobre-o-cancer"
+                    href="/para-sua-saude/tudo-sobre-o-cancer"
                     className="hover:text-white"
                   >
                     Tudo sobre o câncer
@@ -171,12 +171,12 @@ export default function Footer(): JSX.Element {
               <h4 className="mb-4 font-bold text-white">Médicos</h4>
               <ul>
                 <li>
-                  <Link href="pesquisa-clinica" className="hover:text-white">
+                  <Link href="/pesquisa-clinica" className="hover:text-white">
                     Pesquisa clínica
                   </Link>
                 </li>
                 <li>
-                  <Link href="eventos" className="hover:text-white">
+                  <Link href="/eventos" className="hover:text-white">
                     Eventos
                   </Link>
                 </li>
@@ -186,7 +186,7 @@ export default function Footer(): JSX.Element {
                   </Link>
                 </li>
                 <li>
-                  <Link href="oc-journal" className="hover:text-white">
+                  <Link href="/oc-journal" className="hover:text-white">
                     OC Journal
                   </Link>
                 </li>
