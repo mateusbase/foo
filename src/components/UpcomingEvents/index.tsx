@@ -14,8 +14,8 @@ export default function UpcomingEventsSection(): JSX.Element {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="container flex flex-col items-start justify-center gap-8 px-4 py-16 md:flex-row">
-      <div className="max-w-[536px]">
+    <div className="flex flex-col items-start justify-center gap-8 px-4 py-16 lg:flex-row">
+      <div className="max-w-[1024px]">
         <div className="text-left">
           <h2 className="text-5xl font-thin text-primary">
             Olá dr(a). Conheça a agenda dos próximos eventos Oncoclínicas
@@ -34,7 +34,7 @@ export default function UpcomingEventsSection(): JSX.Element {
         <Swiper
           modules={[Navigation]}
           spaceBetween={30}
-          slidesPerView={2}
+          slidesPerView={1}
           loop
           navigation={{
             nextEl: nextRef.current,
@@ -42,8 +42,8 @@ export default function UpcomingEventsSection(): JSX.Element {
           }}
           onInit={(swiper) => {
             if (swiper.params.navigation) {
-              // eslint-disable-next-line prettier/prettier
-              const navigationParams = swiper.params.navigation as NavigationOptions;
+              const navigationParams = swiper.params
+                .navigation as NavigationOptions;
               navigationParams.prevEl = prevRef.current;
               navigationParams.nextEl = nextRef.current;
               swiper.navigation.init();
@@ -54,6 +54,10 @@ export default function UpcomingEventsSection(): JSX.Element {
             640: {
               slidesPerView: 1,
               spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
             },
             1024: {
               slidesPerView: 2,
@@ -68,7 +72,7 @@ export default function UpcomingEventsSection(): JSX.Element {
           ))}
         </Swiper>
 
-        <div className="mt-4 flex justify-end space-x-4">
+        <div className="mt-4 flex justify-center space-x-4 lg:justify-end">
           <button
             ref={prevRef}
             type="button"
@@ -94,6 +98,6 @@ export default function UpcomingEventsSection(): JSX.Element {
           </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
