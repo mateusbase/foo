@@ -9,8 +9,9 @@ import {
   Link,
   Image,
 } from "@nextui-org/react";
-import { Calendar, Stethoscope, LogIn } from "lucide-react";
+import { Calendar, Stethoscope, LogIn, X } from "lucide-react";
 import { useRouter } from "next/router";
+import { IoMenu } from "react-icons/io5";
 import NavLink from "../NavLink";
 import { NavBarProps } from "./types";
 
@@ -44,8 +45,16 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           <NavbarContent>
             <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              className="lg:hidden"
+              className="hidden sm:block lg:hidden"
+              icon={
+                isMenuOpen ? (
+                  <X className="h-full w-full min-w-10 text-primary" />
+                ) : (
+                  <IoMenu className="h-full w-full min-w-10 text-primary" />
+                )
+              }
             />
+
             <NavbarBrand className="cursor-pointer" onClick={handleLogoClick}>
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
@@ -53,6 +62,18 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                 className="w-[250px] max-w-none lg:w-[300px]"
               />
             </NavbarBrand>
+
+            <NavbarMenuToggle
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              className="sm:hidden"
+              icon={
+                isMenuOpen ? (
+                  <X className="h-full w-full min-w-10 text-primary" />
+                ) : (
+                  <IoMenu className="h-full w-full min-w-10 text-primary" />
+                )
+              }
+            />
           </NavbarContent>
 
           <NavbarContent
@@ -98,17 +119,15 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarContent>
 
           {isMenuOpen && (
-            <div className="sm:hidden">
-              <NavbarMenu>
-                {routes.map((route) => (
-                  <NavbarMenuItem key={route.label}>
-                    <Link href={route.pathname} className="block py-2">
-                      {route.label}
-                    </Link>
-                  </NavbarMenuItem>
-                ))}
-              </NavbarMenu>
-            </div>
+            <NavbarMenu>
+              {routes.map((route) => (
+                <NavbarMenuItem key={route.label}>
+                  <Link href={route.pathname} className="block py-2">
+                    {route.label}
+                  </Link>
+                </NavbarMenuItem>
+              ))}
+            </NavbarMenu>
           )}
         </NextNavBar>
       </div>
