@@ -1,8 +1,4 @@
-import MainOptionsActions from "@/components/MainOptionsActions";
-import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
-import { options } from "@/utils/objectUtils";
-import BaseContainer from "@/components/Container";
-import PageHeader from "@/components/PageHeader";
+import PageLayout from "@/components/PageLayout";
 import ServiceSection from "./components/ServiceSection";
 
 export default function ServiceScreen(): JSX.Element {
@@ -110,44 +106,30 @@ export default function ServiceScreen(): JSX.Element {
   };
 
   return (
-    <main>
-      <div className="block bg-gray-200 p-6 md:hidden">
-        <Breadcrumb />
-      </div>
+    <PageLayout title={headerProps.title} subtitle={headerProps.address}>
+      <ServiceSection
+        id="servicos"
+        title="Serviços Oncoclínicas"
+        description="Comodidade e priorização da vida em toda a jornada do tratamento do câncer. Conheça nossos serviços."
+        healthServices={healthServices1}
+        medicalServices={medicalServices1}
+      />
 
-      <PageHeader title={headerProps.title} subtitle={headerProps.address} />
+      <ServiceSection
+        id="diagnósticos"
+        title="OC Diagnósticos"
+        description="Corpo clínico altamente especializado e os mais variados tipos de exames. Conheça a OC Diagnóstico."
+        healthServices={healthServices2}
+        medicalServices={medicalServices2}
+      />
 
-      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
-        <div className="hidden px-10 md:block md:px-0">
-          <Breadcrumb />
-        </div>
-
-        <ServiceSection
-          id="servicos"
-          title="Serviços Oncoclínicas"
-          description="Comodidade e priorização da vida em toda a jornada do tratamento do câncer. Conheça nossos serviços."
-          healthServices={healthServices1}
-          medicalServices={medicalServices1}
-        />
-
-        <ServiceSection
-          id="diagnósticos"
-          title="OC Diagnósticos"
-          description="Corpo clínico altamente especializado e os mais variados tipos de exames. Conheça a OC Diagnóstico."
-          healthServices={healthServices2}
-          medicalServices={medicalServices2}
-        />
-
-        <ServiceSection
-          id="tratamentos"
-          title="Tratamentos Oncoclínicas"
-          description="As terapias mais eficazes para o tratamento do câncer. Conheça nossos métodos."
-          healthServices={healthServices1}
-          medicalServices={medicalServices1}
-        />
-      </BaseContainer>
-
-      <MainOptionsActions options={options} rounded="rounded-none" />
-    </main>
+      <ServiceSection
+        id="tratamentos"
+        title="Tratamentos Oncoclínicas"
+        description="As terapias mais eficazes para o tratamento do câncer. Conheça nossos métodos."
+        healthServices={healthServices1}
+        medicalServices={medicalServices1}
+      />
+    </PageLayout>
   );
 }

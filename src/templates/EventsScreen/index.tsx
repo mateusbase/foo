@@ -1,13 +1,10 @@
-import MainOptionsActions from "@/components/MainOptionsActions";
-import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
-import { options } from "@/utils/objectUtils";
 import InformationSlider from "@/components/InformationSlider";
 import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 import EventCard from "@/components/EventsCard";
-import BaseContainer from "@/components/Container";
-import PageHeader from "@/components/PageHeader";
+
 import BaseSelect from "@/components/Select";
+import PageLayout from "@/components/PageLayout";
 
 export default function EventsScreen(): JSX.Element {
   const events = [
@@ -69,77 +66,62 @@ export default function EventsScreen(): JSX.Element {
   ];
 
   return (
-    <main>
-      <div className="block bg-gray-200 p-6 md:hidden">
-        <Breadcrumb />
+    <PageLayout
+      title="Eventos Oncoclínicas"
+      subtitle="Congressos, palestras, simpósios e muito mais."
+    >
+      <div className="mt-20 hidden md:flex">
+        <InformationSlider
+          title="Pesquisa Clínica Oncoclínicas"
+          description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
+          image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+        />
       </div>
 
-      <PageHeader
-        title="Eventos Oncoclínicas"
-        subtitle="Congressos, palestras, simpósios e muito mais."
-        showContactSection={false}
-      />
-
-      <BaseContainer className="flex w-full flex-col py-0 md:py-20">
-        <div className="hidden px-10 md:block md:px-0">
-          <Breadcrumb />
-        </div>
-
-        <div className="mt-20 hidden md:flex">
-          <InformationSlider
-            title="Pesquisa Clínica Oncoclínicas"
-            description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
-            image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+      <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-28 md:flex-row md:items-center md:justify-between md:px-0">
+        <div className="flex flex-col items-center gap-4 sm:flex-row">
+          <BaseSelect
+            color="primary"
+            variant="bordered"
+            label="Tipo de evento"
+            radius="full"
+            size="sm"
+            className="w-full sm:w-[280px]"
+            options={[
+              { key: 1, value: "1", label: "SP" },
+              { key: 2, value: "2", label: "RJ" },
+            ]}
           />
+
+          <BaseSelect
+            color="primary"
+            variant="bordered"
+            label="Tema"
+            radius="full"
+            size="sm"
+            className="w-full sm:w-[280px]"
+            options={[
+              { key: 1, value: "1", label: "São Paulo" },
+              { key: 2, value: "2", label: "Rio de Janeiro" },
+            ]}
+          />
+
+          <BaseButton color="primary" className="w-full text-white sm:w-auto">
+            Buscar
+          </BaseButton>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-28 md:flex-row md:items-center md:justify-between md:px-0">
-          <div className="flex flex-col items-center gap-4 sm:flex-row">
-            <BaseSelect
-              color="primary"
-              variant="bordered"
-              label="Tipo de evento"
-              radius="full"
-              size="sm"
-              className="w-full sm:w-[280px]"
-              options={[
-                { key: 1, value: "1", label: "SP" },
-                { key: 2, value: "2", label: "RJ" },
-              ]}
-            />
-
-            <BaseSelect
-              color="primary"
-              variant="bordered"
-              label="Tema"
-              radius="full"
-              size="sm"
-              className="w-full sm:w-[280px]"
-              options={[
-                { key: 1, value: "1", label: "São Paulo" },
-                { key: 2, value: "2", label: "Rio de Janeiro" },
-              ]}
-            />
-
-            <BaseButton color="primary" className="w-full text-white sm:w-auto">
-              Buscar
-            </BaseButton>
-          </div>
-
-          <div className="flex cursor-pointer items-center justify-end gap-2 sm:justify-start">
-            <span className="text-lg text-primary">Mais Relevantes</span>
-            <IoIosArrowDown size={20} className="text-primary" />
-          </div>
+        <div className="flex cursor-pointer items-center justify-end gap-2 sm:justify-start">
+          <span className="text-lg text-primary">Mais Relevantes</span>
+          <IoIosArrowDown size={20} className="text-primary" />
         </div>
+      </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-24 lg:grid-cols-3">
-          {events.map((event) => (
-            <EventCard key={event.title} event={event} />
-          ))}
-        </div>
-      </BaseContainer>
-
-      <MainOptionsActions options={options} rounded="rounded-none" />
-    </main>
+      <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-24 lg:grid-cols-3">
+        {events.map((event) => (
+          <EventCard key={event.title} event={event} />
+        ))}
+      </div>
+    </PageLayout>
   );
 }
