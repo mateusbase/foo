@@ -85,7 +85,10 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               }
             />
 
-            <NavbarBrand className="cursor-pointer" onClick={handleLogoClick}>
+            <NavbarBrand
+              className="cursor-pointer sm:ml-5 lg:ml-0"
+              onClick={handleLogoClick}
+            >
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
                 alt="Logo"

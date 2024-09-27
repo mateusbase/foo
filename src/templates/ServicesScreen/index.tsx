@@ -113,16 +113,25 @@ export default function ServiceScreen(): JSX.Element {
       contactLinks={headerProps.contactLinks}
       showIcons={false}
     >
-      <div className="mt-8 flex w-full items-center justify-center gap-1 lg:hidden">
-        <div className="flex items-center justify-center rounded-xl bg-primary px-8 py-5 text-center text-white">
+      <div className="mt-8 flex w-full flex-wrap items-center justify-center gap-2 lg:hidden">
+        <a
+          href="#servicos"
+          className="flex min-w-[90px] max-w-[150px] flex-1 items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-white"
+        >
           Serviço
-        </div>
-        <div className="flex items-center justify-center rounded-xl bg-primary px-8 py-5 text-center text-white">
+        </a>
+        <a
+          href="#diagnósticos"
+          className="flex min-w-[90px] max-w-[150px] flex-1 items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-white"
+        >
           Diagnóstico
-        </div>
-        <div className="flex items-center justify-center rounded-xl bg-primary px-8 py-5 text-center text-white">
+        </a>
+        <a
+          href="#tratamentos"
+          className="flex min-w-[90px] max-w-[150px] flex-1 items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-white"
+        >
           Tratamento
-        </div>
+        </a>
       </div>
 
       <ServiceSection

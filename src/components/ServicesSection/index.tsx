@@ -10,7 +10,7 @@ export default function ServicesSection(): JSX.Element {
   ];
 
   return (
-    <section className="hidden w-full items-center justify-center py-8 lg:flex lg:flex-row">
+    <section className="items-left hidden w-full justify-center py-8 lg:flex lg:flex-row">
       <ServiceText />
 
       <ListServiceCards services={services} />

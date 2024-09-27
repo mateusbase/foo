@@ -3,7 +3,7 @@ import { IoArrowDown } from "react-icons/io5";
 import { BaseSelectProps } from "./types";
 
 export default function BaseSelect({
-  color = "warning",
+  color = "primary",
   variant = "bordered",
   label = " ",
   radius = "full",
