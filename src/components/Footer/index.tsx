@@ -96,7 +96,7 @@ export default function Footer(): JSX.Element {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link href="/fale-conosco" className="hover:text-white">
                     Fale conosco
                   </Link>
                 </li>
