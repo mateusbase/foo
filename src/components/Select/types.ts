@@ -6,7 +6,7 @@ export interface BaseSelectProps {
     | "warning"
     | "danger"
     | "default";
-  variant?: "bordered" | "flat" | "faded" | "underlined"; // Corrigido aqui
+  variant?: "bordered" | "flat" | "faded" | "underlined";
   label?: string;
   radius?: "none" | "sm" | "md" | "lg" | "full";
   size?: "sm" | "md" | "lg";
@@ -14,4 +14,8 @@ export interface BaseSelectProps {
   options: { key: string | number; value: string | number; label: string }[];
   onChange?: (value: string | number) => void;
   width?: string;
+  startContent?: React.ReactNode;
+  endContent?: React.ReactNode;
+  labelPlacement?: "inside" | "outside" | "outside-left";
+  defaultSelectedKey?: string | number;
 }

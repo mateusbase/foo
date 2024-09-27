@@ -17,7 +17,7 @@ export default function MedicalServiceCard({
 
   return (
     <div
-      className="flex w-auto flex-col overflow-hidden rounded-br-[100px] border bg-white"
+      className="flex h-fit w-auto flex-col overflow-hidden rounded-br-[100px] border bg-white"
     >
       <div
         className="h-[376px] bg-cover bg-no-repeat"

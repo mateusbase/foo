@@ -10,7 +10,9 @@ export default function FaqSection(): JSX.Element {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center bg-background-foreground px-8 py-16 md:py-28">
+    // prettier-ignore
+    <section className="bg-gray-foreground flex flex-col items-center justify-center px-8 py-16 md:py-28">
+
       <FaqHeader titleHeader={title} />
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center">
         <Accordion

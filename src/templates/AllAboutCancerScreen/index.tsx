@@ -1,10 +1,8 @@
-import MainOptionsActions from "@/components/MainOptionsActions";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import HealthServiceCard from "@/components/HealthServiceCard";
 import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
-import { options } from "@/utils/objectUtils";
 import { useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { NavigationOptions } from "swiper/types";
@@ -395,8 +393,6 @@ export default function AllAboutCancerScreen(): JSX.Element {
           </button>
         </div>
       </div>
-
-      <MainOptionsActions options={options} rounded="rounded-none" />
     </PageLayout>
   );
 }
