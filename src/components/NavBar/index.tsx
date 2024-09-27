@@ -153,7 +153,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarContent>
 
           <NavbarContent
-            className={`hidden gap-8 font-bold uppercase lg:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
+            className={`hidden gap-8 font-semibold uppercase lg:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
           >
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />
@@ -165,7 +165,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               <>
                 <Link
                   href="/contato"
-                  className="ml-10 mr-14 hidden items-center font-bold text-primary lg:flex"
+                  className="ml-10 mr-14 hidden items-center font-semibold text-primary lg:flex"
                 >
                   Entrar
                   <LogIn size={26} className="ml-2" />

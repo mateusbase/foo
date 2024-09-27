@@ -1,11 +1,6 @@
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
-import MedicalServiceCard from "@/components/MedicalServiceCard";
-import { Textarea } from "@nextui-org/react";
-import BaseButton from "@/components/Button";
-import BaseInput from "@/components/Input";
 import PageLayout from "@/components/PageLayout";
-import Link from "next/link";
 import InfoCard from "@/components/InfoCard";
 import ContactUsForm from "./components/ContactUsForm";
 

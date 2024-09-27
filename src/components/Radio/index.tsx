@@ -1,4 +1,4 @@
-import { Radio, RadioProps } from "@nextui-org/react";
+import { Radio } from "@nextui-org/react";
 import { BaseRadioProps } from "./types";
 
 export default function BaseRadio({

@@ -1,4 +1,6 @@
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
+
 import { FaqHeader } from "./components/FaqHeader";
 
 export default function FaqSection(): JSX.Element {
@@ -20,31 +22,31 @@ export default function FaqSection(): JSX.Element {
           itemClasses={itemClasses}
           selectionMode="multiple"
         >
-          <AccordionItem key="1" title="O que é a Oncoclínicas?">
+          <AccordionItem key="1" title="O que é a Oncoclínicas?" indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />} >
             {defaultContent}
           </AccordionItem>
-          <AccordionItem key="2" title="Quais cidades têm Oncoclínicas?">
+          <AccordionItem key="2" title="Quais cidades têm Oncoclínicas?" indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />} >
             {defaultContent}
           </AccordionItem>
           <AccordionItem
             key="3"
             title="Quais os tipos de tratamentos que a Oncoclínicas oferece?"
-          >
+            indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />} >
             {defaultContent}
           </AccordionItem>
           <AccordionItem
             key="4"
             title="A Oncoclínicas atende quais especialidades?"
-          >
+            indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />} >
             {defaultContent}
           </AccordionItem>
-          <AccordionItem key="5" title="Quais planos de saúde são aceitos?">
+          <AccordionItem key="5" title="Quais planos de saúde são aceitos?" indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />} >
             {defaultContent}
           </AccordionItem>
           <AccordionItem
             key="6"
             title="A Oncoclínicas atende pelo SUS (Sistema Único de Saúde)?"
-          >
+            indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />} >
             {defaultContent}
           </AccordionItem>
         </Accordion>
