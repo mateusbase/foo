@@ -1,26 +1,11 @@
 import BaseButton from "@/components/Button";
 import BaseInput from "@/components/Input";
 import BaseRadio from "@/components/Radio";
-import {
-  Radio,
-  RadioGroup,
-  Select,
-  SelectItem,
-  Textarea,
-} from "@nextui-org/react";
+import { RadioGroup, Select, SelectItem, Textarea } from "@nextui-org/react";
 import { useState } from "react";
 
 export default function ContactUsForm(): JSX.Element {
   const [selected, setSelected] = useState("no");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    state: "",
-    city: "",
-    subject: "",
-  });
 
   return (
     <div className="w-full space-y-6 lg:mt-12">

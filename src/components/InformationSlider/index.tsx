@@ -7,7 +7,6 @@ import { Image } from "@nextui-org/react";
 import { InformationSliderProps } from "./types";
 
 export default function InformationSlider({
-  subtitle,
   title,
   description,
   image,

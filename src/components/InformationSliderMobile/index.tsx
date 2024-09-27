@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState, useRef } from "react";
@@ -72,8 +73,8 @@ export default function InformationSliderMobile({
             tabIndex={0}
             aria-label={`Slide ${index + 1}`}
             className={`mx-1 h-3 w-3 rounded-full ${informations[currentIndex].id === information.id
-                ? "bg-darkGray"
-                : "bg-gray-300"
+              ? "bg-darkGray"
+              : "bg-gray-300"
               }`}
             onClick={() => handleIndicatorClick(index)}
             onKeyDown={(event) => handleKeyDown(index, event)}
