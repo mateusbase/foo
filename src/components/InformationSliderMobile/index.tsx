@@ -4,10 +4,8 @@ import { InformationSliderMobileProps } from "./types";
 
 export default function InformationSliderMobile({
   image,
-  alt,
 }: InformationSliderMobileProps): JSX.Element {
   return (
-    // TODO: Fazer o map, de acordo de como as imagens serão recebidas e ajustar a props
     <div className="flex w-full">
       <Swiper pagination modules={[Pagination]} className="mySwiper">
         <SwiperSlide>

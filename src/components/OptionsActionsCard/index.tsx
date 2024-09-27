@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react"; // Import React para usar React.Fragment
 import { MainOptionsActionsProps } from "./types";
 
