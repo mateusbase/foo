@@ -12,6 +12,29 @@ import NearbyUnitsMobile from "@/components/NearbyUnitsMobile";
 import SearchInput from "./components/SearchInput";
 import SearchInputMobile from "./components/SearchInputMobile";
 
+const informationMock = [
+  {
+    id: 1,
+    description:
+      "Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil.",
+    image:
+      "https://i.postimg.cc/8PkhLkj0/Captura-de-tela-2024-09-25-104009.png",
+  },
+  {
+    id: 2,
+    description:
+      "Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil.",
+    image:
+      "https://i.postimg.cc/8PkhLkj0/Captura-de-tela-2024-09-25-104009.png",
+  },
+  {
+    id: 3,
+    description:
+      "Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil.",
+    image:
+      "https://i.postimg.cc/JhtjVzj7/Captura-de-tela-2024-09-27-161441.png",
+  },
+];
 export default function HomeScreen(): JSX.Element {
   return (
     <main className="flex w-full flex-col">
@@ -53,7 +76,9 @@ export default function HomeScreen(): JSX.Element {
       </BaseContainer>
 
       <div className="block lg:hidden">
-        <InformationSliderMobile image="https://i.postimg.cc/8PkhLkj0/Captura-de-tela-2024-09-25-104009.png" />
+        {/* {informationMock.map((information) => ( */}
+        <InformationSliderMobile informations={informationMock} />
+        {/* ))} */}
       </div>
 
       <FaqSection />
