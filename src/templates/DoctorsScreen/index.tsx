@@ -6,6 +6,7 @@ import FaqSection from "@/components/FaqSection";
 import BaseContainer from "@/components/Container";
 import OptionsActionsCard from "@/components/OptionsActionsCard";
 import ServicesSectionMobile from "@/components/ServicesSectionMobile";
+import UpcomingEventsSectionMobile from "@/components/UpcomingEventsMobile";
 import SearchInput from "../HomeScreen/components/SearchInput";
 import SearchInputMobile from "../HomeScreen/components/SearchInputMobile";
 
@@ -37,6 +38,8 @@ export default function DoctorsScreen(): JSX.Element {
         <ServicesSectionMobile />
 
         <UpcomingEventsSection />
+
+        <UpcomingEventsSectionMobile />
       </BaseContainer>
 
       <FaqSection />

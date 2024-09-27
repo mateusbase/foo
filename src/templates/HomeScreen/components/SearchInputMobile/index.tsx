@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import React from "react";
 
-const SearchInput = (): JSX.Element => {
+const SearchInputMobile = (): JSX.Element => {
   return (
     <div className="mt-2 flex h-14 w-full items-center justify-between rounded-full border border-solid border-primary bg-white px-10 font-semibold opacity-85 md:hidden">
       <div className="flex w-full flex-col">
@@ -18,4 +18,4 @@ const SearchInput = (): JSX.Element => {
   );
 };
 
-export default SearchInput;
+export default SearchInputMobile;
