@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import Link from "next/link";
 import { MainOptionsActionsProps } from "./types";
 
 export default function OptionsActionsCard({
@@ -12,10 +13,12 @@ export default function OptionsActionsCard({
           className={`flex min-h-24 min-w-28 items-start justify-center rounded-lg p-4 ${option.id === 1 ? "bg-secondary" : "bg-primary"
             }`}
         >
-          <button type="button" className="flex flex-col items-start">
-            <option.icon className="mb-2 h-6 w-6" />
-            <span className="text-start text-sm">{option.title}</span>
-          </button>
+          <Link href={option.link || "#"} passHref>
+            <button type="button" className="flex flex-col items-start">
+              <option.icon className="mb-2 h-6 w-6" />
+              <span className="text-start text-sm">{option.title}</span>
+            </button>
+          </Link>
         </div>
       ))}
     </div>
