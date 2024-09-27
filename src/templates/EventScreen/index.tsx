@@ -133,7 +133,7 @@ export default function EventScreen(): JSX.Element {
       </PageLayout>
 
       <div className="mt-10 block w-full justify-center md:hidden">
-        <div className="flex h-auto w-[493px] flex-col justify-between bg-primary p-16">
+        <div className="flex h-auto w-auto flex-col justify-between bg-primary p-16">
           <h2 className="text-left text-3xl font-bold text-white">
             Inscreva-se
           </h2>

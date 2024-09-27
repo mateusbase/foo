@@ -206,6 +206,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                   </Link>
                 </NavbarMenuItem>
               ))}
+
               <NavbarMenuItem className="w-full">
                 <div className="flex h-full w-full flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white">
                   <Link
