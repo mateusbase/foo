@@ -30,6 +30,18 @@ export default function InformationSliderMobile({
     return () => clearInterval(interval);
   }, [informations.length]);
 
+  const handleIndicatorClick = (index: number): void => {
+    setCurrentIndex(index);
+    swiperRef.current?.slideTo(index);
+  };
+
+  const handleKeyDown = (index: number, event: React.KeyboardEvent): void => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleIndicatorClick(index);
+    }
+  };
+
   return (
     <div className="w-full">
       <Swiper
@@ -53,14 +65,18 @@ export default function InformationSliderMobile({
       </Swiper>
 
       <div className="my-4 flex justify-center">
-        {informations.map((information) => (
+        {informations.map((information, index) => (
           <div
             key={information.id}
-            className={`mx-1 h-3 w-3 rounded-full ${informations[currentIndex].id === information.id ? "bg-darkGray" : "bg-gray-300"}`}
-            onClick={() => {
-              setCurrentIndex(information.id);
-              swiperRef.current?.slideTo(information.id);
-            }}
+            role="button"
+            tabIndex={0}
+            aria-label={`Slide ${index + 1}`}
+            className={`mx-1 h-3 w-3 rounded-full ${informations[currentIndex].id === information.id
+                ? "bg-darkGray"
+                : "bg-gray-300"
+              }`}
+            onClick={() => handleIndicatorClick(index)}
+            onKeyDown={(event) => handleKeyDown(index, event)}
           />
         ))}
       </div>
