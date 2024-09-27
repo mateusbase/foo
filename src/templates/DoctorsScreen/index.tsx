@@ -6,6 +6,7 @@ import FaqSection from "@/components/FaqSection";
 import BaseContainer from "@/components/Container";
 import OptionsActionsCard from "@/components/OptionsActionsCard";
 import ServicesSectionMobile from "@/components/ServicesSectionMobile";
+import InformationSlider from "@/components/InformationSlider";
 import SearchInput from "../HomeScreen/components/SearchInput";
 import SearchInputMobile from "../HomeScreen/components/SearchInputMobile";
 
@@ -35,6 +36,15 @@ export default function DoctorsScreen(): JSX.Element {
         <ServicesSection />
 
         <ServicesSectionMobile />
+
+        <div className="hidden lg:block">
+          <InformationSlider
+            title="Leve a medicina de precisão aos seus pacientes"
+            description="Na Oncoclínicas, nos dedicamos ao atendimento integral e multidisciplinar, com foco no tratamento individualizado, seguros e menos invasivos. E tudo isso começa nos diagnósticos precisos."
+            image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+            backgroundType="darkGray"
+          />
+        </div>
 
         <UpcomingEventsSection />
       </BaseContainer>

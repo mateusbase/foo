@@ -2,6 +2,7 @@ import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import PageLayout from "@/components/PageLayout";
 import InfoCard from "@/components/InfoCard";
+import Link from "next/link";
 import ContactUsForm from "./components/ContactUsForm";
 
 export default function TalkToUsScreen(): JSX.Element {
@@ -29,23 +30,23 @@ export default function TalkToUsScreen(): JSX.Element {
               <p className="text-3xl font-bold text-white">
                 Área de Novos Negócios
               </p>
-              <a
+              <Link
                 href="mailto:novosnegocios@onoclinicas.com"
                 className="text-lg text-white underline"
               >
                 novosnegocios@onoclinicas.com
-              </a>
+              </Link>
 
               <p className="mt-4 text-3xl text-white">
                 <strong>Fornecedores</strong>
                 <br />
               </p>
-              <a
+              <Link
                 href="mailto:comprasdiversas@onoclinicas.com"
                 className="text-lg text-white underline"
               >
                 comprasdiversas@onoclinicas.com
-              </a>
+              </Link>
             </div>
           </InfoCard>
         </div>
