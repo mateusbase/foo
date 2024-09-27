@@ -152,11 +152,25 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             <NavbarMenu>
               {routes.map((route) => (
                 <NavbarMenuItem key={route.label}>
-                  <Link href={route.pathname} className="block py-2">
+                  <Link
+                    href={route.pathname}
+                    className="block py-2 text-lg uppercase"
+                  >
                     {route.label}
                   </Link>
                 </NavbarMenuItem>
               ))}
+              <NavbarMenuItem className="w-full">
+                <div className="flex h-full w-full flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white">
+                  <Link
+                    className="flex w-full items-center justify-center text-lg text-white"
+                    href="/agende-sua-consulta"
+                  >
+                    <Calendar size={24} className="mr-2 text-white" />
+                    Agende uma consulta ou exame
+                  </Link>
+                </div>
+              </NavbarMenuItem>
             </NavbarMenu>
           )}
         </NextNavBar>
