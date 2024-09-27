@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar as NextNavBar,
   NavbarBrand,
@@ -12,6 +12,7 @@ import {
 import { Calendar, Stethoscope, LogIn, X } from "lucide-react";
 import { useRouter } from "next/router";
 import { IoMenu } from "react-icons/io5";
+import { HiOutlineMapPin } from "react-icons/hi2";
 import NavLink from "../NavLink";
 import { NavBarProps } from "./types";
 
@@ -25,6 +26,7 @@ const routes = [
 
 export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [location, setLocation] = useState("Carregando localização...");
   const router = useRouter();
 
   const isMedicoPage = router.pathname === "/medicos";
@@ -33,8 +35,36 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
     router.push("/");
   };
 
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const { latitude, longitude } = position.coords;
+        try {
+          const response = await fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`,
+          );
+          const data = await response.json();
+          if (data.address) {
+            const city = data.address.city || data.address.town || "Cidade";
+            const state = data.address.state || "Estado";
+            setLocation(`${city}, ${state}`);
+          }
+        } catch (error) {
+          setLocation("Localização indisponível");
+        }
+      });
+    } else {
+      setLocation("Geolocalização não suportada");
+    }
+  }, []);
+
   return (
     <>
+      <div className="flex h-[52px] w-full items-center justify-center bg-[#F0F0F0] md:hidden">
+        <HiOutlineMapPin size={24} className="mr-2 text-secondary" />
+        <span className="font-semibold text-darkGray">{location}</span>
+      </div>
+
       <div className="w-full bg-white">
         <NextNavBar
           maxWidth="full"
