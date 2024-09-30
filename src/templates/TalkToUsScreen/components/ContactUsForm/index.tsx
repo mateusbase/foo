@@ -6,6 +6,15 @@ import { useState } from "react";
 
 export default function ContactUsForm(): JSX.Element {
   const [selected, setSelected] = useState("no");
+  const [fileName, setFileName] = useState<string>("");
+
+  const handleFileChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    if (event.target.files && event.target.files.length > 0) {
+      setFileName(event.target.files[0].name);
+    }
+  };
 
   return (
     <div className="w-full space-y-6 lg:mt-12">
@@ -97,7 +106,20 @@ export default function ContactUsForm(): JSX.Element {
         </SelectItem>
       </Select>
 
-      <BaseInput placeholder="Anexar arquivo (jpg, jpeg, png, pdf, doc, docx) " />
+      <div className="relative flex w-full flex-col">
+        <BaseInput
+          placeholder="Anexar arquivo (jpg, jpeg, png, pdf, doc, docx)"
+          value={fileName}
+        />
+
+        <input
+          id="file-upload"
+          type="file"
+          accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
+          className="absolute inset-0 cursor-pointer opacity-0"
+          onChange={handleFileChange}
+        />
+      </div>
 
       <Textarea
         label="Mensagem"
