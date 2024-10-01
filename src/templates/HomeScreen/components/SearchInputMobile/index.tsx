@@ -14,7 +14,7 @@ interface SpeechRecognitionErrorEvent extends Event {
   error: string;
 }
 
-const SearchInput = (): JSX.Element => {
+const SearchInputMobile = (): JSX.Element => {
   const [searchText, setSearchText] = useState("");
 
   const handleVoiceSearch = (): void => {
@@ -67,4 +67,4 @@ const SearchInput = (): JSX.Element => {
   );
 };
 
-export default SearchInput;
+export default SearchInputMobile;
