@@ -33,7 +33,16 @@ const DynamicPage = (): JSX.Element => {
   }, [slug]);
 
   if (!content) {
-    return <p>Carregando...</p>;
+    return (
+      <Page title="Oncoclínicas" description="Oncoclínicas">
+        <PageLayout
+          title="Página não encontrada - 404"
+          subtitle="A página que você está procurando não foi encontrada."
+        >
+          <div />
+        </PageLayout>
+      </Page>
+    );
   }
 
   return (

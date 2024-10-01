@@ -13,10 +13,21 @@ export default function ServicesSection(): JSX.Element {
       id: 1,
       title: "Tratamentos",
       icon: <TreatmentsIcon />,
+      path: "/tratamentos",
     },
-    { id: 2, title: "Diagnósticos", icon: <MicroscopeIcon /> },
-    { id: 3, title: "Serviços", icon: <ServiceIcon /> },
-    { id: 4, title: "Tudo sobre o câncer", icon: <AllOfCancerIcon /> },
+    {
+      id: 2,
+      title: "Diagnósticos",
+      icon: <MicroscopeIcon />,
+      path: "/diagnosticos",
+    },
+    { id: 3, title: "Serviços", icon: <ServiceIcon />, path: "/servicos" },
+    {
+      id: 4,
+      title: "Tudo sobre o câncer",
+      icon: <AllOfCancerIcon />,
+      path: "/servicos/tudo-sobre-o-cancer",
+    },
   ];
 
   return (
