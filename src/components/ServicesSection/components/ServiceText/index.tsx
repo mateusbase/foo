@@ -1,6 +1,6 @@
 export default function ServiceText(): JSX.Element {
   return (
-    <div className="flex max-w-md flex-col justify-center">
+    <div className="flex w-full max-w-md flex-col justify-center">
       <div className="text-left">
         <h2 className="hidden text-5xl font-light text-primary md:block">
           Descubra como ajudamos você.

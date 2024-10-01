@@ -1,6 +1,7 @@
 import BaseButton from "@/components/Button";
 import BaseInput from "@/components/Input";
 import BaseRadio from "@/components/Radio";
+import BaseSelect from "@/components/Select";
 import { RadioGroup, Select, SelectItem, Textarea } from "@nextui-org/react";
 import { useState } from "react";
 
@@ -45,12 +46,17 @@ export default function ContactUsForm(): JSX.Element {
       </div>
 
       <div className="row flex flex-col gap-6 md:flex-row lg:flex-row">
-        <Select
+        <BaseSelect
           variant="bordered"
+          color="default"
           label="Selecione o estado"
           className="w-full"
           radius="full"
           size="sm"
+          options={[
+            { key: 1, value: "1", label: "SP" },
+            { key: 2, value: "2", label: "RJ" },
+          ]}
         >
           <SelectItem key={1} value="1">
             SP
@@ -58,53 +64,47 @@ export default function ContactUsForm(): JSX.Element {
           <SelectItem key={2} value="2">
             RJ
           </SelectItem>
-        </Select>
+        </BaseSelect>
 
-        <Select
+        <BaseSelect
           variant="bordered"
+          color="default"
           label="Selecione a cidade"
           className="w-full"
           radius="full"
           size="sm"
-        >
-          <SelectItem key={1} value="1">
-            São Paulo
-          </SelectItem>
-          <SelectItem key={2} value="2">
-            Rio de Janeiro
-          </SelectItem>
-        </Select>
+          options={[
+            { key: 1, value: "1", label: "São Paulo" },
+            { key: 2, value: "2", label: "Rio de Janeiro" },
+          ]}
+        />
       </div>
 
-      <Select
+      <BaseSelect
         variant="bordered"
+        color="default"
         label="Selecione a unidade"
         className="w-full"
         radius="full"
         size="sm"
-      >
-        <SelectItem key={1} value="1">
-          OncoRJ
-        </SelectItem>
-        <SelectItem key={2} value="2">
-          OncoSP
-        </SelectItem>
-      </Select>
+        options={[
+          { key: 1, value: "1", label: "Onco RJ" },
+          { key: 2, value: "2", label: "Onco SP" },
+        ]}
+      />
 
-      <Select
+      <BaseSelect
         variant="bordered"
+        color="default"
         label="Selecione o assunto"
         className="w-full"
         radius="full"
         size="sm"
-      >
-        <SelectItem key={1} value="1">
-          Assunto 1
-        </SelectItem>
-        <SelectItem key={2} value="2">
-          Assunto 2
-        </SelectItem>
-      </Select>
+        options={[
+          { key: 1, value: "1", label: "Assunto 1" },
+          { key: 2, value: "2", label: "Assunto 2" },
+        ]}
+      />
 
       <div className="relative flex w-full flex-col">
         <BaseInput
