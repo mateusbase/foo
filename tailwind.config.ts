@@ -37,9 +37,15 @@ const config: Config = {
         "260": "16.25rem",
       },
       colors: {
+        primary: "#007D77",
+        secondary: "#6328B4",
         darkGray: "#5C5C5C",
         lightGray: "#707070",
-        primary: "#007D77",
+        white: "#FFFFFF",
+        background: "#FFFFFF",
+        "primary-foreground": "#00B6AD",
+        "secondary-foreground": "#BA99E7",
+        "gray-foreground": "#F0F0F0",
       },
     },
   },
@@ -48,30 +54,8 @@ const config: Config = {
     nextui({
       prefix: "nextui",
       addCommonColors: false,
-      layout: {},
       themes: {
         light: {
-          layout: {},
-          colors: {
-            background: {
-              DEFAULT: "#FFFFFF",
-              foreground: "#F0F0F0",
-            },
-            primary: {
-              DEFAULT: "#007D77",
-              foreground: "#00B6AD",
-            },
-            secondary: {
-              DEFAULT: "#6328B4",
-              foreground: "#BA99E7",
-            },
-            default: {
-              DEFAULT: "#FFFFFF",
-              foreground: "#FFFFFF",
-            },
-          },
-        },
-        dark: {
           layout: {},
           colors: {},
         },

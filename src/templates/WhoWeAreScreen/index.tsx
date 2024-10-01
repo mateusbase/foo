@@ -1,10 +1,11 @@
 import { useState } from "react";
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
+import BaseSelect from "@/components/Select";
+import { IoMenu } from "react-icons/io5";
+import { menuContent } from "./helpers";
 
 export default function WhoWeArecreen(): JSX.Element {
-  const [activeItem, setActiveItem] = useState<number | null>(null);
-
   const menuItems = [
     { id: 1, name: "História" },
     { id: 2, name: "Franquias" },
@@ -17,12 +18,39 @@ export default function WhoWeArecreen(): JSX.Element {
     { id: 9, name: "Carreiras" },
   ];
 
+  const [activeItem, setActiveItem] = useState<number>(menuItems[0].id);
+
+  const handleSelectChange = (value: string | number): void => {
+    const selectedItem = menuItems.find((item) => item.id === Number(value));
+    if (selectedItem) {
+      setActiveItem(selectedItem.id);
+    }
+  };
+
   return (
     <PageLayout
       title="Oncoclínicas&Co"
       subtitle="Pioneira no país em gestão de serviços oncológicos, a Oncoclínicas&Co foi fundada em 2010 e hoje é um dos maiores centros de oncologia, hematologia e radioterapia da América Latina."
     >
-      <div className="mt-14 flex">
+      <div className="mt-14 flex flex-col md:flex-row">
+        <div className="mb-10 block md:hidden">
+          <BaseSelect
+            color="default"
+            variant="bordered"
+            radius="full"
+            size="lg"
+            startContent={<IoMenu className="text-primary" size={28} />}
+            defaultSelectedKey="1"
+            labelPlacement="outside"
+            options={menuItems.map((item) => ({
+              key: item.id,
+              value: item.id.toString(),
+              label: item.name,
+            }))}
+            onChange={(value) => handleSelectChange(value)}
+          />
+        </div>
+
         <div className="hidden w-[398px] text-white md:block">
           {menuItems.map((item, index) => (
             <MenuItem
@@ -37,60 +65,19 @@ export default function WhoWeArecreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="ml-0 flex-1 md:ml-16">
+        <div className="mb-10 ml-0 flex-1 md:ml-16">
           <h1 className="font-lato text-4xl font-bold leading-[48px] text-primary">
-            A Oncoclínicas&Co é um dos maiores grupos de oncologia, hematologia
-            e radioterapia da América Latina.
+            {menuContent[activeItem].title}
           </h1>
-          <p className="font-lato mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
-            Oncoclínicas&Co é o maior grupo dedicado ao tratamento do câncer na
-            América Latina, com um modelo especializado e inovador focado em
-            toda a jornada do tratamento oncológico, aliando eficiência
-            operacional, atendimento humanizado e especialização por meio de um
-            corpo clínico composto por mais de 2.700 médicos especialistas com
-            ênfase em oncologia. Com a missão de democratizar o tratamento
-            oncológico, oferece um sistema completo que integra clínicas
-            ambulatoriais a cancer centers de alta complexidade. Conta com 145
-            unidades em 39 cidades brasileiras, permitindo acesso de qualidade
-            em todas as regiões que atua, alinhados aos padrões dos melhores
-            centros de referência mundiais no tratamento do câncer.
-            <br />
-            <br />
-          </p>
 
-          <p className="font-lato mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
-            Com foco em tecnologia, medicina de precisão e genômica, a
-            Oncoclínicas realizou aproximadamente 635 mil tratamentos em 2023. É
-            parceira exclusiva no Brasil do Dana-Farber Cancer Institute,
-            afiliado à Faculdade de Medicina de Harvard, um dos principais
-            centros de pesquisa e tratamento de câncer no mundo. Possui a Boston
-            Lighthouse Innovation, especializada em bioinformática, em
-            Cambridge, Estados Unidos, e participação na MedSir, dedicada ao
-            desenvolvimento e gestão de ensaios clínicos para pesquisas
-            independentes sobre o câncer, em Barcelona, Espanha. Recentemente,
-            expandiu sua atuação para a Arábia Saudita por meio de uma joint
-            venture com o Grupo Al Faisaliah, levando a missão de vencer o
-            câncer para um novo continente e proporcionando cuidados oncológicos
-            em escala global, ao combinar a hiperespecialização oncológica com
-            abordagens inovadoras de tratamento.
-          </p>
-
-          <p className="font-lato mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
-            A laserterapia é usada para eliminar ou ao menos aliviar essas
-            manifestações e, consequentemente, melhorar a qualidade de vida do
-            paciente.
-          </p>
-
-          <br />
-          <br />
-
-          <p className="font-lato mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
-            A companhia integra a carteira do IDIVERSA, índice lançado pela B3,
-            destacando empresas comprometidas com diversidade de gênero e raça.
-          </p>
-
-          <br />
-          <br />
+          {menuContent[activeItem].paragraphs.map((paragraph: string) => (
+            <p
+              key={paragraph}
+              className="font-lato mt-6 text-[20px] font-normal leading-[26px] text-darkGray"
+            >
+              {paragraph}
+            </p>
+          ))}
         </div>
       </div>
     </PageLayout>

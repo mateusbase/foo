@@ -2,6 +2,7 @@ import HomeScreen from "@/templates/HomeScreen";
 import Head from "next/head";
 import { ReactElement } from "react";
 import Layout from "@/components/layout";
+
 import { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {

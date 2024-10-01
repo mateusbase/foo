@@ -37,8 +37,8 @@ const Breadcrumb = (): JSX.Element => {
   }, [asPath]);
 
   return (
-    <div className="font-mono z-10 items-start justify-between text-sm lg:flex">
-      <h1 className="text-left">
+    <div className="z-10 items-start justify-between text-sm lg:flex max-w-full break-words">
+      <div className="text-left">
         {breadcrumbs.map((breadcrumb, index) => (
           <span key={breadcrumb.breadcrumbUrl}>
             <Link href={breadcrumb.breadcrumbUrl}>
@@ -54,7 +54,7 @@ const Breadcrumb = (): JSX.Element => {
             {index < breadcrumbs.length - 1 && " > "}
           </span>
         ))}
-      </h1>
+      </div>
     </div>
   );
 };

@@ -14,6 +14,8 @@ import { useRouter } from "next/router";
 import { IoMenu } from "react-icons/io5";
 import { HiOutlineMapPin } from "react-icons/hi2";
 import NavLink from "../NavLink";
+import BaseSelect from "../Select";
+import BaseButton from "../Button";
 import { NavBarProps } from "./types";
 
 const routes = [
@@ -27,12 +29,28 @@ const routes = [
 export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location, setLocation] = useState("Carregando localização...");
+  const [showLanguageSelector, setShowLanguageSelector] = useState(true);
+  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
   const router = useRouter();
 
   const isMedicoPage = router.pathname === "/medicos";
 
   const handleLogoClick = (): void => {
     router.push("/");
+  };
+
+  useEffect(() => {
+    const language = localStorage.getItem("selectedLanguage");
+    if (language) {
+      setShowLanguageSelector(false);
+    }
+  }, []);
+
+  const handleLanguageSelect = (): void => {
+    if (selectedLanguage) {
+      localStorage.setItem("selectedLanguage", selectedLanguage);
+      setShowLanguageSelector(false);
+    }
   };
 
   useEffect(() => {
@@ -60,6 +78,31 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
 
   return (
     <>
+      {showLanguageSelector && (
+        <div className="flex h-[102px] w-full items-center justify-center gap-2 bg-[#5C5C5C] px-5 md:hidden">
+          <BaseSelect
+            color="primary"
+            variant="bordered"
+            label="Selecione o idioma de sua preferência"
+            className="max-w-xs bg-white"
+            radius="none"
+            options={[
+              { key: 1, value: "1", label: "Português" },
+              { key: 2, value: "2", label: "Inglês" },
+              { key: 3, value: "3", label: "Espanhol" },
+            ]}
+            onChange={(value) => setSelectedLanguage(value as string)}
+          />
+          <BaseButton
+            color="primary"
+            className="w-auto text-white"
+            onClick={handleLanguageSelect}
+          >
+            Continuar
+          </BaseButton>
+        </div>
+      )}
+
       <div className="flex h-[52px] w-full items-center justify-center bg-[#F0F0F0] md:hidden">
         <HiOutlineMapPin size={24} className="mr-2 text-secondary" />
         <span className="font-semibold text-darkGray">{location}</span>
@@ -85,7 +128,10 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               }
             />
 
-            <NavbarBrand className="cursor-pointer" onClick={handleLogoClick}>
+            <NavbarBrand
+              className="cursor-pointer sm:ml-5 lg:ml-0"
+              onClick={handleLogoClick}
+            >
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
                 alt="Logo"
@@ -107,7 +153,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarContent>
 
           <NavbarContent
-            className={`hidden gap-8 font-bold uppercase lg:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
+            className={`hidden gap-8 font-semibold uppercase lg:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
           >
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />
@@ -119,7 +165,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               <>
                 <Link
                   href="/contato"
-                  className="ml-10 mr-14 hidden items-center font-bold text-primary lg:flex"
+                  className="ml-10 mr-14 hidden items-center font-semibold text-primary lg:flex"
                 >
                   Entrar
                   <LogIn size={26} className="ml-2" />
@@ -160,6 +206,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                   </Link>
                 </NavbarMenuItem>
               ))}
+
               <NavbarMenuItem className="w-full">
                 <div className="flex h-full w-full flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white">
                   <Link

@@ -1,15 +1,19 @@
 import { Select, SelectItem } from "@nextui-org/react";
-import React from "react";
+import { IoArrowDown } from "react-icons/io5";
 import { BaseSelectProps } from "./types";
 
 export default function BaseSelect({
   color = "primary",
   variant = "bordered",
-  label = "Selecione uma opção",
+  label = " ",
   radius = "full",
   size = "sm",
   className = "w-full",
   options,
+  startContent,
+  endContent,
+  labelPlacement,
+  defaultSelectedKey,
   onChange,
 }: BaseSelectProps): JSX.Element {
   return (
@@ -21,6 +25,13 @@ export default function BaseSelect({
       size={size}
       className={`${className}`}
       onChange={(e) => onChange?.(e.target.value)}
+      defaultSelectedKeys={
+        defaultSelectedKey ? [defaultSelectedKey] : undefined
+      }
+      startContent={startContent}
+      endContent={endContent}
+      labelPlacement={labelPlacement}
+      selectorIcon={<IoArrowDown className="text-primary" size={28} />}
     >
       {options.map((option) => (
         <SelectItem key={option.key} value={option.value}>

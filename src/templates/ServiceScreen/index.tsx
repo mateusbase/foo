@@ -2,18 +2,27 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
+import BaseSelect from "@/components/Select";
+import { IoMenu } from "react-icons/io5";
 
 export default function ServiceScreen(): JSX.Element {
   const router = useRouter();
   const { servico } = router.query;
-
-  const [activeItem, setActiveItem] = useState<number | null>(null);
 
   const menuItems = [
     { id: 1, name: "O que é a laserterapia" },
     { id: 2, name: "Quando é usada" },
     { id: 3, name: "Como é realizada" },
   ];
+
+  const [activeItem, setActiveItem] = useState<number>(menuItems[0].id);
+
+  const handleSelectChange = (value: string | number): void => {
+    const selectedItem = menuItems.find((item) => item.id === Number(value));
+    if (selectedItem) {
+      setActiveItem(selectedItem.id);
+    }
+  };
 
   const capitalizeFirstLetter = (text: string): string => {
     return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
@@ -29,7 +38,25 @@ export default function ServiceScreen(): JSX.Element {
       subtitle="Serviço Oncoclínicas"
       showContactSection={false}
     >
-      <div className="mt-14 flex">
+      <div className="mt-14 flex flex-col md:flex-row">
+        <div className="mb-10 block md:hidden">
+          <BaseSelect
+            color="default"
+            variant="bordered"
+            radius="full"
+            size="lg"
+            startContent={<IoMenu className="text-primary" size={28} />}
+            defaultSelectedKey="1"
+            labelPlacement="outside"
+            options={menuItems.map((item) => ({
+              key: item.id,
+              value: item.id.toString(),
+              label: item.name,
+            }))}
+            onChange={(value) => handleSelectChange(value)}
+          />
+        </div>
+
         <div className="hidden w-[398px] text-white md:block">
           {menuItems.map((item, index) => (
             <MenuItem
