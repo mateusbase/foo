@@ -1,6 +1,7 @@
 import { Select, SelectItem } from "@nextui-org/react";
 import { IoArrowDown } from "react-icons/io5";
 import { BaseSelectProps } from "./types";
+import ArrowDownIcon from "../Icons/ArrowDownIcon";
 
 export default function BaseSelect({
   color = "primary",
@@ -31,7 +32,7 @@ export default function BaseSelect({
       startContent={startContent}
       endContent={endContent}
       labelPlacement={labelPlacement}
-      selectorIcon={<IoArrowDown className="text-primary" size={28} />}
+      selectorIcon={<ArrowDownIcon className="text-primary" />}
     >
       {options.map((option) => (
         <SelectItem key={option.key} value={option.value}>
