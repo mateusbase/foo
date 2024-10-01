@@ -57,7 +57,7 @@ const SearchInputMobile = (): JSX.Element => {
                 <Link
                   key={page.id}
                   href={page.data?.url || "#"}
-                  className="block py-4 text-blue-500"
+                  className="block rounded-lg px-4 py-4 transition duration-300 hover:bg-gray-100 hover:text-blue-700"
                 >
                   <div className="text-xl font-bold">
                     {page.data?.title || "Página Sem Título"}

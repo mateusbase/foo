@@ -85,14 +85,14 @@ const SearchInput = (): JSX.Element => {
       </div>
 
       {searchTerm && (
-        <div className="bg-white md:hidden px-10 font-semibold opacity-85">
+        <div className="bg-white px-10 font-semibold opacity-85">
           <div className="absolute left-0 top-full mt-1 w-full rounded-lg bg-white p-4 shadow-lg">
             {results.length > 0 ? (
               results.map((page) => (
                 <Link
                   key={page.id}
                   href={page.data?.url || "#"}
-                  className="block py-4 text-blue-500"
+                  className="block py-4 px-4 rounded-lg hover:bg-gray-100 hover:text-blue-700 transition duration-300"
                 >
                   <div className="text-xl font-bold">
                     {page.data?.title || "Página Sem Título"}
@@ -110,6 +110,7 @@ const SearchInput = (): JSX.Element => {
           </div>
         </div>
       )}
+
     </div>
 
   );
