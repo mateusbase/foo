@@ -1,5 +1,4 @@
 import { Select, SelectItem } from "@nextui-org/react";
-import { IoArrowDown } from "react-icons/io5";
 import { BaseSelectProps } from "./types";
 import ArrowDownIcon from "../Icons/ArrowDownIcon";
 
