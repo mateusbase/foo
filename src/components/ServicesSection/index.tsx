@@ -1,4 +1,9 @@
-import { TreatmentsIcon } from "@/components/Icons";
+import {
+  TreatmentsIcon,
+  MicroscopeIcon,
+  ServiceIcon,
+  AllOfCancerIcon,
+} from "@/components/Icons";
 import ListServiceCards from "./components/ListServiceCards";
 import ServiceText from "./components/ServiceText";
 
@@ -9,9 +14,9 @@ export default function ServicesSection(): JSX.Element {
       title: "Tratamentos",
       icon: <TreatmentsIcon />,
     },
-    { id: 2, title: "Diagnósticos", icon: "/favicon.ico" },
-    { id: 3, title: "Serviços", icon: "/favicon.ico" },
-    { id: 4, title: "Tudo sobre o câncer", icon: "/favicon.ico" },
+    { id: 2, title: "Diagnósticos", icon: <MicroscopeIcon /> },
+    { id: 3, title: "Serviços", icon: <ServiceIcon /> },
+    { id: 4, title: "Tudo sobre o câncer", icon: <AllOfCancerIcon /> },
   ];
 
   return (

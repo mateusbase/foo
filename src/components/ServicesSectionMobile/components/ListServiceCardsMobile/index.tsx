@@ -1,5 +1,5 @@
 import ServiceCard from "@/components/ServiceCard";
-import { useRef } from "react";
+import { ReactNode, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 interface Service {
   id: number;
   title: string;
-  icon: string;
+  icon: ReactNode;
 }
 
 interface ListServiceCardsMobileProps {
