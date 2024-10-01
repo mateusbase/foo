@@ -5,8 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
-import EventCardMobile from "@/components/EventCardMobile";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import EventCardMobile from "@/components/EventCardMobile";
+import NavigationButton from "../NavigationButton";
 import { ListUpcomingEventCardsMobileProps } from "./types";
 import NavigationButton from "../NavigationButton";
 
