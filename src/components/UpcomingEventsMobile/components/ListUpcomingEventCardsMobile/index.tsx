@@ -8,6 +8,7 @@ import { NavigationOptions } from "swiper/types";
 import EventCardMobile from "@/components/EventCardMobile";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { ListUpcomingEventCardsMobileProps } from "./types";
+import NavigationButton from "../NavigationButton";
 
 export default function ListUpcomingEventCardsMobile({
   events,
@@ -61,31 +62,29 @@ export default function ListUpcomingEventCardsMobile({
           </SwiperSlide>
         ))}
       </Swiper>
-
       <div className="mt-4 flex justify-center space-x-4 lg:justify-end">
-        <button
+        <NavigationButton
           ref={prevRef}
-          type="button"
-          className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-          aria-label="Previous"
-        >
-          <IoIosArrowBack
-            className="text-primary-foreground dark:text-gray-800"
-            size={35}
-          />
-        </button>
-
-        <button
+          onClick={() => { }}
+          label="Previous"
+          icon={
+            <IoIosArrowBack
+              className="text-primary-foreground dark:text-gray-800"
+              size={35}
+            />
+          }
+        />
+        <NavigationButton
           ref={nextRef}
-          type="button"
-          className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-          aria-label="Next"
-        >
-          <IoIosArrowForward
-            className="text-primary-foreground dark:text-gray-800"
-            size={35}
-          />
-        </button>
+          onClick={() => { }}
+          label="Next"
+          icon={
+            <IoIosArrowForward
+              className="text-primary-foreground dark:text-gray-800"
+              size={35}
+            />
+          }
+        />
       </div>
     </div>
   );
