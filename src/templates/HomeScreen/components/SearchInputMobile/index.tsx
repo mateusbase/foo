@@ -63,7 +63,7 @@ const SearchInput = (): JSX.Element => {
 
   return (
     <div className="relative w-full">
-      <div className={`mt-2 flex h-14 w-full items-center justify-between rounded-full border border-solid ${isRecording ? "border-red-500" : "border-primary"} bg-white px-10 font-semibold opacity-85`}>
+      <div className={`mt-2 flex h-14 w-full md:hidden items-center justify-between rounded-full border border-solid ${isRecording ? "border-red-500" : "border-primary"} bg-white px-10 font-semibold opacity-85`}>
         <div className="flex w-full flex-col">
           <input
             type="text"
