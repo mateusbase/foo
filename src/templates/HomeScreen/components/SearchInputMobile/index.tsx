@@ -85,7 +85,7 @@ const SearchInput = (): JSX.Element => {
       </div>
 
       {searchTerm && (
-        <div className="bg-white px-10 font-semibold opacity-85">
+        <div className="bg-white md:hidden px-10 font-semibold opacity-85">
           <div className="absolute left-0 top-full mt-1 w-full rounded-lg bg-white p-4 shadow-lg">
             {results.length > 0 ? (
               results.map((page) => (
