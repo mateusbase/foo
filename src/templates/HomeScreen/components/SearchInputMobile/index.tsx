@@ -85,30 +85,33 @@ const SearchInput = (): JSX.Element => {
       </div>
 
       {searchTerm && (
-        <div className="absolute left-0 top-full mt-2 w-full rounded-lg bg-white p-4 shadow-lg">
-          {results.length > 0 ? (
-            results.map((page) => (
-              <Link
-                key={page.id}
-                href={page.data?.url || "#"}
-                className="block py-4 text-blue-500"
-              >
-                <div className="text-xl font-bold">
-                  {page.data?.title || "Página Sem Título"}
-                </div>
-                <div className="text-sm text-gray-600">
-                  {page.data?.description || "Sem descrição"}
-                </div>
-              </Link>
-            ))
-          ) : (
-            <div className="py-2 text-lg text-gray-500">
-              Nenhum resultado encontrado.
-            </div>
-          )}
+        <div className="bg-white md:hidden px-10 font-semibold opacity-85">
+          <div className="absolute left-0 top-full mt-1 w-full rounded-lg bg-white p-4 shadow-lg">
+            {results.length > 0 ? (
+              results.map((page) => (
+                <Link
+                  key={page.id}
+                  href={page.data?.url || "#"}
+                  className="block py-4 text-blue-500"
+                >
+                  <div className="text-xl font-bold">
+                    {page.data?.title || "Página Sem Título"}
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    {page.data?.description || "Sem descrição"}
+                  </div>
+                </Link>
+              ))
+            ) : (
+              <div className="py-2 text-lg text-gray-500">
+                Nenhum resultado encontrado.
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
+
   );
 };
 
