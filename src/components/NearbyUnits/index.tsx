@@ -7,7 +7,7 @@ export default function NearbyUnits(): JSX.Element {
   return (
     <main className="mt-10 flex flex-col gap-14 p-8">
       <section className="flex items-center justify-between gap-5">
-        <h1 className="text-4xl font-extralight text-primary">
+        <h1 className="text-3xl font-extralight text-primary">
           Encontre uma unidade Oncoclínicas próxima a você
         </h1>
 
@@ -35,11 +35,11 @@ export default function NearbyUnits(): JSX.Element {
           ]}
         />
 
-        <BaseButton color="primary" className="w-56 text-white">
+        <BaseButton color="primary" className="w-40 text-white">
           Buscar Unidades
         </BaseButton>
       </section>
-      <section className="mx-auto mb-10 mt-20 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+      <section className="mx-auto mb-10 mt-10 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {unitsData.map((unit) => (
           <UnitsCard key={unit.id} {...unit} />
         ))}

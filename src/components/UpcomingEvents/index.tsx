@@ -14,7 +14,7 @@ export default function UpcomingEventsSection(): JSX.Element {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className="hidden items-start justify-center gap-8 px-4 py-16 lg:flex">
+    <div className="flex flex-col items-start justify-center gap-8 px-4 py-16 lg:flex-row">
       <div className="max-w-[1024px]">
         <div className="text-left">
           <h2 className="text-5xl font-thin text-primary">

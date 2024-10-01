@@ -8,8 +8,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import UnitsCardMobile from "../UnitsCard";
-import { ListServiceCardsMobileProps } from "./types";
 
+interface Units {
+  id: number;
+  unitName: string;
+  address: string;
+  complement: string;
+  city: string;
+  hours: string;
+  specialties: string[];
+}
+
+interface ListServiceCardsMobileProps {
+  units: Units[];
+}
 export default function ListNearbyUnitCardsMobile({
   units,
 }: ListServiceCardsMobileProps): JSX.Element {

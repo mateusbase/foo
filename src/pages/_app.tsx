@@ -12,6 +12,10 @@ import { NextUIProvider } from "@nextui-org/react";
 import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
 import { Lato } from "next/font/google";
+import { builder } from "@builder.io/react";
+import { SearchProvider } from "@/contexts/search.context";
+
+builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY ?? "");
 
 const lato = Lato({ subsets: ["latin"], weight: ["400", "700", "900"] });
 
@@ -35,14 +39,16 @@ export default function App({
     <NextUIProvider>
       <CookiesProvider>
         <ApolloProvider client={apolloClient}>
-          <ErrorBoundary>
-            {getLayout(
-              <main className={lato.className}>
-                <Component {...pageProps} />
-              </main>,
-            )}
-          </ErrorBoundary>
-          {process.env.NODE_ENV === "production" && <VLibras forceOnload />}
+          <SearchProvider>
+            <ErrorBoundary>
+              {getLayout(
+                <main className={lato.className}>
+                  <Component {...pageProps} />
+                </main>,
+              )}
+            </ErrorBoundary>
+            {process.env.NODE_ENV === "production" && <VLibras forceOnload />}
+          </SearchProvider>{" "}
         </ApolloProvider>
       </CookiesProvider>
     </NextUIProvider>

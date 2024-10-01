@@ -7,7 +7,7 @@ import { IoMenu } from "react-icons/io5";
 
 export default function ServiceScreen(): JSX.Element {
   const router = useRouter();
-  const { servico } = router.query;
+  const { servicos } = router.query;
 
   const menuItems = [
     { id: 1, name: "O que é a laserterapia" },
@@ -31,8 +31,8 @@ export default function ServiceScreen(): JSX.Element {
   return (
     <PageLayout
       title={
-        servico
-          ? capitalizeFirstLetter(decodeURIComponent(servico as string))
+        servicos
+          ? capitalizeFirstLetter(decodeURIComponent(servicos as string))
           : " "
       }
       subtitle="Serviço Oncoclínicas"

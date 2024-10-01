@@ -221,7 +221,7 @@ export default function Footer(): JSX.Element {
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-8 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-8 lg:grid-cols-5">
             <div>
               <h4 className="mb-4 font-bold text-white">Notícias</h4>
               <ul>
