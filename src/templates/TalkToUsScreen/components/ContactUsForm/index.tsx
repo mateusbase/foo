@@ -57,14 +57,7 @@ export default function ContactUsForm(): JSX.Element {
             { key: 1, value: "1", label: "SP" },
             { key: 2, value: "2", label: "RJ" },
           ]}
-        >
-          <SelectItem key={1} value="1">
-            SP
-          </SelectItem>
-          <SelectItem key={2} value="2">
-            RJ
-          </SelectItem>
-        </BaseSelect>
+        />
 
         <BaseSelect
           variant="bordered"
