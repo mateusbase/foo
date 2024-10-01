@@ -9,7 +9,6 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import EventCardMobile from "@/components/EventCardMobile";
 import NavigationButton from "../NavigationButton";
 import { ListUpcomingEventCardsMobileProps } from "./types";
-import NavigationButton from "../NavigationButton";
 
 export default function ListUpcomingEventCardsMobile({
   events,
@@ -66,7 +65,6 @@ export default function ListUpcomingEventCardsMobile({
       <div className="mt-4 flex justify-center space-x-4 lg:justify-end">
         <NavigationButton
           ref={prevRef}
-          onClick={() => { }}
           label="Previous"
           icon={
             <IoIosArrowBack
@@ -77,7 +75,6 @@ export default function ListUpcomingEventCardsMobile({
         />
         <NavigationButton
           ref={nextRef}
-          onClick={() => { }}
           label="Next"
           icon={
             <IoIosArrowForward
