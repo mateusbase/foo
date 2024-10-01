@@ -17,7 +17,7 @@ const PageHeader = ({
         <div className="flex w-full max-w-screen-2xl flex-col items-start justify-center px-4">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between lg:justify-start">
             <div className="sm:w-[350px] lg:w-full">
-              <p className="max-w-unit-9xl mt-2 text-sm leading-[20px] text-white sm:text-base sm:leading-[22px] lg:mt-4 lg:text-lg lg:leading-[24px]">
+              <p className="mt-2 max-w-unit-9xl text-sm leading-[20px] text-white sm:text-base sm:leading-[22px] lg:mt-4 lg:text-lg lg:leading-[24px]">
                 {preTitle}
               </p>
 
@@ -26,7 +26,7 @@ const PageHeader = ({
               </h1>
 
               <div className="w-[272px] lg:w-full">
-                <p className="max-w-unit-9xl mt-2 text-sm leading-[20px] text-white sm:text-base sm:leading-[22px] lg:mt-4 lg:text-lg lg:leading-[24px]">
+                <p className="mt-2 max-w-unit-9xl text-sm leading-[20px] text-white sm:text-base sm:leading-[22px] lg:mt-4 lg:text-lg lg:leading-[24px]">
                   {subtitle}
                 </p>
               </div>
