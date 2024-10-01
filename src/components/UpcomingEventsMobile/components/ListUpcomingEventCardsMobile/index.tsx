@@ -65,6 +65,7 @@ export default function ListUpcomingEventCardsMobile({
       <div className="mt-4 flex justify-center space-x-4 lg:justify-end">
         <NavigationButton
           ref={prevRef}
+          onClick={() => console.log("prev")}
           label="Previous"
           icon={
             <IoIosArrowBack
@@ -76,6 +77,7 @@ export default function ListUpcomingEventCardsMobile({
         <NavigationButton
           ref={nextRef}
           label="Next"
+          onClick={() => console.log("prev")}
           icon={
             <IoIosArrowForward
               className="text-primary-foreground dark:text-gray-800"
