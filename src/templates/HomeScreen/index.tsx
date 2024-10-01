@@ -76,9 +76,7 @@ export default function HomeScreen(): JSX.Element {
       </BaseContainer>
 
       <div className="block lg:hidden">
-        {/* {informationMock.map((information) => ( */}
         <InformationSliderMobile informations={informationMock} />
-        {/* ))} */}
       </div>
 
       <FaqSection />

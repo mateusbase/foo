@@ -1,9 +1,14 @@
+import { TreatmentsIcon } from "@/components/Icons";
 import ListServiceCards from "./components/ListServiceCards";
 import ServiceText from "./components/ServiceText";
 
 export default function ServicesSection(): JSX.Element {
   const services = [
-    { id: 1, title: "Tratamentos", icon: "/favicon.ico" },
+    {
+      id: 1,
+      title: "Tratamentos",
+      icon: <TreatmentsIcon />,
+    },
     { id: 2, title: "Diagnósticos", icon: "/favicon.ico" },
     { id: 3, title: "Serviços", icon: "/favicon.ico" },
     { id: 4, title: "Tudo sobre o câncer", icon: "/favicon.ico" },

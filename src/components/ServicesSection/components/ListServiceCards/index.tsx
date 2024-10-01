@@ -1,9 +1,10 @@
 import ServiceCard from "@/components/ServiceCard";
+import { ReactNode } from "react";
 
 interface Service {
   id: number;
   title: string;
-  icon: string;
+  icon: ReactNode;
 }
 
 interface ListServiceCardsProps {
