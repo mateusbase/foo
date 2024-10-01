@@ -27,6 +27,11 @@ const SearchInputMobile = (): JSX.Element => {
     }
   };
 
+  const handleClick = (): void => {
+    setSearchTerm("");
+    setResults([]);
+  };
+
   return (
     <div className="relative w-3/4 max-w-screen-lg">
       <div className="flex h-28 items-center justify-between rounded-full border border-solid border-primary bg-white px-10 font-semibold opacity-85">
@@ -58,6 +63,7 @@ const SearchInputMobile = (): JSX.Element => {
                   key={page.id}
                   href={page.data?.url || "#"}
                   className="block rounded-lg px-4 py-4 transition duration-300 hover:bg-gray-100 hover:text-blue-700"
+                  onClick={handleClick}
                 >
                   <div className="text-xl font-bold">
                     {page.data?.title || "Página Sem Título"}

@@ -61,6 +61,11 @@ const SearchInput = (): JSX.Element => {
     recognition.start();
   };
 
+  const handleClick = (): void => {
+    setSearchTerm("");
+    setResults([]);
+  };
+
   return (
     <div className="relative w-full">
       <div className={`mt-2 flex h-14 w-full md:hidden items-center justify-between rounded-full border border-solid ${isRecording ? "border-red-500" : "border-primary"} bg-white px-10 font-semibold opacity-85`}>
@@ -92,6 +97,7 @@ const SearchInput = (): JSX.Element => {
                 <Link
                   key={page.id}
                   href={page.data?.url || "#"}
+                  onClick={handleClick}
                   className="block py-4 px-4 rounded-lg hover:bg-gray-100 hover:text-blue-700 transition duration-300"
                 >
                   <div className="text-xl font-bold">
