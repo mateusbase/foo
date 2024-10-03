@@ -9,7 +9,6 @@ export default function OcJournalScreen(): JSX.Element {
     <PageLayout
       title="Oc Journal"
       subtitle="A newsletter científica do Grupo Oncoclínicas"
-      showContactSection={false}
     >
       <div className="mt-20">
         <InformationSlider

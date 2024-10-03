@@ -25,19 +25,33 @@ export default function UnitScreen(): JSX.Element {
     ? (specialties as string).split(",")
     : [];
 
+  const sections = [
+    {
+      href: "#",
+      text: "Fale por WhatsApp",
+      icon: <Heart />,
+      isLink: true,
+    },
+    {
+      href: "#",
+      text: "Ligar na central de atendimento",
+      icon: <User />,
+      isLink: true,
+    },
+    {
+      href: "#",
+      text: "Mostrar no mapa",
+      icon: <Activity />,
+      isLink: true,
+    },
+  ];
+
   return (
     <PageLayout
       title={`${decodedUnitName}`}
       subtitle={`${decodedAddress}, ${decodedComplement}, ${decodedCity}`}
-      showContactSection
-      contactLinks={{
-        whatsappText: "Fale por WhatsApp",
-        whatsappLink: "#",
-        phoneText: "Ligar na central de atendimento",
-        phoneLink: "#",
-        mapText: "Mostrar no mapa",
-        mapLink: "#",
-      }}
+      showSections
+      sections={sections}
     >
       <div className="mt-10 flex flex-col gap-10 lg:flex-row">
         <div className="mb-10 flex-1">

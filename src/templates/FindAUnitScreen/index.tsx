@@ -11,7 +11,6 @@ export default function FindAUnitScreen(): JSX.Element {
     <PageLayout
       title="Encontre uma unidade"
       subtitle="Conheça as unidades Oncoclínicas em todo o Brasil"
-      showContactSection={false}
     >
       <div className="mt-14">
         <h1 className="font-lato hidden text-4xl leading-[48px] text-primary md:block">

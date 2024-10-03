@@ -94,24 +94,35 @@ export default function ServiceScreen(): JSX.Element {
     title: "Serviços, diagnósticos e tratamentos",
     address: "Oncoclínicas",
     buttonText: "Ver todos os serviços",
-    showContactSection: true,
-    contactLinks: {
-      whatsappLink: "https://wa.me/your-whatsapp-number",
-      whatsappText: "Serviço",
-      phoneLink: "tel:+123456789",
-      phoneText: "Diagnósticos",
-      mapLink: "https://maps.google.com",
-      mapText: "Tratamentos",
-    },
+    showSections: true,
+    sections: [
+      {
+        href: "#servicos",
+        text: "Serviço",
+        icon: undefined,
+        isLink: true,
+      },
+      {
+        href: "#diagnósticos",
+        text: "Diagnósticos",
+        icon: undefined,
+        isLink: true,
+      },
+      {
+        href: "#tratamentos",
+        text: "Tratamentos",
+        icon: undefined,
+        isLink: true,
+      },
+    ],
   };
 
   return (
     <PageLayout
       title={headerProps.title}
       subtitle={headerProps.address}
-      showContactSection
-      contactLinks={headerProps.contactLinks}
-      showIcons={false}
+      showSections
+      sections={headerProps.sections}
     >
       <div className="mt-8 flex w-full flex-wrap items-center justify-center gap-2 lg:hidden">
         <a

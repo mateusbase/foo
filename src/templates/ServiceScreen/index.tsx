@@ -36,7 +36,6 @@ export default function ServiceScreen(): JSX.Element {
           : " "
       }
       subtitle="Serviço Oncoclínicas"
-      showContactSection={false}
     >
       <div className="mt-14 flex flex-col md:flex-row">
         <div className="mb-10 block md:hidden">

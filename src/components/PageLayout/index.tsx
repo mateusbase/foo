@@ -12,8 +12,8 @@ export default function PageLayout({
   showHeader = true,
   title,
   subtitle,
-  showContactSection = false,
-  contactLinks,
+  showSections = false,
+  sections,
   mainOptions = true,
   showIcons = true,
 }: PageLayoutProps): JSX.Element {
@@ -40,8 +40,8 @@ export default function PageLayout({
         <PageHeader
           title={pageTitle}
           subtitle={subtitle}
-          showContactSection={showContactSection}
-          contactLinks={contactLinks}
+          showSections={showSections}
+          sections={sections}
           showIcons={showIcons}
         />
       )}

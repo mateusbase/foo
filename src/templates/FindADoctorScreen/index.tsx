@@ -112,7 +112,6 @@ export default function FindADoctorScreen(): JSX.Element {
     <PageLayout
       title="Encontre um médico"
       subtitle="Conheça os médicos Oncoclínicas em todo o Brasil"
-      showContactSection
     >
       <div className="mt-14 md:px-0">
         <h1 className="font-lato hidden text-4xl leading-[48px] text-primary md:block">

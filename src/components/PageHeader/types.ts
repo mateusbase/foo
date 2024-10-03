@@ -1,16 +1,16 @@
+export type Section = {
+  href: string;
+  text: string;
+  icon?: JSX.Element;
+  isLink?: boolean;
+};
+
 export type PageHeaderProps = {
   preTitle?: string;
   title: string;
   subtitle?: string;
   buttonText?: string;
-  showContactSection?: boolean;
+  showSections?: boolean;
   showIcons?: boolean;
-  contactLinks?: {
-    whatsappText: string;
-    whatsappLink: string;
-    phoneText: string;
-    phoneLink: string;
-    mapText: string;
-    mapLink: string;
-  };
+  sections?: Section[];
 };

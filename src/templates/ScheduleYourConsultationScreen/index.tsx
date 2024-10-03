@@ -5,11 +5,7 @@ import PageLayout from "@/components/PageLayout";
 
 export default function ScheduleYourConsultationScreen(): JSX.Element {
   return (
-    <PageLayout
-      title="Agende sua consulta"
-      subtitle="Oncoclínicas"
-      showContactSection={false}
-    >
+    <PageLayout title="Agende sua consulta" subtitle="Oncoclínicas">
       <div className="mt-5 flex flex-col gap-10 md:mt-20 lg:flex-row">
         <div className="w-full lg:w-1/2">
           <h1 className="text-4xl font-extralight text-primary">

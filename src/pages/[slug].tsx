@@ -47,8 +47,10 @@ const DynamicPage = (): JSX.Element => {
 
   return (
     <Page
-      title={content?.data.title || "Página Dinâmica"}
-      description={content?.data.description || "Descrição da página dinâmica"}
+      title={content?.data.title || "Oncoclínicas"}
+      description={
+        content?.data.description || "Referência em tratamento oncológico."
+      }
     >
       <PageLayout
         title={content?.data.title}
