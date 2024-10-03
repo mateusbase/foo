@@ -3,17 +3,11 @@ import { BuilderComponent, builder } from "@builder.io/react";
 import { useEffect, useState } from "react";
 import Page from "@/components/Page";
 import PageLayout from "@/components/PageLayout";
+import { ContentData } from "@/utils/types";
 
 const DynamicPage = (): JSX.Element => {
   const router = useRouter();
   const { slug } = router.query;
-
-  interface ContentData {
-    data: {
-      title: string;
-      description: string;
-    };
-  }
 
   const [content, setContent] = useState<ContentData | null>(null);
 

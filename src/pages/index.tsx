@@ -2,17 +2,13 @@ import HomeScreen from "@/templates/HomeScreen";
 import Head from "next/head";
 import { ReactElement } from "react";
 import Layout from "@/components/layout";
-
-import { NextPageWithLayout } from "./_app";
+import { NextPageWithLayout } from "@/utils/types";
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>
-          Oncoclínicas - Referência em tratamento oncológico | Referência em
-          tratamento oncológico
-        </title>
+        <title>Oncoclínicas - Referência em tratamento oncológico</title>
 
         <meta
           name="description"
