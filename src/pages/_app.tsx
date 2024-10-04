@@ -8,11 +8,12 @@ import "@/styles/globals.css";
 import { ApolloProvider } from "@apollo/client";
 import { CookiesProvider } from "react-cookie";
 import { NextUIProvider } from "@nextui-org/react";
-
 import { Lato } from "next/font/google";
 import { builder } from "@builder.io/react";
 import { SearchProvider } from "@/contexts/search.context";
 import { AppPropsWithLayout } from "@/utils/types";
+import "../../i18n.js";
+import { LanguageProvider } from "@/contexts/language.context";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY ?? "");
 
@@ -30,16 +31,18 @@ export default function App({
     <NextUIProvider>
       <CookiesProvider>
         <ApolloProvider client={apolloClient}>
-          <SearchProvider>
-            <ErrorBoundary>
-              {getLayout(
-                <main className={lato.className}>
-                  <Component {...pageProps} />
-                </main>,
-              )}
-            </ErrorBoundary>
-            {process.env.NODE_ENV === "production" && <VLibras forceOnload />}
-          </SearchProvider>{" "}
+          <LanguageProvider>
+            <SearchProvider>
+              <ErrorBoundary>
+                {getLayout(
+                  <main className={lato.className}>
+                    <Component {...pageProps} />
+                  </main>,
+                )}
+              </ErrorBoundary>
+              {process.env.NODE_ENV === "production" && <VLibras forceOnload />}
+            </SearchProvider>
+          </LanguageProvider>
         </ApolloProvider>
       </CookiesProvider>
     </NextUIProvider>

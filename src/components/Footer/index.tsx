@@ -2,9 +2,39 @@
 import { Divider, Radio, RadioGroup } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/language.context";
+import { useEffect, useState } from "react";
 import BaseContainer from "../Container";
 
 export default function Footer(): JSX.Element {
+  const { i18n } = useTranslation();
+  const { toggleLanguage } = useLanguage();
+
+  const [selectedLanguage, setSelectedLanguage] = useState<string>(
+    i18n.language || "pt_BR",
+  );
+
+  const toggleLanguageLocale = (language: string): void => {
+    const newLocale = language === "en" ? "en" : "pt_BR";
+
+    i18n.changeLanguage(newLocale).then(() => {
+      localStorage.setItem("language", newLocale);
+
+      setSelectedLanguage(newLocale);
+
+      toggleLanguage();
+    });
+  };
+
+  useEffect(() => {
+    const savedLocale = localStorage.getItem("language") || i18n.language;
+
+    i18n.changeLanguage(savedLocale);
+
+    setSelectedLanguage(savedLocale);
+  }, [i18n]);
+
   const icons = [
     {
       src: "https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/footer/facebook.svg",
@@ -285,13 +315,15 @@ export default function Footer(): JSX.Element {
 
             <RadioGroup
               className="flex flex-col gap-4 lg:flex-row lg:gap-8"
-              color="default"
+              color="primary"
+              value={selectedLanguage}
+              onValueChange={(value) => toggleLanguageLocale(value)}
               orientation="horizontal"
             >
-              <Radio className="text-white" value="pt-BR">
+              <Radio className="text-white" value="pt_BR">
                 <span className="font-medium text-white">Português</span>
               </Radio>
-              <Radio className="text-white" value="en-US">
+              <Radio className="text-white" value="en">
                 <span className="font-medium text-white">English</span>
               </Radio>
               <Radio className="text-white" value="es-ES">

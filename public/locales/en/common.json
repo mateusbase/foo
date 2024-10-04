@@ -1,0 +1,11 @@
+{
+  "navbar": {
+    "patients": "Patients",
+    "doctors": "Doctors",
+    "investors": "Investors",
+    "contact": "Contact"
+  },
+  "footer": {
+    "all_rights_reserved": "All rights reserved"
+  }
+}

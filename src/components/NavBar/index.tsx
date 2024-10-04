@@ -13,18 +13,11 @@ import { Calendar, Stethoscope, LogIn, X } from "lucide-react";
 import { useRouter } from "next/router";
 import { IoMenu } from "react-icons/io5";
 import { HiOutlineMapPin } from "react-icons/hi2";
+import { useTranslation } from "react-i18next";
 import NavLink from "../NavLink";
 import BaseSelect from "../Select";
 import BaseButton from "../Button";
 import { NavBarProps } from "./types";
-
-const routes = [
-  { label: "Pacientes", pathname: "/" },
-  { label: "Médicos", pathname: "/medicos" },
-  { label: "Investidores", pathname: "/relacao-com-investidor" },
-  { label: "Instituto OC", pathname: "/contato" },
-  { label: "Notícias", pathname: "/contato" },
-];
 
 export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,6 +25,16 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [showLanguageSelector, setShowLanguageSelector] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
   const router = useRouter();
+
+  const { t } = useTranslation();
+
+  const routes = [
+    { label: t("navbar.patients"), pathname: "/" },
+    { label: t("navbar.doctors"), pathname: "/medicos" },
+    { label: t("navbar.investors"), pathname: "/relacao-com-investidor" },
+    { label: "Instituto OC", pathname: "/contato" },
+    { label: "Notícias", pathname: "/contato" },
+  ];
 
   const isMedicoPage = router.pathname === "/medicos";
 
