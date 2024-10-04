@@ -1,6 +1,6 @@
 import { Select, SelectItem } from "@nextui-org/react";
 import { BaseSelectProps } from "./types";
-import ArrowDownIcon from "../Icons/ArrowDownIcon";
+import ArrowDownIcon from "../icons/ArrowDownIcon";
 
 export default function BaseSelect({
   color = "primary",

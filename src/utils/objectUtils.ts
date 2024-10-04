@@ -1,3 +1,5 @@
+import { PinIcon, UserIcon } from "@/components/icons";
+import DocumentIcon from "@/components/icons/DocumentIcon";
 import { FaFile, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import { IoIosCalendar } from "react-icons/io";
 
@@ -49,14 +51,19 @@ export const options = [
   {
     id: 2,
     title: "Encontre uma unidade",
-    icon: FaMapMarkerAlt,
+    icon: PinIcon,
     link: "/encontre-uma-unidade",
   },
   {
     id: 3,
     title: "Encontre um médico",
-    icon: FaUser,
+    icon: UserIcon,
     link: "/encontre-um-medico",
   },
-  { id: 4, title: "Resultado de Exames", icon: FaFile, link: "/resultados" },
+  {
+    id: 4,
+    title: "Resultado de Exames",
+    icon: DocumentIcon,
+    link: "/resultados",
+  },
 ];

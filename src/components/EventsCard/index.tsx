@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FiCheckSquare } from "react-icons/fi";
 import { IoIosCalendar } from "react-icons/io";
 import { Button } from "@nextui-org/react";
+import { UserIcon } from "../icons";
 
 export default function EventCard({
   event,
@@ -35,7 +36,7 @@ export default function EventCard({
 
           <div className="space-y-4">
             <div className="flex items-center text-lg font-normal text-darkGray md:text-xl">
-              <Calendar className="mr-2 text-primary" />
+              <UserIcon color="text-primary" className="mr-2 text-primary" />
               <span>{event.date}</span>
             </div>
 

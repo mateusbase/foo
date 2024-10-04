@@ -3,3 +3,8 @@ export { default as MicroscopeIcon } from "./MicroscopeIcon";
 export { default as ServiceIcon } from "./ServiceIcon";
 export { default as AllOfCancerIcon } from "./AllOfCancerIcon";
 export { default as ArrowDownIcon } from "./ArrowDownIcon";
+export { default as ArrowCicleOutline } from "./ArrowCicleOutline";
+export { default as DocumentIcon } from "./DocumentIcon";
+export { default as UserIcon } from "./UserIcon";
+export { default as PinIcon } from "./PinIcon";
+export { default as LogoIcon } from "./LogoIcon";

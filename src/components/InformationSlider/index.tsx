@@ -5,6 +5,7 @@ import {
 } from "react-icons/md";
 import { Image } from "@nextui-org/react";
 import { InformationSliderProps } from "./types";
+import { LogoIcon } from "../icons";
 
 export default function InformationSlider({
   title,
@@ -21,11 +22,12 @@ export default function InformationSlider({
           }`}
       >
         <div className="mt-4">
-          <Image
+          {/* <Image
             src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
             alt="Logo"
             className="w-[250px] max-w-none lg:w-[300px]"
-          />
+          /> */}
+          <LogoIcon />
         </div>
 
         <div>
