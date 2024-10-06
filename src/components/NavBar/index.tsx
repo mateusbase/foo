@@ -132,7 +132,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             />
 
             <NavbarBrand
-              className="ml-5 cursor-pointer xl2:ml-0"
+              className="cursor-pointer md:ml-5 xl2:ml-0"
               onClick={handleLogoClick}
             >
               <Image

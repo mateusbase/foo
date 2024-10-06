@@ -13,13 +13,13 @@ export default function ServicesSectionMobile(): JSX.Element {
       id: 1,
       title: "Tratamentos",
       icon: <TreatmentsIcon />,
-      path: "/tratamentos",
+      path: "/servicos/#tratamentos",
     },
     {
       id: 2,
       title: "Diagnósticos",
       icon: <MicroscopeIcon />,
-      path: "/diagnosticos",
+      path: "/servicos/#diagnósticos",
     },
     { id: 3, title: "Serviços", icon: <ServiceIcon />, path: "/servicos" },
     {
