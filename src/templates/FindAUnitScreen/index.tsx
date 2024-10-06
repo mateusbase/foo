@@ -1,4 +1,3 @@
-import { Input } from "@nextui-org/react";
 import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";
 import { unitsData } from "@/components/NearbyUnits/components/utils";
