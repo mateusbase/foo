@@ -11,6 +11,17 @@ const PageHeader = ({
   sections,
   showIcons = true,
 }: PageHeaderProps): JSX.Element => {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ): void => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="relative h-[243px] w-full bg-gradient-to-r from-primary-foreground to-secondary-foreground sm:h-[343px]">
       <div className="absolute inset-0 flex justify-center">
@@ -49,23 +60,14 @@ const PageHeader = ({
           <div className="ml-[30px] flex items-center gap-8 text-[24px] font-medium">
             {sections.map((section) => (
               <div key={section.href} className="flex items-center gap-2">
-                {section.isLink ? (
-                  <Link
-                    href={section.href}
-                    className="flex items-center gap-2 hover:underline"
-                  >
-                    {showIcons && section.icon && section.icon}
-                    {section.text}
-                  </Link>
-                ) : (
-                  <a
-                    href={section.href}
-                    className="flex items-center gap-2 hover:underline"
-                  >
-                    {showIcons && section.icon && section.icon}
-                    {section.text}
-                  </a>
-                )}
+                <Link
+                  href={section.href}
+                  onClick={(e) => handleLinkClick(e, section.href)}
+                  className="flex cursor-pointer items-center gap-2 hover:underline"
+                >
+                  {showIcons && section.icon && section.icon}
+                  {section.text}
+                </Link>
                 {sections.indexOf(section) < sections.length - 1 && (
                   <span>|</span>
                 )}
