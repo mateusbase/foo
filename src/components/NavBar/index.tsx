@@ -24,9 +24,25 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [location, setLocation] = useState("Carregando localização...");
   const [showLanguageSelector, setShowLanguageSelector] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
 
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const handleScroll = (): void => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const routes = [
     { label: t("navbar.patients"), pathname: "/" },
@@ -111,7 +127,9 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
         <span className="font-semibold text-darkGray">{location}</span>
       </div>
 
-      <div className="w-full bg-white lg:px-4">
+      <div
+        className={`w-full bg-white lg:px-4 ${isScrolled ? "sticky top-0 z-50 shadow-md" : ""}`}
+      >
         <NextNavBar
           maxWidth="full"
           height="96px"
