@@ -1,10 +1,10 @@
-import Breadcrumb from "@/components/Breadcrumb/breadcrumb.component";
 import PageHeader from "@/components/PageHeader";
 import BaseContainer from "@/components/Container";
 import { useRouter } from "next/router";
 import { options } from "@/utils/objectUtils";
 import { PageLayoutProps } from "./types";
 import MainOptionsActions from "../MainOptionsActions";
+import Breadcrumb from "../Breadcrumb";
 
 export default function PageLayout({
   children,
