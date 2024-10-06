@@ -1,4 +1,4 @@
-# ![Oncoclínicas Logo](./public/favicon.ico) Oncoclínicas Project
+# ![Oncoclínicas Logo](./public/favicon.ico) Site Institucional Oncoclínicas
 
 Este é um projeto criado com [Next.js](https://nextjs.org/), adaptado para as necessidades da Oncoclínicas.
 
