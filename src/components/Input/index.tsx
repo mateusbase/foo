@@ -27,6 +27,7 @@ export default function BaseInput({
         className={`${className}`}
         value={value}
         onChange={onChange}
+        color="primary"
       />
     </div>
   );
