@@ -20,7 +20,7 @@ export default function AlphabetSelector({
           <Button
             key={letter}
             onClick={() => onLetterSelect(letter)}
-            className={`font-lato flex h-[32px] w-[32px] items-center justify-center rounded-full p-0 text-[18px] font-black leading-[22px] ${selectedLetter === letter ? "bg-primary text-white" : "bg-white text-primary"
+            className={`flex size-[32px] items-center justify-center rounded-full p-0 text-[18px] font-black leading-[22px] ${selectedLetter === letter ? "bg-primary text-white" : "bg-white text-primary"
               }`}
             style={{
               height: "32px",

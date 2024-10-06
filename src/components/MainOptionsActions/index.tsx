@@ -15,7 +15,7 @@ export default function MainOptionsActions({
           <div className="flex">
             <Link href={option.link || "#"} passHref>
               <button type="button" className="flex items-center space-x-2">
-                <option.icon className="h-6 w-6" />
+                <option.icon className="size-6" />
                 <span className="text-xl">{option.title}</span>
               </button>
             </Link>

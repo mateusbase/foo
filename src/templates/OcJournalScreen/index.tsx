@@ -55,7 +55,7 @@ export default function OcJournalScreen(): JSX.Element {
           <img
             src="https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png"
             alt="ASCO Annual Meeting 2024"
-            className="h-full w-full rounded-md object-cover"
+            className="size-full rounded-md object-cover"
           />
         </div>
 

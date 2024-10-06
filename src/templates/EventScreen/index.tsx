@@ -49,7 +49,7 @@ export default function EventScreen(): JSX.Element {
                   Inscreva-se
                 </h2>
 
-                <div className="mt-10 flex flex-grow flex-col justify-between">
+                <div className="mt-10 flex grow flex-col justify-between">
                   <div className="space-y-10">
                     <Input
                       label="Nome Completo"
@@ -95,7 +95,7 @@ export default function EventScreen(): JSX.Element {
                     <input
                       type="checkbox"
                       id="terms"
-                      className="h-5 w-5 rounded border-white text-primary focus:ring-primary"
+                      className="size-5 rounded border-white text-primary focus:ring-primary"
                     />
                     <label
                       htmlFor="terms"
@@ -133,12 +133,12 @@ export default function EventScreen(): JSX.Element {
       </PageLayout>
 
       <div className="mt-10 block w-full justify-center md:hidden">
-        <div className="flex h-auto w-auto flex-col justify-between bg-primary p-16">
+        <div className="flex size-auto flex-col justify-between bg-primary p-16">
           <h2 className="text-left text-3xl font-bold text-white">
             Inscreva-se
           </h2>
 
-          <div className="mt-10 flex flex-grow flex-col justify-between">
+          <div className="mt-10 flex grow flex-col justify-between">
             <div className="space-y-10">
               <Input
                 label="Nome Completo"
@@ -184,7 +184,7 @@ export default function EventScreen(): JSX.Element {
               <input
                 type="checkbox"
                 id="terms"
-                className="h-5 w-5 rounded border-white text-primary focus:ring-primary"
+                className="size-5 rounded border-white text-primary focus:ring-primary"
               />
               <label
                 htmlFor="terms"

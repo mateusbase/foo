@@ -68,12 +68,12 @@ const SearchInput = (): JSX.Element => {
 
   return (
     <div className="relative w-full">
-      <div className={`mt-2 flex h-14 w-full md:hidden items-center justify-between rounded-full border border-solid ${isRecording ? "border-red-500" : "border-primary"} bg-white px-10 font-semibold opacity-85`}>
+      <div className={`mt-2 flex h-14 w-full items-center justify-between rounded-full border border-solid md:hidden ${isRecording ? "border-red-500" : "border-primary"} bg-white px-10 font-semibold opacity-85`}>
         <div className="flex w-full flex-col">
           <input
             type="text"
             aria-label="Search input"
-            className="h-full w-full border-none bg-transparent text-base font-bold placeholder-primary outline-none"
+            className="size-full border-none bg-transparent text-base font-bold outline-none placeholder:text-primary"
             placeholder="Como podemos te ajudar?"
             value={searchTerm}
             onChange={(e) => handleSearch(e.target.value)}
@@ -90,7 +90,7 @@ const SearchInput = (): JSX.Element => {
       </div>
 
       {searchTerm && (
-        <div className="bg-white md:hidden px-10 font-semibold opacity-85">
+        <div className="bg-white px-10 font-semibold opacity-85 md:hidden">
           <div className="absolute left-0 top-full mt-1 w-full rounded-lg bg-white p-4 shadow-lg">
             {results.length > 0 ? (
               results.map((page) => (
@@ -98,7 +98,7 @@ const SearchInput = (): JSX.Element => {
                   key={page.id}
                   href={page.data?.url || "#"}
                   onClick={handleClick}
-                  className="block py-4 px-4 rounded-lg hover:bg-gray-100 hover:text-blue-700 transition duration-300"
+                  className="block rounded-lg p-4 transition duration-300 hover:bg-gray-100 hover:text-blue-700"
                 >
                   <div className="text-xl font-bold">
                     {page.data?.title || "Página Sem Título"}

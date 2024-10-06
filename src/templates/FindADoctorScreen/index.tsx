@@ -114,7 +114,7 @@ export default function FindADoctorScreen(): JSX.Element {
       subtitle="Conheça os médicos Oncoclínicas em todo o Brasil"
     >
       <div className="mt-14 md:px-0">
-        <h1 className="font-lato hidden text-4xl leading-[48px] text-primary md:block">
+        <h1 className="hidden text-4xl leading-[48px] text-primary md:block">
           Encontre um médico Oncoclínicas próximo a você
         </h1>
 
@@ -196,11 +196,11 @@ export default function FindADoctorScreen(): JSX.Element {
           </div>
         </div>
 
-        <p className="font-lato mt-20 text-[20px] font-normal leading-[26px] text-darkGray">
+        <p className="mt-20 text-[20px] font-normal leading-[26px] text-darkGray">
           Sua pesquisa encontrou 23 médicos
         </p>
 
-        <div className="mb-10 mt-10 grid grid-cols-1 justify-items-center gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="my-10 grid grid-cols-1 justify-items-center gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {doctors.map((doctor) => (
             <CardDoctor key={doctor.id} doctor={doctor} width="max-w-[398px]" />
           ))}

@@ -44,7 +44,7 @@ export default function ContactUsForm(): JSX.Element {
         <BaseInput placeholder="Telefone" />
       </div>
 
-      <div className="row flex flex-col gap-6 md:flex-row lg:flex-row">
+      <div className="flex flex-col gap-6 md:flex-row lg:flex-row">
         <Select
           variant="bordered"
           label="Selecione o estado"

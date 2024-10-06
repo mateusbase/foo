@@ -29,7 +29,7 @@ export default function InformationSlider({
         </div>
 
         <div>
-          <p className="text-5xl font-st">{title}</p>
+          <p className="text-5xl">{title}</p>
         </div>
 
         <div>
@@ -43,7 +43,7 @@ export default function InformationSlider({
       </div>
 
       <div className="h-full w-1/2">
-        <img src={image} alt="Imagem 1" className="h-full w-full" />
+        <img src={image} alt="Imagem 1" className="size-full" />
       </div>
     </div>
   );

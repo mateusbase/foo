@@ -71,10 +71,10 @@ export default function ServiceScreen(): JSX.Element {
         </div>
 
         <div className="flex-1 md:ml-16">
-          <h1 className="font-lato text-4xl font-bold leading-[48px] text-primary">
+          <h1 className="text-4xl font-bold leading-[48px] text-primary">
             O que é a laserterapia
           </h1>
-          <p className="font-lato mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
+          <p className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
             A laserterapia é um tratamento realizado com laser de baixa potência
             que emite comprimento de onda vermelho e/ou infravermelho e não
             promove aumento de temperatura, atuando em nível celular. A luz
@@ -86,11 +86,11 @@ export default function ServiceScreen(): JSX.Element {
             <br />
           </p>
 
-          <h1 className="font-lato text-4xl font-bold leading-[48px] text-primary">
+          <h1 className="text-4xl font-bold leading-[48px] text-primary">
             Quando é usada
           </h1>
 
-          <p className="font-lato mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
+          <p className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
             Pacientes oncológicos submetidos a procedimentos cirúrgicos,
             transplante de medula óssea, quimioterapia, radioterapia em região
             da cabeça e do pescoço e ao uso de alguns medicamentos indicados
@@ -99,7 +99,7 @@ export default function ServiceScreen(): JSX.Element {
             significativas na cavidade oral. As principais manifestações são:
           </p>
 
-          <ul className="font-lato mt-4 list-inside list-disc text-[20px] font-normal leading-[26px] text-darkGray">
+          <ul className="mt-4 list-inside list-disc text-[20px] font-normal leading-[26px] text-darkGray">
             <li>Infecções dentárias e periodontais;</li>
             <li>Infecções oportunistas com candidíase oral;</li>
             <li>Herpes;</li>
@@ -116,7 +116,7 @@ export default function ServiceScreen(): JSX.Element {
             </li>
           </ul>
 
-          <p className="font-lato mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
+          <p className="mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
             A laserterapia é usada para eliminar ou ao menos aliviar essas
             manifestações e, consequentemente, melhorar a qualidade de vida do
             paciente.
@@ -125,11 +125,11 @@ export default function ServiceScreen(): JSX.Element {
           <br />
           <br />
 
-          <h1 className="font-lato text-4xl font-bold leading-[48px] text-primary">
+          <h1 className="text-4xl font-bold leading-[48px] text-primary">
             Como é realizada
           </h1>
 
-          <p className="font-lato mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
+          <p className="mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
             O Grupo Oncoclínicas dispõe de equipes capacitadas e de equipamentos
             para a realização do procedimento de forma segura e eficaz. O número
             de sessões de laserterapia varia de acordo com as lesões a serem

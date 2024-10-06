@@ -15,7 +15,7 @@ export default function UpcomingEventsSection(): JSX.Element {
 
   return (
     <div className="hidden items-start justify-center gap-8 px-4 py-16 lg:flex">
-      <div className="max-w-[1024px]">
+      <div className="max-w-screen-lg">
         <div className="text-left">
           <h2 className="text-5xl font-thin text-primary">
             Olá dr(a). Conheça a agenda dos próximos eventos Oncoclínicas
@@ -76,7 +76,7 @@ export default function UpcomingEventsSection(): JSX.Element {
           <button
             ref={prevRef}
             type="button"
-            className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Previous"
           >
             <IoIosArrowBack
@@ -88,7 +88,7 @@ export default function UpcomingEventsSection(): JSX.Element {
           <button
             ref={nextRef}
             type="button"
-            className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Next"
           >
             <IoIosArrowForward

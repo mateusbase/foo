@@ -1,6 +1,6 @@
 import ScheduleYourConsultationScreen from "@/templates/ScheduleYourConsultationScreen";
 import Page from "@/components/Page";
-import { NextPageWithLayout } from "../_app";
+import { NextPageWithLayout } from "@/utils/types";
 
 const ScheduleYourConsultation: NextPageWithLayout = () => {
   return (

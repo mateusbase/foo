@@ -82,7 +82,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
   return (
     <>
       {showLanguageSelector && (
-        <div className="flex h-[102px] w-full items-center justify-center gap-2 bg-[#5C5C5C] px-5 md:hidden">
+        <div className="flex h-[102px] w-full items-center justify-center gap-2 bg-darkGray px-5 md:hidden">
           <BaseSelect
             color="primary"
             variant="bordered"
@@ -106,7 +106,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
         </div>
       )}
 
-      <div className="flex h-[52px] w-full items-center justify-center bg-[#F0F0F0] md:hidden">
+      <div className="flex h-[52px] w-full items-center justify-center bg-gray-foreground md:hidden">
         <HiOutlineMapPin size={24} className="mr-2 text-secondary" />
         <span className="font-semibold text-darkGray">{location}</span>
       </div>
@@ -121,24 +121,24 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           <NavbarContent>
             <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              className="xl2:hidden hidden sm:block"
+              className="hidden sm:block xl2:hidden"
               icon={
                 isMenuOpen ? (
-                  <X className="h-full w-full min-w-10 text-primary" />
+                  <X className="size-full min-w-10 text-primary" />
                 ) : (
-                  <IoMenu className="h-full w-full min-w-10 text-primary" />
+                  <IoMenu className="size-full min-w-10 text-primary" />
                 )
               }
             />
 
             <NavbarBrand
-              className="xl2:ml-0 ml-5 cursor-pointer"
+              className="ml-5 cursor-pointer xl2:ml-0"
               onClick={handleLogoClick}
             >
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
                 alt="Logo"
-                className="xl2:w-[300px] w-[250px] max-w-none"
+                className="w-[250px] max-w-none xl2:w-[300px]"
               />
             </NavbarBrand>
 
@@ -147,17 +147,15 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               className="sm:hidden"
               icon={
                 isMenuOpen ? (
-                  <X className="h-full w-full min-w-10 text-primary" />
+                  <X className="size-full min-w-10 text-primary" />
                 ) : (
-                  <IoMenu className="h-full w-full min-w-10 text-primary" />
+                  <IoMenu className="size-full min-w-10 text-primary" />
                 )
               }
             />
           </NavbarContent>
 
-          <NavbarContent
-            className={`"justify-center" } xl2:flex hidden gap-8 font-semibold uppercase`}
-          >
+          <NavbarContent className="hidden justify-center gap-8 font-semibold uppercase xl2:flex">
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />
             ))}
@@ -168,7 +166,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               <>
                 <Link
                   href="/contato"
-                  className="xl2:flex ml-10 mr-14 hidden items-center font-semibold text-primary"
+                  className="ml-10 mr-14 hidden items-center font-semibold text-primary xl2:flex"
                 >
                   Entrar
                   <LogIn size={26} className="ml-2" />
@@ -211,7 +209,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               ))}
 
               <NavbarMenuItem className="w-full">
-                <div className="flex h-full w-full flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white sm:hidden">
+                <div className="flex size-full flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white sm:hidden">
                   <Link
                     className="flex w-full items-center justify-center text-sm text-white"
                     href="/agende-sua-consulta"

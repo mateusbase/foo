@@ -13,7 +13,7 @@ export default function FaqSection(): JSX.Element {
 
   return (
     // prettier-ignore
-    <section className="bg-gray-foreground flex flex-col items-center justify-center px-8 py-16 md:py-28">
+    <section className="flex flex-col items-center justify-center bg-gray-foreground px-8 py-16 md:py-28">
 
       <FaqHeader titleHeader={title} />
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center">

@@ -39,7 +39,7 @@ export default function NearbyUnits(): JSX.Element {
           Buscar Unidades
         </BaseButton>
       </section>
-      <section className="mx-auto mb-10 mt-10 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+      <section className="mx-auto my-10 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {unitsData.map((unit) => (
           <UnitsCard key={unit.id} {...unit} />
         ))}

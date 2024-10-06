@@ -8,7 +8,8 @@
     "plugin:react/recommended",
     "airbnb",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -26,7 +27,8 @@
     "react",
     "react-hooks",
     "@typescript-eslint",
-    "prettier"
+    "prettier",
+    "tailwindcss"
   ],
   "rules": {
     "camelcase": "off",
@@ -37,11 +39,9 @@
     "no-param-reassign": "error",
     "react/jsx-curly-newline": "off",
     "react/jsx-filename-extension": [
-      1,
+      "warn",
       {
-        "extensions": [
-          ".tsx"
-        ]
+        "extensions": [".tsx"]
       }
     ],
     "react/jsx-one-expression-per-line": "off",
@@ -77,10 +77,11 @@
       "ignorePackages",
       {
         "ts": "never",
-        "tsx": "never "
+        "tsx": "never"
       }
     ],
-    "react/function-component-definition": "off" // Disable the rule for function component definition
+    "react/function-component-definition": "off",
+    "tailwindcss/classnames-order": "warn"
   },
   "settings": {
     "import/resolver": {
@@ -89,9 +90,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "src/infra/graphql/generated/graphql.ts"
-      ],
+      "files": ["src/infra/graphql/generated/graphql.ts"],
       "rules": {
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/explicit-function-return-type": "off",

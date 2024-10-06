@@ -37,15 +37,15 @@ const Breadcrumb = (): JSX.Element => {
   }, [asPath]);
 
   return (
-    <div className="z-10 items-start justify-between text-sm lg:flex max-w-full break-words">
+    <div className="z-10 max-w-full items-start justify-between break-words text-sm lg:flex">
       <div className="text-left">
         {breadcrumbs.map((breadcrumb, index) => (
           <span key={breadcrumb.breadcrumbUrl}>
             <Link href={breadcrumb.breadcrumbUrl}>
               <span
                 className={`cursor-pointer ${asPath === breadcrumb.breadcrumbUrl
-                  ? "text-[#00B6AD] font-bold"
-                  : "text-black hover:text-[#00B6AD]"
+                  ? "font-bold text-primary-foreground"
+                  : "text-black hover:text-primary-foreground"
                   }`}
               >
                 {breadcrumb.breadcrumbName}
