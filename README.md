@@ -15,3 +15,13 @@ pnpm dev
 # ou
 bun dev
 ```
+
+Abra http://localhost:3000 no seu navegador para ver o site em execução.
+
+Você pode começar a editar a página principal modificando pages/index.tsx. O projeto será atualizado automaticamente à medida que você fizer alterações.
+
+Tecnologias Utilizadas
+Este projeto utiliza as seguintes tecnologias:
+
+Tailwind CSS: Para o design e estilização responsiva, permitindo uma customização rápida e consistente.
+NextUI: Biblioteca de componentes UI para React, usada para criar interfaces modernas e acessíveis.
