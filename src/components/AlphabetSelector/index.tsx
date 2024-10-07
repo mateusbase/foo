@@ -7,6 +7,7 @@ import { AlphabetSelectorProps } from "./types";
 export default function AlphabetSelector({
   selectedLetter,
   onLetterSelect,
+  searchPlaceholder,
 }: AlphabetSelectorProps): JSX.Element {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -34,7 +35,7 @@ export default function AlphabetSelector({
 
       <div className="ml-10 flex gap-5">
         <BaseInput
-          placeholder="Buscar serviço"
+          placeholder={searchPlaceholder}
           size="lg"
           radius="full"
           variant="bordered"
