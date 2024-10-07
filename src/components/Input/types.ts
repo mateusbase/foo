@@ -7,4 +7,6 @@ export interface BaseInputProps {
   className?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  endContent?: React.ReactNode;
+  startContent?: React.ReactNode;
 }

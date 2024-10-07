@@ -1,6 +1,6 @@
 import { Input } from "@nextui-org/react";
 import React from "react";
-import { BaseInputProps } from "./types;";
+import { BaseInputProps } from "./types";
 
 export default function BaseInput({
   label,
@@ -11,6 +11,8 @@ export default function BaseInput({
   className = "w-full",
   value,
   onChange,
+  endContent,
+  startContent,
 }: BaseInputProps): JSX.Element {
   return (
     <div className="w-full">
@@ -28,6 +30,8 @@ export default function BaseInput({
         value={value}
         onChange={onChange}
         color="primary"
+        endContent={endContent}
+        startContent={startContent}
       />
     </div>
   );
