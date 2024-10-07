@@ -1,4 +1,4 @@
-import Link from "next/link"; // Importando Link do Next.js
+import Link from "next/link";
 import { GlossaryCardProps } from "./types";
 
 export default function GlossaryCard({
