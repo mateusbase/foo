@@ -1,7 +1,7 @@
 import BaseButton from "@/components/Button";
 import { IoIosCalendar, IoIosMap, IoIosTime } from "react-icons/io";
-import { Input } from "@nextui-org/react";
 import PageLayout from "@/components/PageLayout";
+import BaseInput from "@/components/Input";
 
 export default function EventScreen(): JSX.Element {
   return (
@@ -19,7 +19,7 @@ export default function EventScreen(): JSX.Element {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-center md:flex-row md:items-start md:justify-between">
-          <div className="relative flex flex-col items-center md:bottom-48 md:left-5">
+          <div className="relative flex flex-col items-start md:bottom-48 md:left-5">
             <img
               src="https://www.clubenoticias.com/images/noticias/8693/7d3c47363b7ee2b12f9204895d4b369b.jpg"
               alt="Foto"
@@ -51,32 +51,24 @@ export default function EventScreen(): JSX.Element {
 
                 <div className="mt-10 flex grow flex-col justify-between">
                   <div className="space-y-10">
-                    <Input
-                      label="Nome Completo"
+                    <BaseInput
                       placeholder="Seu nome"
-                      size="lg"
-                      className="bg-white"
+                      className="bg-white rounded-full"
                       radius="full"
                     />
-                    <Input
-                      label="Email"
+                    <BaseInput
                       placeholder="Seu email"
-                      size="lg"
-                      className="bg-white"
+                      className="bg-white rounded-full"
                       radius="full"
                     />
-                    <Input
-                      label="Telefone"
+                    <BaseInput
                       placeholder="Seu telefone"
-                      size="lg"
-                      className="bg-white"
+                      className="bg-white rounded-full"
                       radius="full"
                     />
-                    <Input
-                      label="CPF"
+                    <BaseInput
                       placeholder="Seu CPF"
-                      size="lg"
-                      className="bg-white"
+                      className="bg-white rounded-full"
                       radius="full"
                     />
                   </div>
@@ -140,32 +132,24 @@ export default function EventScreen(): JSX.Element {
 
           <div className="mt-10 flex grow flex-col justify-between">
             <div className="space-y-10">
-              <Input
-                label="Nome Completo"
+              <BaseInput
                 placeholder="Seu nome"
-                size="lg"
-                className="bg-white"
+                className="bg-white rounded-full"
                 radius="full"
               />
-              <Input
-                label="Email"
+              <BaseInput
                 placeholder="Seu email"
-                size="lg"
-                className="bg-white"
+                className="bg-white rounded-full"
                 radius="full"
               />
-              <Input
-                label="Telefone"
+              <BaseInput
                 placeholder="Seu telefone"
-                size="lg"
-                className="bg-white"
+                className="bg-white rounded-full"
                 radius="full"
               />
-              <Input
-                label="CPF"
+              <BaseInput
                 placeholder="Seu CPF"
-                size="lg"
-                className="bg-white"
+                className="bg-white rounded-full"
                 radius="full"
               />
             </div>

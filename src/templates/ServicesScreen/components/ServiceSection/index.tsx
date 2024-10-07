@@ -11,8 +11,8 @@ import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import SectionHeader from "../SectionHeader";
-import AlphabetSelector from "../AlphabetSelector";
 import { ServiceSectionProps } from "../../types";
+import AlphabetSelector from "@/components/AlphabetSelector";
 
 export default function ServiceSection({
   id,
