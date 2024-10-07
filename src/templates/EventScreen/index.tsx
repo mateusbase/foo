@@ -1,6 +1,5 @@
 import BaseButton from "@/components/Button";
 import { IoIosCalendar, IoIosMap, IoIosTime } from "react-icons/io";
-import { Input } from "@nextui-org/react";
 import PageLayout from "@/components/PageLayout";
 import BaseInput from "@/components/Input";
 
@@ -133,32 +132,24 @@ export default function EventScreen(): JSX.Element {
 
           <div className="mt-10 flex grow flex-col justify-between">
             <div className="space-y-10">
-              <Input
-                label="Nome Completo"
+              <BaseInput
                 placeholder="Seu nome"
-                size="lg"
-                className="bg-white"
+                className="bg-white rounded-full"
                 radius="full"
               />
-              <Input
-                label="Email"
+              <BaseInput
                 placeholder="Seu email"
-                size="lg"
-                className="bg-white"
+                className="bg-white rounded-full"
                 radius="full"
               />
-              <Input
-                label="Telefone"
+              <BaseInput
                 placeholder="Seu telefone"
-                size="lg"
-                className="bg-white"
+                className="bg-white rounded-full"
                 radius="full"
               />
-              <Input
-                label="CPF"
+              <BaseInput
                 placeholder="Seu CPF"
-                size="lg"
-                className="bg-white"
+                className="bg-white rounded-full"
                 radius="full"
               />
             </div>
