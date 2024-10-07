@@ -1,11 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Button, Input } from "@nextui-org/react";
 import { Search } from "lucide-react";
-
-interface AlphabetSelectorProps {
-  selectedLetter: string;
-  onLetterSelect: (letter: string) => void;
-}
+import BaseInput from "../Input";
+import { AlphabetSelectorProps } from "./types";
 
 export default function AlphabetSelector({
   selectedLetter,
@@ -36,16 +33,13 @@ export default function AlphabetSelector({
       </div>
 
       <div className="ml-10 flex gap-5">
-        <Input
+        <BaseInput
           placeholder="Buscar serviço"
           size="lg"
           radius="full"
           variant="bordered"
-          color="primary"
           endContent={<Search className="text-2xl text-primary" />}
-          classNames={{
-            inputWrapper: ["border-primary", "h-[50px]", "w-[280px]"],
-          }}
+          className="w-[300px]"
         />
       </div>
     </div>
