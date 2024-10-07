@@ -10,9 +10,9 @@ import { Search } from "lucide-react";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import AlphabetSelector from "@/components/AlphabetSelector";
 import SectionHeader from "../SectionHeader";
 import { ServiceSectionProps } from "../../types";
-import AlphabetSelector from "@/components/AlphabetSelector";
 
 export default function ServiceSection({
   id,
@@ -51,6 +51,7 @@ export default function ServiceSection({
         <AlphabetSelector
           selectedLetter={selectedLetter}
           onLetterSelect={setSelectedLetter}
+          searchPlaceholder="Buscar serviço"
         />
       </div>
 
