@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Button, Input } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { TbCodePlus } from "react-icons/tb";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -10,9 +10,10 @@ import { Search } from "lucide-react";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import AlphabetSelector from "@/components/AlphabetSelector";
+import BaseInput from "@/components/Input";
 import SectionHeader from "../SectionHeader";
 import { ServiceSectionProps } from "../../types";
-import AlphabetSelector from "@/components/AlphabetSelector";
 
 export default function ServiceSection({
   id,
@@ -37,12 +38,11 @@ export default function ServiceSection({
       <SectionHeader title={title} description={description} />
 
       <div className="mt-10 flex w-full lg:hidden">
-        <Input
+        <BaseInput
           placeholder="Buscar serviço"
           size="lg"
           radius="full"
           variant="bordered"
-          color="primary"
           endContent={<Search className="text-2xl text-primary" />}
         />
       </div>
@@ -51,6 +51,7 @@ export default function ServiceSection({
         <AlphabetSelector
           selectedLetter={selectedLetter}
           onLetterSelect={setSelectedLetter}
+          searchPlaceholder="Buscar serviço"
         />
       </div>
 

@@ -22,6 +22,10 @@ export default function BaseInput({
         </label>
       )}
       <Input
+        classNames={{
+          input: "text-primary placeholder:text-primary",
+          inputWrapper: "border-primary",
+        }}
         placeholder={placeholder}
         size={size}
         radius={radius}
