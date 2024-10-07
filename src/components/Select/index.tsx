@@ -18,6 +18,9 @@ export default function BaseSelect({
 }: BaseSelectProps): JSX.Element {
   return (
     <Select
+      classNames={{
+        trigger: "border-primary",
+      }}
       color={color}
       variant={variant}
       label={label}
