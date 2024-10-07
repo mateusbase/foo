@@ -36,7 +36,7 @@ const InsuranceGrid = (): JSX.Element => {
         />
       </div>
 
-      <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-4 text-base font-bold text-darkGray sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-2 gap-4 text-base font-bold text-darkGray sm:grid-cols-2 lg:grid-cols-3">
         {insurances.map((insurance) => (
           <div key={insurance.id} className="flex items-center">
             {insurance.name}

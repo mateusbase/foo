@@ -14,6 +14,7 @@ export default function FaqSection(): JSX.Element {
   return (
     <section className="flex flex-col items-center justify-center bg-gray-foreground px-8 py-16 md:py-28">
       <FaqHeader titleHeader={title} />
+
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center">
         <Accordion
           className=""
@@ -34,6 +35,7 @@ export default function FaqSection(): JSX.Element {
           >
             {defaultContent}
           </AccordionItem>
+
           <AccordionItem
             key="3"
             title="Quais os tipos de tratamentos que a Oncoclínicas oferece?"
@@ -41,6 +43,7 @@ export default function FaqSection(): JSX.Element {
           >
             {defaultContent}
           </AccordionItem>
+
           <AccordionItem
             key="4"
             title="A Oncoclínicas atende quais especialidades?"
@@ -55,6 +58,7 @@ export default function FaqSection(): JSX.Element {
           >
             {defaultContent}
           </AccordionItem>
+
           <AccordionItem
             key="6"
             title="A Oncoclínicas atende pelo SUS (Sistema Único de Saúde)?"

@@ -66,14 +66,14 @@ export default function WhoWeArecreen(): JSX.Element {
         </div>
 
         <div className="mb-10 ml-0 flex-1 md:ml-16">
-          <h1 className="font-lato text-4xl font-bold leading-[48px] text-primary">
+          <h1 className="text-4xl font-bold leading-[48px] text-primary">
             {menuContent[activeItem].title}
           </h1>
 
           {menuContent[activeItem].paragraphs.map((paragraph: string) => (
             <p
               key={paragraph}
-              className="font-lato mt-6 text-[20px] font-normal leading-[26px] text-darkGray"
+              className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray"
             >
               {paragraph}
             </p>

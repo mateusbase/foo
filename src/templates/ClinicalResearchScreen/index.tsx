@@ -50,7 +50,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
             Pesquisa Clínica Oncoclínicas
           </h1>
 
-          <p className="mt-8 max-w-full text-base text-darkGray lg:max-w-unit-8xl lg:text-lg">
+          <p className="mt-8 max-w-full text-base text-darkGray lg:max-w-7xl lg:text-lg">
             Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem
             sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a
             participação de sete de suas unidades no Brasil.
@@ -123,7 +123,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
             <button
               ref={prevRef}
               type="button"
-              className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
               aria-label="Previous"
             >
               <IoIosArrowBack
@@ -135,7 +135,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
             <button
               ref={nextRef}
               type="button"
-              className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
               aria-label="Next"
             >
               <IoIosArrowForward

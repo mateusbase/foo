@@ -7,7 +7,7 @@ export default function ClippingDetailsScreen(): JSX.Element {
         <p className="text-xl text-darkGray">10 de outubro de 2025</p>
 
         <div className="max-w-7xl">
-          <h1 className="mb-4 mt-4 text-center text-2xl font-extralight text-primary md:text-6xl">
+          <h1 className="my-4 text-center text-2xl font-extralight text-primary md:text-6xl">
             Oncoclínicas é destaque em premiação por prestação de serviços
             médicos
           </h1>

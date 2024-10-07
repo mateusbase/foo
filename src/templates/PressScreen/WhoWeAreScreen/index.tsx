@@ -38,11 +38,11 @@ export default function WhoWeArecreen(): JSX.Element {
         </div>
 
         <div className="ml-0 flex-1 md:ml-16">
-          <h1 className="font-lato text-4xl font-bold leading-[48px] text-primary">
+          <h1 className="text-4xl font-bold leading-[48px] text-primary">
             A Oncoclínicas&Co é um dos maiores grupos de oncologia, hematologia
             e radioterapia da América Latina.
           </h1>
-          <p className="font-lato mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
+          <p className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
             Oncoclínicas&Co é o maior grupo dedicado ao tratamento do câncer na
             América Latina, com um modelo especializado e inovador focado em
             toda a jornada do tratamento oncológico, aliando eficiência
@@ -58,7 +58,7 @@ export default function WhoWeArecreen(): JSX.Element {
             <br />
           </p>
 
-          <p className="font-lato mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
+          <p className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
             Com foco em tecnologia, medicina de precisão e genômica, a
             Oncoclínicas realizou aproximadamente 635 mil tratamentos em 2023. É
             parceira exclusiva no Brasil do Dana-Farber Cancer Institute,
@@ -75,7 +75,7 @@ export default function WhoWeArecreen(): JSX.Element {
             abordagens inovadoras de tratamento.
           </p>
 
-          <p className="font-lato mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
+          <p className="mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
             A laserterapia é usada para eliminar ou ao menos aliviar essas
             manifestações e, consequentemente, melhorar a qualidade de vida do
             paciente.
@@ -84,7 +84,7 @@ export default function WhoWeArecreen(): JSX.Element {
           <br />
           <br />
 
-          <p className="font-lato mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
+          <p className="mt-4 text-[20px] font-normal leading-[26px] text-darkGray">
             A companhia integra a carteira do IDIVERSA, índice lançado pela B3,
             destacando empresas comprometidas com diversidade de gênero e raça.
           </p>

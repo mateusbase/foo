@@ -22,6 +22,9 @@ const config: Config = {
       "lato-black": ["Lato", "sans-serif"],
     },
     extend: {
+      screens: {
+        xl2: "1472px",
+      },
       fontSize: {
         "title-xl": "3.875rem",
       },

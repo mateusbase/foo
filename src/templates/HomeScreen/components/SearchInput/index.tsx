@@ -39,7 +39,7 @@ const SearchInputMobile = (): JSX.Element => {
           <input
             type="text"
             aria-label="Search input"
-            className="h-full w-full border-none bg-transparent text-2xl font-bold placeholder-primary outline-none"
+            className="size-full border-none bg-transparent text-2xl font-bold outline-none placeholder:text-primary"
             placeholder="O que você está procurando?"
             value={searchTerm}
             onChange={(e) => handleSearch(e.target.value)}
@@ -62,7 +62,7 @@ const SearchInputMobile = (): JSX.Element => {
                 <Link
                   key={page.id}
                   href={page.data?.url || "#"}
-                  className="block rounded-lg px-4 py-4 transition duration-300 hover:bg-gray-100 hover:text-blue-700"
+                  className="block rounded-lg p-4 transition duration-300 hover:bg-gray-100 hover:text-blue-700"
                   onClick={handleClick}
                 >
                   <div className="text-xl font-bold">

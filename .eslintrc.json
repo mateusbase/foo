@@ -8,7 +8,8 @@
     "plugin:react/recommended",
     "airbnb",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -22,7 +23,13 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier",
+    "tailwindcss"
+  ],
   "rules": {
     "camelcase": "off",
     "import/prefer-default-export": "off",
@@ -33,7 +40,7 @@
     "no-param-reassign": "error",
     "react/jsx-curly-newline": "off",
     "react/jsx-filename-extension": [
-      1,
+      "warn",
       {
         "extensions": [".tsx"]
       }
@@ -71,10 +78,11 @@
       "ignorePackages",
       {
         "ts": "never",
-        "tsx": "never "
+        "tsx": "never"
       }
     ],
-    "react/function-component-definition": "off" // Disable the rule for function component definition
+    "react/function-component-definition": "off",
+    "tailwindcss/classnames-order": "warn"
   },
   "settings": {
     "import/resolver": {

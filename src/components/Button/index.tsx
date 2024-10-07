@@ -23,6 +23,7 @@ export default function BaseButton({
       disabled={disabled}
       startContent={startContent}
       endContent={endContent}
+      radius="sm"
     >
       {children}
     </Button>

@@ -28,7 +28,7 @@ export default function MedicalServiceCard({
         }}
       />
       <div
-        className="flex flex-col gap-12 justify-between rounded-br-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground py-8 px-14"
+        className="flex flex-col justify-between gap-12 rounded-br-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground px-14 py-8"
       >
         {hasSubtitle && (
           <p className="mt-4 text-[24px] leading-[30px] text-white">
@@ -38,7 +38,7 @@ export default function MedicalServiceCard({
 
         {hasActionButton && (
           <Button
-            className="flex py-7 items-center justify-start rounded-[12px] border-2 border-white bg-transparent pl-4 text-left text-xl font-black leading-[60px] text-white"
+            className="flex items-center justify-start rounded-[12px] border-2 border-white bg-transparent py-7 pl-4 text-left text-xl font-black leading-[60px] text-white"
             startContent={serviceIcon}
           >
             {actionButtonText}
@@ -46,16 +46,16 @@ export default function MedicalServiceCard({
         )}
 
         <div className="text-left">
-          <h3 className="text-4xl md:text-5xl leading-[60px] text-white">
+          <h3 className="text-4xl leading-[60px] text-white md:text-5xl">
             {serviceTitle}
           </h3>
 
-          <p className="mt-4 text-xl md:text-2xl leading-[30px] text-white">
+          <p className="mt-4 text-xl leading-[30px] text-white md:text-2xl">
             {serviceDescription}
           </p>
         </div>
 
-        <div className="flex w-full items-start justify-start rounded-full mt-20">
+        <div className="mt-20 flex w-full items-start justify-start rounded-full">
           <IoIosArrowDropright size={29} color="white" />
         </div>
       </div>

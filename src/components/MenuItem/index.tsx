@@ -13,7 +13,7 @@ export default function MenuItem({
   return (
     <div
       className={`flex h-[79px] cursor-pointer items-center justify-between bg-primary px-10 ${isActive ? "bg-primary-foreground" : "hover:bg-primary-foreground"
-        } ${isFirst ? "rounded-tl-xl rounded-tr-xl" : ""} ${isLast ? "rounded-bl-xl rounded-br-xl" : "border-b border-white"
+        } ${isFirst ? "rounded-t-xl" : ""} ${isLast ? "rounded-b-xl" : "border-b border-white"
         }`}
       onClick={() => onClick(id)}
     >

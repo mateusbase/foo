@@ -344,7 +344,7 @@ export default function Footer(): JSX.Element {
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
-          className="h-6 w-6 text-primary"
+          className="size-6 text-primary"
         >
           <path
             strokeLinecap="round"
@@ -362,7 +362,7 @@ export default function Footer(): JSX.Element {
             viewBox="0 0 24 24"
             strokeWidth="2"
             stroke="currentColor"
-            className="mr-2 h-6 w-6"
+            className="mr-2 size-6"
           >
             <path
               strokeLinecap="round"
@@ -380,7 +380,7 @@ export default function Footer(): JSX.Element {
             viewBox="0 0 24 24"
             strokeWidth="2"
             stroke="currentColor"
-            className="mr-2 h-6 w-6"
+            className="mr-2 size-6"
           >
             <path
               strokeLinecap="round"

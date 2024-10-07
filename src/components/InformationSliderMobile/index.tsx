@@ -51,7 +51,6 @@ export default function InformationSliderMobile({
           swiperRef.current = swiper;
         }}
         modules={[Pagination]}
-        className="mySwiper"
       >
         {informations.map((information) => (
           <SwiperSlide key={information.id}>
@@ -59,7 +58,7 @@ export default function InformationSliderMobile({
               radius="none"
               src={information.image}
               alt={information.description}
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
             />
           </SwiperSlide>
         ))}
@@ -72,7 +71,7 @@ export default function InformationSliderMobile({
             role="button"
             tabIndex={0}
             aria-label={`Slide ${index + 1}`}
-            className={`mx-1 h-3 w-3 rounded-full ${informations[currentIndex].id === information.id
+            className={`mx-1 size-3 rounded-full ${informations[currentIndex].id === information.id
               ? "bg-darkGray"
               : "bg-gray-300"
               }`}

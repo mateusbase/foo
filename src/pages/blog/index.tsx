@@ -1,6 +1,6 @@
 import BlogScreen from "@/templates/BlogScreen";
 import Page from "@/components/Page";
-import { NextPageWithLayout } from "../_app";
+import { NextPageWithLayout } from "@/utils/types";
 
 const Blog: NextPageWithLayout = () => {
   return (

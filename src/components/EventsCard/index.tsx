@@ -22,7 +22,7 @@ export default function EventCard({
 
   return (
     <Link href={`/eventos/${eventSlug}`}>
-      <div className="flex h-full min-h-[798px] w-full max-w-[514px] flex-col justify-between rounded-md p-6">
+      <div className="flex size-full min-h-[798px] max-w-[514px] flex-col justify-between rounded-md p-6">
         <img
           src={event.imageUrl}
           alt={event.title}

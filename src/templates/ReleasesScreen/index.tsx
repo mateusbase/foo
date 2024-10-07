@@ -33,7 +33,7 @@ export default function ReleasesScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mb-10 mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-10 lg:grid-cols-3">
+      <div className="my-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-10 lg:grid-cols-3">
         <ClippingCard
           title="Oncoclínicas é destaque em premiação por prestação de serviços médicos"
           date="23 de Setembro de 2023"

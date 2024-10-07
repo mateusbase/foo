@@ -7,7 +7,7 @@ const NavigationButton = forwardRef<HTMLButtonElement, NavigationButtonProps>(
       <button
         ref={ref}
         type="button"
-        className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+        className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
         aria-label={label}
         onClick={onClick}
       >

@@ -11,7 +11,7 @@ export default function HealthServiceCard({
   return (
     <div className="flex h-auto min-h-[280px] w-full flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6">
       <div className="flex flex-col items-start sm:flex-row md:items-center">
-        <div className="flex h-[63px] w-[63px] items-center justify-center rounded-full bg-primary-foreground">
+        <div className="flex size-[63px] items-center justify-center rounded-full bg-primary-foreground">
           {serviceIcon}
         </div>
 

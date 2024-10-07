@@ -24,9 +24,25 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [location, setLocation] = useState("Carregando localização...");
   const [showLanguageSelector, setShowLanguageSelector] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
 
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const handleScroll = (): void => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const routes = [
     { label: t("navbar.patients"), pathname: "/" },
@@ -82,7 +98,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
   return (
     <>
       {showLanguageSelector && (
-        <div className="flex h-[102px] w-full items-center justify-center gap-2 bg-[#5C5C5C] px-5 md:hidden">
+        <div className="flex h-[102px] w-full items-center justify-center gap-2 bg-darkGray px-5 md:hidden">
           <BaseSelect
             color="primary"
             variant="bordered"
@@ -106,12 +122,14 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
         </div>
       )}
 
-      <div className="flex h-[52px] w-full items-center justify-center bg-[#F0F0F0] md:hidden">
+      <div className="flex h-[52px] w-full items-center justify-center bg-gray-foreground md:hidden">
         <HiOutlineMapPin size={24} className="mr-2 text-secondary" />
         <span className="font-semibold text-darkGray">{location}</span>
       </div>
 
-      <div className="w-full bg-white">
+      <div
+        className={`w-full bg-white lg:px-4 ${isScrolled ? "sticky top-0 z-50 shadow-md" : ""}`}
+      >
         <NextNavBar
           maxWidth="full"
           height="96px"
@@ -121,24 +139,24 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           <NavbarContent>
             <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              className="hidden sm:block lg:hidden"
+              className="hidden sm:block xl2:hidden"
               icon={
                 isMenuOpen ? (
-                  <X className="h-full w-full min-w-10 text-primary" />
+                  <X className="size-full min-w-10 text-primary" />
                 ) : (
-                  <IoMenu className="h-full w-full min-w-10 text-primary" />
+                  <IoMenu className="size-full min-w-10 text-primary" />
                 )
               }
             />
 
             <NavbarBrand
-              className="cursor-pointer sm:ml-5 lg:ml-0"
+              className="cursor-pointer md:ml-5 xl2:ml-0"
               onClick={handleLogoClick}
             >
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
                 alt="Logo"
-                className="w-[250px] max-w-none lg:w-[300px]"
+                className="w-[250px] max-w-none xl2:w-[300px]"
               />
             </NavbarBrand>
 
@@ -147,17 +165,15 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               className="sm:hidden"
               icon={
                 isMenuOpen ? (
-                  <X className="h-full w-full min-w-10 text-primary" />
+                  <X className="size-full min-w-10 text-primary" />
                 ) : (
-                  <IoMenu className="h-full w-full min-w-10 text-primary" />
+                  <IoMenu className="size-full min-w-10 text-primary" />
                 )
               }
             />
           </NavbarContent>
 
-          <NavbarContent
-            className={`hidden gap-8 font-semibold uppercase lg:flex ${isMedicoPage ? "justify-center" : "justify-center"}`}
-          >
+          <NavbarContent className="hidden justify-center gap-8 font-semibold uppercase xl2:flex">
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />
             ))}
@@ -168,7 +184,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               <>
                 <Link
                   href="/contato"
-                  className="ml-10 mr-14 hidden items-center font-semibold text-primary lg:flex"
+                  className="ml-10 mr-14 hidden items-center font-semibold text-primary xl2:flex"
                 >
                   Entrar
                   <LogIn size={26} className="ml-2" />
@@ -211,9 +227,9 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               ))}
 
               <NavbarMenuItem className="w-full">
-                <div className="flex h-full w-full flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white">
+                <div className="flex size-full flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white sm:hidden">
                   <Link
-                    className="flex w-full items-center justify-center text-lg text-white"
+                    className="flex w-full items-center justify-center text-sm text-white"
                     href="/agende-sua-consulta"
                   >
                     <Calendar size={24} className="mr-2 text-white" />
