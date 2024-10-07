@@ -1,14 +1,24 @@
 import React from "react";
 
-function LogoIcon(): JSX.Element {
+type LogoIconProps = React.SVGProps<SVGSVGElement> & {
+  size?: number;
+  color?: string;
+};
+
+function LogoIcon({
+  size = 1,
+  color = "#ffffff",
+  ...props
+}: LogoIconProps): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="251"
-      height="58"
-      fill="none"
+      width={251 * size}
+      height={58 * size}
+      fill={color}
       viewBox="0 0 251 58"
+      {...props}
     >
       <path fill="url(#pattern0_2414_6438)" d="M0 0H251V58H0z" />
       <defs>

@@ -8,3 +8,4 @@ export { default as DocumentIcon } from "./DocumentIcon";
 export { default as UserIcon } from "./UserIcon";
 export { default as PinIcon } from "./PinIcon";
 export { default as LogoIcon } from "./LogoIcon";
+export { default as CalendarIcon } from "./CalendarIcon";

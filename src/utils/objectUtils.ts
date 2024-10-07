@@ -1,4 +1,4 @@
-import { PinIcon, UserIcon } from "@/components/icons";
+import { CalendarIcon, PinIcon, UserIcon } from "@/components/icons";
 import DocumentIcon from "@/components/icons/DocumentIcon";
 import { FaFile, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import { IoIosCalendar } from "react-icons/io";
@@ -45,7 +45,7 @@ export const options = [
   {
     id: 1,
     title: "Agende uma consulta ou exame",
-    icon: IoIosCalendar,
+    icon: CalendarIcon,
     link: "/agende-sua-consulta",
   },
   {
