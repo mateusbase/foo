@@ -1,9 +1,7 @@
-import { Calendar, MapPin, Clock } from "lucide-react";
 import Link from "next/link";
 import { FiCheckSquare } from "react-icons/fi";
-import { IoIosCalendar } from "react-icons/io";
 import { Button } from "@nextui-org/react";
-import { CalendarIcon, UserIcon } from "../icons";
+import { CalendarIcon, CheckIcon, ClockIcon, PinIcon } from "../Icons";
 
 export default function EventCard({
   event,
@@ -36,14 +34,13 @@ export default function EventCard({
 
           <div className="space-y-4">
             <div className="flex items-center text-lg font-normal text-darkGray md:text-xl">
-              {/* <CalendarIcon className="mr-2 text-primary" /> */}
               <CalendarIcon color="text-primary-foreground" className="mr-2" />
 
               <span>{event.date}</span>
             </div>
 
             <div className="flex items-center text-[18px] font-normal text-darkGray md:text-xl">
-              <MapPin className="mr-2 text-primary" />
+              <PinIcon color="text-primary-foreground" className="mr-2" />
               <span>{event.location}</span>
             </div>
 
@@ -52,7 +49,7 @@ export default function EventCard({
             </div>
 
             <div className="flex items-center text-[18px] font-normal text-darkGray md:text-xl">
-              <Clock className="mr-2 text-primary" />
+              <ClockIcon color="text-primary-foreground" className="mr-2" />
               <span>{event.time}</span>
             </div>
           </div>
@@ -67,7 +64,7 @@ export default function EventCard({
               color="primary"
               variant="solid"
               radius="sm"
-              startContent={<FiCheckSquare size={23} />}
+              startContent={<CheckIcon />}
             >
               Quero me inscrever
             </Button>
@@ -76,7 +73,7 @@ export default function EventCard({
               color="primary"
               variant="bordered"
               radius="sm"
-              startContent={<IoIosCalendar size={23} />}
+              startContent={<CalendarIcon />}
             >
               Adicionar a agenda
             </Button>

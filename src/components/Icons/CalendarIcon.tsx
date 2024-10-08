@@ -8,7 +8,7 @@ type CalendarIconProps = React.SVGProps<SVGSVGElement> & {
 
 const CalendarIcon = ({
   size = 1,
-  color = "text-primary",
+  color = "white",
   className = "",
   ...props
 }: CalendarIconProps): JSX.Element => {

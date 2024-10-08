@@ -9,3 +9,5 @@ export { default as UserIcon } from "./UserIcon";
 export { default as PinIcon } from "./PinIcon";
 export { default as LogoIcon } from "./LogoIcon";
 export { default as CalendarIcon } from "./CalendarIcon";
+export { default as ClockIcon } from "./ClockIcon";
+export { default as CheckIcon } from "./CheckIcon";
