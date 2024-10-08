@@ -3,6 +3,7 @@ import React from "react";
 import { BaseInputProps } from "./types";
 
 export default function BaseInput({
+  color = "default",
   label,
   placeholder = "Digite aqui",
   size = "lg",
@@ -23,8 +24,8 @@ export default function BaseInput({
       )}
       <Input
         classNames={{
-          input: "text-primary placeholder:text-primary",
-          inputWrapper: "border-primary",
+          input: `text-${color} placeholder:text-${color}`,
+          inputWrapper: `border-${color}`,
         }}
         placeholder={placeholder}
         size={size}
@@ -33,7 +34,7 @@ export default function BaseInput({
         className={`${className}`}
         value={value}
         onChange={onChange}
-        color="primary"
+        color={color}
         endContent={endContent}
         startContent={startContent}
       />

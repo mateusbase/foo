@@ -3,7 +3,7 @@ import { BaseSelectProps } from "./types";
 import ArrowDownIcon from "../Icons/ArrowDownIcon";
 
 export default function BaseSelect({
-  color = "primary",
+  color = "default",
   variant = "bordered",
   label = " ",
   radius = "full",
