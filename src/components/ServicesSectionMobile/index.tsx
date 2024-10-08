@@ -3,7 +3,7 @@ import {
   MicroscopeIcon,
   ServiceIcon,
   AllOfCancerIcon,
-} from "@/components/icons";
+} from "@/components/Icons";
 import ListServiceCardsMobile from "./components/ListServiceCardsMobile";
 import ServiceTextMobile from "./components/ServiceTextMobile";
 

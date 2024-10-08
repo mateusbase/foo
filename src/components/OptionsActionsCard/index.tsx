@@ -15,7 +15,7 @@ export default function OptionsActionsCard({
         >
           <Link href={option.link || "#"} passHref>
             <button type="button" className="flex flex-col items-start">
-              <option.icon className="mb-2 size-6" />
+              <option.icon />
               <span className="text-start text-sm">{option.title}</span>
             </button>
           </Link>

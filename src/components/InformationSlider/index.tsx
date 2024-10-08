@@ -3,10 +3,8 @@ import {
   MdKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
-import { Image } from "@nextui-org/react";
 import { InformationSliderProps } from "./types";
-import { AllOfCancerIcon, LogoIcon, UserIcon } from "../icons";
-import CalendarIcon from "../icons/CalendarIcon";
+import { LogoIcon } from "../Icons";
 
 export default function InformationSlider({
   title,

@@ -34,7 +34,7 @@ export default function FindAUnitScreen(): JSX.Element {
 
           <BaseSelect
             color="primary"
-            variant="bordered"
+            variant="faded"
             label="Cidade"
             className="w-full md:max-w-full lg:max-w-xs"
             radius="full"
