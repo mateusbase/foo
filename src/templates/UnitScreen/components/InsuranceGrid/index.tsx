@@ -1,3 +1,4 @@
+import { SearchIcon } from "@/components/Icons";
 import { Input } from "@nextui-org/react";
 import { Search } from "lucide-react";
 
@@ -31,7 +32,7 @@ const InsuranceGrid = (): JSX.Element => {
           size="lg"
           radius="full"
           variant="bordered"
-          endContent={<Search className="text-2xl text-default-400" />}
+          endContent={<SearchIcon className="text-default" />}
           className="h-[50px] w-full md:w-[350px]"
         />
       </div>

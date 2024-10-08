@@ -1,6 +1,7 @@
 import { CardDoctor } from "@/components/CardDoctors";
+import { SearchIcon } from "@/components/Icons";
 import { Input, Button } from "@nextui-org/react";
-import { Search, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 const ClinicalBody = (): JSX.Element => {
   const doctors = [
@@ -49,7 +50,7 @@ const ClinicalBody = (): JSX.Element => {
             size="lg"
             radius="full"
             variant="bordered"
-            endContent={<Search className="text-2xl text-default-400" />}
+            endContent={<SearchIcon className="text-default" />}
             className="w-full sm:w-[280px]"
           />
 
@@ -58,7 +59,7 @@ const ClinicalBody = (): JSX.Element => {
             size="lg"
             radius="full"
             variant="bordered"
-            endContent={<Search className="text-2xl text-default-400" />}
+            endContent={<SearchIcon className="text-default" />}
             className="w-full sm:w-[280px]"
           />
         </div>

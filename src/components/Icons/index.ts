@@ -11,3 +11,6 @@ export { default as LogoIcon } from "./LogoIcon";
 export { default as CalendarIcon } from "./CalendarIcon";
 export { default as ClockIcon } from "./ClockIcon";
 export { default as CheckIcon } from "./CheckIcon";
+export { default as MarkerCircleIcon } from "./MarkerCircleIcon";
+export { default as SearchIcon } from "./SearchIcon";
+export { default as MicIcon } from "./MicIcon";

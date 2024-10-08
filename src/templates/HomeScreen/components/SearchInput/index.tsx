@@ -1,7 +1,7 @@
 import React from "react";
-import { Search } from "lucide-react";
 import { useSearch } from "@/contexts/search.context";
 import Link from "next/link";
+import { SearchIcon } from "@/components/Icons";
 
 const SearchInputMobile = (): JSX.Element => {
   const { searchTerm, setSearchTerm, results, setResults, pages } = useSearch();
@@ -51,7 +51,7 @@ const SearchInputMobile = (): JSX.Element => {
           </span>
         </div>
 
-        <Search className="text-primary" size={44} />
+        <SearchIcon className="text-primary" size={2} />
       </div>
 
       {searchTerm && (

@@ -3,6 +3,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";
 import { useRouter } from "next/router";
+import { MarkerCircleIcon } from "@/components/Icons";
 import { UnitsCardProps } from "./types";
 
 export default function UnitsCard({
@@ -33,7 +34,7 @@ export default function UnitsCard({
     <main className="flex flex-col justify-between gap-8">
       <section>
         <section className="flex items-center gap-1">
-          <HiOutlineMapPin className="-ml-2 text-secondary" size={40} />
+          <MarkerCircleIcon className="-ml-2 text-secondary" />
           <h1 className="text-2xl font-bold uppercase text-primary">
             {unitName}
           </h1>
