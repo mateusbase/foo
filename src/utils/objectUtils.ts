@@ -1,7 +1,9 @@
-import { CalendarIcon, PinIcon, UserIcon } from "@/components/icons";
-import DocumentIcon from "@/components/icons/DocumentIcon";
-import { FaFile, FaMapMarkerAlt, FaUser } from "react-icons/fa";
-import { IoIosCalendar } from "react-icons/io";
+import {
+  CalendarIcon,
+  DocumentIcon,
+  PinIcon,
+  UserIcon,
+} from "@/components/Icons";
 
 /* eslint-disable prettier/prettier */
 export const clone = <T extends object>(obj: T): T => {

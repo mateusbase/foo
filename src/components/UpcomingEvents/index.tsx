@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
 import EventCard from "../EventsCard";
@@ -8,6 +7,8 @@ import { events } from "./eventMocks";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import PreviousArrowIcon from "../Icons/PreviousArrowIcon";
+import NextArrowIcon from "../Icons/NextArrowIcon";
 
 export default function UpcomingEventsSection(): JSX.Element {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -79,10 +80,7 @@ export default function UpcomingEventsSection(): JSX.Element {
             className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Previous"
           >
-            <IoIosArrowBack
-              className="text-primary dark:text-gray-800"
-              size={35}
-            />
+            <PreviousArrowIcon className="text-primary dark:text-gray-800" />
           </button>
 
           <button
@@ -91,10 +89,7 @@ export default function UpcomingEventsSection(): JSX.Element {
             className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Next"
           >
-            <IoIosArrowForward
-              className="text-primary dark:text-gray-800"
-              size={35}
-            />
+            <NextArrowIcon className="text-primary dark:text-gray-800" />
           </button>
         </div>
       </div>

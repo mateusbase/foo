@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FiCheckSquare } from "react-icons/fi";
 import { Button } from "@nextui-org/react";
 import { CalendarIcon, CheckIcon, ClockIcon, PinIcon } from "../Icons";
 
