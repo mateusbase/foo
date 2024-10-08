@@ -80,6 +80,7 @@ export default function HomeScreen(): JSX.Element {
       </div>
 
       <FaqSection />
+
       <section>
         <MainOptionsActions options={options} rounded="rounded-none" />
       </section>
