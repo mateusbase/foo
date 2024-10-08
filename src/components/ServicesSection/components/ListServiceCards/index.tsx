@@ -15,7 +15,7 @@ export default function ListServiceCards({
   services,
 }: ListServiceCardsProps): JSX.Element {
   return (
-    <div className="mt-8 hidden w-full justify-center gap-3 md:flex">
+    <div className="mt-8 hidden w-full justify-end gap-3 md:flex">
       {services.map((service) => (
         <ServiceCard key={service.id} {...service} />
       ))}
