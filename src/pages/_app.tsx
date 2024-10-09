@@ -17,7 +17,10 @@ import { LanguageProvider } from "@/contexts/language.context";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY ?? "");
 
-const lato = Lato({ subsets: ["latin"], weight: ["400", "700", "900"] });
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700", "900"],
+});
 
 export default function App({
   Component,

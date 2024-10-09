@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface MedicalServiceCardProps {
   subtitle?: string;
   serviceTitle?: string;
@@ -5,5 +7,5 @@ export interface MedicalServiceCardProps {
   actionButtonText?: string;
   serviceIcon?: JSX.Element;
   backgroundImageUrl?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
