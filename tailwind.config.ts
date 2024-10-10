@@ -48,6 +48,8 @@ const config: Config = {
         background: "#FFFFFF",
         purpleDark: "#473067",
         purpleLight: "#8E60CD",
+        purpleAccent: "#B799E6",
+        purpleMedium: "#8459BE",
         "primary-foreground": "#00B6AD",
         "secondary-foreground": "#BA99E7",
         "gray-foreground": "#F0F0F0",

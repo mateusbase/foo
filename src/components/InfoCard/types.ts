@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 export interface MedicalServiceCardProps {
+  roundedSide?: string;
   subtitle?: string;
   serviceTitle?: string;
   serviceDescription?: string;
