@@ -10,12 +10,12 @@ export default function ContentCard({
 }: ContentCardProps): JSX.Element {
   return (
     <div className="flex h-auto min-h-[201px] w-full flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6">
-      <div className="flex flex-col items-start sm:flex-row md:items-center">
+      <div className="flex items-center">
         <div className="flex size-[63px] items-center justify-center rounded-full bg-purpleDark">
           {serviceIcon}
         </div>
 
-        <h3 className="mt-2 max-w-60 font-normal leading-[28px] text-purpleDark sm:ml-4 sm:mt-0 sm:text-[26px] sm:leading-[32px] lg:text-xl xl:text-2xl">
+        <h3 className="ml-4 mt-2 max-w-60 text-2xl font-normal leading-[28px] text-purpleDark sm:mt-0 sm:leading-[32px] lg:text-xl xl:text-2xl">
           {serviceTitle}
         </h3>
       </div>

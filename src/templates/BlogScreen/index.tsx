@@ -11,31 +11,39 @@ import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const options = [
   {
-    title: "A Inteligência Artificial está presente em diversos exames para apoiar o médico no diagnóstico.",
+    title:
+      "A Inteligência Artificial está presente em diversos exames para apoiar o médico no diagnóstico.",
     date: "22 de Setembro de 2024",
-    description: "O ASCO Annual Meeting 2024, realizado em junho em Chicago, trouxe como tema central 'A arte e a ciência do tratamento do câncer: do conforto à cura'. Este tema reflete um dos valores essenciais da Oncoclínicas&Co: proporcionar um acolhimento na mesma proporção do tratamento para nossos pacientes. Acesse o artigo completo deste estudo.",
-    image: "https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png"
+    description:
+      "O ASCO Annual Meeting 2024, realizado em junho em Chicago, trouxe como tema central 'A arte e a ciência do tratamento do câncer: do conforto à cura'. Este tema reflete um dos valores essenciais da Oncoclínicas&Co: proporcionar um acolhimento na mesma proporção do tratamento para nossos pacientes. Acesse o artigo completo deste estudo.",
+    image:
+      "https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png",
   },
   {
     title: "Novas Descobertas no Tratamento do Câncer de Mama",
     date: "15 de Outubro de 2024",
-    description: "Pesquisadores descobriram um novo medicamento que aumenta a taxa de sobrevivência em pacientes com câncer de mama avançado. O estudo foi apresentado no congresso europeu de oncologia.",
-    image: "https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png"
+    description:
+      "Pesquisadores descobriram um novo medicamento que aumenta a taxa de sobrevivência em pacientes com câncer de mama avançado. O estudo foi apresentado no congresso europeu de oncologia.",
+    image:
+      "https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png",
   },
   {
     title: "Tecnologias de Saúde Digital Transformam o Atendimento ao Paciente",
     date: "30 de Setembro de 2024",
-    description: "A adoção de tecnologias digitais na saúde está melhorando a eficiência do atendimento e a satisfação dos pacientes. Soluções como telemedicina e prontuários eletrônicos estão se tornando padrão.",
-    image: "https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png"
+    description:
+      "A adoção de tecnologias digitais na saúde está melhorando a eficiência do atendimento e a satisfação dos pacientes. Soluções como telemedicina e prontuários eletrônicos estão se tornando padrão.",
+    image:
+      "https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png",
   },
   {
     title: "Campanha de Vacinação Contra a Gripe Começa em Todo o País",
     date: "5 de Outubro de 2024",
-    description: "O Ministério da Saúde iniciou a campanha nacional de vacinação contra a gripe, com foco em grupos prioritários como idosos e profissionais de saúde. Veja onde se vacinar.",
-    image: "https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png"
+    description:
+      "O Ministério da Saúde iniciou a campanha nacional de vacinação contra a gripe, com foco em grupos prioritários como idosos e profissionais de saúde. Veja onde se vacinar.",
+    image:
+      "https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png",
   },
 ];
-
 
 export default function BlogScreen(): JSX.Element {
   return (
@@ -127,7 +135,6 @@ export default function BlogScreen(): JSX.Element {
           <div className="mt-4">
             <IoArrowForwardCircleOutline size={30} color="white" />
           </div>
-
         </div>
         <div className="h-full w-1/2">
           <img
@@ -138,9 +145,8 @@ export default function BlogScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="h-full w-100 flex justify-between font-bold">
-        <div className="gap-10 flex justify-around">
-
+      <div className="w-100 flex h-full justify-between font-bold">
+        <div className="flex justify-around gap-10">
           <div className="flex items-center justify-center gap-1 text-primary">
             <RxHamburgerMenu size={20} />
             <span>Todos</span>
@@ -169,18 +175,12 @@ export default function BlogScreen(): JSX.Element {
       </div>
 
       <div className="mt-10">
-        {
-          options.map((option, index) => (
-            <div className="mt-10">
-              <NewsInformationCard
-                key={index}
-                options={option}
-              />
-            </div>
-          ))
-        }
+        {options.map((option, index) => (
+          <div className="mt-10">
+            <NewsInformationCard key={index} options={option} />
+          </div>
+        ))}
       </div>
-
     </BaseContainer>
   );
 }

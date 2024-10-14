@@ -19,7 +19,7 @@ export default function InfoCard({
         }}
       />
       <div
-        className={`flex w-full flex-col justify-between gap-12 ${roundedSide === "left" ? "rounded-bl-[100px]" : "rounded-br-[100px]"} bg-gradient-to-br from-primary-foreground to-secondary-foreground px-14 py-8`}
+        className={`flex min-h-[292px] w-full flex-col justify-between gap-12 ${roundedSide === "left" ? "rounded-bl-[100px]" : "rounded-br-[100px]"} bg-gradient-to-br from-primary-foreground to-secondary-foreground px-14 py-8`}
       >
         {children}
       </div>
