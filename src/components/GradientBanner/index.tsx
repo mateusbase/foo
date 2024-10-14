@@ -30,7 +30,7 @@ export default function GradientBanner({
         </>
       ) : (
         <>
-          <div className="h-full w-1/2">
+          <div className="h-full w-1/2 ">
             <img
               src={image}
               alt="Imagem 1"
@@ -39,7 +39,7 @@ export default function GradientBanner({
           </div>
 
           <div
-            className={`flex h-full w-1/2 flex-col justify-between gap-2  px-20 py-10 ${backgroundType === "gradient"
+            className={`flex h-full w-1/2 flex-col justify-between gap-2  px-16 py-10 ${backgroundType === "gradient"
               ? "bg-gradient-to-t from-purpleAccent from-5% via-30% to-primary-foreground"
               : "bg-darkGray"
               }`}

@@ -81,40 +81,40 @@ export default function WorkWithUsScreen(): JSX.Element {
             </div>
           </div>
         </GradientBanner>
+      </div>
 
-        <div className="mt-20 flex w-full flex-row justify-center gap-9">
-          <InformationCard>
-            <p className="text-center text-2xl">
-              Aqui você encontra as oportunidades de carreira na
-              <span className="font-bold">Oncocínicas</span>. Acha que este é o
-              seu perfil? Então acesse as vagas e veja como.
-            </p>
-            <div className="mt-6 flex w-full justify-center">
-              <BaseButton className="bg-purpleMedium text-lg text-white">
-                Veja as oportunidades
-              </BaseButton>
-            </div>
-          </InformationCard>
+      <div className="mt-20 flex w-full flex-col justify-center gap-9 lg:flex-row">
+        <InformationCard>
+          <p className="text-center text-2xl">
+            Aqui você encontra as oportunidades de carreira na
+            <span className="font-bold">Oncocínicas</span>. Acha que este é o
+            seu perfil? Então acesse as vagas e veja como.
+          </p>
+          <div className="mt-6 flex w-full justify-center">
+            <BaseButton className="bg-purpleMedium text-lg text-white">
+              Veja as oportunidades
+            </BaseButton>
+          </div>
+        </InformationCard>
 
-          <InformationCard background>
-            <p className="text-center text-2xl text-white">
-              A <span className="font-bold">Oncoclínicas&Co</span> está sempre
-              aberto para receber novos colaboradores, que devem estar alinhados
-              com nossos valores
-            </p>
-            <div className="mt-6 flex w-full justify-center">
-              <BaseButton className="bg-white text-lg text-purpleMedium">
-                Envie o seu currículo
-              </BaseButton>
-            </div>
-          </InformationCard>
-        </div>
+        <InformationCard background>
+          <p className="text-center text-2xl text-white">
+            A <span className="font-bold">Oncoclínicas&Co</span> está sempre
+            aberto para receber novos colaboradores, que devem estar alinhados
+            com nossos valores
+          </p>
+          <div className="mt-6 flex w-full justify-center">
+            <BaseButton className="bg-white text-lg text-purpleMedium">
+              Envie o seu currículo
+            </BaseButton>
+          </div>
+        </InformationCard>
       </div>
       <SectionHeader
         title="Quer ser um de nossos colaboradores?"
         description="A Oncoclínicas&Co está sempre aberto para receber novos colaboradores, que devem estar alinhados com nossos valores e ter excelência técnica. Acha que este é o seu perfil? Então acesse as vagas e veja como."
       />
-      <div className="mt-20 grid grid-cols-2 gap-7 lg:grid-cols-3">
+      <div className="mt-20 grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
         {dataMock.map((card) => (
           <ContentCard
             key={card.id}
