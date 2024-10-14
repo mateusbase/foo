@@ -9,6 +9,7 @@ export default function BaseInput({
   radius = "full",
   variant = "bordered",
   className = "w-full",
+  borderStyle = "border-primary", // Default border style
   value,
   onChange,
   endContent,
@@ -24,7 +25,7 @@ export default function BaseInput({
       <Input
         classNames={{
           input: "text-primary placeholder:text-primary",
-          inputWrapper: "border-primary",
+          inputWrapper: borderStyle,
         }}
         placeholder={placeholder}
         size={size}

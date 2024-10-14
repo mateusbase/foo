@@ -9,4 +9,5 @@ export interface BaseInputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   endContent?: React.ReactNode;
   startContent?: React.ReactNode;
+  borderStyle?: string;
 }

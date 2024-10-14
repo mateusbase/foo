@@ -9,6 +9,7 @@ export default function BaseSelect({
   radius = "full",
   size = "sm",
   className = "w-full",
+  borderStyle = "border-primary",
   options,
   startContent,
   endContent,
@@ -19,7 +20,7 @@ export default function BaseSelect({
   return (
     <Select
       classNames={{
-        trigger: "border-primary",
+        trigger: borderStyle,
       }}
       color={color}
       variant={variant}

@@ -21,6 +21,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               size="lg"
               radius="full"
               variant="bordered"
+              borderStyle="border-default"
             />
           </div>
 
@@ -30,6 +31,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               size="lg"
               radius="full"
               variant="bordered"
+              borderStyle="border-default"
             />
           </div>
 
@@ -39,6 +41,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               variant="bordered"
               label="UF"
               radius="full"
+              borderStyle="border-default"
               size="sm"
               options={[
                 { key: 1, value: "1", label: "SP" },
@@ -51,6 +54,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               variant="bordered"
               label="UF"
               radius="full"
+              borderStyle="border-default"
               size="sm"
               options={[
                 { key: 1, value: "1", label: "SP" },
@@ -65,6 +69,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               variant="bordered"
               label="UF"
               radius="full"
+              borderStyle="border-default"
               size="sm"
               options={[
                 { key: 1, value: "1", label: "SP" },
