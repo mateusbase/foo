@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { NavigationOptions } from "swiper/types";
-import { useEffect } from "react";
 import { NavigationButtons } from "../NavigationButtons";
 
 interface CustomSwiperProps {
