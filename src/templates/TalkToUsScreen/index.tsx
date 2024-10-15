@@ -9,6 +9,7 @@ export default function TalkToUsScreen(): JSX.Element {
   return (
     <main>
       <PageLayout
+        title="Fale Conosco"
         subtitle="Este canal é exclusivo para você tirar dúvidas, enviar sugestões, elogios, reclamações e buscar informações sobre a Oncoclínicas&Co ou se preferir ligue para 4004-8020."
         mainOptions={false}
       >
