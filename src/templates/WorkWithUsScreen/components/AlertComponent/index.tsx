@@ -2,7 +2,7 @@ import { AlertTriangle, CircleChevronRight } from "lucide-react";
 
 export default function AlertComponent(): JSX.Element {
   return (
-    <div className="mt-20 w-full rounded-3xl border-5 bg-gray-50 px-8 py-4">
+    <div className="my-10 w-full rounded-3xl border-5 bg-gray-50 px-8 py-4">
       <div className="flex flex-col items-center justify-between md:flex-row lg:flex-row">
         <div className="my-3 flex w-full max-w-72 items-center justify-center space-x-4">
           <AlertTriangle size={55} color="red" />
@@ -11,7 +11,7 @@ export default function AlertComponent(): JSX.Element {
           </h1>
         </div>
 
-        <div className="max-w-5xl text-center text-base lg:text-left">
+        <div className="max-w-5xl text-center text-base text-darkGray lg:text-left">
           Oncoclínicas&Co é o maior grupo dedicado ao tratamento do câncer na
           América Latina, com um modelo especializado e inovador focado em toda
           a jornada do tratamento oncológico, aliando eficiência operacional,

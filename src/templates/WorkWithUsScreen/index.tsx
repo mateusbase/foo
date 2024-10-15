@@ -8,13 +8,14 @@ import { Navigation } from "swiper/modules";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import BaseContainer from "@/components/Container";
 import AlertComponent from "./components/AlertComponent";
 import InformationCard from "./components/InformationCard";
 import SectionHeader from "./components/SectionHeader";
 import { dataMock } from "./dataMock";
 
 export default function WorkWithUsScreen(): JSX.Element {
+  const prevRefContentCard = useRef<HTMLButtonElement>(null);
+  const nextRefContentCard = useRef<HTMLButtonElement>(null);
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -33,13 +34,15 @@ export default function WorkWithUsScreen(): JSX.Element {
     },
   ];
   return (
-    <PageLayout>
+    <PageLayout
+      title="Trabalhe Conosco"
+      subtitle="Saiba quais são os valores e os critérios técnicos exigidos para fazer parte da Oncoclínicas&Co, cujo foco é o paciente como centro de tudo."
+    >
       <AlertComponent />
 
-      {/* <div className="my-10"> */}
       <GradientBanner image="https://i.postimg.cc/hP4Kg3YK/DESK-Home-Blog-image2.png">
         <div className="mt-6 flex w-full flex-col lg:mt-16">
-          <div className="text-xl font-normal lg:text-2xl">
+          <div className="text-sm font-normal lg:text-2xl">
             Estrutura profissional
           </div>
           <div className="mt-2 text-2xl font-thin md:text-4xl lg:mt-8 lg:text-6xl">
@@ -47,7 +50,7 @@ export default function WorkWithUsScreen(): JSX.Element {
             <span className="font-medium">o paciente como centro de tudo</span>
             <span className="font-light">"</span>
           </div>
-          <div className="mt-4 lg:mt-8">
+          <div className="mb-10 mt-4 lg:mt-8">
             <BaseButton
               className="mx-auto w-full border-white text-white lg:w-1/2"
               size="lg"
@@ -58,14 +61,12 @@ export default function WorkWithUsScreen(): JSX.Element {
           </div>
         </div>
       </GradientBanner>
-      {/* </div> */}
 
-      {/* <div className="my-10"> */}
       <GradientBanner
         sideImage="right"
         image="https://i.postimg.cc/hP4Kg3YK/DESK-Home-Blog-image2.png"
       >
-        <div className="mt-2 flex size-full max-h-8 flex-col">
+        <div className="mt-2 flex size-full flex-col">
           <div className="font-normal lg:text-lg">
             <p className="leading-5">
               Oncoclínicas&Co é o maior grupo dedicado ao tratamento do câncer
@@ -87,7 +88,7 @@ export default function WorkWithUsScreen(): JSX.Element {
 
           <div className="mt-8">
             <h2 className="text-xl font-bold lg:text-2xl">Nossos valores:</h2>
-            <div className="mt-4 grid grid-cols-2 gap-4 gap-x-20 text-lg">
+            <div className="mt-4 grid grid-cols-1 gap-4 gap-x-20 text-lg sm:grid-cols-2">
               <ul className="list-inside list-disc leading-5">
                 <li>Integridade</li>
                 <li>Trabalho em equipe</li>
@@ -104,9 +105,8 @@ export default function WorkWithUsScreen(): JSX.Element {
           </div>
         </div>
       </GradientBanner>
-      {/* </div> */}
 
-      <div className="mt-20 flex w-full flex-col justify-center gap-9 lg:flex-row">
+      <div className="mt-14 flex w-full flex-col justify-center gap-9 lg:flex-row">
         <InformationCard>
           <p className="text-center text-2xl">
             Aqui você encontra as oportunidades de carreira na
@@ -155,15 +155,15 @@ export default function WorkWithUsScreen(): JSX.Element {
           slidesPerView={1}
           loop
           navigation={{
-            nextEl: nextRef.current,
-            prevEl: prevRef.current,
+            nextEl: nextRefContentCard.current,
+            prevEl: prevRefContentCard.current,
           }}
           onInit={(swiper) => {
             if (swiper.params.navigation) {
               const navigationParams = swiper.params
                 .navigation as NavigationOptions;
-              navigationParams.prevEl = prevRef.current;
-              navigationParams.nextEl = nextRef.current;
+              navigationParams.prevEl = prevRefContentCard.current;
+              navigationParams.nextEl = nextRefContentCard.current;
               swiper.navigation.init();
               swiper.navigation.update();
             }
