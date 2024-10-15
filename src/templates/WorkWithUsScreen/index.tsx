@@ -12,6 +12,7 @@ import InformationCard from "./components/InformationCard";
 import SectionHeader from "./components/SectionHeader";
 import { dataMock } from "./dataMock";
 import { NavigationButtons } from "./components/NavigationButtons";
+import CustomSwiper from "./components/CustomSwiper";
 
 export default function WorkWithUsScreen(): JSX.Element {
   const prevRefContentCard = useRef<HTMLButtonElement>(null);
@@ -150,42 +151,21 @@ export default function WorkWithUsScreen(): JSX.Element {
       </div>
 
       <div className="mt-10 block grid-cols-3 gap-[26px] md:hidden">
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          loop
-          navigation={{
-            nextEl: nextRefContentCard.current,
-            prevEl: prevRefContentCard.current,
-          }}
-          onInit={(swiper) => {
-            if (swiper.params.navigation) {
-              const navigationParams = swiper.params
-                .navigation as NavigationOptions;
-              navigationParams.prevEl = prevRefContentCard.current;
-              navigationParams.nextEl = nextRefContentCard.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
-          }}
-        >
-          {dataMock.map((card) => (
-            <SwiperSlide key={card.id}>
-              <ContentCard
-                key={card.id}
-                serviceTitle={card.title}
-                serviceDescription={card.description}
-                showButton={false}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <NavigationButtons
-          nextRef={nextRefContentCard}
+        <CustomSwiper
+          slides={dataMock}
           prevRef={prevRefContentCard}
+          nextRef={nextRefContentCard}
+          renderSlide={(slide) => (
+            <ContentCard
+              key={slide.id}
+              serviceTitle={slide.title}
+              serviceDescription={slide.description}
+              showButton={false}
+            />
+          )}
         />
       </div>
+
       <div className="my-20 hidden grid-cols-2 gap-10 md:grid lg:grid">
         <InfoCard roundedSide="left">
           <div>
@@ -215,43 +195,24 @@ export default function WorkWithUsScreen(): JSX.Element {
       </div>
 
       <div className="mt-10 block grid-cols-3 gap-[26px] md:hidden">
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          loop
-          navigation={{
-            nextEl: nextRef.current,
-            prevEl: prevRef.current,
-          }}
-          onInit={(swiper) => {
-            if (swiper.params.navigation) {
-              const navigationParams = swiper.params
-                .navigation as NavigationOptions;
-              navigationParams.prevEl = prevRef.current;
-              navigationParams.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
-          }}
-        >
-          {infoCardContent.map((infoCard) => (
-            <SwiperSlide key={infoCard.id}>
-              <InfoCard roundedSide="left">
-                <div>
-                  <h3 className="text-4xl text-white">{infoCard.title}</h3>
-                  <h3 className="mt-10 max-w-md text-sm font-bold text-white">
-                    {infoCard.content}
-                  </h3>
-                  <BaseButton className="mt-10 w-full border-2 bg-transparent text-white">
-                    Cadastre seu currículo
-                  </BaseButton>
-                </div>
-              </InfoCard>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <NavigationButtons nextRef={nextRef} prevRef={prevRef} />
+        <CustomSwiper
+          slides={infoCardContent}
+          prevRef={prevRefContentCard}
+          nextRef={nextRefContentCard}
+          renderSlide={(slide) => (
+            <InfoCard roundedSide="left">
+              <div>
+                <h3 className="text-4xl text-white">{slide.title}</h3>
+                <h3 className="mt-10 max-w-md text-sm font-bold text-white">
+                  {slide.content}
+                </h3>
+                <BaseButton className="mt-10 w-full border-2 bg-transparent text-white">
+                  Cadastre seu currículo
+                </BaseButton>
+              </div>
+            </InfoCard>
+          )}
+        />
       </div>
     </PageLayout>
   );
