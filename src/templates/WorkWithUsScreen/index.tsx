@@ -7,11 +7,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import AlertComponent from "./components/AlertComponent";
 import InformationCard from "./components/InformationCard";
 import SectionHeader from "./components/SectionHeader";
 import { dataMock } from "./dataMock";
+import { NavigationButtons } from "./components/NavigationButtons";
 
 export default function WorkWithUsScreen(): JSX.Element {
   const prevRefContentCard = useRef<HTMLButtonElement>(null);
@@ -33,6 +33,7 @@ export default function WorkWithUsScreen(): JSX.Element {
         "A Oncoclínicas está sempre aberto para receber médicos alinhados com nossos valores.",
     },
   ];
+
   return (
     <PageLayout
       title="Trabalhe Conosco"
@@ -180,33 +181,11 @@ export default function WorkWithUsScreen(): JSX.Element {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="mt-4 flex w-full justify-center space-x-4">
-          <button
-            ref={prevRef}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Previous"
-          >
-            <IoIosArrowBack
-              className="text-primary-foreground dark:text-gray-800"
-              size={35}
-            />
-          </button>
-
-          <button
-            ref={nextRef}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Next"
-          >
-            <IoIosArrowForward
-              className="text-primary-foreground dark:text-gray-800"
-              size={35}
-            />
-          </button>
-        </div>
+        <NavigationButtons
+          nextRef={nextRefContentCard}
+          prevRef={prevRefContentCard}
+        />
       </div>
-
       <div className="my-20 hidden grid-cols-2 gap-10 md:grid lg:grid">
         <InfoCard roundedSide="left">
           <div>
@@ -272,31 +251,7 @@ export default function WorkWithUsScreen(): JSX.Element {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="mb-10 mt-4 flex w-full justify-center space-x-4">
-          <button
-            ref={prevRef}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Previous"
-          >
-            <IoIosArrowBack
-              className="text-primary-foreground dark:text-gray-800"
-              size={35}
-            />
-          </button>
-
-          <button
-            ref={nextRef}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Next"
-          >
-            <IoIosArrowForward
-              className="text-primary-foreground dark:text-gray-800"
-              size={35}
-            />
-          </button>
-        </div>
+        <NavigationButtons nextRef={nextRef} prevRef={prevRef} />
       </div>
     </PageLayout>
   );
