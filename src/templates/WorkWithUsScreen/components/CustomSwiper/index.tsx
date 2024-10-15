@@ -17,13 +17,6 @@ export default function CustomSwiper({
   prevRef,
   nextRef,
 }: CustomSwiperProps): JSX.Element {
-  // useEffect(() => {
-  //   // UseEffect para garantir que os refs estejam prontos antes da inicialização do Swiper
-  //   if (prevRef.current && nextRef.current) {
-  //     // Lógica extra se necessário
-  //   }
-  // }, [prevRef, nextRef]);
-
   return (
     <div className="relative">
       <Swiper
