@@ -271,7 +271,7 @@ export default function Footer(): JSX.Element {
               <h4 className="mb-4 font-bold text-white">OC Carreiras</h4>
               <ul>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link href="/trabalhe-conosco" className="hover:text-white">
                     Trabalhe Conosco
                   </Link>
                 </li>
