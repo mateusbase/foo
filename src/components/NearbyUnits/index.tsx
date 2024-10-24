@@ -38,7 +38,7 @@ export default function NearbyUnits(): JSX.Element {
             ]}
           />
 
-          <BaseButton color="primary" className="w-40 text-white">
+          <BaseButton color="primary" className="w-40 min-w-36 text-white">
             Buscar Unidades
           </BaseButton>
         </div>
