@@ -3,7 +3,7 @@ import { BaseSelectProps } from "./types";
 import ArrowDownIcon from "../Icons/ArrowDownIcon";
 
 export default function BaseSelect({
-  color = "primary",
+  color = "default",
   variant = "bordered",
   label = " ",
   radius = "full",
@@ -20,7 +20,7 @@ export default function BaseSelect({
   return (
     <Select
       classNames={{
-        trigger: borderStyle,
+        trigger: `border-${color}`,
       }}
       color={color}
       variant={variant}
@@ -35,7 +35,7 @@ export default function BaseSelect({
       startContent={startContent}
       endContent={endContent}
       labelPlacement={labelPlacement}
-      selectorIcon={<ArrowDownIcon className="text-primary" />}
+      selectorIcon={<ArrowDownIcon color={`text-${color}`} />}
     >
       {options.map((option) => (
         <SelectItem key={option.key} value={option.value}>

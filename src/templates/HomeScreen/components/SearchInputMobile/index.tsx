@@ -2,10 +2,10 @@
 /* eslint-disable no-console */
 /* eslint-disable no-alert */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Search, Mic } from "lucide-react";
 import React, { useState } from "react";
 import { useSearch } from "@/contexts/search.context";
 import Link from "next/link";
+import { MicIcon, SearchIcon } from "@/components/Icons";
 import { SpeechRecognitionErrorEvent, SpeechRecognitionResultEvent } from "./types";
 
 const SearchInput = (): JSX.Element => {
@@ -80,11 +80,10 @@ const SearchInput = (): JSX.Element => {
           />
         </div>
 
-        <Search className="mr-2 text-primary" size={28} />
+        <SearchIcon className="mr-2 text-primary" />
 
-        <Mic
+        <MicIcon
           className={`cursor-pointer text-primary ${isRecording ? "animate-pulse" : ""}`}
-          size={28}
           onClick={handleVoiceSearch}
         />
       </div>

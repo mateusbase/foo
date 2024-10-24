@@ -36,6 +36,7 @@
     "import/no-duplicates": "off",
     "react/no-unescaped-entities": 0,
     "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": [2, { "caseSensitive": true }],
     "no-unused-expressions": "off",
     "no-param-reassign": "error",
     "react/jsx-curly-newline": "off",

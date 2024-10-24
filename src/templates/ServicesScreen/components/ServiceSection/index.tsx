@@ -6,12 +6,13 @@ import { Navigation } from "swiper/modules";
 import HealthServiceCard from "@/components/HealthServiceCard";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import Link from "next/link";
-import { Search } from "lucide-react";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import AlphabetSelector from "@/components/AlphabetSelector";
 import BaseInput from "@/components/Input";
+import { SearchIcon } from "@/components/Icons";
+import PreviousArrowIcon from "@/components/Icons/PreviousArrowIcon";
+import NextArrowIcon from "@/components/Icons/NextArrowIcon";
 import SectionHeader from "../SectionHeader";
 import { ServiceSectionProps } from "../../types";
 
@@ -39,11 +40,12 @@ export default function ServiceSection({
 
       <div className="mt-10 flex w-full lg:hidden">
         <BaseInput
+          color="primary"
           placeholder="Buscar serviço"
           size="lg"
           radius="full"
           variant="bordered"
-          endContent={<Search className="text-2xl text-primary" />}
+          endContent={<SearchIcon className="text-primary" />}
         />
       </div>
 
@@ -127,10 +129,7 @@ export default function ServiceSection({
             className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Previous"
           >
-            <IoIosArrowBack
-              className="text-primary dark:text-gray-800"
-              size={35}
-            />
+            <PreviousArrowIcon className="text-primary dark:text-gray-800" />
           </button>
 
           <button
@@ -139,10 +138,7 @@ export default function ServiceSection({
             className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Next"
           >
-            <IoIosArrowForward
-              className="text-primary dark:text-gray-800"
-              size={35}
-            />
+            <NextArrowIcon className="text-primary dark:text-gray-800" />
           </button>
         </div>
       </div>
@@ -206,10 +202,7 @@ export default function ServiceSection({
             className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Previous"
           >
-            <IoIosArrowBack
-              className="text-primary dark:text-gray-800"
-              size={35}
-            />
+            <PreviousArrowIcon className="text-primary dark:text-gray-800" />
           </button>
 
           <button
@@ -218,10 +211,7 @@ export default function ServiceSection({
             className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Next"
           >
-            <IoIosArrowForward
-              className="text-primary dark:text-gray-800"
-              size={35}
-            />
+            <NextArrowIcon className="text-primary dark:text-gray-800" />
           </button>
         </div>
       </div>

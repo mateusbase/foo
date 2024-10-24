@@ -53,22 +53,22 @@ export default function EventScreen(): JSX.Element {
                   <div className="space-y-10">
                     <BaseInput
                       placeholder="Seu nome"
-                      className="bg-white rounded-full"
+                      className="rounded-full bg-white"
                       radius="full"
                     />
                     <BaseInput
                       placeholder="Seu email"
-                      className="bg-white rounded-full"
+                      className="rounded-full bg-white"
                       radius="full"
                     />
                     <BaseInput
                       placeholder="Seu telefone"
-                      className="bg-white rounded-full"
+                      className="rounded-full bg-white"
                       radius="full"
                     />
                     <BaseInput
                       placeholder="Seu CPF"
-                      className="bg-white rounded-full"
+                      className="rounded-full bg-white"
                       radius="full"
                     />
                   </div>
@@ -134,22 +134,22 @@ export default function EventScreen(): JSX.Element {
             <div className="space-y-10">
               <BaseInput
                 placeholder="Seu nome"
-                className="bg-white rounded-full"
+                className="rounded-full bg-white"
                 radius="full"
               />
               <BaseInput
                 placeholder="Seu email"
-                className="bg-white rounded-full"
+                className="rounded-full bg-white"
                 radius="full"
               />
               <BaseInput
                 placeholder="Seu telefone"
-                className="bg-white rounded-full"
+                className="rounded-full bg-white"
                 radius="full"
               />
               <BaseInput
                 placeholder="Seu CPF"
-                className="bg-white rounded-full"
+                className="rounded-full bg-white"
                 radius="full"
               />
             </div>

@@ -51,6 +51,7 @@ export default function FindAUnitScreen(): JSX.Element {
             radius="full"
             variant="bordered"
             className="h-[50px] w-full"
+            color="primary"
           />
 
           <div className="flex w-full flex-col items-center gap-4 md:flex-row lg:flex-row lg:gap-4">

@@ -28,7 +28,6 @@ export default function FaqSection(): JSX.Element {
           >
             {defaultContent}
           </AccordionItem>
-
           <AccordionItem
             key="2"
             title="Quais cidades têm Oncoclínicas?"
@@ -52,7 +51,6 @@ export default function FaqSection(): JSX.Element {
           >
             {defaultContent}
           </AccordionItem>
-
           <AccordionItem
             key="5"
             title="Quais planos de saúde são aceitos?"

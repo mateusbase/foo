@@ -1,4 +1,11 @@
 export interface BaseInputProps {
+  color?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning"
+    | "danger"
+    | "default";
   label?: string;
   placeholder?: string;
   size?: "sm" | "md" | "lg";

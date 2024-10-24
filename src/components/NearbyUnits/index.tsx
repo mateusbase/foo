@@ -8,7 +8,7 @@ export default function NearbyUnits(): JSX.Element {
     <main className="mt-10 flex flex-col gap-14 p-8">
       <section className="flex items-center justify-between gap-5">
         <div className="w-full">
-          <h1 className="text-3xl font-extralight text-primary">
+          <h1 className="text-3xl font-light text-primary">
             Encontre uma unidade Oncoclínicas próxima a você
           </h1>
         </div>
