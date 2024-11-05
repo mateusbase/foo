@@ -1,12 +1,4 @@
-import {
-  createContext,
-  useState,
-  useContext,
-  ReactNode,
-  useEffect,
-  useMemo,
-} from "react";
-import { builder } from "@builder.io/react";
+import { createContext, useState, useContext, ReactNode, useMemo } from "react";
 
 interface Page {
   id: string;
@@ -44,27 +36,6 @@ export function SearchProvider({
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [results, setResults] = useState<Page[]>([]);
   const [pages, setPages] = useState<Page[]>([]);
-
-  useEffect(() => {
-    async function fetchPages(): Promise<void> {
-      const pagesData = await builder.getAll("page", {
-        options: { noTargeting: true },
-      });
-
-      const mappedPages: Page[] = pagesData.map((page) => ({
-        id: page.id || "",
-        data: {
-          title: page.data?.title || "",
-          description: page.data?.description || "",
-          url: page.data?.url || "",
-        },
-      }));
-
-      setPages(mappedPages);
-    }
-
-    fetchPages();
-  }, []);
 
   const contextValue = useMemo(
     () => ({ searchTerm, setSearchTerm, results, setResults, pages }),
