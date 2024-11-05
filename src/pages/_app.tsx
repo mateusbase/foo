@@ -9,13 +9,10 @@ import { ApolloProvider } from "@apollo/client";
 import { CookiesProvider } from "react-cookie";
 import { NextUIProvider } from "@nextui-org/react";
 import { Lato } from "next/font/google";
-import { builder } from "@builder.io/react";
 import { SearchProvider } from "@/contexts/search.context";
 import { AppPropsWithLayout } from "@/utils/types";
 import "../../i18n.js";
 import { LanguageProvider } from "@/contexts/language.context";
-
-builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY ?? "");
 
 const lato = Lato({
   subsets: ["latin"],

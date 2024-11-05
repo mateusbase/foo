@@ -17,8 +17,6 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
-    "@builder.io/react": "^5.0.3",
-    "@builder.io/sdk": "^3.0.2",
     "@nextui-org/react": "^2.2.10",
     "class-transformer": "^0.5.1",
     "framer-motion": "^11.0.20",
