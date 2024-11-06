@@ -85,7 +85,8 @@ export default function ServiceSection({
           onInit={(swiper) => {
             if (swiper.params.navigation) {
               // eslint-disable-next-line prettier/prettier
-              const navigationParams = swiper.params.navigation as NavigationOptions;
+              const navigationParams = swiper.params
+                .navigation as NavigationOptions;
               navigationParams.prevEl = prevRef.current;
               navigationParams.nextEl = nextRef.current;
               swiper.navigation.init();
@@ -166,7 +167,8 @@ export default function ServiceSection({
           onInit={(swiper) => {
             if (swiper.params.navigation) {
               // eslint-disable-next-line prettier/prettier
-              const navigationParams = swiper.params.navigation as NavigationOptions;
+              const navigationParams = swiper.params
+                .navigation as NavigationOptions;
               navigationParams.prevEl = prevRef.current;
               navigationParams.nextEl = nextRef.current;
               swiper.navigation.init();
