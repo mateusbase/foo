@@ -52,6 +52,7 @@ export default function VaccinesScreen(): JSX.Element {
               <VaccinesCard
                 title={vaccine.title}
                 description={vaccine.description}
+                iconUrl={vaccine.iconUrl}
               />
             </SwiperSlide>
           ))}
