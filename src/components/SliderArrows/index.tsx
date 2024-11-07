@@ -10,29 +10,6 @@ type SliderArrowsProps = {
 };
 
 const SliderArrows = ({ swiperRef, prevRef, nextRef }: SliderArrowsProps) => {
-  const [isPrevDisabled, setIsPrevDisabled] = useState(true);
-  const [isNextDisabled, setIsNextDisabled] = useState(false);
-
-  useEffect(() => {
-    const handleSlideChange = () => {
-      if (swiperRef.current) {
-        const activeIndex = swiperRef.current.activeIndex;
-        setIsPrevDisabled(activeIndex === 0);
-        setIsNextDisabled(activeIndex === swiperRef.current.slides.length - 1);
-      }
-    };
-
-    if (swiperRef.current) {
-      swiperRef.current.on("slideChange", handleSlideChange);
-    }
-
-    return () => {
-      if (swiperRef.current) {
-        swiperRef.current.off("slideChange", handleSlideChange);
-      }
-    };
-  }, [swiperRef]);
-
   const handlePrev = () => {
     if (swiperRef.current) {
       swiperRef.current.slidePrev();
@@ -50,12 +27,9 @@ const SliderArrows = ({ swiperRef, prevRef, nextRef }: SliderArrowsProps) => {
       <button
         ref={prevRef}
         type="button"
-        className={`group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60 ${
-          isPrevDisabled ? "cursor-not-allowed opacity-50" : ""
-        }`}
+        className={`group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60`}
         aria-label="Previous"
         onClick={handlePrev}
-        disabled={isPrevDisabled}
       >
         <PreviousArrowIcon className="text-primary-foreground dark:text-gray-800" />
       </button>
@@ -63,12 +37,9 @@ const SliderArrows = ({ swiperRef, prevRef, nextRef }: SliderArrowsProps) => {
       <button
         ref={nextRef}
         type="button"
-        className={`group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60 ${
-          isNextDisabled ? "cursor-not-allowed opacity-50" : ""
-        }`}
+        className={`group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60`}
         aria-label="Next"
         onClick={handleNext}
-        disabled={isNextDisabled}
       >
         <NextArrowIcon className="text-primary-foreground dark:text-gray-800" />
       </button>

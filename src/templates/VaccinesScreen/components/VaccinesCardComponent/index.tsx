@@ -8,25 +8,28 @@ interface VaccinesCardProps {
 
 const VaccinesCard = ({ title, description, iconUrl }: VaccinesCardProps) => {
   return (
-    <div className="flex h-full min-h-[280px] w-full flex-col rounded-xl border border-slate-300 bg-white p-6">
-      <div className="flex items-center gap-4">
-        {iconUrl ? (
-          <img
-            src={iconUrl}
-            alt="Icon"
-            className="flex h-[61px] w-[57px] flex-shrink-0 items-center justify-center rounded-full"
-          />
-        ) : (
-          <div className="flex h-[61px] w-[57px] flex-shrink-0 items-center justify-center rounded-full bg-primary-foreground"></div>
-        )}
+    <div className="mt-10 h-[300px] w-full rounded-xl border border-lightGray bg-white p-6 lg:w-[80%]">
+      <div className="flex flex-col items-center">
+        <div className="mb-6 flex w-full items-center gap-4">
+          <div className="flex h-[61px] w-[61px] flex-shrink-0 items-center justify-center rounded-full bg-primary-foreground">
+            {iconUrl ? (
+              <img
+                src={iconUrl}
+                alt="Icon"
+                className="h-full w-full rounded-full"
+              />
+            ) : (
+              <div className="h-full w-full rounded-full bg-primary-foreground"></div>
+            )}
+          </div>
+          <h3 className="font-lato-thin text-xl font-bold text-primary md:text-2xl">
+            {title}
+          </h3>
+        </div>
 
-        <h3 className="flex-1 text-xl font-bold text-primary md:text-2xl">
-          {title}
-        </h3>
-      </div>
-
-      <div className="mt-4 flex-1 text-base text-gray-600 md:text-lg">
-        {description}
+        <p className="md:text-md font-lato-thin text-base leading-relaxed text-darkGray">
+          {description}
+        </p>
       </div>
     </div>
   );
