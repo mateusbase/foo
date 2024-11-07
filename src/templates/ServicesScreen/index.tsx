@@ -29,7 +29,7 @@ export default function ServiceScreen(): JSX.Element {
     },
     {
       id: 5,
-      serviceTitle: "Análise Patológica",
+      serviceTitle: "Análise Clínica",
       serviceDescription:
         "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
     },
@@ -66,6 +66,12 @@ export default function ServiceScreen(): JSX.Element {
   ];
 
   const healthServices2 = [
+    {
+      id: 1,
+      serviceTitle: "Análise Molecular",
+      serviceDescription:
+        "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
+    },
     {
       id: 4,
       serviceTitle: "Jornada Molecular",
