@@ -8,6 +8,8 @@ export default function AlphabetSelector({
   selectedLetter,
   onLetterSelect,
   searchPlaceholder,
+  handleSearchChange,
+  valueSearch
 }: AlphabetSelectorProps): JSX.Element {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -42,6 +44,8 @@ export default function AlphabetSelector({
           variant="bordered"
           endContent={<SearchIcon className="text-2xl text-primary" />}
           className="w-[300px]"
+          onChange={handleSearchChange}
+          value={valueSearch}
         />
       </div>
     </div>

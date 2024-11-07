@@ -1,11 +1,9 @@
-import InformationSlider from "@/components/InformationSlider";
 import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 import EventCard from "@/components/EventsCard";
 
 import BaseSelect from "@/components/Select";
 import PageLayout from "@/components/PageLayout";
-import LogoIcon from "@/components/Icons/LogoIcon";
 import { Plus } from "lucide-react";
 
 export default function EventsScreen(): JSX.Element {
@@ -90,7 +88,7 @@ export default function EventsScreen(): JSX.Element {
 
             <div className="flex gap-2">
               <BaseButton
-                className="justify-end border-white text-white"
+                className="h-16 w-80 justify-center border-white text-2xl text-white"
                 variant="bordered"
               >
                 Quero me inscrever
@@ -153,13 +151,13 @@ export default function EventsScreen(): JSX.Element {
         ))}
       </div>
 
-      <div className="mt-10 flex justify-center lg:justify-start">
+      <div className="my-10 flex justify-center lg:justify-start">
         <BaseButton
           color="primary"
           variant="bordered"
           radius="sm"
           startContent={<Plus />}
-          className="hidden h-[50px] w-80 w-full items-center justify-center pl-3 text-[18px] font-black leading-[22px] text-primary sm:w-3/6 md:flex lg:w-[228px]"
+          className="h-[50px] w-80 items-center justify-center pl-3 text-[18px] font-black leading-[22px] text-primary sm:w-3/6 md:flex lg:w-[228px]"
         >
           Ver mais
         </BaseButton>
