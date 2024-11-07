@@ -64,7 +64,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
   ];
 
   return (
-    <PageLayout>
+    <PageLayout title="Tudo sobre o câncer" subtitle="Oncoclínicas">
       <div className="mt-20 flex justify-start">
         <div className="text-left md:text-center">
           <h2 className="text-2xl font-extralight text-primary md:text-title-xl md:font-black md:leading-[74px]">
