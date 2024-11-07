@@ -1,0 +1,70 @@
+import BaseButton from "@/components/Button";
+import BaseInput from "@/components/Input";
+import React from "react";
+
+export default function SignupForm(): JSX.Element {
+  return (
+    <div className="flex h-auto w-[493px] flex-col justify-between bg-primary p-16 md:rounded-[20px]">
+      <h2 className="text-left text-3xl font-bold text-white">Inscreva-se</h2>
+
+      <div className="mt-10 flex grow flex-col justify-between">
+        <div className="space-y-4">
+          <p className="font-medium text-white">Nome completo</p>
+          <BaseInput
+            placeholder="Preencha seu nome"
+            className="rounded-full bg-white"
+            radius="full"
+          />
+          <p className="font-medium text-white">E-mail</p>
+
+          <BaseInput
+            placeholder="Preencha seu e-mail"
+            className="rounded-full bg-white"
+            radius="full"
+          />
+          <p className="font-medium text-white">Telefone</p>
+
+          <BaseInput
+            placeholder="(xx) xxxxx-xxxx"
+            className="rounded-full bg-white"
+            radius="full"
+          />
+          <p className="font-medium text-white">CRM</p>
+
+          <BaseInput
+            placeholder="Preencha seu CRM"
+            className="rounded-full bg-white"
+            radius="full"
+          />
+        </div>
+
+        <BaseButton
+          color="primary"
+          size="lg"
+          variant="solid"
+          width="100%"
+          className="mt-6 w-full border border-white text-white"
+        >
+          Confirmar
+        </BaseButton>
+
+        <div className="mt-4 flex items-start space-x-3">
+          <input
+            type="checkbox"
+            id="terms"
+            className="size-5 rounded border-white text-primary focus:ring-primary"
+          />
+          <label
+            htmlFor="terms"
+            className="text-left text-[14px] leading-[18px] text-white"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex
+            id sem ullamcorper. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit.
+          </label>
+        </div>
+      </div>
+    </div>
+  );
+}
