@@ -15,9 +15,9 @@ export default function UpcomingEventsSection(): JSX.Element {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className="hidden items-start justify-center gap-8 px-4 py-16 lg:flex">
+    <div className="hidden items-start justify-center gap-4 px-4 py-16 lg:flex">
       <div className="max-w-screen-lg">
-        <div className="text-left">
+        <div className="w-full text-left">
           <h2 className="text-5xl font-light text-primary">
             Olá dr(a). Conheça a agenda dos próximos eventos Oncoclínicas
           </h2>
@@ -31,10 +31,10 @@ export default function UpcomingEventsSection(): JSX.Element {
         </div>
       </div>
 
-      <div className="relative w-full max-w-[1052px]">
+      <div className="relative w-9/12 max-w-[1052px] md:max-w-[700px] lg:max-w-[1052px]">
         <Swiper
           modules={[Navigation]}
-          spaceBetween={30}
+          spaceBetween={0}
           slidesPerView={1}
           loop
           navigation={{

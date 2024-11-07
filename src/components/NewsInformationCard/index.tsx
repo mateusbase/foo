@@ -1,9 +1,9 @@
+import { LuArrowUpRight } from "react-icons/lu";
 import BaseButton from "../Button";
 
 export default function NewsInformationCard({
-  options
+  options,
 }: NewsInformationCardProps): JSX.Element {
-
   const { title, date, description, image } = options;
 
   return (
@@ -17,17 +17,14 @@ export default function NewsInformationCard({
       </div>
 
       <div className="flex w-full flex-col justify-start">
-
         <div>
-          <BaseButton
-            children="Inovação & Oncologia"
-            variant="bordered"
-            color="secondary"
-          >
+          <BaseButton variant="bordered" color="secondary">
+            <LuArrowUpRight />
+            Inovação & Oncologia
           </BaseButton>
         </div>
 
-        <h1 className="mt-8 text-left text-[48px] font-lato-light leading-[48px] text-darkGray">
+        <h1 className="mt-8 text-left font-lato-light text-[48px] leading-[48px] text-darkGray">
           {title}
         </h1>
 
@@ -35,10 +32,10 @@ export default function NewsInformationCard({
           {date}
         </p>
 
-        <p className="mt-14 text-left text-[22px] font-medium leading-[27px] text-darkGray">
+        <p className="mt-14 text-left text-xl font-medium leading-[27px] text-darkGray">
           {description}
         </p>
       </div>
     </div>
-  )
-};
+  );
+}

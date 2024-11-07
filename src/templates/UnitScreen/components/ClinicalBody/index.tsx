@@ -40,7 +40,7 @@ const ClinicalBody = (): JSX.Element => {
   return (
     <div>
       <div className="mt-20 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between md:mt-32">
-        <h2 className="text-2xl font-extralight text-primary md:text-3xl md:leading-[50px]">
+        <h2 className="text-2xl font-normal text-primary md:text-3xl md:leading-[50px]">
           Corpo Clínico
         </h2>
 
