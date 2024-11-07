@@ -49,7 +49,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
     { label: t("navbar.doctors"), pathname: "/medicos" },
     { label: t("navbar.investors"), pathname: "/relacao-com-investidor" },
     { label: "Instituto OC", pathname: "/contato" },
-    { label: "Notícias", pathname: "/contato" },
+    { label: "Notícias", pathname: "/blog" },
   ];
 
   const isMedicoPage = router.pathname === "/medicos";
