@@ -8,7 +8,7 @@ interface VaccinesCardProps {
 
 const VaccinesCard = ({ title, description, iconUrl }: VaccinesCardProps) => {
   return (
-    <div className="mt-10 h-[300px] w-full rounded-xl border border-lightGray bg-white p-6 lg:w-[80%]">
+    <div className="mt-3 h-[80%] w-full rounded-xl border border-lightGray bg-white p-6 lg:w-[80%]">
       <div className="flex flex-col items-center">
         <div className="mb-6 flex w-full items-center gap-4">
           <div className="flex h-[61px] w-[61px] flex-shrink-0 items-center justify-center rounded-full bg-primary-foreground">
@@ -27,7 +27,7 @@ const VaccinesCard = ({ title, description, iconUrl }: VaccinesCardProps) => {
           </h3>
         </div>
 
-        <p className="md:text-md font-lato-thin text-base leading-relaxed text-darkGray">
+        <p className="md:text-md h-48 font-lato-thin text-base leading-relaxed text-darkGray">
           {description}
         </p>
       </div>

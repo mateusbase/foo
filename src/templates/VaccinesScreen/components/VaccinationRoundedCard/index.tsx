@@ -13,7 +13,7 @@ const VaccinationRoundedCard = ({
   listItems,
 }: VaccinationRoundedCardProps) => {
   return (
-    <div className="mb-10 flex h-full w-full flex-col justify-between">
+    <div className="flex h-full w-full flex-col justify-between">
       <InfoCard roundedSide="left">
         <div className="flex h-full flex-col justify-between p-4 lg:max-h-[400px] lg:min-h-[400px] lg:p-6">
           <h3 className="font-lato-thin text-3xl text-white lg:text-5xl">

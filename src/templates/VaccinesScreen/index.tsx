@@ -8,42 +8,16 @@ import SliderArrows from "../../components/SliderArrows";
 import VaccinationRoundedCard from "./components/VaccinationRoundedCard";
 import listItems from "./listItems";
 import PageLayout from "@/components/PageLayout";
-
-type SwiperParams = {
-  params: {
-    navigation: {
-      prevEl: HTMLButtonElement | null;
-      nextEl: HTMLButtonElement | null;
-    };
-  };
-};
+import VaccinationRoundedSection from "./components/VaccinationRoundedSection";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 
 export default function VaccinesScreen(): JSX.Element {
-  const prevRefCard = useRef<HTMLButtonElement>(null);
-  const nextRefCard = useRef<HTMLButtonElement>(null);
-  const swiperRefCard = useRef<SwiperType>(null);
-
-  const prevRefRounded = useRef<HTMLButtonElement>(null);
-  const nextRefRounded = useRef<HTMLButtonElement>(null);
-  const swiperRefRounded = useRef<SwiperType>(null);
-
-  const onBeforeInit = useCallback(
-    (
-      swiper: SwiperType,
-      swiperRef: React.RefObject<SwiperType>,
-      prevRef: React.RefObject<HTMLButtonElement>,
-      nextRef: React.RefObject<HTMLButtonElement>,
-    ) => {
-      if (
-        swiper.params.navigation &&
-        typeof swiper.params.navigation !== "boolean"
-      ) {
-        swiper.params.navigation.prevEl = prevRef.current;
-        swiper.params.navigation.nextEl = nextRef.current;
-      }
-    },
-    [],
-  );
+  const {
+    prevRef: prevRefCard,
+    nextRef: nextRefCard,
+    swiperRef: swiperRefCard,
+    onBeforeInit: onBeforeInitCard,
+  } = useSwiperNavigation();
 
   return (
     <PageLayout title="OC Vacinas" subtitle="Todo o cuidado que a vida merece">
@@ -53,9 +27,7 @@ export default function VaccinesScreen(): JSX.Element {
           spaceBetween={30}
           slidesPerView={1}
           loop
-          onBeforeInit={(swiper) =>
-            onBeforeInit(swiper, swiperRefCard, prevRefCard, nextRefCard)
-          }
+          onBeforeInit={(swiper) => onBeforeInitCard(swiper)}
         >
           {vaccineInformation.map((vaccine) => (
             <SwiperSlide key={vaccine.id}>
@@ -86,45 +58,12 @@ export default function VaccinesScreen(): JSX.Element {
         ))}
       </div>
 
-      <div className="mt-10 w-full overflow-hidden lg:space-x-6">
-        <Swiper
-          spaceBetween={16}
-          slidesPerView={1}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-          }}
-          loop
-          onBeforeInit={(swiper) =>
-            onBeforeInit(
-              swiper,
-              swiperRefRounded,
-              prevRefRounded,
-              nextRefRounded,
-            )
-          }
-          className="mt-10 w-full"
-        >
-          <SwiperSlide className="flex h-full min-h-full">
-            <VaccinationRoundedCard
-              title="Padrão de excelência Oncoclínicas"
-              description="A oferta de serviço de vacinação da Oncoclínicas segue o Calendário do PNI - Programa Nacional de imunizações -, e as diretrizes da SBIm - Sociedade Brasileira de Imunizações - e da SBOC - Sociedade Brasileira de Oncologia Clínica."
-            />
-          </SwiperSlide>
-          <SwiperSlide className="flex h-full min-h-full">
-            <VaccinationRoundedCard
-              title="Por que é importante se vacinar?"
-              listItems={listItems}
-            />
-          </SwiperSlide>
-        </Swiper>
+      <VaccinationRoundedSection />
 
-        <div className="mb-10 md:hidden">
-          <SliderArrows
-            swiperRef={swiperRefRounded}
-            prevRef={prevRefRounded}
-            nextRef={nextRefRounded}
-          />
-        </div>
+      <div className="justify-center lg:mt-14">
+        <h1 className="font-lato-bold text-primary lg:text-title-xl">
+          Consulte as vacinas oferecidas na sua cidade
+        </h1>
       </div>
     </PageLayout>
   );

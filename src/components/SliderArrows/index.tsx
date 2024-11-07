@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Swiper as SwiperType } from "swiper/types";
 import NextArrowIcon from "@/components/Icons/NextArrowIcon";
 import PreviousArrowIcon from "@/components/Icons/PreviousArrowIcon";
@@ -21,6 +20,7 @@ const SliderArrows = ({ swiperRef, prevRef, nextRef }: SliderArrowsProps) => {
       swiperRef.current.slideNext();
     }
   };
+  console.log(swiperRef, prevRef, nextRef);
 
   return (
     <div className="mt-4 flex justify-center space-x-4 lg:justify-end">
