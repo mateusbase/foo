@@ -1,7 +1,7 @@
 import BaseContainer from "@/components/Container";
 import NewsInformationCard from "@/components/NewsInformationCard";
 import { Button } from "@nextui-org/react";
-import { Plus } from "lucide-react";
+import { ArrowDownIcon, Plus } from "lucide-react";
 import { FaRunning } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { GiFlowerStar } from "react-icons/gi";
@@ -20,14 +20,18 @@ import { Navigation } from "swiper/modules";
 import { useRef } from "react";
 import { options } from "./optionsMock";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 export default function BlogScreen(): JSX.Element {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     <BaseContainer className="px-0">
-      <div className="flex md:h-[223px] lg:h-[536px]">
-        <div className="flex h-full w-1/2 flex-col items-start justify-center bg-gradient-to-br from-primary via-primary-foreground to-secondary-foreground pl-[65px]">
+      <div className="flex flex-col md:h-[223px] md:flex-row lg:h-[536px]">
+        <div className="flex h-full flex-col items-start justify-center bg-gradient-to-br from-primary via-primary-foreground to-secondary-foreground p-8 md:w-1/2 md:pl-[65px]">
           <Button
             color="primary"
             variant="bordered"
@@ -38,10 +42,10 @@ export default function BlogScreen(): JSX.Element {
             Prática de Esportes
           </Button>
 
-          <h1 className="mt-4 text-left text-title-xl font-black leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
+          <h1 className="mt-4 text-left text-3xl leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
             Benefícios da corrida
           </h1>
-          <p className="mt-4 max-w-[625px] text-left text-white md:text-sm md:font-bold lg:text-2xl">
+          <p className="mt-4 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
             Novas pesquisas mostram os benefícios da corrida para o apoio no
             pós-tratamento de câncer e na recuperação dos pacientes.
           </p>
@@ -50,7 +54,7 @@ export default function BlogScreen(): JSX.Element {
             <IoArrowForwardCircleOutline size={30} color="white" />
           </div>
         </div>
-        <div className="h-full w-1/2">
+        <div className="h-56 md:h-full md:w-1/2">
           <img
             src="https://img.freepik.com/fotos-gratis/mulheres-correndo-juntos-na-floresta_23-2149486921.jpg?t=st=1724864618~exp=1724868218~hmac=27e18a9d0cb01ea11a2c4d3902108f29ec8223f907f52b280e236dc068320357&w=1380"
             alt="Imagem do lado direito"
@@ -59,15 +63,15 @@ export default function BlogScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="flex md:h-[223px] lg:h-[536px]">
-        <div className="h-full w-1/2">
+      <div className="flex flex-col-reverse md:h-[223px] md:flex-row lg:h-[536px]">
+        <div className="h-56 md:h-full md:w-1/2">
           <img
             src="https://img.freepik.com/fotos-gratis/mulheres-correndo-juntos-na-floresta_23-2149486921.jpg?t=st=1724864618~exp=1724868218~hmac=27e18a9d0cb01ea11a2c4d3902108f29ec8223f907f52b280e236dc068320357&w=1380"
             alt="Imagem do lado esquerdo"
             className="size-full object-cover"
           />
         </div>
-        <div className="flex h-full w-1/2 flex-col items-start justify-center bg-gradient-to-br from-secondary via-secondary to-secondary-foreground pl-[65px]">
+        <div className="flex h-full flex-col items-start justify-center bg-gradient-to-br from-secondary via-secondary to-secondary-foreground p-8 md:w-1/2 md:pl-[65px]">
           <Button
             color="primary"
             variant="bordered"
@@ -77,10 +81,10 @@ export default function BlogScreen(): JSX.Element {
           >
             Saúde e Bem-Estar
           </Button>
-          <h1 className="mt-4 text-left text-title-xl font-black leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
-            Título
+          <h1 className="mt-4 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
+            Meditação Guiada
           </h1>
-          <p className="mt-4 max-w-[625px] text-left text-white md:text-sm md:font-bold lg:text-2xl">
+          <p className="mt-4 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
             Novas pesquisas mostram os benefícios da corrida para o apoio no
             pós-tratamento de câncer e na recuperação dos pacientes.
           </p>
@@ -91,8 +95,8 @@ export default function BlogScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mb-10 flex md:h-[223px] lg:h-[536px]">
-        <div className="flex h-full w-1/2 flex-col items-start justify-center bg-darkGray pl-[65px] lg:rounded-bl-[80px]">
+      <div className="mb-10 flex flex-col md:h-[223px] md:flex-row lg:h-[536px]">
+        <div className="flex h-full flex-col items-start justify-center bg-darkGray p-8 md:w-1/2 md:pl-[65px] lg:rounded-bl-[80px]">
           <Button
             color="primary"
             variant="bordered"
@@ -102,10 +106,10 @@ export default function BlogScreen(): JSX.Element {
           >
             Inovação & Oncologia
           </Button>
-          <h1 className="mt-4 text-left text-title-xl font-black leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
+          <h1 className="mt-4 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
             Uso de IA na medicina
           </h1>
-          <p className="mt-4 max-w-[625px] text-left text-white md:text-sm md:font-bold lg:text-2xl">
+          <p className="mt-4 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
             Novas pesquisas mostram os benefícios da corrida para o apoio no
             pós-tratamento de câncer e na recuperação dos pacientes.
           </p>
@@ -114,7 +118,7 @@ export default function BlogScreen(): JSX.Element {
             <IoArrowForwardCircleOutline size={30} color="white" />
           </div>
         </div>
-        <div className="h-full w-1/2">
+        <div className="h-56 md:h-full md:w-1/2">
           <img
             src="https://img.freepik.com/fotos-gratis/mulheres-correndo-juntos-na-floresta_23-2149486921.jpg?t=st=1724864618~exp=1724868218~hmac=27e18a9d0cb01ea11a2c4d3902108f29ec8223f907f52b280e236dc068320357&w=1380"
             alt="Imagem do lado direito"
@@ -163,23 +167,27 @@ export default function BlogScreen(): JSX.Element {
       </div>
 
       <div className="flex flex-col lg:hidden">
-        <div className="flex justify-center">
+        <div className="mx-6 flex justify-center">
           <BaseSelect
             color="primary"
             variant="bordered"
-            className="max-w-[656px]"
             radius="md"
+            size="lg"
+            label=""
+            startContent={
+              <RxHamburgerMenu size={20} className="text-primary" />
+            }
             options={[
               { key: 1, value: "1", label: "Mais relevantes" },
               { key: 2, value: "2", label: "Todos os temas" },
             ]}
           />
         </div>
-        <div className="relative mx-10 w-full">
+        <div className="relative mx-auto w-11/12">
           <Swiper
             modules={[Navigation]}
             slidesPerView={1}
-            spaceBetween={300}
+            spaceBetween={30}
             loop
             navigation={{
               nextEl: nextRef.current,
@@ -202,11 +210,11 @@ export default function BlogScreen(): JSX.Element {
               },
               768: {
                 slidesPerView: 2,
-                spaceBetween: 40,
+                spaceBetween: 10,
               },
               1024: {
                 slidesPerView: 2,
-                spaceBetween: 40,
+                spaceBetween: 10,
               },
             }}
           >
@@ -217,37 +225,44 @@ export default function BlogScreen(): JSX.Element {
             ))}
           </Swiper>
 
-          <div className="mt-4 flex justify-center space-x-4">
-            <button
-              ref={prevRef}
-              type="button"
-              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-              aria-label="Previous"
+          <div className="mt-4 flex items-center justify-center space-x-4 md:justify-between">
+            <Button
+              color="primary"
+              variant="bordered"
+              radius="sm"
+              startContent={<Plus />}
+              className="hidden h-[50px] w-full items-center justify-center pl-3 text-[18px] font-black leading-[22px] text-primary sm:w-3/6 md:flex"
             >
-              <IoIosArrowBack
-                className="text-primary-foreground dark:text-gray-800"
-                size={35}
-              />
-            </button>
+              Ver todos
+            </Button>
 
-            <button
-              ref={nextRef}
-              type="button"
-              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-              aria-label="Next"
-            >
-              <IoIosArrowForward
-                className="text-primary-foreground dark:text-gray-800"
-                size={35}
-              />
-            </button>
+            <div className="flex items-center space-x-4">
+              <button
+                ref={prevRef}
+                type="button"
+                className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+                aria-label="Previous"
+              >
+                <IoIosArrowBack
+                  className="text-primary-foreground dark:text-gray-800"
+                  size={35}
+                />
+              </button>
+
+              <button
+                ref={nextRef}
+                type="button"
+                className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+                aria-label="Next"
+              >
+                <IoIosArrowForward
+                  className="text-primary-foreground dark:text-gray-800"
+                  size={35}
+                />
+              </button>
+            </div>
           </div>
         </div>
-        {/* {options.map((option) => (
-          <div className="mt-10" key={option.id}>
-            <NewsInformationCard options={option} />
-          </div>
-        ))} */}
       </div>
     </BaseContainer>
   );
