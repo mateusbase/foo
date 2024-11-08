@@ -1,7 +1,5 @@
 import { SearchIcon } from "@/components/Icons";
 import BaseInput from "@/components/Input";
-import { Input } from "@nextui-org/react";
-import { Search } from "lucide-react";
 
 const InsuranceGrid = (): JSX.Element => {
   const insurances = [

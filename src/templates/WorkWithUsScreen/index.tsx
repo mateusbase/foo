@@ -3,22 +3,16 @@ import GradientBanner from "@/components/GradientBanner";
 import BaseButton from "@/components/Button";
 import ContentCard from "@/components/ContentCard";
 import InfoCard from "@/components/InfoCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import { useRef } from "react";
-import { NavigationOptions } from "swiper/types";
 import AlertComponent from "./components/AlertComponent";
 import InformationCard from "./components/InformationCard";
 import SectionHeader from "./components/SectionHeader";
 import { dataMock } from "./dataMock";
-import { NavigationButtons } from "./components/NavigationButtons";
 import CustomSwiper from "./components/CustomSwiper";
 
 export default function WorkWithUsScreen(): JSX.Element {
   const prevRefContentCard = useRef<HTMLButtonElement>(null);
   const nextRefContentCard = useRef<HTMLButtonElement>(null);
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
 
   const infoCardContent = [
     {

@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from "react";
-import { Button, Input } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { TbCodePlus } from "react-icons/tb";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
