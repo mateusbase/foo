@@ -1,6 +1,6 @@
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { useApollo } from "@/hooks/useApollo";
-import VLibras from "vlibras-nextjs";
+// import VLibras from "vlibras-nextjs";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -40,7 +40,7 @@ export default function App({
                   </main>,
                 )}
               </ErrorBoundary>
-              {process.env.NODE_ENV === "production" && <VLibras forceOnload />}
+              {/* {process.env.NODE_ENV === "production" && <VLibras forceOnload />} */}
             </SearchProvider>
           </LanguageProvider>
         </ApolloProvider>
