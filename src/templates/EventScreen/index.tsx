@@ -1,6 +1,12 @@
 import { IoIosCalendar, IoIosMap, IoIosTime } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
+import { CalendarIcon } from "@/components/Icons";
+import { events } from "@/components/UpcomingEvents/eventMocks";
+import EventCard from "@/components/EventsCard";
 import SignupForm from "./components/SignupForm";
+import { listMedics } from "./medicsMock";
+import InvitedMedicCard from "./components/InvitedMedicCard";
+import { topicsCovered } from "./topicsMock";
 
 export default function EventScreen(): JSX.Element {
   return (
@@ -27,7 +33,7 @@ export default function EventScreen(): JSX.Element {
 
             <div className="mt-8 text-left">
               <div className="flex items-center text-lg text-darkGray">
-                <IoIosCalendar size={24} className="mr-2" />
+                <CalendarIcon className="mr-2" />
                 <p className="font-bold">23/09/2023 a 07/10/2023</p>
               </div>
 
@@ -57,12 +63,58 @@ export default function EventScreen(): JSX.Element {
               Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit
               in. Fusce id ex id sem ullamcorper. Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Vestibulum pellentesque nunc lectus,
-              vitae lacinia ex hendrerit in. Fusce id ex id sem ullamcorper.
+              vitae lacinia ex hendrerit in. Fusce id ex id sem
+              ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex
+              hendrerit in. Fusce id ex id sem ullamcorper.Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Vestibulum pellentesque nunc
+              lectus, vitae lacinia ex hendrerit in. Fusce id ex id sem
+              ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex
+              hendrerit in. Fusce id ex id sem ullamcorper.Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Vestibulum pellentesque nunc
+              lectus, vitae lacinia ex hendrerit in. Fusce id ex id sem
+              ullamcorper.
             </p>
 
-            <h1 className="mt-10 text-[42px] font-bold text-primary">
-              Médicos convidados
-            </h1>
+            <div>
+              <h1 className="mt-16 text-[40px] text-primary">
+                Médicos convidados
+              </h1>
+              {listMedics.map((medic) => (
+                <InvitedMedicCard
+                  key={medic.id}
+                  name={medic.name}
+                  crm={medic.crm}
+                  positions={medic.positions}
+                  avatar={medic.avatar}
+                />
+              ))}
+            </div>
+            <div>
+              <h1 className="mb-4 mt-16 text-[40px] text-primary">
+                Temas abordados
+              </h1>
+              <ul>
+                {topicsCovered.map((topic) => (
+                  <li
+                    key={topic.id}
+                    className="list-inside list-disc text-xl font-medium text-lightGray"
+                  >
+                    {topic.topic}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h1 className="text-[40px] text-primary">Próximos eventos</h1>
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-10 lg:grid-cols-3">
+            {events.map((event) => (
+              <EventCard key={event.title} event={event} />
+            ))}
           </div>
         </div>
       </PageLayout>
