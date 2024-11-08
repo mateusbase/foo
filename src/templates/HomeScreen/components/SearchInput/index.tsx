@@ -2,34 +2,19 @@ import React from "react";
 import { useSearch } from "@/contexts/search.context";
 import Link from "next/link";
 import { SearchIcon } from "@/components/Icons";
+import { useTranslation } from "react-i18next";
 
 const SearchInputMobile = (): JSX.Element => {
-  const { searchTerm, setSearchTerm, results, setResults, pages } = useSearch();
+  const { searchTerm, setSearchTerm, results, search } = useSearch();
+  const { t } = useTranslation();
 
   const handleSearch = (term: string): void => {
     setSearchTerm(term);
-
-    if (term && pages.length > 0) {
-      const filteredPages = pages.filter((page) => {
-        const titleMatch = page.data?.title
-          ?.toLowerCase()
-          .includes(term.toLowerCase());
-
-        const descriptionMatch = page.data?.description
-          ?.toLowerCase()
-          .includes(term.toLowerCase());
-
-        return titleMatch || descriptionMatch;
-      });
-      setResults(filteredPages);
-    } else {
-      setResults([]);
-    }
+    search(term);
   };
 
   const handleClick = (): void => {
     setSearchTerm("");
-    setResults([]);
   };
 
   return (
@@ -38,16 +23,15 @@ const SearchInputMobile = (): JSX.Element => {
         <div className="flex w-full flex-col">
           <input
             type="text"
-            aria-label="Search input"
+            aria-label={t("searchInput.ariaLabel")}
             className="size-full border-none bg-transparent text-2xl font-bold outline-none placeholder:text-primary"
-            placeholder="O que você está procurando?"
+            placeholder={t("searchInput.placeholder")}
             value={searchTerm}
             onChange={(e) => handleSearch(e.target.value)}
           />
 
           <span className="mt-1 text-base text-slate-600">
-            Busque por serviços, unidade, sintomas, exames, tratamentos, eventos
-            e etc...
+            {t("searchInput.description")}
           </span>
         </div>
 
@@ -61,21 +45,21 @@ const SearchInputMobile = (): JSX.Element => {
               results.map((page) => (
                 <Link
                   key={page.id}
-                  href={page.data?.url || "#"}
+                  href={page.path}
                   className="block rounded-lg p-4 transition duration-300 hover:bg-gray-100 hover:text-blue-700"
                   onClick={handleClick}
                 >
                   <div className="text-xl font-bold">
-                    {page.data?.title || "Página Sem Título"}
+                    {page.pageTitle || t("searchInput.noTitle")}
                   </div>
                   <div className="text-sm text-gray-600">
-                    {page.data?.description || "Sem descrição"}
+                    {page.content || t("searchInput.noDescription")}
                   </div>
                 </Link>
               ))
             ) : (
               <div className="py-2 text-lg text-gray-500">
-                Nenhum resultado encontrado.
+                {t("searchInput.noResults")}
               </div>
             )}
           </div>

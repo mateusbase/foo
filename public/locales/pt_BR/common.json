@@ -7,5 +7,26 @@
   },
   "footer": {
     "all_rights_reserved": "Todos os direitos reservados"
+  },
+  "pages": {
+    "scheduleYourConsultation": {
+      "pageTitle": "Agende sua consulta",
+      "pageSubtitle": "Oncoclínicas",
+      "heading": "Agende sua consulta ou exame",
+      "description": "Todo o cuidado que a sua vida merece",
+      "placeholderUnitName": "Nome da unidade",
+      "selectUfLabel": "UF",
+      "buttonText": "Agendar",
+      "consultationImageAlt": "Imagem de consulta",
+      "path": "/agende-sua-consulta"
+    }
+  },
+  "searchInput": {
+    "ariaLabel": "Campo de busca",
+    "placeholder": "O que você está procurando?",
+    "description": "Busque por serviços, unidade, sintomas, exames, tratamentos, eventos e etc...",
+    "noResults": "Nenhum resultado encontrado.",
+    "noTitle": "Página Sem Título",
+    "noDescription": "Sem descrição"
   }
 }

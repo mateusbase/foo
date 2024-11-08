@@ -1,21 +1,40 @@
-import { createContext, useState, useContext, ReactNode, useMemo } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import {
+  createContext,
+  useState,
+  useContext,
+  ReactNode,
+  useMemo,
+  useEffect,
+} from "react";
 
-interface Page {
+interface PageData {
   id: string;
-  data: {
-    title?: string;
-    description?: string;
-    url?: string;
-  };
-  [key: string]: unknown;
+  pageTitle: string;
+  content: string;
+  path: string;
+}
+
+interface TranslationPageData {
+  pageTitle: string;
+  pageSubtitle?: string;
+  heading?: string;
+  description?: string;
+  placeholderUnitName?: string;
+  selectUfLabel?: string;
+  buttonText?: string;
+  consultationImageAlt?: string;
+  additionalInfo?: string;
+  path: string;
 }
 
 interface SearchContextType {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  results: Page[];
-  setResults: (results: Page[]) => void;
-  pages: Page[];
+  results: PageData[];
+  setResults: (results: PageData[]) => void;
+  pages: PageData[];
+  search: (term: string) => void;
 }
 
 const SearchContext = createContext<SearchContextType | undefined>(undefined);
@@ -34,11 +53,66 @@ export function SearchProvider({
   children: ReactNode;
 }): JSX.Element {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [results, setResults] = useState<Page[]>([]);
-  const [pages, setPages] = useState<Page[]>([]);
+  const [results, setResults] = useState<PageData[]>([]);
+  const [pages, setPages] = useState<PageData[]>([]);
+
+  useEffect(() => {
+    const loadTranslations = async (): Promise<void> => {
+      try {
+        const response = await fetch("/locales/pt_BR/common.json");
+        const data: { pages: Record<string, TranslationPageData> } =
+          await response.json();
+
+        const loadedPages: PageData[] = Object.entries(data.pages).map(
+          ([key, page]) => {
+            const content = Object.entries(page)
+              .filter(([_, value]) => typeof value === "string")
+              .map(([_, value]) => value)
+              .join(" ")
+              .toLowerCase();
+
+            return {
+              id: key,
+              pageTitle: page.pageTitle || "Página Sem Título",
+              content,
+              path: page.path,
+            };
+          },
+        );
+
+        setPages(loadedPages);
+      } catch (error) {
+        error;
+      }
+    };
+
+    loadTranslations();
+  }, []);
+
+  const search = (term: string): void => {
+    setSearchTerm(term);
+    if (term) {
+      const filteredResults = pages
+        .map((page) => {
+          const matchingContent = Object.values(page)
+            .filter(
+              (value) =>
+                typeof value === "string" &&
+                value.toLowerCase().includes(term.toLowerCase()),
+            )
+            .join(" ");
+
+          return matchingContent ? { ...page, content: matchingContent } : null;
+        })
+        .filter((page) => page !== null) as PageData[];
+      setResults(filteredResults);
+    } else {
+      setResults([]);
+    }
+  };
 
   const contextValue = useMemo(
-    () => ({ searchTerm, setSearchTerm, results, setResults, pages }),
+    () => ({ searchTerm, setSearchTerm, results, setResults, pages, search }),
     [searchTerm, results, pages],
   );
 
