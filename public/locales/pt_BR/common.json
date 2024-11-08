@@ -18,6 +18,7 @@
       "selectUfLabel": "UF",
       "buttonText": "Agendar",
       "consultationImageAlt": "Imagem de consulta",
+      "additionalInfo": "Fusce ac ligula quis eros convallis rhoncus. Nam rutrum ligula at tellus tempor, at pharetra mauris dictum. Sed quis dolor consectetur, laoreet arcu ut, tempor est.",
       "path": "/agende-sua-consulta"
     }
   },
