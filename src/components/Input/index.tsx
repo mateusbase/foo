@@ -10,7 +10,6 @@ export default function BaseInput({
   radius = "full",
   variant = "bordered",
   className = "w-full",
-  borderStyle = "border-primary", // Default border style
   value,
   onChange,
   endContent,

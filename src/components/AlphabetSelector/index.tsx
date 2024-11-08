@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Button, Input } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import BaseInput from "../Input";
 import { AlphabetSelectorProps } from "./types";
 import { SearchIcon } from "../Icons";

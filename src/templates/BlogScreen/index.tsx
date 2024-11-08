@@ -1,7 +1,7 @@
 import BaseContainer from "@/components/Container";
 import NewsInformationCard from "@/components/NewsInformationCard";
 import { Button } from "@nextui-org/react";
-import { ArrowDownIcon, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { FaRunning } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { GiFlowerStar } from "react-icons/gi";
