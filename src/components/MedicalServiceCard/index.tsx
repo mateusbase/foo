@@ -11,14 +11,13 @@ export default function MedicalServiceCard({
   actionButtonText,
   serviceIcon = <Plus size={24} className="mr-4" />,
   backgroundImageUrl,
+  shouldShowButton = true,
 }: MedicalServiceCardProps): JSX.Element {
   const hasActionButton = !!actionButtonText;
   const hasSubtitle = !!subtitle;
 
   return (
-    <div
-      className="flex h-fit w-auto flex-col overflow-hidden rounded-br-[100px] border bg-white"
-    >
+    <div className="flex h-fit w-auto flex-col overflow-hidden rounded-br-[100px] border bg-white">
       <div
         className="h-[376px] bg-cover bg-no-repeat"
         style={{
@@ -27,9 +26,7 @@ export default function MedicalServiceCard({
             "url('https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg')",
         }}
       />
-      <div
-        className="flex flex-col justify-between gap-12 rounded-br-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground px-14 py-8"
-      >
+      <div className="flex flex-col justify-between gap-12 rounded-br-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground px-14 py-8">
         {hasSubtitle && (
           <p className="mt-4 text-[24px] leading-[30px] text-white">
             {subtitle}
@@ -56,7 +53,7 @@ export default function MedicalServiceCard({
         </div>
 
         <div className="mt-20 flex w-full items-start justify-start rounded-full">
-          <IoIosArrowDropright size={29} color="white" />
+          {shouldShowButton && <IoIosArrowDropright size={29} color="white" />}
         </div>
       </div>
     </div>

@@ -5,4 +5,5 @@ export interface MedicalServiceCardProps {
   actionButtonText?: string;
   serviceIcon?: JSX.Element;
   backgroundImageUrl?: string;
+  shouldShowButton?: boolean;
 }

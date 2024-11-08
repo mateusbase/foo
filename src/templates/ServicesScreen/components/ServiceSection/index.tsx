@@ -106,6 +106,7 @@ export default function ServiceSection({
           }}
           onInit={(swiper) => {
             if (swiper.params.navigation) {
+
               const navigationParams = swiper.params
                 .navigation as NavigationOptions;
               navigationParams.prevEl = prevRefCard.current;
