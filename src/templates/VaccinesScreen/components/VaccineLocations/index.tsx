@@ -1,4 +1,4 @@
-const VaccineLocations = () => {
+const VaccineLocations = (): JSX.Element => {
   return (
     <div className="flex justify-center lg:mt-14">
       <h1 className="font-lato-bold text-primary lg:text-title-xl">

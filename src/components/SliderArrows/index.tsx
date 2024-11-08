@@ -1,33 +1,30 @@
-import { Swiper as SwiperType } from "swiper/types";
 import NextArrowIcon from "@/components/Icons/NextArrowIcon";
 import PreviousArrowIcon from "@/components/Icons/PreviousArrowIcon";
+import { SliderArrowsProps } from "./types";
 
-type SliderArrowsProps = {
-  swiperRef: React.RefObject<SwiperType>;
-  prevRef: React.RefObject<HTMLButtonElement>;
-  nextRef: React.RefObject<HTMLButtonElement>;
-};
-
-const SliderArrows = ({ swiperRef, prevRef, nextRef }: SliderArrowsProps) => {
-  const handlePrev = () => {
+const SliderArrows = ({
+  swiperRef,
+  prevRef,
+  nextRef,
+}: SliderArrowsProps): JSX.Element => {
+  const handlePrev = (): void => {
     if (swiperRef.current) {
       swiperRef.current.slidePrev();
     }
   };
 
-  const handleNext = () => {
+  const handleNext = (): void => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();
     }
   };
-  console.log(swiperRef, prevRef, nextRef);
 
   return (
     <div className="mt-4 flex justify-center space-x-4 lg:justify-end">
       <button
         ref={prevRef}
         type="button"
-        className={`group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60`}
+        className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
         aria-label="Previous"
         onClick={handlePrev}
       >
@@ -37,7 +34,7 @@ const SliderArrows = ({ swiperRef, prevRef, nextRef }: SliderArrowsProps) => {
       <button
         ref={nextRef}
         type="button"
-        className={`group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60`}
+        className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
         aria-label="Next"
         onClick={handleNext}
       >

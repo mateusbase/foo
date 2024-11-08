@@ -1,5 +1,6 @@
 import { LuArrowUpRight } from "react-icons/lu";
 import BaseButton from "../Button";
+import { NewsInformationCardProps } from "./types";
 
 export default function NewsInformationCard({
   options,

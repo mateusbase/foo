@@ -1,15 +1,11 @@
-import { useRef, useCallback, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import PageLayout from "@/components/PageLayout";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import { vaccineInformation } from "./vaccineInformation";
 import VaccinesCard from "./components/VaccinesCardComponent";
-import { Swiper as SwiperType } from "swiper/types";
 import SliderArrows from "../../components/SliderArrows";
-import VaccinationRoundedCard from "./components/VaccinationRoundedCard";
-import listItems from "./listItems";
-import PageLayout from "@/components/PageLayout";
 import VaccinationRoundedSection from "./components/VaccinationRoundedSection";
-import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 
 export default function VaccinesScreen(): JSX.Element {
   const {

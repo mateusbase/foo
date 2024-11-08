@@ -1,9 +1,9 @@
 import SliderArrows from "@/components/SliderArrows";
 import { SwiperSlide, Swiper } from "swiper/react";
-import listItems from "../../listItems";
-import VaccinationRoundedCard from "../VaccinationRoundedCard";
 import { Navigation } from "swiper/modules";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import listItems from "../../listItems";
+import VaccinationRoundedCard from "../VaccinationRoundedCard";
 
 export default function VaccinationRoundedSection(): JSX.Element {
   const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();

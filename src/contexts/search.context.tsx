@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 import {
   createContext,
@@ -9,6 +10,7 @@ import {
 } from "react";
 
 interface PageData {
+  [x: string]: any;
   id: string;
   pageTitle: string;
   content: string;

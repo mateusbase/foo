@@ -6,7 +6,10 @@ import React, { useState } from "react";
 import { useSearch } from "@/contexts/search.context";
 import Link from "next/link";
 import { MicIcon, SearchIcon } from "@/components/Icons";
-import { SpeechRecognitionErrorEvent, SpeechRecognitionResultEvent } from "./types";
+import {
+  SpeechRecognitionErrorEvent,
+  SpeechRecognitionResultEvent,
+} from "./types";
 
 const SearchInput = (): JSX.Element => {
   const { searchTerm, setSearchTerm, results, setResults, pages } = useSearch();
@@ -17,8 +20,12 @@ const SearchInput = (): JSX.Element => {
 
     if (term && pages.length > 0) {
       const filteredPages = pages.filter((page) => {
-        const titleMatch = page.data?.title?.toLowerCase().includes(term.toLowerCase());
-        const descriptionMatch = page.data?.description?.toLowerCase().includes(term.toLowerCase());
+        const titleMatch = page.data?.title
+          ?.toLowerCase()
+          .includes(term.toLowerCase());
+        const descriptionMatch = page.data?.description
+          ?.toLowerCase()
+          .includes(term.toLowerCase());
         return titleMatch || descriptionMatch;
       });
       setResults(filteredPages);
@@ -68,7 +75,9 @@ const SearchInput = (): JSX.Element => {
 
   return (
     <div className="relative w-full">
-      <div className={`mt-2 flex h-14 w-full items-center justify-between rounded-full border border-solid md:hidden ${isRecording ? "border-red-500" : "border-primary"} bg-white px-10 font-semibold opacity-85`}>
+      <div
+        className={`mt-2 flex h-14 w-full items-center justify-between rounded-full border border-solid md:hidden ${isRecording ? "border-red-500" : "border-primary"} bg-white px-10 font-semibold opacity-85`}
+      >
         <div className="flex w-full flex-col">
           <input
             type="text"
@@ -115,9 +124,7 @@ const SearchInput = (): JSX.Element => {
           </div>
         </div>
       )}
-
     </div>
-
   );
 };
 
