@@ -1,6 +1,7 @@
-import InformationSlider from "@/components/InformationSlider";
 import PageLayout from "@/components/PageLayout";
 import { useTranslation } from "react-i18next";
+import AcademyCard from "./components/AcademyCard";
+import EducationalCard from "./components/EducationalCard";
 
 export default function OcInstitute(): JSX.Element {
   const { t } = useTranslation();
@@ -10,12 +11,22 @@ export default function OcInstitute(): JSX.Element {
       title={t("oc_institute.title")}
       subtitle={t("oc_institute.subtitle")}
     >
+      <div className="mt-10 w-full">
+        <EducationalCard />
+      </div>
+
       <div className="mt-20">
-        <InformationSlider
-          title="Pesquisa Clínica Oncoclínicas"
-          description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
-          image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
-        />
+        <AcademyCard />
+      </div>
+
+      <div className="mt-40 flex-col justify-center">
+        <p className="text-2xl text-primary lg:text-6xl">
+          Instituto Oncoclínicas
+        </p>
+        <p className="text-2xl text-darkGray">
+          Produção e compartilhamento de ciência, tecnologia, inovação e
+          educação para a área de saúde.
+        </p>
       </div>
     </PageLayout>
   );
