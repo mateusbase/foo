@@ -23,5 +23,27 @@
       "odontology": "Odontoclínica",
       "precision_oncology": "Oncologia de precisão"
     }
+  },
+  "pages": {
+    "scheduleYourConsultation": {
+      "pageTitle": "Agende sua consulta",
+      "pageSubtitle": "Oncoclínicas",
+      "heading": "Agende sua consulta ou exame",
+      "description": "Todo o cuidado que a sua vida merece",
+      "placeholderUnitName": "Nome da unidade",
+      "selectUfLabel": "UF",
+      "buttonText": "Agendar",
+      "consultationImageAlt": "Imagem de consulta",
+      "additionalInfo": "Fusce ac ligula quis eros convallis rhoncus. Nam rutrum ligula at tellus tempor, at pharetra mauris dictum. Sed quis dolor consectetur, laoreet arcu ut, tempor est.",
+      "path": "/agende-sua-consulta"
+    }
+  },
+  "searchInput": {
+    "ariaLabel": "Campo de busca",
+    "placeholder": "O que você está procurando?",
+    "description": "Busque por serviços, unidade, sintomas, exames, tratamentos, eventos e etc...",
+    "noResults": "Nenhum resultado encontrado.",
+    "noTitle": "Página Sem Título",
+    "noDescription": "Sem descrição"
   }
 }

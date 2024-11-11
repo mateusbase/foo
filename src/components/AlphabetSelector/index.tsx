@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Button, Input } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import BaseInput from "../Input";
 import { AlphabetSelectorProps } from "./types";
 import { SearchIcon } from "../Icons";
@@ -8,6 +8,8 @@ export default function AlphabetSelector({
   selectedLetter,
   onLetterSelect,
   searchPlaceholder,
+  handleSearchChange,
+  valueSearch
 }: AlphabetSelectorProps): JSX.Element {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -42,6 +44,8 @@ export default function AlphabetSelector({
           variant="bordered"
           endContent={<SearchIcon className="text-2xl text-primary" />}
           className="w-[300px]"
+          onChange={handleSearchChange}
+          value={valueSearch}
         />
       </div>
     </div>

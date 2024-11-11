@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Button } from "@nextui-org/react";
 import { TbCodePlus } from "react-icons/tb";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,7 +6,6 @@ import { Navigation } from "swiper/modules";
 import HealthServiceCard from "@/components/HealthServiceCard";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import Link from "next/link";
-import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
 import AlphabetSelector from "@/components/AlphabetSelector";
 import BaseInput from "@/components/Input";
@@ -16,6 +15,10 @@ import NextArrowIcon from "@/components/Icons/NextArrowIcon";
 import SectionHeader from "../SectionHeader";
 import { ServiceSectionProps } from "../../types";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 export default function ServiceSection({
   id,
   title,
@@ -23,19 +26,34 @@ export default function ServiceSection({
   healthServices,
   medicalServices,
 }: ServiceSectionProps): JSX.Element {
+  const prevRefCard = useRef<HTMLButtonElement>(null);
+  const nextRefCard = useRef<HTMLButtonElement>(null);
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
   const [selectedLetter, setSelectedLetter] = useState("A");
+  const [valueSearch, setValueSearch] = useState("");
 
   const filteredHealthServices = useMemo(() => {
-    return healthServices.filter((service) =>
-      service.serviceTitle.toUpperCase().startsWith(selectedLetter),
-    );
-  }, [selectedLetter, healthServices]);
+    return healthServices.filter((service) => {
+      const matchesLetter = service.serviceTitle
+        .toUpperCase()
+        .startsWith(selectedLetter);
+      const matchesSearch = valueSearch
+        ? service.serviceTitle.toLowerCase().includes(valueSearch.toLowerCase())
+        : true;
+      return matchesLetter && matchesSearch;
+    });
+  }, [selectedLetter, valueSearch, healthServices]);
+
+  const handleSearchChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    setValueSearch(event.target.value);
+  };
 
   return (
-    <section id={id} className="pt-8">
+    <div id={id} className="pt-8">
       <SectionHeader title={title} description={description} />
 
       <div className="mt-10 flex w-full lg:hidden">
@@ -45,6 +63,8 @@ export default function ServiceSection({
           size="lg"
           radius="full"
           variant="bordered"
+          onChange={handleSearchChange}
+          value={valueSearch}
           endContent={<SearchIcon className="text-primary" />}
         />
       </div>
@@ -54,6 +74,8 @@ export default function ServiceSection({
           selectedLetter={selectedLetter}
           onLetterSelect={setSelectedLetter}
           searchPlaceholder="Buscar serviço"
+          handleSearchChange={handleSearchChange}
+          valueSearch={valueSearch}
         />
       </div>
 
@@ -79,15 +101,15 @@ export default function ServiceSection({
           slidesPerView={1}
           loop
           navigation={{
-            nextEl: nextRef.current,
-            prevEl: prevRef.current,
+            nextEl: nextRefCard.current,
+            prevEl: prevRefCard.current,
           }}
           onInit={(swiper) => {
             if (swiper.params.navigation) {
-              // eslint-disable-next-line prettier/prettier
-              const navigationParams = swiper.params.navigation as NavigationOptions;
-              navigationParams.prevEl = prevRef.current;
-              navigationParams.nextEl = nextRef.current;
+              const navigationParams = swiper.params
+                .navigation as NavigationOptions;
+              navigationParams.prevEl = prevRefCard.current;
+              navigationParams.nextEl = nextRefCard.current;
               swiper.navigation.init();
               swiper.navigation.update();
             }
@@ -106,9 +128,7 @@ export default function ServiceSection({
           {filteredHealthServices.map((service) => (
             <SwiperSlide key={service.id}>
               <Link
-                href={`/servicos/${service.serviceTitle
-                  .replace(/\s+/g, "-")
-                  .toLowerCase()}`}
+                href={`/servicos/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
                 passHref
               >
                 <div className="cursor-pointer">
@@ -124,7 +144,7 @@ export default function ServiceSection({
 
         <div className="mt-4 flex justify-center space-x-4">
           <button
-            ref={prevRef}
+            ref={prevRefCard}
             type="button"
             className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Previous"
@@ -133,7 +153,7 @@ export default function ServiceSection({
           </button>
 
           <button
-            ref={nextRef}
+            ref={nextRefCard}
             type="button"
             className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
             aria-label="Next"
@@ -165,8 +185,8 @@ export default function ServiceSection({
           }}
           onInit={(swiper) => {
             if (swiper.params.navigation) {
-              // eslint-disable-next-line prettier/prettier
-              const navigationParams = swiper.params.navigation as NavigationOptions;
+              const navigationParams = swiper.params
+                .navigation as NavigationOptions;
               navigationParams.prevEl = prevRef.current;
               navigationParams.nextEl = nextRef.current;
               swiper.navigation.init();
@@ -231,6 +251,6 @@ export default function ServiceSection({
           </Link>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

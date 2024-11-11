@@ -2,13 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { NavigationOptions } from "swiper/types";
 import { NavigationButtons } from "../NavigationButtons";
-
-interface CustomSwiperProps {
-  slides: any[];
-  renderSlide: (slide: any) => JSX.Element;
-  prevRef: React.RefObject<HTMLButtonElement>;
-  nextRef: React.RefObject<HTMLButtonElement>;
-}
+import { CustomSwiperProps } from "./types";
 
 export default function CustomSwiper({
   slides,

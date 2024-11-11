@@ -1,7 +1,6 @@
-import BaseButton from "@/components/Button";
 import { IoIosCalendar, IoIosMap, IoIosTime } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
-import BaseInput from "@/components/Input";
+import SignupForm from "./components/SignupForm";
 
 export default function EventScreen(): JSX.Element {
   return (
@@ -44,63 +43,7 @@ export default function EventScreen(): JSX.Element {
             </div>
 
             <div className="mt-10 hidden w-full justify-center md:flex">
-              <div className="flex h-auto w-[493px] flex-col justify-between rounded-[20px] bg-primary p-16">
-                <h2 className="text-left text-3xl font-bold text-white">
-                  Inscreva-se
-                </h2>
-
-                <div className="mt-10 flex grow flex-col justify-between">
-                  <div className="space-y-10">
-                    <BaseInput
-                      placeholder="Seu nome"
-                      className="rounded-full bg-white"
-                      radius="full"
-                    />
-                    <BaseInput
-                      placeholder="Seu email"
-                      className="rounded-full bg-white"
-                      radius="full"
-                    />
-                    <BaseInput
-                      placeholder="Seu telefone"
-                      className="rounded-full bg-white"
-                      radius="full"
-                    />
-                    <BaseInput
-                      placeholder="Seu CPF"
-                      className="rounded-full bg-white"
-                      radius="full"
-                    />
-                  </div>
-
-                  <BaseButton
-                    color="primary"
-                    size="lg"
-                    variant="solid"
-                    width="100%"
-                    className="mt-6 w-full border border-white text-white"
-                  >
-                    Confirmar
-                  </BaseButton>
-
-                  <div className="mt-4 flex items-start space-x-3">
-                    <input
-                      type="checkbox"
-                      id="terms"
-                      className="size-5 rounded border-white text-primary focus:ring-primary"
-                    />
-                    <label
-                      htmlFor="terms"
-                      className="text-left text-[14px] leading-[18px] text-white"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Vestibulum pellentesque nunc lectus, vitae lacinia ex
-                      hendrerit in. Fusce id ex id sem ullamcorper. Lorem ipsum
-                      dolor sit amet, consectetur adipiscing elit.
-                    </label>
-                  </div>
-                </div>
-              </div>
+              <SignupForm />
             </div>
           </div>
 
@@ -125,63 +68,7 @@ export default function EventScreen(): JSX.Element {
       </PageLayout>
 
       <div className="mt-10 block w-full justify-center md:hidden">
-        <div className="flex size-auto flex-col justify-between bg-primary p-16">
-          <h2 className="text-left text-3xl font-bold text-white">
-            Inscreva-se
-          </h2>
-
-          <div className="mt-10 flex grow flex-col justify-between">
-            <div className="space-y-10">
-              <BaseInput
-                placeholder="Seu nome"
-                className="rounded-full bg-white"
-                radius="full"
-              />
-              <BaseInput
-                placeholder="Seu email"
-                className="rounded-full bg-white"
-                radius="full"
-              />
-              <BaseInput
-                placeholder="Seu telefone"
-                className="rounded-full bg-white"
-                radius="full"
-              />
-              <BaseInput
-                placeholder="Seu CPF"
-                className="rounded-full bg-white"
-                radius="full"
-              />
-            </div>
-
-            <BaseButton
-              color="primary"
-              size="lg"
-              variant="solid"
-              width="100%"
-              className="mt-6 w-full border border-white text-white"
-            >
-              Confirmar
-            </BaseButton>
-
-            <div className="mt-4 flex items-start space-x-3">
-              <input
-                type="checkbox"
-                id="terms"
-                className="size-5 rounded border-white text-primary focus:ring-primary"
-              />
-              <label
-                htmlFor="terms"
-                className="text-left text-[14px] leading-[18px] text-white"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit
-                in. Fusce id ex id sem ullamcorper. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit.
-              </label>
-            </div>
-          </div>
-        </div>
+        <SignupForm />
       </div>
     </>
   );

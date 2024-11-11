@@ -9,7 +9,6 @@ export default function BaseSelect({
   radius = "full",
   size = "sm",
   className = "w-full",
-  borderStyle = "border-primary",
   options,
   startContent,
   endContent,

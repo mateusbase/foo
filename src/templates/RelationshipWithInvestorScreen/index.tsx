@@ -51,7 +51,7 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
     >
       <div className="mt-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 lg:flex-row">
         <div className="flex w-full flex-col">
-          <h1 className="max-w-full text-4xl font-extralight text-primary lg:text-6xl">
+          <h1 className="max-w-full text-4xl font-light text-primary lg:text-6xl">
             Relações com investidores
           </h1>
 

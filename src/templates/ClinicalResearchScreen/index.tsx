@@ -43,10 +43,13 @@ export default function ClinicalResearchScreen(): JSX.Element {
   ];
 
   return (
-    <PageLayout subtitle="Programa de Pesquisa Clínica do Grupo Oncoclínicas">
+    <PageLayout
+      title="Pesquisa Clínica"
+      subtitle="Programa de Pesquisa Clínica do Grupo Oncoclínicas"
+    >
       <div className="mt-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 lg:flex-row">
         <div className="flex w-full flex-col">
-          <h1 className="max-w-full text-4xl font-extralight text-primary lg:text-6xl">
+          <h1 className="max-w-full text-3xl font-light text-primary lg:text-6xl">
             Pesquisa Clínica Oncoclínicas
           </h1>
 

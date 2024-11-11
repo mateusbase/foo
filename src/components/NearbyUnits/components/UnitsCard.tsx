@@ -1,4 +1,3 @@
-import { HiOutlineMapPin } from "react-icons/hi2";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";

@@ -1,4 +1,3 @@
-import InformationSlider from "@/components/InformationSlider";
 import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 import BaseSelect from "@/components/Select";
@@ -7,15 +6,43 @@ import PageLayout from "@/components/PageLayout";
 export default function OcJournalScreen(): JSX.Element {
   return (
     <PageLayout
-      title="Oc Journal"
+      title="OC Journal"
       subtitle="A newsletter científica do Grupo Oncoclínicas"
     >
       <div className="mt-20">
-        <InformationSlider
-          title="Pesquisa Clínica Oncoclínicas"
-          description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
-          image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
-        />
+        <div className="hidden h-[536px] w-full justify-between text-white lg:flex">
+          <div className="flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-b from-primary-foreground to-secondary-foreground p-20">
+            <div>
+              <p className="text-6xl font-light">
+                Faça o download da edição mais recente do OC Journal
+              </p>
+            </div>
+
+            <div>
+              <p className="text-2xl font-bold">
+                Novidades do universo médico-científico com reportagens e
+                análises de especialistas em oncologia.
+              </p>
+            </div>
+
+            <div className="flex gap-2">
+              <BaseButton
+                className="h-16 w-80 justify-center border-white text-2xl text-white"
+                variant="bordered"
+              >
+                Download
+              </BaseButton>
+            </div>
+          </div>
+
+          <div className="h-full w-1/2">
+            <img
+              src="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+              alt="Imagem 1"
+              className="size-full"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="mt-28 flex flex-col gap-4 border-b border-gray-300 px-8 pb-4 md:flex-row md:items-center md:justify-between md:px-0">

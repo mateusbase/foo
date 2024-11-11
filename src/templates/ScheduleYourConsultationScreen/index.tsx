@@ -1,23 +1,31 @@
+import { useTranslation } from "react-i18next";
 import BaseButton from "@/components/Button";
 import BaseSelect from "@/components/Select";
 import BaseInput from "@/components/Input";
 import PageLayout from "@/components/PageLayout";
 
 export default function ScheduleYourConsultationScreen(): JSX.Element {
+  const { t } = useTranslation();
+
   return (
-    <PageLayout title="Agende sua consulta" subtitle="Oncoclínicas">
+    <PageLayout
+      title={t("pages.scheduleYourConsultation.pageTitle")}
+      subtitle={t("pages.scheduleYourConsultation.pageSubtitle")}
+    >
       <div className="mt-5 flex flex-col gap-10 md:mt-20 lg:flex-row">
         <div className="w-full lg:w-1/2">
           <h1 className="text-4xl font-extralight text-primary">
-            Agende sua consulta ou exame
+            {t("pages.scheduleYourConsultation.heading")}
           </h1>
           <p className="mt-2 text-lg text-primary">
-            Todo o cuidado que a sua vida merece
+            {t("pages.scheduleYourConsultation.description")}
           </p>
 
           <div className="mt-10">
             <BaseInput
-              placeholder="Nome da unidade"
+              placeholder={t(
+                "pages.scheduleYourConsultation.placeholderUnitName",
+              )}
               size="lg"
               radius="full"
               variant="bordered"
@@ -27,7 +35,9 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
 
           <div className="mt-6">
             <BaseInput
-              placeholder="Nome da unidade"
+              placeholder={t(
+                "pages.scheduleYourConsultation.placeholderUnitName",
+              )}
               size="lg"
               radius="full"
               variant="bordered"
@@ -39,7 +49,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             <BaseSelect
               color="primary"
               variant="bordered"
-              label="UF"
+              label={t("pages.scheduleYourConsultation.selectUfLabel")}
               radius="full"
               borderStyle="border-default"
               size="sm"
@@ -52,7 +62,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             <BaseSelect
               color="primary"
               variant="bordered"
-              label="UF"
+              label={t("pages.scheduleYourConsultation.selectUfLabel")}
               radius="full"
               borderStyle="border-default"
               size="sm"
@@ -67,7 +77,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             <BaseSelect
               color="primary"
               variant="bordered"
-              label="UF"
+              label={t("pages.scheduleYourConsultation.selectUfLabel")}
               radius="full"
               borderStyle="border-default"
               size="sm"
@@ -84,7 +94,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               className="w-full text-white lg:w-auto"
               width="322px"
             >
-              Agendar
+              {t("pages.scheduleYourConsultation.buttonText")}
             </BaseButton>
           </div>
         </div>
@@ -92,14 +102,11 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
         <div className="flex w-full flex-col items-center lg:w-1/2">
           <img
             src="https://i.postimg.cc/Y0sxRgW5/Captura-de-tela-2024-09-22-152639.png"
-            alt="Imagem de consulta"
+            alt={t("pages.scheduleYourConsultation.consultationImageAlt")}
             className="w-full object-cover"
           />
           <p className="mb-5 mt-4 text-left text-gray-700">
-            Fusce ac ligula quis eros convallis rhoncus. Nam rutrum ligula at
-            tellus tempor, at pharetra mauris dictum. Sed quis dolor
-            consectetur, laoreet arcu ut, tempor est. Praesent bibendum
-            fermentum ipsum id suscipit. Morbi sit amet eros libero.
+            {t("pages.scheduleYourConsultation.additionalInfo")}
           </p>
         </div>
       </div>

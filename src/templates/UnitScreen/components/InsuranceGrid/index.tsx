@@ -1,6 +1,5 @@
 import { SearchIcon } from "@/components/Icons";
-import { Input } from "@nextui-org/react";
-import { Search } from "lucide-react";
+import BaseInput from "@/components/Input";
 
 const InsuranceGrid = (): JSX.Element => {
   const insurances = [
@@ -27,14 +26,17 @@ const InsuranceGrid = (): JSX.Element => {
           Convênios atendidos nesta unidade
         </h2>
 
-        <Input
-          placeholder="Buscar convênio"
-          size="lg"
-          radius="full"
-          variant="bordered"
-          endContent={<SearchIcon className="text-default" />}
-          className="h-[50px] w-full md:w-[350px]"
-        />
+        <div className="flex h-[50px] w-full md:w-[350px]">
+          <BaseInput
+            color="primary"
+            placeholder="Buscar convênio"
+            size="lg"
+            radius="full"
+            variant="bordered"
+            className="h-[50px] w-full md:w-[350px]"
+            endContent={<SearchIcon className="text-primary" />}
+          />
+        </div>
       </div>
 
       <div className="mt-10 grid grid-cols-2 gap-4 text-base font-bold text-darkGray sm:grid-cols-2 lg:grid-cols-3">

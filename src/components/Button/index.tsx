@@ -12,6 +12,7 @@ export default function BaseButton({
   disabled = false,
   startContent,
   endContent,
+  radius = "sm",
 }: BaseButtonProps): JSX.Element {
   return (
     <Button
@@ -23,7 +24,7 @@ export default function BaseButton({
       disabled={disabled}
       startContent={startContent}
       endContent={endContent}
-      radius="sm"
+      radius={radius}
     >
       {children}
     </Button>

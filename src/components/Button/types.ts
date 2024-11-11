@@ -15,4 +15,5 @@ export interface BaseButtonProps {
   width?: string;
   startContent?: React.ReactNode;
   endContent?: React.ReactNode;
+  radius?: "none" | "sm" | "md" | "lg" | "full";
 }

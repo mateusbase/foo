@@ -1,10 +1,10 @@
-import InformationSlider from "@/components/InformationSlider";
 import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 import EventCard from "@/components/EventsCard";
 
 import BaseSelect from "@/components/Select";
 import PageLayout from "@/components/PageLayout";
+import { Plus } from "lucide-react";
 
 export default function EventsScreen(): JSX.Element {
   const events = [
@@ -71,11 +71,39 @@ export default function EventsScreen(): JSX.Element {
       subtitle="Congressos, palestras, simpósios e muito mais."
     >
       <div className="mt-20 hidden md:flex">
-        <InformationSlider
-          title="Pesquisa Clínica Oncoclínicas"
-          description="Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a participação de sete de suas unidades no Brasil."
-          image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
-        />
+        <div className="hidden h-[536px] w-full justify-between text-white lg:flex">
+          <div className="flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-b from-primary-foreground to-secondary-foreground p-20">
+            <div>
+              <p className="text-5xl font-light">
+                Workshop sobre crescimento do câncer
+              </p>
+            </div>
+
+            <div>
+              <p className="text-2xl">
+                Um bate papo com especialistas do mundo todo sobre o crescimento
+                do câncer em grandes cidades.
+              </p>
+            </div>
+
+            <div className="flex gap-2">
+              <BaseButton
+                className="h-16 w-80 justify-center border-white text-2xl text-white"
+                variant="bordered"
+              >
+                Quero me inscrever
+              </BaseButton>
+            </div>
+          </div>
+
+          <div className="h-full w-1/2">
+            <img
+              src="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+              alt="Imagem 1"
+              className="size-full"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-28 md:flex-row md:items-center md:justify-between md:px-0">
@@ -121,6 +149,18 @@ export default function EventsScreen(): JSX.Element {
         {events.map((event) => (
           <EventCard key={event.title} event={event} />
         ))}
+      </div>
+
+      <div className="my-10 flex justify-center lg:justify-start">
+        <BaseButton
+          color="primary"
+          variant="bordered"
+          radius="sm"
+          startContent={<Plus />}
+          className="h-[50px] w-80 items-center justify-center pl-3 text-[18px] font-black leading-[22px] text-primary sm:w-3/6 md:flex lg:w-[228px]"
+        >
+          Ver mais
+        </BaseButton>
       </div>
     </PageLayout>
   );
