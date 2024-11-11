@@ -82,7 +82,6 @@ export default function InformationSlider({
     );
   }
 
-  // Render sem o Swiper se não for necessário
   return renderContent({
     title: title ?? "",
     description: description ?? "",
