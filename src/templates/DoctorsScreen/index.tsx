@@ -8,10 +8,16 @@ import OptionsActionsCard from "@/components/OptionsActionsCard";
 import ServicesSectionMobile from "@/components/ServicesSectionMobile";
 import UpcomingEventsSectionMobile from "@/components/UpcomingEventsMobile";
 import InformationSlider from "@/components/InformationSlider";
-import SearchInput from "../HomeScreen/components/SearchInput";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SearchInputMobile from "../HomeScreen/components/SearchInputMobile";
+import SearchInput from "../HomeScreen/components/SearchInput";
+import { sliderItems } from "./informationItems";
 
 export default function DoctorsScreen(): JSX.Element {
+  const { onBeforeInit } = useSwiperNavigation();
+
   return (
     <main className="flex w-full flex-col">
       <section className="relative w-full">
@@ -40,10 +46,9 @@ export default function DoctorsScreen(): JSX.Element {
 
         <div className="hidden lg:block">
           <InformationSlider
-            title="Leve a medicina de precisão aos seus pacientes"
-            description="Na Oncoclínicas, nos dedicamos ao atendimento integral e multidisciplinar, com foco no tratamento individualizado, seguros e menos invasivos. E tudo isso começa nos diagnósticos precisos."
-            image="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+            items={sliderItems}
             backgroundType="darkGray"
+            isSwiper
           />
         </div>
 
