@@ -28,7 +28,7 @@ export default function AcademyCard(): JSX.Element {
                 : "bg-primary-foreground text-greenDark"
               }`}
           >
-            <p className="eading-10 text-sm font-bold lg:text-[40px] lg:font-semibold">
+            <p className="text-sm font-bold leading-10 lg:text-[40px] lg:font-semibold">
               {option.title}
             </p>
           </div>

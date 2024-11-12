@@ -19,7 +19,7 @@ export default function OcInstitute(): JSX.Element {
         <AcademyCard />
       </div>
 
-      <div className="mt-40 flex-col justify-center">
+      <div className="mt-16 flex flex-col items-center space-y-4 lg:mt-40 lg:text-center">
         <p className="text-2xl text-primary lg:text-6xl">
           Instituto Oncoclínicas
         </p>
