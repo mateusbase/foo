@@ -1,8 +1,8 @@
 export default function EducationalCard(): JSX.Element {
   return (
     <div className="flex h-[413px] w-full flex-col text-white lg:flex-row">
-      <div className="flex flex-col justify-center rounded-bl-[100px] text-primary lg:w-[555px] lg:bg-gradient-to-t lg:from-secondary-foreground lg:to-primary-foreground lg:text-white">
-        <p className="w-full text-center text-4xl font-medium lg:text-left lg:text-5xl">
+      <div className="flex flex-col justify-center rounded-bl-[100px] text-primary lg:w-[555px] lg:bg-gradient-to-t lg:from-secondary-foreground lg:to-primary-foreground lg:p-20 lg:text-white">
+        <p className="w-full text-center text-4xl font-medium lg:text-left lg:text-5xl lg:leading-tight">
           Ensino, pesquisa e Educação médica continuada
         </p>
       </div>
