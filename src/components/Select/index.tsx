@@ -15,11 +15,14 @@ export default function BaseSelect({
   labelPlacement,
   defaultSelectedKey,
   onChange,
+  noBorder = false,
 }: BaseSelectProps): JSX.Element {
   return (
     <Select
       classNames={{
-        trigger: `border-${color}`,
+        trigger: noBorder
+          ? `bg-transparent border-none shadow-none `
+          : `border-${color} `,
       }}
       color={color}
       variant={variant}
