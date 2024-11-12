@@ -8,16 +8,11 @@ import OptionsActionsCard from "@/components/OptionsActionsCard";
 import ServicesSectionMobile from "@/components/ServicesSectionMobile";
 import UpcomingEventsSectionMobile from "@/components/UpcomingEventsMobile";
 import InformationSlider from "@/components/InformationSlider";
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
-import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SearchInputMobile from "../HomeScreen/components/SearchInputMobile";
 import SearchInput from "../HomeScreen/components/SearchInput";
 import { sliderItems } from "./informationItems";
 
 export default function DoctorsScreen(): JSX.Element {
-  const { onBeforeInit } = useSwiperNavigation();
-
   return (
     <main className="flex w-full flex-col">
       <section className="relative w-full">
