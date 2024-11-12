@@ -1,14 +1,14 @@
 export default function EducationalCard(): JSX.Element {
   return (
-    <div className="flex w-full flex-col text-white lg:flex-row">
-      <div className="flex min-w-80 flex-col justify-between gap-2 rounded-bl-[100px] p-8 text-primary lg:bg-gradient-to-t lg:from-secondary-foreground lg:to-primary-foreground lg:p-20 lg:text-white">
-        <p className="text-center text-4xl font-medium lg:text-left lg:text-5xl">
+    <div className="flex h-[413px] w-full flex-col text-white lg:flex-row">
+      <div className="flex flex-col justify-center rounded-bl-[100px] text-primary lg:w-[555px] lg:bg-gradient-to-t lg:from-secondary-foreground lg:to-primary-foreground lg:text-white">
+        <p className="w-full text-center text-4xl font-medium lg:text-left lg:text-5xl">
           Ensino, pesquisa e Educação médica continuada
         </p>
       </div>
 
-      <div className="px-8 py-6 lg:py-0 lg:pl-8">
-        <div>
+      <div className="px-8 py-6 lg:w-4/6 lg:py-0 lg:pl-8">
+        <div className="lg:w-5/6">
           <p className="text-base text-darkGray lg:text-2xl">
             Criado em 2015, o Instituto Oncoclínicas tem a missão de gerar,
             disseminar e integrar o conhecimento, qualificar os profissionais
@@ -22,7 +22,7 @@ export default function EducationalCard(): JSX.Element {
             uma das principais referências mundiais no tratamento oncológico.
           </p>
         </div>
-        <div className="mt-6 lg:mt-10">
+        <div className="mt-6 lg:mt-14">
           <p className="text-base font-bold text-darkGray lg:text-2xl">
             Dr. Carlos Gil Moreira Ferreira
           </p>
