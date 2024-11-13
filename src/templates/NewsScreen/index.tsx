@@ -24,7 +24,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function BlogScreen(): JSX.Element {
+export default function NewsScreen(): JSX.Element {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -152,8 +152,17 @@ export default function BlogScreen(): JSX.Element {
           </div>
 
           <div className="flex cursor-pointer items-center justify-center gap-1 hover:text-darkGray">
-            <span>Mais Relevantes</span>
-            <IoIosArrowDown size={20} className="text-primary" />
+            <BaseSelect
+              label=""
+              className="w-[151px] text-primary"
+              noBorder
+              color="primary"
+              defaultSelectedKey="1"
+              options={[
+                { key: 1, value: "1", label: "Mais relevantes" },
+                { key: 2, value: "2", label: "Todos os temas" },
+              ]}
+            />
           </div>
         </div>
 
@@ -174,6 +183,7 @@ export default function BlogScreen(): JSX.Element {
             radius="md"
             size="lg"
             label=""
+            defaultSelectedKey="1"
             startContent={
               <RxHamburgerMenu size={20} className="text-primary" />
             }

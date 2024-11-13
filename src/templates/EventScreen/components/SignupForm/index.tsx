@@ -5,7 +5,7 @@ import React from "react";
 export default function SignupForm(): JSX.Element {
   return (
     <div className="flex h-auto w-[493px] flex-col justify-between bg-primary p-16 md:rounded-[20px]">
-      <h2 className="text-left text-3xl font-bold text-white">Inscreva-se</h2>
+      <h2 className="text-left text-[40px] text-white">Inscreva-se</h2>
 
       <div className="mt-10 flex grow flex-col justify-between">
         <div className="space-y-4">
@@ -43,12 +43,12 @@ export default function SignupForm(): JSX.Element {
           size="lg"
           variant="solid"
           width="100%"
-          className="mt-6 w-full border border-white text-white"
+          className="mt-6 w-full border border-white text-lg text-white"
         >
           Confirmar
         </BaseButton>
 
-        <div className="mt-4 flex items-start space-x-3">
+        <div className="mt-16 flex items-start space-x-3">
           <input
             type="checkbox"
             id="terms"

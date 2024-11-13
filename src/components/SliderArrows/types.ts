@@ -4,4 +4,6 @@ export type SliderArrowsProps = {
   swiperRef: React.RefObject<SwiperType>;
   prevRef: React.RefObject<HTMLButtonElement>;
   nextRef: React.RefObject<HTMLButtonElement>;
+  size?: number;
+  color?: string;
 };
