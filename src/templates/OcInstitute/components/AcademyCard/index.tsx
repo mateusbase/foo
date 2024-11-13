@@ -7,7 +7,7 @@ export default function AcademyCard(): JSX.Element {
   ];
 
   return (
-    <div className="flex h-[536px] w-full flex-col justify-between text-white lg:flex-row">
+    <div className="flex w-full flex-col justify-between text-white lg:flex-row">
       <div className="flex flex-col justify-center gap-4 bg-gradient-to-t from-purpleDark to-purpleLight p-10 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
         <p className="text-2xl font-normal lg:text-4xl">OC Academia</p>
         <p className="mt-6 text-3xl font-light lg:text-5xl">
@@ -23,12 +23,12 @@ export default function AcademyCard(): JSX.Element {
         {options.map((option, index) => (
           <div
             key={option.id}
-            className={`flex min-h-24 min-w-40 items-end justify-start rounded-2xl p-7 lg:min-h-64 lg:min-w-28 ${(Math.floor(index / 2) + (index % 2)) % 2 === 0
+            className={`flex min-h-28 min-w-40 items-end justify-start rounded-2xl p-7 lg:min-h-64 lg:min-w-28 ${(Math.floor(index / 2) + (index % 2)) % 2 === 0
                 ? "bg-primary text-white"
                 : "bg-primary-foreground text-greenDark"
               }`}
           >
-            <p className="text-sm font-bold leading-10 lg:text-[40px] lg:font-semibold">
+            <p className="text-sm font-bold lg:text-[40px] lg:font-semibold lg:leading-10">
               {option.title}
             </p>
           </div>

@@ -15,15 +15,15 @@ export default function OcInstitute(): JSX.Element {
         <EducationalCard />
       </div>
 
-      <div className="mt-20">
+      <div className="mt-28">
         <AcademyCard />
       </div>
 
-      <div className="mt-16 flex flex-col items-center space-y-4 lg:mt-40 lg:text-center">
+      <div className="mt-16 flex flex-col space-y-4 lg:mt-40 lg:items-center lg:text-center">
         <p className="text-2xl text-primary lg:text-6xl">
           Instituto Oncoclínicas
         </p>
-        <p className="text-2xl text-darkGray">
+        <p className="text-darkGray lg:text-2xl">
           Produção e compartilhamento de ciência, tecnologia, inovação e
           educação para a área de saúde.
         </p>
