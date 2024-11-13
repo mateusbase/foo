@@ -68,8 +68,8 @@ export function SearchProvider({
         const loadedPages: PageData[] = Object.entries(data.pages).map(
           ([key, page]) => {
             const content = Object.entries(page)
-              .filter(([_, value]) => typeof value === "string")
-              .map(([_, value]) => value)
+              .filter(([value]) => typeof value === "string")
+              .map(([value]) => value)
               .join(" ")
               .toLowerCase();
 

@@ -1,5 +1,4 @@
 import BaseButton from "@/components/Button";
-import { IoIosArrowDown } from "react-icons/io";
 import EventCard from "@/components/EventsCard";
 
 import BaseSelect from "@/components/Select";

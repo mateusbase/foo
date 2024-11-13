@@ -6,11 +6,7 @@ import { FaRunning } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { GiFlowerStar } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import {
-  IoIosArrowBack,
-  IoIosArrowDown,
-  IoIosArrowForward,
-} from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { LuArrowUpRight } from "react-icons/lu";
 import BaseSelect from "@/components/Select";
