@@ -4,8 +4,6 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
   Link,
   Image,
 } from "@nextui-org/react";
@@ -18,6 +16,7 @@ import NavLink from "../NavLink";
 import BaseSelect from "../Select";
 import BaseButton from "../Button";
 import { NavBarProps } from "./types";
+import MobileMenu from "./components/menuMobile";
 
 export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,11 +47,11 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
     { label: t("navbar.patients"), pathname: "/" },
     { label: t("navbar.doctors"), pathname: "/medicos" },
     { label: t("navbar.investors"), pathname: "/relacao-com-investidor" },
-    { label: t("navbar.oc_institute"), pathname: "/contato" },
-    { label: t("navbar.news"), pathname: "/noticias" },
+    { label: "Instituto OC", pathname: "/contato" },
+    { label: "Notícias", pathname: "/blog" },
   ];
 
-  const isMedicPage = router.pathname.includes("/medicos");
+  const isMedicoPage = router.pathname === "/medicos";
 
   const handleLogoClick = (): void => {
     router.push("/");
@@ -76,14 +75,18 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
+
         try {
           const response = await fetch(
             `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`,
           );
           const data = await response.json();
+
           if (data.address) {
             const city = data.address.city || data.address.town || "Cidade";
+
             const state = data.address.state || "Estado";
+
             setLocation(`${city}, ${state}`);
           }
         } catch (error) {
@@ -124,6 +127,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
 
       <div className="flex h-[52px] w-full items-center justify-center bg-gray-foreground md:hidden">
         <HiOutlineMapPin size={24} className="mr-2 text-secondary" />
+
         <span className="font-semibold text-darkGray">{location}</span>
       </div>
 
@@ -139,7 +143,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           <NavbarContent>
             <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              className="hidden sm:block xl2:hidden"
+              className="hidden sm:block lg:hidden"
               icon={
                 isMenuOpen ? (
                   <X className="size-full min-w-10 text-primary" />
@@ -150,7 +154,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             />
 
             <NavbarBrand
-              className="cursor-pointer md:ml-5 xl2:ml-0"
+              className="shrink-0 cursor-pointer md:ml-5 xl2:ml-0"
               onClick={handleLogoClick}
             >
               <Image
@@ -173,30 +177,35 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             />
           </NavbarContent>
 
-          <NavbarContent className="hidden justify-center gap-8 font-semibold uppercase xl2:flex">
+          <NavbarContent className="hidden justify-center gap-8 text-base font-semibold uppercase lg:flex">
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />
             ))}
           </NavbarContent>
 
           <NavbarContent justify="end" className="hidden items-center sm:flex">
-            {!isMedicPage ? (
+            {!isMedicoPage ? (
               <>
                 <Link
                   href="/contato"
-                  className="ml-10 mr-14 hidden items-center font-semibold text-primary xl2:flex"
+                  className="ml-10 mr-14 hidden items-center font-semibold text-primary lg:flex"
                 >
                   Entrar
                   <LogIn size={26} className="ml-2" />
                 </Link>
 
-                <div className="flex h-full w-96 flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white">
+                <div className="flex h-full w-auto flex-row items-center justify-center gap-2 bg-secondary p-6 text-white">
                   <Link
                     className="flex w-full items-center justify-center text-lg text-white"
                     href="/agende-sua-consulta"
                   >
                     <Calendar size={24} className="mr-2 text-white" />
-                    Agende uma consulta ou exame
+
+                    <span className="lg:block xl2:hidden">Agendamento</span>
+
+                    <span className="hidden xl2:block">
+                      Agende uma consulta ou exame
+                    </span>
                   </Link>
                 </div>
               </>
@@ -213,32 +222,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             )}
           </NavbarContent>
 
-          {isMenuOpen && (
-            <NavbarMenu>
-              {routes.map((route) => (
-                <NavbarMenuItem key={route.label}>
-                  <Link
-                    href={route.pathname}
-                    className="block py-2 text-lg uppercase"
-                  >
-                    {route.label}
-                  </Link>
-                </NavbarMenuItem>
-              ))}
-
-              <NavbarMenuItem className="w-full">
-                <div className="flex size-full flex-row items-center justify-center gap-2 bg-secondary p-6 font-semibold text-white sm:hidden">
-                  <Link
-                    className="flex w-full items-center justify-center text-sm text-white"
-                    href="/agende-sua-consulta"
-                  >
-                    <Calendar size={24} className="mr-2 text-white" />
-                    Agende uma consulta ou exame
-                  </Link>
-                </div>
-              </NavbarMenuItem>
-            </NavbarMenu>
-          )}
+          {isMenuOpen && <MobileMenu routes={routes} />}
         </NextNavBar>
       </div>
 
