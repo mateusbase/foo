@@ -79,7 +79,6 @@ export default function NewScreen(): JSX.Element {
 
           <div className="my-10 w-full">
             {paragraphs.map((paragraph) => (
-              // eslint-disable-next-line react/no-array-index-key
               <p
                 key={paragraph}
                 className="mt-4 text-sm leading-snug text-lightGray md:text-base lg:text-[22px]"
