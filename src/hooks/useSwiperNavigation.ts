@@ -10,9 +10,7 @@ export function useSwiperNavigation(): {
 } {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
-  const swiperRef = useRef<SwiperType | null>(
-    null,
-  ) as React.MutableRefObject<SwiperType | null>;
+  const swiperRef = useRef<SwiperType | null>(null);
 
   const onBeforeInit = useCallback((swiper: SwiperType) => {
     swiperRef.current = swiper;

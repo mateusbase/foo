@@ -31,7 +31,7 @@ const VaccinesCard = ({
           </h3>
         </div>
 
-        <p className="md:text-md h-48 font-lato-thin text-base leading-relaxed text-darkGray">
+        <p className="h-48 font-lato-thin text-base leading-relaxed text-darkGray md:text-base">
           {description}
         </p>
       </div>
