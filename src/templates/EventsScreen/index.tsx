@@ -88,7 +88,7 @@ export default function EventsScreen(): JSX.Element {
 
             <div className="flex gap-2">
               <BaseButton
-                className="h-16 w-80 justify-center border-white text-2xl text-white"
+                className="h-16 w-80 justify-end border-white text-2xl text-white"
                 variant="bordered"
               >
                 Quero me inscrever
@@ -133,15 +133,23 @@ export default function EventsScreen(): JSX.Element {
               { key: 2, value: "2", label: "Rio de Janeiro" },
             ]}
           />
-
-          <BaseButton color="primary" className="w-full text-white sm:w-auto">
+          <BaseButton color="primary" className="text-white sm:w-auto md:w-40">
             Buscar
           </BaseButton>
         </div>
 
         <div className="flex cursor-pointer items-center justify-end gap-2 sm:justify-start">
-          <span className="text-lg text-primary">Mais Relevantes</span>
-          <IoIosArrowDown size={20} className="text-primary" />
+          <BaseSelect
+            label=""
+            className="w-[151px] text-primary"
+            noBorder
+            color="primary"
+            defaultSelectedKey="1"
+            options={[
+              { key: 1, value: "1", label: "Mais relevantes" },
+              { key: 2, value: "2", label: "Todos os temas" },
+            ]}
+          />
         </div>
       </div>
 

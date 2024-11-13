@@ -48,11 +48,11 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
     { label: t("navbar.patients"), pathname: "/" },
     { label: t("navbar.doctors"), pathname: "/medicos" },
     { label: t("navbar.investors"), pathname: "/relacao-com-investidor" },
-    { label: "Instituto OC", pathname: "/contato" },
-    { label: "Notícias", pathname: "/noticias" },
+    { label: t("navbar.oc_institute"), pathname: "/contato" },
+    { label: t("navbar.news"), pathname: "/noticias" },
   ];
 
-  const isMedicoPage = router.pathname === "/medicos";
+  const isMedicPage = router.pathname.includes("/medicos");
 
   const handleLogoClick = (): void => {
     router.push("/");
@@ -180,7 +180,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarContent>
 
           <NavbarContent justify="end" className="hidden items-center sm:flex">
-            {!isMedicoPage ? (
+            {!isMedicPage ? (
               <>
                 <Link
                   href="/contato"
