@@ -18,7 +18,7 @@ export default function EventCard({
   const eventSlug = event.title.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <Link href={`/eventos/${eventSlug}`}>
+    <Link href={`/medicos/eventos/${eventSlug}`}>
       <div className="flex min-h-[798px] w-full max-w-[514px] flex-col rounded-md">
         <img
           src={event.imageUrl}

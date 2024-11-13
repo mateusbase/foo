@@ -19,4 +19,5 @@ export interface BaseSelectProps {
   endContent?: React.ReactNode;
   labelPlacement?: "inside" | "outside" | "outside-left";
   defaultSelectedKey?: string | number;
+  noBorder?: boolean;
 }
