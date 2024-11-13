@@ -1,4 +1,4 @@
-import { IoIosCalendar, IoIosMap, IoIosTime } from "react-icons/io";
+import { IoIosMap, IoIosTime } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
 import { CalendarIcon } from "@/components/Icons";
 import { events } from "@/components/UpcomingEvents/eventMocks";
