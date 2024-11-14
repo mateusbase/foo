@@ -2,6 +2,7 @@ import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 import BaseSelect from "@/components/Select";
 import PageLayout from "@/components/PageLayout";
+import { Plus } from "lucide-react";
 
 export default function OcJournalScreen(): JSX.Element {
   return (
@@ -85,7 +86,6 @@ export default function OcJournalScreen(): JSX.Element {
           />
         </div>
       </div>
-
       <div className="mx-auto mt-20 flex w-full gap-8">
         <div className="h-auto w-[812px] shrink-0">
           <img
@@ -124,6 +124,17 @@ export default function OcJournalScreen(): JSX.Element {
             </BaseButton>
           </div>
         </div>
+      </div>
+      <div className="mt-10 flex justify-center lg:justify-start">
+        <BaseButton
+          color="primary"
+          variant="bordered"
+          radius="sm"
+          startContent={<Plus />}
+          className="h-[50px] w-80 items-center justify-center border-1 pl-3 text-[18px] font-black leading-[22px] text-primary sm:w-3/6 md:flex lg:w-[228px]"
+        >
+          Ver mais
+        </BaseButton>
       </div>
     </PageLayout>
   );
