@@ -26,7 +26,7 @@ export default function MedicalServiceCard({
             "url('https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg')",
         }}
       />
-      <div className="flex flex-col justify-between gap-12 rounded-br-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground px-14 py-8">
+      <div className="flex min-h-[515px] flex-col justify-between gap-12 rounded-br-[100px] bg-gradient-to-b from-primary-foreground from-85% via-secondary-foreground via-100% to-purpleAccent  px-14 py-8">
         {hasSubtitle && (
           <p className="mt-4 text-[24px] leading-[30px] text-white">
             {subtitle}
@@ -52,7 +52,7 @@ export default function MedicalServiceCard({
           </p>
         </div>
 
-        <div className="mt-20 flex w-full items-start justify-start rounded-full">
+        <div className="mt-10 flex w-full items-start justify-start rounded-full">
           {shouldShowButton && <IoIosArrowDropright size={29} color="white" />}
         </div>
       </div>
