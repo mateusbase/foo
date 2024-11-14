@@ -17,6 +17,7 @@ import BaseSelect from "../Select";
 import BaseButton from "../Button";
 import { NavBarProps } from "./types";
 import MobileMenu from "./components/menuMobile";
+import { CalendarIcon } from "../Icons";
 
 export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,11 +48,11 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
     { label: t("navbar.patients"), pathname: "/" },
     { label: t("navbar.doctors"), pathname: "/medicos" },
     { label: t("navbar.investors"), pathname: "/relacao-com-investidor" },
-    { label: "Instituto OC", pathname: "/contato" },
-    { label: "Notícias", pathname: "/blog" },
+    { label: t("navbar.oc_institute"), pathname: "/contato" },
+    { label: t("navbar.news"), pathname: "/noticias" },
   ];
 
-  const isMedicoPage = router.pathname === "/medicos";
+  const isMedicPage = router.pathname.includes("/medicos");
 
   const handleLogoClick = (): void => {
     router.push("/");
@@ -184,7 +185,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           </NavbarContent>
 
           <NavbarContent justify="end" className="hidden items-center sm:flex">
-            {!isMedicoPage ? (
+            {!isMedicPage ? (
               <>
                 <Link
                   href="/contato"
@@ -194,12 +195,12 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                   <LogIn size={26} className="ml-2" />
                 </Link>
 
-                <div className="flex h-full w-auto flex-row items-center justify-center gap-2 bg-secondary p-6 text-white">
+                <div className="flex h-full w-auto min-w-96 flex-row items-center justify-center gap-2 bg-secondary p-6 text-white">
                   <Link
                     className="flex w-full items-center justify-center text-lg text-white"
                     href="/agende-sua-consulta"
                   >
-                    <Calendar size={24} className="mr-2 text-white" />
+                    <CalendarIcon size={1} className="mr-2 text-white" />
 
                     <span className="lg:block xl2:hidden">Agendamento</span>
 

@@ -65,7 +65,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
             variant="solid"
             width="322px"
           >
-            Como funciona
+            Conheça
           </BaseButton>
         </div>
 
