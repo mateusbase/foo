@@ -6,11 +6,7 @@ import { FaRunning } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { GiFlowerStar } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import {
-  IoIosArrowBack,
-  IoIosArrowDown,
-  IoIosArrowForward,
-} from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { LuArrowUpRight } from "react-icons/lu";
 import BaseSelect from "@/components/Select";
@@ -152,8 +148,17 @@ export default function NewsScreen(): JSX.Element {
           </div>
 
           <div className="flex cursor-pointer items-center justify-center gap-1 hover:text-darkGray">
-            <span>Mais Relevantes</span>
-            <IoIosArrowDown size={20} className="text-primary" />
+            <BaseSelect
+              label=""
+              className="w-[151px] text-primary"
+              noBorder
+              color="primary"
+              defaultSelectedKey="1"
+              options={[
+                { key: 1, value: "1", label: "Mais relevantes" },
+                { key: 2, value: "2", label: "Todos os temas" },
+              ]}
+            />
           </div>
         </div>
 
@@ -174,6 +179,7 @@ export default function NewsScreen(): JSX.Element {
             radius="md"
             size="lg"
             label=""
+            defaultSelectedKey="1"
             startContent={
               <RxHamburgerMenu size={20} className="text-primary" />
             }

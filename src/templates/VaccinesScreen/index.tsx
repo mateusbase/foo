@@ -6,6 +6,7 @@ import { vaccineInformation } from "./vaccineInformation";
 import VaccinesCard from "./components/VaccinesCardComponent";
 import SliderArrows from "../../components/SliderArrows";
 import VaccinationRoundedSection from "./components/VaccinationRoundedSection";
+import VaccineLocations from "./components/VaccineLocations";
 
 export default function VaccinesScreen(): JSX.Element {
   const {
@@ -56,11 +57,7 @@ export default function VaccinesScreen(): JSX.Element {
 
       <VaccinationRoundedSection />
 
-      <div className="justify-center lg:mt-14">
-        <h1 className="font-lato-bold text-primary lg:text-title-xl">
-          Consulte as vacinas oferecidas na sua cidade
-        </h1>
-      </div>
+      <VaccineLocations />
     </PageLayout>
   );
 }

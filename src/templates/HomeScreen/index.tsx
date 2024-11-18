@@ -35,6 +35,7 @@ const informationMock = [
       "https://i.postimg.cc/JhtjVzj7/Captura-de-tela-2024-09-27-161441.png",
   },
 ];
+
 export default function HomeScreen(): JSX.Element {
   return (
     <main className="flex w-full flex-col">

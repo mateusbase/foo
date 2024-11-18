@@ -1,4 +1,4 @@
-import { TbCodePlus, TbCurrentLocation } from "react-icons/tb";
+import { TbCurrentLocation } from "react-icons/tb";
 import BaseButton from "@/components/Button";
 import { unitsData } from "@/components/NearbyUnits/components/utils";
 import UnitsCard from "@/components/NearbyUnits/components/UnitsCard";

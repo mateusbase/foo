@@ -5,7 +5,9 @@ import { SliderArrowsProps } from "./types";
 const SliderArrows = ({
   swiperRef,
   prevRef,
+  size,
   nextRef,
+  color = "text-primary-foreground",
 }: SliderArrowsProps): JSX.Element => {
   const handlePrev = (): void => {
     if (swiperRef.current) {
@@ -24,21 +26,24 @@ const SliderArrows = ({
       <button
         ref={prevRef}
         type="button"
-        className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+        className="group flex size-10 items-center justify-center rounded-full hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
         aria-label="Previous"
         onClick={handlePrev}
       >
-        <PreviousArrowIcon className="text-primary-foreground dark:text-gray-800" />
+        <PreviousArrowIcon
+          size={size}
+          className={`${color} dark:text-gray-800`}
+        />
       </button>
 
       <button
         ref={nextRef}
         type="button"
-        className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
+        className="group flex size-10 items-center justify-center rounded-full hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
         aria-label="Next"
         onClick={handleNext}
       >
-        <NextArrowIcon className="text-primary-foreground dark:text-gray-800" />
+        <NextArrowIcon size={size} className={`${color} dark:text-gray-800`} />
       </button>
     </div>
   );

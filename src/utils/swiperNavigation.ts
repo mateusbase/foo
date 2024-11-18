@@ -1,9 +1,8 @@
 import { Swiper as SwiperType } from "swiper/types";
 
-export type SliderArrowsProps = {
-  swiperRef: React.RefObject<SwiperType>;
+export interface UseSwiperNavigationReturn {
   prevRef: React.RefObject<HTMLButtonElement>;
   nextRef: React.RefObject<HTMLButtonElement>;
-  size?: number;
-  color?: string;
-};
+  swiperRef: React.RefObject<SwiperType>;
+  onBeforeInit: (swiper: SwiperType) => void;
+}
