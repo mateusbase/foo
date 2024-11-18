@@ -1,10 +1,5 @@
 import React from "react";
-
-interface VaccinesCardProps {
-  title: string;
-  description: string;
-  iconUrl?: string;
-}
+import { VaccinesCardProps } from "./type";
 
 const VaccinesCard = ({
   title,

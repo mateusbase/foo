@@ -1,11 +1,6 @@
 import InfoCard from "@/components/InfoCard";
 import React from "react";
-
-interface VaccinationRoundedCardProps {
-  title: string;
-  description?: string;
-  listItems?: string[];
-}
+import { VaccinationRoundedCardProps } from "./types";
 
 const VaccinationRoundedCard = ({
   title,

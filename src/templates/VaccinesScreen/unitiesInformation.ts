@@ -13,6 +13,12 @@ const unitiesInformation = [
       "Hepatite B Adulto Dose Única",
       "Herpes Zoster Inativada (Shingrix) Dose Única",
       "Influenza Quadrivalente Dose Única",
+      "Menigite Conjugada B Und",
+      "Meningite Acwy Und",
+      "Mmr Ii Triviral(Sarampo + Caxumba + Rubeola) Und",
+      "Pneumococcica 23(Pneumovax)",
+      "Pneumococoica 13(Prevenar) Und",
+      "Refortrix Dtpa Sem Polio Dose Und",
     ],
   },
   {
