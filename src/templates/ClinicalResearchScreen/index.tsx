@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
-import InformationSlider from "@/components/InformationSlider";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";

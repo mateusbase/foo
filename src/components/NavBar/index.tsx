@@ -7,7 +7,7 @@ import {
   Link,
   Image,
 } from "@nextui-org/react";
-import { Calendar, Stethoscope, LogIn, X } from "lucide-react";
+import { Stethoscope, LogIn, X } from "lucide-react";
 import { useRouter } from "next/router";
 import { IoMenu } from "react-icons/io5";
 import { HiOutlineMapPin } from "react-icons/hi2";
