@@ -19,20 +19,24 @@ export default function AcademyCard(): JSX.Element {
         </p>
       </div>
 
-      <div className="mt-10 grid size-full grid-cols-2 gap-5 lg:mt-0 lg:w-1/2 lg:pl-10">
-        {options.map((option, index) => (
-          <div
-            key={option.id}
-            className={`flex min-h-28 min-w-40 items-end justify-start rounded-2xl p-7 lg:min-h-64 lg:min-w-28 ${(Math.floor(index / 2) + (index % 2)) % 2 === 0
-                ? "bg-primary text-white"
-                : "bg-primary-foreground text-greenDark"
-              }`}
-          >
-            <p className="text-sm font-bold lg:text-[40px] lg:font-semibold lg:leading-10">
-              {option.title}
-            </p>
-          </div>
-        ))}
+      <div className="mt-10 grid w-full grid-cols-2 gap-5 lg:mt-0 lg:w-1/2 lg:pl-10">
+        {options.map((option, index) => {
+          const isEven = Math.floor(index / 2) % 2 === index % 2;
+          const bgColor = isEven
+            ? "bg-primary text-white"
+            : "bg-primary-foreground text-greenDark";
+
+          return (
+            <div
+              key={option.id}
+              className={`flex min-h-28 min-w-40 items-end justify-start rounded-2xl p-7 lg:min-h-64 lg:min-w-28 ${bgColor}`}
+            >
+              <p className="text-sm font-bold lg:text-[40px] lg:font-semibold lg:leading-10">
+                {option.title}
+              </p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
