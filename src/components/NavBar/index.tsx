@@ -48,7 +48,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
     { label: t("navbar.patients"), pathname: "/" },
     { label: t("navbar.doctors"), pathname: "/medicos" },
     { label: t("navbar.investors"), pathname: "/relacao-com-investidor" },
-    { label: t("navbar.oc_institute"), pathname: "/contato" },
+    { label: t("navbar.oc_institute"), pathname: "/instituto-oc" },
     { label: t("navbar.news"), pathname: "/noticias" },
   ];
 
