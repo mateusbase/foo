@@ -27,7 +27,7 @@ export default function MedicalServiceCard({
       />
       <div className="flex min-h-[515px] flex-col justify-between gap-12 rounded-br-[100px] bg-gradient-to-b from-primary-foreground from-60% via-secondary-foreground via-90% to-purpleAccent to-70% px-14 py-8">
         {hasSubtitle && (
-          <p className="mt-4 text-[24px] leading-[30px] text-white">
+          <p className="mt-4 text-left text-[24px] leading-[30px] text-white">
             {subtitle}
           </p>
         )}
