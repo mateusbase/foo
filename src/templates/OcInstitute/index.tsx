@@ -1,7 +1,5 @@
 import PageLayout from "@/components/PageLayout";
 import { useTranslation } from "react-i18next";
-import EventCard from "@/components/EventsCard";
-import MedicalServiceCard from "@/components/MedicalServiceCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import { Navigation } from "swiper/modules";
@@ -13,12 +11,11 @@ import { LogoIcon } from "@/components/Icons";
 import AcademyCard from "./components/AcademyCard";
 import EducationalCard from "./components/EducationalCard";
 import SliderVideos from "./components/SliderVideos";
-import { events, services, videosContents } from "./mock";
+import { videosContents } from "./mock";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import VideoCard from "./components/VideoCard";
 import SliderMedicalService from "./components/SliderMedicalService";
 import Agenda from "./components/Agenda";
 

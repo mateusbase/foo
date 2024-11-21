@@ -48,6 +48,7 @@ export default function BaseSelect({
           key={option.key}
           value={option.value}
           color={color}
+          // eslint-disable-next-line tailwindcss/no-custom-classname
           className={`text-${optionsColor}`}
         >
           {option.label}
