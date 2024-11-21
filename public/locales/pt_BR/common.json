@@ -33,10 +33,15 @@
       "heading": "Agende sua consulta ou exame",
       "description": "Todo o cuidado que a sua vida merece",
       "placeholderUnitName": "Nome da unidade",
-      "selectUfLabel": "UF",
+      "name": "Nome",
+      "email": "E-mail",
+      "telephone": "Telefone",
+      "selectUfLabel": "Selecione o estado",
+      "selectCityLabel": "Selecione a cidade",
+      "selectUnityLabel": "Selecione a unidade",
       "buttonText": "Agendar",
       "consultationImageAlt": "Imagem de consulta",
-      "additionalInfo": "Fusce ac ligula quis eros convallis rhoncus. Nam rutrum ligula at tellus tempor, at pharetra mauris dictum. Sed quis dolor consectetur, laoreet arcu ut, tempor est.",
+      "additionalInfo": "Fusce ac ligula quis eros convallis rhoncus. Nam rutrum ligula at tellus tempor, at pharetra mauris dictum. Sed quis dolor consectetur, laoreet arcu ut, tempor est. Praesent bibendum fermentum ipsum id suscipit. Morbi sit amet eros libero.",
       "path": "/agende-sua-consulta"
     }
   },

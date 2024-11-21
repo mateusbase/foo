@@ -78,6 +78,23 @@ export default function WhoWeArecreen(): JSX.Element {
               {paragraph}
             </p>
           ))}
+
+          {menuContent[activeItem].icons && (
+            <div className="mt-6 flex flex-wrap justify-center gap-10">
+              {menuContent[activeItem].icons.map((icon: string) => (
+                <div
+                  key={icon}
+                  className="flex size-52 items-center justify-center border border-darkGray"
+                >
+                  <img
+                    src={icon}
+                    alt="icon"
+                    className="max-h-[90%] max-w-[90%] object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </PageLayout>

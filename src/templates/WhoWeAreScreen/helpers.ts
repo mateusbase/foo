@@ -2,6 +2,7 @@ type MenuContent = {
   [key: number]: {
     title: string;
     paragraphs: string[];
+    icons?: string[];
   };
 };
 
@@ -49,6 +50,14 @@ export const menuContent: MenuContent = {
     paragraphs: [
       `A Oncoclínicas segue padrões rigorosos de qualidade e segurança, contando com certificações de órgãos nacionais e internacionais que garantem a excelência no atendimento.`,
       `Os processos são continuamente revisados e atualizados para garantir que o paciente receba o melhor cuidado, com foco na segurança e nos melhores resultados clínicos.`,
+    ],
+    icons: [
+      "https://www.onconews.com.br/site/images/artigos/2019/asco-qopi_bx.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlk6_3Kw69_KXzUx0U18ou-j2gBb5x6unC5g&s",
+      "https://www.ona.org.br/img/ona_og.png",
+      "https://estruturadinamica.com.br/wp-content/uploads/2023/03/Logo_Metodologia_Horiz_central.png",
+      "https://www.promedica.com.br/wp-content/uploads/2020/01/SeloPALC_cmyk.jpg",
+      "https://www.revistasaudenews.com.br/fotos/p_20210916_162400_94.jpg",
     ],
   },
   7: {

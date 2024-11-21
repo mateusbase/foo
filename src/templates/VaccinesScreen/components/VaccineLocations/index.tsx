@@ -5,7 +5,7 @@ import MenuItem from "@/components/MenuItem";
 import unitiesInformation from "../../unitiesInformation";
 
 const VaccineLocations = (): JSX.Element => {
-  const [selectedLocation, setSelectedLocation] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("Paraná");
 
   const handleLocationChange = (location: string | number): void => {
     if (typeof location === "string") {
@@ -14,6 +14,7 @@ const VaccineLocations = (): JSX.Element => {
       const selectedState = unitiesInformation.find(
         (unity) => unity.id === location,
       )?.state;
+
       if (selectedState) {
         setSelectedLocation(selectedState);
       }
@@ -25,30 +26,35 @@ const VaccineLocations = (): JSX.Element => {
   );
 
   return (
-    <div className="mb-8 mt-2 flex w-full flex-col lg:mt-10">
-      <h1 className="mb-4 text-center font-lato-bold text-2xl text-primary lg:text-title-xl">
-        Consulte as vacinas oferecidas na sua cidade
-      </h1>
+    <div className="mb-8 mt-2 flex w-full flex-col md:mt-12 lg:mt-28">
+      <div className="flex w-full flex-col items-center md:flex-row md:justify-center">
+        <h1 className="mb-4 text-center font-lato-bold text-2xl text-primary md:mb-0 md:ml-2 md:mr-4 md:w-[45%] md:text-left md:text-3xl lg:w-full lg:text-center lg:text-title-xl">
+          Consulte as vacinas oferecidas na sua cidade
+        </h1>
 
-      <BaseSelect
-        color="primary"
-        variant="bordered"
-        label="Estado"
-        labelPlacement="inside"
-        radius="full"
-        size="lg"
-        className="w-[95%] max-w-md text-primary-foreground lg:hidden"
-        borderStyle="border-primary"
-        startContent={<RxHamburgerMenu size={20} className="text-primary" />}
-        options={unitiesInformation.map((unity) => ({
-          key: unity.id,
-          value: unity.state,
-          label: unity.state,
-        }))}
-        onChange={(selectedValue: string | number) => {
-          handleLocationChange(Number(selectedValue));
-        }}
-      />
+        <BaseSelect
+          color="primary"
+          variant="bordered"
+          label="Escolha seu Estado"
+          labelPlacement="inside"
+          labelColor="primary"
+          radius="full"
+          defaultSelectedKey="1"
+          size="lg"
+          className="w-[95%] max-w-md text-primary-foreground md:w-1/2 lg:hidden"
+          borderStyle="border-primary"
+          startContent={<RxHamburgerMenu size={20} className="text-primary" />}
+          options={unitiesInformation.map((unity) => ({
+            key: unity.id,
+            value: unity.state,
+            label: unity.state,
+          }))}
+          optionsColor="primary"
+          onChange={(selectedValue: string | number) => {
+            handleLocationChange(Number(selectedValue));
+          }}
+        />
+      </div>
 
       <div className="flex flex-row justify-start">
         <div className="mr-20 mt-10 hidden w-[398px] items-start justify-start font-lato-regular text-white lg:block lg:text-sm">

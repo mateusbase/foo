@@ -8,6 +8,7 @@ export interface BaseSelectProps {
     | "default";
   variant?: "bordered" | "flat" | "faded" | "underlined";
   label?: string;
+  labelColor?: string;
   radius?: "none" | "sm" | "md" | "lg" | "full";
   size?: "sm" | "md" | "lg";
   className?: string;
@@ -18,6 +19,7 @@ export interface BaseSelectProps {
   startContent?: React.ReactNode;
   endContent?: React.ReactNode;
   labelPlacement?: "inside" | "outside" | "outside-left";
+  optionsColor?: string;
   defaultSelectedKey?: string | number;
   noBorder?: boolean;
 }
