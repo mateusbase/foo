@@ -6,7 +6,7 @@ export default function VideoCard({
   description,
 }: VideoCardProps): JSX.Element {
   return (
-    <div className="max-w-[502px]">
+    <div className="flex max-w-[502px]">
       <div className="w-full">
         <Image
           width={502}
@@ -16,8 +16,12 @@ export default function VideoCard({
           alt="Preview do vídeo"
         />
         <div className="mt-5">
-          <p className="text-left text-[42px] text-primary">{title}</p>
-          <p className="text-left text-2xl text-darkGray">{description}</p>
+          <p className="text-left text-2xl text-primary lg:text-[42px]">
+            {title}
+          </p>
+          <p className="text-left text-base text-darkGray lg:text-2xl">
+            {description}
+          </p>
         </div>
       </div>
     </div>

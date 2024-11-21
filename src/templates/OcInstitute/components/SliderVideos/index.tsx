@@ -15,7 +15,7 @@ export default function SliderVideos(): JSX.Element {
   return (
     <div>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={1}
         spaceBetween={10}
         modules={[Navigation]}
         navigation={{
@@ -33,7 +33,7 @@ export default function SliderVideos(): JSX.Element {
           },
           768: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 20,
           },
         }}
       >
