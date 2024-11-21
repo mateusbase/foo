@@ -37,47 +37,47 @@ export default function ReleasesScreen(): JSX.Element {
         <ClippingCard
           title="Oncoclínicas é destaque em premiação por prestação de serviços médicos"
           date="23 de Setembro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex id sem ullamcorper."
+          isRelease
         />
         <ClippingCard
           title="Oncoclínicas lança nova campanha de conscientização"
           date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
+          isRelease
         />
         <ClippingCard
           title="Oncoclínicas lança nova campanha de conscientização"
           date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
+          isRelease
         />
         <ClippingCard
           title="Oncoclínicas lança nova campanha de conscientização"
           date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
+          isRelease
         />
         <ClippingCard
           title="Oncoclínicas lança nova campanha de conscientização"
           date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
+          isRelease
         />
         <ClippingCard
           title="Oncoclínicas lança nova campanha de conscientização"
           date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
+          isRelease
         />
         <ClippingCard
           title="Oncoclínicas lança nova campanha de conscientização"
           date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
+          isRelease
         />
         <ClippingCard
           title="Oncoclínicas lança nova campanha de conscientização"
           date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
+          isRelease
         />
         <ClippingCard
           title="Oncoclínicas lança nova campanha de conscientização"
           date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
+          isRelease
         />
       </div>
     </PageLayout>
