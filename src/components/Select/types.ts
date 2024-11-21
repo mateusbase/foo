@@ -8,6 +8,7 @@ export interface BaseSelectProps {
     | "default";
   variant?: "bordered" | "flat" | "faded" | "underlined";
   label?: string;
+  labelColor?: string;
   radius?: "none" | "sm" | "md" | "lg" | "full";
   size?: "sm" | "md" | "lg";
   className?: string;

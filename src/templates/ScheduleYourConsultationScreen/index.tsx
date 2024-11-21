@@ -14,40 +14,45 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
     >
       <div className="mt-5 flex flex-col gap-10 md:mt-20 lg:flex-row">
         <div className="w-full lg:w-1/2">
-          <h1 className="text-4xl font-extralight text-primary">
+          <h1 className="text-[40px] text-primary">
             {t("pages.scheduleYourConsultation.heading")}
           </h1>
-          <p className="mt-2 text-lg text-primary">
+          <p className="mt-2 text-2xl text-primary">
             {t("pages.scheduleYourConsultation.description")}
           </p>
 
           <div className="mt-10">
             <BaseInput
-              placeholder={t(
-                "pages.scheduleYourConsultation.placeholderUnitName",
-              )}
+              placeholder={t("pages.scheduleYourConsultation.name")}
               size="lg"
               radius="full"
               variant="bordered"
+              placeholderColor="darkGray"
               borderStyle="border-default"
             />
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 flex gap-4">
             <BaseInput
-              placeholder={t(
-                "pages.scheduleYourConsultation.placeholderUnitName",
-              )}
+              placeholder={t("pages.scheduleYourConsultation.email")}
               size="lg"
               radius="full"
               variant="bordered"
+              placeholderColor="darkGray"
+              borderStyle="border-default"
+            />
+            <BaseInput
+              placeholder={t("pages.scheduleYourConsultation.telephone")}
+              size="lg"
+              radius="full"
+              variant="bordered"
+              placeholderColor="darkGray"
               borderStyle="border-default"
             />
           </div>
 
           <div className="mt-6 flex gap-4">
             <BaseSelect
-              color="primary"
               variant="bordered"
               label={t("pages.scheduleYourConsultation.selectUfLabel")}
               radius="full"
@@ -60,9 +65,8 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             />
 
             <BaseSelect
-              color="primary"
               variant="bordered"
-              label={t("pages.scheduleYourConsultation.selectUfLabel")}
+              label={t("pages.scheduleYourConsultation.selectCityLabel")}
               radius="full"
               borderStyle="border-default"
               size="sm"
@@ -75,9 +79,8 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
 
           <div className="mt-6">
             <BaseSelect
-              color="primary"
               variant="bordered"
-              label={t("pages.scheduleYourConsultation.selectUfLabel")}
+              label={t("pages.scheduleYourConsultation.selectUnityLabel")}
               radius="full"
               borderStyle="border-default"
               size="sm"
@@ -88,10 +91,10 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             />
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 flex justify-center">
             <BaseButton
               color="primary"
-              className="w-full text-white lg:w-auto"
+              className="w-full text-white lg:w-[322px]"
               width="322px"
             >
               {t("pages.scheduleYourConsultation.buttonText")}
@@ -105,7 +108,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             alt={t("pages.scheduleYourConsultation.consultationImageAlt")}
             className="w-full object-cover"
           />
-          <p className="mb-5 mt-4 text-left text-gray-700">
+          <p className="mb-5 mt-4 text-left text-lightGray">
             {t("pages.scheduleYourConsultation.additionalInfo")}
           </p>
         </div>
