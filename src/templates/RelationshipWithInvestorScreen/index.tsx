@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 import { NavigationOptions } from "swiper/types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
-import { Image } from "@nextui-org/react";
 
 export default function RelationshipWithInvestorScreen(): JSX.Element {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -72,7 +71,7 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="hidden w-full flex-col items-center md:flex">
+        <div className="hidden w-full flex-col items-end md:flex">
           <img
             src="https://i.postimg.cc/PxrFcXTm/Captura-de-tela-2024-11-21-145049.png"
             alt="Imagem de consulta"
