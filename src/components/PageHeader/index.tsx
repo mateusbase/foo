@@ -33,7 +33,7 @@ const PageHeader = ({
                   {preTitle}
                 </p>
               )}
-              <h1 className="text-3xl font-bold leading-[32px] text-white sm:text-5xl sm:leading-[56px] lg:text-title-xl lg:leading-[72px]">
+              <h1 className="text-3xl font-normal leading-[32px] text-white sm:text-5xl sm:leading-[56px] lg:text-title-xl lg:leading-[72px]">
                 {title}
               </h1>
               {subtitle && (
