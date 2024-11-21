@@ -47,8 +47,8 @@ export const menuContent: MenuContent = {
   6: {
     title: "Qualidade/Certificações",
     paragraphs: [
-      `A Oncoclínicas segue padrões rigorosos de qualidade e segurança, contando com certificações de órgãos nacionais e internacionais que garantem a excelência no atendimento.`,
-      `Os processos são continuamente revisados e atualizados para garantir que o paciente receba o melhor cuidado, com foco na segurança e nos melhores resultados clínicos.`,
+      `Nosso Sistema de Gestão de Qualidade e Segurança do Paciente tem como objetivo Implementar e oferecer serviços e processos com alta qualidade, seguros, baseados em evidência científica e centrado no paciente.`,
+      `Promover uma cultura de excelência em todos os níveis da organização, incentivando a colaboração, a inovação e o aprendizado contínuo, onde cada membro da equipe é responsável por contribuir para a qualidade dos cuidados prestados, com foco na segurança do paciente, na eficácia dos tratamentos e na experiência do paciente.`,
     ],
   },
   7: {

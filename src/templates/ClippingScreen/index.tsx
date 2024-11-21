@@ -3,33 +3,42 @@ import { IoIosArrowDown } from "react-icons/io";
 import BaseSelect from "@/components/Select";
 import PageLayout from "@/components/PageLayout";
 import ClippingCard from "@/components/ClippingCard";
+import BaseInput from "@/components/Input";
 
 export default function ClippingScreen(): JSX.Element {
   return (
     <PageLayout title="Clipping">
       <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-20 md:flex-row md:items-center md:justify-between md:px-0">
         <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <BaseSelect
+          <BaseInput
             color="primary"
             variant="bordered"
-            label="Tipo de evento"
             radius="full"
-            size="sm"
+            placeholder="Pesquise pelo título"
+            placeholderColor="primary"
             className="w-full sm:w-[280px]"
-            options={[
-              { key: 1, value: "1", label: "SP" },
-              { key: 2, value: "2", label: "RJ" },
-            ]}
           />
 
-          <BaseButton color="primary" className="w-full text-white sm:w-auto">
+          <BaseButton
+            color="primary"
+            className="w-full text-white sm:w-auto lg:min-w-36"
+          >
             Buscar
           </BaseButton>
         </div>
 
-        <div className="flex cursor-pointer items-center justify-end gap-2 sm:justify-start">
-          <span className="text-lg text-primary">Mais Relevantes</span>
-          <IoIosArrowDown size={20} className="text-primary" />
+        <div className="hidden cursor-pointer items-center justify-end gap-2 sm:justify-start lg:flex">
+          <BaseSelect
+            label=""
+            className="w-[151px] text-primary"
+            noBorder
+            color="primary"
+            defaultSelectedKey="1"
+            options={[
+              { key: 1, value: "1", label: "Mais relevantes" },
+              { key: 2, value: "2", label: "Todos os temas" },
+            ]}
+          />
         </div>
       </div>
 
