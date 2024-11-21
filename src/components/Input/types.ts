@@ -8,6 +8,7 @@ export interface BaseInputProps {
     | "default";
   label?: string;
   placeholder?: string;
+  placeholderColor?: string;
   size?: "sm" | "md" | "lg";
   radius?: "none" | "sm" | "md" | "lg" | "full";
   variant?: "bordered" | "flat" | "faded" | "underlined";

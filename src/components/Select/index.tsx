@@ -6,6 +6,7 @@ export default function BaseSelect({
   color = "default",
   variant = "bordered",
   label = " ",
+  labelColor = "darkGray",
   radius = "full",
   size = "sm",
   className = "w-full",
@@ -23,6 +24,7 @@ export default function BaseSelect({
         trigger: noBorder
           ? `bg-transparent border-none shadow-none `
           : `border-${color} `,
+        label: `text-${labelColor} text-base`,
       }}
       color={color}
       variant={variant}
