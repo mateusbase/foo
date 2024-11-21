@@ -69,7 +69,7 @@ export default function PresScreen(): JSX.Element {
               size="lg"
               radius="full"
               variant="bordered"
-              className="w-full overflow-hidden rounded-sm bg-white"
+              className="w-full overflow-hidden rounded-xl bg-white"
             />
 
             <BaseButton
