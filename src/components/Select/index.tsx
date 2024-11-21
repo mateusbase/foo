@@ -15,6 +15,7 @@ export default function BaseSelect({
   endContent,
   labelPlacement,
   defaultSelectedKey,
+  optionsColor = "darkGray",
   onChange,
   noBorder = false,
 }: BaseSelectProps): JSX.Element {
@@ -25,6 +26,7 @@ export default function BaseSelect({
           ? `bg-transparent border-none shadow-none `
           : `border-${color} `,
         label: `text-${labelColor} text-base`,
+        value: `text-${labelColor} text-base`,
       }}
       color={color}
       variant={variant}
@@ -42,7 +44,12 @@ export default function BaseSelect({
       selectorIcon={<ArrowDownIcon color={`text-${color}`} />}
     >
       {options.map((option) => (
-        <SelectItem key={option.key} value={option.value}>
+        <SelectItem
+          key={option.key}
+          value={option.value}
+          color={color}
+          className={`text-${optionsColor}`}
+        >
           {option.label}
         </SelectItem>
       ))}

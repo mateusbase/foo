@@ -19,6 +19,7 @@ export interface BaseSelectProps {
   startContent?: React.ReactNode;
   endContent?: React.ReactNode;
   labelPlacement?: "inside" | "outside" | "outside-left";
+  optionsColor?: string;
   defaultSelectedKey?: string | number;
   noBorder?: boolean;
 }
