@@ -20,7 +20,7 @@ export default function ClippingCard({
       onClick={!isRelease ? handleCardClick : undefined}
       className={`flex h-auto w-full cursor-pointer flex-col justify-between rounded-2xl border border-darkGray p-6 transition-shadow hover:shadow-lg ${!isRelease ? "cursor-pointer" : ""}`}
     >
-      <h3 className="mb-4 text-left text-[30px] font-bold text-primary">
+      <h3 className="mb-4 text-left text-[23px] font-bold text-primary md:text-[30px]">
         {title}
       </h3>
 

@@ -29,7 +29,7 @@ export default function ClippingScreen(): JSX.Element {
         <div className="hidden cursor-pointer items-center justify-end gap-2 sm:justify-start lg:flex">
           <BaseSelect
             label=""
-            className="w-[180px] text-primary"
+            className="w-[170px] text-primary"
             noBorder
             color="primary"
             defaultSelectedKey="1"
