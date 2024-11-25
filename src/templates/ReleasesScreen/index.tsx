@@ -1,5 +1,4 @@
 import BaseButton from "@/components/Button";
-import { IoIosArrowDown } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
 import ClippingCard from "@/components/ClippingCard";
 import BaseInput from "@/components/Input";
