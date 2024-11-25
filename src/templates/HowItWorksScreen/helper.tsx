@@ -1,5 +1,6 @@
 import Committees from "./components/Committees";
 import HowItWorks from "./components/HowItWorks";
+import OpenClinicalStudies from "./components/OpenClinicalStudies";
 
 type MenuContent = {
   [key: number]: JSX.Element;
@@ -7,10 +8,63 @@ type MenuContent = {
 
 export const menuContent: MenuContent = {
   1: <HowItWorks />,
-  2: <Committees />,
-  3: <div>testee</div>,
-  4: <div>testee</div>,
+  2: <div>testee</div>,
+  3: <OpenClinicalStudies />,
+  4: <Committees />,
   5: <div>testee</div>,
   6: <div>testee</div>,
   7: <div>testee</div>,
+  8: <div>testee</div>,
 };
+
+export const clinicalResearchs = [
+  {
+    id: 1,
+    title: "BGB-11417-201",
+    unity: "OC Oncoclínicas RJ",
+    description:
+      "Um estudo de fase 2 multicêntrico, aberto e de braço único para avaliar a eficácia, segurança e farmacocinética do inibidor de Bcl-2 BGB-11417 em pacientes com linfoma de células do manto recidivado ou refratário",
+  },
+  {
+    id: 2,
+    title: "BGB-11417-201",
+    unity: "OC Oncoclínicas RJ",
+    description:
+      "Um estudo de fase 2 multicêntrico, aberto e de braço único para avaliar a eficácia, segurança e farmacocinética do inibidor de Bcl-2 BGB-11417 em pacientes com linfoma de células do manto recidivado ou refratário",
+  },
+  {
+    id: 3,
+    title: "BGB-11417-201",
+    unity: "OC Oncoclínicas RJ",
+    description:
+      "Um estudo de fase 2 multicêntrico, aberto e de braço único para avaliar a eficácia, segurança e farmacocinética do inibidor de Bcl-2 BGB-11417 em pacientes com linfoma de células do manto recidivado ou refratário",
+  },
+  {
+    id: 4,
+    title: "BGB-11417-201",
+    unity: "OC Oncoclínicas RJ",
+    description:
+      "Um estudo de fase 2 multicêntrico, aberto e de braço único para avaliar a eficácia, segurança e farmacocinética do inibidor de Bcl-2 BGB-11417 em pacientes com linfoma de células do manto recidivado ou refratário",
+  },
+  {
+    id: 5,
+    title: "BGB-11417-201",
+    unity: "OC Oncoclínicas RJ",
+    description:
+      "Um estudo de fase 2 multicêntrico, aberto e de braço único para avaliar a eficácia, segurança e farmacocinética do inibidor de Bcl-2 BGB-11417 em pacientes com linfoma de células do manto recidivado ou refratário",
+  },
+  {
+    id: 6,
+    title: "BGB-11417-201",
+    unity: "OC Oncoclínicas RJ",
+    description:
+      "Um estudo de fase 2 multicêntrico, aberto e de braço único para avaliar a eficácia, segurança e farmacocinética do inibidor de Bcl-2 BGB-11417 em pacientes com linfoma de células do manto recidivado ou refratário",
+  },
+  {
+    id: 7,
+    title: "BGB-11417-201",
+    unity: "OC Oncoclínicas RJ",
+    description:
+      "Um estudo de fase 2 multicêntrico, aberto e de braço único para avaliar a eficácia, segurança e farmacocinética do inibidor de Bcl-2 BGB-11417 em pacientes com linfoma de células do manto recidivado ou refratário",
+  },
+];

@@ -50,6 +50,7 @@ export default function OcJournalScreen(): JSX.Element {
           <div className="w-full sm:w-[280px]">
             <BaseSelect
               label="Especialidade"
+              labelColor="primary"
               color="primary"
               variant="bordered"
               radius="full"
