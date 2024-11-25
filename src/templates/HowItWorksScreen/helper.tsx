@@ -8,13 +8,13 @@ type MenuContent = {
 
 export const menuContent: MenuContent = {
   1: <HowItWorks />,
-  2: <div>testee</div>,
-  3: <OpenClinicalStudies />,
+  2: <OpenClinicalStudies />,
+  3: <div />,
   4: <Committees />,
-  5: <div>testee</div>,
-  6: <div>testee</div>,
-  7: <div>testee</div>,
-  8: <div>testee</div>,
+  5: <div />,
+  6: <div />,
+  7: <div />,
+  8: <div />,
 };
 
 export const clinicalResearchs = [
