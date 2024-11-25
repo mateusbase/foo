@@ -1,3 +1,4 @@
+import Committees from "./components/Committees";
 import HowItWorks from "./components/HowItWorks";
 
 type MenuContent = {
@@ -6,7 +7,7 @@ type MenuContent = {
 
 export const menuContent: MenuContent = {
   1: <HowItWorks />,
-  2: <div>testee</div>,
+  2: <Committees />,
   3: <div>testee</div>,
   4: <div>testee</div>,
   5: <div>testee</div>,
