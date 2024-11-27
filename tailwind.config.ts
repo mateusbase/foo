@@ -50,6 +50,7 @@ const config: Config = {
         purpleLight: "#8E60CD",
         purpleAccent: "#B799E6",
         purpleMedium: "#8459BE",
+        greenDark: "#034E4A",
         "primary-foreground": "#00B6AD",
         "secondary-foreground": "#BA99E7",
         "gray-foreground": "#F0F0F0",

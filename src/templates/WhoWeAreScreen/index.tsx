@@ -27,6 +27,8 @@ export default function WhoWeArecreen(): JSX.Element {
     }
   };
 
+  const activeContent = menuContent[activeItem];
+
   return (
     <PageLayout
       title="Oncoclínicas&Co"
@@ -66,18 +68,41 @@ export default function WhoWeArecreen(): JSX.Element {
         </div>
 
         <div className="mb-10 ml-0 flex-1 md:ml-16">
-          <h1 className="text-4xl font-bold leading-[48px] text-primary">
-            {menuContent[activeItem].title}
-          </h1>
+          {activeContent ? (
+            <>
+              <h1 className="text-4xl font-bold leading-[48px] text-primary">
+                {activeContent.title}
+              </h1>
 
-          {menuContent[activeItem].paragraphs.map((paragraph: string) => (
-            <p
-              key={paragraph}
-              className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray"
-            >
-              {paragraph}
-            </p>
-          ))}
+              {activeContent.paragraphs?.map((paragraph: string) => (
+                <p
+                  key={paragraph}
+                  className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray"
+                >
+                  {paragraph}
+                </p>
+              ))}
+
+              {activeContent.icons && (
+                <div className="mt-6 flex flex-wrap justify-center gap-10">
+                  {activeContent.icons.map((icon: string) => (
+                    <div
+                      key={icon}
+                      className="flex size-52 items-center justify-center border border-darkGray"
+                    >
+                      <img
+                        src={icon}
+                        alt="icon"
+                        className="max-h-[90%] max-w-[90%] object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <p className="text-darkGray">Conteúdo não encontrado.</p>
+          )}
         </div>
       </div>
     </PageLayout>

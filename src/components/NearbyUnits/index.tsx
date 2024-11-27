@@ -18,6 +18,7 @@ export default function NearbyUnits(): JSX.Element {
             color="primary"
             variant="bordered"
             label="UF"
+            labelColor="primary"
             className="max-w-[122px]"
             radius="full"
             options={[
@@ -30,6 +31,7 @@ export default function NearbyUnits(): JSX.Element {
             color="primary"
             variant="bordered"
             label="Cidade"
+            labelColor="primary"
             className="max-w-xs"
             radius="full"
             options={[

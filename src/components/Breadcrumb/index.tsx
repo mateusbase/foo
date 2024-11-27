@@ -23,7 +23,9 @@ const Breadcrumb = (): JSX.Element => {
     const pathSegments = asPath.split("/").filter((segment) => segment);
 
     const mappedSegments = pathSegments.map((segment, index) => {
-      const decodedSegment = decodeURIComponent(segment);
+      const cleanSegment = segment.split("?")[0];
+      const decodedSegment = decodeURIComponent(cleanSegment);
+
       const breadcrumbName = capitalizeFirstLetter(
         breadcrumbMap[decodedSegment] || decodedSegment,
       );

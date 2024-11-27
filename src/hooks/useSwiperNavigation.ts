@@ -1,35 +1,23 @@
 /* eslint-disable no-param-reassign */
+import { UseSwiperNavigationReturn } from "@/utils/swiperNavigation";
 import { useRef, useCallback, useEffect } from "react";
 import { Swiper as SwiperType } from "swiper/types";
 
-export function useSwiperNavigation(): {
-  prevRef: React.RefObject<HTMLButtonElement>;
-  nextRef: React.RefObject<HTMLButtonElement>;
-  swiperRef: React.MutableRefObject<SwiperType | null>;
-  onBeforeInit: (swiper: SwiperType) => void;
-} {
+export function useSwiperNavigation(): UseSwiperNavigationReturn {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
-  const swiperRef = useRef<SwiperType | null>(null);
+  const swiperRef = useRef<SwiperType>(null);
 
   const onBeforeInit = useCallback((swiper: SwiperType) => {
-    swiperRef.current = swiper;
-
-    const updatedNavigationParams = {
-      ...(typeof swiper.params.navigation !== "boolean"
-        ? swiper.params.navigation
-        : {}),
-      prevEl: prevRef.current,
-      nextEl: nextRef.current,
-    };
-
-    swiper.params = {
-      ...swiper.params,
-      navigation: updatedNavigationParams,
-    };
-
-    swiper.navigation.init();
-    swiper.navigation.update();
+    if (
+      swiper.params.navigation &&
+      typeof swiper.params.navigation !== "boolean"
+    ) {
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
+      swiper.navigation.init();
+      swiper.navigation.update();
+    }
   }, []);
 
   useEffect(() => {

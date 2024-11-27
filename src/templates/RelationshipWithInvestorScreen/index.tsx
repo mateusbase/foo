@@ -17,27 +17,27 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
   const services = [
     {
       id: 1,
-      serviceTitle: "Comitê nacional de pesquisa",
+      serviceTitle: "Diretoria, Conselhos e Comitês",
       serviceDescription:
-        "Confira os profissionais que integram o Comitê Nacional de Pesquisa Clínica, Equipe de Abrangência Nacional.",
+        "Conheça as equipes responsáveis pela estratégia de negócios e elaboração de planos, projetos e desempenho operacional e financeiro da Oncoclínicas.",
       actionButtonText: "Ver mais",
       backgroundImageUrl:
         "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
     },
     {
       id: 2,
-      serviceTitle: "Parcerias para ensino",
+      serviceTitle: "Estatuto, Códigos e Políticas",
       serviceDescription:
-        "Conheça as instituições parceiras do Grupo para ensino, pesquisa, eventos, capacitação, treinamento e atualização de profissionais.",
+        "Nosso compromisso com a integridade juntamente com nossos valores e cultura corporativa são fundamentais para o sucesso de nosso negócio.",
       actionButtonText: "Descubra",
       backgroundImageUrl:
         "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
     },
     {
       id: 3,
-      serviceTitle: "Estudos clínicos abertos",
+      serviceTitle: "Reuniões e Assembléias",
       serviceDescription:
-        "Contribua com o desenvolvimento de soluções para a saúde e qualidade de vida de todos.",
+        "Confira as atas de reuniões e assembleias gerais da Oncoclínicas e entenda quais foram as pautas levantadas e as deliberações nas atividades da companhia.",
       actionButtonText: "Ver detalhes",
       backgroundImageUrl:
         "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
@@ -50,31 +50,32 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
       subtitle="Baseado em seu compromisso com a ética e a transparência, a Oncoclínicas&Co. disponibiliza informações e documentos aos seus investidores."
     >
       <div className="mt-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 lg:flex-row">
-        <div className="flex w-full flex-col">
+        <div className="flex w-full flex-col lg:max-w-md">
           <h1 className="max-w-full text-4xl font-light text-primary lg:text-6xl">
             Relações com investidores
           </h1>
 
-          <p className="mt-8 max-w-full text-base text-darkGray lg:max-w-7xl lg:text-lg">
-            Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas vem
-            sendo desenvolvido, e, hoje, conta com uma gestão centralizada e a
-            participação de sete de suas unidades no Brasil.
+          <p className="mt-8 max-w-full text-base text-darkGray lg:max-w-7xl lg:text-2xl">
+            A Oncoclínicas é o maior prestador no mercado de oncologia clínica
+            privada do Brasil em termos de receita, contando com 145 unidades
+            estrategicamente localizadas em 39 cidades brasileiras.
           </p>
-
-          <BaseButton
-            className="mt-8 w-full font-bold text-white lg:mt-16 lg:w-80"
-            color="primary"
-            variant="solid"
-          >
-            Acesse
-          </BaseButton>
+          <div className="mt-6 flex items-end">
+            <BaseButton
+              className="w-full font-bold text-white lg:mt-16 lg:w-80"
+              color="primary"
+              variant="solid"
+            >
+              Acesse
+            </BaseButton>
+          </div>
         </div>
 
-        <div className="hidden w-full flex-col items-center md:flex">
+        <div className="hidden w-full flex-col items-end md:flex">
           <img
-            src="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+            src="https://i.postimg.cc/PxrFcXTm/Captura-de-tela-2024-11-21-145049.png"
             alt="Imagem de consulta"
-            className="h-auto w-full object-cover lg:w-auto"
+            className="h-auto w-full lg:w-auto"
           />
         </div>
       </div>

@@ -118,78 +118,77 @@ export default function FindADoctorScreen(): JSX.Element {
           Encontre um médico Oncoclínicas próximo a você
         </h1>
 
-        <div className="mt-0 flex flex-col gap-5 md:mt-14 md:flex-col lg:flex-row lg:items-center lg:justify-center">
-          <Select
-            color="primary"
-            variant="bordered"
-            label="UF"
-            className="w-full md:max-w-full lg:max-w-[122px]"
-            radius="full"
-            size="sm"
-          >
-            <SelectItem key={1} value="1">
-              SP
-            </SelectItem>
-            <SelectItem key={2} value="2">
-              RJ
-            </SelectItem>
-          </Select>
-
-          <Select
-            color="primary"
-            variant="bordered"
-            label="Cidade"
-            className="w-full md:max-w-full lg:max-w-xs"
-            radius="full"
-            size="sm"
-          >
-            <SelectItem key={1} value="1">
-              São Paulo
-            </SelectItem>
-            <SelectItem key={2} value="2">
-              Ibituruna
-            </SelectItem>
-          </Select>
-
-          <Select
-            color="primary"
-            variant="bordered"
-            label="Especialidade"
-            className="w-full md:max-w-full lg:max-w-xs"
-            radius="full"
-            size="sm"
-          >
-            <SelectItem key={1} value="1">
-              Oncologia
-            </SelectItem>
-            <SelectItem key={2} value="2">
-              Cardiologia
-            </SelectItem>
-          </Select>
-
-          <Input
-            placeholder="Nome ou CRM"
-            size="lg"
-            radius="full"
-            variant="bordered"
-            className="h-[50px] w-full"
-          />
-
-          <div className="flex w-full flex-col items-center gap-4 md:flex-row lg:flex-row lg:gap-4">
-            <BaseButton
+        <div className="mt-0 flex flex-col gap-5 md:mt-14 lg:w-full lg:flex-row lg:items-start lg:gap-2">
+          <div className="flex flex-col gap-5 md:flex md:flex-row lg:w-1/5 lg:gap-3">
+            <Select
               color="primary"
-              className="w-full text-white lg:w-auto"
-              width="100% lg:w-[322px]"
+              variant="bordered"
+              label="UF"
+              className="w-full md:w-1/3 lg:w-[100px]"
+              radius="full"
+              size="sm"
             >
+              <SelectItem key={1} value="1">
+                SP
+              </SelectItem>
+              <SelectItem key={2} value="2">
+                RJ
+              </SelectItem>
+            </Select>
+
+            <Select
+              color="primary"
+              variant="bordered"
+              label="Unidade"
+              className="w-full md:w-2/3 lg:w-[200px]"
+              radius="full"
+              size="sm"
+            >
+              <SelectItem key={1} value="1">
+                São Paulo
+              </SelectItem>
+              <SelectItem key={2} value="2">
+                Ibituruna
+              </SelectItem>
+            </Select>
+          </div>
+
+          <div className="flex flex-col gap-5 md:flex md:flex-row lg:flex-1 lg:gap-3">
+            <Select
+              color="primary"
+              variant="bordered"
+              label="Especialidade"
+              className="w-full md:w-1/2 lg:flex-1"
+              radius="full"
+              size="sm"
+            >
+              <SelectItem key={1} value="1">
+                Oncologia
+              </SelectItem>
+              <SelectItem key={2} value="2">
+                Cardiologia
+              </SelectItem>
+            </Select>
+
+            <Input
+              placeholder="Nome ou CRM"
+              size="lg"
+              radius="full"
+              variant="bordered"
+              className="h-[50px] w-full md:w-1/2 lg:flex-1"
+            />
+          </div>
+
+          <div className="flex flex-col gap-4 md:flex md:flex-row lg:flex-1">
+            <BaseButton color="primary" className="w-full text-white lg:flex-1">
               Buscar Médicos
             </BaseButton>
 
             <BaseButton
-              className="w-full font-bold lg:w-auto"
+              className="w-full font-bold lg:flex-1"
               color="primary"
               variant="bordered"
               startContent={<TbCodePlus size={20} />}
-              width="100% lg:w-[322px]"
             >
               Buscar próximos a mim
             </BaseButton>

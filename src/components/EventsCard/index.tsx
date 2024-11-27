@@ -43,7 +43,7 @@ export default function EventCard({
               <span>{event.location}</span>
             </div>
 
-            <div className="ml-7 text-[18px] font-normal text-darkGray md:text-xl">
+            <div className="ml-7 text-left text-[18px] font-normal text-darkGray md:text-xl">
               <span>{event.address}</span>
             </div>
 

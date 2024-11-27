@@ -6,6 +6,7 @@ export default function BaseInput({
   color = "default",
   label,
   placeholder = "Digite aqui",
+  placeholderColor = "darkGray",
   size = "lg",
   radius = "full",
   variant = "bordered",
@@ -24,8 +25,8 @@ export default function BaseInput({
       )}
       <Input
         classNames={{
-          input: `text-${color} placeholder:text-${color}`,
-          inputWrapper: `border-${color}`,
+          input: `text-${color} placeholder:text-${placeholderColor}`,
+          inputWrapper: `border-${color} border-1`,
         }}
         placeholder={placeholder}
         size={size}

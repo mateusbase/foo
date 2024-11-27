@@ -116,7 +116,7 @@ export default function Footer(): JSX.Element {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link href="/instituto-oc" className="hover:text-white">
                     Instituto OC
                   </Link>
                 </li>
@@ -201,7 +201,10 @@ export default function Footer(): JSX.Element {
               <h4 className="mb-4 font-bold text-white">Médicos</h4>
               <ul>
                 <li>
-                  <Link href="/pesquisa-clinica" className="hover:text-white">
+                  <Link
+                    href="/medicos/pesquisa-clinica"
+                    className="hover:text-white"
+                  >
                     Pesquisa clínica
                   </Link>
                 </li>
