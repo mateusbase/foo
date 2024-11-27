@@ -54,31 +54,6 @@ export default function OcInstitute(): JSX.Element {
           </div>
 
           <div className="w-full">
-            {/* <div className="max-w-[555px]">
-              <h1 className="hidden text-left text-[42px] font-light text-darkGray md:flex">
-                Agenda 2024
-              </h1>
-              <h1 className="mt-10 flex text-left text-2xl text-darkGray md:hidden">
-                Conheça a agenda dos próximos eventos
-              </h1>
-              <p className="mt-10 text-left text-darkGray">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent hendrerit magna sit amet ultricies porttitor. Quisque
-                fringilla ut orci a venenatis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Praesent hendrerit magna sit amet
-                ultricies porttitor. Quisque fringilla ut orci a venenatis.
-              </p>
-              <div className="mt-10 flex h-40 w-full cursor-pointer items-end rounded-3xl bg-primary p-10 hover:bg-primary-foreground md:p-6">
-                <h1 className="text-left text-2xl font-semibold text-white md:text-4xl md:font-light">
-                  Agenda 2024
-                </h1>
-              </div>
-            </div>
-
-            <div className="flex flex-row gap-10">
-              <EventCard key="Evento Teste" event={events[0]} />
-              <EventCard key="Evento Teste" event={events[1]} />
-            </div> */}
             <Agenda />
           </div>
 

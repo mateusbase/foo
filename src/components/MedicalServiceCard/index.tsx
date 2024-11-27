@@ -38,6 +38,7 @@ export default function MedicalServiceCard({
             <BaseButton
               className="h-10 w-full border-white text-white"
               variant="bordered"
+              startContent={serviceIcon}
             >
               {actionButtonText}
             </BaseButton>
@@ -54,7 +55,7 @@ export default function MedicalServiceCard({
           </p>
         </div>
 
-        <div className="mt-10 flex w-full items-start justify-start rounded-full">
+        <div className="mt-5 flex w-full items-start justify-start rounded-full">
           {shouldShowButton && <IoIosArrowDropright size={29} color="white" />}
         </div>
       </div>
