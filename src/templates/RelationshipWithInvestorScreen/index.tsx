@@ -2,54 +2,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
-import { useRef } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { NavigationOptions } from "swiper/types";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import SliderArrows from "@/components/SliderArrows";
+import { services } from "./mock";
 
 export default function RelationshipWithInvestorScreen(): JSX.Element {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
-
-  const services = [
-    {
-      id: 1,
-      serviceTitle: "Diretoria, Conselhos e Comitês",
-      serviceDescription:
-        "Conheça as equipes responsáveis pela estratégia de negócios e elaboração de planos, projetos e desempenho operacional e financeiro da Oncoclínicas.",
-      actionButtonText: "Ver mais",
-      backgroundImageUrl:
-        "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
-    },
-    {
-      id: 2,
-      serviceTitle: "Estatuto, Códigos e Políticas",
-      serviceDescription:
-        "Nosso compromisso com a integridade juntamente com nossos valores e cultura corporativa são fundamentais para o sucesso de nosso negócio.",
-      actionButtonText: "Descubra",
-      backgroundImageUrl:
-        "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
-    },
-    {
-      id: 3,
-      serviceTitle: "Reuniões e Assembléias",
-      serviceDescription:
-        "Confira as atas de reuniões e assembleias gerais da Oncoclínicas e entenda quais foram as pautas levantadas e as deliberações nas atividades da companhia.",
-      actionButtonText: "Ver detalhes",
-      backgroundImageUrl:
-        "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
-    },
-  ];
-
+  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
   return (
     <PageLayout
       title="Investidores Oncoclínicas&Co"
       subtitle="Baseado em seu compromisso com a ética e a transparência, a Oncoclínicas&Co. disponibiliza informações e documentos aos seus investidores."
     >
-      <div className="mt-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 lg:flex-row">
+      <div className="my-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 md:flex-row">
         <div className="flex w-full flex-col lg:max-w-md">
           <h1 className="max-w-full text-4xl font-light text-primary lg:text-6xl">
             Relações com investidores
@@ -71,7 +39,7 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="hidden w-full flex-col items-end md:flex">
+        <div className="flex w-full flex-col items-end">
           <img
             src="https://i.postimg.cc/PxrFcXTm/Captura-de-tela-2024-11-21-145049.png"
             alt="Imagem de consulta"
@@ -81,7 +49,7 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
       </div>
 
       <div>
-        <div className="mx-auto mt-20 hidden w-full grid-cols-1 gap-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto my-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-1 md:hidden lg:grid lg:grid-cols-3">
           {services.map((service) => (
             <MedicalServiceCard
               key={service.id}
@@ -91,25 +59,28 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="relative mb-20 mt-10 w-full sm:hidden">
+        <div className="hidden md:block lg:hidden">
           <Swiper
-            modules={[Navigation]}
-            spaceBetween={30}
             slidesPerView={1}
-            loop
+            spaceBetween={10}
+            modules={[Navigation]}
             navigation={{
-              nextEl: nextRef.current,
               prevEl: prevRef.current,
+              nextEl: nextRef.current,
             }}
+            loop
             onInit={(swiper) => {
-              if (swiper.params.navigation) {
-                const navigationParams = swiper.params
-                  .navigation as NavigationOptions;
-                navigationParams.prevEl = prevRef.current;
-                navigationParams.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
-              }
+              swiperRef.current = swiper;
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
             }}
           >
             {services.map((service) => (
@@ -122,30 +93,14 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
             ))}
           </Swiper>
 
-          <div className="mt-4 flex justify-center space-x-4">
-            <button
-              ref={prevRef}
-              type="button"
-              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-              aria-label="Previous"
-            >
-              <IoIosArrowBack
-                className="text-primary dark:text-gray-800"
-                size={35}
-              />
-            </button>
-
-            <button
-              ref={nextRef}
-              type="button"
-              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-              aria-label="Next"
-            >
-              <IoIosArrowForward
-                className="text-primary dark:text-gray-800"
-                size={35}
-              />
-            </button>
+          <div className="mt-10 flex justify-center space-x-4">
+            <SliderArrows
+              swiperRef={swiperRef}
+              prevRef={prevRef}
+              nextRef={nextRef}
+              size={1}
+              color="text-primary"
+            />
           </div>
         </div>
       </div>
