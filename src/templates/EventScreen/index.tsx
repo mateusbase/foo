@@ -3,10 +3,14 @@ import PageLayout from "@/components/PageLayout";
 import { CalendarIcon } from "@/components/Icons";
 import { events } from "@/components/UpcomingEvents/eventMocks";
 import EventCard from "@/components/EventsCard";
+import BaseContainer from "@/components/Container";
 import SignupForm from "./components/SignupForm";
 import { listMedics } from "./medicsMock";
 import InvitedMedicCard from "./components/InvitedMedicCard";
 import { topicsCovered } from "./topicsMock";
+import IncomingEventsSection from "./components/IncomingEventsSection";
+import TopicsCoveredSection from "./components/TopicsCoveredSection";
+import InvitedMedicsSection from "./components/InvitedMedicsSection";
 
 export default function EventScreen(): JSX.Element {
   return (
@@ -53,12 +57,12 @@ export default function EventScreen(): JSX.Element {
             </div>
           </div>
 
-          <div className="mt-8 text-center md:ml-52 md:mt-0 md:flex-1 md:text-left">
-            <h1 className="text-[42px] text-primary">
+          <div className="ml-20 mt-8 text-center md:mt-0 md:text-left lg:ml-24 lg:flex-1">
+            <h1 className="text-4xl font-medium leading-none text-primary lg:text-[62px] lg:font-light">
               Novas tecnologias no combate ao câncer de mama
             </h1>
 
-            <p className="mt-6 text-lg leading-[28px] text-darkGray">
+            <p className="mt-6 text-xl leading-[28px] text-darkGray">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit
               in. Fusce id ex id sem ullamcorper. Lorem ipsum dolor sit amet,
@@ -77,50 +81,34 @@ export default function EventScreen(): JSX.Element {
               ullamcorper.
             </p>
 
-            <div>
-              <h1 className="mt-16 text-[40px] text-primary">
-                Médicos convidados
-              </h1>
-              {listMedics.map((medic) => (
-                <InvitedMedicCard
-                  key={medic.id}
-                  name={medic.name}
-                  crm={medic.crm}
-                  positions={medic.positions}
-                  avatar={medic.avatar}
-                />
-              ))}
+            <div className="mt-10 hidden flex-col lg:flex">
+              <InvitedMedicsSection />
             </div>
-            <div>
-              <h1 className="mb-4 mt-16 text-[40px] text-primary">
-                Temas abordados
-              </h1>
-              <ul>
-                {topicsCovered.map((topic) => (
-                  <li
-                    key={topic.id}
-                    className="list-inside list-disc text-xl font-medium text-lightGray"
-                  >
-                    {topic.topic}
-                  </li>
-                ))}
-              </ul>
+            <div className="hidden flex-col lg:flex">
+              <TopicsCoveredSection />
             </div>
           </div>
         </div>
 
-        <div>
-          <h1 className="text-[40px] text-primary">Próximos eventos</h1>
-          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-10 lg:grid-cols-3">
-            {events.map((event) => (
-              <EventCard key={event.title} event={event} />
-            ))}
-          </div>
+        <div className="flex flex-col gap-6 md:flex-row md:gap-8 lg:hidden">
+          <section className="flex-1">
+            <InvitedMedicsSection />
+          </section>
+          <section className="flex-1">
+            <TopicsCoveredSection />
+          </section>
+        </div>
+
+        <div className="hidden md:block">
+          <IncomingEventsSection />
         </div>
       </PageLayout>
 
       <div className="mt-10 block w-full justify-center md:hidden">
         <SignupForm />
+        <BaseContainer>
+          <IncomingEventsSection />
+        </BaseContainer>
       </div>
     </>
   );
