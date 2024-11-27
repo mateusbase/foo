@@ -73,13 +73,13 @@ export default function EventsScreen(): JSX.Element {
         <div className="hidden h-[536px] w-full justify-between text-white lg:flex">
           <div className="flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-b from-primary-foreground to-secondary-foreground p-20">
             <div>
-              <p className="text-5xl font-light">
+              <p className="text-6xl font-light">
                 Workshop sobre crescimento do câncer
               </p>
             </div>
 
             <div>
-              <p className="text-2xl">
+              <p className="text-2xl font-bold">
                 Um bate papo com especialistas do mundo todo sobre o crescimento
                 do câncer em grandes cidades.
               </p>
@@ -87,7 +87,7 @@ export default function EventsScreen(): JSX.Element {
 
             <div className="flex gap-2">
               <BaseButton
-                className="h-16 w-80 justify-end border-white text-2xl text-white"
+                className="h-16 w-80 justify-center border-white text-lg text-white"
                 variant="bordered"
               >
                 Quero me inscrever
@@ -105,42 +105,49 @@ export default function EventsScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-28 md:flex-row md:items-center md:justify-between md:px-0">
-        <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <BaseSelect
-            color="primary"
-            variant="bordered"
-            label="Tipo de evento"
-            radius="full"
-            size="sm"
-            className="w-full sm:w-[280px]"
-            options={[
-              { key: 1, value: "1", label: "SP" },
-              { key: 2, value: "2", label: "RJ" },
-            ]}
-          />
+      <div className="mt-10 flex flex-col gap-4 border-gray-300 pb-4 md:mt-28 md:flex-row md:items-center md:justify-between md:border-b md:px-0">
+        <div className="flex w-full flex-col items-center gap-2 sm:flex-row">
+          <div className="flex w-full flex-col gap-4 sm:flex-row">
+            <BaseSelect
+              color="primary"
+              variant="bordered"
+              label="Tipo de evento"
+              labelColor="primary"
+              radius="full"
+              size="sm"
+              className="sm:w-[260px] lg:w-full"
+              options={[
+                { key: 1, value: "1", label: "SP" },
+                { key: 2, value: "2", label: "RJ" },
+              ]}
+            />
 
-          <BaseSelect
-            color="primary"
-            variant="bordered"
-            label="Tema"
-            radius="full"
-            size="sm"
-            className="w-full sm:w-[280px]"
-            options={[
-              { key: 1, value: "1", label: "São Paulo" },
-              { key: 2, value: "2", label: "Rio de Janeiro" },
-            ]}
-          />
-          <BaseButton color="primary" className="text-white sm:w-auto md:w-40">
-            Buscar
-          </BaseButton>
+            <BaseSelect
+              color="primary"
+              variant="bordered"
+              label="Tema"
+              labelColor="primary"
+              radius="full"
+              size="sm"
+              className="sm:w-[260px] lg:w-full"
+              options={[
+                { key: 1, value: "1", label: "São Paulo" },
+                { key: 2, value: "2", label: "Rio de Janeiro" },
+              ]}
+            />
+          </div>
+
+          <div className="mt-5 flex w-full justify-center sm:mt-0 md:justify-end lg:justify-start">
+            <BaseButton className="w-full text-white md:w-40">
+              Buscar
+            </BaseButton>
+          </div>
         </div>
 
-        <div className="flex cursor-pointer items-center justify-end gap-2 sm:justify-start">
+        <div className="hidden cursor-pointer items-center justify-end gap-2 sm:justify-start lg:flex">
           <BaseSelect
             label=""
-            className="w-[151px] text-primary"
+            className="w-[171px] text-primary"
             noBorder
             color="primary"
             defaultSelectedKey="1"
