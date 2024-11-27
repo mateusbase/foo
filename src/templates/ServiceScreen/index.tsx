@@ -40,8 +40,9 @@ export default function ServiceScreen(): JSX.Element {
       <div className="mt-14 flex flex-col md:flex-row">
         <div className="mb-10 block md:hidden">
           <BaseSelect
-            color="default"
+            color="primary"
             variant="bordered"
+            labelColor="primary"
             radius="full"
             size="lg"
             startContent={<IoMenu className="text-primary" size={28} />}
@@ -56,7 +57,7 @@ export default function ServiceScreen(): JSX.Element {
           />
         </div>
 
-        <div className="hidden w-[398px] text-white md:block">
+        <div className="hidden w-[398px] text-white lg:block">
           {menuItems.map((item, index) => (
             <MenuItem
               key={item.id}

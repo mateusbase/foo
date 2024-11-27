@@ -45,7 +45,7 @@ export default function MedicalServiceCard({
         )}
 
         <div className="text-left">
-          <h3 className="text-[32px] text-white md:text-[32px] lg:text-5xl lg:leading-[60px]">
+          <h3 className="text-[32px] leading-none text-white md:text-[32px] lg:text-5xl lg:leading-[60px]">
             {serviceTitle}
           </h3>
 

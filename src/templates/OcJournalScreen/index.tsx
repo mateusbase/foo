@@ -2,6 +2,7 @@ import BaseButton from "@/components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 import BaseSelect from "@/components/Select";
 import PageLayout from "@/components/PageLayout";
+import { Plus } from "lucide-react";
 
 export default function OcJournalScreen(): JSX.Element {
   return (
@@ -65,18 +66,26 @@ export default function OcJournalScreen(): JSX.Element {
           <BaseButton
             color="primary"
             width="149px"
-            className="w-full text-white sm:w-auto"
+            className="w-full min-w-44 text-white sm:w-auto"
           >
             Buscar
           </BaseButton>
         </div>
 
         <div className="flex cursor-pointer items-center justify-end gap-2 sm:justify-start">
-          <span className="text-lg text-primary">Mais Relevantes</span>
-          <IoIosArrowDown size={20} className="text-primary" />
+          <BaseSelect
+            label=""
+            className="w-[151px] text-primary"
+            noBorder
+            color="primary"
+            defaultSelectedKey="1"
+            options={[
+              { key: 1, value: "1", label: "Mais relevantes" },
+              { key: 2, value: "2", label: "Todos os temas" },
+            ]}
+          />
         </div>
       </div>
-
       <div className="mx-auto mt-20 flex w-full gap-8">
         <div className="h-auto w-[812px] shrink-0">
           <img
@@ -91,29 +100,41 @@ export default function OcJournalScreen(): JSX.Element {
             O ASCO Annual Meeting 2024
           </h1>
 
-          <p className="mt-4 text-left text-[16px] font-medium leading-[19px] text-primary">
+          <p className="mt-8 text-left text-[16px] font-medium leading-[19px] text-primary">
             Abril de 2024
           </p>
 
-          <p className="mt-4 text-left text-[22px] font-medium leading-[27px] text-darkGray">
+          <p className="mt-8 text-left text-[22px] font-medium leading-[27px] text-darkGray">
             O ASCO Annual Meeting 2024, realizado em junho em Chicago, trouxe
             como tema central “A arte e a ciência do tratamento do câncer: do
             conforto à cura”. Este tema reflete um dos valores essenciais da
             Oncoclínicas&Co: proporcionar um acolhimento na mesma proporção do
-            tratamento para nossos pacientes. Acesse o artigo completo deste
-            estudo.
+            tratamento para nossos pacientes.
           </p>
-
+          <p className="mt-6 text-[22px] font-medium text-darkGray">
+            Acesse o artigo completo deste estudo.
+          </p>
           <div className="mt-6">
             <BaseButton
               color="primary"
               width="149px"
               className="w-full text-white sm:w-auto"
             >
-              Buscar
+              Download
             </BaseButton>
           </div>
         </div>
+      </div>
+      <div className="mt-10 flex justify-center lg:justify-start">
+        <BaseButton
+          color="primary"
+          variant="bordered"
+          radius="sm"
+          startContent={<Plus />}
+          className="h-[50px] w-80 items-center justify-center border-1 pl-3 text-[18px] font-black leading-[22px] text-primary sm:w-3/6 md:flex lg:w-[228px]"
+        >
+          Ver mais
+        </BaseButton>
       </div>
     </PageLayout>
   );
