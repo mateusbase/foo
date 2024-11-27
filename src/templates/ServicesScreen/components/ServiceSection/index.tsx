@@ -18,6 +18,7 @@ import { ServiceSectionProps } from "../../types";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Plus } from "lucide-react";
 
 export default function ServiceSection({
   id,
@@ -60,6 +61,7 @@ export default function ServiceSection({
         <BaseInput
           color="primary"
           placeholder="Buscar serviço"
+          placeholderColor="primary"
           size="lg"
           radius="full"
           variant="bordered"
@@ -79,7 +81,7 @@ export default function ServiceSection({
         />
       </div>
 
-      <div className="mt-28 hidden grid-cols-3 gap-[26px] md:grid">
+      <div className="mt-10 hidden grid-cols-4 gap-[26px] md:grid">
         {filteredHealthServices.map((service) => (
           <Link
             key={service.id}
@@ -98,7 +100,7 @@ export default function ServiceSection({
         <Swiper
           modules={[Navigation]}
           spaceBetween={30}
-          slidesPerView={1}
+          slidesPerView={2}
           loop
           navigation={{
             nextEl: nextRefCard.current,
@@ -116,12 +118,12 @@ export default function ServiceSection({
           }}
           breakpoints={{
             640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
+              slidesPerView: 4,
+              spaceBetween: 10,
             },
             1024: {
               slidesPerView: 4,
-              spaceBetween: 30,
+              spaceBetween: 20,
             },
           }}
         >
@@ -142,7 +144,7 @@ export default function ServiceSection({
           ))}
         </Swiper>
 
-        <div className="mt-4 flex justify-center space-x-4">
+        <div className="mt-4 flex justify-center space-x-4 md:hidden">
           <button
             ref={prevRefCard}
             type="button"
@@ -163,15 +165,17 @@ export default function ServiceSection({
         </div>
       </div>
 
-      <Button
-        color="primary"
-        variant="bordered"
-        radius="sm"
-        startContent={<TbCodePlus size={24} />}
-        className="mt-8 h-[50px] w-[176px] pl-3 text-left text-[18px] font-black leading-[22px] text-primary"
-      >
-        Ver todos
-      </Button>
+      <div className="flex w-full justify-center">
+        <Button
+          color="primary"
+          variant="bordered"
+          radius="sm"
+          startContent={<Plus size={24} />}
+          className="mt-8 h-[50px] w-full border-1 pl-3 text-left text-[18px] leading-[22px] text-primary md:w-[322px]"
+        >
+          Ver todos
+        </Button>
+      </div>
 
       <div className="relative mb-10 mt-20 w-full lg:hidden">
         <Swiper
