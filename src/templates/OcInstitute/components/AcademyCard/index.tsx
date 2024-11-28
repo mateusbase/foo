@@ -1,3 +1,5 @@
+import PurpleBanner from "@/components/PurpleBanner";
+
 export default function AcademyCard(): JSX.Element {
   const options = [
     { id: 1, title: "Cirurgia robótica", link: "/#" },
@@ -8,16 +10,11 @@ export default function AcademyCard(): JSX.Element {
 
   return (
     <div className="flex w-full flex-col justify-between text-white lg:flex-row">
-      <div className="flex flex-col justify-center gap-4 bg-gradient-to-t from-purpleDark to-purpleLight p-10 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
-        <p className="text-2xl font-normal lg:text-4xl">OC Academia</p>
-        <p className="mt-6 text-3xl font-light lg:text-5xl">
-          Multiplataforma Educacional do Instituto Onoclínicas
-        </p>
-        <p className="mt-4 text-lg lg:text-2xl">
-          Acesse a plataforma e navegue por conteúdos educativos criados pelos
-          melhores especialistas
-        </p>
-      </div>
+      <PurpleBanner
+        title="OC Academia"
+        subtitle="Multiplataforma Educacional do Instituto Onoclínicas"
+        description="Acesse a plataforma e navegue por conteúdos educativos criados pelos melhores especialistas"
+      />
 
       <div className="mt-10 grid w-full grid-cols-2 gap-5 lg:mt-0 lg:w-1/2 lg:pl-10">
         {options.map((option, index) => {
