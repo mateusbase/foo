@@ -1,4 +1,3 @@
-import { Button } from "@nextui-org/react";
 import { Plus } from "lucide-react";
 import { IoIosArrowDropright } from "react-icons/io";
 import { MedicalServiceCardProps } from "./types";
