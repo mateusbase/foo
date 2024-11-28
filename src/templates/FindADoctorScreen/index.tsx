@@ -1,8 +1,11 @@
-import { Input, Select, SelectItem } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
 import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";
 import { CardDoctor } from "@/components/CardDoctors";
 import PageLayout from "@/components/PageLayout";
+import BaseSelect from "@/components/Select";
+import BaseInput from "@/components/Input";
+import { specialtyArrays, stateArrays, unityArrays } from "./itemsArray";
 
 export default function FindADoctorScreen(): JSX.Element {
   const doctors = [
@@ -120,62 +123,50 @@ export default function FindADoctorScreen(): JSX.Element {
 
         <div className="mt-0 flex flex-col gap-5 md:mt-14 lg:w-full lg:flex-row lg:items-start lg:gap-2">
           <div className="flex flex-col gap-5 md:flex md:flex-row lg:w-1/5 lg:gap-3">
-            <Select
+            <BaseSelect
               color="primary"
               variant="bordered"
               label="UF"
-              className="w-full md:w-1/3 lg:w-[100px]"
+              className="w-full border-primary-foreground md:w-1/3 lg:w-[100px]"
               radius="full"
               size="sm"
-            >
-              <SelectItem key={1} value="1">
-                SP
-              </SelectItem>
-              <SelectItem key={2} value="2">
-                RJ
-              </SelectItem>
-            </Select>
+              options={stateArrays}
+              labelColor="primary"
+              optionsColor="primary"
+            />
 
-            <Select
+            <BaseSelect
               color="primary"
               variant="bordered"
               label="Unidade"
               className="w-full md:w-2/3 lg:w-[200px]"
               radius="full"
               size="sm"
-            >
-              <SelectItem key={1} value="1">
-                São Paulo
-              </SelectItem>
-              <SelectItem key={2} value="2">
-                Ibituruna
-              </SelectItem>
-            </Select>
+              options={unityArrays}
+              labelColor="primary"
+              optionsColor="primary"
+            />
           </div>
 
           <div className="flex flex-col gap-5 md:flex md:flex-row lg:flex-1 lg:gap-3">
-            <Select
+            <BaseSelect
               color="primary"
               variant="bordered"
               label="Especialidade"
-              className="w-full md:w-1/2 lg:flex-1"
+              className="w-full md:w-1/2"
               radius="full"
               size="sm"
-            >
-              <SelectItem key={1} value="1">
-                Oncologia
-              </SelectItem>
-              <SelectItem key={2} value="2">
-                Cardiologia
-              </SelectItem>
-            </Select>
+              options={specialtyArrays}
+              labelColor="primary"
+              optionsColor="primary"
+            />
 
-            <Input
+            <BaseInput
               placeholder="Nome ou CRM"
-              size="lg"
+              placeholderColor="primary"
               radius="full"
+              color="primary"
               variant="bordered"
-              className="h-[50px] w-full md:w-1/2 lg:flex-1"
             />
           </div>
 
