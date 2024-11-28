@@ -26,7 +26,7 @@ export default function BaseInput({
       <Input
         classNames={{
           input: `text-${color} placeholder:text-${placeholderColor}`,
-          inputWrapper: `border-${color}`,
+          inputWrapper: `border-${color} border-1`,
         }}
         placeholder={placeholder}
         size={size}

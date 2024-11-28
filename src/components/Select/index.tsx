@@ -24,7 +24,7 @@ export default function BaseSelect({
       classNames={{
         trigger: noBorder
           ? `bg-transparent border-none shadow-none `
-          : `border-${color} border-1 `,
+          : `border-${color} border-1`,
         label: `text-${labelColor} text-base`,
         value: `text-${labelColor} text-base`,
       }}

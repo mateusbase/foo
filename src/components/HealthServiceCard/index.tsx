@@ -9,23 +9,25 @@ export default function HealthServiceCard({
   showButton = true,
 }: HealthServiceCardProps): JSX.Element {
   return (
-    <div className="flex h-auto min-h-[280px] w-full flex-col justify-between rounded-[20px] border border-lightGray bg-white p-6">
-      <div className="flex flex-col items-start sm:flex-row md:items-center">
-        <div className="flex size-[63px] items-center justify-center rounded-full bg-primary-foreground">
+    <div className="flex h-auto min-h-[300px] w-full flex-col rounded-[20px] border border-lightGray bg-white px-4 py-8 lg:justify-between lg:p-6">
+      <div className="flex flex-col items-start md:items-start lg:flex-row">
+        <div className="flex items-center justify-center rounded-full bg-primary-foreground lg:size-[63px]">
           {serviceIcon}
         </div>
 
-        <h3 className="mt-2 text-[22px] font-black leading-[28px] text-primary sm:ml-4 sm:mt-0 sm:text-[26px] sm:leading-[32px]">
-          {serviceTitle}
-        </h3>
+        <div className="mt-4 w-full">
+          <h3 className="text-sm leading-4 text-primary sm:mt-0 sm:leading-[32px] md:font-normal lg:ml-4 lg:text-[22px]">
+            {serviceTitle}
+          </h3>
+        </div>
       </div>
 
-      <p className="mt-4 text-left text-[16px] font-medium leading-[22px] text-darkGray sm:text-[18px] sm:leading-[24px]">
+      <p className="mt-4 text-left text-sm leading-[22px] text-darkGray sm:leading-[24px] md:font-medium lg:text-[16px]">
         {serviceDescription}
       </p>
 
       {showButton && (
-        <div className="mt-10 flex items-center justify-start rounded-full">
+        <div className="mt-10 hidden items-center justify-start rounded-full lg:flex">
           <IoIosArrowDropright size={29} className="text-primary-foreground" />
         </div>
       )}

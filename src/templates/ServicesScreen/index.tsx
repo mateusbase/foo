@@ -35,6 +35,12 @@ export default function ServiceScreen(): JSX.Element {
     },
     {
       id: 6,
+      serviceTitle: "Análise Clínica",
+      serviceDescription:
+        "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
+    },
+    {
+      id: 7,
       serviceTitle: "Laserterapia",
       serviceDescription:
         "Testes moleculares para a escolha do melhor tratamento em cada paciente.",

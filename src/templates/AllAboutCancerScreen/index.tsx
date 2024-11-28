@@ -67,7 +67,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
     <PageLayout title="Tudo sobre o câncer" subtitle="Oncoclínicas">
       <div className="mt-20 flex justify-start">
         <div className="text-left md:text-center">
-          <h2 className="text-2xl font-extralight text-primary md:text-title-xl md:font-black md:leading-[74px]">
+          <h2 className="text-2xl text-primary md:text-title-xl md:leading-[74px]">
             O que é o câncer?
           </h2>
 
@@ -78,7 +78,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
             qualidade de vida.
           </p>
 
-          <h2 className="mt-14 hidden text-2xl font-extralight text-primary md:block md:text-[28px] md:font-black md:leading-[74px]">
+          <h2 className="mt-14 hidden text-2xl font-extralight text-primary md:block md:text-[28px] md:font-bold md:leading-[74px]">
             Leia o conteúdo abaixo
           </h2>
         </div>
@@ -86,7 +86,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
       <div className="mt-20 flex flex-col md:flex-row md:justify-between">
         <div className="w-full md:w-1/2 md:pr-16">
-          <h2 className="text-2xl font-extralight text-primary md:text-[40px] md:font-black md:leading-[48px]">
+          <h2 className="text-2xl text-primary md:text-[40px] md:leading-[48px]">
             O câncer?
           </h2>
           <p className="mt-4 text-base text-darkGray md:text-[20px] md:leading-[30px]">
