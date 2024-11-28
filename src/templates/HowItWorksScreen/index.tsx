@@ -28,6 +28,7 @@ export default function HowItWorksScreen(): JSX.Element {
         <div className="w-[398px] text-white">
           {menuItems.map((item, index) => (
             <MenuItem
+              key={item.id}
               id={item.id}
               name={item.name}
               isActive={activeItem === item.id}

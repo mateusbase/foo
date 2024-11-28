@@ -169,6 +169,18 @@ export default function NewsScreen(): JSX.Element {
             </div>
           ))}
         </div>
+
+        <div className="mt-14 w-full">
+          <Button
+            color="primary"
+            variant="bordered"
+            radius="sm"
+            startContent={<Plus />}
+            className="h-[50px] w-[228px] items-center justify-center pl-3 text-[23px] text-primary lg:flex"
+          >
+            Ver todos
+          </Button>
+        </div>
       </div>
 
       <div className="flex flex-col lg:hidden">
