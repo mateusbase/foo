@@ -1,6 +1,5 @@
 import { useState, useMemo, useRef } from "react";
 import { Button } from "@nextui-org/react";
-import { TbCodePlus } from "react-icons/tb";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import HealthServiceCard from "@/components/HealthServiceCard";
@@ -12,13 +11,13 @@ import BaseInput from "@/components/Input";
 import { SearchIcon } from "@/components/Icons";
 import PreviousArrowIcon from "@/components/Icons/PreviousArrowIcon";
 import NextArrowIcon from "@/components/Icons/NextArrowIcon";
+import { Plus } from "lucide-react";
 import SectionHeader from "../SectionHeader";
 import { ServiceSectionProps } from "../../types";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Plus } from "lucide-react";
 
 export default function ServiceSection({
   id,

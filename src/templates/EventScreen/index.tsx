@@ -1,13 +1,8 @@
 import { IoIosMap, IoIosTime } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
 import { CalendarIcon } from "@/components/Icons";
-import { events } from "@/components/UpcomingEvents/eventMocks";
-import EventCard from "@/components/EventsCard";
 import BaseContainer from "@/components/Container";
 import SignupForm from "./components/SignupForm";
-import { listMedics } from "./medicsMock";
-import InvitedMedicCard from "./components/InvitedMedicCard";
-import { topicsCovered } from "./topicsMock";
 import IncomingEventsSection from "./components/IncomingEventsSection";
 import TopicsCoveredSection from "./components/TopicsCoveredSection";
 import InvitedMedicsSection from "./components/InvitedMedicsSection";
