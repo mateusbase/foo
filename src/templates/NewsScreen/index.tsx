@@ -14,15 +14,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { NavigationOptions } from "swiper/types";
 import { Navigation } from "swiper/modules";
 import { useRef } from "react";
-import { options } from "./optionsMock";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import SortingFilterDropdown from "@/components/SortingFilterDropdown";
+import { sortingFilterOptions } from "@/utils/sortingOptions";
+import { useSortingFilter } from "@/hooks/useSortingFilter";
+import { options } from "./optionsMock";
 
 export default function NewsScreen(): JSX.Element {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
 
   return (
     <BaseContainer className="px-0">
@@ -148,16 +152,10 @@ export default function NewsScreen(): JSX.Element {
           </div>
 
           <div className="flex cursor-pointer items-center justify-center gap-1 hover:text-darkGray">
-            <BaseSelect
-              label=""
-              className="w-[151px] text-primary"
-              noBorder
-              color="primary"
-              defaultSelectedKey="1"
-              options={[
-                { key: 1, value: "1", label: "Mais relevantes" },
-                { key: 2, value: "2", label: "Todos os temas" },
-              ]}
+            <SortingFilterDropdown
+              options={sortingFilterOptions}
+              defaultSelectedKey={sortingFilterOptions[0].value}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -190,6 +188,7 @@ export default function NewsScreen(): JSX.Element {
             variant="bordered"
             radius="md"
             size="lg"
+            onChange={handleChange}
             label=""
             defaultSelectedKey="1"
             startContent={

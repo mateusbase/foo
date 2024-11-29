@@ -2,10 +2,15 @@ import BaseButton from "@/components/Button";
 import BaseSelect from "@/components/Select";
 import { Plus } from "lucide-react";
 import Link from "next/link";
-import ClinicalStudiesCard from "./components/ClinicalStudiesCard";
+import SortingFilterDropdown from "@/components/SortingFilterDropdown";
+import { sortingFilterOptions } from "@/utils/sortingOptions";
+import { useSortingFilter } from "@/hooks/useSortingFilter";
 import { clinicalResearchs } from "../../helper";
+import ClinicalStudiesCard from "./components/ClinicalStudiesCard";
 
 export default function OpenClinicalStudies(): JSX.Element {
+  const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
+
   return (
     <div className="w-full">
       <div className="flex flex-row border-b border-gray-300 pb-4">
@@ -43,16 +48,10 @@ export default function OpenClinicalStudies(): JSX.Element {
           </BaseButton>
         </div>
         <div className="hidden justify-end gap-2 sm:justify-start lg:flex">
-          <BaseSelect
-            noBorder
-            label=""
-            color="primary"
-            defaultSelectedKey="1"
-            className="w-[170px]"
-            options={[
-              { key: 1, value: "1", label: "Mais relevantes" },
-              { key: 2, value: "2", label: "Todos itens" },
-            ]}
+          <SortingFilterDropdown
+            options={sortingFilterOptions}
+            defaultSelectedKey={sortingFilterOptions[0].value}
+            onChange={handleChange}
           />
         </div>
       </div>
