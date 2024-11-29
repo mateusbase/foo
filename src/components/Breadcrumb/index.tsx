@@ -30,27 +30,29 @@ const Breadcrumb = (): JSX.Element => {
         breadcrumbMap[decodedSegment] || decodedSegment,
       );
 
+      const breadcrumbNameReplaced = breadcrumbName.replaceAll("-", " ");
+
       const breadcrumbUrl = `/${pathSegments.slice(0, index + 1).join("/")}`;
 
-      return { breadcrumbName, breadcrumbUrl };
+      return { breadcrumbNameReplaced, breadcrumbUrl };
     });
 
-    return [{ breadcrumbName: "Home", breadcrumbUrl: "/" }, ...mappedSegments];
+    return [{ breadcrumbNameReplaced: "Home", breadcrumbUrl: "/" }, ...mappedSegments];
   }, [asPath]);
 
   return (
     <div className="z-10 max-w-full items-start justify-between break-words text-sm lg:flex">
       <div className="text-left">
         {breadcrumbs.map((breadcrumb, index) => (
-          <span key={breadcrumb.breadcrumbUrl}>
+          <span className="text-darkGray" key={breadcrumb.breadcrumbUrl}>
             <Link href={breadcrumb.breadcrumbUrl}>
               <span
                 className={`cursor-pointer ${asPath === breadcrumb.breadcrumbUrl
                   ? "font-bold text-primary-foreground"
-                  : "text-black hover:text-primary-foreground"
+                  : "text-darkGray hover:text-primary-foreground"
                   }`}
               >
-                {breadcrumb.breadcrumbName}
+                {breadcrumb.breadcrumbNameReplaced}
               </span>
             </Link>
             {index < breadcrumbs.length - 1 && " > "}
