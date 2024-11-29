@@ -67,15 +67,15 @@ export default function Footer(): JSX.Element {
     <>
       <footer className="bg-darkGray p-10 text-white">
         <BaseContainer className="flex w-full flex-col">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-start md:gap-0">
+          <div className="flex flex-col items-center justify-between gap-4 md:gap-14 lg:flex-row lg:items-start lg:gap-0">
             <Image
               src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/footer/oncoclinicas.svg"
               alt="Oncoclinicas Icon"
               width={312}
               height={38}
             />
-            <div className="flex flex-col items-center gap-4 md:flex-row">
-              <h1 className="mt-10 font-semibold text-white md:mt-0">
+            <div className="flex flex-col items-center gap-4 lg:flex-row">
+              <h1 className="mt-10 text-white md:mt-0 lg:text-[26px]">
                 Nossos Canais
               </h1>
 
@@ -93,57 +93,73 @@ export default function Footer(): JSX.Element {
 
           <div className="mt-16 grid grid-cols-2 gap-8 md:mt-8 lg:grid-cols-5">
             <div>
-              <h4 className="mb-4 font-bold text-white">
-                Sobre a Oncoclínicas
-              </h4>
+              <h4 className="mb-3 text-white">Sobre a Oncoclínicas</h4>
               <ul>
                 <li>
-                  <Link href="/quem-somos" className="hover:text-white">
+                  <Link
+                    href="/quem-somos"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Quem somos
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link
+                    href="#"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     OC Medicina de Precisão
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/relacao-com-investidor"
-                    className="hover:text-white"
+                    className="text-[13px] hover:text-white lg:text-base"
                   >
                     Investidores
                   </Link>
                 </li>
                 <li>
-                  <Link href="/instituto-oc" className="hover:text-white">
+                  <Link
+                    href="/instituto-oc"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Instituto OC
                   </Link>
                 </li>
                 <li>
-                  <Link href="/imprensa" className="hover:text-white">
+                  <Link
+                    href="/imprensa"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Imprensa
                   </Link>
                 </li>
                 <li>
-                  <Link href="/fale-conosco" className="hover:text-white">
+                  <Link
+                    href="/fale-conosco"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Fale conosco
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="mb-4 font-bold text-white">Pacientes</h4>
+              <h4 className="mb-3 text-white">Pacientes</h4>
               <ul>
                 <li>
-                  <Link href="/servicos" className="hover:text-white">
+                  <Link
+                    href="/servicos"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Serviços
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/servicos#tratamentos"
-                    className="hover:text-white"
+                    className="text-[13px] hover:text-white lg:text-base"
                   >
                     Tratamentos
                   </Link>
@@ -151,7 +167,7 @@ export default function Footer(): JSX.Element {
                 <li>
                   <Link
                     href="/servicos#diagnósticos"
-                    className="hover:text-white"
+                    className="text-[13px] hover:text-white lg:text-base"
                   >
                     Diagnóstico
                   </Link>
@@ -159,38 +175,53 @@ export default function Footer(): JSX.Element {
                 <li>
                   <Link
                     href="/para-sua-saude/tudo-sobre-o-cancer"
-                    className="hover:text-white"
+                    className="text-[13px] hover:text-white lg:text-base"
                   >
                     Tudo sobre o câncer
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link
+                    href="#"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     OC ACESSO
                   </Link>
                 </li>
                 <li>
-                  <Link href="/vacinas" className="hover:text-white">
+                  <Link
+                    href="/vacinas"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Vacinas
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="mb-4 font-bold text-white">Transparência</h4>
+              <h4 className="mb-3 text-white">Transparência</h4>
               <ul>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link
+                    href="#"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Política de Privacidade
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link
+                    href="#"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Política de Segurança
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link
+                    href="#"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Ética e Compliance
                   </Link>
                 </li>
@@ -198,33 +229,45 @@ export default function Footer(): JSX.Element {
             </div>
 
             <div>
-              <h4 className="mb-4 font-bold text-white">Médicos</h4>
+              <h4 className="mb-3 text-white">Médicos</h4>
               <ul>
                 <li>
                   <Link
                     href="/medicos/pesquisa-clinica"
-                    className="hover:text-white"
+                    className="text-[13px] hover:text-white lg:text-base"
                   >
                     Pesquisa clínica
                   </Link>
                 </li>
                 <li>
-                  <Link href="/medicos/eventos" className="hover:text-white">
+                  <Link
+                    href="/medicos/eventos"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Eventos
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link
+                    href="#"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     OC Academia
                   </Link>
                 </li>
                 <li>
-                  <Link href="/medicos/oc-journal" className="hover:text-white">
+                  <Link
+                    href="/medicos/oc-journal"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     OC Journal
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link
+                    href="#"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Acesso do médico
                   </Link>
                 </li>
@@ -232,9 +275,7 @@ export default function Footer(): JSX.Element {
             </div>
 
             <div className="hidden md:block">
-              <h4 className="mb-4 font-bold text-white">
-                Baixe o app Oncoclínicas
-              </h4>
+              <h4 className="mb-3 text-white">Baixe o app Oncoclínicas</h4>
               <div className="flex flex-col">
                 <a
                   href="https://apps.apple.com/br/app/oncocl%C3%ADnicas-por-voc%C3%AA/id6444621218"
@@ -264,25 +305,34 @@ export default function Footer(): JSX.Element {
 
           <div className="mt-8 grid grid-cols-2 gap-8 lg:grid-cols-5">
             <div>
-              <h4 className="mb-4 font-bold text-white">Notícias</h4>
+              <h4 className="mb-3 text-white">Notícias</h4>
               <ul>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link
+                    href="#"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Publicações Oncoclínicas
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white">
+                  <Link
+                    href="#"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Reportagens e artigos
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="mb-4 font-bold text-white">OC Carreiras</h4>
+              <h4 className="mb-3 text-white">OC Carreiras</h4>
               <ul>
                 <li>
-                  <Link href="/trabalhe-conosco" className="hover:text-white">
+                  <Link
+                    href="/trabalhe-conosco"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
                     Trabalhe Conosco
                   </Link>
                 </li>
@@ -325,11 +375,12 @@ export default function Footer(): JSX.Element {
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-between text-center lg:flex-row lg:text-left">
-            <div className="mb-4 lg:mb-0">
-              <p className="text-xs text-white">
-                © 2024 Grupo Oncoclínicas - RT: Dra. Mariana Laloni - CRM-SP
-                102379
+            <div className="mb-4 flex flex-col lg:mb-0 lg:flex-row">
+              <p className="text-[13px] text-white lg:text-base">
+                © 2024 Grupo Oncoclínicas - RT: Dra. Mariana Laloni
               </p>
+              <p className="mx-2 hidden text-[13px] lg:flex lg:text-base">-</p>
+              <p className="text-[13px] lg:text-base">CRM-SP 102379</p>
             </div>
 
             <RadioGroup
@@ -339,21 +390,27 @@ export default function Footer(): JSX.Element {
               onValueChange={(value) => toggleLanguageLocale(value)}
               orientation="horizontal"
             >
-              <Radio className="text-white" value="pt_BR">
-                <span className="font-medium text-white">Português</span>
+              <Radio value="pt_BR">
+                <span className="text-[13px] text-white lg:text-base">
+                  PORTUGUÊS
+                </span>
               </Radio>
-              <Radio className="text-white" value="en">
-                <span className="font-medium text-white">English</span>
+              <Radio value="en">
+                <span className="text-[13px] text-white lg:text-base">
+                  ENGLISH
+                </span>
               </Radio>
-              <Radio className="text-white" value="es-ES">
-                <span className="font-medium text-white">Español</span>
+              <Radio value="es-ES">
+                <span className="text-[13px] text-white lg:text-base">
+                  ESPAÑOL
+                </span>
               </Radio>
             </RadioGroup>
           </div>
         </BaseContainer>
       </footer>
 
-      <div className="flex h-[65px] w-full items-center justify-between bg-[#E3E3E3] px-4 lg:hidden">
+      <div className="flex h-[65px] w-full items-center justify-between bg-[#E3E3E3] px-4 md:hidden">
         <p className="text-lg font-bold text-gray-600">
           O que você está procurando?
         </p>
@@ -373,7 +430,7 @@ export default function Footer(): JSX.Element {
         </svg>
       </div>
 
-      <div className="flex h-[65px] w-full items-center justify-between lg:hidden">
+      <div className="flex h-[65px] w-full items-center justify-between md:hidden">
         <div className="flex h-full w-1/2 items-center justify-center rounded-bl-3xl bg-secondary text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
