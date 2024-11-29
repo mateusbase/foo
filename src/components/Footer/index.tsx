@@ -236,20 +236,28 @@ export default function Footer(): JSX.Element {
                 Baixe o app Oncoclínicas
               </h4>
               <div className="flex flex-col">
-                <Link href="#">
+                <a
+                  href="https://apps.apple.com/br/app/oncocl%C3%ADnicas-por-voc%C3%AA/id6444621218"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src="https://i.postimg.cc/Mph9CNpn/Imagem-5.png"
                     alt="App Store"
                     className="h-10 w-36"
                   />
-                </Link>
-                <Link href="#">
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.ocporvoce&pli=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src="https://i.postimg.cc/289cwVpF/Imagem-6.png"
                     alt="Google Play"
                     className="h-10 w-36"
                   />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -290,20 +298,28 @@ export default function Footer(): JSX.Element {
                 Baixe o app Oncoclínicas
               </h4>
               <div className="flex flex-col">
-                <Link href="#">
+                <a
+                  href="https://apps.apple.com/br/app/oncocl%C3%ADnicas-por-voc%C3%AA/id6444621218"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src="https://i.postimg.cc/Mph9CNpn/Imagem-5.png"
                     alt="App Store"
                     className="h-10 w-36"
                   />
-                </Link>
-                <Link href="#">
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.ocporvoce&pli=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src="https://i.postimg.cc/289cwVpF/Imagem-6.png"
                     alt="Google Play"
                     className="h-10 w-36"
                   />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
