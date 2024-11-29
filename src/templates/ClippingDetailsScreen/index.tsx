@@ -33,7 +33,7 @@ export default function ClippingDetailsScreen(): JSX.Element {
           </p>
 
           <img
-            src="https://via.placeholder.com/1600x900"
+            src="https://dummyimage.com/1536x581/"
             alt="Premiação Oncoclínicas"
             className="mt-8 w-full max-w-screen-2xl object-cover"
           />

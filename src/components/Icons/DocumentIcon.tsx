@@ -1,12 +1,22 @@
 import * as React from "react";
 
-const DocumentIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
+type DocumentIconProps = React.SVGProps<SVGSVGElement> & {
+  size?: number;
+  color?: string;
+};
+
+const DocumentIcon = ({
+  size = 1,
+  color = "white",
+  className = "",
+  ...props
+}: DocumentIconProps): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="26"
-    height="33"
-    fill="none"
+    width={26 * size}
+    height={33 * size}
     viewBox="0 0 26 33"
+    className={`${color} ${className}`}
     {...props}
   >
     <path

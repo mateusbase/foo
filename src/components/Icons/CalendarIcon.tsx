@@ -15,8 +15,8 @@ const CalendarIcon = ({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={24 * size}
-      height={21 * size}
+      width={33 * size}
+      height={33 * size}
       viewBox="0 0 24 21"
       className={`${color} ${className}`}
       {...props}
