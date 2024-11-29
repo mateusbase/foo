@@ -1,115 +1,24 @@
-import { Input } from "@nextui-org/react";
 import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";
 import { CardDoctor } from "@/components/CardDoctors";
 import PageLayout from "@/components/PageLayout";
 import BaseSelect from "@/components/Select";
 import BaseInput from "@/components/Input";
-import { specialtyArrays, stateArrays, unityArrays } from "./itemsArray";
+import { useState } from "react";
+import {
+  doctors,
+  specialtyArrays,
+  stateArrays,
+  unityArrays,
+} from "./itemsArray";
+import LocationIcon from "../../../public/assets/icons/location-icon";
 
 export default function FindADoctorScreen(): JSX.Element {
-  const doctors = [
-    {
-      id: 1,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/medico-alegre-um-rosto-feliz-na-profissao-medica-isolado-em-um-fundo-branco_94628-20220.jpg?w=1800",
-    },
-    {
-      id: 2,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/a-presenca-iluminadora-da-enfermeira-isolada-em-um-fundo-branco-ai-generativo_94628-9638.jpg?w=1800",
-    },
-    {
-      id: 3,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/mulher-prestadora-de-servicos-de-saude-em-scrub-wear-generative-ai_94628-7730.jpg?w=1800",
-    },
-    {
-      id: 4,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/mulher-prestadora-de-servicos-de-saude-em-scrub-wear-generative-ai_94628-7730.jpg?w=1800",
-    },
-    {
-      id: 4,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/mulher-prestadora-de-servicos-de-saude-em-scrub-wear-generative-ai_94628-7730.jpg?w=1800",
-    },
-    {
-      id: 4,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/mulher-prestadora-de-servicos-de-saude-em-scrub-wear-generative-ai_94628-7730.jpg?w=1800",
-    },
-    {
-      id: 4,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/mulher-prestadora-de-servicos-de-saude-em-scrub-wear-generative-ai_94628-7730.jpg?w=1800",
-    },
-    {
-      id: 4,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/mulher-prestadora-de-servicos-de-saude-em-scrub-wear-generative-ai_94628-7730.jpg?w=1800",
-    },
-    {
-      id: 4,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/mulher-prestadora-de-servicos-de-saude-em-scrub-wear-generative-ai_94628-7730.jpg?w=1800",
-    },
-    {
-      id: 4,
-      name: "Carla Lira",
-      crm: "123456",
-      specialty: "Especialidade",
-      rqe: "12345",
-      location: "Hospital XYZ",
-      imgSrc:
-        "https://img.freepik.com/fotos-premium/mulher-prestadora-de-servicos-de-saude-em-scrub-wear-generative-ai_94628-7730.jpg?w=1800",
-    },
-  ];
+  const [visibleDoctors, setVisibleDoctors] = useState(2);
+
+  const handleLoadMore = (): void => {
+    setVisibleDoctors((prev) => prev + 2);
+  };
 
   return (
     <PageLayout
@@ -153,7 +62,7 @@ export default function FindADoctorScreen(): JSX.Element {
               color="primary"
               variant="bordered"
               label="Especialidade"
-              className="w-full md:w-1/2"
+              className="w-full md:w-2/3"
               radius="full"
               size="sm"
               options={specialtyArrays}
@@ -179,22 +88,40 @@ export default function FindADoctorScreen(): JSX.Element {
               className="w-full font-bold lg:flex-1"
               color="primary"
               variant="bordered"
-              startContent={<TbCodePlus size={20} />}
+              startContent={<LocationIcon className="size-7" />}
             >
               Buscar próximos a mim
             </BaseButton>
           </div>
         </div>
 
-        <p className="mt-20 text-[20px] font-normal leading-[26px] text-darkGray">
+        <p className="mt-20 hidden text-[20px] font-normal leading-[26px] text-darkGray lg:flex">
           Sua pesquisa encontrou 23 médicos
         </p>
 
-        <div className="my-10 grid grid-cols-1 justify-items-center gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="my-10 grid grid-cols-1 justify-items-center gap-x-5 gap-y-10 sm:grid-cols-2 lg:hidden">
+          {doctors.slice(0, visibleDoctors).map((doctor) => (
+            <CardDoctor key={doctor.id} doctor={doctor} width="max-w-[398px]" />
+          ))}
+        </div>
+
+        <div className="my-10 hidden grid-cols-1 justify-items-center gap-x-5 gap-y-10 lg:grid-cols-4">
           {doctors.map((doctor) => (
             <CardDoctor key={doctor.id} doctor={doctor} width="max-w-[398px]" />
           ))}
         </div>
+
+        {visibleDoctors < doctors.length && (
+          <div className="mb-11 flex justify-center lg:hidden">
+            <BaseButton
+              onClick={handleLoadMore}
+              className="h-11 w-[316px] border-1 border-primary bg-transparent px-32 py-10 text-primary"
+            >
+              [+]
+              <span>Ver todos</span>
+            </BaseButton>
+          </div>
+        )}
       </div>
     </PageLayout>
   );
