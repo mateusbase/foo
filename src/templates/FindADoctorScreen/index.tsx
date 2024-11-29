@@ -1,4 +1,3 @@
-import { TbCodePlus } from "react-icons/tb";
 import BaseButton from "@/components/Button";
 import { CardDoctor } from "@/components/CardDoctors";
 import PageLayout from "@/components/PageLayout";
