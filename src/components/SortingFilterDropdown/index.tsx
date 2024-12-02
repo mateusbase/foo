@@ -10,7 +10,7 @@ const SortingFilterDropdown = ({
   return (
     <BaseSelect
       label=""
-      labelColor="primary"
+      labelColor="darkGray"
       className={`w-[170px] text-primary ${className}`}
       noBorder
       color="primary"
