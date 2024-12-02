@@ -12,11 +12,11 @@ export default function NewsInformationCard({
   return (
     <Link href={`/noticias/${newSlug}`}>
       <div className="mx-auto flex w-full flex-col gap-4 lg:h-full lg:flex-row lg:gap-8">
-        <div className="h-auto shrink-0 lg:max-w-[812px]">
+        <div className="h-auto w-full lg:max-w-[812px]">
           <img
             src={image}
             alt="ASCO Annual Meeting 2024"
-            className="w-full object-cover"
+            className="size-auto object-cover"
           />
         </div>
 
@@ -32,7 +32,7 @@ export default function NewsInformationCard({
             </BaseButton>
           </div>
 
-          <h1 className="mt-8 text-left text-xl font-light text-darkGray lg:text-[48px] lg:leading-[48px]">
+          <h1 className="mt-8 text-left text-xl font-light text-darkGray lg:text-4xl xl:text-[48px] xl:leading-[48px]">
             {title}
           </h1>
 
@@ -40,7 +40,7 @@ export default function NewsInformationCard({
             {date}
           </p>
 
-          <p className="mt-6 text-left text-sm font-medium text-darkGray lg:mt-14 lg:text-xl lg:leading-[27px]">
+          <p className="mt-6 text-left text-sm font-medium text-darkGray lg:mt-14 lg:text-lg lg:leading-[27px] xl:text-xl">
             {description}
           </p>
         </div>
