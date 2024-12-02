@@ -104,7 +104,7 @@ export default function FindADoctorScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="my-10 hidden grid-cols-1 justify-items-center gap-x-5 gap-y-10 lg:grid-cols-4">
+        <div className="my-10 hidden grid-cols-1 justify-items-center gap-x-5 gap-y-10 lg:grid lg:grid-cols-4">
           {doctors.map((doctor) => (
             <CardDoctor key={doctor.id} doctor={doctor} width="max-w-[398px]" />
           ))}
