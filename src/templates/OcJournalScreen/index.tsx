@@ -1,10 +1,14 @@
 import BaseButton from "@/components/Button";
-import { IoIosArrowDown } from "react-icons/io";
 import BaseSelect from "@/components/Select";
 import PageLayout from "@/components/PageLayout";
 import { Plus } from "lucide-react";
+import SortingFilterDropdown from "@/components/SortingFilterDropdown";
+import { sortingFilterOptions } from "@/utils/sortingOptions";
+import { useSortingFilter } from "@/hooks/useSortingFilter";
 
 export default function OcJournalScreen(): JSX.Element {
+  const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
+
   return (
     <PageLayout
       title="OC Journal"
@@ -51,6 +55,7 @@ export default function OcJournalScreen(): JSX.Element {
           <div className="w-full sm:w-[280px]">
             <BaseSelect
               label="Especialidade"
+              labelColor="primary"
               color="primary"
               variant="bordered"
               radius="full"
@@ -73,16 +78,10 @@ export default function OcJournalScreen(): JSX.Element {
         </div>
 
         <div className="flex cursor-pointer items-center justify-end gap-2 sm:justify-start">
-          <BaseSelect
-            label=""
-            className="w-[151px] text-primary"
-            noBorder
-            color="primary"
-            defaultSelectedKey="1"
-            options={[
-              { key: 1, value: "1", label: "Mais relevantes" },
-              { key: 2, value: "2", label: "Todos os temas" },
-            ]}
+          <SortingFilterDropdown
+            options={sortingFilterOptions}
+            defaultSelectedKey={sortingFilterOptions[0].value}
+            onChange={handleChange}
           />
         </div>
       </div>

@@ -2,9 +2,13 @@ import BaseButton from "@/components/Button";
 import PageLayout from "@/components/PageLayout";
 import ClippingCard from "@/components/ClippingCard";
 import BaseInput from "@/components/Input";
-import BaseSelect from "@/components/Select";
+import SortingFilterDropdown from "@/components/SortingFilterDropdown";
+import { sortingFilterOptions } from "@/utils/sortingOptions";
+import { useSortingFilter } from "@/hooks/useSortingFilter";
 
 export default function ReleasesScreen(): JSX.Element {
+  const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
+
   return (
     <PageLayout title="Releases">
       <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-20 md:flex-row md:items-center md:justify-between md:px-0">
@@ -27,16 +31,10 @@ export default function ReleasesScreen(): JSX.Element {
         </div>
 
         <div className="flex cursor-pointer items-center justify-end gap-2 sm:justify-start">
-          <BaseSelect
-            label=""
-            className="w-[170px] text-primary"
-            noBorder
-            color="primary"
-            defaultSelectedKey="1"
-            options={[
-              { key: 1, value: "1", label: "Mais relevantes" },
-              { key: 2, value: "2", label: "Todos os temas" },
-            ]}
+          <SortingFilterDropdown
+            options={sortingFilterOptions}
+            defaultSelectedKey={sortingFilterOptions[0].value}
+            onChange={handleChange}
           />
         </div>
       </div>

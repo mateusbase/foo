@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
+import { Link } from "@nextui-org/react";
 
 export default function ClinicalResearchScreen(): JSX.Element {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -60,14 +61,16 @@ export default function ClinicalResearchScreen(): JSX.Element {
             </p>
           </div>
 
-          <BaseButton
-            className="mt-8 w-full font-bold text-white lg:mt-16 lg:w-80"
-            color="primary"
-            variant="solid"
-            width="322px"
-          >
-            Conheça
-          </BaseButton>
+          <Link href="/medicos/pesquisa-clinica/como-funciona">
+            <BaseButton
+              className="mt-8 w-full font-bold text-white lg:mt-16 lg:w-80"
+              color="primary"
+              variant="solid"
+              width="322px"
+            >
+              Conheça
+            </BaseButton>
+          </Link>
         </div>
 
         <div className="hidden w-full flex-col items-center md:flex">
