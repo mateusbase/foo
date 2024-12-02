@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import BaseButton from "@/components/Button";
 import { IoIosCalendar } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
+import locations from "./locations";
+import especializations from "./especializations";
 
 export default function DoctorScreen(): JSX.Element {
   const router = useRouter();
@@ -55,14 +57,14 @@ export default function DoctorScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="mt-8 text-center md:ml-52 md:mt-0 md:flex-1 md:text-left">
+        <div className="my-8 text-center md:ml-52 md:mt-0 md:flex-1 md:text-left">
           <h1 className="hidden text-[42px] text-primary md:block">
             {name
               ? `Dra. ${decodeURIComponent(name as string)}`
               : "Dra. Nome do Médico"}
           </h1>
 
-          <p className="mt-6 text-lg leading-[28px] text-darkGray">
+          <p className="mt-6 text-left text-lg leading-[28px] text-darkGray">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex
             id sem ullamcorper. Lorem ipsum dolor sit amet, consectetur
@@ -73,9 +75,28 @@ export default function DoctorScreen(): JSX.Element {
             ullamcorper.
           </p>
 
-          <h1 className="mt-8 text-[42px] font-bold text-primary">
+          <h1 className="mb-6 mt-32 text-left text-2xl font-bold text-primary-foreground lg:text-[42px]">
             Locais de atendimento
           </h1>
+          {locations.map((location) => (
+            <ul key={location.id} className="list-inside list-disc">
+              <li className="text-left text-sm text-darkGray lg:text-lg">
+                {location.name}
+              </li>
+            </ul>
+          ))}
+
+          <h1 className="mb-6 mt-12 text-left text-2xl font-bold text-primary-foreground lg:text-[42px]">
+            Especializações
+          </h1>
+
+          {especializations.map((especialization) => (
+            <ul key={especialization.id} className="list-inside list-disc">
+              <li className="text-left text-sm text-darkGray lg:text-lg">
+                {especialization.name}
+              </li>
+            </ul>
+          ))}
         </div>
       </div>
     </PageLayout>
