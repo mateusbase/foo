@@ -5,9 +5,15 @@ import BaseInput from "@/components/Input";
 import SortingFilterDropdown from "@/components/SortingFilterDropdown";
 import { sortingFilterOptions } from "@/utils/sortingOptions";
 import { useSortingFilter } from "@/hooks/useSortingFilter";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SliderArrows from "@/components/SliderArrows";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import { Navigation } from "swiper/modules";
+import clippingCardData, { ClippingCardInfo } from "./cardInformations";
 
 export default function ClippingScreen(): JSX.Element {
   const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
+  const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
 
   return (
     <PageLayout title="Clipping">
@@ -39,52 +45,51 @@ export default function ClippingScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="my-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mt-10 lg:grid-cols-3">
-        <ClippingCard
-          title="Oncoclínicas é destaque em premiação por prestação de serviços médicos"
-          date="23 de Setembro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex id sem ullamcorper."
-        />
-        <ClippingCard
-          title="Oncoclínicas lança nova campanha de conscientização"
-          date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
-        />
-        <ClippingCard
-          title="Oncoclínicas lança nova campanha de conscientização"
-          date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
-        />
-        <ClippingCard
-          title="Oncoclínicas lança nova campanha de conscientização"
-          date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
-        />
-        <ClippingCard
-          title="Oncoclínicas lança nova campanha de conscientização"
-          date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
-        />
-        <ClippingCard
-          title="Oncoclínicas lança nova campanha de conscientização"
-          date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
-        />
-        <ClippingCard
-          title="Oncoclínicas lança nova campanha de conscientização"
-          date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
-        />
-        <ClippingCard
-          title="Oncoclínicas lança nova campanha de conscientização"
-          date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
-        />
-        <ClippingCard
-          title="Oncoclínicas lança nova campanha de conscientização"
-          date="10 de Outubro de 2023"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit in."
-        />
+      <div className="my-10">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop
+          onBeforeInit={(swiper) => {
+            swiperRef.current = swiper;
+            onBeforeInit(swiper);
+          }}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+        >
+          {clippingCardData
+            .reduce((acc, clipping, index) => {
+              const chunkIndex = Math.floor(index / 9);
+              if (!acc[chunkIndex]) acc[chunkIndex] = [];
+              acc[chunkIndex].push(clipping);
+              return acc;
+            }, [] as ClippingCardInfo[][])
+            .map((group) => (
+              <SwiperSlide key={group[0].id}>
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                  {group.map((clipping) => (
+                    <ClippingCard
+                      key={clipping.id}
+                      title={clipping.title}
+                      date={clipping.date}
+                      description={clipping.description}
+                    />
+                  ))}
+                </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
+
+        <div className="mt-6 flex justify-center">
+          <SliderArrows
+            swiperRef={swiperRef}
+            prevRef={prevRef}
+            nextRef={nextRef}
+          />
+        </div>
       </div>
     </PageLayout>
   );
