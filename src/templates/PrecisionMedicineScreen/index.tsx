@@ -6,6 +6,8 @@ import RoundedRectangle from "./components/RoundedRectangle";
 import { cardElements } from "./components/RoundedRectangle/CardElements";
 import PlayStoreContainer from "./components/PlayStoreContainer";
 import ValuesAndMissionText from "./components/ValuesAndMIssionText";
+import ExamsCard from "./components/ExamsCard";
+import { genomicsExams, patologicalExams } from "./exams";
 
 export function PrecisionMedicineScreen({
   media,
@@ -48,6 +50,12 @@ export function PrecisionMedicineScreen({
         <h4 className="mb-8 font-lato-regular text-3xl text-darkGray">
           Patologia
         </h4>
+        <ExamsCard exams={patologicalExams} />
+
+        <h4 className="mb-8 mt-20 font-lato-regular text-3xl text-darkGray">
+          Genômica
+        </h4>
+        <ExamsCard exams={genomicsExams} />
       </div>
     </PageLayout>
   );
