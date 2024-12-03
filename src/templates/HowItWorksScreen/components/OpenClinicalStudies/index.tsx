@@ -1,6 +1,5 @@
 import BaseButton from "@/components/Button";
 import BaseSelect from "@/components/Select";
-import { Plus } from "lucide-react";
 import Link from "next/link";
 import SortingFilterDropdown from "@/components/SortingFilterDropdown";
 import { sortingFilterOptions } from "@/utils/sortingOptions";
@@ -14,7 +13,7 @@ export default function OpenClinicalStudies(): JSX.Element {
   return (
     <div className="w-full">
       <div className="flex flex-row border-b border-gray-300 pb-4">
-        <div className="flex w-full flex-col items-center gap-4 sm:flex-row">
+        <div className="mt-3 flex w-full flex-col items-center gap-4 sm:flex-row md:mt-0">
           <BaseSelect
             color="primary"
             label=""
@@ -22,7 +21,7 @@ export default function OpenClinicalStudies(): JSX.Element {
             radius="full"
             size="lg"
             labelColor="primary"
-            className="max-w-[280px]"
+            className="lg:max-w-[280px]"
             defaultSelectedKey="1"
             options={[
               { key: 1, value: "1", label: "Tipo de câncer" },
@@ -37,13 +36,13 @@ export default function OpenClinicalStudies(): JSX.Element {
             size="lg"
             labelColor="primary"
             defaultSelectedKey="1"
-            className="max-w-[280px]"
+            className="lg:max-w-[280px]"
             options={[
               { key: 1, value: "1", label: "Unidade" },
               { key: 2, value: "2", label: "Clínica" },
             ]}
           />
-          <BaseButton className="w-full max-w-[141px] text-white">
+          <BaseButton className="w-full text-white md:max-w-[141px]">
             Buscar
           </BaseButton>
         </div>
@@ -57,7 +56,9 @@ export default function OpenClinicalStudies(): JSX.Element {
       </div>
 
       <div className="mt-10">
-        <h2 className="text-[40px] text-primary">Estudos clínicos abertos</h2>
+        <h2 className="text-2xl text-primary md:text-3xl 2xl:text-[40px]">
+          Estudos clínicos abertos
+        </h2>
         {clinicalResearchs.map((research) => (
           <Link href="#/">
             <ClinicalStudiesCard
@@ -68,14 +69,13 @@ export default function OpenClinicalStudies(): JSX.Element {
             />
           </Link>
         ))}
-        <div>
+        <div className="mb-10 flex w-full justify-center lg:justify-start">
           <BaseButton
             variant="bordered"
             radius="sm"
-            startContent={<Plus />}
-            className="w-full max-w-[228px]"
+            className="w-full border-1 md:w-[322px] lg:w-[228px]"
           >
-            Ver mais
+            [+] Ver mais
           </BaseButton>
         </div>
       </div>
