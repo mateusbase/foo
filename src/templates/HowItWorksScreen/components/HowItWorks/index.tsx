@@ -2,8 +2,10 @@ export default function HowItWorks(): JSX.Element {
   return (
     <div className="w-full">
       <div>
-        <h2 className="text-[40px] text-primary">O que é a pesquisa clínica</h2>
-        <p className="mt-10 text-xl text-darkGray">
+        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
+          O que é a pesquisa clínica
+        </h2>
+        <p className="mt-10 text-base font-medium text-darkGray lg:text-xl lg:font-normal">
           Pesquisa clínica é a obtenção, utilização, estudo, análise ou geração
           de informações privadas identificáveis ou de bioespécimes
           identificáveis. Esta coleta determina a segurança e a eficácia de
@@ -41,8 +43,10 @@ export default function HowItWorks(): JSX.Element {
         </p>
       </div>
       <div className="mt-20">
-        <h2 className="text-[40px] text-primary">Missão e visão</h2>
-        <p className="mt-10 text-xl text-darkGray">
+        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
+          Missão e visão
+        </h2>
+        <p className="mt-10 text-base font-medium text-darkGray lg:text-xl lg:font-normal">
           Nossa missão por meio da pesquisa clínica é vencer o câncer com
           desenvolvimento e participação em estudos clínicos, garantindo
           estrutura, recursos e equipe capacitada para atender às necessidades
@@ -53,8 +57,10 @@ export default function HowItWorks(): JSX.Element {
         </p>
       </div>
       <div className="mt-20">
-        <h2 className="text-[40px] text-primary">Quem pode participar</h2>
-        <p className="mt-10 text-xl text-darkGray">
+        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
+          Quem pode participar
+        </h2>
+        <p className="mt-10 text-base font-medium text-darkGray lg:text-xl lg:font-normal">
           Qualquer pessoa que tenha o perfil exigido pelo estudo (os chamados
           “critérios de elegibilidade”) poderá ser voluntária e potencial
           participante de uma pesquisa clínica.
@@ -68,8 +74,10 @@ export default function HowItWorks(): JSX.Element {
         </p>
       </div>
       <div className="my-20">
-        <h2 className="text-[40px] text-primary">Como participar</h2>
-        <p className="mt-10 text-xl text-darkGray">
+        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
+          Como participar
+        </h2>
+        <p className="mt-10 text-base font-medium text-darkGray lg:text-xl lg:font-normal">
           Converse com seu médico e entre em contato conosco pelos nossos canais
           de atendimento. Nossa equipe fará um primeiro atendimento para checar
           se você pode participar de algum estudo no qual seu perfil se encaixe.
