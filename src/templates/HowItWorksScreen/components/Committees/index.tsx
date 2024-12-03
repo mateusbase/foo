@@ -5,32 +5,36 @@ export default function Committees(): JSX.Element {
   return (
     <div className="w-full">
       <div>
-        <h2 className="text-[40px] text-primary">
+        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
           Comitê nacional de pesquisa clínica
         </h2>
-        {listMedics.map((medic) => (
-          <InvitedMedicCard
-            key={medic.id}
-            name={medic.name}
-            crm={medic.crm}
-            positions={medic.positions}
-            avatar={medic.avatar}
-          />
-        ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-1">
+          {listMedics.map((medic) => (
+            <InvitedMedicCard
+              key={medic.id}
+              name={medic.name}
+              crm={medic.crm}
+              positions={medic.positions}
+              avatar={medic.avatar}
+            />
+          ))}
+        </div>
       </div>
-      <div className="mt-32">
-        <h2 className="text-[40px] text-primary">
+      <div className="mt-9 lg:mt-32">
+        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
           Equipe de abrangência nacional
         </h2>
-        {listMedics.map((medic) => (
-          <InvitedMedicCard
-            key={medic.id}
-            name={medic.name}
-            crm={medic.crm}
-            positions={medic.positions}
-            avatar={medic.avatar}
-          />
-        ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-1">
+          {listMedics.map((medic) => (
+            <InvitedMedicCard
+              key={medic.id}
+              name={medic.name}
+              crm={medic.crm}
+              positions={medic.positions}
+              avatar={medic.avatar}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

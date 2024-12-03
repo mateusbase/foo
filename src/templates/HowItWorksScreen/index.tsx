@@ -1,6 +1,8 @@
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
 import { useState } from "react";
+import BaseSelect from "@/components/Select";
+import { IoMenu } from "react-icons/io5";
 import { menuContent } from "./helper";
 
 export default function HowItWorksScreen(): JSX.Element {
@@ -24,8 +26,26 @@ export default function HowItWorksScreen(): JSX.Element {
       title="Como funciona"
       subtitle="Programa de Pesquisa Clínica do Grupo Oncoclínicas"
     >
-      <div className="mt-10 flex flex-row gap-12">
-        <div className="w-[398px] text-white">
+      <div className="mt-10 flex flex-col md:gap-12 lg:flex-row">
+        <div className="mb-2 block lg:hidden">
+          <BaseSelect
+            color="primary"
+            variant="bordered"
+            labelColor="primary"
+            radius="full"
+            size="lg"
+            startContent={<IoMenu className="text-primary" size={28} />}
+            defaultSelectedKey="1"
+            labelPlacement="outside"
+            options={menuItems.map((item) => ({
+              key: item.id,
+              value: item.id,
+              label: item.name,
+            }))}
+            onChange={(value) => setActiveItem(Number(value))}
+          />
+        </div>
+        <div className="hidden w-[398px] text-white lg:block">
           {menuItems.map((item, index) => (
             <MenuItem
               key={item.id}
@@ -39,7 +59,7 @@ export default function HowItWorksScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="w-[1061px]">{activeContent}</div>
+        <div className="w-full lg:w-[1061px]">{activeContent}</div>
       </div>
     </PageLayout>
   );

@@ -11,15 +11,17 @@ export default function ClinicalStudiesCard({
 
   return (
     <Link href={`/estudos/${newSlug}`}>
-      <div className="my-6 flex h-[224px] flex-row">
-        <div className="flex w-[375px] flex-col items-center justify-center rounded-br-3xl rounded-tl-3xl bg-gradient-to-b from-primary-foreground via-primary-foreground to-secondary-foreground">
-          <p className="text-[40px] text-white">{title}</p>
-          <p className="text-2xl text-white">{unity}</p>
+      <div className="my-20 flex h-[224px] flex-col lg:my-6 lg:flex-row">
+        <div className="flex flex-col justify-center rounded-t-3xl bg-gradient-to-b from-primary-foreground via-primary-foreground to-secondary-foreground p-7 lg:w-[375px] lg:items-center lg:rounded-br-3xl lg:rounded-tr-none lg:p-0">
+          <p className="text-[26px] text-white 2xl:text-[40px]">{title}</p>
+          <p className="text-lg text-white 2xl:text-2xl">{unity}</p>
         </div>
-        <div className="w-full max-w-[638px] bg-gray-foreground p-10">
-          <p className="text-xl text-darkGray">{description}</p>
+
+        <div className="w-full rounded-b-3xl bg-gray-foreground p-10 lg:max-w-[638px] lg:rounded-b-none">
+          <p className="text-[15px] text-darkGray 2xl:text-xl">{description}</p>
         </div>
-        <div className="flex w-16 cursor-pointer items-center justify-center rounded-e-3xl bg-primary hover:bg-primary-foreground">
+
+        <div className="hidden w-16 cursor-pointer items-center justify-center rounded-e-3xl bg-primary hover:bg-primary-foreground lg:flex">
           <CircleChevronRight size={29} color="white" />
         </div>
       </div>

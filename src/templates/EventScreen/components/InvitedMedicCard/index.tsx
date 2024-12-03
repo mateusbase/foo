@@ -13,7 +13,7 @@ export default function InvitedMedicalCard({
       </div>
       <div className="ml-6">
         <h2 className="text-primary lg:text-2xl">{name}</h2>
-        <p className="text-sm text-darkGray lg:text-lg">{crm}</p>
+        <p className="text-darkGray lg:text-lg">{crm}</p>
         {positions?.map((position) => (
           <ul className="list-inside list-disc text-sm font-medium text-darkGray lg:text-lg">
             <li>{position}</li>
