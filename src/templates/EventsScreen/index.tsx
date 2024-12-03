@@ -169,10 +169,9 @@ export default function EventsScreen(): JSX.Element {
           color="primary"
           variant="bordered"
           radius="sm"
-          startContent={<Plus />}
-          className="h-[50px] w-80 items-center justify-center pl-3 text-[18px] font-black leading-[22px] text-primary sm:w-3/6 md:flex lg:w-[228px]"
+          className="h-[50px] w-80 items-center justify-center border-1 pl-3 text-[18px] leading-[22px] text-primary sm:w-3/6 md:flex lg:w-[228px]"
         >
-          Ver mais
+          [+] Ver mais
         </BaseButton>
       </div>
     </PageLayout>
