@@ -56,7 +56,7 @@ export default function UnitScreen(): JSX.Element {
       <div className="mt-10 flex flex-col gap-10 lg:flex-row">
         <div className="mb-10 flex-1">
           <div>
-            <h2 className="text-2xl font-normal text-primary md:text-3xl md:leading-[50px]">
+            <h2 className="text-2xl font-normal text-primary md:text-3xl md:leading-[50px] 2xl:text-[32px]">
               Especialidades e Serviços {decodedUnitName}
             </h2>
 
@@ -78,7 +78,7 @@ export default function UnitScreen(): JSX.Element {
           </div>
 
           <div>
-            <h2 className="mt-20 text-2xl font-normal text-primary md:text-3xl md:leading-[50px]">
+            <h2 className="mt-20 text-2xl font-normal text-primary md:text-3xl md:leading-[50px] 2xl:text-[32px]">
               Facilidades e Comodidades
             </h2>
 

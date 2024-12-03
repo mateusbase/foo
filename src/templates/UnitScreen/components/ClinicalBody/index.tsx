@@ -1,5 +1,7 @@
+import BaseButton from "@/components/Button";
 import { CardDoctor } from "@/components/CardDoctors";
 import { SearchIcon } from "@/components/Icons";
+import BaseSelect from "@/components/Select";
 import { Input, Button } from "@nextui-org/react";
 import { Plus } from "lucide-react";
 
@@ -45,22 +47,30 @@ const ClinicalBody = (): JSX.Element => {
         </h2>
 
         <div className="flex flex-col gap-5 sm:flex-row">
-          <Input
-            placeholder="Especialidade"
-            size="lg"
+          <BaseSelect
+            label="Especialidade"
+            labelColor="primary"
+            color="primary"
             radius="full"
             variant="bordered"
-            endContent={<SearchIcon className="text-default" />}
             className="w-full sm:w-[280px]"
+            options={[
+              { key: 1, value: "1", label: "Otorrino" },
+              { key: 1, value: "2", label: "Cardiologista" },
+            ]}
           />
 
-          <Input
-            placeholder="Buscar por nome ou CRM"
-            size="lg"
+          <BaseSelect
+            label="Buscar por nome ou CRM"
+            labelColor="primary"
+            color="primary"
             radius="full"
             variant="bordered"
-            endContent={<SearchIcon className="text-default" />}
             className="w-full sm:w-[280px]"
+            options={[
+              { key: 1, value: "1", label: "" },
+              { key: 1, value: "2", label: "" },
+            ]}
           />
         </div>
       </div>
@@ -71,15 +81,13 @@ const ClinicalBody = (): JSX.Element => {
         ))}
       </div>
 
-      <Button
+      <BaseButton
         color="primary"
         variant="bordered"
-        radius="sm"
-        startContent={<Plus />}
-        className="mt-8 h-[50px] w-full pl-3 text-left text-[18px] font-black leading-[22px] text-primary sm:w-[176px]"
+        className="mt-8 border-1 text-[18px] leading-[22px] text-primary sm:w-[176px] md:w-60"
       >
-        Ver todos
-      </Button>
+        [+] Ver todos
+      </BaseButton>
     </div>
   );
 };

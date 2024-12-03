@@ -1,4 +1,5 @@
-import { Clock, MapPin } from "lucide-react";
+import { UserIcon } from "@/components/Icons";
+import { Clock, House, MapPin } from "lucide-react";
 
 const MapCard = (): JSX.Element => {
   return (
@@ -45,24 +46,33 @@ const MapCard = (): JSX.Element => {
       </div>
 
       <div className="mb-6">
-        <h3 className="mb-2 text-[20px] font-bold leading-[26px] text-primary">
-          Estrutura da Unidade
-        </h3>
-        <p className="text-[18px] leading-[30px] text-darkGray">
-          • 12 consultórios <br />
-          • 17 leitos (7 suítes com vista) <br />
-          • Sala de emergência <br />• Área arborizada
-        </p>
+        <div className="flex gap-3">
+          <House className="text-primary" />
+          <h3 className="mb-2 text-[20px] font-bold leading-[26px] text-primary">
+            Estrutura da Unidade
+          </h3>
+        </div>
+        <ul className="ml-14 list-disc text-[18px] leading-[30px] text-darkGray">
+          <li>12 consultórios</li>
+          <li>17 leitos (7 suítes com vista)</li>
+          <li>Sala de emergência</li>
+          <li>• Área arborizada</li>
+        </ul>
       </div>
 
       <div>
-        <h3 className="mb-2 text-[20px] font-bold leading-[26px] text-primary">
-          Composição da Equipe
-        </h3>
-        <p className="text-[18px] leading-[30px] text-darkGray">
-          • Nutricionistas <br />
-          • Psicólogos <br />• Massoterapeutas
-        </p>
+        <div className="flex gap-3">
+          <UserIcon color="text-primary" size={0.8} />
+          <h3 className="mb-2 text-[20px] font-bold leading-[26px] text-primary">
+            Composição da Equipe
+          </h3>
+        </div>
+        <ul className="ml-14 list-disc text-[18px] leading-[30px] text-darkGray">
+          <li>Nutricionistas</li>
+          <li>Psicólogos</li>
+          <li>Sala de emergência</li>
+          <li>Massoterapeutas</li>
+        </ul>
       </div>
     </div>
   );

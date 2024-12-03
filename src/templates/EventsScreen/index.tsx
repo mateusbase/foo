@@ -3,7 +3,6 @@ import EventCard from "@/components/EventsCard";
 
 import BaseSelect from "@/components/Select";
 import PageLayout from "@/components/PageLayout";
-import { Plus } from "lucide-react";
 import SortingFilterDropdown from "@/components/SortingFilterDropdown";
 import { sortingFilterOptions } from "@/utils/sortingOptions";
 import { useSortingFilter } from "@/hooks/useSortingFilter";
