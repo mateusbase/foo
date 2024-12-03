@@ -62,8 +62,8 @@ export default function OcJournalScreen(): JSX.Element {
               size="sm"
               className="w-full"
               options={[
-                { key: 1, value: "1", label: "SP" },
-                { key: 2, value: "2", label: "RJ" },
+                { key: 1, value: "1", label: "Oncologia" },
+                { key: 2, value: "2", label: "Cardiologia" },
               ]}
             />
           </div>
@@ -113,12 +113,8 @@ export default function OcJournalScreen(): JSX.Element {
           <p className="mt-6 text-[22px] font-medium text-darkGray">
             Acesse o artigo completo deste estudo.
           </p>
-          <div className="mt-6">
-            <BaseButton
-              color="primary"
-              width="149px"
-              className="w-full text-white sm:w-auto"
-            >
+          <div className="mt-6 flex w-full">
+            <BaseButton color="primary" className="min-w-40 text-white">
               Download
             </BaseButton>
           </div>
