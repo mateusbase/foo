@@ -26,7 +26,7 @@ export default function ServicesSection(): JSX.Element {
       id: 4,
       title: "Tudo sobre o câncer",
       icon: <AllOfCancerIcon />,
-      path: "/servicos/tudo-sobre-o-cancer",
+      path: "/para-sua-saude/tudo-sobre-o-cancer",
     },
   ];
 

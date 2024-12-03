@@ -6,10 +6,8 @@ export default function ServiceCard({
   icon,
   path,
 }: ServiceCardProps): JSX.Element {
-  const formattedTitle = title.toLowerCase().replace(/\s+/g, "");
-
   return path ? (
-    <Link href={`/servicos#${formattedTitle}`}>
+    <Link href={path}>
       <div className="flex min-h-28 min-w-24 cursor-pointer flex-col items-center justify-center rounded-2xl border-1 border-primary p-2 opacity-100 lg:size-40 xl:size-52">
         <div className="mb-4 size-8 sm:size-10 md:size-12">{icon}</div>
         <h3 className="text-xs font-bold text-primary lg:text-center lg:text-xl">
