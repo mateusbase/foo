@@ -74,7 +74,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
         </div>
 
         <div className="mb-10">
-          <div className="mx-auto mt-20 hidden w-full grid-cols-1 gap-8 lg:grid lg:grid-cols-3">
+          <div className="mx-auto mt-20 hidden w-full grid-cols-1 gap-8 lg:grid lg:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => (
               <MedicalServiceCard
                 key={service.subtitle}
@@ -85,49 +85,51 @@ export default function ClinicalResearchScreen(): JSX.Element {
             ))}
           </div>
 
-          <div className="relative mt-20 w-full md:block">
-            <Swiper
-              modules={[Navigation]}
-              spaceBetween={30}
-              slidesPerView={1}
-              loop
-              navigation={{
-                prevEl: prevRef.current,
-                nextEl: nextRef.current,
-              }}
-              onInit={(swiper) => {
-                swiperRef.current = swiper;
-              }}
-              breakpoints={{
-                768: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                1024: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-              }}
-            >
-              {services.map((service) => (
-                <SwiperSlide key={service.subtitle}>
-                  <MedicalServiceCard
-                    subtitle={service.subtitle}
-                    serviceTitle={service.serviceTitle}
-                    serviceDescription={service.serviceDescription}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          <div className="md:flex lg:hidden">
+            <div className="relative mt-20 w-full">
+              <Swiper
+                modules={[Navigation]}
+                spaceBetween={30}
+                slidesPerView={1}
+                loop
+                navigation={{
+                  prevEl: prevRef.current,
+                  nextEl: nextRef.current,
+                }}
+                onInit={(swiper) => {
+                  swiperRef.current = swiper;
+                }}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                  },
+                }}
+              >
+                {services.map((service) => (
+                  <SwiperSlide key={service.subtitle}>
+                    <MedicalServiceCard
+                      subtitle={service.subtitle}
+                      serviceTitle={service.serviceTitle}
+                      serviceDescription={service.serviceDescription}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
 
-            <div className="mt-4 flex justify-center space-x-4">
-              <SliderArrows
-                swiperRef={swiperRef}
-                prevRef={prevRef}
-                nextRef={nextRef}
-                size={1}
-                color="text-primary"
-              />
+              <div className="mt-4 flex justify-center space-x-4">
+                <SliderArrows
+                  swiperRef={swiperRef}
+                  prevRef={prevRef}
+                  nextRef={nextRef}
+                  size={1}
+                  color="text-primary"
+                />
+              </div>
             </div>
           </div>
         </div>
