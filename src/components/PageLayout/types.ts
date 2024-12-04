@@ -17,4 +17,6 @@ export interface PageLayoutProps {
   sections?: Section[];
   mainOptions?: boolean;
   showIcons?: boolean;
+  buttonText?: string;
+  buttonIcon?: JSX.Element;
 }

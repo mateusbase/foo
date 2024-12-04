@@ -16,6 +16,8 @@ export default function PageLayout({
   sections,
   mainOptions = true,
   showIcons = true,
+  buttonText,
+  buttonIcon,
 }: PageLayoutProps): JSX.Element {
   const router = useRouter();
   const pathSegments = router.asPath.split("/").filter(Boolean);
@@ -43,6 +45,8 @@ export default function PageLayout({
           showSections={showSections}
           sections={sections}
           showIcons={showIcons}
+          buttonText={buttonText}
+          buttonIcon={buttonIcon}
         />
       )}
 

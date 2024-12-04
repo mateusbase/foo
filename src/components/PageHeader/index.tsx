@@ -1,12 +1,13 @@
-import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { PageHeaderProps } from "./types";
+import BaseButton from "../Button";
 
 const PageHeader = ({
   preTitle,
   title,
   subtitle,
   buttonText,
+  buttonIcon,
   showSections,
   sections,
   showIcons = true,
@@ -26,7 +27,7 @@ const PageHeader = ({
     <div className="relative h-[155px] w-full bg-gradient-to-br from-primary-foreground to-secondary-foreground md:h-[243px] lg:h-[343px]">
       <div className="absolute inset-0 flex justify-center">
         <div className="flex w-full max-w-screen-2xl flex-col items-start justify-center px-4">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between lg:justify-start">
+          <div className="flex w-full flex-col sm:flex-row sm:items-center sm:justify-between lg:justify-start">
             <div className="w-full">
               {preTitle && (
                 <p className="mt-2 max-w-7xl text-sm leading-[20px] text-white sm:text-base sm:leading-[22px] lg:mt-4 lg:text-lg lg:leading-[24px]">
@@ -46,9 +47,13 @@ const PageHeader = ({
             </div>
             {buttonText && (
               <div className="mt-4 sm:ml-4 sm:mt-0 sm:w-[322px] lg:hidden">
-                <Button className="h-[44px] w-[322px] rounded bg-white font-semibold text-primary">
+                <BaseButton
+                  className="h-[54px] w-[322px] rounded border-white text-white"
+                  startContent={buttonIcon}
+                  variant="bordered"
+                >
                   {buttonText}
-                </Button>
+                </BaseButton>
               </div>
             )}
           </div>
