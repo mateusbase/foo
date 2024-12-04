@@ -13,7 +13,7 @@ export default function IncomingEventsSection(): JSX.Element {
   const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
 
   return (
-    <div>
+    <div className="my-10">
       <h1 className="flex justify-center text-[32px] text-primary md:justify-start md:text-[40px]">
         Próximos eventos
       </h1>

@@ -1,6 +1,5 @@
-import { IoIosMap, IoIosTime } from "react-icons/io";
 import PageLayout from "@/components/PageLayout";
-import { CalendarIcon } from "@/components/Icons";
+import { CalendarIcon, ClockIcon, PinIcon } from "@/components/Icons";
 import BaseContainer from "@/components/Container";
 import SignupForm from "./components/SignupForm";
 import IncomingEventsSection from "./components/IncomingEventsSection";
@@ -14,7 +13,7 @@ export default function EventScreen(): JSX.Element {
         title="Eventos Oncoclínicas"
         subtitle="Congressos, palestras, simpósios e muito mais."
       >
-        <div className="mt-14 hidden md:block">
+        <div className="relative mt-14 md:block">
           <img
             src="https://vidavg.com.br/wp-content/uploads/2021/10/Diagnostico-precoce-aumenta-chances-de-cura-do-cancer-de-mama-reforca-o-mastologista-Luciano-Florisbelo.jpg"
             alt="Imagem descritiva"
@@ -22,28 +21,32 @@ export default function EventScreen(): JSX.Element {
           />
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-center md:flex-row md:items-start md:justify-between">
-          <div className="relative flex flex-col items-start md:bottom-48 md:left-5">
+        <div className="-mt-20 flex flex-col items-center justify-center md:mt-10 md:flex-row md:items-start md:justify-between">
+          <div className="relative flex flex-col items-center md:bottom-48 md:left-5 md:items-start">
             <img
               src="https://www.clubenoticias.com/images/noticias/8693/7d3c47363b7ee2b12f9204895d4b369b.jpg"
               alt="Foto"
-              className="h-[316px] w-[320px] rounded-2xl object-cover"
+              className="size-44 rounded-2xl object-cover md:h-[316px] md:w-[320px]"
             />
+
+            <h1 className="mt-10 block w-5/6 text-2xl font-medium leading-none text-primary md:hidden lg:text-[62px] lg:font-light">
+              Novas tecnologias no combate ao câncer de mama
+            </h1>
 
             <div className="mt-8 text-left">
               <div className="flex items-center text-lg text-darkGray">
-                <CalendarIcon className="mr-2" />
-                <p className="font-bold">23/09/2023 a 07/10/2023</p>
+                <CalendarIcon className="mr-2 text-primary" />
+                <p>23/09/2023 a 07/10/2023</p>
               </div>
 
               <div className="mt-4 flex items-center text-lg text-darkGray">
-                <IoIosMap size={24} className="mr-2" />
-                <p className="font-bold">Evento Online</p>
+                <PinIcon size={1} className="mr-2 text-primary" />
+                <p>Evento Online</p>
               </div>
 
               <div className="mt-4 flex items-center text-lg text-darkGray">
-                <IoIosTime size={24} className="mr-2" />
-                <p className="font-bold">Das 9h às 19h</p>
+                <ClockIcon size={1} className="mr-4 text-primary" />
+                <p>Das 9h às 19h</p>
               </div>
             </div>
 
@@ -52,12 +55,15 @@ export default function EventScreen(): JSX.Element {
             </div>
           </div>
 
-          <div className="ml-20 mt-8 text-center md:mt-0 md:text-left lg:ml-24 lg:flex-1">
-            <h1 className="text-4xl font-medium leading-none text-primary lg:text-[62px] lg:font-light">
+          <div className="mt-8 text-center md:ml-20 md:mt-0 md:text-left lg:ml-24 lg:flex-1">
+            <h1 className="hidden text-4xl font-medium leading-none text-primary md:block lg:text-[62px] lg:font-light">
               Novas tecnologias no combate ao câncer de mama
             </h1>
+            <h1 className="block text-left text-2xl font-medium leading-none text-primary md:hidden">
+              Sobre o evento
+            </h1>
 
-            <p className="mt-6 text-xl leading-[28px] text-darkGray">
+            <p className="my-6 text-left text-sm text-darkGray md:text-xl md:leading-[28px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Vestibulum pellentesque nunc lectus, vitae lacinia ex hendrerit
               in. Fusce id ex id sem ullamcorper. Lorem ipsum dolor sit amet,
