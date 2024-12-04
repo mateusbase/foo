@@ -29,7 +29,7 @@ export function PrecisionMedicineScreen({
 
   return (
     <PageLayout title="Medicina de Precisão" showBreadcrumb>
-      <div className="lg:hidden">
+      <div className="relative left-1/2 w-screen -translate-x-1/2 lg:hidden">
         <PurpleBanner
           subtitle="Conheça a OC Medicina de Precisão"
           description="A OC Medicina de Precisão engloba os laboratórios de Anatomia Patológica, Genômica e Big data que oferece um portfolio completo e de alta relevância clínica."
@@ -71,23 +71,26 @@ export function PrecisionMedicineScreen({
         <ExamsCard exams={genomicsExams} />
       </div>
 
-      <BannerWithImage
-        title="Programas de Suporte ao Paciente"
-        description="Para garantir o tratamento personalizado e de precisão, é importante assegurar aos nossos pacientes acesso à jornada molecular de testes."
-        media="/assets/images/image 30.jpg"
-        secondaryColor="primary-foreground"
-      />
-
+      <div className="relative left-1/2 mb-9 w-screen -translate-x-1/2">
+        <BannerWithImage
+          title="Programas de Suporte ao Paciente"
+          description="Para garantir o tratamento personalizado e de precisão, é importante assegurar aos nossos pacientes acesso à jornada molecular de testes."
+          media="/assets/images/image 30.jpg"
+          secondaryColor="primary-foreground"
+        />
+      </div>
       <PlusCard exams={pacientSupport} />
 
-      <BannerWithImage
-        title="Programa de Apoio à Pesquisa"
-        description="Com o objetivo de impulsionar a pesquisa na área de genômica na América Latina, a OC Medicina de Precisão fortalece seu compromisso ao oferecer o sistema de facilities, um novo serviço desenvolvido para oferecer uma solução que alia expertise e tecnologia de ponta, para auxiliar no desenvolvimento de pesquisas na área de genômica. Nossa equipe especializada e nosso ambiente tecnológico estão à disposição para apoiar projetos de pesquisa, fornecendo um ambiente propício e recursos avançados para o progresso científico. Este é um serviço versátil e eficiente, projetado para impulsionar a excelência e a inovação em estudos de diversos campos. Contamos com um parque tecnológico completo com as plataformas de sequenciamento Illumina (MiSeq, NextSeq e NovaSeq), permitindo análises do DNA e RNA por metodologias diver"
-        media="/assets/images/image (1).jpg"
-        isLeft
-        primaryColor="primary-foreground"
-        isLargeText
-      />
+      <div className="relative left-1/2 mt-11 w-screen -translate-x-1/2">
+        <BannerWithImage
+          title="Programa de Apoio à Pesquisa"
+          description="Com o objetivo de impulsionar a pesquisa na área de genômica na América Latina, a OC Medicina de Precisão fortalece seu compromisso ao oferecer o sistema de facilities, um novo serviço desenvolvido para oferecer uma solução que alia expertise e tecnologia de ponta, para auxiliar no desenvolvimento de pesquisas na área de genômica. Nossa equipe especializada e nosso ambiente tecnológico estão à disposição para apoiar projetos de pesquisa, fornecendo um ambiente propício e recursos avançados para o progresso científico. Este é um serviço versátil e eficiente, projetado para impulsionar a excelência e a inovação em estudos de diversos campos. Contamos com um parque tecnológico completo com as plataformas de sequenciamento Illumina (MiSeq, NextSeq e NovaSeq), permitindo análises do DNA e RNA por metodologias diver"
+          media="/assets/images/image (1).jpg"
+          isLeft
+          primaryColor="primary-foreground"
+          isLargeText
+        />
+      </div>
 
       <div className="mb-8 mt-6 text-center">
         <h1 className="mb-5 font-lato-regular text-4xl text-primary">
