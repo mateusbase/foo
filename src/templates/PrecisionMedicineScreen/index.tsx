@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import PurpleBanner from "@/components/PurpleBanner";
+import BannerWithImage from "@/components/BannerWithImage";
 import { PrecisionMedicineScreenProps } from "./type";
 import BannerWithVideo from "./components/BannerWithVideo";
 import RoundedRectangle from "./components/RoundedRectangle";
@@ -7,7 +8,8 @@ import { cardElements } from "./components/RoundedRectangle/CardElements";
 import PlayStoreContainer from "./components/PlayStoreContainer";
 import ValuesAndMissionText from "./components/ValuesAndMIssionText";
 import ExamsCard from "./components/ExamsCard";
-import { genomicsExams, patologicalExams } from "./exams";
+import { genomicsExams, pacientSupport, patologicalExams } from "./exams";
+import PlusCard from "./components/PlusCard";
 
 export function PrecisionMedicineScreen({
   media,
@@ -43,7 +45,7 @@ export function PrecisionMedicineScreen({
 
       <PlayStoreContainer />
 
-      <div className="mt-16 text-center">
+      <div className="mb-7 mt-16 text-center">
         <h1 className="mb-11 font-lato-regular text-4xl text-primary-foreground">
           Nossos Exames
         </h1>
@@ -57,6 +59,24 @@ export function PrecisionMedicineScreen({
         </h4>
         <ExamsCard exams={genomicsExams} />
       </div>
+
+      <BannerWithImage
+        title="Programas de Suporte ao Paciente"
+        description="Para garantir o tratamento personalizado e de precisão, é importante assegurar aos nossos pacientes acesso à jornada molecular de testes."
+        media="/assets/images/image 30.jpg"
+        secondaryColor="primary-foreground"
+      />
+
+      <PlusCard exams={pacientSupport} />
+
+      <BannerWithImage
+        title="Programa de Apoio à Pesquisa"
+        description="Com o objetivo de impulsionar a pesquisa na área de genômica na América Latina, a OC Medicina de Precisão fortalece seu compromisso ao oferecer o sistema de facilities, um novo serviço desenvolvido para oferecer uma solução que alia expertise e tecnologia de ponta, para auxiliar no desenvolvimento de pesquisas na área de genômica.  Nossa equipe especializada e nosso ambiente tecnológico estão à disposição para apoiar projetos de pesquisa, fornecendo um ambiente propício e recursos avançados para o progresso científico. Este é um serviço versátil e eficiente, projetado para impulsionar a excelência e a inovação em estudos de diversos campos.  Contamos com um parque tecnológico completo com as plataformas de sequenciamento Illumina (MiSeq, NextSeq e NovaSeq), permitindo análises do DNA e RNA por metodologias diver"
+        media="/assets/images/image (1).jpg"
+        isLeft
+        primaryColor="primary-foreground"
+        isLargeText
+      />
     </PageLayout>
   );
 }

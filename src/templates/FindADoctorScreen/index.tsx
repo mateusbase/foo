@@ -4,13 +4,13 @@ import PageLayout from "@/components/PageLayout";
 import BaseSelect from "@/components/Select";
 import BaseInput from "@/components/Input";
 import { useState } from "react";
+import LocationIcon from "@/components/Icons/LocationIcon";
 import {
   doctors,
   specialtyArrays,
   stateArrays,
   unityArrays,
 } from "./itemsArray";
-import LocationIcon from "../../../public/assets/icons/location-icon";
 
 export default function FindADoctorScreen(): JSX.Element {
   const [visibleDoctors, setVisibleDoctors] = useState(2);

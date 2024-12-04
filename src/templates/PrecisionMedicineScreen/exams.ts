@@ -48,3 +48,30 @@ export const genomicsExams: Exams[] = [
     name: "Testes Complementares",
   },
 ];
+
+export const pacientSupport: Exams[] = [
+  {
+    id: 1,
+    name: "Programa ID Mama (PIK3CA/AKT1/PTEN)",
+  },
+  {
+    id: 2,
+    name: "Programa ID Mama (PIK3CA/AKT1/PTEN)",
+  },
+  {
+    id: 3,
+    name: "TakeCare - Takeda (PULMÃO)",
+  },
+  {
+    id: 4,
+    name: "PD Point - MSD (PULMÃO)",
+  },
+  {
+    id: 5,
+    name: "PD Point - MSD (PAN-TUMOR)",
+  },
+  {
+    id: 6,
+    name: "RAStrear - AMGEN (COLORRETAL)",
+  },
+];
