@@ -5,6 +5,8 @@ import { Plus } from "lucide-react";
 import SortingFilterDropdown from "@/components/SortingFilterDropdown";
 import { sortingFilterOptions } from "@/utils/sortingOptions";
 import { useSortingFilter } from "@/hooks/useSortingFilter";
+import OcJournalItems from "@/components/OcJournalItems";
+import { options } from "../NewsScreen/optionsMock";
 
 export default function OcJournalScreen(): JSX.Element {
   const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
@@ -85,6 +87,15 @@ export default function OcJournalScreen(): JSX.Element {
           />
         </div>
       </div>
+
+      <div className="mt-10">
+        {options.map((option) => (
+          <div className="mt-10" key={option.id}>
+            <OcJournalItems options={option} />
+          </div>
+        ))}
+      </div>
+
       <div className="mx-auto mt-20 flex w-full gap-8">
         <div className="h-auto w-[812px] shrink-0">
           <img
