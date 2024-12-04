@@ -1,6 +1,9 @@
 import { Activity, Heart, User } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { useRouter } from "next/router";
+import { PinIcon } from "@/components/Icons";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { RiWhatsappFill } from "react-icons/ri";
 import ClinicalBody from "./components/ClinicalBody";
 import MapCard from "./components/MapCard";
 import InsuranceGrid from "./components/InsuranceGrid";
@@ -29,19 +32,19 @@ export default function UnitScreen(): JSX.Element {
     {
       href: "#",
       text: "Fale por WhatsApp",
-      icon: <Heart />,
+      icon: <RiWhatsappFill />,
       isLink: true,
     },
     {
       href: "#",
       text: "Ligar na central de atendimento",
-      icon: <User />,
+      icon: <BsFillTelephoneFill />,
       isLink: true,
     },
     {
       href: "#",
       text: "Mostrar no mapa",
-      icon: <Activity />,
+      icon: <PinIcon size={0.8} />,
       isLink: true,
     },
   ];
@@ -56,7 +59,7 @@ export default function UnitScreen(): JSX.Element {
       <div className="mt-10 flex flex-col gap-10 lg:flex-row">
         <div className="mb-10 flex-1">
           <div>
-            <h2 className="text-2xl font-normal text-primary md:text-3xl md:leading-[50px] 2xl:text-[32px]">
+            <h2 className="text-2xl font-normal text-primary md:leading-[50px] 2xl:text-[32px]">
               Especialidades e Serviços {decodedUnitName}
             </h2>
 
@@ -64,34 +67,33 @@ export default function UnitScreen(): JSX.Element {
               {decodedSpecialties.map((specialty) => (
                 <div
                   key={specialty}
-                  className="flex items-center gap-2 text-base text-primary sm:text-[20px]"
+                  className="flex items-center gap-2 text-base text-primary lg:text-[20px]"
                 >
-                  <Heart size={40} className="text-primary sm:size-[60px]" />{" "}
+                  <Heart size={40} className="text-primary lg:size-[60px]" />{" "}
                   {specialty}
                 </div>
               ))}
             </div>
-
-            <div className="mt-10 flex items-center justify-center md:hidden">
+            <div className="mt-10 flex items-center justify-center lg:hidden">
               <MapCard />
             </div>
           </div>
 
           <div>
-            <h2 className="mt-20 text-2xl font-normal text-primary md:text-3xl md:leading-[50px] 2xl:text-[32px]">
+            <h2 className="mt-20 text-2xl font-normal text-primary md:leading-[50px] 2xl:text-[32px]">
               Facilidades e Comodidades
             </h2>
 
             <div className="mt-10 grid grid-cols-2 gap-10 sm:grid-cols-2 lg:grid-cols-3">
               <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Heart size={40} className="text-primary sm:size-[60px]" />{" "}
+                <Heart size={40} className="text-primary lg:size-[60px]" />{" "}
                 Estacionamento
               </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <User size={40} className="text-primary sm:size-[60px]" /> Wi-fi
+              <div className="flex items-center gap-2 text-base text-primary lg:text-[20px]">
+                <User size={40} className="text-primary lg:size-[60px]" /> Wi-fi
               </div>
-              <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Activity size={40} className="text-primary sm:size-[60px]" />{" "}
+              <div className="flex items-center gap-2 text-base text-primary lg:text-[20px]">
+                <Activity size={40} className="text-primary lg:size-[60px]" />{" "}
                 Lanche para paciente
               </div>
             </div>

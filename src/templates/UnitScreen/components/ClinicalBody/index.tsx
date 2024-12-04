@@ -1,11 +1,18 @@
 import BaseButton from "@/components/Button";
 import { CardDoctor } from "@/components/CardDoctors";
-import { SearchIcon } from "@/components/Icons";
 import BaseSelect from "@/components/Select";
-import { Input, Button } from "@nextui-org/react";
-import { Plus } from "lucide-react";
+import SliderArrows from "@/components/SliderArrows";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const ClinicalBody = (): JSX.Element => {
+  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+
   const doctors = [
     {
       id: 1,
@@ -42,7 +49,7 @@ const ClinicalBody = (): JSX.Element => {
   return (
     <div>
       <div className="mt-20 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between md:mt-32">
-        <h2 className="text-2xl font-normal text-primary md:text-3xl md:leading-[50px]">
+        <h2 className="text-2xl font-normal text-primary md:leading-[50px] 2xl:text-3xl">
           Corpo Clínico
         </h2>
 
@@ -75,16 +82,71 @@ const ClinicalBody = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 hidden grid-cols-1 gap-6 sm:grid-cols-2 lg:grid lg:grid-cols-3">
         {doctors.map((doctor) => (
           <CardDoctor key={doctor.id} doctor={doctor} />
         ))}
       </div>
 
+      <div className="relative mt-20 block w-full lg:hidden">
+        <Swiper
+          modules={[Navigation]}
+          slidesPerView={1}
+          spaceBetween={10}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          loop
+          onInit={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+          }}
+        >
+          {doctors.map((doctor) => (
+            <SwiperSlide
+              key={`slide-${doctor.id}`}
+              aria-label={`Slide ${doctor.name}`}
+            >
+              <CardDoctor doctor={doctor} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="mt-4 flex flex-col-reverse items-center justify-between space-x-4 md:flex-row">
+          <div className="mt-4 flex w-full">
+            <BaseButton
+              color="primary"
+              variant="bordered"
+              className="w-full border-1 text-[18px] leading-[22px] text-primary md:w-72"
+            >
+              [+] Ver todos
+            </BaseButton>
+          </div>
+
+          <SliderArrows
+            swiperRef={swiperRef}
+            prevRef={prevRef}
+            nextRef={nextRef}
+            size={1}
+            color="text-primary"
+          />
+        </div>
+      </div>
+
       <BaseButton
         color="primary"
         variant="bordered"
-        className="mt-8 border-1 text-[18px] leading-[22px] text-primary sm:w-[176px] md:w-60"
+        className="mt-8 hidden border-1 text-[18px] leading-[22px] text-primary sm:w-[176px] md:w-60 lg:block"
       >
         [+] Ver todos
       </BaseButton>
