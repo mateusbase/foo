@@ -20,9 +20,9 @@ const InsuranceGrid = (): JSX.Element => {
   ];
 
   return (
-    <div>
-      <div className="mt-20 flex flex-col justify-between gap-6 md:mt-32 md:flex-row">
-        <h2 className="text-2xl font-extralight text-primary md:text-3xl md:font-bold md:leading-[50px]">
+    <div className="lg:mt-72">
+      <div className="mt-20 flex flex-col justify-between gap-6 md:mt-32 lg:flex-row">
+        <h2 className="text-2xl text-primary md:text-3xl md:leading-[50px]">
           Convênios atendidos nesta unidade
         </h2>
 
@@ -30,6 +30,7 @@ const InsuranceGrid = (): JSX.Element => {
           <BaseInput
             color="primary"
             placeholder="Buscar convênio"
+            placeholderColor="primary"
             size="lg"
             radius="full"
             variant="bordered"
@@ -39,7 +40,7 @@ const InsuranceGrid = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-2 gap-4 text-base font-bold text-darkGray sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-2 gap-2 text-base text-darkGray sm:grid-cols-2 lg:grid-cols-3 lg:gap-4 2xl:text-xl">
         {insurances.map((insurance) => (
           <div key={insurance.id} className="flex items-center">
             {insurance.name}

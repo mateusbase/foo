@@ -10,6 +10,7 @@ export type PageHeaderProps = {
   title: string;
   subtitle?: string;
   buttonText?: string;
+  buttonIcon?: JSX.Element;
   showSections?: boolean;
   showIcons?: boolean;
   sections?: Section[];

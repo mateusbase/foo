@@ -25,6 +25,7 @@ export default function FindAUnitScreen(): JSX.Element {
                 color="primary"
                 variant="bordered"
                 label="UF"
+                labelColor="primary"
                 className="w-full lg:max-w-[300px]"
                 radius="full"
                 size="sm"
@@ -39,6 +40,7 @@ export default function FindAUnitScreen(): JSX.Element {
                 color="primary"
                 variant="bordered"
                 label="Cidade"
+                labelColor="primary"
                 className="w-full lg:max-w-xs"
                 radius="full"
                 size="sm"
@@ -52,6 +54,7 @@ export default function FindAUnitScreen(): JSX.Element {
 
           <BaseInput
             placeholder="Nome da unidade"
+            placeholderColor="primary"
             size="lg"
             radius="full"
             variant="bordered"
