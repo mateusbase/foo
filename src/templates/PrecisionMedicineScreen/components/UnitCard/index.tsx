@@ -12,7 +12,7 @@ const PrecisionMedicineUnitCard = ({
   complement,
 }: PrecisionMedicineUnitCardProps): JSX.Element => {
   return (
-    <main className="flex flex-col justify-between gap-7">
+    <main className="mb-4 flex flex-col justify-between gap-7">
       {image && (
         <img
           src={image}

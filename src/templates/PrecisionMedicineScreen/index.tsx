@@ -5,6 +5,8 @@ import SliderArrows from "@/components/SliderArrows";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import BaseButton from "@/components/Button";
+import BaseInput from "@/components/Input";
 import { PrecisionMedicineScreenProps } from "./type";
 import BannerWithVideo from "./components/BannerWithVideo";
 import RoundedRectangle from "./components/RoundedRectangle";
@@ -16,6 +18,7 @@ import { genomicsExams, pacientSupport, patologicalExams } from "./exams";
 import PlusCard from "./components/PlusCard";
 import PrecisionMedicineUnitCard from "./components/UnitCard";
 import { unitsData } from "./components/UnitCard/unitsMock";
+import InformationCard from "../WorkWithUsScreen/components/InformationCard";
 
 export function PrecisionMedicineScreen({
   media,
@@ -118,6 +121,45 @@ export function PrecisionMedicineScreen({
           nextRef={nextRef}
         />
       </div>
+
+      <InformationCard className="my-4 h-[225px] px-14 py-6">
+        <p className="mb-6 text-center font-lato-bold text-4xl text-darkGray">
+          Fale conosco
+        </p>
+        <p className="font-lato-thin text-darkGray">
+          Nossa equipe dedicada está à disposição para atendê-lo e oferecer todo
+          o suporte necessário.
+        </p>
+        <div className="mt-6 flex w-full justify-center">
+          <BaseButton className="w-full bg-purpleMedium px-32 py-3 font-lato-thin text-lg text-white">
+            Envie uma mensagem
+          </BaseButton>
+        </div>
+      </InformationCard>
+
+      <InformationCard
+        background
+        className="mb-8 mt-16 flex h-[440px] w-full flex-col gap-2 p-6"
+      >
+        <p className="mb-6 mt-8 text-center font-lato-bold text-2xl text-white">
+          Participe das Quintas Moleculares
+        </p>
+        <p className="mb-5 text-center font-lato-thin text-base text-white">
+          Reuniões Multidisciplinares que ocorrem por videoconferência que
+          permitem discussões de casos, a fim de educar a comunidade médica a
+          respeito da indicação e interpretação de testes moleculares.
+        </p>
+        <BaseInput
+          className="rounded-full bg-white"
+          placeholder="Digite aqui o seu melhor e-mail"
+        />
+
+        <div className="mt-6 flex justify-center">
+          <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium">
+            Inscreva-se
+          </BaseButton>
+        </div>
+      </InformationCard>
     </PageLayout>
   );
 }
