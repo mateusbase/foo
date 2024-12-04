@@ -1,5 +1,5 @@
-/* eslint-disable prettier/prettier */
 import { Button } from "@nextui-org/react";
+import clsx from "clsx";
 import BaseInput from "../Input";
 import { AlphabetSelectorProps } from "./types";
 import { SearchIcon } from "../Icons";
@@ -9,19 +9,24 @@ export default function AlphabetSelector({
   onLetterSelect,
   searchPlaceholder,
   handleSearchChange,
-  valueSearch
+  valueSearch,
 }: AlphabetSelectorProps): JSX.Element {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   return (
     <div className="mt-20 flex items-center justify-between">
-      <div className="flex items-center justify-center gap-1">
+      <div className="flex items-center justify-center xl:gap-1">
         {alphabet.map((letter: string) => (
           <Button
             key={letter}
             onClick={() => onLetterSelect(letter)}
-            className={`flex size-8 items-center justify-center rounded-full p-0 text-lg font-black leading-5 ${selectedLetter === letter ? "bg-primary text-white" : "bg-white text-primary"
-              }`}
+            className={clsx(
+              "flex size-8 items-center justify-center rounded-full p-0 text-lg leading-5",
+              {
+                "bg-primary text-white": selectedLetter === letter,
+                "bg-white text-primary": selectedLetter !== letter,
+              },
+            )}
             style={{
               height: "32px",
               width: "32px",
@@ -31,11 +36,10 @@ export default function AlphabetSelector({
           >
             {letter}
           </Button>
-
         ))}
       </div>
 
-      <div className="ml-10 flex gap-5">
+      <div className="flex">
         <BaseInput
           color="primary"
           placeholder={searchPlaceholder}
@@ -43,7 +47,7 @@ export default function AlphabetSelector({
           radius="full"
           variant="bordered"
           endContent={<SearchIcon className="text-2xl text-primary" />}
-          className="w-[300px]"
+          className="w-full min-w-40"
           onChange={handleSearchChange}
           value={valueSearch}
         />
