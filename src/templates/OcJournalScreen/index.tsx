@@ -96,41 +96,6 @@ export default function OcJournalScreen(): JSX.Element {
         ))}
       </div>
 
-      <div className="mx-auto mt-20 flex w-full gap-8">
-        <div className="h-auto w-[812px] shrink-0">
-          <img
-            src="https://i.postimg.cc/VkpqZTR5/Captura-de-tela-2024-09-22-202935.png"
-            alt="ASCO Annual Meeting 2024"
-            className="size-full rounded-md object-cover"
-          />
-        </div>
-
-        <div className="flex w-full flex-col justify-start">
-          <h1 className="text-left text-[48px] font-light leading-[48px] text-darkGray">
-            O ASCO Annual Meeting 2024
-          </h1>
-
-          <p className="mt-8 text-left text-[16px] font-medium leading-[19px] text-primary">
-            Abril de 2024
-          </p>
-
-          <p className="mt-8 text-left text-[22px] font-medium leading-[27px] text-darkGray">
-            O ASCO Annual Meeting 2024, realizado em junho em Chicago, trouxe
-            como tema central “A arte e a ciência do tratamento do câncer: do
-            conforto à cura”. Este tema reflete um dos valores essenciais da
-            Oncoclínicas&Co: proporcionar um acolhimento na mesma proporção do
-            tratamento para nossos pacientes.
-          </p>
-          <p className="mt-6 text-[22px] font-medium text-darkGray">
-            Acesse o artigo completo deste estudo.
-          </p>
-          <div className="mt-6 flex w-full">
-            <BaseButton color="primary" className="min-w-40 text-white">
-              Download
-            </BaseButton>
-          </div>
-        </div>
-      </div>
       <div className="mt-10 flex justify-center lg:justify-start">
         <BaseButton
           color="primary"
