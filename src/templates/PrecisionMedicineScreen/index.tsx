@@ -19,6 +19,7 @@ import PlusCard from "./components/PlusCard";
 import PrecisionMedicineUnitCard from "./components/UnitCard";
 import { unitsData } from "./components/UnitCard/unitsMock";
 import InformationCard from "../WorkWithUsScreen/components/InformationCard";
+import AccreditationsSection from "./components/AccreditationsSection";
 
 export function PrecisionMedicineScreen({
   media,
@@ -182,6 +183,8 @@ export function PrecisionMedicineScreen({
           </BaseButton>
         </div>
       </InformationCard>
+
+      <AccreditationsSection />
     </PageLayout>
   );
 }
