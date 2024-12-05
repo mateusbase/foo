@@ -12,7 +12,7 @@ const PrecisionMedicineUnitCard = ({
   complement,
 }: PrecisionMedicineUnitCardProps): JSX.Element => {
   return (
-    <main className="mb-4 flex flex-col justify-between gap-7">
+    <main className="mb-4 flex flex-col items-center gap-7">
       {image && (
         <img
           src={image}
@@ -21,30 +21,30 @@ const PrecisionMedicineUnitCard = ({
         />
       )}
 
-      <section className="flex items-center gap-2 self-center">
+      <section className="flex items-center gap-2">
         <MarkerCircleIcon className="text-secondary" />
         <h1 className="text-left text-2xl font-bold uppercase text-primary">
           {unitName}
         </h1>
       </section>
 
-      <section className="flex flex-col text-base text-zinc-600">
+      <section className="flex flex-col items-center text-base text-zinc-600">
         <p>{address}</p>
         <p>{complement}</p>
         <p className="font-bold">{city}</p>
       </section>
 
-      <section>
+      <section className="text-center">
         <p className="text-zinc-400">{hours}</p>
       </section>
 
-      <section className="flex w-60 flex-col gap-4 self-center">
+      <section className="flex w-60 flex-col gap-4">
         <BaseButton className="text-white" color="primary">
           Agende uma consulta
         </BaseButton>
 
         <BaseButton
-          className="font-bold"
+          className="font-lato-bold"
           color="primary"
           variant="bordered"
           startContent={<TbCodePlus size={20} />}

@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import BaseButton from "@/components/Button";
 import BaseInput from "@/components/Input";
+import InfoCard from "@/components/InfoCard";
 import { PrecisionMedicineScreenProps } from "./type";
 import BannerWithVideo from "./components/BannerWithVideo";
 import RoundedRectangle from "./components/RoundedRectangle";
@@ -29,13 +30,13 @@ export function PrecisionMedicineScreen({
 
   return (
     <PageLayout title="Medicina de Precisão" showBreadcrumb>
-      <div className="relative left-1/2 w-screen -translate-x-1/2 lg:hidden">
+      <div className="h-auto lg:hidden">
         <PurpleBanner
           subtitle="Conheça a OC Medicina de Precisão"
           description="A OC Medicina de Precisão engloba os laboratórios de Anatomia Patológica, Genômica e Big data que oferece um portfolio completo e de alta relevância clínica."
         />
         {media && (
-          <div className="mb-6 w-full">
+          <div className="relative left-1/2 mb-6 w-screen -translate-x-1/2">
             {isVideo ? (
               <video src={media} controls className="w-full rounded-md">
                 <track kind="captions" />
@@ -60,18 +61,25 @@ export function PrecisionMedicineScreen({
         <h1 className="mb-11 font-lato-regular text-4xl text-primary-foreground">
           Nossos Exames
         </h1>
-        <h4 className="mb-8 font-lato-regular text-3xl text-darkGray">
-          Patologia
-        </h4>
-        <ExamsCard exams={patologicalExams} />
 
-        <h4 className="mb-8 mt-20 font-lato-regular text-3xl text-darkGray">
-          Genômica
-        </h4>
-        <ExamsCard exams={genomicsExams} />
+        <div className="flex flex-col md:grid md:grid-cols-2">
+          <div className="mb-16 md:mb-0">
+            <h4 className="mb-8 font-lato-regular text-3xl text-darkGray">
+              Patologia
+            </h4>
+            <ExamsCard exams={patologicalExams} />
+          </div>
+
+          <div>
+            <h4 className="mb-8 font-lato-regular text-3xl text-darkGray">
+              Genômica
+            </h4>
+            <ExamsCard exams={genomicsExams} />
+          </div>
+        </div>
       </div>
 
-      <div className="relative left-1/2 mb-9 w-screen -translate-x-1/2">
+      <div className="relative left-1/2 mb-9 w-screen -translate-x-1/2 md:w-full">
         <BannerWithImage
           title="Programas de Suporte ao Paciente"
           description="Para garantir o tratamento personalizado e de precisão, é importante assegurar aos nossos pacientes acesso à jornada molecular de testes."
@@ -81,7 +89,7 @@ export function PrecisionMedicineScreen({
       </div>
       <PlusCard exams={pacientSupport} />
 
-      <div className="relative left-1/2 mt-11 w-screen -translate-x-1/2">
+      <div className="relative left-1/2 mt-11 w-screen -translate-x-1/2 md:hidden md:w-full lg:flex">
         <BannerWithImage
           title="Programa de Apoio à Pesquisa"
           description="Com o objetivo de impulsionar a pesquisa na área de genômica na América Latina, a OC Medicina de Precisão fortalece seu compromisso ao oferecer o sistema de facilities, um novo serviço desenvolvido para oferecer uma solução que alia expertise e tecnologia de ponta, para auxiliar no desenvolvimento de pesquisas na área de genômica. Nossa equipe especializada e nosso ambiente tecnológico estão à disposição para apoiar projetos de pesquisa, fornecendo um ambiente propício e recursos avançados para o progresso científico. Este é um serviço versátil e eficiente, projetado para impulsionar a excelência e a inovação em estudos de diversos campos. Contamos com um parque tecnológico completo com as plataformas de sequenciamento Illumina (MiSeq, NextSeq e NovaSeq), permitindo análises do DNA e RNA por metodologias diver"
@@ -92,20 +100,52 @@ export function PrecisionMedicineScreen({
         />
       </div>
 
-      <div className="mb-8 mt-6 text-center">
-        <h1 className="mb-5 font-lato-regular text-4xl text-primary">
+      <div className="mt-24 hidden min-h-[620px] px-14 py-9 md:flex lg:hidden">
+        <InfoCard roundedSide="left">
+          <h2 className="mb-10 mt-7 text-4xl font-bold text-white">
+            Programa de Apoio à Pesquisa
+          </h2>
+          <p className="mb-28 text-xl text-white">
+            Com o objetivo de impulsionar a pesquisa na área de genômica na
+            América Latina, a OC Medicina de Precisão fortalece seu compromisso
+            ao oferecer o sistema de facilities, um novo serviço desenvolvido
+            para oferecer uma solução que alia expertise e tecnologia de ponta,
+            para auxiliar no desenvolvimento de pesquisas na área de genômica.
+            <br />
+            Nossa equipe especializada e nosso ambiente tecnológico estão à
+            disposição para apoiar projetos de pesquisa, fornecendo um ambiente
+            propício e recursos avançados para o progresso científico. Este é um
+            serviço versátil e eficiente, projetado para impulsionar a
+            excelência e a inovação em estudos de diversos campos.
+            <br />
+            Contamos com um parque tecnológico completo com as plataformas de
+            sequenciamento Illumina (MiSeq, NextSeq e NovaSeq), permitindo
+            análises do DNA e RNA por metodologias diver
+          </p>
+        </InfoCard>
+      </div>
+
+      <div className="mb-8 mt-6 text-center md:text-left">
+        <h1 className="mb-8 font-lato-regular text-4xl text-primary md:ml-24">
           Nossas unidades
         </h1>
 
         <Swiper
           modules={[Navigation]}
           spaceBetween={30}
-          slidesPerView={1}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+          }}
           loop
           onBeforeInit={(swiper) => onBeforeInit(swiper)}
         >
           {unitsData.map((unit) => (
-            <SwiperSlide key={unit.id}>
+            <SwiperSlide key={unit.id} className="mb-8">
               <PrecisionMedicineUnitCard
                 id={unit.id}
                 address={unit.address}
@@ -127,15 +167,15 @@ export function PrecisionMedicineScreen({
       </div>
 
       <InformationCard className="my-4 min-h-[225px] px-14 py-6">
-        <p className="mb-6 text-center font-lato-bold text-4xl text-darkGray">
+        <p className="mb-6 text-center font-lato-black text-4xl text-darkGray">
           Fale conosco
         </p>
-        <p className="font-lato-thin text-darkGray">
+        <p className="text-center font-lato-thin text-darkGray">
           Nossa equipe dedicada está à disposição para atendê-lo e oferecer todo
           o suporte necessário.
         </p>
         <div className="mt-6 flex w-full justify-center">
-          <BaseButton className="w-full bg-purpleMedium px-32 py-3 font-lato-thin text-lg text-white">
+          <BaseButton className="w-full bg-purpleMedium px-32 py-3 text-center font-lato-thin text-lg text-white md:h-14 md:w-64 md:text-xl">
             Envie uma mensagem
           </BaseButton>
         </div>
@@ -143,9 +183,9 @@ export function PrecisionMedicineScreen({
 
       <InformationCard
         background
-        className="mb-8 mt-16 flex min-h-[450px] w-full flex-col gap-4 px-6 py-14"
+        className="mb-8 mt-16 flex min-h-[450px] w-full flex-col gap-4 px-6 py-14 md:py-4"
       >
-        <p className="mb-6 mt-8 text-center font-lato-bold text-2xl text-white">
+        <p className="mb-6 mt-8 text-center font-lato-bold text-2xl text-white md:mt-1">
           Participe das Quintas Moleculares
         </p>
         <p className="mb-5 text-center font-lato-thin text-base text-white">
@@ -154,12 +194,12 @@ export function PrecisionMedicineScreen({
           respeito da indicação e interpretação de testes moleculares.
         </p>
         <BaseInput
-          className="rounded-full bg-white"
+          className="mx-auto w-full max-w-xs rounded-full bg-white md:w-72"
           placeholder="Digite aqui o seu melhor e-mail"
         />
 
         <div className="mt-6 flex justify-center">
-          <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium">
+          <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium md:mb-4 md:w-64">
             Inscreva-se
           </BaseButton>
         </div>
@@ -176,12 +216,12 @@ export function PrecisionMedicineScreen({
           semanas e são abertas ao público.
         </p>
         <BaseInput
-          className="rounded-full border-darkGray bg-white"
+          className="mx-auto rounded-full border-darkGray bg-white md:w-64"
           placeholder="Digite aqui o seu melhor e-mail"
         />
 
         <div className="mt-6 flex justify-center">
-          <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white">
+          <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64">
             Inscreva-se
           </BaseButton>
         </div>

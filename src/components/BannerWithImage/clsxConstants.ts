@@ -12,11 +12,11 @@ export const getDesktopContainerClasses = (
   isLeft: boolean,
 ): string =>
   clsx(
-    "flex size-full flex-col justify-between gap-2 bg-gradient-to-t lg:w-1/2",
+    "flex h-[320px] w-1/2 flex-col justify-between gap-2 bg-gradient-to-t lg:size-full",
     getGradientClasses(primaryColor, secondaryColor),
     {
-      "rounded-br-[100px]": isLeft,
-      "rounded-bl-[100px]": !isLeft,
+      "lg:rounded-br-[100px]": isLeft,
+      "lg:rounded-bl-[100px]": !isLeft,
       "text-lg": isLargeText,
       "p-10": isLargeText,
       "p-20": !isLargeText,
@@ -24,20 +24,20 @@ export const getDesktopContainerClasses = (
   );
 
 export const getDesktopTitleClasses = (isLargeText: boolean): string =>
-  clsx("font-lato-light text-6xl", {
+  clsx("font-lato-light text-2xl lg:text-6xl", {
     "text-xl": isLargeText,
     "mb-6": isLargeText,
     "text-left": isLargeText,
   });
 
 export const getDesktopDescriptionClasses = (isLargeText: boolean): string =>
-  clsx("font-lato-bold text-xl", {
+  clsx("font-lato-bold text-base lg:text-xl", {
     "text-base": isLargeText,
     "text-left": isLargeText,
   });
 
 export const getMobileContainerClasses = (isLeft: boolean): string =>
-  clsx("flex w-full flex-1 flex-col lg:hidden", {
+  clsx("flex w-full flex-1 flex-col md:hidden", {
     "flex-col-reverse": isLeft,
   });
 

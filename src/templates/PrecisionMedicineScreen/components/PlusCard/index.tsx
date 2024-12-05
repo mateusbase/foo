@@ -4,10 +4,10 @@ import { ExamsCardProps } from "../../exams";
 
 const PlusCard = ({ exams }: ExamsCardProps): JSX.Element => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       {exams.map((exam) => (
         <div
-          className="mb-4 flex h-[150px] w-[342px] cursor-pointer flex-row items-center justify-between gap-4 text-wrap rounded-2xl border-1 border-darkGray bg-transparent px-5 py-6 text-left font-lato-bold text-2xl text-primary"
+          className="flex h-[150px] w-full cursor-pointer items-center justify-between gap-4 rounded-2xl border border-darkGray bg-transparent px-5 py-6 text-left font-lato-bold text-2xl text-primary"
           key={exam.id}
         >
           <div className="shrink-0">

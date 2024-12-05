@@ -30,10 +30,14 @@ const BannerWithImage: React.FC<BannerWithImageProps> = ({
   return (
     <div className="mb-6 mt-4 w-full flex-1 text-white">
       {/* Layout para telas grandes */}
-      <div className="hidden h-[480px] w-full justify-between lg:flex">
+      <div className="hidden w-full justify-between md:flex">
         {isLeft && (
-          <div className="h-full w-1/2">
-            <img src={media} alt="Imagem" className="size-full object-cover" />
+          <div className="h-[320px] w-1/2">
+            <img
+              src={media}
+              alt="Imagem"
+              className="h-[320px] w-full object-cover lg:size-full"
+            />
           </div>
         )}
 
@@ -56,8 +60,12 @@ const BannerWithImage: React.FC<BannerWithImageProps> = ({
         </div>
 
         {!isLeft && (
-          <div className="h-full w-1/2">
-            <img src={media} alt="Imagem" className="size-full object-cover" />
+          <div className="h-[320px] w-1/2">
+            <img
+              src={media}
+              alt="Imagem"
+              className="h-[320px] w-full object-cover lg:size-full"
+            />
           </div>
         )}
       </div>
