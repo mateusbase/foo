@@ -14,3 +14,12 @@ export const menuContent: MenuContent = {
   7: <div />,
   8: <div />,
 };
+
+export const menuItems = [
+  { id: 1, name: "O que é o câncer de mama" },
+  { id: 2, name: "Subtipos de câncer de mama" },
+  { id: 3, name: "Sintomas e sinais" },
+  { id: 4, name: "Diagnóstico" },
+  { id: 5, name: "Tratamento" },
+  { id: 6, name: "Prevenção" },
+];
