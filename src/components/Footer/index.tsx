@@ -196,6 +196,14 @@ export default function Footer(): JSX.Element {
                     Vacinas
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/glossario"
+                    className="text-[13px] hover:text-white lg:text-base"
+                  >
+                    Glossário
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
