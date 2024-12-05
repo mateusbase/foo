@@ -7,6 +7,8 @@ import { useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { NavigationOptions } from "swiper/types";
 import PageLayout from "@/components/PageLayout";
+import { categories } from "@/components/IconCard/mocks";
+import IconCard from "@/components/IconCard";
 
 export default function AllAboutCancerScreen(): JSX.Element {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -105,31 +107,13 @@ export default function AllAboutCancerScreen(): JSX.Element {
         </div>
 
         <div className="mt-10 hidden w-full grid-cols-1 gap-6 md:mt-0 md:grid md:w-1/2 md:grid-cols-2">
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-            showButton={false}
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-            showButton={false}
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-            showButton={false}
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-            showButton={false}
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-            showButton={false}
-          />
+          {categories.map((categorie) => (
+            <IconCard
+              cardTitle={categorie.title}
+              cardDescription={categorie.description}
+              showButton={false}
+            />
+          ))}
         </div>
 
         <div className="mt-10 block grid-cols-3 gap-[26px] md:hidden">
@@ -211,42 +195,12 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
       <div className="mt-10 flex flex-col justify-between gap-5 md:mt-20">
         <div className="hidden w-full grid-cols-2 gap-6 sm:grid-cols-2 md:grid lg:grid-cols-4">
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-          />
-          <HealthServiceCard
-            serviceTitle="Análise Patológica"
-            serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-          />
+          {categories.map(() => (
+            <IconCard
+              cardTitle="Próstata "
+              cardDescription="É o segundo tipo mais comum entre os homens e atinge principalmente pessoas com mais de 65 anos."
+            />
+          ))}
         </div>
 
         <div className="block grid-cols-3 gap-[26px] md:hidden">
