@@ -45,11 +45,11 @@ export default function MedicalServiceCard({
         )}
 
         <div className="text-left">
-          <h3 className="text-[32px] leading-none text-white md:text-[32px] lg:text-5xl lg:leading-[60px]">
+          <h3 className="text-[32px] leading-none text-white md:text-[32px] 2xl:text-5xl 2xl:leading-[60px]">
             {serviceTitle}
           </h3>
 
-          <p className="mt-4 text-sm text-white md:text-sm lg:text-2xl lg:leading-[30px]">
+          <p className="mt-4 text-sm text-white md:text-sm lg:text-xl lg:leading-[30px] 2xl:text-2xl">
             {serviceDescription}
           </p>
         </div>
