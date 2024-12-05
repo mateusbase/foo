@@ -9,7 +9,6 @@ export default function ContactUsForm(): JSX.Element {
   const [selected, setSelected] = useState("no");
   const [fileName, setFileName] = useState<string>("");
   const [topicSelected, setTopicSelected] = useState<string | number>();
-  console.log("topicSelected", topicSelected);
 
   const handleFileChange = (
     event: React.ChangeEvent<HTMLInputElement>,

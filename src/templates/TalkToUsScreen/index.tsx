@@ -4,7 +4,6 @@ import PageLayout from "@/components/PageLayout";
 import InfoCard from "@/components/InfoCard";
 import Link from "next/link";
 import { Image } from "@nextui-org/image";
-import { LogoIcon } from "@/components/Icons";
 import BaseButton from "@/components/Button";
 import ContactUsForm from "./components/ContactUsForm";
 
