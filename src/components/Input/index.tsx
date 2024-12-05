@@ -19,7 +19,7 @@ export default function BaseInput({
   return (
     <div className="w-full">
       {label && (
-        <label className="mb-2 ml-5 block text-left text-sm font-medium text-gray-700">
+        <label className="mb-2 ml-5 block text-left text-base font-bold text-lightGray">
           {label}
         </label>
       )}

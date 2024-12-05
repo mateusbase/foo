@@ -8,6 +8,8 @@ import { useState } from "react";
 export default function ContactUsForm(): JSX.Element {
   const [selected, setSelected] = useState("no");
   const [fileName, setFileName] = useState<string>("");
+  const [topicSelected, setTopicSelected] = useState<string | number>();
+  console.log("topicSelected", topicSelected);
 
   const handleFileChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -93,11 +95,42 @@ export default function ContactUsForm(): JSX.Element {
         className="w-full"
         radius="full"
         size="sm"
+        onChange={setTopicSelected}
         options={[
-          { key: 1, value: "1", label: "Assunto 1" },
-          { key: 2, value: "2", label: "Assunto 2" },
+          { key: 1, value: "1", label: "Reclamação" },
+          { key: 2, value: "2", label: "Elogio" },
         ]}
       />
+
+      {topicSelected === "1" && (
+        <div className="flex">
+          <div className="flex w-1/2">
+            <RadioGroup
+              label="Deseja receber retorno de sua manifestação?"
+              orientation="horizontal"
+              value={selected}
+              onValueChange={setSelected}
+              classNames={{
+                label: "text-base font-bold mb-2",
+              }}
+            >
+              <BaseRadio value="yes" size="md">
+                Sim
+              </BaseRadio>
+              <BaseRadio value="no" size="md">
+                Não
+              </BaseRadio>
+            </RadioGroup>
+          </div>
+          <div className="flex w-1/2">
+            <BaseInput
+              label="Nome completo do paciente"
+              placeholder="Digite o seu nome completo"
+              className="text-base font-bold"
+            />
+          </div>
+        </div>
+      )}
 
       <div className="relative flex w-full flex-col">
         <BaseInput
