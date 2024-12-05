@@ -150,7 +150,7 @@ export default function ContactUsForm(): JSX.Element {
       <Textarea
         label="Mensagem"
         variant="bordered"
-        className="w-full overflow-hidden bg-white"
+        className="h-[230px] w-full overflow-hidden bg-white"
         style={{ height: "230px" }}
         size="lg"
       />
