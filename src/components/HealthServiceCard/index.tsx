@@ -9,13 +9,13 @@ export default function HealthServiceCard({
   showButton = true,
 }: HealthServiceCardProps): JSX.Element {
   return (
-    <div className="flex h-auto min-h-[300px] w-full flex-col rounded-[20px] border border-lightGray bg-white px-4 py-8 lg:justify-between lg:p-6">
-      <div className="flex flex-col items-start md:items-start lg:flex-row">
-        <div className="flex items-center justify-center rounded-full bg-primary-foreground lg:size-[63px]">
+    <div className="flex h-auto min-h-[200px] w-full flex-col rounded-[20px] border border-lightGray bg-white px-4 py-8 lg:justify-between lg:p-6">
+      <div className="flex flex-col items-center lg:flex-row">
+        <div className="flex min-w-16 items-center justify-center rounded-full bg-primary-foreground lg:size-[63px]">
           {serviceIcon}
         </div>
 
-        <div className="mt-4 w-full">
+        <div>
           <h3 className="text-sm leading-4 text-primary sm:mt-0 sm:leading-[32px] md:font-normal lg:ml-4 lg:text-[22px]">
             {serviceTitle}
           </h3>
