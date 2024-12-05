@@ -31,7 +31,7 @@ export default function AcademyCard(): JSX.Element {
               key={option.id}
               className={`flex min-h-28 min-w-40 items-end justify-start rounded-2xl p-7 lg:min-h-64 lg:min-w-28 ${bgColor}`}
             >
-              <p className="text-sm font-bold lg:text-[40px] lg:font-semibold lg:leading-10">
+              <p className="text-sm font-bold lg:text-3xl lg:font-semibold lg:leading-10 2xl:text-[40px]">
                 {option.title}
               </p>
             </div>
