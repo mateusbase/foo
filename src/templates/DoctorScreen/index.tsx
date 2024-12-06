@@ -20,7 +20,7 @@ export default function DoctorScreen(): JSX.Element {
           : specialty || "Especialidade"
       }
     >
-      <div className="mt-14 hidden md:block">
+      <div className="relative mt-14 hidden lg:block">
         <img
           src="https://i2.wp.com/robertopestana.com.br/wp-content/uploads/2022/02/891351.png?w=750&quality=90&strip=all&ssl=1"
           alt="Imagem descritiva"
@@ -28,8 +28,8 @@ export default function DoctorScreen(): JSX.Element {
         />
       </div>
 
-      <div className="mt-10 flex flex-col items-center justify-center md:flex-row md:justify-between">
-        <div className="relative flex flex-col items-center md:bottom-48 md:left-5">
+      <div className="mt-40 flex flex-col items-center justify-center lg:mt-20 lg:flex-row lg:items-start lg:justify-between">
+        <div className="relative flex flex-col items-center md:left-5 lg:bottom-48">
           <img
             src={
               (imgSrc as string) ||
@@ -39,8 +39,8 @@ export default function DoctorScreen(): JSX.Element {
             className="h-[316px] w-[320px] rounded-2xl object-cover"
           />
 
-          <div className="mt-8 text-center md:text-left">
-            <h1 className="m-4 block text-3xl text-darkGray md:hidden">
+          <div className="mt-8 text-center lg:text-left">
+            <h1 className="m-4 block text-3xl text-darkGray lg:hidden">
               {name ? `Dra. ${decodeURIComponent(name as string)}` : ""}
             </h1>
 
@@ -57,14 +57,14 @@ export default function DoctorScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="my-8 text-center md:ml-52 md:mt-0 md:flex-1 md:text-left">
-          <h1 className="hidden text-[42px] text-primary md:block">
+        <div className="mt-8 text-center md:mt-0 md:text-left lg:ml-24 lg:flex-1">
+          <h1 className="hidden text-[62px] text-primary lg:block">
             {name
               ? `Dra. ${decodeURIComponent(name as string)}`
               : "Dra. Nome do Médico"}
           </h1>
 
-          <p className="mt-6 text-left text-lg leading-[28px] text-darkGray">
+          <p className="mt-6 text-left text-sm leading-[28px] text-darkGray lg:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex
             id sem ullamcorper. Lorem ipsum dolor sit amet, consectetur
@@ -75,28 +75,34 @@ export default function DoctorScreen(): JSX.Element {
             ullamcorper.
           </p>
 
-          <h1 className="mb-6 mt-32 text-left text-2xl font-bold text-primary-foreground lg:text-[42px]">
-            Locais de atendimento
-          </h1>
-          {locations.map((location) => (
-            <ul key={location.id} className="list-inside list-disc">
-              <li className="text-left text-sm text-darkGray lg:text-lg">
-                {location.name}
-              </li>
-            </ul>
-          ))}
+          <div className="my-10 flex flex-col justify-between md:flex-row lg:mt-32 lg:flex-col">
+            <div>
+              <h1 className="mb-6 text-left text-2xl text-primary lg:text-[42px]">
+                Locais de atendimento
+              </h1>
+              {locations.map((location) => (
+                <ul key={location.id} className="list-inside list-disc">
+                  <li className="text-left text-sm text-darkGray lg:text-lg">
+                    {location.name}
+                  </li>
+                </ul>
+              ))}
+            </div>
 
-          <h1 className="mb-6 mt-12 text-left text-2xl font-bold text-primary-foreground lg:text-[42px]">
-            Especializações
-          </h1>
+            <div>
+              <h1 className="my-6 text-left text-2xl text-primary lg:mt-12 lg:text-[42px]">
+                Especializações
+              </h1>
 
-          {especializations.map((especialization) => (
-            <ul key={especialization.id} className="list-inside list-disc">
-              <li className="text-left text-sm text-darkGray lg:text-lg">
-                {especialization.name}
-              </li>
-            </ul>
-          ))}
+              {especializations.map((especialization) => (
+                <ul key={especialization.id} className="list-inside list-disc">
+                  <li className="text-left text-sm text-darkGray lg:text-lg">
+                    {especialization.name}
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </PageLayout>
