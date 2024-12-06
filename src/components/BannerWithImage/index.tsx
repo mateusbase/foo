@@ -2,6 +2,7 @@ import {
   getDesktopContainerClasses,
   getDesktopDescriptionClasses,
   getDesktopTitleClasses,
+  getImageClasses,
   getMobileContainerClasses,
   getMobileContentClasses,
   getMobileDescriptionClasses,
@@ -32,13 +33,11 @@ const BannerWithImage: React.FC<BannerWithImageProps> = ({
       {/* Layout para telas grandes */}
       <div className="hidden w-full justify-between md:flex">
         {isLeft && (
-          <div className="h-[320px] w-1/2">
-            <img
-              src={media}
-              alt="Imagem"
-              className="h-[320px] w-full object-cover lg:size-full"
-            />
-          </div>
+          <img
+            src={media}
+            alt="Imagem"
+            className={getImageClasses(isLargeText)}
+          />
         )}
 
         <div
@@ -60,13 +59,11 @@ const BannerWithImage: React.FC<BannerWithImageProps> = ({
         </div>
 
         {!isLeft && (
-          <div className="h-[320px] w-1/2">
-            <img
-              src={media}
-              alt="Imagem"
-              className="h-[320px] w-full object-cover lg:size-full"
-            />
-          </div>
+          <img
+            src={media}
+            alt="Imagem"
+            className={getImageClasses(isLargeText)}
+          />
         )}
       </div>
 

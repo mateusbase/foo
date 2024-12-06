@@ -12,39 +12,39 @@ const PrecisionMedicineUnitCard = ({
   complement,
 }: PrecisionMedicineUnitCardProps): JSX.Element => {
   return (
-    <main className="mb-4 flex flex-col items-center gap-7">
+    <main className="mb-4 flex flex-col items-center gap-7 text-center">
       {image && (
         <img
           src={image}
           alt="Imagem"
-          className="mb-3 h-[230px] w-full object-contain"
+          className="mb-3 h-[230px] w-full object-contain lg:w-[426px]"
         />
       )}
 
-      <section className="flex items-center gap-2">
+      <section className="flex items-center justify-center gap-2">
         <MarkerCircleIcon className="text-secondary" />
-        <h1 className="text-left text-2xl font-bold uppercase text-primary">
+        <h1 className="text-2xl font-bold uppercase text-primary">
           {unitName}
         </h1>
       </section>
 
-      <section className="flex flex-col items-center text-base text-zinc-600">
+      <section className="flex flex-col text-base text-zinc-600">
         <p>{address}</p>
         <p>{complement}</p>
         <p className="font-bold">{city}</p>
       </section>
 
-      <section className="text-center">
+      <section>
         <p className="text-zinc-400">{hours}</p>
       </section>
 
-      <section className="flex w-60 flex-col gap-4">
-        <BaseButton className="text-white" color="primary">
+      <section className="flex w-full flex-col items-center gap-4 lg:w-full lg:flex-row lg:justify-start">
+        <BaseButton className="w-full text-white lg:w-[215px]" color="primary">
           Agende uma consulta
         </BaseButton>
 
         <BaseButton
-          className="font-lato-bold"
+          className="w-full font-lato-bold lg:w-auto"
           color="primary"
           variant="bordered"
           startContent={<TbCodePlus size={20} />}

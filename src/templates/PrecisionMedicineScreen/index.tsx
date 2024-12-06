@@ -47,6 +47,7 @@ export function PrecisionMedicineScreen({
           </div>
         )}
       </div>
+
       <div className="hidden lg:flex">
         <BannerWithVideo isVideo={isVideo} media={media} />
       </div>
@@ -58,20 +59,19 @@ export function PrecisionMedicineScreen({
       <PlayStoreContainer />
 
       <div className="mb-7 mt-16 text-center">
-        <h1 className="mb-11 font-lato-regular text-4xl text-primary-foreground">
+        <h1 className="mb-11 font-lato-regular text-4xl text-primary lg:text-6xl">
           Nossos Exames
         </h1>
 
-        <div className="flex flex-col md:grid md:grid-cols-2">
-          <div className="mb-16 md:mb-0">
-            <h4 className="mb-8 font-lato-regular text-3xl text-darkGray">
+        <div className="grid grid-cols-1 gap-16 md:grid-cols-2 lg:flex lg:flex-col">
+          <div className="items-center justify-center">
+            <h4 className="mb-8 font-lato-regular text-3xl text-darkGray lg:text-5xl">
               Patologia
             </h4>
             <ExamsCard exams={patologicalExams} />
           </div>
-
-          <div>
-            <h4 className="mb-8 font-lato-regular text-3xl text-darkGray">
+          <div className="items-center justify-center">
+            <h4 className="mb-8 font-lato-regular text-3xl text-darkGray lg:text-5xl">
               Genômica
             </h4>
             <ExamsCard exams={genomicsExams} />
@@ -125,8 +125,8 @@ export function PrecisionMedicineScreen({
         </InfoCard>
       </div>
 
-      <div className="mb-8 mt-6 text-center md:text-left">
-        <h1 className="mb-8 font-lato-regular text-4xl text-primary md:ml-24">
+      <div className="mb-8 mt-6 text-center md:text-left lg:text-center lg:align-middle">
+        <h1 className="mb-8 font-lato-regular text-4xl text-primary md:ml-24 lg:ml-0">
           Nossas unidades
         </h1>
 
@@ -139,6 +139,9 @@ export function PrecisionMedicineScreen({
             },
             640: {
               slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
             },
           }}
           loop
@@ -159,73 +162,77 @@ export function PrecisionMedicineScreen({
           ))}
         </Swiper>
 
-        <SliderArrows
-          swiperRef={swiperRef}
-          prevRef={prevRef}
-          nextRef={nextRef}
-        />
+        <div className="lg:hidden">
+          <SliderArrows
+            swiperRef={swiperRef}
+            prevRef={prevRef}
+            nextRef={nextRef}
+          />
+        </div>
       </div>
 
-      <InformationCard className="my-4 min-h-[225px] px-14 py-6">
-        <p className="mb-6 text-center font-lato-black text-4xl text-darkGray">
-          Fale conosco
-        </p>
-        <p className="text-center font-lato-thin text-darkGray">
-          Nossa equipe dedicada está à disposição para atendê-lo e oferecer todo
-          o suporte necessário.
-        </p>
-        <div className="mt-6 flex w-full justify-center">
-          <BaseButton className="w-full bg-purpleMedium px-32 py-3 text-center font-lato-thin text-lg text-white md:h-14 md:w-64 md:text-xl">
-            Envie uma mensagem
-          </BaseButton>
-        </div>
-      </InformationCard>
+      <div className="my-8 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-center">
+        <InformationCard className="min-h-[225px] px-14 py-6 lg:h-[566px] lg:w-[432px]">
+          <p className="mb-6 text-center font-lato-black text-4xl text-darkGray">
+            Fale conosco
+          </p>
+          <p className="text-center font-lato-thin text-darkGray">
+            Nossa equipe dedicada está à disposição para atendê-lo e oferecer
+            todo o suporte necessário.
+          </p>
+          <div className="mt-6 flex w-full justify-center">
+            <BaseButton className="w-full bg-purpleMedium px-32 py-3 text-center font-lato-thin text-lg text-white md:h-14 md:w-64 md:text-xl">
+              Envie uma mensagem
+            </BaseButton>
+          </div>
+        </InformationCard>
 
-      <InformationCard
-        background
-        className="mb-8 mt-16 flex min-h-[450px] w-full flex-col gap-4 px-6 py-14 md:py-4"
-      >
-        <p className="mb-6 mt-8 text-center font-lato-bold text-2xl text-white md:mt-1">
-          Participe das Quintas Moleculares
-        </p>
-        <p className="mb-5 text-center font-lato-thin text-base text-white">
-          Reuniões Multidisciplinares que ocorrem por videoconferência que
-          permitem discussões de casos, a fim de educar a comunidade médica a
-          respeito da indicação e interpretação de testes moleculares.
-        </p>
-        <BaseInput
-          className="mx-auto w-full max-w-xs rounded-full bg-white md:w-72"
-          placeholder="Digite aqui o seu melhor e-mail"
-        />
+        <InformationCard
+          background
+          className="flex min-h-[450px] w-full flex-col gap-4 px-6 py-14 md:py-4 lg:h-[566px] lg:w-[432px]"
+        >
+          <p className="mb-6 mt-8 text-center font-lato-bold text-2xl text-white md:mt-1 lg:text-3xl">
+            Participe das Quintas Moleculares
+          </p>
+          <p className="mb-5 text-center font-lato-thin text-base text-white">
+            Reuniões Multidisciplinares que ocorrem por videoconferência que
+            permitem discussões de casos, a fim de educar a comunidade médica a
+            respeito da indicação e interpretação de testes moleculares.
+          </p>
+          <BaseInput
+            className="mx-auto w-full max-w-xs rounded-full bg-white md:w-72"
+            placeholder="Digite aqui o seu melhor e-mail"
+          />
 
-        <div className="mt-6 flex justify-center">
-          <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium md:mb-4 md:w-64">
-            Inscreva-se
-          </BaseButton>
-        </div>
-      </InformationCard>
+          <div className="mt-6 flex justify-center">
+            <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium md:mb-4 md:w-64">
+              Inscreva-se
+            </BaseButton>
+          </div>
+        </InformationCard>
 
-      <InformationCard className="mb-8 mt-16 flex min-h-[450px] w-full flex-col justify-between gap-4 p-6">
-        <p className="mb-6 text-center font-lato-bold text-2xl text-darkGray">
-          Participe das Quintas Patológicas
-        </p>
-        <p className="mb-5 text-center font-lato-thin text-base text-darkGray">
-          Encontros virtuais para apresentação de temas relevantes em patologia
-          com impacto em decisões oncológicas, além de apresentação de casos
-          clínicos. As sessões acontecem por videoconferência a cada duas
-          semanas e são abertas ao público.
-        </p>
-        <BaseInput
-          className="mx-auto rounded-full border-darkGray bg-white md:w-64"
-          placeholder="Digite aqui o seu melhor e-mail"
-        />
+        <InformationCard className="flex min-h-[450px] w-full flex-col justify-between gap-4 p-6 lg:h-[566px] lg:w-[432px] lg:py-[85px]">
+          <p className="mb-6 text-center font-lato-bold text-2xl text-darkGray lg:text-3xl">
+            Participe das Quintas Patológicas
+          </p>
+          <p className="mb-5 text-center font-lato-thin text-base text-darkGray">
+            Encontros virtuais para apresentação de temas relevantes em
+            patologia com impacto em decisões oncológicas, além de apresentação
+            de casos clínicos. As sessões acontecem por videoconferência a cada
+            duas semanas e são abertas ao público.
+          </p>
+          <BaseInput
+            className="mx-auto rounded-full border-darkGray bg-white md:w-64"
+            placeholder="Digite aqui o seu melhor e-mail"
+          />
 
-        <div className="mt-6 flex justify-center">
-          <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64">
-            Inscreva-se
-          </BaseButton>
-        </div>
-      </InformationCard>
+          <div className="mt-6 flex justify-center">
+            <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64">
+              Inscreva-se
+            </BaseButton>
+          </div>
+        </InformationCard>
+      </div>
 
       <AccreditationsSection />
     </PageLayout>

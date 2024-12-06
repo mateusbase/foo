@@ -1,16 +1,16 @@
 const AccreditationsSection = (): JSX.Element => {
   return (
     <section className="relative left-1/2 mt-20 flex min-h-[400px] w-screen -translate-x-1/2 flex-col items-center bg-gray-foreground text-center md:-mb-20 md:mt-20 md:h-auto">
-      <div className="flex flex-col md:mt-4 md:flex-row md:items-center md:gap-4">
-        <h1 className="mt-14 font-lato-black text-2xl text-primary md:mt-0">
+      <div className="flex flex-col md:mt-8 md:flex-row md:items-center md:gap-2 lg:mt-14">
+        <h1 className="mt-14 font-lato-black text-2xl text-primary md:mt-0 lg:text-6xl">
           Acreditações OC
         </h1>
-        <h2 className="mb-11 font-lato-black text-2xl text-primary md:mb-0">
+        <h2 className="mb-11 font-lato-black text-2xl text-primary md:mb-0 lg:text-6xl">
           Medicina de Precisão
         </h2>
       </div>
 
-      <div className="mb-9 mt-14 flex flex-col items-center gap-6 md:w-[90%] md:flex-row">
+      <div className="mb-9 mt-14 flex flex-col items-center gap-6 md:mb-10 md:w-[90%] md:flex-row lg:mb-24 lg:justify-center lg:align-middle">
         <div className="flex min-h-[250px] w-[300px] flex-col items-center justify-center rounded-3xl bg-white px-1 py-9">
           <img
             src="assets/images/image 16.png"
