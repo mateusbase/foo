@@ -14,9 +14,9 @@ const genomicsExamsMock: MenuItem[] = [
     label: "Exames com Parceiros",
     value: "1",
     exams: [
-      { label: "Signatera®", value: "1-1" },
-      { label: "Mammaprint®", value: "1-2" },
-      { label: "Oncotype DX®", value: "1-3" },
+      { label: "Signatera ®", value: "1-1" },
+      { label: "Mammaprint ®", value: "1-2" },
+      { label: "Oncotype DX ®", value: "1-3" },
     ],
   },
   {
