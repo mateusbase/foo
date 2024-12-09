@@ -82,11 +82,7 @@ export default function ServiceSection({
 
       <div className="mt-10 hidden grid-cols-4 gap-[26px] md:grid">
         {filteredHealthServices.map((service) => (
-          <Link
-            key={service.id}
-            href={`/servicos/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
-            passHref
-          >
+          <Link key={service.id} href={`/servicos/${service.slug}`} passHref>
             <HealthServiceCard
               serviceTitle={service.serviceTitle}
               serviceDescription={service.serviceDescription}

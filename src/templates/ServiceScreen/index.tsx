@@ -1,20 +1,20 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
 import BaseSelect from "@/components/Select";
 import { IoMenu } from "react-icons/io5";
 
+const menuItems = [
+  { id: 1, name: "O que é a laserterapia" },
+  { id: 2, name: "Quando é usada" },
+  { id: 3, name: "Como é realizada" },
+];
+
 export default function ServiceScreen(): JSX.Element {
   const router = useRouter();
   const { servicos } = router.query;
-
-  const menuItems = [
-    { id: 1, name: "O que é a laserterapia" },
-    { id: 2, name: "Quando é usada" },
-    { id: 3, name: "Como é realizada" },
-  ];
-
+  const [title, setTitle] = useState<string>("");
   const [activeItem, setActiveItem] = useState<number>(menuItems[0].id);
 
   const handleSelectChange = (value: string | number): void => {
@@ -28,15 +28,14 @@ export default function ServiceScreen(): JSX.Element {
     return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
   };
 
+  useEffect(() => {
+    if (router.isReady && servicos) {
+      setTitle(capitalizeFirstLetter(decodeURIComponent(servicos as string)));
+    }
+  }, [router.isReady, servicos]);
+
   return (
-    <PageLayout
-      title={
-        servicos
-          ? capitalizeFirstLetter(decodeURIComponent(servicos as string))
-          : " "
-      }
-      subtitle="Serviço Oncoclínicas"
-    >
+    <PageLayout title={title} subtitle="Serviço Oncoclínicas">
       <div className="mt-14 flex flex-col md:flex-row">
         <div className="mb-10 block md:hidden">
           <BaseSelect

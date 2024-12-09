@@ -4,6 +4,7 @@ export interface ServiceSectionProps {
   description: string;
   healthServices: Array<{
     id: number;
+    slug?: string;
     serviceTitle: string;
     serviceDescription: string;
   }>;

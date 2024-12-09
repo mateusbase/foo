@@ -16,7 +16,7 @@ const Breadcrumb = (): JSX.Element => {
       servico: "Serviços",
       diagnostico: "Diagnósticos",
       tratamento: "Tratamentos",
-      "análise-patológica": "Análise Patológica",
+      "analise-patologica": "Análise Patológica",
       laserterapia: "Laserterapia",
     };
 
