@@ -97,6 +97,9 @@ export default function WhoWeArecreen(): JSX.Element {
                       />
                     </div>
                   ))}
+                  <p className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
+                    {activeContent.secondParagraph}
+                  </p>
                 </div>
               )}
             </>
