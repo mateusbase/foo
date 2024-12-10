@@ -33,7 +33,7 @@ export default function PageLayout({
   return (
     <main>
       {showBreadcrumb && (
-        <div className="block bg-gray-200 p-6 md:hidden">
+        <div className="block bg-gray-200 p-6 lg:hidden">
           <Breadcrumb />
         </div>
       )}
@@ -52,7 +52,7 @@ export default function PageLayout({
 
       <BaseContainer className="flex w-full flex-col py-0 md:py-20">
         {showBreadcrumb && (
-          <div className="hidden px-10 md:block md:px-0">
+          <div className="hidden px-10 md:px-0 lg:block">
             <Breadcrumb />
           </div>
         )}
