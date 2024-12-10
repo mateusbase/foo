@@ -175,7 +175,7 @@ export default function UnitScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <MapCard />
         </div>
       </div>
