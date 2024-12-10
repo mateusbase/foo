@@ -1,4 +1,3 @@
-import { Image } from "@nextui-org/react";
 import { StepTestCardProps } from "./types";
 
 export default function StepTestCard({
@@ -7,7 +6,11 @@ export default function StepTestCard({
 }: StepTestCardProps): JSX.Element {
   return (
     <div className="w-full">
-      <Image src={stepImage} className="h-[213px] w-[334px] object-cover" />
+      <img
+        alt="Etapas para teste onco pdo"
+        src={stepImage}
+        className="h-[213px] w-full rounded-3xl object-cover"
+      />
       <div className="mt-4 w-5/6">
         <p className="text-xl text-darkGray">{stepDescription}</p>
       </div>

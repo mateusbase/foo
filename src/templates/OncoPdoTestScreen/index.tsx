@@ -19,7 +19,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
       subtitle="Teste in-vitro que, a partir de modelos 3D obtidos do próprio tumor do paciente, avalia e quantifica a resposta das células tumorais a diferentes combinações de agentes quimioterápicos e terapias-alvo moleculares."
     >
       <div className="mt-10">
-        <h1 className="text-[40px] text-primary">
+        <h1 className="text-4xl text-primary md:text-[40px]">
           Onco-PDO™️ é o que há de mais moderno em Oncologia de Precisão
         </h1>
 
@@ -38,7 +38,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
       </div>
 
       <div className="mt-20">
-        <h1 className="text-[40px] text-primary">
+        <h1 className="text-4xl text-primary md:text-[40px]">
           Os diferenciais do Teste Onco-PDO™️
         </h1>
 
@@ -77,8 +77,10 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
       </div>
 
       <div className="mt-10">
-        <h1 className="text-[40px] text-primary">Etapas do Teste Onco-PDO™️</h1>
-        <div className="my-16 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <h1 className="text-4xl text-primary md:text-[40px]">
+          Etapas do Teste Onco-PDO™️
+        </h1>
+        <div className="my-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {stepTestData.map((step) => (
             <StepTestCard
               stepDescription={step.description}
@@ -88,8 +90,8 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
         </div>
       </div>
 
-      <div className="mt-10 w-5/6">
-        <h1 className="text-[40px] text-primary">
+      <div className="my-10 w-5/6">
+        <h1 className="text-4xl text-primary md:text-[40px]">
           Em quais tumores pode ser aplicado o Teste Onco-PDO™️
         </h1>
         <p className="mt-5 text-xl text-darkGray">
