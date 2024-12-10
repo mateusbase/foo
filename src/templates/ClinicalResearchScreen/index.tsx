@@ -141,7 +141,9 @@ export default function ClinicalResearchScreen(): JSX.Element {
       <div className="hidden lg:block">
         <MainOptionsActions options={options} rounded="rounded-none" />
       </div>
-      <TermsOfConsentBanner />
+      <div className="block lg:hidden">
+        <TermsOfConsentBanner />
+      </div>
     </>
   );
 }
