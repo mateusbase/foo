@@ -48,6 +48,13 @@ export const healthServices1 = [
     serviceDescription:
       "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
   },
+  {
+    id: 8,
+    slug: "teste-onco-pdo",
+    serviceTitle: "Teste ONCO-PDO™️",
+    serviceDescription:
+      "Teste in-vitro que, a partir de modelos 3D obtidos do próprio tumor do paciente, avalia e quantifica a resposta das células tumorais a diferentes combinações de agentes quimioterápicos e terapias-alvo moleculares.",
+  },
 ];
 
 export const healthServices2 = [

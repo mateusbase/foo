@@ -10,7 +10,7 @@ import NewsPreviewCard from "./components/NewsPreviewCard";
 import { newsItems } from "./optionsMock";
 
 export default function JournalScreen(): JSX.Element {
-  const noticiaContent = `
+  const noticeContent = `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet dui quis accumsan. Aenean nisl odio, aliquam et libero posuere, viverra pretium lectus. Cras justo orci, rutrum nec tellus a, vulputate eleifend ligula. Aenean rutrum nisi dui, eget aliquam velit pretium non. Curabitur id nunc et nulla maximus pulvinar et ut urna. Nullam posuere ex a viverra congue. Cras et vestibulum orci, ac bibendum orci. In bibendum tortor et eros tincidunt, quis cursus odio aliquet. Fusce la ligula quis eros convallis rhoncus. Nam rutrum ligula et tellus tempor, at pharetra mauris dictum. Sed quis dolor consectetur, laoreet arcu ut, tempor est. Praesent bibendum fermentum ipsum id suscipit. Morbi sit amet eros libero.
 
     Sed placerat maximus tincidunt. Nulla ac lacus metus. Sed sed lorem eros. Sed sollicitudin, nibh sed auctor rutrum, odio enim iaculis ex, nec euismod est enim ut ex. Vivamus iaculis, nibh et viverra pellentesque, ex massa ultricies dui, quis gravida mi metus at neque. Nullam sollicitudin velit id libero gravida, eget fringilla magna varius. Curabitur porta sem id arcu consequat, a placerat arcu posuere. Quisque mattis justo sit amet lobortis hendrerit. Sed viverra imperdiet ligula, vel congue massa aliquet sed.
@@ -19,10 +19,8 @@ export default function JournalScreen(): JSX.Element {
   
     `;
 
-  const paragraphs = noticiaContent
-    .trim()
-    .replace(/\n+/g, "\n\n")
-    .split("\n\n");
+  const paragraphs = noticeContent.trim().replace(/\n+/g, "\n\n").split("\n\n");
+
   return (
     <>
       <PageHeader title="Notícias" subtitle="Oncoclínicas" />
