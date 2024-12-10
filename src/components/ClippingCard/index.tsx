@@ -17,7 +17,7 @@ export default function ClippingCard({
   return (
     <div
       onClick={!isRelease ? handleCardClick : undefined}
-      className={`flex h-[367px] w-full cursor-pointer flex-col justify-between rounded-2xl border border-darkGray p-6 transition-shadow hover:shadow-lg ${!isRelease ? "cursor-pointer" : ""}`}
+      className={`flex h-[420px] w-full cursor-pointer flex-col justify-between rounded-2xl border border-darkGray p-6 transition-shadow hover:shadow-lg md:h-[347px] ${!isRelease ? "cursor-pointer" : ""}`}
     >
       <h3 className="mb-4 text-left text-[23px] font-bold text-primary md:text-lg lg:text-3xl">
         {title}
@@ -42,7 +42,7 @@ export default function ClippingCard({
       )}
 
       {!isRelease && (
-        <p className="text-ellipsis text-left text-[20px] text-darkGray md:text-base lg:text-2xl">
+        <p className="text-ellipsis text-left text-[20px] text-darkGray md:text-base lg:text-xl">
           {description}
         </p>
       )}
