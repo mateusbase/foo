@@ -12,7 +12,17 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
       title={t("pages.scheduleYourConsultation.pageTitle")}
       subtitle={t("pages.scheduleYourConsultation.pageSubtitle")}
     >
-      <div className="mt-5 flex flex-col gap-10 md:mt-20 lg:flex-row">
+      <div className="mb-10 mt-5 flex flex-col gap-10 md:mt-20 lg:mb-6 lg:flex-row">
+        <div className="flex w-full flex-col items-center lg:hidden">
+          <img
+            src="https://i.postimg.cc/Y0sxRgW5/Captura-de-tela-2024-09-22-152639.png"
+            alt={t("pages.scheduleYourConsultation.consultationImageAlt")}
+            className="w-full object-cover"
+          />
+          <p className="mb-5 mt-4 text-left text-lightGray">
+            {t("pages.scheduleYourConsultation.additionalInfo")}
+          </p>
+        </div>
         <div className="w-full lg:w-1/2">
           <h1 className="text-[40px] text-primary">
             {t("pages.scheduleYourConsultation.heading")}
@@ -102,7 +112,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="flex w-full flex-col items-center lg:w-1/2">
+        <div className="hidden w-full flex-col items-center lg:flex lg:w-1/2">
           <img
             src="https://i.postimg.cc/Y0sxRgW5/Captura-de-tela-2024-09-22-152639.png"
             alt={t("pages.scheduleYourConsultation.consultationImageAlt")}
