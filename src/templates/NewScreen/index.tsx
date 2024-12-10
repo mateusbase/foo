@@ -25,9 +25,13 @@ export default function NewScreen(): JSX.Element {
     .split("\n\n");
   return (
     <>
+      <div className="block bg-gray-200 p-6 lg:hidden">
+        <Breadcrumb />
+      </div>
+
       <PageHeader title="Notícias" subtitle="Oncoclínicas" />
       <BaseContainer className="px-10 lg:px-0">
-        <div className="p-6">
+        <div className="hidden px-10 py-6 md:px-0 lg:block">
           <Breadcrumb />
         </div>
         <div className="mt-10 flex flex-col items-center">

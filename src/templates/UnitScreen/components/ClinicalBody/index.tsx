@@ -48,19 +48,19 @@ const ClinicalBody = (): JSX.Element => {
 
   return (
     <div>
-      <div className="mt-20 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between md:mt-32">
-        <h2 className="text-2xl font-normal text-primary md:leading-[50px] 2xl:text-3xl">
+      <div className="mt-20 flex flex-col gap-6 md:flex-col md:gap-10 lg:flex-row">
+        <h2 className="text-2xl font-normal text-primary md:order-1 md:leading-[50px] 2xl:text-3xl">
           Corpo Clínico
         </h2>
 
-        <div className="flex flex-col gap-5 sm:flex-row">
+        <div className="flex flex-col gap-5 sm:flex-row md:order-2 md:flex-row md:items-center md:justify-start md:gap-6 lg:gap-8">
           <BaseSelect
             label="Especialidade"
             labelColor="primary"
             color="primary"
             radius="full"
             variant="bordered"
-            className="w-full sm:w-[280px]"
+            className="w-full max-w-[320px] sm:w-[280px]"
             options={[
               { key: 1, value: "1", label: "Otorrino" },
               { key: 1, value: "2", label: "Cardiologista" },
@@ -73,7 +73,7 @@ const ClinicalBody = (): JSX.Element => {
             color="primary"
             radius="full"
             variant="bordered"
-            className="w-full sm:w-[280px]"
+            className="w-full max-w-[320px] sm:w-[280px]"
             options={[
               { key: 1, value: "1", label: "" },
               { key: 1, value: "2", label: "" },

@@ -84,11 +84,11 @@ export default function WhoWeArecreen(): JSX.Element {
               ))}
 
               {activeContent.icons && (
-                <div className="mt-6 flex flex-wrap justify-center gap-10">
-                  {activeContent.icons.map((icon: string) => (
+                <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:flex lg:grid-cols-none lg:flex-wrap lg:justify-center lg:gap-10">
+                  {activeContent.icons.slice(0, 6).map((icon: string) => (
                     <div
                       key={icon}
-                      className="flex size-52 items-center justify-center border border-darkGray"
+                      className="flex aspect-square w-full max-w-52 items-center justify-center border border-darkGray"
                     >
                       <img
                         src={icon}
@@ -97,6 +97,9 @@ export default function WhoWeArecreen(): JSX.Element {
                       />
                     </div>
                   ))}
+                  <p className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
+                    {activeContent.secondParagraph}
+                  </p>
                 </div>
               )}
             </>

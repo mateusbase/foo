@@ -2,6 +2,7 @@ type MenuContent = {
   [key: number]: {
     title: string;
     paragraphs: string[];
+    secondParagraph?: string;
     icons?: string[];
   };
 };
@@ -59,6 +60,8 @@ export const menuContent: MenuContent = {
       "https://www.promedica.com.br/wp-content/uploads/2020/01/SeloPALC_cmyk.jpg",
       "https://www.revistasaudenews.com.br/fotos/p_20210916_162400_94.jpg",
     ],
+    secondParagraph:
+      "Nosso Sistema de Gestão de Qualidade e Segurança do Paciente tem como objetivo Implementar e oferecer serviços e processos com alta qualidade, seguros, baseados em evidência científica e centrado no paciente.Promover uma cultura de excelência em todos os níveis da organização, incentivando a colaboração, a inovação e o aprendizado contínuo, onde cada membro da equipe é responsável por contribuir para a qualidade dos cuidados prestados, com foco na segurança do paciente, na eficácia dos tratamentos e na experiência do paciente.",
   },
   7: {
     title: "Segurança",
