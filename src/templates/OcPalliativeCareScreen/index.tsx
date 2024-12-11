@@ -1,9 +1,15 @@
 import PageLayout from "@/components/PageLayout";
 import { Image } from "@nextui-org/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SliderArrows from "@/components/SliderArrows";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import { Navigation } from "swiper/modules";
 import { palliativeCareData } from "./data/palliativeCareData";
 import PalliativeCareCard from "./components/PalliativeCareCard";
 
 export default function OcPalliativeCareScreen(): JSX.Element {
+  const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
+
   return (
     <PageLayout
       title="OC Cuidados Paliativos"
@@ -52,31 +58,63 @@ export default function OcPalliativeCareScreen(): JSX.Element {
       </div>
 
       <div className="mt-10">
-        <h1 className="text-[40px] text-primary">
+        <h1 className="text-4xl text-primary md:text-[40px]">
           Pilares dos cuidados paliativos
         </h1>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+        <div className="mt-10 hidden gap-5 md:grid lg:grid-cols-2">
           {palliativeCareData.map((care) => (
             <PalliativeCareCard serviceName={care.title} />
           ))}
         </div>
+
+        <div className="relative mt-10 md:hidden">
+          <Swiper
+            loop
+            spaceBetween={20}
+            slidesPerView={1}
+            modules={[Navigation]}
+            onInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+          >
+            {palliativeCareData.map((care) => (
+              <SwiperSlide key={care.id}>
+                <PalliativeCareCard serviceName={care.title} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="mt-2 flex justify-center">
+            <SliderArrows
+              swiperRef={swiperRef}
+              prevRef={prevRef}
+              nextRef={nextRef}
+              size={0.6}
+            />
+          </div>
+        </div>
       </div>
 
       <div className="mt-10">
-        <h1 className="text-[40px] text-primary">
+        <h1 className="text-4xl text-primary md:text-[40px]">
           Conheça o Programa de Cuidados Paliativos da Oncoclínicas
         </h1>
 
-        <Image
-          src="/assets/images/preview-video-palliative.png"
-          aria-label="Preview de vídeo"
-          className="mt-16"
-        />
+        <div className="full-bleed">
+          <Image
+            src="/assets/images/preview-video-palliative.png"
+            aria-label="Preview de vídeo"
+            className="mt-16 w-full rounded-none"
+          />
+        </div>
       </div>
 
       <div className="mt-10">
-        <h1 className="text-[40px] text-primary">
+        <h1 className="text-4xl text-primary md:text-[40px]">
           Quando o cuidado paliativo deve ser iniciado no paciente com câncer{" "}
         </h1>
         <p className="mt-4 text-xl text-darkGray">
@@ -113,7 +151,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
       </div>
 
       <div className="mt-20">
-        <h1 className="text-[40px] text-primary">
+        <h1 className="text-4xl text-primary md:text-[40px]">
           Quais pacientes oncológicos devem ser encaminhados aos cuidados
           paliativos
         </h1>
@@ -148,10 +186,10 @@ export default function OcPalliativeCareScreen(): JSX.Element {
         </p>
       </div>
 
-      <div className="my-10 flex w-full text-white lg:h-[794px]">
+      <div className="full-bleed mb-0 mt-10 flex w-full text-white lg:h-[794px]">
         <div className="flex w-full flex-col lg:flex-row">
-          <div className="flex h-[794px] flex-col gap-2 rounded-bl-[100px] bg-gradient-to-t from-purpleAccent from-5% via-30% to-primary-foreground py-20 lg:w-1/2 lg:px-16">
-            <h1 className="text-5xl">
+          <div className="flex flex-col gap-2 bg-gradient-to-t from-purpleAccent from-5% via-30% to-primary-foreground p-10 py-20 lg:h-[794px] lg:w-1/2 lg:rounded-bl-[100px] lg:px-16">
+            <h1 className="text-4xl leading-none md:text-[40px] lg:text-5xl">
               Quais os benefícios dos cuidados paliativos na oncologia
             </h1>
             <p className="mt-5 text-xl font-bold">
