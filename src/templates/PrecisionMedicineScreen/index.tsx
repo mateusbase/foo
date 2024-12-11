@@ -36,13 +36,13 @@ export function PrecisionMedicineScreen({
           description="A OC Medicina de Precisão engloba os laboratórios de Anatomia Patológica, Genômica e Big data que oferece um portfolio completo e de alta relevância clínica."
         />
         {media && (
-          <div className="relative left-1/2 mb-6 w-screen -translate-x-1/2">
+          <div className="full-bleed mb-6">
             {isVideo ? (
               <video src={media} controls className="w-full rounded-md">
                 <track kind="captions" />
               </video>
             ) : (
-              <img src={media} alt="Media" className="w-full rounded-md" />
+              <img src={media} alt="Media" className="w-full" />
             )}
           </div>
         )}
@@ -79,7 +79,7 @@ export function PrecisionMedicineScreen({
         </div>
       </div>
 
-      <div className="relative left-1/2 mb-9 w-screen -translate-x-1/2 md:w-full">
+      <div className="full-bleed mb-9 md:w-full">
         <BannerWithImage
           title="Programas de Suporte ao Paciente"
           description="Para garantir o tratamento personalizado e de precisão, é importante assegurar aos nossos pacientes acesso à jornada molecular de testes."
