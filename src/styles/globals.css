@@ -38,3 +38,14 @@ body {
     text-wrap: balance;
   }
 } */
+
+@layer utilities {
+  .full-bleed {
+    position: relative;
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    left: 0;
+    right: 0;
+  }
+}

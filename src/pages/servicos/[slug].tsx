@@ -5,6 +5,12 @@ import { healthServices1 } from "@/templates/ServicesScreen/data/servicesData";
 
 const ServiceScreen = dynamic(() => import("@/templates/ServiceScreen"));
 const OcCareLineScreen = dynamic(() => import("@/templates/OcCareLineScreen"));
+const OncoPdoTestScreen = dynamic(
+  () => import("@/templates/OncoPdoTestScreen"),
+);
+const OcPalliativeCareScreen = dynamic(
+  () => import("@/templates/OcPalliativeCareScreen"),
+);
 
 const Service = (): JSX.Element => {
   const router = useRouter();
@@ -22,6 +28,10 @@ const Service = (): JSX.Element => {
     switch (service?.slug) {
       case "oc-linha-de-cuidado":
         return <OcCareLineScreen />;
+      case "teste-onco-pdo":
+        return <OncoPdoTestScreen />;
+      case "oc-cuidados-paliativos":
+        return <OcPalliativeCareScreen />;
       default:
         return <ServiceScreen />;
     }

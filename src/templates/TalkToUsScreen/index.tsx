@@ -61,7 +61,7 @@ export default function TalkToUsScreen(): JSX.Element {
                   height={236}
                   radius="none"
                   alt="Imagem de conheça"
-                  src="/assets/image/banner-talk-to-us.png"
+                  src="/assets/images/banner-talk-to-us.png"
                   className="size-full"
                 />
               </div>

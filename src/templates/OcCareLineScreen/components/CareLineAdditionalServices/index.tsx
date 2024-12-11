@@ -10,7 +10,7 @@ export default function CareLineAdditionalServices(): JSX.Element {
       <div className="mt-20 flex flex-col gap-10 lg:flex-row">
         <div className="w-full lg:w-1/2">
           <Image
-            src="/assets/image/banner-oc-care-line-2.png"
+            src="/assets/images/banner-oc-care-line-2.png"
             alt="Imagem OC Linha de Cuidado"
             className="h-auto max-h-[373px] w-[968px] rounded-none object-cover md:rounded-2xl"
           />
@@ -22,7 +22,7 @@ export default function CareLineAdditionalServices(): JSX.Element {
 
         <div className="w-full lg:w-1/2">
           <Image
-            src="/assets/image/banner-oc-care-line-1.png"
+            src="/assets/images/banner-oc-care-line-1.png"
             alt="Imagem OC Linha de Cuidado"
             className="h-auto max-h-[373px] w-[968px] rounded-none object-cover md:rounded-2xl"
           />
