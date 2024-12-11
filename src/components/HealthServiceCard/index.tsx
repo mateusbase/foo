@@ -5,13 +5,13 @@ import { HealthServiceCardProps } from "./types";
 export default function HealthServiceCard({
   serviceTitle,
   serviceDescription,
-  serviceIcon = <RiMentalHealthLine size={34} color="white" />,
+  serviceIcon = <RiMentalHealthLine size={30} color="white" />,
   showButton = true,
 }: HealthServiceCardProps): JSX.Element {
   return (
     <div className="flex h-auto min-h-[200px] w-full flex-col rounded-[20px] border border-lightGray bg-white px-4 py-8 lg:justify-between lg:p-6">
       <div className="flex flex-col items-center lg:flex-row">
-        <div className="flex min-w-16 items-center justify-center rounded-full bg-primary-foreground lg:size-[63px]">
+        <div className="flex size-11 items-center justify-center rounded-full bg-primary-foreground lg:size-[63px]">
           {serviceIcon}
         </div>
 
