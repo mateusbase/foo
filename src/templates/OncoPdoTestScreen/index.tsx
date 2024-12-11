@@ -83,6 +83,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
         <div className="my-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {stepTestData.map((step) => (
             <StepTestCard
+              stepNumber={step.id}
               stepDescription={step.description}
               stepImage={step.imageUrl}
             />

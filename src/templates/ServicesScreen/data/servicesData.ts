@@ -55,6 +55,13 @@ export const healthServices1 = [
     serviceDescription:
       "Teste in-vitro que, a partir de modelos 3D obtidos do próprio tumor do paciente, avalia e quantifica a resposta das células tumorais a diferentes combinações de agentes quimioterápicos e terapias-alvo moleculares.",
   },
+  {
+    id: 9,
+    slug: "oc-cuidados-paliativos",
+    serviceTitle: "OC Cuidados Paliativos",
+    serviceDescription:
+      "Cuidados paliativos são realizados por uma equipe multidisciplinar que promove assistência para melhoria da qualidade de vida e também no alívio e prevenção do sofrimento dos pacientes com doenças avançadas. Saiba mais.",
+  },
 ];
 
 export const healthServices2 = [

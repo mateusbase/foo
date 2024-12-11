@@ -1,7 +1,7 @@
 import PageLayout from "@/components/PageLayout";
-import { services } from "./mocks";
 import ServiceCard from "./components/ServiceCard";
 import CareLineAdditionalServices from "./components/CareLineAdditionalServices";
+import { services } from "./data/servicesData";
 
 export default function OcCareLineScreen(): JSX.Element {
   return (
