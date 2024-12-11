@@ -60,7 +60,7 @@ const ClinicalBody = (): JSX.Element => {
             color="primary"
             radius="full"
             variant="bordered"
-            className="w-full max-w-[320px] sm:w-[280px]"
+            className="w-full lg:w-[320px]"
             options={[
               { key: 1, value: "1", label: "Otorrino" },
               { key: 1, value: "2", label: "Cardiologista" },
@@ -73,7 +73,7 @@ const ClinicalBody = (): JSX.Element => {
             color="primary"
             radius="full"
             variant="bordered"
-            className="w-full max-w-[320px] sm:w-[280px]"
+            className="w-full lg:w-[320px]"
             options={[
               { key: 1, value: "1", label: "" },
               { key: 1, value: "2", label: "" },
@@ -127,7 +127,7 @@ const ClinicalBody = (): JSX.Element => {
             <BaseButton
               color="primary"
               variant="bordered"
-              className="w-full border-1 text-[18px] leading-[22px] text-primary md:w-72"
+              className="w-full rounded-md border-1 text-[18px] leading-[22px] text-primary md:w-72"
             >
               [+] Ver todos
             </BaseButton>
@@ -138,7 +138,7 @@ const ClinicalBody = (): JSX.Element => {
             prevRef={prevRef}
             nextRef={nextRef}
             size={1}
-            color="text-primary"
+            color="text-primary-foreground"
           />
         </div>
       </div>

@@ -85,7 +85,7 @@ export default function UnitScreen(): JSX.Element {
               Especialidades e Serviços {decodedUnitName}
             </h2>
 
-            <div className="mt-10 grid grid-cols-2 gap-10 sm:grid-cols-2">
+            <div className="mt-10 grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-2">
               {decodedSpecialties.map((specialty) => (
                 <div
                   key={specialty}
@@ -96,7 +96,7 @@ export default function UnitScreen(): JSX.Element {
                 </div>
               ))}
             </div>
-            <div className="mt-10 flex items-center justify-center lg:hidden">
+            <div className="md:full-bleed mt-10 flex items-center justify-center lg:hidden">
               <MapCard />
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function UnitScreen(): JSX.Element {
               Facilidades e Comodidades
             </h2>
 
-            <div className="mt-10 grid grid-cols-2 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-3">
               <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
                 <Heart size={40} className="text-primary lg:size-[60px]" />{" "}
                 Estacionamento
