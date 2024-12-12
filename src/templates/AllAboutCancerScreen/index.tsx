@@ -3,67 +3,22 @@ import { Navigation } from "swiper/modules";
 import HealthServiceCard from "@/components/HealthServiceCard";
 import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
-import { useRef } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { NavigationOptions } from "swiper/types";
 import PageLayout from "@/components/PageLayout";
 import { categories } from "@/components/IconCard/mocks";
 import IconCard from "@/components/IconCard";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import SliderArrows from "@/components/SliderArrows";
+import CommonCancers from "./components/CommonCancers";
+import { cards, services } from "./aboutCancerMocks";
 
 export default function AllAboutCancerScreen(): JSX.Element {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
-
-  const services = [
-    {
-      subtitle: "Saiba mais",
-      serviceTitle: "OC na mídia",
-      serviceDescription:
-        "Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      actionButtonText: "Ver mais",
-      backgroundImageUrl:
-        "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
-    },
-    {
-      subtitle: "Saiba mais",
-      serviceTitle: "Serviço Oncológico",
-      serviceDescription:
-        "Acompanhe nossos serviços, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      actionButtonText: "Descubra",
-      backgroundImageUrl:
-        "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
-    },
-    {
-      subtitle: "Novidades",
-      serviceTitle: "Tecnologias",
-      serviceDescription:
-        "Tecnologias avançadas, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      actionButtonText: "Ver detalhes",
-      backgroundImageUrl:
-        "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
-    },
-  ];
-
-  const cards = [
-    {
-      id: 1,
-      serviceTitle: "OC Acesso",
-      serviceDescription:
-        "A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.",
-    },
-    {
-      id: 2,
-      serviceTitle: "Análise Patológica",
-      serviceDescription:
-        "Técnica responsável pela análise de células e tecidos com alterações oncológicas.",
-    },
-    {
-      id: 3,
-      serviceTitle: "Tratamento Oncológico",
-      serviceDescription:
-        "Um serviço especializado em oferecer tratamentos de ponta para diversos tipos de câncer.",
-    },
-  ];
+  const { nextRef, prevRef, onBeforeInit, swiperRef } = useSwiperNavigation();
+  const {
+    nextRef: nextRefCard,
+    prevRef: prevRefCard,
+    swiperRef: swiperRefCard,
+    onBeforeInit: onBeforeInitCard,
+  } = useSwiperNavigation();
 
   return (
     <PageLayout title="Tudo sobre o câncer" subtitle="Oncoclínicas">
@@ -86,8 +41,8 @@ export default function AllAboutCancerScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-20 flex flex-col md:flex-row md:justify-between">
-        <div className="w-full md:w-1/2 md:pr-16">
+      <div className="mt-20 flex flex-col md:flex-row">
+        <div className="w-full md:w-1/2 md:pr-3">
           <h2 className="text-2xl text-primary md:text-[40px] md:leading-[48px]">
             O câncer?
           </h2>
@@ -106,7 +61,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
           </p>
         </div>
 
-        <div className="mt-10 hidden w-full grid-cols-1 gap-6 md:mt-0 md:grid md:w-1/2 md:grid-cols-2">
+        <div className="mt-10 hidden w-full grid-cols-1 gap-6 md:mt-0 lg:grid lg:w-2/5 lg:grid-cols-2">
           {categories.map((categorie) => (
             <IconCard
               cardTitle={categorie.title}
@@ -116,29 +71,20 @@ export default function AllAboutCancerScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="mt-10 block grid-cols-3 gap-[26px] md:hidden">
+        <div className="mt-8 flex flex-col items-center justify-center md:w-1/2 lg:hidden">
           <Swiper
             modules={[Navigation]}
             spaceBetween={30}
             slidesPerView={1}
             loop
-            navigation={{
-              nextEl: nextRef.current,
-              prevEl: prevRef.current,
-            }}
-            onInit={(swiper) => {
-              if (swiper.params.navigation) {
-                const navigationParams = swiper.params
-                  .navigation as NavigationOptions;
-                navigationParams.prevEl = prevRef.current;
-                navigationParams.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
-              }
-            }}
+            onInit={(swiper) => onBeforeInitCard(swiper)}
+            className="w-full max-w-lg"
           >
             {cards.map((service) => (
-              <SwiperSlide key={service.id}>
+              <SwiperSlide
+                key={service.id}
+                className="flex items-center justify-center"
+              >
                 <HealthServiceCard
                   serviceTitle="Análise Patológica"
                   serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
@@ -147,37 +93,19 @@ export default function AllAboutCancerScreen(): JSX.Element {
             ))}
           </Swiper>
 
-          <div className="mt-4 flex justify-center space-x-4">
-            <button
-              ref={prevRef}
-              type="button"
-              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-              aria-label="Previous"
-            >
-              <IoIosArrowBack
-                className="text-primary dark:text-gray-800"
-                size={35}
-              />
-            </button>
-
-            <button
-              ref={nextRef}
-              type="button"
-              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-              aria-label="Next"
-            >
-              <IoIosArrowForward
-                className="text-primary dark:text-gray-800"
-                size={35}
-              />
-            </button>
+          <div className="mt-6 flex justify-center space-x-4">
+            <SliderArrows
+              swiperRef={swiperRefCard}
+              prevRef={prevRefCard}
+              nextRef={nextRefCard}
+            />
           </div>
         </div>
       </div>
 
       <div className="mt-10 flex justify-start md:mt-32 md:justify-center">
         <div className="text-left md:text-center">
-          <h2 className="text-2xl font-extralight text-primary md:text-title-xl md:font-black md:leading-[74px]">
+          <h2 className="font-lato-thin text-2xl text-primary md:text-5xl md:font-black md:leading-[74px]">
             Confira os tipos de câncer mais comuns no Brasil
           </h2>
           <p className="mt-4 text-base text-darkGray md:text-[28px] md:font-medium md:leading-[32px]">
@@ -187,14 +115,14 @@ export default function AllAboutCancerScreen(): JSX.Element {
             mais comuns:
           </p>
 
-          <h2 className="mt-10 text-2xl font-extralight text-primary md:mt-14 md:text-[28px] md:font-black md:leading-[74px]">
+          <h2 className="mt-10 text-2xl font-normal text-primary md:mt-14 md:text-[28px] md:font-black md:leading-[74px]">
             Conheça os mais comuns:
           </h2>
         </div>
       </div>
 
       <div className="mt-10 flex flex-col justify-between gap-5 md:mt-20">
-        <div className="hidden w-full grid-cols-2 gap-6 sm:grid-cols-2 md:grid lg:grid-cols-4">
+        <div className="hidden w-full grid-cols-2 gap-6 sm:grid-cols-2 md:hidden lg:grid lg:grid-cols-4">
           {categories.map(() => (
             <IconCard
               cardTitle="Próstata "
@@ -203,65 +131,9 @@ export default function AllAboutCancerScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="block grid-cols-3 gap-[26px] md:hidden">
-          <Swiper
-            modules={[Navigation]}
-            spaceBetween={30}
-            slidesPerView={1}
-            loop
-            navigation={{
-              nextEl: nextRef.current,
-              prevEl: prevRef.current,
-            }}
-            onInit={(swiper) => {
-              if (swiper.params.navigation) {
-                const navigationParams = swiper.params
-                  .navigation as NavigationOptions;
-                navigationParams.prevEl = prevRef.current;
-                navigationParams.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
-              }
-            }}
-          >
-            {cards.map((service) => (
-              <SwiperSlide key={service.id}>
-                <HealthServiceCard
-                  serviceTitle="Análise Patológica"
-                  serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <CommonCancers />
 
-          <div className="mt-4 flex justify-center space-x-4">
-            <button
-              ref={prevRef}
-              type="button"
-              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-              aria-label="Previous"
-            >
-              <IoIosArrowBack
-                className="text-primary dark:text-gray-800"
-                size={35}
-              />
-            </button>
-
-            <button
-              ref={nextRef}
-              type="button"
-              className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-              aria-label="Next"
-            >
-              <IoIosArrowForward
-                className="text-primary dark:text-gray-800"
-                size={35}
-              />
-            </button>
-          </div>
-        </div>
-
-        <div className="flex justify-center">
+        <div className="hidden justify-center lg:flex">
           <BaseButton
             color="primary"
             className="w-full text-white md:w-[224px]"
@@ -271,7 +143,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-28 hidden grid-cols-3 gap-[26px] md:grid">
+      <div className="mt-28 hidden grid-cols-3 gap-[26px] lg:grid">
         <MedicalServiceCard
           serviceTitle="OC Acesso"
           serviceDescription="A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência."
@@ -289,7 +161,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
         />
       </div>
 
-      <div className="relative mb-10 mt-20 w-full sm:hidden">
+      <div className="relative mb-10 mt-20 w-full self-center lg:hidden">
         <Swiper
           modules={[Navigation]}
           spaceBetween={30}
@@ -300,14 +172,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
             prevEl: prevRef.current,
           }}
           onInit={(swiper) => {
-            if (swiper.params.navigation) {
-              const navigationParams = swiper.params
-                .navigation as NavigationOptions;
-              navigationParams.prevEl = prevRef.current;
-              navigationParams.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
+            onBeforeInit(swiper);
           }}
         >
           {services.map((service) => (
@@ -321,30 +186,12 @@ export default function AllAboutCancerScreen(): JSX.Element {
           ))}
         </Swiper>
 
-        <div className="mt-4 flex justify-center space-x-4">
-          <button
-            ref={prevRef}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Previous"
-          >
-            <IoIosArrowBack
-              className="text-primary dark:text-gray-800"
-              size={35}
-            />
-          </button>
-
-          <button
-            ref={nextRef}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Next"
-          >
-            <IoIosArrowForward
-              className="text-primary dark:text-gray-800"
-              size={35}
-            />
-          </button>
+        <div className="mt-6 flex justify-center space-x-4 align-middle lg:hidden">
+          <SliderArrows
+            swiperRef={swiperRef}
+            prevRef={prevRef}
+            nextRef={nextRef}
+          />
         </div>
       </div>
     </PageLayout>
