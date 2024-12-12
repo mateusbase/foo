@@ -28,7 +28,7 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
             privada do Brasil em termos de receita, contando com 145 unidades
             estrategicamente localizadas em 39 cidades brasileiras.
           </p>
-          <div className="mt-6 flex items-end">
+          <div className="mt-6 flex items-center justify-center md:hidden lg:flex">
             <BaseButton
               className="w-full font-bold text-white lg:mt-16 lg:w-80"
               color="primary"
@@ -46,6 +46,16 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
             className="h-auto w-full lg:w-auto"
           />
         </div>
+      </div>
+
+      <div className="mb-10 hidden items-center justify-center md:flex lg:hidden">
+        <BaseButton
+          className="w-[322px] font-bold text-white"
+          color="primary"
+          variant="solid"
+        >
+          Acesse
+        </BaseButton>
       </div>
 
       <div>
