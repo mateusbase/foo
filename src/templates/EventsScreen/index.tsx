@@ -73,7 +73,7 @@ export default function EventsScreen(): JSX.Element {
       title="Eventos Oncoclínicas"
       subtitle="Congressos, palestras, simpósios e muito mais."
     >
-      <div className="mt-20 hidden md:flex">
+      <div className="mt-20 hidden lg:flex">
         <div className="hidden h-[536px] w-full justify-between text-white lg:flex">
           <div className="flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-b from-primary-foreground to-secondary-foreground p-20">
             <div>
@@ -109,7 +109,7 @@ export default function EventsScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-4 border-gray-300 pb-4 md:mt-28 md:flex-row md:items-center md:justify-between md:border-b md:px-0">
+      <div className="mt-10 flex flex-col gap-4 border-gray-300 pb-4 md:mt-0 md:flex-row md:items-center md:justify-between md:border-b md:px-0 lg:mt-20">
         <div className="flex w-full flex-col items-center gap-2 sm:flex-row">
           <div className="flex w-full flex-col gap-4 sm:flex-row">
             <BaseSelect

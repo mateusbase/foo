@@ -8,6 +8,8 @@ import { NavigationOptions } from "swiper/types";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import SliderArrows from "@/components/SliderArrows";
 
 interface Service {
   id: number;
@@ -22,8 +24,7 @@ interface ListServiceCardsMobileProps {
 export default function ListServiceCardsMobile({
   services,
 }: ListServiceCardsMobileProps): JSX.Element {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
 
   return (
     <div className="relative w-full">
@@ -33,18 +34,11 @@ export default function ListServiceCardsMobile({
         spaceBetween={10}
         loop
         navigation={{
-          nextEl: nextRef.current,
           prevEl: prevRef.current,
+          nextEl: nextRef.current,
         }}
         onInit={(swiper) => {
-          if (swiper.params.navigation) {
-            // eslint-disable-next-line prettier/prettier
-            const navigationParams = swiper.params.navigation as NavigationOptions;
-            navigationParams.prevEl = prevRef.current;
-            navigationParams.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }
+          swiperRef.current = swiper;
         }}
         breakpoints={{
           640: {
@@ -65,29 +59,13 @@ export default function ListServiceCardsMobile({
       </Swiper>
 
       <div className="mt-4 flex w-full justify-center space-x-4">
-        <button
-          ref={prevRef}
-          type="button"
-          className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-          aria-label="Previous"
-        >
-          <IoIosArrowBack
-            className="text-primary-foreground dark:text-gray-800"
-            size={35}
-          />
-        </button>
-
-        <button
-          ref={nextRef}
-          type="button"
-          className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-          aria-label="Next"
-        >
-          <IoIosArrowForward
-            className="text-primary-foreground dark:text-gray-800"
-            size={35}
-          />
-        </button>
+        <SliderArrows
+          swiperRef={swiperRef}
+          prevRef={prevRef}
+          nextRef={nextRef}
+          size={1}
+          color="text-primary-foreground"
+        />
       </div>
     </div>
   );
