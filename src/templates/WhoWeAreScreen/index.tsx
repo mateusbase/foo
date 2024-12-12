@@ -34,8 +34,8 @@ export default function WhoWeArecreen(): JSX.Element {
       title="Oncoclínicas&Co"
       subtitle="Pioneira no país em gestão de serviços oncológicos, a Oncoclínicas&Co foi fundada em 2010 e hoje é um dos maiores centros de oncologia, hematologia e radioterapia da América Latina."
     >
-      <div className="mt-14 flex flex-col md:flex-row">
-        <div className="mb-10 block md:hidden">
+      <div className="mt-14 flex flex-col lg:flex-row">
+        <div className="mb-10 block w-full md:w-1/2 lg:hidden">
           <BaseSelect
             color="default"
             variant="bordered"
@@ -53,7 +53,7 @@ export default function WhoWeArecreen(): JSX.Element {
           />
         </div>
 
-        <div className="hidden w-[398px] text-white md:block">
+        <div className="hidden w-[398px] text-white lg:block">
           {menuItems.map((item, index) => (
             <MenuItem
               key={item.id}
@@ -67,7 +67,7 @@ export default function WhoWeArecreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="mb-10 ml-0 flex-1 md:ml-16">
+        <div className="mb-10 ml-0 flex-1 lg:ml-16">
           {activeContent ? (
             <>
               <h1 className="text-4xl font-bold leading-[48px] text-primary">
@@ -97,11 +97,11 @@ export default function WhoWeArecreen(): JSX.Element {
                       />
                     </div>
                   ))}
-                  <p className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
-                    {activeContent.secondParagraph}
-                  </p>
                 </div>
               )}
+              <p className="mt-6 w-full text-[20px] font-normal leading-[26px] text-darkGray">
+                {activeContent.secondParagraph}
+              </p>
             </>
           ) : (
             <p className="text-darkGray">Conteúdo não encontrado.</p>
