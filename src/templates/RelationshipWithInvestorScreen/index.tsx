@@ -17,7 +17,7 @@ export default function RelationshipWithInvestorScreen(): JSX.Element {
       title="Investidores Oncoclínicas&Co"
       subtitle="Baseado em seu compromisso com a ética e a transparência, a Oncoclínicas&Co. disponibiliza informações e documentos aos seus investidores."
     >
-      <div className="my-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 md:flex-row">
+      <div className="my-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-2 md:flex-row lg:mt-10">
         <div className="flex w-full flex-col lg:max-w-md">
           <h1 className="max-w-full text-4xl font-light text-primary lg:text-6xl">
             Relações com investidores
