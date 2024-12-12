@@ -1,9 +1,7 @@
 import ServiceCard from "@/components/ServiceCard";
-import { ReactNode, useRef } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { ReactNode } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { NavigationOptions } from "swiper/types";
 
 import "swiper/css";
 import "swiper/css/pagination";

@@ -38,8 +38,6 @@ export default function GlossaryScreen(): JSX.Element {
             variant="bordered"
             endContent={<SearchIcon className="text-2xl text-primary" />}
             className="h-[54px] w-full"
-          // onChange={handleSearchChange}
-          // value={valueSearch}
           />
 
           <BaseSelect
