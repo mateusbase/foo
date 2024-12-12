@@ -211,7 +211,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                 </div>
               </>
             ) : (
-              <div className="flex size-full flex-row items-center justify-center gap-2 bg-gray-600 p-6 text-gray-500">
+              <div className="flex size-full min-w-60 max-w-96 flex-row items-center justify-center gap-2 bg-gray-600 p-6 text-gray-500">
                 <Link
                   className="flex w-full items-center justify-center text-white xl2:text-lg"
                   href="/contato"

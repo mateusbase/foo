@@ -27,7 +27,7 @@ export default function EventCard({
         />
 
         <div className="mt-6 flex flex-1 flex-col justify-between space-y-6">
-          <h3 className="text-left text-2xl font-normal leading-[32px] text-primary md:text-3xl md:leading-[36px]">
+          <h3 className="text-left text-2xl font-normal leading-[32px] text-primary md:leading-[36px] lg:text-3xl">
             {event.title}
           </h3>
 
