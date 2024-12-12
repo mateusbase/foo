@@ -1,6 +1,6 @@
 import AlphabetSelector from "@/components/AlphabetSelector";
 import PageLayout from "@/components/PageLayout";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import MenuItem from "@/components/MenuItem";
 import BaseInput from "@/components/Input";
 import { SearchIcon } from "lucide-react";
@@ -38,8 +38,8 @@ export default function GlossaryScreen(): JSX.Element {
             variant="bordered"
             endContent={<SearchIcon className="text-2xl text-primary" />}
             className="h-[54px] w-full"
-            // onChange={handleSearchChange}
-            // value={valueSearch}
+          // onChange={handleSearchChange}
+          // value={valueSearch}
           />
 
           <BaseSelect

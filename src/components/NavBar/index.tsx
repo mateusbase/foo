@@ -178,7 +178,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             />
           </NavbarContent>
 
-          <NavbarContent className="hidden justify-center gap-8 text-base font-semibold uppercase lg:flex">
+          <NavbarContent className="hidden justify-center gap-4 text-sm font-normal uppercase lg:flex xl2:gap-8 2xl:text-base">
             {routes.map((route) => (
               <NavLink key={route.label} route={route} />
             ))}
@@ -189,15 +189,15 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               <>
                 <Link
                   href="/contato"
-                  className="ml-10 mr-14 hidden items-center font-semibold text-primary lg:flex"
+                  className="hidden items-center text-primary lg:flex xl2:ml-10 xl2:mr-9"
                 >
                   Entrar
                   <LogIn size={26} className="ml-2" />
                 </Link>
 
-                <div className="flex size-full flex-row items-center justify-center gap-2 bg-secondary p-6 text-white">
+                <div className="flex size-full flex-row items-center justify-center gap-2 bg-secondary text-white xl2:p-6">
                   <Link
-                    className="flex w-full min-w-80 items-center justify-center text-lg text-white"
+                    className="flex w-full min-w-44 items-center justify-center text-white xl2:min-w-80 xl2:text-lg"
                     href="/agende-sua-consulta"
                   >
                     <CalendarIcon size={1} className="mr-2 text-white" />
@@ -211,9 +211,9 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                 </div>
               </>
             ) : (
-              <div className="flex h-full w-96 flex-row items-center justify-center gap-2 bg-gray-600 p-6 font-semibold text-gray-500">
+              <div className="flex size-full flex-row items-center justify-center gap-2 bg-gray-600 p-6 text-gray-500">
                 <Link
-                  className="flex w-full items-center justify-center text-lg text-white"
+                  className="flex w-full items-center justify-center text-white xl2:text-lg"
                   href="/contato"
                 >
                   <Stethoscope size={24} className="mr-2 text-white" />

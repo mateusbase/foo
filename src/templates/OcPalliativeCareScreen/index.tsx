@@ -77,6 +77,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
             onInit={(swiper) => {
               swiperRef.current = swiper;
             }}
+            onBeforeInit={(swiper) => onBeforeInit(swiper)}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
