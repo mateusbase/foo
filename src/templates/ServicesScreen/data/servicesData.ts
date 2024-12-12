@@ -134,7 +134,7 @@ export const headerProps = {
   sections: [
     {
       href: "#servicos",
-      text: "Serviço",
+      text: "Serviços",
       icon: undefined,
       isLink: true,
     },

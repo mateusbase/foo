@@ -2,7 +2,6 @@ import { useState, useMemo, useRef } from "react";
 import { Button } from "@nextui-org/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import HealthServiceCard from "@/components/HealthServiceCard";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import Link from "next/link";
 import { NavigationOptions } from "swiper/types";
@@ -11,13 +10,13 @@ import BaseInput from "@/components/Input";
 import { SearchIcon } from "@/components/Icons";
 import PreviousArrowIcon from "@/components/Icons/PreviousArrowIcon";
 import NextArrowIcon from "@/components/Icons/NextArrowIcon";
-import { Plus } from "lucide-react";
 import SectionHeader from "../SectionHeader";
 import { ServiceSectionProps } from "../../types";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import ServiceCard from "../ServiceCard";
 
 export default function ServiceSection({
   id,
@@ -83,7 +82,7 @@ export default function ServiceSection({
       <div className="mt-10 hidden grid-cols-4 gap-[26px] md:grid">
         {filteredHealthServices.map((service) => (
           <Link key={service.id} href={`/servicos/${service.slug}`} passHref>
-            <HealthServiceCard
+            <ServiceCard
               serviceTitle={service.serviceTitle}
               serviceDescription={service.serviceDescription}
             />
@@ -129,7 +128,7 @@ export default function ServiceSection({
                 passHref
               >
                 <div className="cursor-pointer">
-                  <HealthServiceCard
+                  <ServiceCard
                     serviceTitle={service.serviceTitle}
                     serviceDescription={service.serviceDescription}
                   />
@@ -165,10 +164,9 @@ export default function ServiceSection({
           color="primary"
           variant="bordered"
           radius="sm"
-          startContent={<Plus size={24} />}
-          className="mt-8 h-[50px] w-full border-1 pl-3 text-left text-[18px] leading-[22px] text-primary md:w-[322px]"
+          className="mt-8 h-[50px] w-full rounded-md border-1 pl-3 text-left text-sm leading-[22px] text-primary md:w-[322px] lg:text-[18px]"
         >
-          Ver todos
+          [+] Ver todos
         </Button>
       </div>
 

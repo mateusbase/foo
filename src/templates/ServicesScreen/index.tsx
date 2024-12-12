@@ -19,21 +19,21 @@ export default function ServiceScreen(): JSX.Element {
       <div className="mt-8 flex w-full flex-wrap items-center justify-center gap-2 lg:hidden">
         <a
           href="#servicos"
-          className="flex min-w-[90px] max-w-[150px] flex-1 items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-white"
+          className="flex min-w-[90px] flex-1 items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-white"
         >
-          Serviço
+          Serviços
         </a>
         <a
           href="#diagnósticos"
-          className="flex min-w-[90px] max-w-[150px] flex-1 items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-white"
+          className="flex min-w-[90px] flex-1 items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-white"
         >
-          Diagnóstico
+          Diagnósticos
         </a>
         <a
           href="#tratamentos"
-          className="flex min-w-[90px] max-w-[150px] flex-1 items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-white"
+          className="flex min-w-[90px] flex-1 items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-white"
         >
-          Tratamento
+          Tratamentos
         </a>
       </div>
 

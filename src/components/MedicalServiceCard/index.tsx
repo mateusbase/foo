@@ -8,7 +8,7 @@ export default function MedicalServiceCard({
   serviceTitle,
   serviceDescription,
   actionButtonText,
-  serviceIcon = <Plus size={24} className="mr-4" />,
+  serviceIcon = <Plus size={22} />,
   backgroundImageUrl,
   shouldShowButton = true,
 }: MedicalServiceCardProps): JSX.Element {
@@ -33,7 +33,7 @@ export default function MedicalServiceCard({
         )}
 
         {hasActionButton && (
-          <div className="w-10/12">
+          <div className="w-11/12">
             <BaseButton
               className="h-10 w-full border-white text-white"
               variant="bordered"
