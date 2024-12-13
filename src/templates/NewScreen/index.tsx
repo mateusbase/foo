@@ -6,6 +6,8 @@ import PageHeader from "@/components/PageHeader";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import Breadcrumb from "@/components/Breadcrumb";
+import ShareOptions from "@/components/ShareOptions";
+import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import NewsPreviewCard from "./components/NewsPreviewCard";
 import { newsItems } from "./optionsMock";
 
@@ -91,6 +93,9 @@ export default function NewScreen(): JSX.Element {
               </p>
             ))}
           </div>
+        </div>
+        <div className="my-10 hidden lg:flex">
+          <ShareOptions options={socialNetwork} />
         </div>
       </BaseContainer>
 
