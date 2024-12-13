@@ -28,7 +28,7 @@ export default function DoctorScreen(): JSX.Element {
         />
       </div>
 
-      <div className="mt-40 flex flex-col items-center justify-center lg:mt-20 lg:flex-row lg:items-start lg:justify-between">
+      <div className="mt-14 flex flex-col items-center justify-center lg:mt-20 lg:flex-row lg:items-start lg:justify-between">
         <div className="relative flex flex-col items-center md:left-5 lg:bottom-48">
           <img
             src={
@@ -64,7 +64,7 @@ export default function DoctorScreen(): JSX.Element {
               : "Dra. Nome do Médico"}
           </h1>
 
-          <p className="mt-6 text-left text-sm leading-[28px] text-darkGray lg:text-lg">
+          <p className="mt-6 text-left text-sm leading-[22px] text-darkGray lg:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex
             id sem ullamcorper. Lorem ipsum dolor sit amet, consectetur
@@ -90,7 +90,7 @@ export default function DoctorScreen(): JSX.Element {
             </div>
 
             <div>
-              <h1 className="my-6 text-left text-2xl text-primary lg:mt-12 lg:text-[42px]">
+              <h1 className="my-6 text-left text-2xl text-primary md:my-0 lg:my-6 lg:mt-12 lg:text-[42px]">
                 Especializações
               </h1>
 

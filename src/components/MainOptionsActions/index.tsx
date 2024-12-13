@@ -12,14 +12,16 @@ export default function MainOptionsActions({
     >
       {options.map((option, index) => (
         <React.Fragment key={option.id}>
-          <div className="flex">
-            <Link href={option.link || "#"} passHref>
+          <Link href={option.link || "#"} passHref>
+            <div className="flex">
               <button type="button" className="flex items-center space-x-2">
                 <option.icon />
-                <span className="text-xl">{option.title}</span>
+                <span className="text-lg leading-none 2xl:text-xl">
+                  {option.title}
+                </span>
               </button>
-            </Link>
-          </div>
+            </div>
+          </Link>
           <section>
             {index < options.length - 1 && (
               <span className="mx-7 border-y-large border-l border-white" />

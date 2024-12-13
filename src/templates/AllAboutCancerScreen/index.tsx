@@ -35,7 +35,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
             qualidade de vida.
           </p>
 
-          <h2 className="mt-14 hidden text-2xl font-extralight text-primary md:block md:text-[28px] md:font-bold md:leading-[74px]">
+          <h2 className="mt-14 hidden text-xl font-extralight text-primary md:block md:text-[28px] md:font-bold md:leading-[74px]">
             Leia o conteúdo abaixo
           </h2>
         </div>
@@ -105,7 +105,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
       <div className="mt-10 flex justify-start md:mt-32 md:justify-center">
         <div className="text-left md:text-center">
-          <h2 className="font-lato-thin text-2xl text-primary md:text-5xl md:font-black md:leading-[74px]">
+          <h2 className="font-lato-thin text-2xl text-primary md:text-5xl md:leading-[74px]">
             Confira os tipos de câncer mais comuns no Brasil
           </h2>
           <p className="mt-4 text-base text-darkGray md:text-[28px] md:font-medium md:leading-[32px]">
