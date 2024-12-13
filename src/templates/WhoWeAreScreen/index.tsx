@@ -70,7 +70,7 @@ export default function WhoWeArecreen(): JSX.Element {
         <div className="mb-10 ml-0 flex-1 lg:ml-16">
           {activeContent ? (
             <>
-              <h1 className="text-4xl font-bold leading-[48px] text-primary">
+              <h1 className="text-2xl font-bold text-primary md:text-4xl lg:leading-[48px]">
                 {activeContent.title}
               </h1>
 
