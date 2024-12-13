@@ -133,7 +133,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
         <CommonCancers />
 
-        <div className="hidden justify-center lg:flex">
+        <div className="hidden justify-start lg:flex">
           <BaseButton
             color="primary"
             className="w-full text-white md:w-[224px]"
