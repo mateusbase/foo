@@ -9,7 +9,11 @@ export default function InvitedMedicalCard({
   return (
     <div className="my-6 flex">
       <div>
-        <img className="h-28 w-32" src={avatar} alt="Avatar Médico" />
+        <img
+          className="h-28 w-32 object-cover"
+          src={avatar}
+          alt="Avatar Médico"
+        />
       </div>
       <div className="ml-6">
         <h2 className="text-primary lg:text-2xl">{name}</h2>

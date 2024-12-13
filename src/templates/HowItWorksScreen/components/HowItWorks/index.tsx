@@ -2,7 +2,7 @@ export default function HowItWorks(): JSX.Element {
   return (
     <div className="w-full">
       <div>
-        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
+        <h2 className="mt-10 text-2xl text-primary md:mt-0 md:text-3xl lg:text-[40px]">
           O que é a pesquisa clínica
         </h2>
         <p className="mt-10 text-base font-medium text-darkGray lg:text-xl lg:font-normal">
