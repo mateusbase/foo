@@ -1,7 +1,7 @@
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
 import BaseSelect from "@/components/Select";
-import tumorTypes from "@/pages/medicina-de-precisao/tipos-tumorais/tumorMock";
+import tumorTypes from "@/templates/TumorTypeScreen/mocks";
 import { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
