@@ -8,6 +8,7 @@ import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SliderArrows from "@/components/SliderArrows";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
+import { Swiper as SwiperInstance } from "swiper/types";
 import { services } from "./mock";
 import TermsOfConsentBanner from "./components/TermsOfConsentBanner";
 
@@ -23,12 +24,12 @@ export default function ClinicalResearchScreen(): JSX.Element {
       >
         <div className="mt-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 lg:flex-row">
           <div className="flex w-full flex-col">
-            <h1 className="max-w-full text-4xl font-light text-primary lg:text-6xl">
+            <h1 className="max-w-full text-5xl font-light text-primary 2xl:text-6xl">
               Pesquisa Clínica Oncoclínicas
             </h1>
 
-            <div className="w-3/4">
-              <p className="mt-8 max-w-full font-medium text-darkGray lg:max-w-7xl lg:text-2xl">
+            <div className="lg:mb-14">
+              <p className="mt-8 max-w-full text-xl font-medium text-darkGray lg:max-w-7xl 2xl:text-2xl">
                 Desde 2018, o Programa de Pesquisa Clínica do Grupo Oncoclínicas
                 vem sendo desenvolvido, e, hoje, conta com uma gestão
                 centralizada e a participação de sete de suas unidades no
@@ -96,7 +97,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
                   prevEl: prevRef.current,
                   nextEl: nextRef.current,
                 }}
-                onInit={(swiper) => {
+                onInit={(swiper: SwiperInstance) => {
                   swiperRef.current = swiper;
                 }}
                 breakpoints={{
