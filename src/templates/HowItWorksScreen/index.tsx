@@ -26,7 +26,7 @@ export default function HowItWorksScreen(): JSX.Element {
       title="Como funciona"
       subtitle="Programa de Pesquisa Clínica do Grupo Oncoclínicas"
     >
-      <div className="mt-10 flex flex-col md:gap-12 lg:flex-row">
+      <div className="flex flex-col md:gap-12 lg:mt-10 lg:flex-row">
         <div className="mb-2 block lg:hidden">
           <BaseSelect
             color="primary"
