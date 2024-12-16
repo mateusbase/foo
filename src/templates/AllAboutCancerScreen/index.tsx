@@ -64,6 +64,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
         <div className="mt-10 hidden w-full grid-cols-1 gap-6 md:mt-0 lg:grid lg:w-2/5 lg:grid-cols-2">
           {categories.map((categorie) => (
             <IconCard
+              key={categorie.title}
               cardTitle={categorie.title}
               cardDescription={categorie.description}
               showButton={false}
@@ -123,8 +124,9 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
       <div className="mt-10 flex flex-col justify-between gap-5 md:mt-20">
         <div className="hidden w-full grid-cols-2 gap-6 sm:grid-cols-2 md:hidden lg:grid lg:grid-cols-4">
-          {categories.map(() => (
+          {categories.map((categorie) => (
             <IconCard
+              key={categorie.title}
               cardTitle="Próstata "
               cardDescription="É o segundo tipo mais comum entre os homens e atinge principalmente pessoas com mais de 65 anos."
             />
@@ -133,7 +135,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
         <CommonCancers />
 
-        <div className="hidden justify-start lg:flex">
+        <div className="mt-10 hidden justify-start lg:flex">
           <BaseButton
             color="primary"
             className="w-full text-white md:w-[224px]"
