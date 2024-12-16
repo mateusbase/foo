@@ -9,7 +9,7 @@ export default function ServiceCard({
   showButton = true,
 }: ServiceCardProps): JSX.Element {
   return (
-    <div className="flex h-[231px] w-full flex-col rounded-[20px] border border-lightGray bg-white px-4 py-8 lg:justify-between lg:p-6">
+    <div className="flex min-h-[231px] w-full flex-col rounded-[20px] border border-lightGray bg-white px-3 py-5 lg:h-[272px] lg:justify-between lg:p-6">
       <div className="flex flex-col items-start lg:flex-row">
         <div className="flex size-11 items-center justify-center rounded-full bg-primary-foreground lg:size-[63px]">
           {serviceIcon}
@@ -22,12 +22,12 @@ export default function ServiceCard({
         </div>
       </div>
 
-      <p className="mt-4 text-left text-sm leading-[15px] text-darkGray sm:leading-[14px] md:font-medium lg:text-[16px]">
+      <p className="text-left text-[13px] leading-[15px] text-darkGray sm:leading-[18px] md:font-medium lg:mt-2 2xl:text-[16px]">
         {serviceDescription}
       </p>
 
       {showButton && (
-        <div className="mt-10 hidden items-center justify-start rounded-full lg:flex">
+        <div className="hidden items-center justify-start rounded-full lg:flex">
           <IoIosArrowDropright size={29} className="text-primary-foreground" />
         </div>
       )}
