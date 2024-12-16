@@ -54,7 +54,7 @@ const CommonCancers = (): JSX.Element => {
           color="primary"
           className="h-[56px] w-[320px] shrink-0 text-white"
         >
-          Ver todos os tipos de câncer
+          Ver todos os tipos de câncers
         </BaseButton>
       </div>
     </div>

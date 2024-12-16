@@ -188,7 +188,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
           ))}
         </Swiper>
 
-        <div className="mt-6 flex justify-center space-x-4 align-middle lg:hidden">
+        <div className="mr-10 mt-6 flex justify-end space-x-4 lg:hidden">
           <SliderArrows
             swiperRef={swiperRef}
             prevRef={prevRef}

@@ -25,7 +25,7 @@ export default function MedicalServiceCard({
             "url('https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg')",
         }}
       />
-      <div className="flex h-[289px] min-w-[322px] flex-col justify-between rounded-br-[100px] bg-gradient-to-b from-primary-foreground from-60% via-secondary-foreground via-90% to-purpleAccent to-70% px-14 py-8 lg:h-[342px] lg:min-h-[515px] lg:gap-12">
+      <div className="flex h-[289px] min-w-[322px] flex-col justify-between rounded-br-[100px] bg-gradient-to-b from-primary-foreground from-60% via-secondary-foreground via-90% to-purpleAccent to-70% p-8 md:px-14 lg:h-[342px] lg:min-h-[515px] lg:gap-12">
         {hasSubtitle && (
           <p className="mt-4 text-left text-lg leading-[30px] text-white md:text-[24px]">
             {subtitle}
@@ -45,16 +45,16 @@ export default function MedicalServiceCard({
         )}
 
         <div className="text-left">
-          <h3 className="text-[32px] leading-none text-white md:text-[32px] 2xl:text-5xl 2xl:leading-[60px]">
+          <h3 className="text-[30px] leading-7 text-white md:text-[32px] 2xl:text-5xl 2xl:leading-[60px]">
             {serviceTitle}
           </h3>
 
-          <p className="mt-4 text-sm text-white md:text-sm lg:text-xl lg:leading-[30px] 2xl:text-2xl">
+          <p className="mt-4 text-sm leading-5 text-white md:text-sm lg:text-xl lg:leading-[30px] 2xl:text-2xl">
             {serviceDescription}
           </p>
         </div>
 
-        <div className="mt-5 flex w-full items-start justify-start rounded-full">
+        <div className="mt-4 flex w-full items-start justify-start rounded-full">
           {shouldShowButton && <IoIosArrowDropright size={29} color="white" />}
         </div>
       </div>
