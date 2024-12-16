@@ -15,7 +15,7 @@ export default function ContentCard({
           {serviceIcon}
         </div>
 
-        <h3 className="ml-4 mt-2 max-w-60 text-2xl font-normal leading-[28px] text-purpleDark sm:mt-0 sm:leading-[32px] lg:text-xl xl:text-2xl">
+        <h3 className="ml-4 mt-2 max-w-60 text-xl font-normal leading-[28px] text-purpleDark sm:mt-0 sm:leading-[32px] lg:text-xl xl:text-2xl">
           {serviceTitle}
         </h3>
       </div>
