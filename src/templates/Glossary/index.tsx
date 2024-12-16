@@ -6,12 +6,13 @@ import BaseInput from "@/components/Input";
 import { SearchIcon } from "lucide-react";
 import BaseSelect from "@/components/Select";
 import { RxHamburgerMenu } from "react-icons/rx";
+import ShareOptions from "@/components/ShareOptions";
+import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import { glossaryData } from "./glossaryMock";
-import socialNetwork from "./socialNetwork";
 
 export default function GlossaryScreen(): JSX.Element {
   const [selectedLetter, setSelectedLetter] = useState(glossaryData[0].letter);
-  const [selectedTerm, setSelectedTerm] = useState("");
+  const [selectedTerm, setSelectedTerm] = useState("1");
 
   const filteredGlossary = glossaryData.find(
     (glossary) => glossary.letter === selectedLetter,
@@ -93,33 +94,14 @@ export default function GlossaryScreen(): JSX.Element {
         </div>
 
         {filteredTerm && (
-          <div className="mb-9 mt-4 w-[90%] text-left font-lato-regular">
+          <div className="mb-9 mt-4 w-[90%] text-left font-lato-regular text-darkGray">
             {filteredTerm.definition.split("\n").map((line) => (
               <p className="my-3">{line}</p>
             ))}
           </div>
         )}
-
-        <h3 className="mb-4 self-center text-center text-xl text-primary md:self-start md:text-left lg:mt-3">
-          Compartilhar
-        </h3>
-
-        <div className="flex flex-col items-center self-center md:items-start md:self-start">
-          <div className="flex flex-row gap-4">
-            {socialNetwork.map((socialNetworks) => (
-              <div
-                key={socialNetworks.name}
-                className="flex cursor-pointer flex-col items-center"
-              >
-                <div className="flex size-12 items-center justify-center rounded-full border bg-gray-300 text-primary">
-                  {socialNetworks.icon}
-                </div>
-                <span className="mt-2 font-lato-bold text-xs text-darkGray">
-                  {socialNetworks.name}
-                </span>
-              </div>
-            ))}
-          </div>
+        <div className="mb-10">
+          <ShareOptions options={socialNetwork} />
         </div>
       </div>
 
@@ -137,11 +119,11 @@ export default function GlossaryScreen(): JSX.Element {
             {filteredGlossary?.terms.map((terms, index, array) => (
               <MenuItem
                 key={terms.id}
-                isFirst={index === 0}
-                isLast={index === array.length - 1}
                 id={terms.id}
                 name={terms.term}
-                isActive={selectedTerm === terms.term}
+                isActive={selectedTerm === terms.id.toString()}
+                isFirst={index === 0}
+                isLast={index === array.length - 1}
                 onClick={(value) => {
                   setSelectedTerm(value.toString());
                 }}
@@ -151,7 +133,7 @@ export default function GlossaryScreen(): JSX.Element {
 
           <div className="flex w-3/4 flex-col">
             {filteredTerm && (
-              <div className="size-[90%] justify-start text-left font-lato-regular text-2xl">
+              <div className="size-[90%] justify-start text-left font-lato-regular text-2xl text-darkGray">
                 <h1 className="mb-7 text-4xl text-primary">
                   {filteredTerm.term}
                 </h1>
@@ -161,29 +143,7 @@ export default function GlossaryScreen(): JSX.Element {
               </div>
             )}
 
-            <div className="mt-32">
-              <h3 className="mb-4 text-center text-xl text-primary md:text-left lg:mt-3">
-                Compartilhar
-              </h3>
-
-              <div className="flex flex-col items-center md:items-start">
-                <div className="flex flex-row gap-4">
-                  {socialNetwork.map((socialNetworks) => (
-                    <div
-                      key={socialNetworks.name}
-                      className="flex cursor-pointer flex-col items-center"
-                    >
-                      <div className="flex size-12 items-center justify-center rounded-full border bg-gray-300 text-primary">
-                        {socialNetworks.icon}
-                      </div>
-                      <span className="mt-2 font-lato-bold text-xs text-darkGray">
-                        {socialNetworks.name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <ShareOptions options={socialNetwork} />
           </div>
         </div>
       </div>
