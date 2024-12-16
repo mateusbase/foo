@@ -104,26 +104,26 @@ export default function WorkWithUsScreen(): JSX.Element {
 
       <div className="mt-14 flex w-full flex-col justify-center gap-9 lg:flex-row">
         <InformationCard>
-          <p className="text-center text-2xl">
+          <p className="text-center text-xl md:text-2xl">
             Aqui você encontra as oportunidades de carreira na
-            <span className="font-bold">Oncocínicas</span>. Acha que este é o
+            <span className="font-bold"> Oncocínicas</span>. Acha que este é o
             seu perfil? Então acesse as vagas e veja como.
           </p>
           <div className="mt-6 flex w-full justify-center">
-            <BaseButton className="w-2/3 bg-purpleMedium text-lg text-white">
+            <BaseButton className="w-full bg-purpleMedium text-base text-white md:w-2/3 md:text-lg">
               Veja as oportunidades
             </BaseButton>
           </div>
         </InformationCard>
 
         <InformationCard background>
-          <p className="text-center text-2xl text-white">
+          <p className="text-center text-xl text-white md:text-2xl">
             A <span className="font-bold">Oncoclínicas&Co</span> está sempre
             aberto para receber novos colaboradores, que devem estar alinhados
             com nossos valores
           </p>
           <div className="mt-6 flex w-full justify-center">
-            <BaseButton className="w-2/3 bg-white text-lg text-purpleMedium">
+            <BaseButton className="w-full bg-white text-base text-purpleMedium md:w-2/3 md:text-lg">
               Envie o seu currículo
             </BaseButton>
           </div>
