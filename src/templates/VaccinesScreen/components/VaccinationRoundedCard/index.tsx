@@ -8,19 +8,19 @@ const VaccinationRoundedCard = ({
   listItems,
 }: VaccinationRoundedCardProps): JSX.Element => {
   return (
-    <div className="flex size-full flex-col justify-between">
+    <div className="mb-7 flex size-full flex-col justify-between">
       <InfoCard roundedSide="left">
-        <div className="flex h-full flex-col justify-between p-4 lg:max-h-[400px] lg:min-h-[400px] lg:p-6">
+        <div className="flex h-[480px] flex-col justify-between p-4 lg:h-[500px] lg:p-6">
           <h3 className="font-lato-thin text-3xl text-white lg:text-5xl">
             {title}
           </h3>
-          <div className="mt-8 grid flex-1 grid-cols-1 gap-4 gap-x-20 text-lg">
+          <div className="mt-10 grid flex-1 grid-cols-1 gap-4 gap-x-20 text-lg md:mt-14">
             {description ? (
-              <span className="font-lato-bold text-xl text-white md:text-2xl">
+              <span className="font-lato-bold text-xl text-white md:text-lg lg:text-2xl">
                 {description}
               </span>
             ) : (
-              <ul className="list-inside list-disc text-xl text-white md:text-2xl">
+              <ul className="list-inside list-disc text-xl text-white md:text-lg lg:text-2xl">
                 {listItems?.map((item) => (
                   <li className="font-lato-bold" key={item}>
                     {item}
