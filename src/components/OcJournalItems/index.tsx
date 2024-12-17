@@ -10,32 +10,32 @@ export default function OcJournalItems({
 
   return (
     <Link href={`/medicos/oc-journal/${newSlug}`}>
-      <div className="mx-auto mt-20 flex w-full gap-8">
-        <div className="h-auto w-[812px] shrink-0">
+      <div className="mx-auto flex w-full flex-col gap-2 lg:mt-20 lg:flex-row lg:gap-8">
+        <div className="h-auto shrink-0 border-2 lg:w-[812px]">
           <img
             src={image}
             alt="ASCO Annual Meeting 2024"
-            className="size-full rounded-md object-cover"
+            className="size-full object-cover lg:rounded-md"
           />
         </div>
 
         <div className="flex w-full flex-col justify-start">
-          <h1 className="text-left text-[48px] font-light leading-[48px] text-darkGray">
+          <h1 className="text-left text-xl font-light text-darkGray lg:text-[48px] lg:leading-[48px]">
             {title}
           </h1>
 
-          <p className="mt-8 text-left text-[16px] font-medium leading-[19px] text-primary">
+          <p className="mt-4 text-left text-sm font-medium leading-[19px] text-primary lg:mt-8 lg:text-[16px]">
             {date}
           </p>
 
-          <p className="mt-8 text-left text-[22px] font-medium leading-[27px] text-darkGray">
+          <p className="mt-4 text-left text-sm font-medium text-darkGray lg:mt-8 lg:text-[22px] lg:leading-[27px]">
             {description}
           </p>
-          <p className="mt-6 text-[22px] font-medium text-darkGray">
+          <p className="mt-6 text-sm font-medium text-darkGray lg:text-[22px]">
             Acesse o artigo completo deste estudo.
           </p>
           <div className="mt-6 flex w-full">
-            <BaseButton color="primary" className="min-w-40 text-white">
+            <BaseButton color="primary" className="w-full text-white lg:w-40">
               Download
             </BaseButton>
           </div>

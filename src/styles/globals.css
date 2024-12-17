@@ -41,11 +41,6 @@ body {
 
 @layer utilities {
   .full-bleed {
-    position: relative;
-    width: calc(100% + 2rem);
-    margin-left: -1rem;
-    margin-right: -1rem;
-    left: 0;
-    right: 0;
+    @apply relative w-[100vw] -ml-4 sm:-ml-8 lg:ml-0 lg:w-auto;
   }
 }
