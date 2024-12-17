@@ -9,7 +9,7 @@ export default function VaccinationRoundedSection(): JSX.Element {
   const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
 
   return (
-    <div className="mt-10 w-full overflow-hidden lg:space-x-6">
+    <div className="mt-10 w-full lg:space-x-6">
       <Swiper
         modules={[Navigation]}
         spaceBetween={16}
@@ -21,13 +21,13 @@ export default function VaccinationRoundedSection(): JSX.Element {
         onBeforeInit={onBeforeInit}
         className="mt-10 w-full"
       >
-        <SwiperSlide className="flex h-full min-h-full">
+        <SwiperSlide className="flex h-full">
           <VaccinationRoundedCard
             title="Padrão de excelência Oncoclínicas"
             description="A oferta de serviço de vacinação da Oncoclínicas segue o Calendário do PNI - Programa Nacional de imunizações -, e as diretrizes da SBIm - Sociedade Brasileira de Imunizações - e da SBOC - Sociedade Brasileira de Oncologia Clínica."
           />
         </SwiperSlide>
-        <SwiperSlide className="flex h-full min-h-full">
+        <SwiperSlide className="flex h-full">
           <VaccinationRoundedCard
             title="Por que é importante se vacinar?"
             listItems={listItems}

@@ -28,7 +28,7 @@ const VaccineLocations = (): JSX.Element => {
   return (
     <div className="mb-8 mt-2 flex w-full flex-col md:mt-12 lg:mt-28">
       <div className="flex w-full flex-col items-center md:flex-row md:justify-center">
-        <h1 className="mb-4 text-center font-lato-bold text-2xl text-primary md:mb-0 md:ml-2 md:mr-4 md:w-[45%] md:text-left md:text-3xl lg:w-full lg:text-center lg:text-title-xl">
+        <h1 className="mb-4 text-wrap text-center font-lato-bold text-2xl leading-relaxed text-primary md:mb-0 md:ml-2 md:mr-4 md:w-[45%] md:text-left md:text-3xl lg:w-full lg:text-center lg:text-6xl">
           Consulte as vacinas oferecidas na sua cidade
         </h1>
 
@@ -73,21 +73,21 @@ const VaccineLocations = (): JSX.Element => {
 
         {filteredLocationInfo && (
           <div className="my-3 w-[90%] font-lato-regular">
-            <h3 className="my-4 mt-6 font-lato-bold text-2xl text-primary">
+            <h3 className="my-4 mt-6 font-lato-bold text-2xl text-primary lg:text-4xl">
               {filteredLocationInfo.title}
             </h3>
             <p className="my-4 text-lg text-darkGray">
               {filteredLocationInfo.address}
             </p>
 
-            <div className="lg:max-h-[250px] lg:w-[70%] lg:columns-2 lg:gap-0">
+            <div className="grid grid-cols-1 gap-x-10 lg:h-auto lg:w-4/5 lg:grid-cols-2">
               {filteredLocationInfo.availableVaccines.map((vaccine) => (
-                <ul
-                  className="mb-1 list-inside list-disc break-inside-avoid text-base text-darkGray"
+                <div
+                  className="mb-1 list-inside list-disc text-base text-darkGray"
                   key={vaccine}
                 >
                   <li>{vaccine}</li>
-                </ul>
+                </div>
               ))}
             </div>
           </div>
