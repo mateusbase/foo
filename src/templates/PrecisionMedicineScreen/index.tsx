@@ -213,10 +213,10 @@ export function PrecisionMedicineScreen({
         </InformationCard>
 
         <InformationCard className="flex min-h-[450px] w-full flex-col justify-between gap-4 p-6 lg:h-[566px] lg:w-[30%] lg:py-[50px] 2xl:py-[85px]">
-          <p className="mb-6 text-center font-lato-bold text-2xl text-darkGray lg:text-xl 2xl:text-3xl">
+          <p className="mb-6 text-center font-lato-bold text-2xl text-darkGray lg:mb-3 lg:text-xl 2xl:mb-6 2xl:text-3xl">
             Participe das Quintas Patológicas
           </p>
-          <p className="mb-5 text-center font-lato-thin text-darkGray lg:text-sm 2xl:text-base">
+          <p className="mb-6 text-center font-lato-thin text-darkGray lg:mb-3 lg:text-sm 2xl:mb-6 2xl:text-base">
             Encontros virtuais para apresentação de temas relevantes em
             patologia com impacto em decisões oncológicas, além de apresentação
             de casos clínicos. As sessões acontecem por videoconferência a cada
@@ -227,7 +227,7 @@ export function PrecisionMedicineScreen({
             placeholder="Digite aqui o seu melhor e-mail"
           />
 
-          <div className="mt-6 flex justify-center">
+          <div className="mt-6 flex justify-center lg:mt-3 2xl:mt-6">
             <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64">
               Inscreva-se
             </BaseButton>
