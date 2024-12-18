@@ -51,15 +51,21 @@ const TumorTypeScreen = (): JSX.Element => {
 
   const renderTumorHeader = (): JSX.Element => (
     <div className="lg:flex lg:flex-col">
-      <img
-        src={currentTumor?.icon}
-        alt="Ícone do tipo de tumor"
-        className="size-14"
-      />
-      <h1 className="mt-4 text-2xl font-bold text-primary">
-        {currentTumor?.title}
-      </h1>
-      <p className="mt-4 text-xl text-darkGray">{currentTumor?.description}</p>
+      <div className="items-center gap-2 lg:flex">
+        <img
+          src={currentTumor?.icon}
+          alt="Ícone do tipo de tumor"
+          className="size-14"
+        />
+        <h1 className="mt-4 text-2xl text-primary lg:mt-0 2xl:text-[40px]">
+          {currentTumor?.title}
+        </h1>
+      </div>
+      <div>
+        <p className="mt-4 text-xl text-darkGray">
+          {currentTumor?.description}
+        </p>
+      </div>
     </div>
   );
 
@@ -107,14 +113,14 @@ const TumorTypeScreen = (): JSX.Element => {
 
   const renderRelatedTypes = (): JSX.Element => (
     <div className="my-8 self-center lg:self-start">
-      <h2 className="text-2xl font-bold text-primary lg:mb-7">
+      <h2 className="text-2xl text-primary lg:mb-7">
         Tipos Tumorais Relacionados
       </h2>
       <div className="mt-4 flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap">
         {currentTumor?.types.map((type) => (
           <div
             key={type.title}
-            className="mx-auto flex h-20 w-[328px] items-center gap-4 rounded-lg border-1 border-primary px-4 py-3 lg:mx-0"
+            className="mx-auto flex h-20 w-[328px] items-center gap-4 rounded-lg border-1 border-primary px-4 py-3 lg:mx-0 lg:h-28 lg:w-[243px]"
           >
             <img src={type.icon} alt="Ícone do tipo" className="size-10" />
             <span className="ml-2 text-2xl text-primary">{type.title}</span>
@@ -143,7 +149,6 @@ const TumorTypeScreen = (): JSX.Element => {
                 {renderMethodologies()}
                 {renderExams()}
               </div>
-
               {renderRelatedTypes()}
             </div>
           )}

@@ -168,6 +168,7 @@ export function PrecisionMedicineScreen({
             swiperRef={swiperRef}
             prevRef={prevRef}
             nextRef={nextRef}
+            showSwiperPagination
           />
         </div>
       </div>

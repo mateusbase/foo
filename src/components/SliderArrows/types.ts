@@ -5,5 +5,6 @@ export type SliderArrowsProps = {
   prevRef: React.RefObject<HTMLButtonElement>;
   nextRef: React.RefObject<HTMLButtonElement>;
   size?: number;
+  showSwiperPagination?: boolean;
   color?: string;
 };

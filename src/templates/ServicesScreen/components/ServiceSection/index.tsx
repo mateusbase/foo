@@ -10,6 +10,8 @@ import BaseInput from "@/components/Input";
 import { SearchIcon } from "@/components/Icons";
 import PreviousArrowIcon from "@/components/Icons/PreviousArrowIcon";
 import NextArrowIcon from "@/components/Icons/NextArrowIcon";
+import SliderArrows from "@/components/SliderArrows";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SectionHeader from "../SectionHeader";
 import { ServiceSectionProps } from "../../types";
 
@@ -25,10 +27,16 @@ export default function ServiceSection({
   healthServices,
   medicalServices,
 }: ServiceSectionProps): JSX.Element {
-  const prevRefCard = useRef<HTMLButtonElement>(null);
-  const nextRefCard = useRef<HTMLButtonElement>(null);
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  // const prevRefCard = useRef<HTMLButtonElement>(null);
+  // const nextRefCard = useRef<HTMLButtonElement>(null);
+  // const prevRef = useRef<HTMLButtonElement>(null);
+  // const nextRef = useRef<HTMLButtonElement>(null);
+  const {
+    nextRef: nextRefCard,
+    prevRef: prevRefCard,
+    swiperRef: swiperRefCard,
+  } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
 
   const [selectedLetter, setSelectedLetter] = useState("A");
   const [valueSearch, setValueSearch] = useState("");
@@ -95,20 +103,13 @@ export default function ServiceSection({
           modules={[Navigation]}
           spaceBetween={30}
           slidesPerView={2}
-          loop
           navigation={{
-            nextEl: nextRefCard.current,
             prevEl: prevRefCard.current,
+            nextEl: nextRefCard.current,
           }}
+          loop
           onInit={(swiper) => {
-            if (swiper.params.navigation) {
-              const navigationParams = swiper.params
-                .navigation as NavigationOptions;
-              navigationParams.prevEl = prevRefCard.current;
-              navigationParams.nextEl = nextRefCard.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
+            swiperRefCard.current = swiper;
           }}
           breakpoints={{
             640: {
@@ -137,25 +138,13 @@ export default function ServiceSection({
             </SwiperSlide>
           ))}
         </Swiper>
-
         <div className="mt-4 flex justify-center space-x-4 md:hidden">
-          <button
-            ref={prevRefCard}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Previous"
-          >
-            <PreviousArrowIcon className="text-primary dark:text-gray-800" />
-          </button>
-
-          <button
-            ref={nextRefCard}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Next"
-          >
-            <NextArrowIcon className="text-primary dark:text-gray-800" />
-          </button>
+          <SliderArrows
+            swiperRef={swiperRefCard}
+            prevRef={prevRefCard}
+            nextRef={nextRefCard}
+            showSwiperPagination
+          />
         </div>
       </div>
 
@@ -175,20 +164,13 @@ export default function ServiceSection({
           modules={[Navigation]}
           spaceBetween={30}
           slidesPerView={1}
-          loop
           navigation={{
-            nextEl: nextRef.current,
             prevEl: prevRef.current,
+            nextEl: nextRef.current,
           }}
+          loop
           onInit={(swiper) => {
-            if (swiper.params.navigation) {
-              const navigationParams = swiper.params
-                .navigation as NavigationOptions;
-              navigationParams.prevEl = prevRef.current;
-              navigationParams.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
+            swiperRef.current = swiper;
           }}
           breakpoints={{
             640: {
@@ -213,23 +195,12 @@ export default function ServiceSection({
         </Swiper>
 
         <div className="mt-4 flex justify-center space-x-4">
-          <button
-            ref={prevRef}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Previous"
-          >
-            <PreviousArrowIcon className="text-primary dark:text-gray-800" />
-          </button>
-
-          <button
-            ref={nextRef}
-            type="button"
-            className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-            aria-label="Next"
-          >
-            <NextArrowIcon className="text-primary dark:text-gray-800" />
-          </button>
+          <SliderArrows
+            swiperRef={swiperRef}
+            prevRef={prevRef}
+            nextRef={nextRef}
+            showSwiperPagination
+          />
         </div>
       </div>
 

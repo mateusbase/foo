@@ -138,6 +138,7 @@ const ClinicalBody = (): JSX.Element => {
             prevRef={prevRef}
             nextRef={nextRef}
             size={1}
+            showSwiperPagination
             color="text-primary-foreground"
           />
         </div>
