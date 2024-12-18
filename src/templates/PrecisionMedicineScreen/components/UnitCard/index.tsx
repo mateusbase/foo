@@ -23,7 +23,7 @@ const PrecisionMedicineUnitCard = ({
 
       <section className="flex items-center justify-center gap-2">
         <MarkerCircleIcon className="text-secondary" />
-        <h1 className="text-2xl font-bold uppercase text-primary">
+        <h1 className="font-bold uppercase text-primary 2xl:text-2xl">
           {unitName}
         </h1>
       </section>
