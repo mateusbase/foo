@@ -14,7 +14,7 @@ const Breadcrumb = (): JSX.Element => {
 
   const breadcrumbs = useMemo(() => {
     const breadcrumbMap: { [key: string]: string } = {
-      servico: "Serviços",
+      servicos: "Serviços, diagnósticos e tratamentos",
       diagnostico: "Diagnósticos",
       tratamento: "Tratamentos",
       "analise-patologica": "Análise Patológica",
