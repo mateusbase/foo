@@ -49,7 +49,7 @@ export function PrecisionMedicineScreen({
         )}
       </div>
 
-      <div className="hidden lg:flex">
+      <div className="mt-10 hidden lg:flex">
         <BannerWithVideo isVideo={isVideo} media={media} />
       </div>
 
