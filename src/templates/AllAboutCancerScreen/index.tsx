@@ -99,6 +99,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
               swiperRef={swiperRefCard}
               prevRef={prevRefCard}
               nextRef={nextRefCard}
+              showSwiperPagination
             />
           </div>
         </div>
@@ -188,11 +189,12 @@ export default function AllAboutCancerScreen(): JSX.Element {
           ))}
         </Swiper>
 
-        <div className="mr-10 mt-6 flex justify-end space-x-4 lg:hidden">
+        <div className="mr-10 mt-6 flex justify-center space-x-4 md:justify-end lg:hidden">
           <SliderArrows
             swiperRef={swiperRef}
             prevRef={prevRef}
             nextRef={nextRef}
+            showSwiperPagination
           />
         </div>
       </div>

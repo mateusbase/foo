@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import NextArrowIcon from "@/components/Icons/NextArrowIcon";
 import PreviousArrowIcon from "@/components/Icons/PreviousArrowIcon";
 import { SliderArrowsProps } from "./types";
@@ -5,10 +6,21 @@ import { SliderArrowsProps } from "./types";
 const SliderArrows = ({
   swiperRef,
   prevRef,
-  size,
   nextRef,
+  size,
+  showSwiperPagination,
   color = "text-primary-foreground",
 }: SliderArrowsProps): JSX.Element => {
+  const [currentIndex, setCurrentIndex] = useState<number>(1);
+
+  useEffect(() => {
+    swiperRef?.current?.on("slideChange", () => {
+      console.log("caiu aqui");
+
+      setCurrentIndex((swiperRef.current?.realIndex || 0) + 1);
+    });
+  }, [swiperRef]);
+
   const handlePrev = (): void => {
     if (swiperRef.current) {
       swiperRef.current.slidePrev();
@@ -22,7 +34,7 @@ const SliderArrows = ({
   };
 
   return (
-    <div className="flex justify-center space-x-4 align-middle lg:justify-end">
+    <div className="flex items-center justify-center space-x-4 align-middle lg:justify-end">
       <button
         ref={prevRef}
         type="button"
@@ -35,7 +47,9 @@ const SliderArrows = ({
           className={`${color} dark:text-gray-800`}
         />
       </button>
-
+      {showSwiperPagination && (
+        <span className="text-sm text-primary">{currentIndex}</span>
+      )}
       <button
         ref={nextRef}
         type="button"

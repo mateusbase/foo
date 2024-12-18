@@ -1,21 +1,18 @@
-/* eslint-disable no-console */
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import EventCardMobile from "@/components/EventCardMobile";
-import NavigationButton from "../NavigationButton";
+import SliderArrows from "@/components/SliderArrows";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import { ListUpcomingEventCardsMobileProps } from "./types";
 
 export default function ListUpcomingEventCardsMobile({
   events,
 }: ListUpcomingEventCardsMobileProps): JSX.Element {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
 
   return (
     <div className="relative w-full max-w-[1052px]">
@@ -29,14 +26,7 @@ export default function ListUpcomingEventCardsMobile({
           prevEl: prevRef.current,
         }}
         onInit={(swiper) => {
-          if (swiper.params.navigation) {
-            const navigationParams = swiper.params
-              .navigation as NavigationOptions;
-            navigationParams.prevEl = prevRef.current;
-            navigationParams.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }
+          swiperRef.current = swiper;
         }}
         breakpoints={{
           640: {
@@ -64,27 +54,13 @@ export default function ListUpcomingEventCardsMobile({
         ))}
       </Swiper>
       <div className="mt-4 flex justify-center space-x-4 lg:justify-end">
-        <NavigationButton
-          ref={prevRef}
-          onClick={() => console.log("prev")}
-          label="Previous"
-          icon={
-            <IoIosArrowBack
-              className="text-primary-foreground dark:text-gray-800"
-              size={35}
-            />
-          }
-        />
-        <NavigationButton
-          ref={nextRef}
-          label="Next"
-          onClick={() => console.log("prev")}
-          icon={
-            <IoIosArrowForward
-              className="text-primary-foreground dark:text-gray-800"
-              size={35}
-            />
-          }
+        <SliderArrows
+          swiperRef={swiperRef}
+          prevRef={prevRef}
+          nextRef={nextRef}
+          size={1}
+          showSwiperPagination
+          color="text-primary-foreground"
         />
       </div>
     </div>

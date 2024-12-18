@@ -6,7 +6,6 @@ import { FaRunning } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { GiFlowerStar } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { LuArrowUpRight } from "react-icons/lu";
 import BaseSelect from "@/components/Select";
@@ -21,11 +20,12 @@ import "swiper/css/navigation";
 import SortingFilterDropdown from "@/components/SortingFilterDropdown";
 import { sortingFilterOptions } from "@/utils/sortingOptions";
 import { useSortingFilter } from "@/hooks/useSortingFilter";
+import SliderArrows from "@/components/SliderArrows";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import { options } from "./optionsMock";
 
 export default function NewsScreen(): JSX.Element {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  const { nextRef, prevRef, onBeforeInit, swiperRef } = useSwiperNavigation();
   const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
 
   return (
@@ -210,16 +210,7 @@ export default function NewsScreen(): JSX.Element {
               nextEl: nextRef.current,
               prevEl: prevRef.current,
             }}
-            onInit={(swiper) => {
-              if (swiper.params.navigation) {
-                const navigationParams = swiper.params
-                  .navigation as NavigationOptions;
-                navigationParams.prevEl = prevRef.current;
-                navigationParams.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
-              }
-            }}
+            onInit={(swiper) => onBeforeInit(swiper)}
             breakpoints={{
               640: {
                 slidesPerView: 1,
@@ -254,29 +245,12 @@ export default function NewsScreen(): JSX.Element {
             </Button>
 
             <div className="flex items-center space-x-4">
-              <button
-                ref={prevRef}
-                type="button"
-                className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-                aria-label="Previous"
-              >
-                <IoIosArrowBack
-                  className="text-primary-foreground dark:text-gray-800"
-                  size={35}
-                />
-              </button>
-
-              <button
-                ref={nextRef}
-                type="button"
-                className="group flex size-10 items-center justify-center rounded-full bg-white/30 hover:bg-white/50 focus:outline-none dark:bg-gray-800/30 dark:hover:bg-gray-800/60"
-                aria-label="Next"
-              >
-                <IoIosArrowForward
-                  className="text-primary-foreground dark:text-gray-800"
-                  size={35}
-                />
-              </button>
+              <SliderArrows
+                swiperRef={swiperRef}
+                prevRef={prevRef}
+                nextRef={nextRef}
+                showSwiperPagination
+              />
             </div>
           </div>
         </div>

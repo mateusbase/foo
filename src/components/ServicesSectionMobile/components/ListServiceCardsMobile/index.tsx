@@ -56,12 +56,13 @@ export default function ListServiceCardsMobile({
         ))}
       </Swiper>
 
-      <div className="mt-4 flex w-full justify-center space-x-4">
+      <div className="mt-4 flex w-full justify-center space-x-4 md:hidden">
         <SliderArrows
           swiperRef={swiperRef}
           prevRef={prevRef}
           nextRef={nextRef}
           size={1}
+          showSwiperPagination
           color="text-primary-foreground"
         />
       </div>

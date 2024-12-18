@@ -10,8 +10,6 @@ import "swiper/css/navigation";
 import SliderArrows from "../SliderArrows";
 
 export default function UpcomingEventsSection(): JSX.Element {
-  // const prevRef = useRef<HTMLButtonElement>(null);
-  // const nextRef = useRef<HTMLButtonElement>(null);
   const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
 
   return (
@@ -75,7 +73,7 @@ export default function UpcomingEventsSection(): JSX.Element {
           </Swiper>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="hidden justify-center lg:flex">
         <SliderArrows
           swiperRef={swiperRef}
           prevRef={prevRef}
