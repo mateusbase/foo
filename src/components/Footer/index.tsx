@@ -105,7 +105,7 @@ export default function Footer(): JSX.Element {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/medicina-de-precisao"
                     className="text-[13px] hover:text-white lg:text-base"
                   >
                     OC Medicina de Precisão

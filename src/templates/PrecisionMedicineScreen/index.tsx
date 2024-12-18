@@ -8,6 +8,7 @@ import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import BaseButton from "@/components/Button";
 import BaseInput from "@/components/Input";
 import InfoCard from "@/components/InfoCard";
+import { LogoIcon } from "@/components/Icons";
 import { PrecisionMedicineScreenProps } from "./type";
 import BannerWithVideo from "./components/BannerWithVideo";
 import RoundedRectangle from "./components/RoundedRectangle";
@@ -29,7 +30,7 @@ export function PrecisionMedicineScreen({
   const { nextRef, prevRef, swiperRef, onBeforeInit } = useSwiperNavigation();
 
   return (
-    <PageLayout title="Medicina de Precisão" showBreadcrumb>
+    <PageLayout title={<LogoIcon size={1.5} />} showBreadcrumb>
       <div className="h-auto lg:hidden">
         <PurpleBanner
           subtitle="Conheça a OC Medicina de Precisão"
