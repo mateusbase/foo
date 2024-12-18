@@ -7,7 +7,7 @@ export type Section = {
 
 export type PageHeaderProps = {
   preTitle?: string;
-  title: string;
+  title: string | JSX.Element;
   subtitle?: string;
   buttonText?: string;
   buttonIcon?: JSX.Element;

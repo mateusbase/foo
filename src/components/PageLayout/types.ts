@@ -11,7 +11,7 @@ export interface PageLayoutProps {
   children: ReactNode;
   showBreadcrumb?: boolean;
   showHeader?: boolean;
-  title?: string;
+  title?: string | JSX.Element;
   subtitle?: string;
   showSections?: boolean;
   sections?: Section[];
