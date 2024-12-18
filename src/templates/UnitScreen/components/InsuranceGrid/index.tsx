@@ -1,23 +1,52 @@
 import { SearchIcon } from "@/components/Icons";
 import BaseInput from "@/components/Input";
+import SliderArrows from "@/components/SliderArrows";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
 const InsuranceGrid = (): JSX.Element => {
+  const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
+
   const insurances = [
+    { id: 5, name: "(CNU)" },
+    { id: 14, name: "(CNU)" },
+    { id: 23, name: "(CNU)" },
     { id: 1, name: "Amil Assistência Médica" },
-    { id: 2, name: "Assim Saúde" },
-    { id: 3, name: "Bradesco Seguros" },
-    { id: 4, name: "Central Nacional Unimed" },
-    { id: 5, name: "(CNU) NotreDame Intermédica" },
-    { id: 6, name: "Prevent Sênior São Francisco" },
-    { id: 7, name: "Assim Saúde" },
-    { id: 8, name: "Central Nacional Unimed" },
-    { id: 9, name: "(CNU) NotreDame Intermédica" },
     { id: 10, name: "Amil Assistência Médica" },
+    { id: 19, name: "Amil Assistência Médica" },
+    { id: 2, name: "Assim Saúde" },
     { id: 11, name: "Assim Saúde" },
-    { id: 12, name: "Central Nacional Unimed" },
-    { id: 13, name: "Bradesco Seguros" },
-    { id: 14, name: "Prevent Sênior São Francisco" },
+    { id: 20, name: "Assim Saúde" },
+    { id: 3, name: "Bradesco Seguros" },
+    { id: 12, name: "Bradesco Seguros" },
+    { id: 21, name: "Bradesco Seguros" },
+    { id: 4, name: "Central Nacional Unimed" },
+    { id: 13, name: "Central Nacional Unimed" },
+    { id: 22, name: "Central Nacional Unimed" },
+    { id: 6, name: "NotreDame Intermédica" },
+    { id: 15, name: "NotreDame Intermédica" },
+    { id: 24, name: "NotreDame Intermédica" },
+    { id: 7, name: "Prevent Sênior" },
+    { id: 16, name: "Prevent Sênior" },
+    { id: 25, name: "Prevent Sênior" },
+    { id: 8, name: "São Francisco Saúde" },
+    { id: 17, name: "São Francisco Saúde" },
+    { id: 26, name: "São Francisco Saúde" },
+    { id: 9, name: "SulAmérica" },
+    { id: 18, name: "SulAmérica" },
+    { id: 27, name: "SulAmérica" },
   ];
+
+  function chunkArray<T>(array: T[], chunkSize: number): T[][] {
+    const result = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize));
+    }
+    return result;
+  }
+
+  const groupedInsurances = chunkArray(insurances, 8);
 
   return (
     <div className="lg:mt-72">
@@ -40,12 +69,53 @@ const InsuranceGrid = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-2 gap-2 text-base text-darkGray sm:grid-cols-2 lg:grid-cols-3 lg:gap-4 2xl:text-xl">
-        {insurances.map((insurance) => (
-          <div key={insurance.id} className="flex items-center">
-            {insurance.name}
-          </div>
-        ))}
+      <div className="relative mt-10 lg:w-9/12">
+        <Swiper
+          modules={[Navigation]}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onInit={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          loop
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+        >
+          {groupedInsurances.map((group, index) => (
+            <SwiperSlide key={index}>
+              <div className="gap-4">
+                {group.map((plan) => (
+                  <div
+                    key={plan.id}
+                    className="mt-2 text-left text-lg text-darkGray"
+                  >
+                    {plan.name}
+                  </div>
+                ))}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="mt-6 flex justify-center md:justify-end">
+          <SliderArrows
+            swiperRef={swiperRef}
+            prevRef={prevRef}
+            nextRef={nextRef}
+            showSwiperPagination
+          />
+        </div>
       </div>
     </div>
   );
