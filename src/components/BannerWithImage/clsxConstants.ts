@@ -36,16 +36,19 @@ export const getImageClasses = (isLargeText: boolean): string =>
   });
 
 export const getDesktopTitleClasses = (isLargeText: boolean): string =>
-  clsx("mb-6 font-lato-light text-2xl lg:text-6xl", {
+  clsx("mb-6 font-lato-light text-2xl 2xl:text-6xl", {
     "text-xl": isLargeText,
+    "lg:text-5xl": isLargeText || !isLargeText,
     "mb-6": isLargeText,
     "text-left": isLargeText,
   });
 
 export const getDesktopDescriptionClasses = (isLargeText: boolean): string =>
-  clsx("font-lato-bold text-base lg:text-xl", {
-    "text-base": isLargeText,
+  clsx("mb-5 font-lato-bold text-base ", {
+    "2xl:text-lg": isLargeText,
     "text-left": isLargeText,
+    "lg:text-xl": !isLargeText,
+    "lg:text-base": isLargeText,
   });
 
 export const getMobileContainerClasses = (isLeft: boolean): string =>

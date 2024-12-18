@@ -4,22 +4,21 @@ import { ExamsCardProps } from "../../exams";
 
 const PlusCard = ({ exams }: ExamsCardProps): JSX.Element => {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-flow-col lg:grid-rows-2">
+    <div className="grid grid-cols-1 gap-4 self-center md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
       {exams.map((exam) => (
         <div
-          className="flex h-[150px] w-full cursor-pointer items-center justify-between gap-4 rounded-2xl border border-darkGray bg-transparent px-5 py-6 text-left font-lato-bold text-2xl text-primary lg:h-[129px] lg:w-[439px]"
+          className="flex h-[150px] w-full max-w-[439px] cursor-pointer items-center justify-between gap-4 rounded-2xl border border-darkGray bg-transparent px-5 py-6 text-left font-lato-bold text-2xl text-primary lg:h-[129px]"
           key={exam.id}
         >
           <div className="shrink-0">
             <RoundedPlusIcon />
           </div>
 
-          <span className="min-w-0 pr-3 text-left text-xl">{exam.name}</span>
+          <span className="min-w-0 grow overflow-hidden text-ellipsis pr-3 text-left text-xl">
+            {exam.name}
+          </span>
 
-          <IoChevronForwardCircleOutline
-            className="size-10 shrink-0"
-            size={60}
-          />
+          <IoChevronForwardCircleOutline className="shrink-0" size={60} />
         </div>
       ))}
     </div>

@@ -101,7 +101,7 @@ export function PrecisionMedicineScreen({
         />
       </div>
 
-      <div className="mt-24 hidden min-h-[620px] px-14 py-9 md:flex lg:hidden">
+      <div className="full-bleed mt-24 hidden min-h-[620px] px-14 py-9 md:flex lg:hidden">
         <InfoCard roundedSide="left">
           <h2 className="mb-10 mt-7 text-4xl font-bold text-white">
             Programa de Apoio à Pesquisa
@@ -173,7 +173,7 @@ export function PrecisionMedicineScreen({
       </div>
 
       <div className="my-8 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-center">
-        <InformationCard className="min-h-[225px] px-14 py-6 lg:h-[566px] lg:w-[432px]">
+        <InformationCard className="min-h-[225px] px-14 py-6 lg:h-[566px] lg:w-[30%]">
           <p className="mb-6 text-center font-lato-black text-4xl text-darkGray">
             Fale conosco
           </p>
@@ -190,18 +190,18 @@ export function PrecisionMedicineScreen({
 
         <InformationCard
           background
-          className="flex min-h-[450px] w-full flex-col gap-4 px-6 py-14 md:py-4 lg:h-[566px] lg:w-[432px]"
+          className="flex min-h-[450px] w-full flex-col gap-4 px-6 py-14 md:py-4 lg:h-[566px] lg:w-[30%]"
         >
-          <p className="mb-6 mt-8 text-center font-lato-bold text-2xl text-white md:mt-1 lg:text-3xl">
+          <p className="mb-6 text-center font-lato-bold text-2xl text-white lg:text-2xl 2xl:text-3xl">
             Participe das Quintas Moleculares
           </p>
-          <p className="mb-5 text-center font-lato-thin text-base text-white">
+          <p className="mb-5 text-center font-lato-thin text-white lg:text-sm 2xl:text-base">
             Reuniões Multidisciplinares que ocorrem por videoconferência que
             permitem discussões de casos, a fim de educar a comunidade médica a
             respeito da indicação e interpretação de testes moleculares.
           </p>
           <BaseInput
-            className="mx-auto w-full max-w-xs rounded-full bg-white md:w-72"
+            className="mx-auto rounded-full bg-white md:w-72 lg:w-[90%]"
             placeholder="Digite aqui o seu melhor e-mail"
           />
 
@@ -212,22 +212,22 @@ export function PrecisionMedicineScreen({
           </div>
         </InformationCard>
 
-        <InformationCard className="flex min-h-[450px] w-full flex-col justify-between gap-4 p-6 lg:h-[566px] lg:w-[432px] lg:py-[85px]">
-          <p className="mb-6 text-center font-lato-bold text-2xl text-darkGray lg:text-3xl">
+        <InformationCard className="flex min-h-[450px] w-full flex-col justify-between gap-4 p-6 lg:h-[566px] lg:w-[30%] lg:py-[50px] 2xl:py-[85px]">
+          <p className="mb-6 text-center font-lato-bold text-2xl text-darkGray lg:mb-3 lg:text-xl 2xl:mb-6 2xl:text-3xl">
             Participe das Quintas Patológicas
           </p>
-          <p className="mb-5 text-center font-lato-thin text-base text-darkGray">
+          <p className="mb-6 text-center font-lato-thin text-darkGray lg:mb-3 lg:text-sm 2xl:mb-6 2xl:text-base">
             Encontros virtuais para apresentação de temas relevantes em
             patologia com impacto em decisões oncológicas, além de apresentação
             de casos clínicos. As sessões acontecem por videoconferência a cada
             duas semanas e são abertas ao público.
           </p>
           <BaseInput
-            className="mx-auto rounded-full border-darkGray bg-white md:w-64"
+            className="mx-auto rounded-full border-darkGray bg-white md:w-64 lg:w-[90%]"
             placeholder="Digite aqui o seu melhor e-mail"
           />
 
-          <div className="mt-6 flex justify-center">
+          <div className="mt-6 flex justify-center lg:mt-3 2xl:mt-6">
             <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64">
               Inscreva-se
             </BaseButton>
