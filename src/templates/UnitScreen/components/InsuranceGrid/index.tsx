@@ -38,10 +38,16 @@ const InsuranceGrid = (): JSX.Element => {
     { id: 27, name: "SulAmérica" },
   ];
 
-  function chunkArray<T>(array: T[], chunkSize: number): T[][] {
+  function chunkArray<T>(
+    array: T[],
+    chunkSize: number,
+  ): { id: string; items: T[] }[] {
     const result = [];
     for (let i = 0; i < array.length; i += chunkSize) {
-      result.push(array.slice(i, i + chunkSize));
+      result.push({
+        id: `group-${i / chunkSize}`,
+        items: array.slice(i, i + chunkSize),
+      });
     }
     return result;
   }
@@ -92,10 +98,10 @@ const InsuranceGrid = (): JSX.Element => {
             },
           }}
         >
-          {groupedInsurances.map((group, index) => (
-            <SwiperSlide key={index}>
+          {groupedInsurances.map((group) => (
+            <SwiperSlide key={group.id}>
               <div className="gap-4">
-                {group.map((plan) => (
+                {group.items.map((plan) => (
                   <div
                     key={plan.id}
                     className="mt-2 text-left text-lg text-darkGray"
@@ -108,7 +114,7 @@ const InsuranceGrid = (): JSX.Element => {
           ))}
         </Swiper>
 
-        <div className="mt-6 flex justify-center md:justify-end">
+        <div className="mt-6 flex justify-center md:justify-end lg:hidden">
           <SliderArrows
             swiperRef={swiperRef}
             prevRef={prevRef}
