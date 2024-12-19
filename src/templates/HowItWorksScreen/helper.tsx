@@ -1,4 +1,5 @@
 import Committees from "./components/Committees";
+import FAQ from "./components/FAQ";
 import HowItWorks from "./components/HowItWorks";
 import OpenClinicalStudies from "./components/OpenClinicalStudies";
 
@@ -14,7 +15,7 @@ export const menuContent: MenuContent = {
   5: <div />,
   6: <div />,
   7: <div />,
-  8: <div />,
+  8: <FAQ />,
 };
 
 export const clinicalResearchs = [

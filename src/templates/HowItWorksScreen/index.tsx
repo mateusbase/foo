@@ -20,10 +20,13 @@ export default function HowItWorksScreen(): JSX.Element {
   ];
 
   const activeContent = menuContent[activeItem];
+  const titleSelectedMenu =
+    menuItems.find((item) => item.id === activeItem)?.name ||
+    "Item não encontrado";
 
   return (
     <PageLayout
-      title="Como funciona"
+      title={titleSelectedMenu}
       subtitle="Programa de Pesquisa Clínica do Grupo Oncoclínicas"
     >
       <div className="flex flex-col md:gap-12 lg:mt-10 lg:flex-row">
