@@ -12,9 +12,7 @@ export default function IconCard({
   const cardSlug = cardTitle.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <Link
-      href={`/para-sua-saude/tudo-sobre-o-cancer/detalhe-cancer/${cardSlug}`}
-    >
+    <Link href={`/tudo-sobre-o-cancer/${cardSlug}`}>
       <div className="flex h-auto min-h-[200px] w-full flex-col rounded-[20px] border border-lightGray bg-white px-4 py-8 lg:justify-between lg:p-6">
         <div className="flex flex-col items-center lg:flex-row">
           <div className="flex min-w-16 items-center justify-center rounded-full bg-primary-foreground lg:size-[63px]">
