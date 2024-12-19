@@ -174,7 +174,7 @@ export default function Footer(): JSX.Element {
                 </li>
                 <li>
                   <Link
-                    href="/para-sua-saude/tudo-sobre-o-cancer"
+                    href="/tudo-sobre-o-cancer"
                     className="text-[13px] hover:text-white lg:text-base"
                   >
                     Tudo sobre o câncer
