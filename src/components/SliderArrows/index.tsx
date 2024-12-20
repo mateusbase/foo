@@ -15,8 +15,6 @@ const SliderArrows = ({
 
   useEffect(() => {
     swiperRef?.current?.on("slideChange", () => {
-      console.log("caiu aqui");
-
       setCurrentIndex((swiperRef.current?.realIndex || 0) + 1);
     });
   }, [swiperRef]);

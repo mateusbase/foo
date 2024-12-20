@@ -3,7 +3,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { NavigationOptions } from "swiper/types";
 import EventCardMobile from "@/components/EventCardMobile";
 import SliderArrows from "@/components/SliderArrows";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";

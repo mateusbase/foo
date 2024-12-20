@@ -10,9 +10,7 @@ import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { LuArrowUpRight } from "react-icons/lu";
 import BaseSelect from "@/components/Select";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { NavigationOptions } from "swiper/types";
 import { Navigation } from "swiper/modules";
-import { useRef } from "react";
 
 import "swiper/css";
 import "swiper/css/pagination";

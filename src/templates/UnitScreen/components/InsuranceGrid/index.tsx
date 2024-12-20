@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
 const InsuranceGrid = (): JSX.Element => {
-  const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
+  const { prevRef, nextRef, swiperRef } = useSwiperNavigation();
 
   const insurances = [
     { id: 5, name: "(CNU)" },

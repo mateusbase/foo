@@ -1,7 +1,6 @@
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import PageLayout from "@/components/PageLayout";
-import InfoCard from "@/components/InfoCard";
 import Link from "next/link";
 import { Image } from "@nextui-org/image";
 import BaseButton from "@/components/Button";
