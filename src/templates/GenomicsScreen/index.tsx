@@ -32,7 +32,7 @@ const GenomicsScreen = (): JSX.Element => {
         <div className="flex w-3/4 flex-col gap-7 border border-red-500">
           {selectedItem && (
             <>
-              <h1 className="mb-12 font-lato-bold text-5xl text-primary">
+              <h1 className="mb-4 font-lato-bold text-5xl text-primary">
                 {selectedItem.label}
               </h1>
               {selectedItem.exams.map((exam) => (
