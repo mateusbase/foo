@@ -29,7 +29,7 @@ const GenomicsScreen = (): JSX.Element => {
             </div>
           ))}
         </div>
-        <div className="flex w-3/4 flex-col gap-7 border border-red-500">
+        <div className="flex w-3/4 flex-col gap-7">
           {selectedItem && (
             <>
               <h1 className="mb-4 font-lato-bold text-5xl text-primary">
