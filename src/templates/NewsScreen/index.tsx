@@ -173,10 +173,9 @@ export default function NewsScreen(): JSX.Element {
             color="primary"
             variant="bordered"
             radius="sm"
-            startContent={<Plus />}
             className="h-[50px] w-[228px] items-center justify-center pl-3 text-[23px] text-primary lg:flex"
           >
-            Ver todos
+            [+] Ver mais
           </Button>
         </div>
       </div>
@@ -238,10 +237,9 @@ export default function NewsScreen(): JSX.Element {
               color="primary"
               variant="bordered"
               radius="sm"
-              startContent={<Plus />}
               className="hidden h-[50px] w-full items-center justify-center pl-3 text-[18px] font-black leading-[22px] text-primary sm:w-3/6 md:flex"
             >
-              Ver todos
+              [+] Ver mais
             </Button>
 
             <div className="flex items-center space-x-4">

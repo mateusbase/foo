@@ -1,31 +1,41 @@
 export default function WhatIsCancer(): JSX.Element {
   return (
     <div>
-      <h2 className="text-[40px] text-primary">O que é o câncer de mama</h2>
-      <p className="text-xl text-darkGray">
+      <h2 className="text-3xl text-primary lg:text-[40px]">
+        O que é o câncer de mama
+      </h2>
+      <p className="mt-6 text-darkGray lg:text-xl">
         O câncer de mama é uma doença em que a multiplicação desordenada de
-        células anormais da mama gera um tumor. No mundo, é um dos três tipos de
-        câncer de maior incidência, ao lado do de pulmão e do colorretal, além
-        do câncer de pele não melanoma, que é o mais frequente. Considerando os
-        diagnósticos de ambos os sexos, os casos de câncer de mama representam
-        11,6% do total da doença. Quando o recorte é apenas entre as mulheres,
-        esse número sobe para 24,2%. No Brasil, o câncer de mama é o que mais
-        acomete as mulheres (excluídos os tumores de pele não melanoma). Para
-        2023, o INCA (Instituto Nacional de Câncer) estimou cerca de 73.610 mil
-        novos casos no país. Os homens também podem ser surpreendidos com um
-        diagnóstico de câncer de mama, mas a incidência é baixíssima: cerca de
-        1% do total de casos da doença.
+        células anormais da mama gera um tumor.
+        <p className="mt-6 text-darkGray lg:text-xl">
+          No mundo, é um dos três tipos de câncer de maior incidência, ao lado
+          do de pulmão e do colorretal, além do câncer de pele não melanoma, que
+          é o mais frequente. Considerando os diagnósticos de ambos os sexos, os
+          casos de câncer de mama representam 11,6% do total da doença. Quando o
+          recorte é apenas entre as mulheres, esse número sobe para 24,2%.
+        </p>
+        <p className="mt-6 text-darkGray lg:text-xl">
+          No Brasil, o câncer de mama é o que mais acomete as mulheres
+          (excluídos os tumores de pele não melanoma). Para 2023, o INCA
+          (Instituto Nacional de Câncer) estimou cerca de 73.610 mil novos casos
+          no país.
+        </p>
+        <p className="mt-6 text-darkGray lg:text-xl">
+          Os homens também podem ser surpreendidos com um diagnóstico de câncer
+          de mama, mas a incidência é baixíssima: cerca de 1% do total de casos
+          da doença.
+        </p>
       </p>
-      <h3 className="my-4 text-2xl font-bold text-darkGray">
+      <h3 className="my-4 text-lg font-bold text-darkGray lg:text-2xl">
         Subtipos de câncer de mama
       </h3>
-      <p className="text-xl text-darkGray">
+      <p className="text-darkGray lg:text-xl">
         O câncer de mama é composto por diferentes subtipos, o que torna a
         doença extremamente heterogênea, fazendo com que possa evoluir de formas
         diferentes, sendo o tratamento também bastante diferente. Os tipos mais
         comuns são:
       </p>
-      <ul className="ml-6 mt-10 list-disc text-xl text-darkGray">
+      <ul className="ml-6 mt-10 list-disc text-darkGray lg:text-xl">
         <li>
           Carcinoma Ductal In Situ – é o tipo mais comum de câncer, tendo a
           característica de não invadir o tecido adiposo (gordura) em volta dos
@@ -82,15 +92,15 @@ export default function WhatIsCancer(): JSX.Element {
           os vasos linfáticos.
         </li>
       </ul>
-      <h3 className="my-4 text-2xl font-bold text-darkGray">
+      <h3 className="my-4 text-lg font-bold text-darkGray lg:text-2xl">
         Sintomas e sinais do câncer de mama
       </h3>
-      <p className="text-xl text-darkGray">
+      <p className="text-darkGray lg:text-xl">
         O câncer de mama apresenta sintomas que podem ser percebidos no
         autoexame realizado pela própria mulher ou nas consultas de rotina com o
         médico ginecologista. Na maioria dos casos, os sintomas são:
       </p>
-      <ul className="ml-6 mt-10 list-disc text-xl text-darkGray">
+      <ul className="ml-6 mt-10 list-disc text-darkGray lg:text-xl">
         <li>
           Nódulo ou caroço fixo e geralmente indolor, presente em cerca de 90%
           dos casos em que o câncer é percebido pela própria pessoa;
@@ -106,7 +116,7 @@ export default function WhatIsCancer(): JSX.Element {
           sanguinolento.
         </li>
       </ul>
-      <p className="mt-6 text-xl text-darkGray">
+      <p className="mt-6 text-darkGray lg:text-xl">
         O autoexame pode ser feito no banho, no momento da troca de roupa ou em
         qualquer situação cotidiana, quando a mulher sentir-se mais confortável.
         Deve-se palpar os dois seios e mamilos em busca de pequenas alterações
@@ -114,10 +124,10 @@ export default function WhatIsCancer(): JSX.Element {
         câncer de mama. Sem dúvida, o autoexame pode contribuir para o
         diagnóstico precoce da doença
       </p>
-      <p className="my-4 text-2xl font-bold text-darkGray">
+      <p className="my-4 text-lg font-bold text-darkGray lg:text-2xl">
         Diagnóstico do câncer de mama
       </p>
-      <p className="text-xl text-darkGray">
+      <p className="text-darkGray lg:text-xl">
         O diagnóstico do câncer de mama baseia-se no tripé composto por exame
         clínico, exame de imagem e análise histopatológica. Após anamnese, com
         história clínica realizada por médico especialista, faz-se necessário
@@ -141,8 +151,10 @@ export default function WhatIsCancer(): JSX.Element {
         uma lesão benigna de uma maligna. O exame de imunohistoquímica ajuda a
         confirmar o diagnóstico e a diferenciar os tipos de câncer de mama.
       </p>
-      <h2 className="my-4 text-2xl font-bold text-darkGray">Tratamento</h2>
-      <p className="text-xl text-darkGray">
+      <h2 className="my-4 text-lg font-bold text-darkGray lg:text-2xl">
+        Tratamento
+      </h2>
+      <p className="text-darkGray lg:text-xl">
         O tratamento do câncer de mama depende da fase da doença (estadiamento),
         do tipo do tumor e das condições clínicas da paciente (como idade,
         doenças preexistentes, se já passou pela menopausa). Entre os
@@ -176,16 +188,20 @@ export default function WhatIsCancer(): JSX.Element {
         por apresentarem uma doença de agressividade menor ou pouco responsiva a
         este tipo de tratamento.
       </p>
-      <h3 className="my-5 text-xl font-bold text-darkGray">Estadiamento III</h3>
-      <p className="text-xl text-darkGray">
+      <h3 className="my-5 font-bold text-darkGray lg:text-xl">
+        Estadiamento III
+      </h3>
+      <p className="text-darkGray lg:text-xl">
         Aqui, os tumores já são maiores que 5 cm e/ou com a presença de
         linfonodos regionais acometidos nas axilas. O tratamento sistêmico
         (geralmente com quimioterapia) tende a ser a opção inicial para a
         redução do tumor. Em seguida, parte-se para o tratamento local, com
         cirurgia e radioterapia.
       </p>
-      <h3 className="my-5 text-xl font-bold text-darkGray">Estadiamento IV</h3>
-      <p className="text-xl text-darkGray">
+      <h3 className="my-5 font-bold text-darkGray lg:text-xl">
+        Estadiamento IV
+      </h3>
+      <p className="text-darkGray lg:text-xl">
         É o estágio da doença em que são detectadas metástases, ou seja, o
         câncer já se espalhou para outros órgãos (mais frequentemente ossos,
         pulmões, fígado e cérebro). É essencial encontrar o equilíbrio entre o
@@ -203,12 +219,14 @@ export default function WhatIsCancer(): JSX.Element {
         nem a superexpressão da proteína HER-2.
       </p>
 
-      <h2 className="my-4 text-2xl font-bold text-darkGray">Prevenção</h2>
-      <p className="text-xl text-darkGray">
+      <h2 className="my-4 text-lg font-bold text-darkGray lg:text-2xl">
+        Prevenção
+      </h2>
+      <p className="text-darkGray lg:text-xl">
         Acredita-se que a adoção de hábitos de vida saudáveis pode prevenir
         cerca de 30% dos casos de câncer de mama. É interessante:
       </p>
-      <ul className="ml-6 mt-10 list-disc text-xl text-darkGray">
+      <ul className="my-10 ml-6 list-disc text-darkGray lg:text-xl">
         <li>Praticar atividades físicas regularmente;</li>
         <li>Manter uma alimentação saudável;</li>
         <li>Manter um peso corporal adequado;</li>
