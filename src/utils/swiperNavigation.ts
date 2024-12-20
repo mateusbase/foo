@@ -5,4 +5,5 @@ export interface UseSwiperNavigationReturn {
   nextRef: React.RefObject<HTMLButtonElement>;
   swiperRef: React.MutableRefObject<SwiperType | null>;
   onBeforeInit: (swiper: SwiperType) => void;
+  currentIndex: number;
 }

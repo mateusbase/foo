@@ -27,7 +27,8 @@ export function PrecisionMedicineScreen({
   media,
 }: PrecisionMedicineScreenProps): JSX.Element {
   const isVideo = media ? /\.(mp4|webm|ogg)$/i.test(media) : undefined;
-  const { nextRef, prevRef, swiperRef, onBeforeInit } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   return (
     <PageLayout title={<LogoIcon size={1.5} />} showBreadcrumb>
@@ -166,6 +167,7 @@ export function PrecisionMedicineScreen({
         <div className="lg:hidden">
           <SliderArrows
             swiperRef={swiperRef}
+            currentIndex={currentIndex}
             prevRef={prevRef}
             nextRef={nextRef}
             showSwiperPagination

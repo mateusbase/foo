@@ -14,6 +14,7 @@ export default function VaccinesScreen(): JSX.Element {
     nextRef: nextRefCard,
     swiperRef: swiperRefCard,
     onBeforeInit: onBeforeInitCard,
+    currentIndex,
   } = useSwiperNavigation();
 
   return (
@@ -39,6 +40,8 @@ export default function VaccinesScreen(): JSX.Element {
 
         <SliderArrows
           swiperRef={swiperRefCard}
+          showSwiperPagination
+          currentIndex={currentIndex}
           prevRef={prevRefCard}
           nextRef={nextRefCard}
         />

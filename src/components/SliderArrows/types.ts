@@ -7,4 +7,5 @@ export type SliderArrowsProps = {
   size?: number;
   showSwiperPagination?: boolean;
   color?: string;
+  currentIndex?: number;
 };
