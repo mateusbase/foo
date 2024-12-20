@@ -29,7 +29,7 @@ const GenomicsScreen = (): JSX.Element => {
             </div>
           ))}
         </div>
-        <div className="flex w-3/4 flex-col gap-7">
+        <div className="flex w-3/4 flex-col gap-7 border border-red-500">
           {selectedItem && (
             <>
               <h1 className="mb-12 font-lato-bold text-5xl text-primary">
@@ -38,7 +38,7 @@ const GenomicsScreen = (): JSX.Element => {
               {selectedItem.exams.map((exam) => (
                 <div
                   key={exam.value}
-                  className="relative flex h-[89px] w-[758px] cursor-pointer flex-row items-center rounded-2xl bg-primary px-7 py-8 text-white"
+                  className="relative flex h-[89px] w-full max-w-[758px] cursor-pointer flex-row items-center rounded-2xl bg-primary px-7 py-8 text-white sm:w-[90%] lg:w-[758px]"
                 >
                   <h2 className="font-lato-bold text-2xl">{exam.label}</h2>
                   <IoChevronForwardCircleOutline className="absolute right-[38px] text-3xl text-white" />
