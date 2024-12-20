@@ -50,7 +50,7 @@ const PathologicExamsScreen = (): JSX.Element => {
                 {selectedItem.relatedTumoralTypes.map((exam) => (
                   <div
                     key={exam.value}
-                    className="flex h-[150px] w-[287px] cursor-pointer items-center gap-4 rounded-lg border border-primary px-5 py-3 text-primary"
+                    className="flex h-[150px] w-full cursor-pointer items-center gap-4 rounded-lg border border-primary px-5 py-3 text-primary"
                   >
                     <h2 className="grow font-lato-bold text-xl">
                       {exam.label}
