@@ -14,7 +14,7 @@ const PacientSupportScreen = (): JSX.Element => {
 
   return (
     <PageLayout title="Programas de Suporte ao Paciente">
-      <div className="flex flex-row gap-14">
+      <div className="mt-16 flex flex-row gap-14">
         <div className="w-1/4">
           {pacientSupportMock.map((item) => (
             <div key={item.id} className="font-lato-regular text-white">
