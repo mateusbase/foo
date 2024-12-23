@@ -7,7 +7,8 @@ import BaseButton from "@/components/Button";
 import { cards } from "../../aboutCancerMocks";
 
 const CommonCancers = (): JSX.Element => {
-  const { swiperRef, prevRef, nextRef, onBeforeInit } = useSwiperNavigation();
+  const { swiperRef, prevRef, nextRef, currentIndex, onBeforeInit } =
+    useSwiperNavigation();
   return (
     <div className="mx-auto mt-8 flex w-full flex-col items-center justify-center md:mt-0 lg:hidden">
       <Swiper
@@ -47,6 +48,8 @@ const CommonCancers = (): JSX.Element => {
             swiperRef={swiperRef}
             prevRef={prevRef}
             nextRef={nextRef}
+            showSwiperPagination
+            currentIndex={currentIndex}
           />
         </div>
 
@@ -54,7 +57,7 @@ const CommonCancers = (): JSX.Element => {
           color="primary"
           className="h-[56px] w-[320px] shrink-0 text-white"
         >
-          Ver todos os tipos de câncers
+          Ver todos os tipos de câncer
         </BaseButton>
       </div>
     </div>
