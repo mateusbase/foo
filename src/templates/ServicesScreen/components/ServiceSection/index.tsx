@@ -28,8 +28,11 @@ export default function ServiceSection({
     nextRef: nextRefCard,
     prevRef: prevRefCard,
     swiperRef: swiperRefCard,
+    currentIndex: currentIndexCard,
+    onBeforeInit: onBeforeInitCard,
   } = useSwiperNavigation();
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
+    useSwiperNavigation();
 
   const [selectedLetter, setSelectedLetter] = useState("A");
   const [valueSearch, setValueSearch] = useState("");
@@ -101,9 +104,7 @@ export default function ServiceSection({
             nextEl: nextRefCard.current,
           }}
           loop
-          onInit={(swiper) => {
-            swiperRefCard.current = swiper;
-          }}
+          onBeforeInit={(swiper) => onBeforeInitCard(swiper)}
           breakpoints={{
             640: {
               slidesPerView: 4,
@@ -137,6 +138,7 @@ export default function ServiceSection({
             prevRef={prevRefCard}
             nextRef={nextRefCard}
             showSwiperPagination
+            currentIndex={currentIndexCard}
           />
         </div>
       </div>
@@ -162,9 +164,7 @@ export default function ServiceSection({
             nextEl: nextRef.current,
           }}
           loop
-          onInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
+          onBeforeInit={(swiper) => onBeforeInit(swiper)}
           breakpoints={{
             640: {
               slidesPerView: 2,
@@ -193,6 +193,7 @@ export default function ServiceSection({
             prevRef={prevRef}
             nextRef={nextRef}
             showSwiperPagination
+            currentIndex={currentIndex}
           />
         </div>
       </div>

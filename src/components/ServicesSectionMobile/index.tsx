@@ -6,6 +6,7 @@ import {
 } from "@/components/Icons";
 import ListServiceCardsMobile from "./components/ListServiceCardsMobile";
 import ServiceTextMobile from "./components/ServiceTextMobile";
+import PrecisionMedicineIcon from "../Icons/PrecisionMedicineIcon";
 
 export default function ServicesSectionMobile(): JSX.Element {
   const services = [
@@ -26,6 +27,12 @@ export default function ServicesSectionMobile(): JSX.Element {
       id: 4,
       title: "Tudo sobre o câncer",
       icon: <AllOfCancerIcon />,
+      path: "/tudo-sobre-o-cancer",
+    },
+    {
+      id: 5,
+      title: "Medicina de precisão",
+      icon: <PrecisionMedicineIcon size={1.5} />,
       path: "/tudo-sobre-o-cancer",
     },
   ];

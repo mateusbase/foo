@@ -36,8 +36,8 @@ export default function ServiceScreen(): JSX.Element {
 
   return (
     <PageLayout title={title} subtitle="Serviço Oncoclínicas">
-      <div className="mt-14 flex flex-col md:flex-row">
-        <div className="mb-10 block md:hidden">
+      <div className="mt-14 flex flex-col lg:flex-row">
+        <div className="mb-10 block lg:hidden">
           <BaseSelect
             color="primary"
             variant="bordered"
@@ -70,7 +70,7 @@ export default function ServiceScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="flex-1 md:ml-16">
+        <div className="flex-1 lg:ml-16">
           <h1 className="text-4xl font-bold leading-[48px] text-primary">
             O que é a laserterapia
           </h1>

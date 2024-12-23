@@ -62,7 +62,6 @@ export default function ListServiceCardsMobile({
           prevRef={prevRef}
           nextRef={nextRef}
           size={1}
-          showSwiperPagination
           color="text-primary-foreground"
         />
       </div>
