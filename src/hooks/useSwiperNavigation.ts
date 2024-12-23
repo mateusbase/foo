@@ -1,10 +1,4 @@
-import {
-  MutableRefObject,
-  useRef,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 import { Swiper as SwiperType } from "swiper/types";
 import { UseSwiperNavigationReturn } from "@/utils/swiperNavigation";
 
