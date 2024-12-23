@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const ClinicalBody = (): JSX.Element => {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex } = useSwiperNavigation();
 
   const doctors = [
     {
@@ -139,6 +139,7 @@ const ClinicalBody = (): JSX.Element => {
             nextRef={nextRef}
             size={1}
             showSwiperPagination
+            currentIndex={currentIndex}
             color="text-primary-foreground"
           />
         </div>

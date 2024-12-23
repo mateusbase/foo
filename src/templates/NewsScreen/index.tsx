@@ -25,7 +25,8 @@ import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import { options } from "./optionsMock";
 
 export default function NewsScreen(): JSX.Element {
-  const { nextRef, prevRef, onBeforeInit, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, onBeforeInit, swiperRef, currentIndex } =
+    useSwiperNavigation();
   const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
 
   return (
@@ -248,6 +249,7 @@ export default function NewsScreen(): JSX.Element {
                 prevRef={prevRef}
                 nextRef={nextRef}
                 showSwiperPagination
+                currentIndex={currentIndex}
               />
             </div>
           </div>

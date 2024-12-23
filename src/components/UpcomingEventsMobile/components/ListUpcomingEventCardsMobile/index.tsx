@@ -3,7 +3,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { NavigationOptions } from "swiper/types";
 import EventCardMobile from "@/components/EventCardMobile";
 import SliderArrows from "@/components/SliderArrows";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
@@ -12,7 +11,7 @@ import { ListUpcomingEventCardsMobileProps } from "./types";
 export default function ListUpcomingEventCardsMobile({
   events,
 }: ListUpcomingEventCardsMobileProps): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex } = useSwiperNavigation();
 
   return (
     <div className="relative w-full max-w-[1052px]">
@@ -60,6 +59,7 @@ export default function ListUpcomingEventCardsMobile({
           nextRef={nextRef}
           size={1}
           showSwiperPagination
+          currentIndex={currentIndex}
           color="text-primary-foreground"
         />
       </div>

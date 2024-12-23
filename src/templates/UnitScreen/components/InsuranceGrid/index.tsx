@@ -6,7 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
 const InsuranceGrid = (): JSX.Element => {
-  const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
+  const { prevRef, nextRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   const insurances = [
     { id: 5, name: "(CNU)" },
@@ -120,6 +121,7 @@ const InsuranceGrid = (): JSX.Element => {
             prevRef={prevRef}
             nextRef={nextRef}
             showSwiperPagination
+            currentIndex={currentIndex}
           />
         </div>
       </div>

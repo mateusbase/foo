@@ -13,7 +13,8 @@ import clippingCardData, { ClippingCardInfo } from "./cardInformations";
 
 export default function ClippingScreen(): JSX.Element {
   const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
-  const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
+  const { prevRef, nextRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   return (
     <PageLayout title="Clipping">
@@ -85,6 +86,8 @@ export default function ClippingScreen(): JSX.Element {
 
         <div className="mt-6 flex justify-center">
           <SliderArrows
+            showSwiperPagination
+            currentIndex={currentIndex}
             swiperRef={swiperRef}
             prevRef={prevRef}
             nextRef={nextRef}
