@@ -8,7 +8,8 @@ import { palliativeCareData } from "./data/palliativeCareData";
 import PalliativeCareCard from "./components/PalliativeCareCard";
 
 export default function OcPalliativeCareScreen(): JSX.Element {
-  const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
+  const { prevRef, nextRef, swiperRef, currentIndex, onBeforeInit } =
+    useSwiperNavigation();
 
   return (
     <PageLayout
@@ -74,9 +75,6 @@ export default function OcPalliativeCareScreen(): JSX.Element {
             spaceBetween={20}
             slidesPerView={1}
             modules={[Navigation]}
-            onInit={(swiper) => {
-              swiperRef.current = swiper;
-            }}
             onBeforeInit={(swiper) => onBeforeInit(swiper)}
             navigation={{
               prevEl: prevRef.current,
@@ -95,6 +93,8 @@ export default function OcPalliativeCareScreen(): JSX.Element {
               prevRef={prevRef}
               nextRef={nextRef}
               size={0.6}
+              showSwiperPagination
+              currentIndex={currentIndex}
             />
           </div>
         </div>

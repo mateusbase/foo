@@ -24,7 +24,8 @@ interface ListServiceCardsMobileProps {
 export default function ListNearbyUnitCardsMobile({
   units,
 }: ListServiceCardsMobileProps): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
+    useSwiperNavigation();
 
   return (
     <div className="">
@@ -38,9 +39,7 @@ export default function ListNearbyUnitCardsMobile({
             nextEl: nextRef.current,
             prevEl: prevRef.current,
           }}
-          onInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
+          onBeforeInit={(swiper) => onBeforeInit(swiper)}
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -59,7 +58,18 @@ export default function ListNearbyUnitCardsMobile({
           ))}
         </Swiper>
 
-        <div className="mt-4 flex justify-center space-x-4">
+        <div className="mt-4 hidden justify-center space-x-4 md:flex">
+          <SliderArrows
+            swiperRef={swiperRef}
+            prevRef={prevRef}
+            nextRef={nextRef}
+            size={1}
+            color="text-primary-foreground"
+            showSwiperPagination
+            currentIndex={currentIndex}
+          />
+        </div>
+        <div className="mt-4 flex justify-center space-x-4 md:hidden">
           <SliderArrows
             swiperRef={swiperRef}
             prevRef={prevRef}
