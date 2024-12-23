@@ -6,7 +6,8 @@ import listItems from "../../listItems";
 import VaccinationRoundedCard from "../VaccinationRoundedCard";
 
 export default function VaccinationRoundedSection(): JSX.Element {
-  const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
+  const { prevRef, nextRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   return (
     <div className="mt-10 w-full lg:space-x-6">
@@ -38,6 +39,8 @@ export default function VaccinationRoundedSection(): JSX.Element {
       <div className="mb-10 md:hidden">
         <SliderArrows
           swiperRef={swiperRef}
+          showSwiperPagination
+          currentIndex={currentIndex}
           prevRef={prevRef}
           nextRef={nextRef}
         />

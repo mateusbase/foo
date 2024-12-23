@@ -11,7 +11,7 @@ import { ListUpcomingEventCardsMobileProps } from "./types";
 export default function ListUpcomingEventCardsMobile({
   events,
 }: ListUpcomingEventCardsMobileProps): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex } = useSwiperNavigation();
 
   return (
     <div className="relative w-full max-w-[1052px]">
@@ -59,6 +59,7 @@ export default function ListUpcomingEventCardsMobile({
           nextRef={nextRef}
           size={1}
           showSwiperPagination
+          currentIndex={currentIndex}
           color="text-primary-foreground"
         />
       </div>

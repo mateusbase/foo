@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import NextArrowIcon from "@/components/Icons/NextArrowIcon";
 import PreviousArrowIcon from "@/components/Icons/PreviousArrowIcon";
 import { SliderArrowsProps } from "./types";
@@ -10,15 +9,8 @@ const SliderArrows = ({
   size,
   showSwiperPagination,
   color = "text-primary-foreground",
+  currentIndex,
 }: SliderArrowsProps): JSX.Element => {
-  const [currentIndex, setCurrentIndex] = useState<number>(1);
-
-  useEffect(() => {
-    swiperRef?.current?.on("slideChange", () => {
-      setCurrentIndex((swiperRef.current?.realIndex || 0) + 1);
-    });
-  }, [swiperRef]);
-
   const handlePrev = (): void => {
     if (swiperRef.current) {
       swiperRef.current.slidePrev();

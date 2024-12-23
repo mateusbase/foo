@@ -12,12 +12,15 @@ import CommonCancers from "./components/CommonCancers";
 import { cards, services } from "./aboutCancerMocks";
 
 export default function AllAboutCancerScreen(): JSX.Element {
-  const { nextRef, prevRef, onBeforeInit, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, onBeforeInit, swiperRef, currentIndex } =
+    useSwiperNavigation();
+
   const {
     nextRef: nextRefCard,
     prevRef: prevRefCard,
     swiperRef: swiperRefCard,
     onBeforeInit: onBeforeInitCard,
+    currentIndex: currentIndexCard,
   } = useSwiperNavigation();
 
   return (
@@ -100,6 +103,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
               prevRef={prevRefCard}
               nextRef={nextRefCard}
               showSwiperPagination
+              currentIndex={currentIndexCard}
             />
           </div>
         </div>
@@ -195,6 +199,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
             prevRef={prevRef}
             nextRef={nextRef}
             showSwiperPagination
+            currentIndex={currentIndex}
           />
         </div>
       </div>
