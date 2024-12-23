@@ -26,6 +26,9 @@ export default function VaccinesScreen(): JSX.Element {
           slidesPerView={1}
           loop
           onBeforeInit={(swiper) => onBeforeInitCard(swiper)}
+          onInit={(swiper) => {
+            swiperRefCard.current = swiper;
+          }}
         >
           {vaccineInformation.map((vaccine) => (
             <SwiperSlide key={vaccine.id}>
@@ -44,6 +47,7 @@ export default function VaccinesScreen(): JSX.Element {
           currentIndex={currentIndex}
           prevRef={prevRefCard}
           nextRef={nextRefCard}
+          showSwiperPagination
         />
       </div>
 

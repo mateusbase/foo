@@ -1,15 +1,12 @@
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "@nextui-org/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import Link from "next/link";
-import { NavigationOptions } from "swiper/types";
 import AlphabetSelector from "@/components/AlphabetSelector";
 import BaseInput from "@/components/Input";
 import { SearchIcon } from "@/components/Icons";
-import PreviousArrowIcon from "@/components/Icons/PreviousArrowIcon";
-import NextArrowIcon from "@/components/Icons/NextArrowIcon";
 import SliderArrows from "@/components/SliderArrows";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SectionHeader from "../SectionHeader";
@@ -27,10 +24,6 @@ export default function ServiceSection({
   healthServices,
   medicalServices,
 }: ServiceSectionProps): JSX.Element {
-  // const prevRefCard = useRef<HTMLButtonElement>(null);
-  // const nextRefCard = useRef<HTMLButtonElement>(null);
-  // const prevRef = useRef<HTMLButtonElement>(null);
-  // const nextRef = useRef<HTMLButtonElement>(null);
   const {
     nextRef: nextRefCard,
     prevRef: prevRefCard,
