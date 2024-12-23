@@ -47,7 +47,6 @@ export default function VaccinesScreen(): JSX.Element {
           currentIndex={currentIndex}
           prevRef={prevRefCard}
           nextRef={nextRefCard}
-          showSwiperPagination
         />
       </div>
 
