@@ -22,7 +22,8 @@ interface ListServiceCardsMobileProps {
 export default function ListServiceCardsMobile({
   services,
 }: ListServiceCardsMobileProps): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
+    useSwiperNavigation();
 
   return (
     <div className="relative w-full">
@@ -35,9 +36,7 @@ export default function ListServiceCardsMobile({
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
-        onInit={(swiper) => {
-          swiperRef.current = swiper;
-        }}
+        onBeforeInit={(swiper) => onBeforeInit(swiper)}
         breakpoints={{
           640: {
             slidesPerView: 3,
@@ -62,6 +61,8 @@ export default function ListServiceCardsMobile({
           prevRef={prevRef}
           nextRef={nextRef}
           size={1}
+          showSwiperPagination
+          currentIndex={currentIndex}
           color="text-primary-foreground"
         />
       </div>
