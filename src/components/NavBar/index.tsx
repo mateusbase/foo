@@ -17,7 +17,7 @@ import BaseSelect from "../Select";
 import BaseButton from "../Button";
 import { NavBarProps } from "./types";
 import MobileMenu from "./components/menuMobile";
-import { CalendarIcon } from "../Icons";
+import { CalendarIcon, SearchIcon } from "../Icons";
 
 export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,6 +52,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
     { label: t("navbar.news"), pathname: "/noticias" },
   ];
 
+  const isHomePage = router.pathname === "/";
   const isMedicPage = router.pathname.includes("/medicos");
 
   const handleLogoClick = (): void => {
@@ -187,9 +188,16 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
           <NavbarContent justify="end" className="hidden items-center sm:flex">
             {!isMedicPage ? (
               <>
+                {!isHomePage && (
+                  <SearchIcon
+                    className="hidden text-primary hover:cursor-pointer lg:flex xl2:ml-2"
+                    size={1.5}
+                  />
+                )}
+
                 <Link
                   href="/contato"
-                  className="hidden items-center text-primary lg:flex xl2:ml-10 xl2:mr-9"
+                  className="hidden items-center text-primary lg:flex xl2:mr-9"
                 >
                   Entrar
                   <LogIn size={26} className="ml-2" />
