@@ -12,7 +12,7 @@ import NearbyUnitsMobile from "@/components/NearbyUnitsMobile";
 import SearchInput from "./components/SearchInput";
 import SearchInputMobile from "./components/SearchInputMobile";
 
-const informationMock = [
+export const informationMock = [
   {
     id: 1,
     description:

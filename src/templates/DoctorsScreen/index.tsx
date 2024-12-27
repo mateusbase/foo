@@ -8,9 +8,11 @@ import OptionsActionsCard from "@/components/OptionsActionsCard";
 import ServicesSectionMobile from "@/components/ServicesSectionMobile";
 import UpcomingEventsSectionMobile from "@/components/UpcomingEventsMobile";
 import InformationSlider from "@/components/InformationSlider";
+import InformationSliderMobile from "@/components/InformationSliderMobile";
 import SearchInputMobile from "../HomeScreen/components/SearchInputMobile";
 import SearchInput from "../HomeScreen/components/SearchInput";
 import { sliderItems } from "./informationItems";
+import { informationMock } from "../HomeScreen";
 
 export default function DoctorsScreen(): JSX.Element {
   return (
@@ -51,6 +53,10 @@ export default function DoctorsScreen(): JSX.Element {
 
         <UpcomingEventsSectionMobile />
       </BaseContainer>
+
+      <div className="block md:hidden">
+        <InformationSliderMobile informations={informationMock} />
+      </div>
 
       <FaqSection />
 
