@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SliderArrows from "@/components/SliderArrows";
+import { useRouter } from "next/router";
 
 interface Service {
   id: number;
@@ -19,11 +20,23 @@ interface Service {
 interface ListServiceCardsMobileProps {
   services: Service[];
 }
+
 export default function ListServiceCardsMobile({
   services,
 }: ListServiceCardsMobileProps): JSX.Element {
+  const router = useRouter();
   const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
     useSwiperNavigation();
+
+  const isMedicPage = router.pathname.startsWith("/medicos");
+  const showPagination = isMedicPage;
+
+  const sliderProps = {
+    size: 1,
+    color: "text-primary-foreground",
+    ...(showPagination && { currentIndex }),
+    ...(showPagination && { showSwiperPagination: true }),
+  };
 
   return (
     <div className="relative w-full">
@@ -60,10 +73,7 @@ export default function ListServiceCardsMobile({
           swiperRef={swiperRef}
           prevRef={prevRef}
           nextRef={nextRef}
-          size={1}
-          showSwiperPagination
-          currentIndex={currentIndex}
-          color="text-primary-foreground"
+          {...sliderProps}
         />
       </div>
     </div>
