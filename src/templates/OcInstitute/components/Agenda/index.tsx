@@ -10,7 +10,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 export default function Agenda(): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   return (
     <div className="mt-10 flex w-full flex-col gap-10 lg:flex-row">
@@ -45,9 +46,7 @@ export default function Agenda(): JSX.Element {
             nextEl: nextRef.current,
           }}
           loop
-          onInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
+          onBeforeInit={(swiper) => onBeforeInit(swiper)}
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -71,6 +70,8 @@ export default function Agenda(): JSX.Element {
           swiperRef={swiperRef}
           prevRef={prevRef}
           nextRef={nextRef}
+          showSwiperPagination
+          currentIndex={currentIndex}
           size={1}
           color="text-primary"
         />
