@@ -1,10 +1,11 @@
 import { Activity, Heart, House, User, UserIcon } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { useRouter } from "next/router";
-import { PinIcon } from "@/components/Icons";
+import { HeartIcon, LunchIcon, ParkingIcon, PinIcon } from "@/components/Icons";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { RiWhatsappFill } from "react-icons/ri";
 import { FaMapMarkedAlt } from "react-icons/fa";
+import WifiIcon from "@/components/Icons/WifiIcon";
 import ClinicalBody from "./components/ClinicalBody";
 import MapCard from "./components/MapCard";
 import InsuranceGrid from "./components/InsuranceGrid";
@@ -91,7 +92,10 @@ export default function UnitScreen(): JSX.Element {
                   key={specialty}
                   className="flex items-center gap-2 text-base text-primary lg:text-[20px]"
                 >
-                  <Heart size={40} className="text-primary lg:size-[60px]" />{" "}
+                  <HeartIcon
+                    size={1}
+                    className="text-primary-foreground lg:size-[60px]"
+                  />{" "}
                   {specialty}
                 </div>
               ))}
@@ -108,14 +112,14 @@ export default function UnitScreen(): JSX.Element {
 
             <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-3">
               <div className="flex items-center gap-2 text-base text-primary sm:text-[20px]">
-                <Heart size={40} className="text-primary lg:size-[60px]" />{" "}
+                <ParkingIcon size={1} className="text-primary-foreground" />
                 Estacionamento
               </div>
               <div className="flex items-center gap-2 text-base text-primary lg:text-[20px]">
-                <User size={40} className="text-primary lg:size-[60px]" /> Wi-fi
+                <WifiIcon size={1} className="text-primary-foreground" /> Wi-fi
               </div>
               <div className="flex items-center gap-2 text-base text-primary lg:text-[20px]">
-                <Activity size={40} className="text-primary lg:size-[60px]" />{" "}
+                <LunchIcon size={1} className="text-primary-foreground" />
                 Lanche para paciente
               </div>
             </div>

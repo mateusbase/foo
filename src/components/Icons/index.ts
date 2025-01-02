@@ -14,3 +14,6 @@ export { default as CheckIcon } from "./CheckIcon";
 export { default as MarkerCircleIcon } from "./MarkerCircleIcon";
 export { default as SearchIcon } from "./SearchIcon";
 export { default as MicIcon } from "./MicIcon";
+export { default as ParkingIcon } from "./ParkingIcon";
+export { default as LunchIcon } from "./LunchIcon";
+export { default as HeartIcon } from "./HeartIcon";
