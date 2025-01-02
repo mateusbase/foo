@@ -17,7 +17,7 @@ export default function UpcomingEventsSection(): JSX.Element {
       <div className="hidden items-start justify-center gap-4 px-4 py-16 lg:flex">
         <div className="max-w-screen-lg">
           <div className="w-full text-left">
-            <h2 className="text-5xl font-light text-primary">
+            <h2 className="text-[42px] font-light leading-none text-darkGray">
               Olá dr(a). Conheça a agenda dos próximos eventos Oncoclínicas
             </h2>
             <p className="mt-8 text-base text-gray-600">
