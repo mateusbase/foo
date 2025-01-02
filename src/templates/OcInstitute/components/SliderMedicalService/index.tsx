@@ -10,7 +10,8 @@ import MedicalServiceCard from "@/components/MedicalServiceCard";
 import { services } from "../../mock";
 
 export default function SliderMedicalService(): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
+    useSwiperNavigation();
 
   return (
     <div>
@@ -35,9 +36,7 @@ export default function SliderMedicalService(): JSX.Element {
             nextEl: nextRef.current,
           }}
           loop
-          onInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
+          onBeforeInit={(swiper) => onBeforeInit(swiper)}
           breakpoints={{
             640: {
               slidesPerView: 2,
@@ -64,6 +63,8 @@ export default function SliderMedicalService(): JSX.Element {
           <SliderArrows
             swiperRef={swiperRef}
             prevRef={prevRef}
+            showSwiperPagination
+            currentIndex={currentIndex}
             nextRef={nextRef}
             size={1}
             color="text-primary"

@@ -21,7 +21,8 @@ import Agenda from "./components/Agenda";
 
 export default function OcInstitute(): JSX.Element {
   const { t } = useTranslation();
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   return (
     <>
@@ -85,9 +86,7 @@ export default function OcInstitute(): JSX.Element {
                   nextEl: nextRef.current,
                 }}
                 loop
-                onInit={(swiper) => {
-                  swiperRef.current = swiper;
-                }}
+                onBeforeInit={(swiper) => onBeforeInit(swiper)}
                 breakpoints={{
                   640: {
                     slidesPerView: 2,
@@ -115,6 +114,8 @@ export default function OcInstitute(): JSX.Element {
                   swiperRef={swiperRef}
                   prevRef={prevRef}
                   nextRef={nextRef}
+                  showSwiperPagination
+                  currentIndex={currentIndex}
                   size={1}
                   color="text-primary"
                 />

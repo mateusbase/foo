@@ -10,7 +10,8 @@ import { videosContents } from "../../mock";
 import VideoCard from "../VideoCard";
 
 export default function SliderVideos(): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   return (
     <div>
@@ -23,9 +24,7 @@ export default function SliderVideos(): JSX.Element {
           nextEl: nextRef.current,
         }}
         loop
-        onInit={(swiper) => {
-          swiperRef.current = swiper;
-        }}
+        onBeforeInit={(swiper) => onBeforeInit(swiper)}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -51,6 +50,8 @@ export default function SliderVideos(): JSX.Element {
           swiperRef={swiperRef}
           prevRef={prevRef}
           nextRef={nextRef}
+          showSwiperPagination
+          currentIndex={currentIndex}
           size={1}
           color="text-primary"
         />
