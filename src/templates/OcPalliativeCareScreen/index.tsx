@@ -187,7 +187,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
         </p>
       </div>
 
-      <div className="full-bleed mb-0 mt-10 flex w-full text-white lg:h-[794px]">
+      <div className="full-bleed mt-10 flex w-full text-white lg:h-[794px]">
         <div className="flex w-full flex-col lg:flex-row">
           <div className="flex flex-col gap-2 bg-gradient-to-t from-purpleAccent from-5% via-30% to-primary-foreground p-10 py-20 lg:h-[794px] lg:w-1/2 lg:rounded-bl-[100px] lg:px-16">
             <h1 className="text-4xl leading-none md:text-[40px] lg:text-5xl">
@@ -222,11 +222,11 @@ export default function OcPalliativeCareScreen(): JSX.Element {
             </ul>
           </div>
 
-          <div className="size-full h-1/2 lg:h-full lg:w-1/2">
+          <div className="size-full h-full lg:w-1/2">
             <img
               src="/assets/images/banner-palliative-care.png"
               alt="Imagem 1"
-              className="size-full object-fill"
+              className="size-full object-cover"
             />
           </div>
         </div>
