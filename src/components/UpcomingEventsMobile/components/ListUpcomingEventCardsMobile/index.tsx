@@ -11,7 +11,8 @@ import { ListUpcomingEventCardsMobileProps } from "./types";
 export default function ListUpcomingEventCardsMobile({
   events,
 }: ListUpcomingEventCardsMobileProps): JSX.Element {
-  const { nextRef, prevRef, swiperRef, currentIndex } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
+    useSwiperNavigation();
 
   return (
     <div className="relative w-full max-w-[1052px]">
@@ -24,9 +25,7 @@ export default function ListUpcomingEventCardsMobile({
           nextEl: nextRef.current,
           prevEl: prevRef.current,
         }}
-        onInit={(swiper) => {
-          swiperRef.current = swiper;
-        }}
+        onBeforeInit={(swiper) => onBeforeInit(swiper)}
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -52,7 +51,7 @@ export default function ListUpcomingEventCardsMobile({
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="mt-4 flex justify-center space-x-4 lg:justify-end">
+      <div className="mt-6 flex justify-center space-x-4 lg:justify-end">
         <SliderArrows
           swiperRef={swiperRef}
           prevRef={prevRef}
