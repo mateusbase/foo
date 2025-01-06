@@ -23,9 +23,9 @@ export function mapIconsBySpeciality(speciality: string): React.ReactElement {
   };
 
   const normalizedSpeciality = speciality
-    .normalize("NFD") // Normaliza a string para remover acentos
-    .replace(/[\u0300-\u036f]/g, "") // Remove os acentos
-    .toLowerCase(); // Converte para minúsculas
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
 
   return (
     iconSpeciality[normalizedSpeciality] || (
