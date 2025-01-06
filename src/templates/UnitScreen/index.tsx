@@ -123,7 +123,7 @@ export default function UnitScreen(): JSX.Element {
                 <ParkingIcon size={1} className="text-primary-foreground" />
                 Estacionamento
               </div>
-              <div className="flex items-center gap-2 text-base text-primary lg:text-[20px]">
+              <div className="flex items-center gap-2 text-base text-primary lg:justify-center lg:text-[20px]">
                 <WifiIcon size={1} className="text-primary-foreground" /> Wi-fi
               </div>
               <div className="flex items-center gap-2 text-base text-primary lg:text-[20px]">
