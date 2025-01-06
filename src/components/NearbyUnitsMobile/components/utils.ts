@@ -9,7 +9,7 @@ export const unitsData = [
     specialties: [
       "Cardiologia oncológica",
       "Dermatologia",
-      "Genética médica",
+      "Genética Médica",
       "Hematologia",
       "Medicina paliativa",
       "Oncologia clínica",
@@ -34,7 +34,7 @@ export const unitsData = [
     specialties: [
       "Cardiologia oncológica",
       "Dermatologia",
-      "Genética médica",
+      "Genética Médica",
       "Hematologia",
       "Medicina paliativa",
       "Oncologia clínica",
