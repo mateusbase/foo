@@ -1,7 +1,7 @@
-import { Activity, Heart, House, User, UserIcon } from "lucide-react";
+import { House, UserIcon } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { useRouter } from "next/router";
-import { HeartIcon, LunchIcon, ParkingIcon, PinIcon } from "@/components/Icons";
+import { LunchIcon, ParkingIcon, PinIcon } from "@/components/Icons";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { RiWhatsappFill } from "react-icons/ri";
 import { FaMapMarkedAlt } from "react-icons/fa";
@@ -11,6 +11,7 @@ import MapCard from "./components/MapCard";
 import InsuranceGrid from "./components/InsuranceGrid";
 import { Section } from "./components/MapCard/components/Section";
 import { locationData } from "./components/MapCard/mocks";
+import { mapIconsBySpeciality } from "./utils";
 
 export default function UnitScreen(): JSX.Element {
   const router = useRouter();
@@ -36,18 +37,24 @@ export default function UnitScreen(): JSX.Element {
   const decodedUnitName = name
     ? decodeURIComponent(name as string)
     : "Oncoclínicas";
+
   const decodedAddress = address
     ? decodeURIComponent(address as string)
     : "Endereço não disponível";
+
   const decodedComplement = complement
     ? decodeURIComponent(complement as string)
     : "";
+
   const decodedCity = city
     ? decodeURIComponent(city as string)
     : "Cidade não disponível";
+
   const decodedSpecialties = specialties
     ? (specialties as string).split(",")
     : [];
+
+  console.log("decodedSpecialties", decodedSpecialties);
 
   const sections = [
     {
@@ -87,18 +94,19 @@ export default function UnitScreen(): JSX.Element {
             </h2>
 
             <div className="mt-10 grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-2">
-              {decodedSpecialties.map((specialty) => (
-                <div
-                  key={specialty}
-                  className="flex items-center gap-2 text-base text-primary lg:text-[20px]"
-                >
-                  <HeartIcon
-                    size={1}
-                    className="text-primary-foreground lg:size-[60px]"
-                  />{" "}
-                  {specialty}
-                </div>
-              ))}
+              {decodedSpecialties.map((specialty) => {
+                const iconSpeciality = mapIconsBySpeciality(specialty);
+
+                return (
+                  <div
+                    key={specialty}
+                    className="flex items-center gap-2 text-base text-primary lg:text-[20px]"
+                  >
+                    {iconSpeciality}
+                    {specialty}
+                  </div>
+                );
+              })}
             </div>
             <div className="md:full-bleed mt-10 flex items-center justify-center lg:hidden">
               <MapCard />
@@ -142,7 +150,7 @@ export default function UnitScreen(): JSX.Element {
               ))}
             </div>
 
-            <div className="mt-10 flex w-full flex-col md:flex-row">
+            <div className="mt-10 flex w-full flex-col md:flex-row lg:hidden">
               <div className="w-1/2">
                 <Section
                   icon={<House className="text-primary" />}
