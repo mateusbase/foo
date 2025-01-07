@@ -55,6 +55,12 @@ export default function ServiceSection({
     setValueSearch(event.target.value);
   };
 
+  const titleService: Record<string, string> = {
+    diagnósticos: "diagnósticos",
+    servicos: "serviços",
+    tratamentos: "tratamentos ",
+  };
+
   return (
     <div id={id} className="pt-8">
       <SectionHeader title={title} description={description} />
@@ -62,7 +68,7 @@ export default function ServiceSection({
       <div className="mt-10 flex w-full lg:hidden">
         <BaseInput
           color="primary"
-          placeholder="Buscar serviço"
+          placeholder={`Buscar ${titleService[id]}`}
           placeholderColor="primary"
           size="lg"
           radius="full"
@@ -77,7 +83,7 @@ export default function ServiceSection({
         <AlphabetSelector
           selectedLetter={selectedLetter}
           onLetterSelect={setSelectedLetter}
-          searchPlaceholder="Buscar serviço"
+          searchPlaceholder={`Buscar ${titleService[id]}`}
           handleSearchChange={handleSearchChange}
           valueSearch={valueSearch}
         />
