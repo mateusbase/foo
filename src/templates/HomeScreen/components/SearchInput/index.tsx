@@ -1,7 +1,7 @@
 import React from "react";
 import { useSearch } from "@/contexts/search.context";
 import Link from "next/link";
-import { SearchIcon } from "@/components/Icons";
+import { SearchGradientIcon } from "@/components/Icons";
 import { useTranslation } from "react-i18next";
 
 const SearchInputMobile = (): JSX.Element => {
@@ -24,7 +24,7 @@ const SearchInputMobile = (): JSX.Element => {
           <input
             type="text"
             aria-label={t("searchInput.ariaLabel")}
-            className="size-full border-none bg-transparent text-2xl font-bold outline-none placeholder:text-primary"
+            className="size-full border-none bg-transparent text-2xl font-bold text-primary outline-none placeholder:text-primary"
             placeholder={t("searchInput.placeholder")}
             value={searchTerm}
             onChange={(e) => handleSearch(e.target.value)}
@@ -35,7 +35,7 @@ const SearchInputMobile = (): JSX.Element => {
           </span>
         </div>
 
-        <SearchIcon className="text-primary" size={2} />
+        <SearchGradientIcon className="text-primary" size={1} />
       </div>
 
       {searchTerm && (
@@ -46,7 +46,7 @@ const SearchInputMobile = (): JSX.Element => {
                 <Link
                   key={page.id}
                   href={page.path}
-                  className="block rounded-lg p-4 transition duration-300 hover:bg-gray-100 hover:text-blue-700"
+                  className="block rounded-lg p-4 transition duration-300 hover:bg-gray-100 hover:text-primary"
                   onClick={handleClick}
                 >
                   <div className="text-xl font-bold">
