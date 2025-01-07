@@ -49,7 +49,7 @@ export default function NewScreen(): JSX.Element {
             Inovação & Oncologia
           </BaseButton>
 
-          <div className="mt-10 w-10/12 text-center text-xl font-light text-darkGray md:text-4xl md:text-primary lg:text-5xl">
+          <div className="mt-10 w-3/4 text-center text-xl font-light text-darkGray md:text-4xl md:text-primary lg:text-5xl">
             A Inteligência Artificial está presente em diversos exames para
             apoiar o médico no diagnóstico.
           </div>
@@ -103,7 +103,7 @@ export default function NewScreen(): JSX.Element {
         <BaseContainer>
           <div>
             <p className="text-6xl font-light text-primary">
-              Itens Relacionados
+              Notícias relacionadas
             </p>
           </div>
           <div className="mt-10 grid w-full grid-cols-4">
