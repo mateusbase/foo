@@ -68,7 +68,7 @@ export const getMobileContentClasses = (
   );
 
 export const getMobileTitleClasses = (isLargeText: boolean): string =>
-  clsx("px-7 text-left font-lato-light text-4xl", {
+  clsx("mb-3 px-7 text-left font-lato-light text-4xl", {
     "text-xl text-left": isLargeText,
     "mb-6": isLargeText,
   });
