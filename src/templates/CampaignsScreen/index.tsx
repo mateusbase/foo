@@ -1,7 +1,15 @@
 import PageLayout from "@/components/PageLayout";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import { Navigation } from "swiper/modules";
+import SliderArrows from "@/components/SliderArrows";
 import YouthBanner from "./components/YouthBanner";
+import bannerImages from "./bannerImages";
 
 const CampaignsScreen = (): JSX.Element => {
+  const { currentIndex, nextRef, onBeforeInit, prevRef, swiperRef } =
+    useSwiperNavigation();
+
   return (
     <PageLayout
       title="Campanhas de prevenção contra o câncer"
@@ -57,9 +65,51 @@ const CampaignsScreen = (): JSX.Element => {
         </div>
       </div>
 
-      <h1 className="mb-6 text-center text-3xl text-primary">
+      <h1 className="mb-6 w-full text-center text-3xl text-primary md:text-4xl lg:text-left">
         Conheça nossas campanhas
       </h1>
+      <div className="mb-16 lg:hidden">
+        <Swiper
+          loop
+          modules={[Navigation]}
+          breakpoints={{
+            "320": {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            "640": {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+          }}
+          onBeforeInit={(swiper) => onBeforeInit(swiper)}
+        >
+          {bannerImages.map((banner) => (
+            <SwiperSlide key={banner.id} className="mb-10">
+              <img src={banner.image} alt={`Imagem número ${banner.id}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <SliderArrows
+          currentIndex={currentIndex}
+          showSwiperPagination
+          nextRef={nextRef}
+          prevRef={prevRef}
+          swiperRef={swiperRef}
+        />
+      </div>
+
+      <div className="hidden w-full lg:flex lg:flex-row lg:gap-10">
+        {bannerImages.map((banner) => (
+          <img
+            key={banner.id}
+            src={banner.image}
+            alt={`Imagem número ${banner.id}`}
+            className="h-auto w-[31%]"
+          />
+        ))}
+      </div>
     </PageLayout>
   );
 };

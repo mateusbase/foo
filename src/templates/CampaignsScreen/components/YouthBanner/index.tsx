@@ -1,12 +1,19 @@
 const YouthBanner = (): JSX.Element => {
   return (
-    <div className="full-bleed">
+    <div className="full-bleed flex flex-col lg:mt-8 lg:flex-row">
       <img
         src="/assets/images/campaigns_banner.png"
         alt="Diagnóstico precoce em crianças"
-        className="w-full"
+        className="w-full lg:hidden"
+        fetchPriority="high"
       />
-      <div className="flex h-[375px] flex-col justify-around bg-gradient-to-b from-primary-foreground to-skyBlue p-9 text-center text-white">
+      <img
+        src="/assets/images/lg_campaigns_banner.png"
+        alt="Diagnóstico precoce em crianças"
+        className="hidden w-1/2 lg:block"
+        fetchPriority="high"
+      />
+      <div className="flex h-[375px] flex-col justify-around bg-gradient-to-b from-primary-foreground to-skyBlue p-9 text-center text-white lg:h-[402px]">
         <h1 className="font-lato-bold text-4xl">Setembro Dourado</h1>
         <p className="font-lato-light text-xl">
           Com o diagnóstico precoce e preciso, as chances de cura do câncer
