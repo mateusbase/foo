@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import { Button } from "@nextui-org/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import MedicalServiceCard from "@/components/MedicalServiceCard";
 import Link from "next/link";
 import AlphabetSelector from "@/components/AlphabetSelector";
 import BaseInput from "@/components/Input";
@@ -16,6 +15,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import ServiceCard from "../ServiceCard";
+import MedicalServiceCard from "../MedicalServiceCard";
 
 export default function ServiceSection({
   id,
