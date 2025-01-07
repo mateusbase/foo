@@ -15,7 +15,7 @@ export default function InformationSlider({
   subtitle,
   image = "https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png",
 }: InformationSliderProps): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, onBeforeInit } = useSwiperNavigation();
 
   const renderContent = (item: InformationItem): JSX.Element => (
     <div className="relative flex h-[536px] w-full justify-between text-white">
@@ -71,9 +71,7 @@ export default function InformationSlider({
           nextEl: nextRef.current,
         }}
         loop
-        onInit={(swiper) => {
-          swiperRef.current = swiper;
-        }}
+        onBeforeInit={(swiper) => onBeforeInit(swiper)}
       >
         {items.map((item) => (
           <SwiperSlide key={item.id}>{renderContent(item)}</SwiperSlide>

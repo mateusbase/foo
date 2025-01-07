@@ -57,6 +57,7 @@ const config: Config = {
         purpleMedium: "#8459BE",
         greenDark: "#034E4A",
         aquaLight: "#D6FFFD",
+        skyBlue: "#87A1D7",
         "primary-foreground": "#00B6AD",
         "secondary-foreground": "#BA99E7",
         "gray-foreground": "#F0F0F0",

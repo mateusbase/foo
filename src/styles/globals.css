@@ -41,6 +41,6 @@ body {
 
 @layer utilities {
   .full-bleed {
-    @apply relative w-[100vw] -ml-4 sm:-ml-8 lg:ml-0 lg:w-auto;
+    @apply relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 lg:static lg:left-0 lg:w-screen lg:max-w-full lg:translate-x-0;
   }
 }
