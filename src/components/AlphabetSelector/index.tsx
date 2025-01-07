@@ -43,6 +43,7 @@ export default function AlphabetSelector({
         <BaseInput
           color="primary"
           placeholder={searchPlaceholder}
+          placeholderColor="primary"
           size="lg"
           radius="full"
           variant="bordered"

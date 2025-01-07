@@ -54,8 +54,6 @@ export default function UnitScreen(): JSX.Element {
     ? (specialties as string).split(",")
     : [];
 
-  console.log("decodedSpecialties", decodedSpecialties);
-
   const sections = [
     {
       href: "#",
