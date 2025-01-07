@@ -7,6 +7,7 @@ export interface MedicalServiceCardProps {
   serviceDescription?: string;
   actionButtonText?: string;
   serviceIcon?: JSX.Element;
+  customPadding?: number;
   backgroundImageUrl?: string;
   children: ReactNode;
 }

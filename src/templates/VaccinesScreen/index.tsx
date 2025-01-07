@@ -19,7 +19,7 @@ export default function VaccinesScreen(): JSX.Element {
 
   return (
     <PageLayout title="OC Vacinas" subtitle="Todo o cuidado que a vida merece">
-      <div className="relative mb-10 mt-20 w-full lg:hidden">
+      <div className="relative mb-5 mt-20 w-full md:my-5 lg:hidden">
         <Swiper
           modules={[Navigation]}
           spaceBetween={30}
