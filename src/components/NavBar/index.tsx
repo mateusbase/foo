@@ -196,7 +196,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                 )}
 
                 <Link
-                  href="/contato"
+                  href="https://paciente.grupooncoclinicas.com/login"
                   className="hidden items-center text-primary lg:flex xl2:mr-9"
                 >
                   Entrar
@@ -222,7 +222,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               <div className="flex size-full min-w-60 max-w-96 flex-row items-center justify-center gap-2 bg-gray-600 p-6 text-gray-500">
                 <Link
                   className="flex w-full items-center justify-center text-white xl2:text-lg"
-                  href="/contato"
+                  href="https://medico.grupooncoclinicas.com/login"
                 >
                   <Stethoscope size={24} className="mr-2 text-white" />
                   Acesso médico

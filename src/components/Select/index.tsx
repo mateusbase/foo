@@ -47,9 +47,14 @@ export default function BaseSelect({
         <SelectItem
           key={option.key}
           value={option.value}
-          color={color}
+          // color={color}
           // eslint-disable-next-line tailwindcss/no-custom-classname
-          className={`text-${optionsColor}`}
+          className={`text-${optionsColor} hover:bg-primary hover:text-white`}
+          classNames={{
+            base: `transition-colors duration-200`,
+            title: `text-${optionsColor} group-hover:text-white`,
+            selectedIcon: `text-darkGray`,
+          }}
         >
           {option.label}
         </SelectItem>
