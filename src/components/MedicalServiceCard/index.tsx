@@ -25,9 +25,9 @@ export default function MedicalServiceCard({
             "url('https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg')",
         }}
       />
-      <div className="flex h-[289px] min-w-[322px] flex-col justify-between rounded-br-[100px] bg-gradient-to-b from-primary-foreground from-60% via-secondary-foreground via-90% to-purpleAccent to-70% p-8 md:px-14 lg:h-[342px] lg:min-h-[515px] lg:gap-12">
+      <div className="flex h-[289px] min-w-[322px] flex-col rounded-br-[100px] bg-gradient-to-br from-primary-foreground from-55% via-purpleAccent via-100% to-secondary-foreground to-10% p-8 md:px-9 lg:h-[342px] lg:min-h-[515px] lg:gap-12 lg:bg-gradient-to-b">
         {hasSubtitle && (
-          <p className="mt-4 text-left text-lg leading-[30px] text-white md:text-[24px]">
+          <p className="mt-4 text-left text-lg leading-[30px] text-white md:text-[20px] lg:text-[24px]">
             {subtitle}
           </p>
         )}
@@ -54,7 +54,7 @@ export default function MedicalServiceCard({
           </p>
         </div>
 
-        <div className="mt-4 flex w-full items-start justify-start rounded-full">
+        <div className="mt-4 flex size-full items-end rounded-full">
           {shouldShowButton && <IoIosArrowDropright size={29} color="white" />}
         </div>
       </div>
