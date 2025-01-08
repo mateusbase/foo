@@ -19,9 +19,9 @@ const VaccinationRoundedCard = ({
               {description}
             </span>
           ) : (
-            <ul className="mb-4 list-inside list-disc text-base text-white md:text-lg lg:text-2xl">
+            <ul className="mb-4 list-disc pl-5 text-base text-white md:text-lg lg:text-2xl">
               {listItems?.map((item) => (
-                <li className="font-lato-bold" key={item}>
+                <li className="ml-4 font-lato-bold" key={item}>
                   {item}
                 </li>
               ))}
