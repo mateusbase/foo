@@ -28,11 +28,8 @@ const VaccineLocations = (): JSX.Element => {
   return (
     <div className="mb-8 mt-2 flex w-full flex-col md:mt-12 lg:mt-28">
       <div className="flex w-full flex-col items-center md:flex-row md:gap-3">
-        <h1 className="mb-4 w-full font-lato-bold text-3xl leading-relaxed text-primary md:mb-0 md:w-[45%] lg:w-full lg:text-6xl">
-          <span className="block text-left">
-            Consulte as vacinas oferecidas{" "}
-          </span>
-          <span className="block text-center">na sua cidade</span>
+        <h1 className="mb-4 w-full text-center font-lato-bold text-3xl leading-relaxed text-primary md:mb-0 md:w-[45%] md:text-3xl lg:w-full lg:text-6xl">
+          Consulte as vacinas oferecidas na sua cidade
         </h1>
 
         <BaseSelect
@@ -59,7 +56,7 @@ const VaccineLocations = (): JSX.Element => {
         />
       </div>
 
-      <div className="flex flex-row justify-start">
+      <div className="ml-3 flex flex-row justify-start">
         <div className="mr-20 mt-10 hidden w-[398px] items-start justify-start font-lato-regular text-white lg:block lg:text-sm">
           {unitiesInformation.map((unity) => (
             <MenuItem
