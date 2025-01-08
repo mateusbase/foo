@@ -10,7 +10,7 @@ export default function VaccinationRoundedSection(): JSX.Element {
     useSwiperNavigation();
 
   return (
-    <div className="mt-10 w-full lg:space-x-6">
+    <div className="mt-5 w-full lg:space-x-6">
       <Swiper
         modules={[Navigation]}
         spaceBetween={16}
@@ -36,7 +36,7 @@ export default function VaccinationRoundedSection(): JSX.Element {
         </SwiperSlide>
       </Swiper>
 
-      <div className="mb-10 md:hidden">
+      <div className="mb-10 mt-6 md:hidden">
         <SliderArrows
           swiperRef={swiperRef}
           showSwiperPagination
