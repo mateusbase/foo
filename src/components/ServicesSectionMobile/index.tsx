@@ -13,26 +13,31 @@ export default function ServicesSectionMobile(): JSX.Element {
     {
       id: 1,
       title: "Tratamentos",
-      icon: <TreatmentsIcon />,
+      icon: <TreatmentsIcon color="text-primary-foreground" size={1} />,
       path: "/servicos/#tratamentos",
     },
     {
       id: 2,
       title: "Diagnósticos",
-      icon: <MicroscopeIcon />,
+      icon: <MicroscopeIcon color="text-primary-foreground" size={1} />,
       path: "/servicos/#diagnósticos",
     },
-    { id: 3, title: "Serviços", icon: <ServiceIcon />, path: "/servicos" },
+    {
+      id: 3,
+      title: "Serviços",
+      icon: <ServiceIcon color="text-primary-foreground" size={1} />,
+      path: "/servicos",
+    },
     {
       id: 4,
       title: "Tudo sobre o câncer",
-      icon: <AllOfCancerIcon />,
+      icon: <AllOfCancerIcon color="text-primary-foreground" size={1} />,
       path: "/tudo-sobre-o-cancer",
     },
     {
       id: 5,
       title: "Medicina de precisão",
-      icon: <PrecisionMedicineIcon size={1.5} />,
+      icon: <PrecisionMedicineIcon color="text-primary-foreground" size={1} />,
       path: "/tudo-sobre-o-cancer",
     },
   ];
