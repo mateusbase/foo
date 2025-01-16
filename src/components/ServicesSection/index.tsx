@@ -30,7 +30,7 @@ export default function ServicesSection(): JSX.Element {
     {
       id: 4,
       title: "Tudo sobre o câncer",
-      icon: <AllOfCancerIcon color="text-primary-foreground" size={2} />,
+      icon: <AllOfCancerIcon color="text-primary-foreground" size={1.7} />,
       path: "/tudo-sobre-o-cancer",
     },
   ];
