@@ -52,7 +52,7 @@ export default function BaseSelect({
           className={`text-${optionsColor} hover:bg-primary hover:text-white`}
           classNames={{
             base: `transition-colors duration-200`,
-            title: `text-${optionsColor} group-hover:text-white`,
+            title: `text-${optionsColor} group-hover:text-darkGray`,
             selectedIcon: `text-darkGray`,
           }}
         >

@@ -13,7 +13,7 @@ import { services } from "./mock";
 import TermsOfConsentBanner from "./components/TermsOfConsentBanner";
 
 export default function ClinicalResearchScreen(): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex } = useSwiperNavigation();
 
   return (
     <>
@@ -55,7 +55,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
                 Como funciona
               </BaseButton>
               <BaseButton
-                className="mt-8 flex w-1/2 font-bold text-white md:hidden"
+                className="mt-8 flex w-full font-bold text-white md:hidden"
                 color="primary"
                 variant="solid"
                 width="322px"
@@ -122,13 +122,15 @@ export default function ClinicalResearchScreen(): JSX.Element {
                 ))}
               </Swiper>
 
-              <div className="mt-4 flex justify-center space-x-4">
+              <div className="mt-4 hidden justify-center space-x-4 md:flex">
                 <SliderArrows
                   swiperRef={swiperRef}
                   prevRef={prevRef}
                   nextRef={nextRef}
+                  currentIndex={currentIndex}
+                  showSwiperPagination
                   size={1}
-                  color="text-primary"
+                  color="text-primary-foreground"
                 />
               </div>
             </div>
