@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { PageHeaderProps } from './types';
-import BaseButton from '../Button';
+import Link from "next/link";
+import { PageHeaderProps } from "./types";
+import BaseButton from "../Button";
 
 const PageHeader = ({
   preTitle,
@@ -14,12 +14,12 @@ const PageHeader = ({
 }: PageHeaderProps): JSX.Element => {
   const handleLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ): void => {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 

@@ -27,6 +27,8 @@ export default function BaseSelect({
           : `border-${color} border-1`,
         label: `text-${labelColor} text-base`,
         value: `text-${labelColor} text-base`,
+        // listbox: "bg-white border border-gray-300 rounded-lg shadow-lg p-2",
+        // listboxWrapper: "z-50 max-h-60 overflow-auto rounded-lg shadow-lg",
       }}
       color={color}
       variant={variant}
@@ -47,7 +49,7 @@ export default function BaseSelect({
         <SelectItem
           key={option.key}
           value={option.value}
-          // color={color}
+          color={color}
           // eslint-disable-next-line tailwindcss/no-custom-classname
           className={`text-${optionsColor} hover:bg-primary hover:text-white`}
           classNames={{
