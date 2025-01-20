@@ -1,6 +1,5 @@
 import PageLayout from "@/components/PageLayout";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import ShareOptions from "@/components/ShareOptions";
 import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import BaseButton from "@/components/Button";
