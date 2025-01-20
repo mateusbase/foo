@@ -4,7 +4,7 @@ import StudyScreen from "@/templates/StudyScreen";
 
 const Blog: NextPageWithLayout = () => {
   return (
-    <Page title="Blog" description="Oncoclínicas - Blog">
+    <Page title="Estudo" description="Oncoclínicas - Estudo">
       <StudyScreen />
     </Page>
   );
