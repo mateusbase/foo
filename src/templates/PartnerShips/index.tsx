@@ -11,7 +11,7 @@ export default function PartnerShipsScreen(): JSX.Element {
             className="size-full lg:rounded-bl-[100px]"
           />
         </div>
-        <div className="w-full bg-gradient-to-b from-primary-foreground via-primary-foreground via-50% to-secondary-foreground lg:max-w-[604px]">
+        <div className="w-full bg-gradient-to-b from-primary via-primary via-70% to-secondary lg:max-w-[604px]">
           <h1 className="p-20 text-center text-3xl text-white md:text-4xl lg:text-left">
             As parcerias da Oncoclínicas&Co com empresas pelo Brasil tem como
             principal objetivo ampliar a oferta de serviços em toda a linha de

@@ -18,7 +18,7 @@ export default function PresScreen(): JSX.Element {
           <Link href="/clipping" passHref>
             <MedicalServiceCard
               subtitle="Saiba mais"
-              serviceTitle="Clipping"
+              serviceTitle="OC na mídia"
               serviceDescription="Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet"
             />
           </Link>
