@@ -9,11 +9,12 @@ export default function MenuItem({
   isFirst,
   isLast,
   onClick,
+  textSize = "text-xl",
 }: MenuItemProps): JSX.Element {
   const handleClick = (): void => onClick(id);
 
   const itemClasses = clsx(
-    "flex h-[79px] cursor-pointer items-center justify-between bg-primary px-10",
+    "flex h-[79px] cursor-pointer items-center justify-between bg-primary pl-10 pr-5",
     {
       "bg-primary-foreground": isActive,
       "hover:bg-primary-foreground": !isActive,
@@ -31,8 +32,8 @@ export default function MenuItem({
       tabIndex={0}
       aria-pressed={isActive}
     >
-      <span className="2xl:text-xl">{name}</span>
-      <IoIosArrowDropright size={29} className="text-white" />
+      <span className={textSize}>{name}</span>
+      <IoIosArrowDropright size={29} className="min-w-8 text-white" />
     </div>
   );
 }

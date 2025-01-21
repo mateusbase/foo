@@ -152,19 +152,20 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
       <div className="mt-28 hidden grid-cols-3 gap-[26px] lg:grid">
         <MedicalServiceCard
-          serviceTitle="OC Acesso"
-          serviceDescription="A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência."
-          actionButtonText="Exclusividade Oncoclínicas"
+          serviceTitle="Tratamentos"
+          serviceDescription="As possibilidades e a diversidade no tratamento para o câncer vêm crescendo, conheça."
+          // actionButtonText="Exclusividade Oncoclínicas"
         />
         <MedicalServiceCard
-          serviceTitle="OC Acesso"
-          serviceDescription="A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência."
-          actionButtonText="Exclusividade Oncoclínicas"
+          serviceTitle="Convivendo com o câncer"
+          serviceDescription="Durante e após o tratamento, a Oncoclínicas oferece diversos serviços e tratamentos."
+          actionLink="/tudo-sobre-o-cancer/convivendo-com-o-cancer/medicina-integrativa/"
+          // actionButtonText="Exclusividade Oncoclínicas"
         />
         <MedicalServiceCard
-          serviceTitle="OC Acesso"
-          serviceDescription="A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência."
-          actionButtonText="Exclusividade Oncoclínicas"
+          serviceTitle="Prevenção ao Câncer"
+          serviceDescription="O Grupo Oncoclínicas desenvolve uma série de importantes ações e campanhas de conscientização e prevenção contra o câncer."
+          // actionButtonText="Exclusividade Oncoclínicas"
         />
       </div>
 

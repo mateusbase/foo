@@ -1,5 +1,6 @@
 import { Plus } from "lucide-react";
 import { IoIosArrowDropright } from "react-icons/io";
+import Link from "next/link";
 import { MedicalServiceCardProps } from "./types";
 import BaseButton from "../Button";
 
@@ -8,6 +9,7 @@ export default function MedicalServiceCard({
   serviceTitle,
   serviceDescription,
   actionButtonText,
+  actionLink = "/default-link",
   serviceIcon = <Plus size={22} />,
   backgroundImageUrl,
   shouldShowButton = true,
@@ -55,7 +57,11 @@ export default function MedicalServiceCard({
         </div>
 
         <div className="mt-4 flex size-full items-end rounded-full">
-          {shouldShowButton && <IoIosArrowDropright size={29} color="white" />}
+          {shouldShowButton && (
+            <Link href={actionLink}>
+              <IoIosArrowDropright size={29} color="white" />
+            </Link>
+          )}
         </div>
       </div>
     </div>
