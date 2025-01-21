@@ -53,7 +53,9 @@ Como o câncer é uma desafio mundial da humanidade, haverá sempre novos estudo
 
       <div className="mt-10 lg:mt-20">
         {paragraphs.map((content) => (
-          <p className="mt-5 text-sm text-darkGray md:text-xl">{content}</p>
+          <p key={content} className="mt-5 text-sm text-darkGray md:text-xl">
+            {content}
+          </p>
         ))}
       </div>
 

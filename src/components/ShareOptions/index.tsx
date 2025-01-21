@@ -11,17 +11,17 @@ export default function ShareOptions({
       </h3>
 
       <div className="flex flex-col items-center md:items-start">
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-6">
           {options.map((socialNetwork) => (
             <Link key={socialNetwork.id} href={socialNetwork.url}>
               <div
                 key={socialNetwork.name}
                 className="flex cursor-pointer flex-col items-center"
               >
-                <div className="flex size-12 items-center justify-center rounded-full border bg-gray-300 text-primary">
+                <div className="flex size-12 items-center justify-center rounded-full bg-gray-50 text-primary">
                   {socialNetwork.icon}
                 </div>
-                <span className="mt-2 font-lato-bold text-xs text-darkGray">
+                <span className="mt-2 text-xs font-bold text-darkGray">
                   {socialNetwork.name}
                 </span>
               </div>

@@ -5,4 +5,5 @@ export interface MenuItemProps {
   isFirst: boolean;
   isLast: boolean;
   onClick: (id: number) => void;
+  textSize?: string;
 }
