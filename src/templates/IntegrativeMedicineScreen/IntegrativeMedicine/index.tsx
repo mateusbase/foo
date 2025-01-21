@@ -67,7 +67,7 @@ export default function HowItWorks(): JSX.Element {
         </p>
       </div>
 
-      <div className="mt-10">
+      <div className="my-10 lg:my-0 lg:mt-10">
         <ShareOptions options={socialNetwork} />
       </div>
     </div>
