@@ -35,7 +35,7 @@ const LastBanner = (): JSX.Element => {
               className="w-full"
             />
             {/* Corrigindo layout interno */}
-            <div className="flex flex-col bg-gradient-to-t from-skyBlue to-primary-foreground p-6 font-lato-regular">
+            <div className="flex flex-col bg-gradient-to-b from-primary from-60% to-secondary p-6 font-lato-regular">
               {/* Ajuste de margens e espaçamento */}
               <h1 className="mb-4 mt-7 w-[90%] text-3xl font-normal text-white">
                 Teste genético ajuda a guiar tratamento contra câncer e evitar
@@ -75,7 +75,7 @@ const LastBanner = (): JSX.Element => {
                 alt="Foto banner Programa de suporte ao paciente"
                 className="w-full md:w-1/2"
               />
-              <div className="flex w-full flex-col rounded-bl-[60px] bg-gradient-to-t from-skyBlue to-primary-foreground p-6 font-lato-regular md:w-1/2">
+              <div className="flex w-full flex-col rounded-bl-[60px] bg-gradient-to-b from-primary from-60% to-secondary p-6 font-lato-regular md:w-1/2">
                 <h1 className="mb-4 h-[130px] text-3xl font-normal text-white">
                   Teste genético ajuda a guiar tratamento contra câncer e evitar
                   novos tumores
