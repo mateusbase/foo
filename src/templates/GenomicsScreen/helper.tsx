@@ -1,13 +1,15 @@
-import IntegrativeMedicine from "./IntegrativeMedicine";
+import ExamsWithPartner from "./ExamsWithPartner";
+import GerminalPainel from "./GerminalPainel";
 
 type MenuContent = {
   [key: number]: JSX.Element;
 };
 
 export const menuContent: MenuContent = {
-  1: <IntegrativeMedicine />,
+  1: <ExamsWithPartner />,
   2: <div />,
-  3: <div />,
+  3: <GerminalPainel />,
+  4: <div />,
 };
 
 export const menuItems = [
