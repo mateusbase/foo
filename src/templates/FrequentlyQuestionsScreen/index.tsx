@@ -2,30 +2,12 @@ import PageLayout from "@/components/PageLayout";
 import { IoAddCircle } from "react-icons/io5";
 import { useState } from "react";
 import MenuSelector from "./components/MenuSelector";
-import { menuContent } from "./helper";
+import { menuContent, options } from "./helper";
 
 export default function FrequentlyQuestionsScreen(): JSX.Element {
   const [activeContent, setActiveContent] = useState<number>(1);
 
   const renderContent = menuContent[activeContent];
-
-  const options = [
-    {
-      id: 1,
-      label: "Geral",
-      icon: <IoAddCircle className="size-20 text-primary-foreground" />,
-    },
-    {
-      id: 2,
-      label: "Tipos de câncer",
-      icon: <IoAddCircle className="size-20 text-primary-foreground" />,
-    },
-    {
-      id: 3,
-      label: "Tratamentos",
-      icon: <IoAddCircle className="size-20 text-primary-foreground" />,
-    },
-  ];
 
   return (
     <PageLayout

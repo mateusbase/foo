@@ -15,17 +15,17 @@ export const options = [
   {
     id: 1,
     label: "Geral",
-    icon: <IoAddCircle className="size-20 text-primary-foreground" />,
+    icon: <IoAddCircle className="size-16 text-primary-foreground" />,
   },
   {
     id: 2,
     label: "Tipos de câncer",
-    icon: <IoAddCircle className="size-20 text-primary-foreground" />,
+    icon: <IoAddCircle className="size-16 text-primary-foreground" />,
   },
   {
     id: 3,
     label: "Tratamentos",
-    icon: <IoAddCircle className="size-20 text-primary-foreground" />,
+    icon: <IoAddCircle className="size-16 text-primary-foreground" />,
   },
 ];
 
