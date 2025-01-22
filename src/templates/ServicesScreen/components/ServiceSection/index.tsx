@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import Link from "next/link";
@@ -62,9 +62,8 @@ export default function ServiceSection({
   };
 
   return (
-    <div id={id} className="pt-8">
+    (<div id={id} className="pt-8">
       <SectionHeader title={title} description={description} />
-
       <div className="mt-10 flex w-full lg:hidden">
         <BaseInput
           color="primary"
@@ -78,7 +77,6 @@ export default function ServiceSection({
           endContent={<SearchIcon className="text-primary" />}
         />
       </div>
-
       <div className="hidden lg:block">
         <AlphabetSelector
           selectedLetter={selectedLetter}
@@ -88,7 +86,6 @@ export default function ServiceSection({
           valueSearch={valueSearch}
         />
       </div>
-
       <div className="mt-10 hidden grid-cols-4 gap-[26px] md:grid">
         {filteredHealthServices.map((service) => (
           <Link key={service.id} href={`/servicos/${service.slug}`} passHref>
@@ -99,7 +96,6 @@ export default function ServiceSection({
           </Link>
         ))}
       </div>
-
       <div className="relative mb-10 mt-20 w-full md:hidden">
         <Swiper
           modules={[Navigation]}
@@ -148,7 +144,6 @@ export default function ServiceSection({
           />
         </div>
       </div>
-
       <div className="flex w-full justify-center">
         <Button
           color="primary"
@@ -159,7 +154,6 @@ export default function ServiceSection({
           [+] Ver todos
         </Button>
       </div>
-
       <div className="relative mb-10 mt-20 w-full lg:hidden">
         <Swiper
           modules={[Navigation]}
@@ -203,7 +197,6 @@ export default function ServiceSection({
           />
         </div>
       </div>
-
       <div className="mt-28 hidden grid-cols-3 gap-[26px] lg:grid">
         {medicalServices.map((service) => (
           <Link
@@ -219,6 +212,6 @@ export default function ServiceSection({
           </Link>
         ))}
       </div>
-    </div>
+    </div>)
   );
 }

@@ -1,7 +1,7 @@
 import { FaClock } from "react-icons/fa";
 import { IoIosCalendar } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { FiCheckSquare } from "react-icons/fi";
 import { EventComponentProps } from "./types";
 import EventCard from "../EventCard";

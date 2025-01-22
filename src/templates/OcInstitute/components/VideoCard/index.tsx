@@ -1,4 +1,4 @@
-import { Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import { VideoCardProps } from "./types";
 
 export default function VideoCard({

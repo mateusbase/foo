@@ -1,5 +1,5 @@
 import PageLayout from "@/components/PageLayout";
-import { Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SliderArrows from "@/components/SliderArrows";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";

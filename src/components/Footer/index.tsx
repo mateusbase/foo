@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Divider, Radio, RadioGroup } from "@nextui-org/react";
+import { Divider, Radio, RadioGroup } from "@heroui/react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";

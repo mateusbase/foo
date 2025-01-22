@@ -1,7 +1,7 @@
 import BaseContainer from "@/components/Container";
 import BaseButton from "@/components/Button";
 import { LuArrowUpRight } from "react-icons/lu";
-import { Image } from "@nextui-org/image";
+import { Image } from "@heroui/image";
 import PageHeader from "@/components/PageHeader";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";

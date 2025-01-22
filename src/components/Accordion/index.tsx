@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, Selection } from "@nextui-org/react";
+import { Accordion, AccordionItem, Selection } from "@heroui/react";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { useState } from "react";
 import { BaseAccordionProps } from "./types";
