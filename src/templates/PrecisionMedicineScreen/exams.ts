@@ -1,6 +1,7 @@
 export type Exams = {
   id: number;
   name: string;
+  redirectUrl?: string;
 };
 
 export interface ExamsCardProps {
@@ -41,7 +42,8 @@ export const genomicsExams: Exams[] = [
   },
   {
     id: 3,
-    name: "Painéis NGS germinativos)",
+    name: "Painéis NGS germinativos",
+    redirectUrl: "/medicina-de-precisao/nossos-exames/genomica",
   },
   {
     id: 4,

@@ -1,52 +1,57 @@
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
 import { useState } from "react";
-import { IoChevronForwardCircleOutline } from "react-icons/io5";
+import { menuContent, menuItems } from "@/templates/GenomicsScreen/helper";
+import BaseSelect from "@/components/Select";
+import { IoMenu } from "react-icons/io5";
 import genomicsExamsMock from "./genomicsExamsMock";
 
 const GenomicsScreen = (): JSX.Element => {
-  const [selectedMenuItem, setSelectedMenuItem] = useState<number>(1);
+  const [activeItem, setActiveItem] = useState<number>(1);
 
-  const selectedItem = genomicsExamsMock.find(
-    (item) => Number(item.value) === selectedMenuItem,
-  );
+  const activeContent = menuContent[activeItem];
 
   return (
     <PageLayout title="Nossos exames">
-      <div className="mt-5 flex flex-row gap-16">
-        <div className="w-1/4 font-lato-bold text-white">
-          {genomicsExamsMock.map((item) => (
-            <div key={item.value} className="font-lato-regular text-white">
-              <MenuItem
-                key={item.value}
-                id={Number(item.value)}
-                isFirst={item.value === "1"}
-                isLast={Number(item.value) === genomicsExamsMock.length}
-                name={item.label}
-                isActive={selectedMenuItem === Number(item.value)}
-                onClick={(value) => setSelectedMenuItem(Number(value))}
-              />
-            </div>
-          ))}
+      <div className="flex w-full flex-col gap-10 lg:mt-12 lg:flex-row xl:gap-16">
+        <div className="text-white lg:w-[398px]">
+          <div className="mb-2 block md:max-w-[302px] lg:hidden">
+            <BaseSelect
+              color="primary"
+              variant="bordered"
+              labelColor="primary"
+              radius="full"
+              size="lg"
+              startContent={<IoMenu className="text-primary" size={28} />}
+              defaultSelectedKey="1"
+              labelPlacement="outside"
+              options={menuItems.map((item) => ({
+                key: item.id,
+                value: item.id,
+                label: item.name,
+              }))}
+              onChange={(value) => setActiveItem(Number(value))}
+            />
+          </div>
+
+          <div className="hidden w-[398px] font-lato-bold text-white lg:block">
+            {genomicsExamsMock.map((item) => (
+              <div key={item.value} className="font-lato-regular text-white">
+                <MenuItem
+                  key={item.value}
+                  id={Number(item.value)}
+                  isFirst={item.value === "1"}
+                  isLast={Number(item.value) === genomicsExamsMock.length}
+                  name={item.label}
+                  isActive={activeItem === Number(item.value)}
+                  onClick={(value) => setActiveItem(Number(value))}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex w-3/4 flex-col gap-7">
-          {selectedItem && (
-            <>
-              <h1 className="mb-4 font-lato-bold text-5xl text-primary">
-                {selectedItem.label}
-              </h1>
-              {selectedItem.exams.map((exam) => (
-                <div
-                  key={exam.value}
-                  className="relative flex h-[89px] w-full max-w-[758px] cursor-pointer flex-row items-center rounded-2xl bg-primary px-7 py-8 text-white sm:w-[90%] lg:w-[758px]"
-                >
-                  <h2 className="font-lato-bold text-2xl">{exam.label}</h2>
-                  <IoChevronForwardCircleOutline className="absolute right-[38px] text-3xl text-white" />
-                </div>
-              ))}
-            </>
-          )}
-        </div>
+
+        <div className="w-full lg:w-[1061px]">{activeContent}</div>
       </div>
     </PageLayout>
   );

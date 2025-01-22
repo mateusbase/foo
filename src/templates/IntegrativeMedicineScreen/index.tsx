@@ -3,27 +3,12 @@ import PageLayout from "@/components/PageLayout";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import BaseSelect from "@/components/Select";
-import { menuContent } from "./helper";
+import { menuContent, menuItems } from "./helper";
 
 export default function IntegrativeMedicineScreen(): JSX.Element {
   const [activeItem, setActiveItem] = useState<number>(1);
 
   const activeContent = menuContent[activeItem];
-
-  const menuItems = [
-    {
-      id: 1,
-      name: "Importância da medicina integrativa durante o tratamento de câncer",
-    },
-    {
-      id: 2,
-      name: "Importância da medicina integrativa durante o tratamento de câncer",
-    },
-    {
-      id: 3,
-      name: "Que médicos devem orientar sobre medicina integrativa durante o tratamento oncológico",
-    },
-  ];
 
   // const titleSelectedMenu =
   //   menuItems.find((item) => item.id === activeItem)?.name ||
@@ -32,8 +17,7 @@ export default function IntegrativeMedicineScreen(): JSX.Element {
   return (
     <PageLayout
       title="Medicina integrativa"
-      subtitle="A medicina integrativa na oncologia é responsável pela mente, o estado de espírito e outras necessidades do paciente durante o tratamento de câncer, com o objetivo de melhorar a sua qualidade de vida. Saiba mais
-"
+      subtitle="A medicina integrativa na oncologia é responsável pela mente, o estado de espírito e outras necessidades do paciente durante o tratamento de câncer, com o objetivo de melhorar a sua qualidade de vida. Saiba mais"
     >
       <div className="mt-14 flex flex-col gap-10 lg:flex-row">
         <div className="text-white lg:w-[398px]">
