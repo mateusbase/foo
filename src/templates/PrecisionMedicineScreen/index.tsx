@@ -9,6 +9,7 @@ import BaseButton from "@/components/Button";
 import BaseInput from "@/components/Input";
 import InfoCard from "@/components/InfoCard";
 import { LogoIcon } from "@/components/Icons";
+import Link from "next/link";
 import { PrecisionMedicineScreenProps } from "./type";
 import BannerWithVideo from "./components/BannerWithVideo";
 import RoundedRectangle from "./components/RoundedRectangle";
@@ -211,9 +212,11 @@ export function PrecisionMedicineScreen({
           />
 
           <div className="mt-6 flex justify-center">
-            <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium md:mb-4 md:w-64 lg:w-[90%]">
-              Inscreva-se
-            </BaseButton>
+            <Link href="/medicina-de-precisao/quintas-moleculares">
+              <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium md:mb-4 md:w-64 lg:w-[90%]">
+                Inscreva-se
+              </BaseButton>
+            </Link>
           </div>
         </InformationCard>
 
