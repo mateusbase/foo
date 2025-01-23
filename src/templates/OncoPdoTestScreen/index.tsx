@@ -1,5 +1,5 @@
 import PageLayout from "@/components/PageLayout";
-import { Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import { stepTestData } from "./data/stepTestData";
 import StepTestCard from "./components/StepTestCard";
 

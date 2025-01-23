@@ -3,7 +3,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState, useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
-import { Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import { InformationSliderMobileProps } from "./types";
 
 export default function InformationSliderMobile({

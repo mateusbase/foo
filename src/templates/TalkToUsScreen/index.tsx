@@ -2,7 +2,7 @@ import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import PageLayout from "@/components/PageLayout";
 import Link from "next/link";
-import { Image } from "@nextui-org/image";
+import { Image } from "@heroui/image";
 import BaseButton from "@/components/Button";
 import ContactUsForm from "./components/ContactUsForm";
 

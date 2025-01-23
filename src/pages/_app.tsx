@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "@/styles/globals.css";
 import { ApolloProvider } from "@apollo/client";
 import { CookiesProvider } from "react-cookie";
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import { Lato } from "next/font/google";
 import { SearchProvider } from "@/contexts/search.context";
 import { AppPropsWithLayout } from "@/utils/types";
@@ -28,7 +28,7 @@ export default function App({
   const apolloClient = useApollo(pageProps.initialApolloState);
 
   return (
-    <NextUIProvider>
+    <HeroUIProvider>
       <CookiesProvider>
         <ApolloProvider client={apolloClient}>
           <LanguageProvider>
@@ -45,6 +45,6 @@ export default function App({
           </LanguageProvider>
         </ApolloProvider>
       </CookiesProvider>
-    </NextUIProvider>
+    </HeroUIProvider>
   );
 }

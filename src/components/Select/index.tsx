@@ -1,4 +1,4 @@
-import { Select, SelectItem } from "@nextui-org/react";
+import { Select, SelectItem } from "@heroui/react";
 import { BaseSelectProps } from "./types";
 import ArrowDownIcon from "../Icons/ArrowDownIcon";
 
