@@ -23,7 +23,7 @@ const ValuesAndMissionText = (): JSX.Element => {
       </div>
 
       <div className="flex flex-col lg:w-1/2">
-        <p className="mt-4 w-[95%] text-justify font-lato-regular text-darkGray md:text-2xl">
+        <p className="mt-4 w-full text-justify font-lato-regular text-darkGray md:text-2xl">
           Para respeitar e valorizar as individualidades dos pacientes com
           câncer, o Grupo Oncoclínicas inovou com a OC Medicina de Precisão, que
           engloba os laboratórios de Anatomia Patológica, Genômica e Big Data,
@@ -33,7 +33,7 @@ const ValuesAndMissionText = (): JSX.Element => {
           maneira efetiva para a prevenção da doença e o tratamento dos
           pacientes.
         </p>
-        <p className="mb-7 mt-4 w-[95%] text-justify font-lato-regular text-darkGray md:text-2xl">
+        <p className="mb-7 mt-4 w-full text-justify font-lato-regular text-darkGray md:text-2xl">
           O laboratório OC Medicina de Precisão recebe amostras de todo o país
           para diagnósticos, segundas opiniões e análises moleculares. É um
           centro integrado de medicina de precisão que oferece uma ampla gama de

@@ -29,7 +29,7 @@ const BannerWithImage: React.FC<BannerWithImageProps> = ({
   isLargeText = false,
 }): JSX.Element => {
   return (
-    <div className="mb-6 mt-4 w-full flex-1 text-white">
+    <div className="my-1 w-full flex-1 text-white">
       {/* Layout para telas grandes */}
       <div className="hidden w-full justify-between md:flex">
         {isLeft && (

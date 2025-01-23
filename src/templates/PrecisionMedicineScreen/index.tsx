@@ -128,7 +128,7 @@ export function PrecisionMedicineScreen({
         </InfoCard>
       </div>
 
-      <div className="mb-8 mt-6 text-center md:text-left lg:text-center lg:align-middle">
+      <div className="my-8 text-center md:text-left lg:text-center lg:align-middle">
         <h1 className="mb-8 font-lato-regular text-4xl text-primary md:ml-24 lg:ml-0">
           Nossas unidades
         </h1>
@@ -151,8 +151,9 @@ export function PrecisionMedicineScreen({
           onBeforeInit={(swiper) => onBeforeInit(swiper)}
         >
           {unitsData.map((unit) => (
-            <SwiperSlide key={unit.id} className="mb-8">
+            <SwiperSlide className="mb-8">
               <PrecisionMedicineUnitCard
+                key={unit.id}
                 id={unit.id}
                 address={unit.address}
                 city={unit.city}
@@ -210,7 +211,7 @@ export function PrecisionMedicineScreen({
           />
 
           <div className="mt-6 flex justify-center">
-            <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium md:mb-4 md:w-64">
+            <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium md:mb-4 md:w-64 lg:w-[90%]">
               Inscreva-se
             </BaseButton>
           </div>
@@ -232,7 +233,7 @@ export function PrecisionMedicineScreen({
           />
 
           <div className="mt-6 flex justify-center lg:mt-3 2xl:mt-6">
-            <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64">
+            <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64 lg:w-[90%]">
               Inscreva-se
             </BaseButton>
           </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const PlayStoreContainer = (): JSX.Element => {
   return (
-    <div className="w-[90%] self-center">
+    <div className="w-full self-center">
       <div className="mb-9 mt-20 rounded-bl-3xl border-1 border-black">
         <div className="flex flex-col md:flex-row">
           <div className="flex flex-col justify-center bg-gradient-to-t from-purpleDark to-purpleLight px-11 py-10 text-center md:w-1/2 md:rounded-bl-[32px]">
