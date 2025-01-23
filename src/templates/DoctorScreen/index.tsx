@@ -49,7 +49,7 @@ export default function DoctorScreen(): JSX.Element {
 
             <BaseButton
               color="secondary"
-              className="mt-8 w-[322px] rounded-md text-white"
+              className="mt-8 w-[390px] rounded-md text-white lg:w-[322px]"
               startContent={<IoIosCalendar size={24} className="mr-2" />}
             >
               Agendar uma consulta
@@ -75,8 +75,8 @@ export default function DoctorScreen(): JSX.Element {
             ullamcorper.
           </p>
 
-          <div className="my-10 flex flex-col justify-between md:flex-row lg:mt-16 lg:flex-col">
-            <div>
+          <div className="my-10 flex flex-col justify-between md:w-[85%] md:flex-row lg:mt-16 lg:flex-col">
+            <div className="mr-4">
               <h1 className="mb-6 text-left text-2xl text-primary lg:text-[42px]">
                 Local de atendimento
               </h1>
@@ -90,7 +90,7 @@ export default function DoctorScreen(): JSX.Element {
             </div>
 
             <div>
-              <h1 className="my-6 text-left text-2xl text-primary md:my-0 lg:my-6 lg:mt-20 lg:text-[42px]">
+              <h1 className="mb-6 text-left text-2xl text-primary lg:my-6 lg:mt-20 lg:text-[42px]">
                 Especializações
               </h1>
 
