@@ -12,6 +12,7 @@ export const patologicalExams: Exams[] = [
   {
     id: 1,
     name: "Anatomia Patológica & Citopatologia",
+    redirectUrl: "/medicina-de-precisao/nossos-exames/patologia",
   },
   {
     id: 2,
