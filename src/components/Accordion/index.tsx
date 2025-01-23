@@ -1,6 +1,6 @@
-import { Accordion, AccordionItem, Selection } from "@heroui/react";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { useState } from "react";
+import { Accordion, AccordionItem } from "@heroui/accordion";
 import { BaseAccordionProps } from "./types";
 
 export default function BaseAccordion({
@@ -10,12 +10,15 @@ export default function BaseAccordion({
     content: "text-2xl",
   },
 }: BaseAccordionProps): JSX.Element {
-  const [selectedKeys, setSelectedKeys] = useState<Selection>(
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(
     new Set<string>(),
   );
 
-  const handleSelectionChange = (keys: Selection): void => {
-    setSelectedKeys(keys);
+  // Tipado como any após a migração de NextUI para HeroUI
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSelectionChange = (keys: any): void => {
+    const newKeys = new Set<string>(keys as unknown as string[]);
+    setSelectedKeys(newKeys);
   };
 
   return (
