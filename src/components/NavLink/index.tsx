@@ -1,4 +1,4 @@
-import { Link, NavbarItem } from "@nextui-org/react";
+import { Link, NavbarItem } from "@heroui/react";
 import { useRouter } from "next/router";
 import { NavLinkProps } from "./types";
 

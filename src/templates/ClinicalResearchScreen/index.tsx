@@ -3,7 +3,7 @@ import { Navigation } from "swiper/modules";
 import BaseButton from "@/components/Button";
 import MedicalServiceCard from "@/components/MedicalServiceCard";
 import PageLayout from "@/components/PageLayout";
-import { Link } from "@nextui-org/react";
+import { Link } from "@heroui/react";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SliderArrows from "@/components/SliderArrows";
 import MainOptionsActions from "@/components/MainOptionsActions";

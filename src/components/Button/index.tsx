@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { BaseButtonProps } from "./types";
 
 export default function BaseButton({

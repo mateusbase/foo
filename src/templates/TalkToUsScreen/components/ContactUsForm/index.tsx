@@ -2,7 +2,7 @@ import BaseButton from "@/components/Button";
 import BaseInput from "@/components/Input";
 import BaseRadio from "@/components/Radio";
 import BaseSelect from "@/components/Select";
-import { RadioGroup, Textarea } from "@nextui-org/react";
+import { RadioGroup, Textarea } from "@heroui/react";
 import { useState } from "react";
 
 export default function ContactUsForm(): JSX.Element {

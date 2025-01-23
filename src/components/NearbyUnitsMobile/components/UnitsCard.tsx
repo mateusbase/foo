@@ -1,5 +1,5 @@
 import { FaLocationDot } from "react-icons/fa6";
-import { Link as NextUILink } from "@nextui-org/react";
+import { Link as NextUILink } from "@heroui/react";
 import { useRouter } from "next/router";
 import { UnitsCardProps } from "./types";
 

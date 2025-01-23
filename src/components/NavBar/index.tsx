@@ -6,7 +6,7 @@ import {
   NavbarMenuToggle,
   Link,
   Image,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { Stethoscope, LogIn, X } from "lucide-react";
 import { useRouter } from "next/router";
 import { IoMenu } from "react-icons/io5";
