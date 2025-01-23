@@ -15,8 +15,6 @@ export const getDesktopContainerClasses = (
     "flex h-[320px] w-1/2 flex-col justify-between gap-2 bg-gradient-to-t md:w-1/2 lg:size-full",
     getGradientClasses(primaryColor, secondaryColor),
     {
-      "lg:rounded-br-[100px]": isLeft,
-      "lg:rounded-bl-[100px]": !isLeft,
       "text-lg": isLargeText,
       "p-10": isLargeText,
       "p-20": !isLargeText,
@@ -29,14 +27,14 @@ export const getDesktopContainerClasses = (
   );
 
 export const getImageClasses = (isLargeText: boolean): string =>
-  clsx("h-[320px] w-full object-cover md:w-1/2", {
+  clsx("h-[320px] w-full object-cover md:w-1/2 lg:rounded-bl-[100px]", {
     "md:h-[438px]": !isLargeText,
     "lg:h-[438px]": !isLargeText,
     "lg:h-[580px]": isLargeText,
   });
 
 export const getDesktopTitleClasses = (isLargeText: boolean): string =>
-  clsx("mb-6 font-lato-light text-2xl 2xl:text-6xl", {
+  clsx("mb-6 font-lato-light text-2xl  2xl:text-6xl", {
     "text-xl": isLargeText,
     "lg:text-5xl": isLargeText || !isLargeText,
     "mb-6": isLargeText,
