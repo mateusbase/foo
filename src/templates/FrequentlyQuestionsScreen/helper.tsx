@@ -1,4 +1,6 @@
-import { IoAddCircle } from "react-icons/io5";
+import GeneralIcon from "@/components/Icons/GeneralIcon";
+import TypeOfCancerIcon from "@/components/Icons/TypeOfCancerIcon";
+import TreatmentIcon from "@/components/Icons/TreatmentIcon";
 import General from "./General";
 
 type MenuContent = {
@@ -15,17 +17,23 @@ export const options = [
   {
     id: 1,
     label: "Geral",
-    icon: <IoAddCircle className="size-16 text-primary-foreground" />,
+    icon: (
+      <GeneralIcon className="size-14 text-primary-foreground lg:size-16" />
+    ),
   },
   {
     id: 2,
     label: "Tipos de câncer",
-    icon: <IoAddCircle className="size-16 text-primary-foreground" />,
+    icon: (
+      <TypeOfCancerIcon className="size-14 text-primary-foreground lg:size-16" />
+    ),
   },
   {
     id: 3,
     label: "Tratamentos",
-    icon: <IoAddCircle className="size-16 text-primary-foreground" />,
+    icon: (
+      <TreatmentIcon className="size-14 text-primary-foreground lg:size-16" />
+    ),
   },
 ];
 
