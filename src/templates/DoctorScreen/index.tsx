@@ -90,7 +90,7 @@ export default function DoctorScreen(): JSX.Element {
             </div>
 
             <div>
-              <h1 className="mb-6 text-left text-2xl text-primary lg:my-6 lg:mt-20 lg:text-[42px]">
+              <h1 className="my-6 text-left text-2xl text-primary lg:my-6 lg:mt-20 lg:text-[42px]">
                 Especializações
               </h1>
 
