@@ -31,7 +31,7 @@ export default function TalkToUsScreen(): JSX.Element {
                   backgroundImage: `url('/assets/images/banner-talk-to-us-2.png')`,
                 }}
               />
-              <div className="flex min-h-[292px] w-full flex-col justify-between gap-12 rounded-bl-[100px] bg-gradient-to-br from-primary-foreground to-secondary-foreground px-6 py-8 md:px-14">
+              <div className="flex min-h-[292px] w-full flex-col justify-between gap-12 rounded-bl-[100px] bg-custom-gradient-dark px-6 py-8 md:px-14">
                 <h2 className="text-2xl font-bold text-white md:text-3xl">
                   Contato para Negócios
                 </h2>

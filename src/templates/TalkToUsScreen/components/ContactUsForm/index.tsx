@@ -19,7 +19,7 @@ export default function ContactUsForm(): JSX.Element {
   };
 
   return (
-    <div className="w-full space-y-6 lg:mt-12">
+    <div className="w-full space-y-6 lg:mt-2">
       <div className="flex">
         <RadioGroup
           label="Você é paciente da Oncoclínicas?"
@@ -30,7 +30,7 @@ export default function ContactUsForm(): JSX.Element {
             label: "text-lg font-bold mb-2",
           }}
         >
-          <BaseRadio value="yes" size="md">
+          <BaseRadio className="mr-2" value="yes" size="md">
             Sim
           </BaseRadio>
           <BaseRadio value="no" size="md">
@@ -149,8 +149,8 @@ export default function ContactUsForm(): JSX.Element {
       <Textarea
         label="Mensagem"
         variant="bordered"
-        className="h-[230px] w-full overflow-hidden bg-white"
-        style={{ height: "230px" }}
+        className="h-[250px] w-full overflow-hidden bg-white"
+        style={{ height: "250px" }}
         size="lg"
       />
       <div className="flex justify-center">

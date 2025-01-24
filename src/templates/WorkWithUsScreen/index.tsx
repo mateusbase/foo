@@ -162,28 +162,27 @@ export default function WorkWithUsScreen(): JSX.Element {
 
       <div className="my-20 hidden grid-cols-2 gap-10 md:grid lg:grid">
         <InfoCard roundedSide="left">
-          <div>
-            <h3 className="text-3xl text-white lg:text-5xl">Colaboradores</h3>
-            <h3 className="mt-10 max-w-md text-2xl text-white">
+          <div className="lg:min-h-[353px]">
+            <h3 className="mt-5 text-3xl text-white lg:text-5xl">
+              Colaboradores
+            </h3>
+            <h3 className="mt-5 max-w-md text-sm text-white lg:text-2xl">
               Dentro da Oncoclínicas, há espaço para diversas especialidades na
               área da saúde, gestão e administração.
             </h3>
-            <BaseButton className="mt-10 border-2 bg-transparent text-white">
+            <BaseButton className="mt-10 h-[54px] w-80 border-1 bg-transparent text-white">
               Cadastre seu currículo
             </BaseButton>
           </div>
         </InfoCard>
 
         <InfoCard roundedSide="left">
-          <div>
-            <h3 className="text-5xl text-white">Médicos</h3>
-            <h3 className="mt-10 max-w-md text-2xl text-white">
-              Dentro da Oncoclínicas, há espaço para diversas especialidades na
-              área da saúde, gestão e administração.
+          <div className="lg:min-h-[353px]">
+            <h3 className="mt-5 text-3xl text-white lg:text-5xl">Médicos</h3>
+            <h3 className="mt-5 max-w-md text-sm text-white lg:text-2xl">
+              A Oncoclínicas está sempre aberto para receber médicos alinhados
+              com nossos valores.
             </h3>
-            <BaseButton className="mt-10 border-2 bg-transparent text-white">
-              Cadastre seu currículo
-            </BaseButton>
           </div>
         </InfoCard>
       </div>

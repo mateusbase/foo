@@ -75,7 +75,7 @@ export default function EventsScreen(): JSX.Element {
     >
       <div className="mt-20 hidden lg:flex">
         <div className="hidden h-[536px] w-full justify-between text-white lg:flex">
-          <div className="flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-b from-primary-foreground to-secondary-foreground p-20">
+          <div className="flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-custom-gradient-dark p-20">
             <div>
               <p className="text-6xl font-light">
                 Workshop sobre crescimento do câncer

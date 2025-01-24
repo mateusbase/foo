@@ -40,7 +40,7 @@ export default function GradientBanner({
 
           <div
             className={`flex flex-col justify-between gap-2 p-8 sm:rounded-bl-[100px] md:h-[532px] lg:h-full lg:w-1/2 lg:rounded-none lg:px-12 ${backgroundType === "gradient"
-              ? "bg-gradient-to-t from-purpleAccent from-5% via-30% to-primary-foreground"
+              ? "bg-custom-gradient-dark"
               : "bg-darkGray"
               }`}
           >
