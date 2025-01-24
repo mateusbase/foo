@@ -18,15 +18,15 @@ export default function OcJournalScreen(): JSX.Element {
     >
       <div className="lg:mt-20">
         <div className="full-bleed flex w-full flex-col-reverse justify-between text-white lg:h-[536px] lg:flex-row">
-          <div className="flex h-full flex-col justify-between gap-2 bg-gradient-to-b from-primary-foreground to-secondary-foreground p-10 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
+          <div className="flex h-full flex-col justify-between gap-2 bg-gradient-to-b from-primary-foreground to-secondary-foreground p-10 lg:w-3/5 lg:rounded-bl-[100px] lg:p-20">
             <div>
-              <p className="text-4xl font-light lg:text-6xl">
+              <p className="text-4xl font-light lg:text-4xl xl:text-5xl">
                 Faça o download da edição mais recente do OC Journal
               </p>
             </div>
 
             <div>
-              <p className="text-xl font-bold lg:text-2xl">
+              <p className="text-xl font-bold lg:text-xl xl:text-2xl">
                 Novidades do universo médico-científico com reportagens e
                 análises de especialistas em oncologia.
               </p>
@@ -34,7 +34,7 @@ export default function OcJournalScreen(): JSX.Element {
 
             <div className="flex gap-2">
               <BaseButton
-                className="mt-10 h-16 w-full justify-center border-white text-lg text-white lg:w-80 lg:text-2xl"
+                className="mb-4 mt-10 h-16 w-full justify-center border-white text-lg text-white lg:w-80 lg:text-2xl"
                 variant="bordered"
               >
                 Download
@@ -42,9 +42,9 @@ export default function OcJournalScreen(): JSX.Element {
             </div>
           </div>
 
-          <div className="h-full lg:w-1/2">
+          <div className="h-full lg:w-2/5">
             <img
-              src="https://i.postimg.cc/pXR1qN6C/Captura-de-tela-2024-09-22-182042.png"
+              src="https://s3-alpha-sig.figma.com/img/1803/5121/5508cff7b204e2ad16fb21c565c89767?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oj0i426~sXVCW0plhPa8~P0H-DCxziYNY-g1HeOidO8DsJZY-5z-qGfMv4xJJsuaUJz85WN8q28XfS9OvDet9phGmTLlvC-X7y3PSyxyKjqmoC-J0OvkAiNhOtWhVmnhHG-3zooteT5v7JlUr9QDkEkaNUrEl-pDebTJVBptqEZESnUxy~71hG4n4R9HME~OYhGOb7gk26EyatNNRoscfOPKM5UbhtJxEfpOezqwWnF5f-NLpp84b4RBq1mD6Ba5IYwEbV5vymmFTwT0TR0LCEkcKfj1XNz04ZL4k1yNhESBdyJlU8Fw3zZeBbJMlhUT0O0upcLwAVXOwt1ou97Ogw__"
               alt="Imagem 1"
               className="size-full"
             />
@@ -105,11 +105,11 @@ export default function OcJournalScreen(): JSX.Element {
         ]}
       />
 
-      {options.map((option) => (
-        <div className="mt-10" key={option.id}>
-          <OcJournalItems options={option} />
-        </div>
-      ))}
+      <div className="mt-4 grid w-full gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-1 lg:gap-8">
+        {options.map((option) => (
+          <OcJournalItems key={option.title} options={option} />
+        ))}
+      </div>
 
       <div className="my-10 flex justify-center lg:mb-0 lg:justify-start">
         <BaseButton
