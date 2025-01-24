@@ -8,6 +8,7 @@ import { categories } from "@/components/IconCard/mocks";
 import IconCard from "@/components/IconCard";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SliderArrows from "@/components/SliderArrows";
+import Link from "next/link";
 import CommonCancers from "./components/CommonCancers";
 import { cards, services } from "./aboutCancerMocks";
 
@@ -141,12 +142,14 @@ export default function AllAboutCancerScreen(): JSX.Element {
         <CommonCancers />
 
         <div className="mt-10 hidden justify-start lg:flex">
-          <BaseButton
-            color="primary"
-            className="w-full text-white md:w-[224px]"
-          >
-            Ver todos os tipos de câncer
-          </BaseButton>
+          <Link href="/tudo-sobre-o-cancer/tipos-de-cancer">
+            <BaseButton
+              color="primary"
+              className="w-full text-white md:w-[224px]"
+            >
+              Ver todos os tipos de câncer
+            </BaseButton>
+          </Link>
         </div>
       </div>
 

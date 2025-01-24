@@ -9,7 +9,6 @@ export const getDesktopContainerClasses = (
   primaryColor: string,
   secondaryColor: string,
   isLargeText: boolean,
-  isLeft: boolean,
 ): string =>
   clsx(
     "flex h-[320px] w-1/2 flex-col justify-between gap-2 bg-gradient-to-t md:w-1/2 lg:size-full",
