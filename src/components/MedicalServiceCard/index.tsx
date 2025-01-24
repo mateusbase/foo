@@ -27,7 +27,7 @@ export default function MedicalServiceCard({
             "url('https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg')",
         }}
       />
-      <div className="bg-custom-gradient-dark flex h-[289px] min-w-[322px] flex-col rounded-br-[100px] p-8 md:px-9 lg:h-[342px] lg:min-h-[515px] lg:gap-12">
+      <div className="flex h-[289px] min-w-[322px] flex-col rounded-br-[100px] bg-custom-gradient-dark p-8 md:px-9 lg:h-[342px] lg:min-h-[515px] lg:gap-12">
         {hasSubtitle && (
           <p className="mt-4 text-left text-lg leading-[30px] text-white md:text-[20px] lg:text-[24px]">
             {subtitle}

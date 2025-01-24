@@ -45,7 +45,6 @@ const BannerWithImage: React.FC<BannerWithImageProps> = ({
             primaryColor,
             secondaryColor,
             isLargeText,
-            isLeft,
           )}
         >
           <div>
