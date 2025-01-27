@@ -62,7 +62,7 @@ export default function ServiceSection({
   };
 
   return (
-    (<div id={id} className="pt-8">
+    <div id={id} className="pt-8">
       <SectionHeader title={title} description={description} />
       <div className="mt-10 flex w-full lg:hidden">
         <BaseInput
@@ -212,6 +212,6 @@ export default function ServiceSection({
           </Link>
         ))}
       </div>
-    </div>)
+    </div>
   );
 }

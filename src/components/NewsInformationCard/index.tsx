@@ -28,7 +28,7 @@ export default function NewsInformationCard({
               color="secondary"
               startContent={<LuArrowUpRight />}
             >
-              Inovação & Oncologia
+              Artigos
             </BaseButton>
           </div>
 

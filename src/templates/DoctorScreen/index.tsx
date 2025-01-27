@@ -28,7 +28,7 @@ export default function DoctorScreen(): JSX.Element {
         />
       </div>
 
-      <div className="mt-14 flex flex-col items-center justify-center lg:mt-20 lg:flex-row lg:items-start lg:justify-between">
+      <div className="mt-14 flex flex-col items-center justify-center lg:mt-14 lg:flex-row lg:items-start lg:justify-between">
         <div className="relative flex flex-col items-center md:left-5 lg:bottom-48">
           <img
             src={
@@ -49,7 +49,7 @@ export default function DoctorScreen(): JSX.Element {
 
             <BaseButton
               color="secondary"
-              className="mt-8 w-full rounded-md text-white"
+              className="mt-8 w-[390px] rounded-md text-white lg:w-[322px]"
               startContent={<IoIosCalendar size={24} className="mr-2" />}
             >
               Agendar uma consulta
@@ -57,7 +57,7 @@ export default function DoctorScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="mt-8 text-center md:mt-0 md:text-left lg:ml-24 lg:flex-1">
+        <div className="mt-8 text-center md:mt-0 md:text-left lg:ml-24 lg:mt-0 lg:flex-1">
           <h1 className="hidden text-[62px] text-primary lg:block">
             {name
               ? `Dra. ${decodeURIComponent(name as string)}`
@@ -75,10 +75,10 @@ export default function DoctorScreen(): JSX.Element {
             ullamcorper.
           </p>
 
-          <div className="my-10 flex flex-col justify-between md:flex-row lg:mt-32 lg:flex-col">
-            <div>
+          <div className="my-10 flex flex-col justify-between md:w-[85%] md:flex-row lg:mt-16 lg:flex-col">
+            <div className="mr-4">
               <h1 className="mb-6 text-left text-2xl text-primary lg:text-[42px]">
-                Locais de atendimento
+                Local de atendimento
               </h1>
               {locations.map((location) => (
                 <ul key={location.id} className="list-inside list-disc">
@@ -90,7 +90,7 @@ export default function DoctorScreen(): JSX.Element {
             </div>
 
             <div>
-              <h1 className="my-6 text-left text-2xl text-primary md:my-0 lg:my-6 lg:mt-12 lg:text-[42px]">
+              <h1 className="my-6 text-left text-2xl text-primary lg:my-6 lg:mt-20 lg:text-[42px]">
                 Especializações
               </h1>
 

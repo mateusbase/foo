@@ -114,7 +114,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-20">
         <h1 className="text-4xl text-primary md:text-[40px]">
           Quando o cuidado paliativo deve ser iniciado no paciente com câncer{" "}
         </h1>
