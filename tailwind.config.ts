@@ -21,6 +21,7 @@ const config: Config = {
       "lato-bold": ["Lato", "sans-serif"],
       "lato-black": ["Lato", "sans-serif"],
     },
+    safelist: [],
     extend: {
       screens: {
         sm: "640px",
