@@ -105,7 +105,7 @@ export function PrecisionMedicineScreen({
         />
       </div>
 
-      <div className="full-bleed mt-24 hidden min-h-[620px] px-14 py-9 md:flex lg:hidden">
+      <div className="full-bleed mt-24 hidden min-h-[620px] px-14 py-9 md:flex md:px-3 lg:hidden">
         <InfoCard roundedSide="left">
           <h2 className="mb-10 mt-7 text-4xl font-bold text-white">
             Programa de Apoio à Pesquisa
