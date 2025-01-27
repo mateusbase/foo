@@ -6,7 +6,7 @@ const PurpleBanner = ({
   description,
 }: PurpleBannerProps): JSX.Element => {
   return (
-    <div className="relative left-1/2 flex size-full w-screen -translate-x-1/2 flex-col justify-center gap-4 bg-gradient-to-t from-purpleDark to-purpleLight p-10 md:mt-8 md:min-h-[302px] lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
+    <div className="relative left-1/2 flex size-full w-screen -translate-x-1/2 flex-col justify-center gap-4 bg-gradient-to-t from-purpleDark to-purpleLight px-10 py-4 md:mt-8 md:min-h-[302px] lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
       <p className="font-lato-regular text-2xl text-white md:text-4xl">
         {title}
       </p>

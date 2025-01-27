@@ -34,7 +34,7 @@ export function PrecisionMedicineScreen({
 
   return (
     <PageLayout title={<LogoIcon size={1.5} />} showBreadcrumb>
-      <div className="h-auto lg:hidden">
+      <div className="lg:hidden">
         <PurpleBanner
           subtitle="Conheça a OC Medicina de Precisão"
           description="A OC Medicina de Precisão engloba os laboratórios de Anatomia Patológica, Genômica e Big data que oferece um portfolio completo e de alta relevância clínica."
@@ -62,7 +62,7 @@ export function PrecisionMedicineScreen({
 
       <PlayStoreContainer />
 
-      <div className="mb-7 mt-16 text-center">
+      <div className="mb-7 mt-10 text-center">
         <h1 className="mb-11 font-lato-regular text-4xl text-primary lg:text-6xl">
           Nossos Exames
         </h1>
@@ -91,6 +91,7 @@ export function PrecisionMedicineScreen({
           secondaryColor="primary-foreground"
         />
       </div>
+
       <PlusCard exams={pacientSupport} />
 
       <div className="relative left-1/2 mt-11 w-screen -translate-x-1/2 md:hidden md:w-full lg:flex">

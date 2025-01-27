@@ -11,7 +11,7 @@ export const getDesktopContainerClasses = (
   isLargeText: boolean,
 ): string =>
   clsx(
-    "flex h-[320px] w-1/2 flex-col justify-between gap-2 bg-gradient-to-t md:w-1/2 lg:size-full",
+    "flex h-[320px] w-1/2 flex-col justify-between gap-2 bg-gradient-to-b md:w-1/2 lg:size-full",
     getGradientClasses(primaryColor, secondaryColor),
     {
       "text-lg": isLargeText,
@@ -59,13 +59,13 @@ export const getMobileContentClasses = (
   secondaryColor: string,
 ): string =>
   clsx(
-    "flex flex-col bg-gradient-to-t py-12",
+    "flex flex-col bg-gradient-to-b py-12",
     getGradientClasses(primaryColor, secondaryColor),
     { "py-16": isLargeText },
   );
 
 export const getMobileTitleClasses = (isLargeText: boolean): string =>
-  clsx("mb-3 px-7 text-left font-lato-light text-4xl", {
+  clsx("mb-8 px-7 text-left font-lato-light text-4xl", {
     "text-xl text-left": isLargeText,
     "mb-6": isLargeText,
   });

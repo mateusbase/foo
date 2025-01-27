@@ -14,7 +14,7 @@ const PlusCard = ({ exams }: ExamsCardProps): JSX.Element => {
             <RoundedPlusIcon />
           </div>
 
-          <span className="min-w-0 grow overflow-hidden text-ellipsis pr-3 text-left text-xl">
+          <span className="min-w-0 grow overflow-hidden text-wrap pr-3 text-left text-xl">
             {exam.name}
           </span>
 
