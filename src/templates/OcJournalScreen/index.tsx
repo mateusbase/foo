@@ -18,7 +18,7 @@ export default function OcJournalScreen(): JSX.Element {
     >
       <div className="lg:mt-20">
         <div className="full-bleed flex w-full flex-col-reverse justify-between text-white lg:h-[536px] lg:flex-row">
-          <div className="flex h-full flex-col justify-between gap-2 bg-gradient-to-b from-primary-foreground to-secondary-foreground p-10 lg:w-3/5 lg:rounded-bl-[100px] lg:p-20">
+          <div className="flex h-full flex-col justify-between gap-2 bg-custom-gradient-dark p-10 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
             <div>
               <p className="text-4xl font-light lg:text-4xl xl:text-5xl">
                 Faça o download da edição mais recente do OC Journal

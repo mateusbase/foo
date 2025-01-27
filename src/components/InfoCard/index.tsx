@@ -24,8 +24,7 @@ export default function InfoCard({
         }}
       />
       <div
-        // eslint-disable-next-line tailwindcss/no-custom-classname
-        className={`flex min-h-[292px] w-full flex-col justify-between gap-12 bg-gradient-to-br from-primary-foreground to-secondary-foreground lg:bg-gradient-to-b ${customPadding ? `px-${customPadding}` : "px-14"} py-8`}
+        className={`flex min-h-[292px] w-full flex-col justify-between gap-12 bg-custom-gradient-dark-145deg lg:bg-custom-gradient-dark ${customPadding ? `px-${customPadding}` : "px-14"} py-8`}
       >
         {children}
       </div>

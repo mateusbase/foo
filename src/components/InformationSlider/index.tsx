@@ -22,7 +22,7 @@ export default function InformationSlider({
       <div
         className={`flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] px-20 py-10 ${
           backgroundType === "gradient"
-            ? "bg-gradient-to-r from-primary-foreground to-secondary-foreground"
+            ? "bg-custom-gradient-dark"
             : "bg-darkGray"
         }`}
       >
