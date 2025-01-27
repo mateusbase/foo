@@ -24,7 +24,7 @@ export default function InfoCard({
         }}
       />
       <div
-        className={`flex min-h-[292px] w-full flex-col justify-between gap-12 bg-custom-gradient-dark-145deg lg:bg-custom-gradient-dark ${customPadding ? `px-${customPadding}` : "px-14"} py-8`}
+        className={`bg-custom-gradient-dark-145deg flex min-h-[292px] w-full flex-col justify-between gap-12 lg:bg-custom-gradient-dark ${customPadding ? `px-${customPadding}` : "px-14"} py-8`}
       >
         {children}
       </div>
