@@ -36,16 +36,19 @@ const PrecisionMedicineUnitCard = ({
         <p className="font-bold">{city}</p>
         <p className="mt-6 text-start text-zinc-400">{hours}</p>
       </div>
-      <div className="mt-auto flex w-full flex-row gap-3 self-start">
-        <BaseButton className="w-full text-white lg:w-4/6" color="primary">
+      <div className="px mt-auto flex w-full flex-row gap-3 self-start">
+        <BaseButton
+          className="w-full px-16 text-white lg:w-4/6"
+          color="primary"
+        >
           Agende uma consulta
         </BaseButton>
 
         <BaseButton
-          className="w-full font-lato-bold lg:w-3/6"
+          className="px-4font-lato-bold w-full lg:w-3/6"
           color="primary"
           variant="bordered"
-          startContent={<TbCodePlus size={20} />}
+          startContent={<TbCodePlus size={20} className="shrink-0" />}
         >
           Informações
         </BaseButton>

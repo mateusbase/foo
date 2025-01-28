@@ -33,8 +33,8 @@ export function PrecisionMedicineScreen({
     useSwiperNavigation();
 
   return (
-    <PageLayout title={<LogoIcon size={1.5} />} showBreadcrumb>
-      <div className="h-auto lg:hidden">
+    <PageLayout title={<LogoIcon size={1.2} />} showBreadcrumb>
+      <div className="lg:hidden">
         <PurpleBanner
           subtitle="Conheça a OC Medicina de Precisão"
           description="A OC Medicina de Precisão engloba os laboratórios de Anatomia Patológica, Genômica e Big data que oferece um portfolio completo e de alta relevância clínica."
@@ -52,7 +52,7 @@ export function PrecisionMedicineScreen({
         )}
       </div>
 
-      <div className="mt-10 hidden lg:flex">
+      <div className="mt-4 hidden lg:flex">
         <BannerWithVideo isVideo={isVideo} media={media} />
       </div>
 
@@ -62,7 +62,7 @@ export function PrecisionMedicineScreen({
 
       <PlayStoreContainer />
 
-      <div className="mb-7 mt-16 text-center">
+      <div className="mb-7 mt-10 text-center">
         <h1 className="mb-11 font-lato-regular text-4xl text-primary lg:text-6xl">
           Nossos Exames
         </h1>
@@ -91,6 +91,7 @@ export function PrecisionMedicineScreen({
           secondaryColor="primary-foreground"
         />
       </div>
+
       <PlusCard exams={pacientSupport} />
 
       <div className="relative left-1/2 mt-11 w-screen -translate-x-1/2 md:hidden md:w-full lg:flex">
@@ -104,7 +105,7 @@ export function PrecisionMedicineScreen({
         />
       </div>
 
-      <div className="full-bleed mt-24 hidden min-h-[620px] px-14 py-9 md:flex lg:hidden">
+      <div className="full-bleed mt-24 hidden min-h-[620px] px-14 py-9 md:flex md:px-3 lg:hidden">
         <InfoCard roundedSide="left">
           <h2 className="mb-10 mt-7 text-4xl font-bold text-white">
             Programa de Apoio à Pesquisa
@@ -196,28 +197,30 @@ export function PrecisionMedicineScreen({
 
         <InformationCard
           background
-          className="flex min-h-[450px] w-full flex-col gap-4 px-6 py-14 md:py-4 lg:h-[566px] lg:w-[30%]"
+          className="flex min-h-[450px] w-full flex-col gap-4 py-8 md:py-4 lg:h-[566px] lg:w-[30%]"
         >
           <p className="mb-6 text-center font-lato-bold text-2xl text-white lg:text-2xl 2xl:text-3xl">
             Participe das Quintas Moleculares
           </p>
-          <p className="mb-5 text-center font-lato-thin text-white lg:text-sm 2xl:text-base">
+          <p className="mb-4 text-center font-lato-thin text-white lg:text-sm 2xl:text-base">
             Reuniões Multidisciplinares que ocorrem por videoconferência que
             permitem discussões de casos, a fim de educar a comunidade médica a
             respeito da indicação e interpretação de testes moleculares.
           </p>
+
           <BaseInput
-            className="mx-auto rounded-full bg-white md:w-72 lg:w-[90%]"
+            className="mx-auto mb-4 w-[85%] rounded-full bg-white md:w-64 lg:w-[90%]"
             placeholder="Digite aqui o seu melhor e-mail"
           />
 
-          <div className="mt-6 flex justify-center">
-            <Link href="/medicina-de-precisao/quintas-moleculares">
-              <BaseButton className="mb-9 bg-white px-32 py-7 font-lato-thin text-lg text-purpleMedium md:mb-4 md:w-64 lg:w-[90%]">
-                Inscreva-se
-              </BaseButton>
-            </Link>
-          </div>
+          <Link
+            href="/medicina-de-precisao/quintas-moleculares"
+            className="flex w-[85%] justify-center self-center"
+          >
+            <BaseButton className="mb-5 w-full bg-white px-12 py-7 text-center font-lato-thin text-lg text-purpleMedium md:w-64">
+              Inscreva-se
+            </BaseButton>
+          </Link>
         </InformationCard>
 
         <InformationCard className="flex min-h-[450px] w-full flex-col justify-between gap-4 p-6 lg:h-[566px] lg:w-[30%] lg:py-[50px] 2xl:py-[85px]">
@@ -231,11 +234,11 @@ export function PrecisionMedicineScreen({
             duas semanas e são abertas ao público.
           </p>
           <BaseInput
-            className="mx-auto rounded-full border-darkGray bg-white md:w-64 lg:w-[90%]"
+            className="mx-auto w-[85%] rounded-full border-darkGray bg-white md:w-64 lg:w-[90%]"
             placeholder="Digite aqui o seu melhor e-mail"
           />
 
-          <div className="mt-6 flex justify-center lg:mt-3 2xl:mt-6">
+          <div className="flex w-[85%] justify-center self-center">
             <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64 lg:w-[90%]">
               Inscreva-se
             </BaseButton>

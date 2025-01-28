@@ -20,7 +20,7 @@ const ExamsCard = ({
         exam.redirectUrl ? (
           <Link href={exam.redirectUrl} key={exam.id} className="w-full">
             <div className="mb-4 flex h-[150px] w-full cursor-pointer items-center justify-between rounded-2xl bg-primary px-5 py-6 text-left font-lato-bold text-2xl text-white lg:h-[89px]">
-              <span className="truncate">{exam.name}</span>
+              <span className="text-wrap">{exam.name}</span>
               <IoChevronForwardCircleOutline
                 className="size-10 shrink-0 lg:hidden"
                 size={40}
@@ -32,7 +32,7 @@ const ExamsCard = ({
             className="mb-4 flex h-[150px] w-full cursor-pointer items-center justify-between rounded-2xl bg-primary px-5 py-6 text-left font-lato-bold text-2xl text-white lg:h-[89px]"
             key={exam.id}
           >
-            <span className="truncate">{exam.name}</span>
+            <span className="text-wrap">{exam.name}</span>
             <IoChevronForwardCircleOutline
               className="size-10 shrink-0 lg:hidden"
               size={40}
