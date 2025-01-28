@@ -84,12 +84,12 @@ export default function FindADoctorScreen(): JSX.Element {
             </BaseButton>
 
             <BaseButton
-              className="w-full font-bold lg:flex-1"
+              className="w-full font-bold lg:flex-1 lg:px-12"
               color="primary"
               variant="bordered"
-              startContent={<LocationIcon className="size-7" />}
+              startContent={<LocationIcon className="size-7 shrink-0" />}
             >
-              Buscar próximos a mim
+              <span>Buscar próximos a mim</span>
             </BaseButton>
           </div>
         </div>

@@ -40,3 +40,4 @@ export { default as OthersIcon } from "./OthersIcon";
 export { default as NeckIcon } from "./NeckIcon";
 export { default as ThoraxBackIcon } from "./ThoraxBackIcon";
 export { default as MouthIcon } from "./MouthIcon";
+export { default as BreastCancerIcon } from "./BreastCancerIcon";

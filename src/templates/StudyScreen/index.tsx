@@ -1,25 +1,15 @@
 import MainOptionsActions from "@/components/MainOptionsActions";
 import PageLayout from "@/components/PageLayout";
 import { options } from "@/utils/objectUtils";
+import { BreastCancerIcon } from "@/components/Icons";
+import ShareOptions from "@/components/ShareOptions";
+import socialNetwork from "@/components/ShareOptions/socialNetwork";
+import BaseButton from "@/components/Button";
 import NominateOrPaticipate from "./components/NominateOrPaticipate";
+import ResearchCentersList from "./components/ResearchCenterList";
+import { researchCentersMock } from "./mocks";
 
 export default function StudyScreen(): JSX.Element {
-  const noticiaContent = `
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet dui quis accumsan. Aenean nisl odio, aliquam et libero posuere, viverra pretium lectus. Cras justo orci, rutrum nec tellus a, vulputate eleifend ligula. Aenean rutrum nisi dui, eget aliquam velit pretium non. Curabitur id nunc et nulla maximus pulvinar et ut urna. Nullam posuere ex a viverra congue. Cras at vestibulum orci, ac bibendum orci. In bibendum tortor at eros tincidunt, quis cursus odio aliquet. Fusce ac ligula quis eros convallis rhoncus. Nam rutrum ligula at tellus tempor, at pharetra mauris dictum. Sed quis dolor consectetur, laoreet arcu ut, tempor est. Praesent bibendum fermentum ipsum id suscipit. Morbi sit amet eros libero.
-
-  Sed placerat maximus tincidunt. Nulla ac lacus metus. Sed sed lorem eros. Sed sollicitudin, nibh sed auctor rutrum, odio enim iaculis ex, nec euismod est enim ut ex. Vivamus iaculis, nibh et viverra pellentesque, ex massa ultricies dui, quis gravida mi metus at neque. Nullam sollicitudin velit id libero gravida, eget fringilla magna varius. Curabitur porta sem id arcu consequat, a placerat arcu posuere. Quisque mattis justo sit amet lobortis hendrerit. Sed viverra imperdiet ligula, vel congue massa aliquet sed.
-
-  Curabitur condimentum auctor massa eget dictum. Fusce non ante at sapien vulputate vestibulum. Nam blandit volutpat ipsum, non fringilla arcu faucibus eu. Suspendisse consequat elit neque, a ultrices nulla faucibus sed. Nam elit velit, maximus non ipsum vel, feugiat mollis mi. Donec in dui mi. Integer nec consectetur arcu, eu pulvinar nunc. Proin mattis imperdiet mollis. Donec lobortis, nulla ac auctor ultrices, nisi neque pretium nisi, ac elementum arcu sapien a justo. Phasellus cursus ullamcorper nisi id congue. Donec id ligula id est elementum rhoncus at et sapien. Suspendisse libero arcu, posuere vitae fermentum nec, rhoncus ut urna. Pellentesque eleifend mauris vitae erat maximus mollis. Vestibulum posuere quis dolor vitae efficitur. Cras sagittis lorem quis bibendum tincidunt.
-
-  Ut dapibus magna tellus. Nunc porta eleifend dolor, eget congue lorem accumsan non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam non urna semper, gravida purus vel, vehicula est. Aliquam et elit est. Vivamus pulvinar rutrum eleifend. Sed suscipit elit ac tincidunt viverra. Integer tempor ornare leo sed pharetra. Pellentesque vehicula tempus magna, vitae dapibus Leo tempor vel. Nunc fringilla sem velit, sed sollicitudin arcu tristique efficitur. Mauris quis tempor nisi. Maecenas venenatis dui sed ante facilisis eleifend. Aliquam ut consectetur lorem, eget mollis urna.
-
-  Quisque egestas varius purus nec sagittis. Vivamus volutpat nibh vel vulputate ornare. Pellentesque consequat, sapien vel auctor pellentesque, nibh dui viverra tortor, vel pretium lacus est sit amet enim. Fusce nisi elit, suscipit sed metus id, rhoncus ultricies leo. Sed et porta tortor. Aenean sed leo fringilla, gravida dolor id, vestibulum diam. Aliquam ac aliquam risus, quis porta dui. Donec non orci vel massa vehicula rutrum. Suspendisse ac quam urna. Nam libero neque, efficitur vitae pulvinar id, congue sollicitudin augue. Suspendisse potenti. Cras euismod cursus dapibus. Fusce a tempus est. Phasellus vehicula ultrices neque.`;
-
-  const paragraphs = noticiaContent
-    .trim()
-    .replace(/\n+/g, "\n\n")
-    .split("\n\n");
-
   return (
     <main>
       <PageLayout
@@ -27,41 +17,91 @@ export default function StudyScreen(): JSX.Element {
         subtitle="Programa de Pesquisa Clínica do Grupo Oncoclínicas"
         mainOptions={false}
       >
-        <div className="mt-20 flex flex-col items-center">
-          <p className="text-3xl text-primary">BGB-11417-201 </p>
+        <div className="mt-10 flex flex-col items-start">
+          <p className="text-[40px] text-primary">BGB-11417-201 </p>
           <p className="text-xl text-lightGray">OC Oncoclínicas RJ</p>
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <h1 className="text-6xl font-light text-primary">
-            Título do estudo clínico publicado
-          </h1>
+        <div className="mt-10 flex w-44 items-center rounded-full bg-[#F16687]">
+          <BreastCancerIcon />
+          <p className="text-xl text-white">Mama</p>
         </div>
 
-        <p className="mt-12 text-2xl text-lightGray">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-          convallis rutrum varius. Vestibulum molestie laoreet dui quis
-          accumsan. Aenean nisl odio, aliquam et libero posuere, viverra pretium
-          lectus. Cras justo orci, rutrum nec tellus a, vulputate eleifend
-          ligula. Aenean rutrum nisi dui, eget aliquam velit pretium non.
-          Curabitur id nunc et nulla maximus pulvinar et ut urna. Nullam posuere
-          ex a viverra congue. Cras at vestibulum orci, ac bibendum orci. In
-          bibendum tortor at eros tincidunt, quis cursus odio aliquet. Fusce ac
-          ligula quis eros convallis rhoncus. Nam rutrum ligula at tellus
-          tempor, at pharetra mauris dictum. Sed quis dolor consectetur, laoreet
-          arcu ut, tempor est. Praesent bibendum fermentum ipsum id suscipit.
-          Morbi sit amet eros libero.
+        <p className="mt-4 text-sm text-lightGray md:text-xl lg:mt-12">
+          EMBER-4: Um estudo randomizado, aberto, de fase 3 de terapia endócrina
+          adjuvante imlunestrant vs terapia endócrina adjuvante padrão em
+          pacientes que receberam anteriormente 2 a 5 anos de terapia endócrina
+          adjuvante para ER+, HER2- câncer de mama precoce com risco aumentado
+          de recorrência
         </p>
 
-        <div className="my-14 w-full">
-          {paragraphs.map((paragraph) => (
-            <p
-              key={paragraph}
-              className="mt-5 text-sm font-normal leading-snug text-lightGray md:text-base lg:text-[22px]"
-            >
-              {paragraph}
-            </p>
-          ))}
+        <div className="mt-10">
+          <ResearchCentersList center={researchCentersMock} />
+        </div>
+
+        <p className="mt-10 text-2xl text-primary md:text-[40px]">
+          Critérios de inclusão
+        </p>
+        <p className="mt-4 text-sm text-lightGray md:text-xl lg:mt-12">
+          Ter diagnóstico de câncer de mama ER+, HER2- em estágio inicial,
+          ressecado, invasivo, sem evidência de metástase à distância.Os
+          participantes devem ter recebido pelo menos 24 meses, mas não mais de
+          60 meses de qualquer TE adjuvante, a partir do momento do início do TE
+          adjuvante.Os participantes podem ter recebido quimioterapia adjuvante
+          (neo) e/ou terapia-alvo com um inibidor da CDK4/6- ou PARP-.Deve ter
+          um risco aumentado de recorrência da doença com base nas
+          características de risco clínico-patológico.Ter um Status de
+          Desempenho de 0 ou 1 na escala do Eastern Cooperative Oncology
+          Group.Ter função adequada do órgão.
+        </p>
+
+        <p className="mt-10 text-2xl text-primary md:text-[40px]">
+          Critérios de exclusão
+        </p>
+        <p className="mt-4 text-sm text-lightGray md:text-xl lg:mt-12">
+          Ter qualquer evidência de doença metastática (incluindo ALN
+          contralateral) ou câncer de mama inflamatório no diagnóstico primário
+          de câncer de mama.Participantes com mais de 6 meses consecutivos de
+          intervalo na terapia durante o curso do TE adjuvante prévio.Os
+          participantes que completaram ou interromperam o TE adjuvante prévio
+          &gt; 6 meses antes da triagem.Participantes com história de câncer de
+          mama prévio são excluídas, com exceção do CDIS ipsilateral tratado
+          apenas por terapia locorregional há ≥5 anos.Grávidas, amamentando ou
+          esperando conceber ou ter filhos dentro da duração projetada do
+          estudo, começando com a visita de triagem até 180 dias após a última
+          dose da intervenção do estudo.
+          <p className="text-sm text-lightGray md:text-xl">
+            A participante recebeu previamente TE de qualquer duração para
+            prevenção do câncer de mama (tamoxifeno ou IAs) ou
+            raloxifeno.Participantes com histórico de qualquer outro
+            câncer.Apresentar condições médicas preexistentes graves que, a
+            juízo do pesquisador, impossibilitariam a participação neste estudo.
+          </p>
+        </p>
+
+        <p className="mt-4 text-2xl text-primary md:text-[40px] lg:mt-10">
+          Coordenador(es)
+        </p>
+        <p className="mt-2 text-sm text-lightGray md:text-xl lg:mt-8">
+          Thamires Almeida
+        </p>
+
+        <p className="mt-4 text-2xl text-primary md:text-[40px] lg:mt-10">
+          Entre em contato
+        </p>
+        <p className="mt-2 text-sm text-lightGray md:text-xl lg:mt-8">
+          gustavo.bretas@medicos.oncoclinicas.com
+        </p>
+        <p className="mt-2 text-sm text-lightGray md:text-xl lg:mt-8">
+          (21) 2127-0281/82
+        </p>
+
+        <BaseButton className="mt-10 text-white md:w-80">
+          Clique aqui para mais informações
+        </BaseButton>
+
+        <div className="my-10">
+          <ShareOptions options={socialNetwork} />
         </div>
       </PageLayout>
 

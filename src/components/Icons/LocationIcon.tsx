@@ -7,6 +7,7 @@ const LocationIcon: React.FC<SvgComponentProps> = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     width={31}
     height={32}
+    viewBox="0 0 31 32"
     fill="none"
     {...props}
   >
