@@ -1,11 +1,12 @@
-import { AlertTriangle, CircleChevronRight } from "lucide-react";
+import { AlertTriangleIcon } from "@/components/Icons";
+import { CircleChevronRight } from "lucide-react";
 
 export default function AlertComponent(): JSX.Element {
   return (
     <div className="my-10 w-full rounded-3xl border-5 bg-gray-50 p-4 md:px-8">
       <div className="flex flex-col items-center justify-between md:flex-row lg:flex-row">
         <div className="my-3 flex w-full max-w-72 items-center justify-center space-x-4">
-          <AlertTriangle size={55} color="red" />
+          <AlertTriangleIcon size={1} color="red" />
           <h1 className="text-xl font-semibold text-darkGray lg:text-3xl">
             Fique atento
           </h1>
@@ -19,7 +20,9 @@ export default function AlertComponent(): JSX.Element {
           composto por mais de 2.700 médicos especialistas com ênfase em
           oncologia.
         </div>
-        <CircleChevronRight className="hidden xl:flex" />
+        <div>
+          <CircleChevronRight className="hidden xl:flex" />
+        </div>
       </div>
     </div>
   );
