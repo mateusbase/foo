@@ -86,7 +86,7 @@ export default function NominateOrPaticipate(): JSX.Element {
             <Checkbox defaultSelected className="-mt-1" radius="full" size="sm">
               {" "}
             </Checkbox>
-            <p className="leading-5">
+            <p className="text-xs leading-5 md:text-[15px]">
               Ao disparar este formulário, seus dados pessoais estarão sendo
               compartilhados com terceiros, conforme Lei Geral de Proteção de
               Dados n 13.709/2018, faz-se necessário que você tenha ciência

@@ -18,12 +18,14 @@ export default function StudyScreen(): JSX.Element {
         mainOptions={false}
       >
         <div className="mt-10 flex flex-col items-start">
-          <p className="text-[40px] text-primary">BGB-11417-201 </p>
-          <p className="text-xl text-lightGray">OC Oncoclínicas RJ</p>
+          <p className="text-2xl text-primary md:text-[40px]">BGB-11417-201 </p>
+          <p className="text-[15px] text-lightGray md:text-xl">
+            OC Oncoclínicas RJ
+          </p>
         </div>
 
         <div className="mt-10 flex w-44 items-center rounded-full bg-[#F16687]">
-          <BreastCancerIcon />
+          <BreastCancerIcon className="size-16 md:size-20" />
           <p className="text-xl text-white">Mama</p>
         </div>
 
