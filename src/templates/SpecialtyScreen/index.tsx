@@ -42,7 +42,7 @@ Como o câncer é uma desafio mundial da humanidade, haverá sempre novos estudo
           />
         </div>
 
-        <div className="flex max-h-[604px] items-center bg-custom-gradient-light p-12 lg:w-3/6 lg:p-12">
+        <div className="flex max-h-[604px] items-center bg-custom-gradient-dark p-12 lg:w-3/6 lg:p-12">
           <p className="text-center leading-tight text-white md:text-[32px] lg:text-left xl:text-4xl">
             A oncologia é a especialidade responsável pelo tratamento clínico e
             medicamentoso do câncer em adultos. É esse especialista que indicará

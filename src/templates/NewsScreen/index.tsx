@@ -30,7 +30,7 @@ export default function NewsScreen(): JSX.Element {
   return (
     <BaseContainer className="px-0">
       <div className="flex flex-col md:h-[223px] md:flex-row lg:h-[536px]">
-        <div className="flex h-full flex-col items-start justify-center bg-gradient-to-br from-primary via-primary-foreground to-secondary-foreground p-8 md:w-1/2 md:pl-[65px]">
+        <div className="flex h-full flex-col items-start justify-center bg-custom-gradient-dark-145deg p-8 md:w-1/2 md:pl-[65px]">
           <Button
             color="primary"
             variant="bordered"
