@@ -15,27 +15,16 @@ export default function BaseSelect({
   endContent,
   labelPlacement,
   defaultSelectedKey,
-  optionsColor = "darkGray",
   onChange,
   noBorder = false,
 }: BaseSelectProps): JSX.Element {
   return (
     <Select
-      classNames={{
-        trigger: noBorder
-          ? `bg-transparent border-none shadow-none `
-          : `border-${color} border-1`,
-        label: `text-${labelColor} text-base`,
-        value: `text-${labelColor} text-base`,
-        // listbox: "bg-white border border-gray-300 rounded-lg shadow-lg p-2",
-        // listboxWrapper: "z-50 max-h-60 overflow-auto rounded-lg shadow-lg",
-      }}
       color={color}
       variant={variant}
       label={label}
       radius={radius}
       size={size}
-      className={`${className}`}
       onChange={(e) => onChange?.(e.target.value)}
       defaultSelectedKeys={
         defaultSelectedKey ? [defaultSelectedKey] : undefined
@@ -44,18 +33,30 @@ export default function BaseSelect({
       endContent={endContent}
       labelPlacement={labelPlacement}
       selectorIcon={<ArrowDownIcon color={`text-${color}`} />}
+      className={`${className}`}
+      classNames={{
+        trigger: noBorder
+          ? `bg-transparent border-none shadow-none `
+          : `border-${color} border-1`,
+        label: `text-${labelColor} text-base`,
+        value: `text-${labelColor} text-base`,
+      }}
     >
       {options.map((option) => (
         <SelectItem
           key={option.key}
           value={option.value}
-          color={color}
-          // eslint-disable-next-line tailwindcss/no-custom-classname
-          className={`text-${optionsColor} hover:bg-primary hover:text-white`}
           classNames={{
-            base: `transition-colors duration-200`,
-            title: `text-${optionsColor} group-hover:text-darkGray`,
-            selectedIcon: `text-darkGray`,
+            base: `
+              data-[hover=true]:bg-gray-200
+              data-[focus=true]:bg-gray-200
+              data-[selected=true]:bg-primary
+            `,
+            title: `
+              text-darkGray
+              data-[selected=true]:text-white
+            `,
+            selectedIcon: "text-white",
           }}
         >
           {option.label}
