@@ -3,9 +3,19 @@ import BaseButton from "@/components/Button";
 import BaseSelect from "@/components/Select";
 import BaseInput from "@/components/Input";
 import PageLayout from "@/components/PageLayout";
+import { useState } from "react";
+import { formatPhoneNumber } from "@/utils/objectUtils";
 
 export default function ScheduleYourConsultationScreen(): JSX.Element {
   const { t } = useTranslation();
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const inputValue = event.target.value;
+    const formattedValue = formatPhoneNumber(inputValue);
+
+    setPhoneNumber(formattedValue);
+  };
 
   return (
     <PageLayout
@@ -58,6 +68,8 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               variant="bordered"
               placeholderColor="darkGray"
               borderStyle="border-default"
+              value={phoneNumber}
+              onChange={handleChange}
             />
           </div>
 

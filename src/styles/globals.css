@@ -44,3 +44,9 @@ body {
     @apply relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 lg:static lg:left-0 lg:w-screen lg:max-w-full lg:translate-x-0;
   }
 }
+
+@layer base {
+  li[data-selected="true"][data-selectable="true"] span[data-label="true"] {
+    color: #fff !important;
+  }
+}
