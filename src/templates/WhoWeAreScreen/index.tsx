@@ -34,7 +34,7 @@ export default function WhoWeArecreen(): JSX.Element {
       title="Oncoclínicas&Co"
       subtitle="Pioneira no país em gestão de serviços oncológicos, a Oncoclínicas&Co foi fundada em 2010 e hoje é um dos maiores centros de oncologia, hematologia e radioterapia da América Latina."
     >
-      <div className="mt-14 flex flex-col lg:flex-row">
+      <div className="mt-2 flex flex-col lg:flex-row">
         <div className="mb-10 block w-full md:w-1/2 lg:hidden">
           <BaseSelect
             color="default"
@@ -53,7 +53,7 @@ export default function WhoWeArecreen(): JSX.Element {
           />
         </div>
 
-        <div className="hidden w-[398px] text-white lg:block">
+        <div className="mt-4 hidden w-[398px] text-white lg:block">
           {menuItems.map((item, index) => (
             <MenuItem
               key={item.id}
@@ -67,7 +67,7 @@ export default function WhoWeArecreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="mb-10 ml-0 flex-1 lg:ml-16">
+        <div className="mb-10 ml-0 flex-1 lg:ml-16 lg:mt-4">
           {activeContent ? (
             <>
               <h1 className="text-2xl font-bold text-primary md:text-4xl lg:leading-[48px]">
