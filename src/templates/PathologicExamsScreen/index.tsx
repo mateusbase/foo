@@ -64,7 +64,7 @@ const PathologicExamsScreen = (): JSX.Element => {
                 Solicitar exame
               </BaseButton>
 
-              <h3 className="font-lato-regular text-2xl text-primary md:text-[40px] lg:text-2xl">
+              <h3 className="font-lato-regular text-2xl text-primary">
                 Tipos Tumorais Relacionados
               </h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
