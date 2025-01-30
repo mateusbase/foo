@@ -4,6 +4,10 @@ import BaseButton from "@/components/Button";
 import ContentCard from "@/components/ContentCard";
 import InfoCard from "@/components/InfoCard";
 import { useRef } from "react";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import SliderArrows from "@/components/SliderArrows";
 import AlertComponent from "./components/AlertComponent";
 import InformationCard from "./components/InformationCard";
 import SectionHeader from "./components/SectionHeader";
@@ -13,6 +17,8 @@ import CustomSwiper from "./components/CustomSwiper";
 export default function WorkWithUsScreen(): JSX.Element {
   const prevRefContentCard = useRef<HTMLButtonElement>(null);
   const nextRefContentCard = useRef<HTMLButtonElement>(null);
+  const { nextRef, prevRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   const infoCardContent = [
     {
@@ -145,18 +151,32 @@ export default function WorkWithUsScreen(): JSX.Element {
       </div>
 
       <div className="mt-10 block grid-cols-3 gap-[26px] md:hidden">
-        <CustomSwiper
-          slides={dataMock}
-          prevRef={prevRefContentCard}
-          nextRef={nextRefContentCard}
-          renderSlide={(slide) => (
-            <ContentCard
-              key={slide.id}
-              serviceTitle={slide.title}
-              serviceDescription={slide.description}
-              showButton={false}
-            />
-          )}
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop
+          onBeforeInit={(swiper) => onBeforeInit(swiper)}
+        >
+          {dataMock.map((card) => (
+            <SwiperSlide key={card.id}>
+              <ContentCard
+                key={card.id}
+                serviceTitle={card.title}
+                serviceDescription={card.description}
+                showButton={false}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <SliderArrows
+          swiperRef={swiperRef}
+          prevRef={prevRef}
+          nextRef={nextRef}
+          showSwiperPagination
+          currentIndex={currentIndex}
+          className="mt-5"
         />
       </div>
 
