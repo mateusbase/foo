@@ -6,7 +6,7 @@ import NewsScreen from "@/templates/NewsScreen";
 
 const Blog: NextPageWithLayout = () => {
   return (
-    <Page title="Blog" description="Oncoclínicas - Blog">
+    <Page title="Notícias" description="Oncoclínicas - Notícias">
       <div className="mb-10">
         <NewsScreen />
       </div>

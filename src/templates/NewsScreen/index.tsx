@@ -20,6 +20,7 @@ import { sortingFilterOptions } from "@/utils/sortingOptions";
 import { useSortingFilter } from "@/hooks/useSortingFilter";
 import SliderArrows from "@/components/SliderArrows";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import { IoIosArrowDropright } from "react-icons/io";
 import { options } from "./optionsMock";
 
 export default function NewsScreen(): JSX.Element {
@@ -41,7 +42,7 @@ export default function NewsScreen(): JSX.Element {
             Prática de Esportes
           </Button>
 
-          <h1 className="mt-4 text-left text-3xl leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
+          <h1 className="mt-12 text-left text-3xl leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
             Benefícios da corrida
           </h1>
           <p className="mt-4 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
@@ -50,9 +51,10 @@ export default function NewsScreen(): JSX.Element {
           </p>
 
           <div className="mt-4 hidden lg:flex">
-            <IoArrowForwardCircleOutline size={30} color="white" />
+            <IoIosArrowDropright size={30} color="white" />
           </div>
         </div>
+
         <div className="h-56 md:h-full md:w-1/2">
           <img
             src="https://img.freepik.com/fotos-gratis/mulheres-correndo-juntos-na-floresta_23-2149486921.jpg?t=st=1724864618~exp=1724868218~hmac=27e18a9d0cb01ea11a2c4d3902108f29ec8223f907f52b280e236dc068320357&w=1380"
@@ -70,6 +72,7 @@ export default function NewsScreen(): JSX.Element {
             className="size-full object-cover"
           />
         </div>
+
         <div className="flex h-full flex-col items-start justify-center bg-gradient-to-br from-secondary via-secondary to-secondary-foreground p-8 md:w-1/2 md:pl-[65px]">
           <Button
             color="primary"
@@ -80,7 +83,7 @@ export default function NewsScreen(): JSX.Element {
           >
             Saúde e Bem-Estar
           </Button>
-          <h1 className="mt-4 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
+          <h1 className="mt-12 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
             Meditação Guiada
           </h1>
           <p className="mt-4 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
@@ -89,7 +92,7 @@ export default function NewsScreen(): JSX.Element {
           </p>
 
           <div className="mt-4 hidden lg:flex">
-            <IoArrowForwardCircleOutline size={30} color="white" />
+            <IoIosArrowDropright size={30} color="white" />
           </div>
         </div>
       </div>
@@ -105,7 +108,7 @@ export default function NewsScreen(): JSX.Element {
           >
             Inovação & Oncologia
           </Button>
-          <h1 className="mt-4 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
+          <h1 className="mt-12 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
             Uso de IA na medicina
           </h1>
           <p className="mt-4 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
@@ -114,7 +117,7 @@ export default function NewsScreen(): JSX.Element {
           </p>
 
           <div className="mt-4 hidden lg:flex">
-            <IoArrowForwardCircleOutline size={30} color="white" />
+            <IoIosArrowDropright size={30} color="white" />
           </div>
         </div>
         <div className="h-56 md:h-full md:w-1/2">
@@ -126,11 +129,11 @@ export default function NewsScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="hidden lg:flex lg:flex-col">
-        <div className="flex size-full justify-between font-bold">
+      <div className="mb-60 hidden lg:flex lg:flex-col">
+        <div className="flex size-full justify-between border-b-1 border-darkGray pb-4 font-bold">
           <div className="flex justify-around gap-10">
-            <div className="flex items-center justify-center gap-1 text-primary">
-              <RxHamburgerMenu size={20} />
+            <div className="flex items-center justify-center gap-4 text-primary">
+              <RxHamburgerMenu size={30} />
               <span>Todos</span>
             </div>
 
@@ -172,7 +175,7 @@ export default function NewsScreen(): JSX.Element {
             color="primary"
             variant="bordered"
             radius="sm"
-            className="h-[50px] w-[228px] items-center justify-center pl-3 text-[23px] text-primary lg:flex"
+            className="h-[50px] w-[228px] items-center justify-center border-1 pl-3 text-[23px] text-primary lg:flex"
           >
             [+] Ver mais
           </Button>
@@ -236,7 +239,7 @@ export default function NewsScreen(): JSX.Element {
               color="primary"
               variant="bordered"
               radius="sm"
-              className="hidden h-[50px] w-full items-center justify-center pl-3 text-[18px] font-black leading-[22px] text-primary sm:w-3/6 md:flex"
+              className="hidden h-[50px] w-full items-center justify-center border-1 pl-3 text-[18px] leading-[22px] text-primary sm:w-3/6 md:flex"
             >
               [+] Ver mais
             </Button>
