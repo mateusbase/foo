@@ -6,7 +6,6 @@ import { FaRunning } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { GiFlowerStar } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { LuArrowUpRight } from "react-icons/lu";
 import BaseSelect from "@/components/Select";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -221,10 +220,6 @@ export default function NewsScreen(): JSX.Element {
                 slidesPerView: 2,
                 spaceBetween: 10,
               },
-              1024: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
             }}
           >
             {options.map((option) => (
@@ -239,9 +234,9 @@ export default function NewsScreen(): JSX.Element {
               color="primary"
               variant="bordered"
               radius="sm"
-              className="hidden h-[50px] w-full items-center justify-center border-1 pl-3 text-[18px] leading-[22px] text-primary sm:w-3/6 md:flex"
+              className="hidden h-[50px] w-full items-center justify-center border-1 pl-3 text-sm leading-[22px] text-primary sm:w-3/6 md:flex"
             >
-              [+] Ver mais
+              [+] Ver todos
             </Button>
 
             <div className="flex items-center space-x-4">

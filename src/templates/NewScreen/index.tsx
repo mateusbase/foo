@@ -8,10 +8,21 @@ import { options } from "@/utils/objectUtils";
 import Breadcrumb from "@/components/Breadcrumb";
 import ShareOptions from "@/components/ShareOptions";
 import socialNetwork from "@/components/ShareOptions/socialNetwork";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import SliderArrows from "@/components/SliderArrows";
+import { Navigation } from "swiper/modules";
 import NewsPreviewCard from "./components/NewsPreviewCard";
 import { newsItems } from "./optionsMock";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 export default function NewScreen(): JSX.Element {
+  const { nextRef, prevRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
+
   const noticiaContent = `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet dui quis accumsan. Aenean nisl odio, aliquam et libero posuere, viverra pretium lectus. Cras justo orci, rutrum nec tellus a, vulputate eleifend ligula. Aenean rutrum nisi dui, eget aliquam velit pretium non. Curabitur id nunc et nulla maximus pulvinar et ut urna. Nullam posuere ex a viverra congue. Cras et vestibulum orci, ac bibendum orci. In bibendum tortor et eros tincidunt, quis cursus odio aliquet. Fusce la ligula quis eros convallis rhoncus. Nam rutrum ligula et tellus tempor, at pharetra mauris dictum. Sed quis dolor consectetur, laoreet arcu ut, tempor est. Praesent bibendum fermentum ipsum id suscipit. Morbi sit amet eros libero.
 
@@ -49,7 +60,7 @@ export default function NewScreen(): JSX.Element {
             Inovação & Oncologia
           </BaseButton>
 
-          <div className="mt-10 w-3/4 text-center text-xl font-light text-darkGray md:text-4xl md:text-primary lg:text-5xl">
+          <div className="mt-10 text-center text-xl font-light text-darkGray md:text-4xl md:text-primary lg:w-3/4 lg:text-5xl">
             A Inteligência Artificial está presente em diversos exames para
             apoiar o médico no diagnóstico.
           </div>
@@ -94,7 +105,7 @@ export default function NewScreen(): JSX.Element {
             ))}
           </div>
         </div>
-        <div className="my-10 hidden lg:flex">
+        <div className="mb-10 flex lg:my-10">
           <ShareOptions options={socialNetwork} />
         </div>
       </BaseContainer>
@@ -103,7 +114,7 @@ export default function NewScreen(): JSX.Element {
         <BaseContainer>
           <div>
             <p className="text-6xl font-light text-primary">
-              Notícias relacionadas
+              Itens relacionados
             </p>
           </div>
           <div className="mt-10 grid w-full grid-cols-4">
@@ -116,6 +127,61 @@ export default function NewScreen(): JSX.Element {
                 imageUrl={news.image}
               />
             ))}
+          </div>
+        </BaseContainer>
+      </div>
+
+      <div className="flex w-full bg-gray-foreground py-20 lg:hidden">
+        <BaseContainer className="w-full">
+          <div>
+            <p className="text-3xl font-light text-primary">
+              Itens relacionados
+            </p>
+          </div>
+
+          <div>
+            <Swiper
+              modules={[Navigation]}
+              slidesPerView={1}
+              spaceBetween={10}
+              loop
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                760: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+              }}
+              onBeforeInit={(swiper) => {
+                swiperRef.current = swiper;
+                onBeforeInit(swiper);
+              }}
+            >
+              {newsItems.map((news) => (
+                <SwiperSlide key={news.id}>
+                  <NewsPreviewCard
+                    key={news.id}
+                    title={news.title}
+                    date={news.date}
+                    description={news.description}
+                    imageUrl={news.image}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <div className="mt-4 flex items-center justify-center space-x-4">
+              <SliderArrows
+                showSwiperPagination
+                currentIndex={currentIndex}
+                swiperRef={swiperRef}
+                prevRef={prevRef}
+                nextRef={nextRef}
+              />
+            </div>
           </div>
         </BaseContainer>
       </div>
