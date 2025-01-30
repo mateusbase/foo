@@ -8,7 +8,7 @@ export default function NewsPreviewCard({
   imageUrl,
 }: NewsPreviewCardProps): JSX.Element {
   return (
-    <div className="h-[395px] overflow-hidden rounded-lg p-2">
+    <div className="h-[395px] overflow-hidden rounded-lg border-2 p-2">
       <div className="h-1/2 overflow-hidden">
         <Image
           src={imageUrl}

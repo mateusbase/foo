@@ -5,7 +5,7 @@ export default function ShareOptions({
   options,
 }: ShareOptionsProps): JSX.Element {
   return (
-    <div>
+    <div className="flex w-full flex-col">
       <h3 className="mb-4 text-center text-xl text-primary md:text-left lg:mt-3">
         Compartilhar
       </h3>
@@ -18,7 +18,7 @@ export default function ShareOptions({
                 key={socialNetwork.name}
                 className="flex cursor-pointer flex-col items-center"
               >
-                <div className="flex size-12 items-center justify-center rounded-full bg-gray-50 text-primary">
+                <div className="flex size-9 items-center justify-center rounded-full bg-gray-50 text-primary md:size-12">
                   {socialNetwork.icon}
                 </div>
                 <span className="mt-2 text-xs font-bold text-darkGray">
