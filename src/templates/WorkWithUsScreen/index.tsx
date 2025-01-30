@@ -37,8 +37,8 @@ export default function WorkWithUsScreen(): JSX.Element {
       <AlertComponent />
 
       <GradientBanner image="https://i.postimg.cc/hP4Kg3YK/DESK-Home-Blog-image2.png">
-        <div className="mt-6 flex w-full flex-col lg:mt-16">
-          <div className="text-sm font-normal lg:text-2xl">
+        <div className="mt-6 flex w-full flex-col py-8 lg:mt-16">
+          <div className="mb-2 text-sm font-normal lg:text-2xl">
             Estrutura profissional
           </div>
           <div className="mt-2 text-2xl font-thin md:text-4xl lg:mt-8 lg:text-6xl">
@@ -46,7 +46,7 @@ export default function WorkWithUsScreen(): JSX.Element {
             <span className="font-medium">o paciente como centro de tudo</span>
             <span className="font-light">"</span>
           </div>
-          <div className="mb-10 mt-4 lg:mt-8">
+          <div className="mb-10 mt-6 lg:mt-8">
             <BaseButton
               className="mx-auto w-full border-white text-white lg:w-1/2"
               size="lg"
