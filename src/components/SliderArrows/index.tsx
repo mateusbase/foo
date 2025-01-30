@@ -10,6 +10,7 @@ const SliderArrows = ({
   showSwiperPagination,
   color = "text-primary-foreground",
   currentIndex,
+  className = "",
 }: SliderArrowsProps): JSX.Element => {
   const handlePrev = (): void => {
     if (swiperRef.current) {
@@ -24,7 +25,9 @@ const SliderArrows = ({
   };
 
   return (
-    <div className="flex items-center justify-center space-x-4 align-middle lg:justify-end">
+    <div
+      className={`flex items-center justify-center space-x-4 align-middle lg:justify-end ${className}`}
+    >
       <button
         ref={prevRef}
         type="button"
