@@ -48,15 +48,23 @@ export default function BaseSelect({
           value={option.value}
           classNames={{
             base: `
-              data-[hover=true]:bg-gray-200
-              data-[focus=true]:bg-gray-200
-              data-[selected=true]:bg-primary
+              data-[hover=true]:!bg-primary 
+              data-[hover=true]:!text-white 
+              data-[focus=true]:!bg-primary 
+              data-[focus=true]:!text-white
+              data-[selected=true]:!bg-primary
+              data-[selected=true]:!text-white
+              aria-[selected=true]:!bg-primary
+              aria-[selected=true]:!text-white
             `,
             title: `
               text-darkGray
-              data-[selected=true]:text-white
+              data-[focus=true]:!bg-primary 
+              data-[hover=true]:!text-white 
+              data-[selected=true]:!text-white
+               aria-[selected=true]:!text-white
             `,
-            selectedIcon: "text-white",
+            selectedIcon: "!text-white",
           }}
         >
           {option.label}

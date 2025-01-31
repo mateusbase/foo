@@ -49,7 +49,16 @@ body {
 }
 
 @layer base {
+  li[data-selected="true"][data-selectable="true"] {
+    background-color: var(--tw-bg-primary, #007D77) !important;
+  }
+
   li[data-selected="true"][data-selectable="true"] span[data-label="true"] {
     color: #fff !important;
+  }
+
+  li[data-hover="true"] span[data-label="true"],
+  li[data-focus="true"] span[data-label="true"] {
+    color: var(--tw-text-primary, #fff);
   }
 }
