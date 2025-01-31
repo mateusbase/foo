@@ -52,7 +52,7 @@ export default function DoctorScreen(): JSX.Element {
               className="mt-8 w-[390px] rounded-md text-white lg:w-[322px]"
               startContent={<IoIosCalendar size={24} className="mr-2" />}
             >
-              Agendar uma consulta
+              Agende uma consulta
             </BaseButton>
           </div>
         </div>
