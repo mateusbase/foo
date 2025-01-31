@@ -49,7 +49,6 @@ const VaccineLocations = (): JSX.Element => {
             value: unity.state,
             label: unity.state,
           }))}
-          optionsColor="primary"
           onChange={(selectedValue: string | number) => {
             handleLocationChange(Number(selectedValue));
           }}
@@ -80,15 +79,35 @@ const VaccineLocations = (): JSX.Element => {
               {filteredLocationInfo.address}
             </p>
 
-            <div className="grid grid-cols-1 gap-x-10 lg:h-auto lg:w-4/5 lg:grid-cols-2">
-              {filteredLocationInfo.availableVaccines.map((vaccine) => (
-                <div
-                  className="mb-1 list-inside list-disc text-base text-darkGray"
-                  key={vaccine}
-                >
-                  <li>{vaccine}</li>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 lg:w-4/5 lg:grid-cols-2 lg:gap-x-10">
+              <ul className="list-outside list-disc space-y-1 pl-4">
+                {filteredLocationInfo.availableVaccines
+                  .slice(
+                    0,
+                    Math.ceil(
+                      filteredLocationInfo.availableVaccines.length / 2,
+                    ),
+                  )
+                  .map((vaccine) => (
+                    <li key={vaccine} className="ml-4 text-base text-darkGray">
+                      {vaccine}
+                    </li>
+                  ))}
+              </ul>
+
+              <ul className="list-outside list-disc space-y-1 pl-4">
+                {filteredLocationInfo.availableVaccines
+                  .slice(
+                    Math.ceil(
+                      filteredLocationInfo.availableVaccines.length / 2,
+                    ),
+                  )
+                  .map((vaccine) => (
+                    <li key={vaccine} className="ml-4 text-base text-darkGray">
+                      {vaccine}
+                    </li>
+                  ))}
+              </ul>
             </div>
           </div>
         )}
