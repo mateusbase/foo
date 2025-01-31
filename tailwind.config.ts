@@ -21,7 +21,16 @@ const config: Config = {
       "lato-bold": ["Lato", "sans-serif"],
       "lato-black": ["Lato", "sans-serif"],
     },
-    safelist: [],
+    safelist: [
+      "data-[hover=true]:bg-primary",
+      "data-[hover=true]:text-white",
+      "data-[focus=true]:bg-primary",
+      "data-[focus=true]:text-white",
+      "data-[selected=true]:bg-primary",
+      "data-[selected=true]:text-white",
+      "aria-[selected=true]:bg-primary",
+      "aria-[selected=true]:text-white",
+    ],
     extend: {
       screens: {
         sm: "640px",
