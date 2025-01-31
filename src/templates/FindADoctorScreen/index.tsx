@@ -40,7 +40,6 @@ export default function FindADoctorScreen(): JSX.Element {
               size="sm"
               options={stateArrays}
               labelColor="primary"
-              optionsColor="primary"
             />
 
             <BaseSelect
@@ -52,7 +51,6 @@ export default function FindADoctorScreen(): JSX.Element {
               size="sm"
               options={unityArrays}
               labelColor="primary"
-              optionsColor="primary"
             />
           </div>
 
@@ -66,7 +64,6 @@ export default function FindADoctorScreen(): JSX.Element {
               size="sm"
               options={specialtyArrays}
               labelColor="primary"
-              optionsColor="primary"
             />
 
             <BaseInput
