@@ -250,7 +250,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                     {dropdownItems.map((item) => (
                       <DropdownItem
                         key={item.key}
-                        className="rounded-md px-3 py-4 font-semibold text-primary transition-all duration-300 hover:!bg-primary hover:!text-white focus:!bg-blue-500 focus:!text-yellow-500"
+                        className="rounded-md px-3 py-4 font-semibold text-primary transition-all duration-300 hover:!bg-primary hover:!text-white focus:!bg-primary focus:!text-white"
                         classNames={{
                           title: "text-lg font-semibold ",
                           wrapper: "p-2",
