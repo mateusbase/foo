@@ -27,12 +27,12 @@ export default function AllAboutCancerScreen(): JSX.Element {
   return (
     <PageLayout title="Tudo sobre o câncer" subtitle="Oncoclínicas">
       <div className="mt-20 flex justify-start">
-        <div className="text-left md:text-center">
+        <div className="flex w-full flex-col items-center text-left md:text-center">
           <h2 className="text-2xl text-primary md:text-title-xl md:leading-[74px]">
             O que é o câncer?
           </h2>
 
-          <p className="mt-4 text-base text-darkGray md:text-[28px] md:font-medium md:leading-[32px]">
+          <p className="mt-4 text-base text-darkGray md:text-[28px] md:leading-[32px] lg:w-5/6">
             Nesta série de informações confeccionadas pelo Grupo Oncoclínicas,
             você poderá entender mais sobre o que é o câncer, seus tipos,
             tratamentos disponíveis na clínica e alertas sobre prevenção e
@@ -54,18 +54,20 @@ export default function AllAboutCancerScreen(): JSX.Element {
             Câncer é um crescimento anormal de células, que se dividem
             rapidamente formando tumores. A doença pode atingir a maior parte
             dos órgãos do corpo humano, incluindo a circulação sanguínea, e se
-            espalhar para outras regiões, como tecidos. É o crescimento
-            desordenado e anormal de células que, dividindo-se rapidamente,
-            formam tumores em algum local do corpo e podem se espalhar para
-            outras regiões, invadindo tecidos e órgãos. São mais de 200 tipos de
-            câncer, que se dividem em 5 categorias:
+            espalhar para outras regiões, como tecidos.
           </p>
-          <p className="mt-10 text-base font-bold text-darkGray md:mt-20 md:text-[20px] md:leading-[30px]">
+          <p className="mt-4 text-base text-darkGray md:text-[20px] md:leading-[30px]">
+            É o crescimento desordenado e anormal de células que, dividindo-se
+            rapidamente, formam tumores em algum local do corpo e podem se
+            espalhar para outras regiões, invadindo tecidos e órgãos. São mais
+            de 200 tipos de câncer, que se dividem em 5 categorias:
+          </p>
+          <p className="mt-10 text-base font-bold text-darkGray md:mt-6 md:text-[20px] md:leading-[30px]">
             São mais de 200 tipos de câncer, que se dividem em 5 categorias:
           </p>
         </div>
 
-        <div className="mt-10 hidden w-full grid-cols-1 gap-6 md:mt-0 lg:grid lg:w-2/5 lg:grid-cols-2">
+        <div className="mt-10 hidden w-full grid-cols-1 gap-6 md:mt-0 lg:grid lg:w-2/4 lg:grid-cols-2">
           {categories.map((categorie) => (
             <IconCard
               key={categorie.title}

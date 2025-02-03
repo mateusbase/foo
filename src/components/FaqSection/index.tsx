@@ -2,6 +2,7 @@ import { Accordion, AccordionItem } from "@heroui/react";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 import { FaqHeader } from "./components/FaqHeader";
+import ArrowCicleOutlineIcon from "../Icons/ArrowCicleOutline";
 
 export default function FaqSection(): JSX.Element {
   const title = "Descubra tudo o que você deseja saber sobre a Oncoclínicas";
@@ -24,14 +25,14 @@ export default function FaqSection(): JSX.Element {
           <AccordionItem
             key="1"
             title="O que é a Oncoclínicas?"
-            indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />}
+            indicator={<ArrowCicleOutlineIcon size={0.8} />}
           >
             {defaultContent}
           </AccordionItem>
           <AccordionItem
             key="2"
             title="Quais cidades têm Oncoclínicas?"
-            indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />}
+            indicator={<ArrowCicleOutlineIcon size={0.8} />}
           >
             {defaultContent}
           </AccordionItem>
@@ -39,7 +40,7 @@ export default function FaqSection(): JSX.Element {
           <AccordionItem
             key="3"
             title="Quais os tipos de tratamentos que a Oncoclínicas oferece?"
-            indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />}
+            indicator={<ArrowCicleOutlineIcon size={0.8} />}
           >
             {defaultContent}
           </AccordionItem>
@@ -47,14 +48,14 @@ export default function FaqSection(): JSX.Element {
           <AccordionItem
             key="4"
             title="A Oncoclínicas atende quais especialidades?"
-            indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />}
+            indicator={<ArrowCicleOutlineIcon size={0.8} />}
           >
             {defaultContent}
           </AccordionItem>
           <AccordionItem
             key="5"
             title="Quais planos de saúde são aceitos?"
-            indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />}
+            indicator={<ArrowCicleOutlineIcon size={0.8} />}
           >
             {defaultContent}
           </AccordionItem>
@@ -62,7 +63,7 @@ export default function FaqSection(): JSX.Element {
           <AccordionItem
             key="6"
             title="A Oncoclínicas atende pelo SUS (Sistema Único de Saúde)?"
-            indicator={<IoArrowBackCircleOutline size={28} color="00B6AD" />}
+            indicator={<ArrowCicleOutlineIcon size={0.8} />}
           >
             {defaultContent}
           </AccordionItem>
