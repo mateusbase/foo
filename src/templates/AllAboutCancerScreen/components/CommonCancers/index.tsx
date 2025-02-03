@@ -43,7 +43,7 @@ const CommonCancers = (): JSX.Element => {
       </Swiper>
 
       <div className="mb-6 mt-10 flex w-full max-w-2xl flex-col items-center justify-between gap-5 px-4 md:flex-row-reverse md:gap-0">
-        <div className="hidden md:block">
+        <div className="block lg:hidden">
           <SliderArrows
             swiperRef={swiperRef}
             prevRef={prevRef}
