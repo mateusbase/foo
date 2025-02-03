@@ -6,12 +6,17 @@ import {
   NavbarMenuToggle,
   Link,
   Image,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
 } from "@heroui/react";
 import { Stethoscope, LogIn, X } from "lucide-react";
 import { useRouter } from "next/router";
 import { IoMenu } from "react-icons/io5";
 import { HiOutlineMapPin } from "react-icons/hi2";
 import { useTranslation } from "react-i18next";
+import clsx from "clsx";
 import NavLink from "../NavLink";
 import BaseSelect from "../Select";
 import BaseButton from "../Button";
@@ -19,12 +24,31 @@ import { NavBarProps } from "./types";
 import MobileMenu from "./components/menuMobile";
 import { CalendarIcon, SearchIcon } from "../Icons";
 
+const dropdownItems = [
+  {
+    key: "patient_login",
+    label: "Paciente",
+    path: "https://paciente.grupooncoclinicas.com/login",
+  },
+  {
+    key: "oncologist_login",
+    label: "Médico Oncoclínicas",
+    path: "https://medico.grupooncoclinicas.com/login",
+  },
+  {
+    key: "external_doctor_login",
+    label: "Médico Externo",
+    path: "https://meupaciente.grupooncoclinicas.com/login",
+  },
+];
+
 export default function NavBar({ children }: NavBarProps): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location, setLocation] = useState("Carregando localização...");
   const [showLanguageSelector, setShowLanguageSelector] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();
 
   const { t } = useTranslation();
@@ -195,13 +219,54 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
                   />
                 )}
 
-                <Link
-                  href="https://paciente.grupooncoclinicas.com/login"
-                  className="hidden items-center text-primary lg:flex xl2:mr-9"
+                <Dropdown
+                  isOpen={isDropdownOpen}
+                  onOpenChange={setIsDropdownOpen}
+                  classNames={{
+                    base: "before:bg-default-200",
+                    content: "py-1 px-1 border border-primary rounded-md",
+                  }}
                 >
-                  Entrar
-                  <LogIn size={26} className="ml-2" />
-                </Link>
+                  <DropdownTrigger>
+                    <BaseButton
+                      variant="solid"
+                      className={clsx(
+                        "hidden h-12 items-center bg-white p-2 text-primary lg:flex",
+                        {
+                          "bg-primary text-white": isDropdownOpen,
+                          "text-primary": !isDropdownOpen,
+                        },
+                      )}
+                    >
+                      Entrar
+                      <LogIn size={26} />
+                    </BaseButton>
+                  </DropdownTrigger>
+
+                  <DropdownMenu
+                    className="z-999 w-60"
+                    aria-label="Menu de usuários"
+                  >
+                    {dropdownItems.map((item) => (
+                      <DropdownItem
+                        key={item.key}
+                        className="rounded-md px-3 py-4 font-semibold text-primary transition-all duration-300 hover:!bg-primary hover:!text-white focus:!bg-blue-500 focus:!text-yellow-500"
+                        classNames={{
+                          title: "text-lg font-semibold ",
+                          wrapper: "p-2",
+                        }}
+                      >
+                        <a
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.label}
+                        </a>
+                      </DropdownItem>
+                    ))}
+                  </DropdownMenu>
+                </Dropdown>
 
                 <div className="flex size-full flex-row items-center justify-center gap-2 bg-secondary text-white xl2:p-6">
                   <Link
