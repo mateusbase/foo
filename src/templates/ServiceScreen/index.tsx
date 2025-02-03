@@ -36,7 +36,7 @@ export default function ServiceScreen(): JSX.Element {
 
   return (
     <PageLayout title={title} subtitle="Serviço Oncoclínicas">
-      <div className="mt-14 flex flex-col lg:flex-row">
+      <div className="mt-8 flex flex-col lg:flex-row">
         <div className="mb-10 block lg:hidden">
           <BaseSelect
             color="primary"
