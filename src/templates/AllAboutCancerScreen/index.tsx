@@ -26,7 +26,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
   return (
     <PageLayout title="Tudo sobre o câncer" subtitle="Oncoclínicas">
-      <div className="mt-20 flex justify-start">
+      <div className="mt-10 flex justify-start md:mt-20">
         <div className="flex w-full flex-col items-center text-left md:text-center">
           <h2 className="text-2xl text-primary md:text-title-xl md:leading-[74px]">
             O que é o câncer?
@@ -45,7 +45,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-20 flex flex-col md:flex-row">
+      <div className="mt-8 flex flex-col md:flex-row lg:mt-20">
         <div className="w-full md:w-1/2 md:pr-3">
           <h2 className="text-2xl text-primary md:text-[40px] md:leading-[48px]">
             O câncer?
@@ -130,7 +130,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col justify-between gap-5 md:mt-20">
+      <div className="flex flex-col justify-between gap-5 md:mt-20 lg:mt-10">
         <div className="hidden w-full grid-cols-2 gap-6 sm:grid-cols-2 md:hidden lg:grid lg:grid-cols-4">
           {categories.map((categorie) => (
             <IconCard
