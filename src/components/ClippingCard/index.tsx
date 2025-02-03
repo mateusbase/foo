@@ -9,14 +9,17 @@ export default function ClippingCard({
   isRelease = false,
 }: ClippingCardProps): JSX.Element {
   const router = useRouter();
-  const handleCardClick = (): void => {
+
+  const handleCardClick = (isReleaseCard: boolean): void => {
     const slug = title.toLowerCase().replace(/\s+/g, "-");
-    router.push(`/clipping/${slug}`);
+    isReleaseCard
+      ? router.push(`/releases/${slug}`)
+      : router.push(`/clipping/${slug}`);
   };
 
   return (
     <div
-      onClick={!isRelease ? handleCardClick : undefined}
+      onClick={() => handleCardClick(isRelease)}
       className={`flex h-[420px] w-full cursor-pointer flex-col justify-between rounded-2xl border border-darkGray p-6 transition-shadow hover:shadow-lg md:h-[347px] ${!isRelease ? "cursor-pointer" : ""}`}
     >
       <h3 className="mb-4 text-left text-[23px] font-bold text-primary md:text-lg lg:text-3xl">

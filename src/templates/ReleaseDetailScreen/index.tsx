@@ -7,7 +7,7 @@ import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import NewsPreviewCard from "../NewScreen/components/NewsPreviewCard";
 import { newsItems } from "../NewScreen/optionsMock";
 
-export default function ClippingDetailsScreen(): JSX.Element {
+export default function ReleaseDetailScreen(): JSX.Element {
   return (
     <>
       <PageLayout title="Oc na mídia" mainOptions={false}>
