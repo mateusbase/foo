@@ -18,27 +18,29 @@ export default function OcJournalScreen(): JSX.Element {
     >
       <div className="lg:mt-20">
         <div className="full-bleed flex w-full flex-col-reverse justify-between text-white lg:h-[536px] lg:flex-row">
-          <div className="flex h-full flex-col justify-between gap-2 bg-custom-gradient-dark p-10 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
-            <div>
-              <p className="text-4xl font-light lg:text-4xl xl:text-5xl">
-                Faça o download da edição mais recente do OC Journal
-              </p>
-            </div>
+          <div className="flex h-full flex-col items-center justify-between gap-2 bg-custom-gradient-dark p-10 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
+            <div className="flex w-full flex-col gap-4 md:w-3/4 lg:w-full">
+              <div>
+                <p className="text-left text-4xl font-light md:text-center lg:text-left lg:text-4xl xl:text-5xl">
+                  Faça o download da edição mais recente do OC Journal
+                </p>
+              </div>
 
-            <div>
-              <p className="text-xl font-bold lg:text-xl xl:text-2xl">
-                Novidades do universo médico-científico com reportagens e
-                análises de especialistas em oncologia.
-              </p>
-            </div>
+              <div>
+                <p className="text-left text-xl font-bold md:text-center lg:text-left lg:text-xl xl:text-2xl">
+                  Novidades do universo médico-científico com reportagens e
+                  análises de especialistas em oncologia.
+                </p>
+              </div>
 
-            <div className="flex gap-2">
-              <BaseButton
-                className="mb-4 mt-10 h-16 w-full justify-center border-white text-lg text-white lg:w-80 lg:text-2xl"
-                variant="bordered"
-              >
-                Download
-              </BaseButton>
+              <div className="flex gap-2">
+                <BaseButton
+                  className="mb-4 mt-10 h-16 w-full justify-center border-white text-lg text-white lg:w-80 lg:text-2xl"
+                  variant="bordered"
+                >
+                  Download
+                </BaseButton>
+              </div>
             </div>
           </div>
 
@@ -52,9 +54,9 @@ export default function OcJournalScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-4 border-gray-300 px-8 pb-4 md:flex-row md:items-center md:justify-between md:px-0 lg:mt-28 lg:border-b">
-        <div className="hidden flex-col items-center gap-4 sm:flex-row lg:flex">
-          <div className="w-[280px]">
+      <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:flex-row md:items-center md:justify-between md:px-0 lg:mt-28">
+        <div className="flex w-full flex-col items-center gap-4 md:flex-row">
+          <div className="w-full md:w-[280px]">
             <BaseSelect
               label="Especialidade"
               labelColor="primary"
@@ -73,13 +75,13 @@ export default function OcJournalScreen(): JSX.Element {
           <BaseButton
             color="primary"
             width="149px"
-            className="hidden w-full min-w-44 text-white sm:w-auto lg:flex"
+            className="rounder-sm w-full min-w-44 text-white sm:w-auto lg:flex"
           >
             Buscar
           </BaseButton>
         </div>
 
-        <div className="hidden cursor-pointer items-center justify-end gap-2 sm:justify-start lg:flex">
+        <div className="flex cursor-pointer items-center justify-center gap-2 md:justify-end">
           <SortingFilterDropdown
             options={sortingFilterOptions}
             defaultSelectedKey={sortingFilterOptions[0].value}
@@ -87,22 +89,6 @@ export default function OcJournalScreen(): JSX.Element {
           />
         </div>
       </div>
-      <BaseSelect
-        color="primary"
-        variant="bordered"
-        labelPlacement="outside-left"
-        labelColor="primary"
-        radius="md"
-        size="lg"
-        startContent={<RxHamburgerMenu size={20} className="text-primary" />}
-        defaultSelectedKey="1"
-        className="w-full lg:hidden"
-        options={[
-          { key: 1, value: "1", label: "Especialidade" },
-          { key: 2, value: "2", label: "Oncologia" },
-          { key: 3, value: "3", label: "Cardiologia" },
-        ]}
-      />
 
       <div className="mt-4 grid w-full gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-1 lg:gap-8">
         {options.map((option) => (
