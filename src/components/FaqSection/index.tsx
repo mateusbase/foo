@@ -1,6 +1,4 @@
 import { Accordion, AccordionItem } from "@heroui/react";
-import { IoArrowBackCircleOutline } from "react-icons/io5";
-
 import { FaqHeader } from "./components/FaqHeader";
 import ArrowCicleOutlineIcon from "../Icons/ArrowCicleOutline";
 

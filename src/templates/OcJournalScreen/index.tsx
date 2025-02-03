@@ -5,7 +5,6 @@ import SortingFilterDropdown from "@/components/SortingFilterDropdown";
 import { sortingFilterOptions } from "@/utils/sortingOptions";
 import { useSortingFilter } from "@/hooks/useSortingFilter";
 import OcJournalItems from "@/components/OcJournalItems";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { options } from "../NewsScreen/optionsMock";
 
 export default function OcJournalScreen(): JSX.Element {
