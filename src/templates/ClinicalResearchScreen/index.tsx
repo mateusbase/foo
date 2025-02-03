@@ -13,7 +13,8 @@ import { services } from "./mock";
 import TermsOfConsentBanner from "./components/TermsOfConsentBanner";
 
 export default function ClinicalResearchScreen(): JSX.Element {
-  const { nextRef, prevRef, swiperRef, currentIndex } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
+    useSwiperNavigation();
 
   return (
     <>
@@ -90,16 +91,10 @@ export default function ClinicalResearchScreen(): JSX.Element {
             <div className="relative mt-20 w-full">
               <Swiper
                 modules={[Navigation]}
-                spaceBetween={30}
+                spaceBetween={20}
                 slidesPerView={1}
                 loop
-                navigation={{
-                  prevEl: prevRef.current,
-                  nextEl: nextRef.current,
-                }}
-                onInit={(swiper: SwiperInstance) => {
-                  swiperRef.current = swiper;
-                }}
+                onBeforeInit={(swiper: SwiperInstance) => onBeforeInit(swiper)}
                 breakpoints={{
                   768: {
                     slidesPerView: 2,
@@ -122,7 +117,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
                 ))}
               </Swiper>
 
-              <div className="mt-4 hidden justify-center space-x-4 md:flex">
+              <div className="mt-4 justify-center space-x-4 md:flex">
                 <SliderArrows
                   swiperRef={swiperRef}
                   prevRef={prevRef}

@@ -20,7 +20,7 @@ export default function MedicalServiceCard({
   return (
     <div className="flex h-fit w-auto flex-col overflow-hidden rounded-br-[100px] border bg-white">
       <div
-        className="h-[322px] bg-cover bg-no-repeat md:h-[376px]"
+        className="h-[430px] bg-cover bg-no-repeat"
         style={{
           backgroundImage:
             backgroundImageUrl ??
