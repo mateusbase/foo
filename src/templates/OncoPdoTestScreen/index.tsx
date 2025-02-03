@@ -38,7 +38,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
         />
       </div>
 
-      <div className="mt-20">
+      <div className="mt-14 md:mt-11 lg:mt-20">
         <h1 className="text-4xl text-primary md:text-[40px]">
           Os diferenciais do Teste Onco-PDO<sup>&trade;</sup>
         </h1>
@@ -57,7 +57,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
             Além disso, o Teste Onco-PDO<sup>&trade;</sup> também se destacada
             por:
           </p>
-          <ul className="ml-4 list-disc text-xl text-darkGray">
+          <ul className="ml-8 list-disc text-xl text-darkGray">
             <li>
               Os medicamentos a serem testados em laboratório são escolhidos
               pelo próprio oncologista, com a possibilidade do uso de esquemas
@@ -78,11 +78,11 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
         </p>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-14 lg:mt-32">
         <h1 className="text-4xl text-primary md:text-[40px]">
           Etapas do Teste Onco-PDO<sup>&trade;</sup>
         </h1>
-        <div className="my-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="my-10 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {stepTestData.map((step) => (
             <StepTestCard
               stepNumber={step.id}
@@ -93,7 +93,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
         </div>
       </div>
 
-      <div className="my-10 w-5/6">
+      <div className="my-8 w-5/6">
         <h1 className="text-4xl text-primary md:text-[40px]">
           Em quais tumores pode ser aplicado o Teste Onco-PDO<sup>&trade;</sup>
         </h1>
@@ -107,7 +107,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
         <p className="mt-5 text-xl text-darkGray">
           O teste está disponível para os seguintes tumores:
         </p>
-        <ul className="ml-4 mt-4 list-disc text-xl text-darkGray">
+        <ul className="ml-8 mt-4 list-disc text-xl text-darkGray">
           <li>Mama</li>
           <li>Ovário</li>
           <li>Pulmão</li>
