@@ -57,7 +57,6 @@ export default function GlossaryScreen(): JSX.Element {
               value: glossary.letter,
               label: glossary.letter,
             }))}
-            optionsColor="primary"
             startContent={
               <RxHamburgerMenu size={20} className="text-primary" />
             }
@@ -83,7 +82,6 @@ export default function GlossaryScreen(): JSX.Element {
                 label: term.term,
               })) || []
             }
-            optionsColor="primary"
             startContent={
               <RxHamburgerMenu size={20} className="text-primary" />
             }

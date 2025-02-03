@@ -94,7 +94,6 @@ export default function OcJournalScreen(): JSX.Element {
         labelColor="primary"
         radius="md"
         size="lg"
-        optionsColor="primary"
         startContent={<RxHamburgerMenu size={20} className="text-primary" />}
         defaultSelectedKey="1"
         className="w-full lg:hidden"

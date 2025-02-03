@@ -28,7 +28,6 @@ const TumorTypeScreen = (): JSX.Element => {
       defaultSelectedKey="1"
       size="lg"
       borderStyle="border-primary"
-      optionsColor="primary"
       onChange={(value) => setSelectedTumorType(Number(value))}
     />
   );
