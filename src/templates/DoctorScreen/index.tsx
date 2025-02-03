@@ -45,7 +45,7 @@ export default function DoctorScreen(): JSX.Element {
             </h1>
 
             <p className="text-xl font-bold text-darkGray">CRM: {crm}</p>
-            <p className="mt-2 text-lg text-darkGray">{specialty}</p>
+            <p className="mt-1 text-lg text-darkGray">{specialty}</p>
 
             <BaseButton
               color="secondary"
@@ -64,7 +64,7 @@ export default function DoctorScreen(): JSX.Element {
               : "Dra. Nome do Médico"}
           </h1>
 
-          <p className="mt-6 text-left text-sm leading-[22px] text-darkGray lg:text-lg">
+          <p className="mt-6 text-left text-sm leading-[22px] text-darkGray md:w-[90%] lg:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex
             id sem ullamcorper. Lorem ipsum dolor sit amet, consectetur
@@ -75,28 +75,27 @@ export default function DoctorScreen(): JSX.Element {
             ullamcorper.
           </p>
 
-          <div className="my-10 flex flex-col justify-between md:w-[85%] md:flex-row lg:mt-16 lg:flex-col">
-            <div className="mr-4">
-              <h1 className="mb-6 text-left text-2xl text-primary lg:text-[42px]">
+          <div className="my-10 flex flex-col md:w-full md:flex-row md:items-start md:gap-8 lg:flex-col">
+            <div className="flex-1">
+              <h1 className="my-6 text-left text-2xl text-primary md:text-[32px]">
                 Local de atendimento
               </h1>
               {locations.map((location) => (
                 <ul key={location.id} className="list-inside list-disc">
-                  <li className="text-left text-sm text-darkGray lg:text-lg">
+                  <li className="text-left text-sm text-darkGray md:text-base">
                     {location.name}
                   </li>
                 </ul>
               ))}
             </div>
 
-            <div>
-              <h1 className="my-6 text-left text-2xl text-primary lg:my-6 lg:mt-20 lg:text-[42px]">
+            <div className="flex-1">
+              <h1 className="my-6 text-left text-2xl text-primary md:text-[32px]">
                 Especialização
               </h1>
-
               {especializations.map((especialization) => (
                 <ul key={especialization.id} className="list-inside list-disc">
-                  <li className="text-left text-sm text-darkGray lg:text-lg">
+                  <li className="text-left text-sm text-darkGray md:text-base">
                     {especialization.name}
                   </li>
                 </ul>
