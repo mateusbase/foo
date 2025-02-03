@@ -20,6 +20,7 @@ export default function HowItWorksScreen(): JSX.Element {
   ];
 
   const activeContent = menuContent[activeItem];
+
   const titleSelectedMenu =
     menuItems.find((item) => item.id === activeItem)?.name ||
     "Item não encontrado";
