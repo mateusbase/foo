@@ -99,6 +99,15 @@ export default function FindAUnitScreen(): JSX.Element {
             <UnitsCardMobile key={unit.id} {...unit} />
           ))}
         </div>
+
+        <div className="mb-10 flex justify-center lg:mb-0">
+          <BaseButton
+            variant="bordered"
+            className="w-full rounded-md border-1 md:w-36"
+          >
+            [+] Ver mais
+          </BaseButton>
+        </div>
       </div>
     </PageLayout>
   );
