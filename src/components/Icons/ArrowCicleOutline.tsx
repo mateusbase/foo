@@ -1,12 +1,19 @@
 import * as React from "react";
 
-const ArrowCicleOutlineIcon = (
-  props: React.SVGProps<SVGSVGElement>,
-): JSX.Element => (
+type ArrowCicleOutlineIconProps = React.SVGProps<SVGSVGElement> & {
+  size?: number;
+  color?: string;
+  className?: string;
+};
+
+const ArrowCicleOutlineIcon = ({
+  size = 1,
+  ...props
+}: ArrowCicleOutlineIconProps): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="30"
-    height="31"
+    width={size * 30}
+    height={size * 31}
     fill="none"
     viewBox="0 0 30 31"
     {...props}
