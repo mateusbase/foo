@@ -29,7 +29,7 @@ export default function DoctorScreen(): JSX.Element {
       </div>
 
       <div className="mt-14 flex flex-col items-center justify-center lg:mt-14 lg:flex-row lg:items-start lg:justify-between">
-        <div className="relative flex flex-col items-center md:left-5 lg:bottom-48">
+        <div className="relative flex flex-col items-center lg:bottom-48">
           <img
             src={
               (imgSrc as string) ||
@@ -64,7 +64,7 @@ export default function DoctorScreen(): JSX.Element {
               : "Dra. Nome do Médico"}
           </h1>
 
-          <p className="mt-6 text-left text-sm leading-[22px] text-darkGray md:w-[90%] lg:text-lg">
+          <p className="mt-6 text-left text-sm leading-[22px] text-darkGray lg:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex
             id sem ullamcorper. Lorem ipsum dolor sit amet, consectetur
@@ -95,7 +95,7 @@ export default function DoctorScreen(): JSX.Element {
               </h1>
               {especializations.map((especialization) => (
                 <ul key={especialization.id} className="list-inside list-disc">
-                  <li className="text-left text-sm text-darkGray md:text-base">
+                  <li className="text-left text-base text-darkGray">
                     {especialization.name}
                   </li>
                 </ul>
