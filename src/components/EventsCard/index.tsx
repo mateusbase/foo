@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Button } from "@heroui/react";
 import { CalendarIcon, CheckIcon, ClockIcon, PinIcon } from "../Icons";
+import BaseButton from "../Button";
 
 export default function EventCard({
   event,
@@ -23,7 +23,7 @@ export default function EventCard({
         <img
           src={event.imageUrl}
           alt={event.title}
-          className="max-h-[260px] w-full rounded-md object-cover"
+          className="max-h-[260px] w-full rounded-lg border-1 border-lightGray object-cover"
         />
 
         <div className="mt-6 flex flex-1 flex-col justify-between space-y-6">
@@ -43,7 +43,7 @@ export default function EventCard({
               <span>{event.location}</span>
             </div>
 
-            <div className="ml-7 text-left text-[18px] font-normal text-darkGray md:text-xl">
+            <div className="ml-7 text-left text-base font-normal text-lightGray">
               <span>{event.address}</span>
             </div>
 
@@ -57,25 +57,24 @@ export default function EventCard({
             {event.description}
           </p>
 
-          <div className="flex flex-col gap-4 md:flex-row">
-            <Button
-              className="font-bold text-white"
+          <div className="flex flex-col gap-4 lg:flex-row">
+            <BaseButton
+              className="text-white"
               color="primary"
               variant="solid"
               radius="sm"
               startContent={<CheckIcon />}
             >
               Quero me inscrever
-            </Button>
-            <Button
-              className="font-bold"
+            </BaseButton>
+            <BaseButton
               color="primary"
               variant="bordered"
               radius="sm"
               startContent={<CalendarIcon />}
             >
               Adicionar a agenda
-            </Button>
+            </BaseButton>
           </div>
         </div>
       </div>
