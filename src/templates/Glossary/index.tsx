@@ -29,7 +29,7 @@ export default function GlossaryScreen(): JSX.Element {
     >
       {/* Telas pequenas e médias */}
       <div className="flex flex-col items-center lg:hidden">
-        <div className="my-11 flex w-[330px] flex-col items-center gap-4 self-center md:my-5 md:w-full md:flex-row md:gap-6 md:align-middle">
+        <div className="my-11 flex w-full flex-col items-center gap-4 self-center md:my-5 md:flex-row md:gap-6 md:align-middle">
           <BaseInput
             color="primary"
             placeholder="Busque pelo termo"
@@ -50,7 +50,7 @@ export default function GlossaryScreen(): JSX.Element {
             radius="full"
             defaultSelectedKey={glossaryData[0].letter}
             size="lg"
-            className="w-[330px] text-primary"
+            className="w-full text-primary md:w-[330px]"
             borderStyle="border-primary"
             options={glossaryData.map((glossary) => ({
               key: glossary.letter,
@@ -73,7 +73,7 @@ export default function GlossaryScreen(): JSX.Element {
             labelColor="primary"
             radius="full"
             size="lg"
-            className="w-[330px] text-primary"
+            className="w-full text-primary md:w-[330px]"
             borderStyle="border-primary"
             options={
               filteredGlossary?.terms.map((term) => ({
@@ -92,9 +92,14 @@ export default function GlossaryScreen(): JSX.Element {
         </div>
 
         {filteredTerm && (
-          <div className="mb-9 mt-4 w-[90%] text-left font-lato-regular text-darkGray">
+          <div className="mb-9 mt-4 text-left font-lato-regular text-darkGray lg:w-[90%]">
             {filteredTerm.definition.split("\n").map((line) => (
-              <p className="my-3">{line}</p>
+              <p
+                key={line}
+                className={`${line.startsWith("•") ? "my-5 pl-4" : "my-3"}`}
+              >
+                {line}
+              </p>
             ))}
           </div>
         )}
@@ -131,12 +136,21 @@ export default function GlossaryScreen(): JSX.Element {
 
           <div className="flex w-3/4 flex-col">
             {filteredTerm && (
-              <div className="size-[90%] justify-start text-left font-lato-regular text-2xl text-darkGray">
+              <div className="size-[90%] justify-start text-left font-lato-regular text-darkGray">
                 <h1 className="mb-7 text-4xl text-primary">
                   {filteredTerm.term}
                 </h1>
                 {filteredTerm.definition.split("\n").map((line) => (
-                  <p className="my-6">{line}</p>
+                  <p
+                    key={line}
+                    className={`${
+                      line.startsWith("•")
+                        ? "-my-2 pl-4 text-xl"
+                        : "my-4 text-xl"
+                    }`}
+                  >
+                    {line}
+                  </p>
                 ))}
               </div>
             )}
