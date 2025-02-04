@@ -8,8 +8,6 @@ export interface NavigationButtonsProps {
 export interface CustomSwiperProps {
   slides: Slide[];
   renderSlide: (slide: Slide) => JSX.Element;
-  prevRef: React.RefObject<HTMLButtonElement>;
-  nextRef: React.RefObject<HTMLButtonElement>;
 }
 
 interface Slide {

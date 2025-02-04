@@ -95,7 +95,8 @@ export default function WorkWithUsScreen(): JSX.Element {
                 <li>Integridade</li>
                 <li>Trabalho em equipe</li>
                 <li>Espírito de dono</li>
-                <li>Simplicidade, objetividade e resolutividade (SOR)</li>
+                <li>Simplicidade, objetividade e </li>
+                <p className="ml-6">resolutividade (SOR)</p>
               </ul>
               <ul className="list-inside list-disc leading-5">
                 <li>Resultado</li>
@@ -190,7 +191,7 @@ export default function WorkWithUsScreen(): JSX.Element {
               Dentro da Oncoclínicas, há espaço para diversas especialidades na
               área da saúde, gestão e administração.
             </h3>
-            <BaseButton className="mt-10 h-[54px] w-80 border-1 bg-transparent text-white">
+            <BaseButton className="mt-10 h-[54px] border-1 bg-transparent text-white lg:w-80">
               Cadastre seu currículo
             </BaseButton>
           </div>
@@ -210,8 +211,6 @@ export default function WorkWithUsScreen(): JSX.Element {
       <div className="mt-10 block grid-cols-3 gap-[26px] md:hidden">
         <CustomSwiper
           slides={infoCardContent}
-          prevRef={prevRefContentCard}
-          nextRef={nextRefContentCard}
           renderSlide={(slide) => (
             <InfoCard roundedSide="left">
               <div>
