@@ -43,11 +43,11 @@ export default function OcJournalScreen(): JSX.Element {
             </div>
           </div>
 
-          <div className="h-full lg:w-2/5">
+          <div className="h-full lg:w-1/2">
             <img
-              src="https://s3-alpha-sig.figma.com/img/1803/5121/5508cff7b204e2ad16fb21c565c89767?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oj0i426~sXVCW0plhPa8~P0H-DCxziYNY-g1HeOidO8DsJZY-5z-qGfMv4xJJsuaUJz85WN8q28XfS9OvDet9phGmTLlvC-X7y3PSyxyKjqmoC-J0OvkAiNhOtWhVmnhHG-3zooteT5v7JlUr9QDkEkaNUrEl-pDebTJVBptqEZESnUxy~71hG4n4R9HME~OYhGOb7gk26EyatNNRoscfOPKM5UbhtJxEfpOezqwWnF5f-NLpp84b4RBq1mD6Ba5IYwEbV5vymmFTwT0TR0LCEkcKfj1XNz04ZL4k1yNhESBdyJlU8Fw3zZeBbJMlhUT0O0upcLwAVXOwt1ou97Ogw__"
+              src="/assets/images/oc-journal/oc-journal-banner.png"
               alt="Imagem 1"
-              className="size-full"
+              className="size-full object-cover"
             />
           </div>
         </div>
