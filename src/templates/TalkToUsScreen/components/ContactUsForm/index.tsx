@@ -102,8 +102,8 @@ export default function ContactUsForm(): JSX.Element {
       />
 
       {topicSelected === "1" && (
-        <div className="flex">
-          <div className="flex w-1/2">
+        <div className="flex flex-col gap-4 lg:flex-row">
+          <div className="flex lg:w-1/2">
             <RadioGroup
               label="Deseja receber retorno de sua manifestação?"
               orientation="horizontal"
@@ -121,7 +121,7 @@ export default function ContactUsForm(): JSX.Element {
               </BaseRadio>
             </RadioGroup>
           </div>
-          <div className="flex w-1/2">
+          <div className="flex lg:w-1/2">
             <BaseInput
               label="Nome completo do paciente"
               placeholder="Digite o seu nome completo"
