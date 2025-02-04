@@ -1,15 +1,15 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { NavigationOptions } from "swiper/types";
-import { NavigationButtons } from "../NavigationButtons";
+import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
+import SliderArrows from "@/components/SliderArrows";
 import { CustomSwiperProps } from "./types";
 
 export default function CustomSwiper({
   slides,
   renderSlide,
-  prevRef,
-  nextRef,
 }: CustomSwiperProps): JSX.Element {
+  const { nextRef, prevRef, swiperRef, currentIndex } = useSwiperNavigation();
   return (
     <div className="relative">
       <Swiper
@@ -36,7 +36,17 @@ export default function CustomSwiper({
           <SwiperSlide key={slide.id}>{renderSlide(slide)}</SwiperSlide>
         ))}
       </Swiper>
-      <NavigationButtons nextRef={nextRef} prevRef={prevRef} />
+
+      <div className="my-6">
+        <SliderArrows
+          color="text-primary-foreground"
+          swiperRef={swiperRef}
+          prevRef={prevRef}
+          nextRef={nextRef}
+          currentIndex={currentIndex}
+          showSwiperPagination
+        />
+      </div>
     </div>
   );
 }

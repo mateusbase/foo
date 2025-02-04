@@ -142,7 +142,10 @@ export default function UnitScreen(): JSX.Element {
 
             <div className="mt-10 space-y-4">
               {paragraphs.map((paragraph) => (
-                <p className="text-base leading-[28px] text-darkGray md:text-[18px] md:font-medium md:leading-[32px]">
+                <p
+                  key={paragraph}
+                  className="text-base leading-[28px] text-darkGray md:text-[18px] md:font-medium md:leading-[32px]"
+                >
                   {paragraph}
                 </p>
               ))}
@@ -167,19 +170,19 @@ export default function UnitScreen(): JSX.Element {
 
             <div className="mt-8 flex flex-wrap justify-center gap-4 lg:flex-row lg:justify-start">
               <img
-                src="https://via.placeholder.com/352x198"
+                src="/assets/images/units/unit-banner-1.jpg"
                 alt="Imagem 1"
-                className="h-[198px] w-full rounded object-cover md:w-[352px]"
+                className="h-[169px] w-full rounded object-cover md:w-[300px]"
               />
               <img
-                src="https://via.placeholder.com/352x198"
+                src="/assets/images/units/unit-banner-2.jpg"
                 alt="Imagem 2"
-                className="h-[198px] w-full rounded object-cover md:w-[352px]"
+                className="h-[169px] w-full rounded object-cover md:w-[300px]"
               />
               <img
-                src="https://via.placeholder.com/352x198"
+                src="/assets/images/units/unit-banner-3.jpg"
                 alt="Imagem 3"
-                className="h-[198px] w-full rounded object-cover md:w-[352px]"
+                className="h-[169px] w-full rounded object-cover md:w-[300px]"
               />
             </div>
           </div>
