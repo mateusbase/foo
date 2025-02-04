@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@heroui/react";
 import { CalendarIcon, CheckIcon, ClockIcon, PinIcon } from "../Icons";
 import BaseButton from "../Button";
 
