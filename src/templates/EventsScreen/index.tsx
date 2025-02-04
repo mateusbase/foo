@@ -105,7 +105,11 @@ export default function EventsScreen(): JSX.Element {
         </div>
       </div>
 
+<<<<<<< Updated upstream
       <div className="mt-10 flex flex-col gap-4 border-gray-300 pb-4 md:mt-28 md:flex-row md:items-center md:justify-between md:border-b md:px-0">
+=======
+      <div className="mt-10 flex flex-col gap-4 border-gray-300 pb-4 md:flex-row md:items-center md:justify-between md:border-b md:px-0 lg:mt-20">
+>>>>>>> Stashed changes
         <div className="flex w-full flex-col items-center gap-2 sm:flex-row">
           <div className="flex w-full flex-col gap-4 sm:flex-row">
             <BaseSelect
