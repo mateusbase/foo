@@ -6,8 +6,18 @@ export const glossaryData = [
       {
         id: 1,
         term: "Adenocarcinoma",
-        definition:
-          "A adenocarcinoma é o tipo mais comum de câncer em adultos, origina-se nas glândulas presentes nos tecidos de revestimento do organismo, este tumor maligno é encontrado no corpo presentes nos tecidos de revestimento do organismo.\nAlguns exemplos de localização dos adenocarcinomas são o trato gastrintestinal, a região da cabeça e pescoço, o trato respiratório, a próstata e a mama.\nQuais são os sintomas do adenocarcinoma?\nOs sintomas podem variar conforme seus subtipos, podendo incluir:\n• Perda de peso repentina\n• Dificuldade para engolir\n• Constipação\n• Falta de ar\n• Dores no peito\nComo é realizado o tratamento para o adenocarcinoma?\nO tratamento e o prognóstico variam dependendo do órgão afetado e do estágio do câncer, considerando a origem do tumor, o órgão afetado e o estágio da doença, tal como o adenocarcinoma de mama.\nOs tratamentos podem envolver cirurgia, radioterapia, terapia alvo ou quimioterapia, lembrando que cada caso é específico.",
+        definition: `A adenocarcinoma é o tipo mais comum de câncer em adultos, origina-se nas glândulas presentes nos tecidos de revestimento do organismo, este tumor maligno é encontrado no corpo presentes nos tecidos de revestimento do organismo.
+          \nAlguns exemplos de localização dos adenocarcinomas são o trato gastrintestinal, a região da cabeça e pescoço, o trato respiratório, a próstata e a mama.
+          \nQuais são os sintomas do adenocarcinoma?
+          \nOs sintomas podem variar conforme seus subtipos, podendo incluir:
+          \n• Perda de peso repentina
+          \n• Dificuldade para engolir
+          \n• Constipação
+          \n• Falta de ar
+          \n• Dores no peito
+          \nComo é realizado o tratamento para o adenocarcinoma?
+          \nO tratamento e o prognóstico variam dependendo do órgão afetado e do estágio do câncer, considerando a origem do tumor, o órgão afetado e o estágio da doença, tal como o adenocarcinoma de mama.
+          \nOs tratamentos podem envolver cirurgia, radioterapia, terapia alvo ou quimioterapia, lembrando que cada caso é específico.`,
       },
       {
         id: 2,
