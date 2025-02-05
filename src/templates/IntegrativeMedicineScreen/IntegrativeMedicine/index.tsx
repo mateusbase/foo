@@ -16,6 +16,7 @@ export default function HowItWorks(): JSX.Element {
           adiante nessa jornada.
         </p>
       </div>
+
       <p className="mt-8 text-base font-medium text-darkGray lg:text-xl lg:font-normal">
         É aí que entra a medicina integrativa na oncologia. Essa prática aborda
         de forma integral o cuidado ao paciente, por meio da proposta de
@@ -33,8 +34,9 @@ export default function HowItWorks(): JSX.Element {
         nova dimensão, com a integração de educadores físicos, terapeutas
         holísticos, especialistas em corpo humano e mesmo de artistas.
       </p>
+
       <div className="mt-20">
-        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
+        <h2 className="text-2xl !leading-snug text-primary md:text-3xl lg:text-[40px]">
           Importância da medicina integrativa durante o tratamento de câncer
         </h2>
         <p className="mt-8 text-base font-medium text-darkGray lg:text-xl lg:font-normal">

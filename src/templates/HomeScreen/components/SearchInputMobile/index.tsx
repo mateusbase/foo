@@ -17,15 +17,16 @@ const SearchInput = (): JSX.Element => {
 
   const handleSearch = (term: string): void => {
     setSearchTerm(term);
-
+    
     if (term && pages.length > 0) {
       const filteredPages = pages.filter((page) => {
-        const titleMatch = page.data?.title
+        const titleMatch = page.pageTitle
           ?.toLowerCase()
           .includes(term.toLowerCase());
         const descriptionMatch = page.data?.description
           ?.toLowerCase()
           .includes(term.toLowerCase());
+          
         return titleMatch || descriptionMatch;
       });
       setResults(filteredPages);
@@ -109,10 +110,10 @@ const SearchInput = (): JSX.Element => {
                   className="block rounded-lg p-4 transition duration-300 hover:bg-gray-100 hover:text-blue-700"
                 >
                   <div className="text-xl font-bold">
-                    {page.data?.title || "Página Sem Título"}
+                    {page.pageTitle || "Página Sem Título"}
                   </div>
                   <div className="text-sm text-gray-600">
-                    {page.data?.description || "Sem descrição"}
+                    {page.content || "Sem descrição"}
                   </div>
                 </Link>
               ))
