@@ -18,4 +18,5 @@ export interface BaseInputProps {
   endContent?: React.ReactNode;
   startContent?: React.ReactNode;
   borderStyle?: string;
+  onBlur?: () => void;
 }

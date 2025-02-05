@@ -4,17 +4,26 @@ import BaseSelect from "@/components/Select";
 import BaseInput from "@/components/Input";
 import PageLayout from "@/components/PageLayout";
 import { useState } from "react";
-import { formatPhoneNumber } from "@/utils/objectUtils";
+import { format } from "@react-input/mask";
 
 export default function ScheduleYourConsultationScreen(): JSX.Element {
   const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const inputValue = event.target.value;
-    const formattedValue = formatPhoneNumber(inputValue);
+    const inputValue = event.target.value.replace(/\D/g, "");
+    setPhoneNumber(inputValue);
+  };
 
-    setPhoneNumber(formattedValue);
+  const handleBlur = (): void => {
+    const inputValue = phoneNumber;
+
+    const dynamicMask =
+      inputValue.length > 10 ? "(__) _____-____" : "(__) ____-____";
+
+    setPhoneNumber(
+      format(inputValue, { mask: dynamicMask, replacement: { _: /\d/ } }),
+    );
   };
 
   return (
@@ -70,6 +79,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               borderStyle="border-default"
               value={phoneNumber}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </div>
 

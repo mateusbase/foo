@@ -15,6 +15,7 @@ export default function BaseInput({
   onChange,
   endContent,
   startContent,
+  onBlur,
 }: BaseInputProps): JSX.Element {
   return (
     <div className="w-full">
@@ -32,6 +33,7 @@ export default function BaseInput({
         size={size}
         radius={radius}
         variant={variant}
+        onBlur={onBlur}
         className={`${className}`}
         value={value}
         onChange={onChange}

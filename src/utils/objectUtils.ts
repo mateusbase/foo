@@ -43,27 +43,6 @@ export function getObjectKeyByValue(
   return Object.keys(object).find((key) => object[key] === value);
 }
 
-export function formatPhoneNumber(input: string): string {
-  const cleanedInput = input.replace(/\D/g, "");
-
-  if (cleanedInput.length > 10) {
-
-    return cleanedInput.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
-  }
-
-  if (cleanedInput.length > 5) {
-
-    return cleanedInput.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, "($1) $2-$3");
-  }
-
-  if (cleanedInput.length > 2) {
-
-    return cleanedInput.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
-  }
-
-  return cleanedInput.replace(/^(\d{0,2})/, "($1");
-}
-
 export const options = [
   {
     id: 1,
