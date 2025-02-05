@@ -39,7 +39,7 @@ const PageHeader = ({
               </h1>
               {subtitle && (
                 <div className="w-full">
-                  <p className="mt-2 max-w-7xl text-[13px] font-medium leading-[20px] text-white sm:text-base sm:leading-[22px] md:text-lg lg:mt-4 lg:text-[22px] lg:leading-[24px]">
+                  <p className="mt-2 max-w-7xl text-[13px] font-medium leading-[20px] text-white sm:text-base sm:leading-[22px] md:text-lg lg:mt-4 lg:text-[22px] lg:leading-[28px]">
                     {subtitle}
                   </p>
                 </div>

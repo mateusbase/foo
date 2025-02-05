@@ -13,14 +13,17 @@ export const menuContent: MenuContent = {
 export const menuItems = [
   {
     id: 1,
+    key: 1,
     name: "Importância da medicina integrativa durante o tratamento de câncer",
   },
   {
     id: 2,
+    key: 2,
     name: "Importância da medicina integrativa durante o tratamento de câncer",
   },
   {
     id: 3,
+    key: 3,
     name: "Que médicos devem orientar sobre medicina integrativa durante o tratamento oncológico",
   },
 ];
