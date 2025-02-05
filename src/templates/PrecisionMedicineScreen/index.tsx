@@ -33,7 +33,7 @@ export function PrecisionMedicineScreen({
     useSwiperNavigation();
 
   return (
-    <PageLayout title={<LogoIcon size={1.2} />} showBreadcrumb>
+    <PageLayout title={<LogoIcon size={1} />} showBreadcrumb>
       <div className="lg:hidden">
         <PurpleBanner
           subtitle="Conheça a OC Medicina de Precisão"
