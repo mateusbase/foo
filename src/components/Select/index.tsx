@@ -34,12 +34,13 @@ export default function BaseSelect({
       labelPlacement={labelPlacement}
       selectorIcon={<ArrowDownIcon color={`text-${color}`} />}
       className={`${className}`}
+      onTouchStart={(e) => e.stopPropagation()}
       classNames={{
         trigger: noBorder
           ? `bg-transparent border-none shadow-none `
           : `border-${color} border-1`,
         label: `text-${labelColor} text-base`,
-        value: `text-${labelColor} text-base`,
+        value: `!text-${labelColor} text-base`,
       }}
     >
       {options.map((option) => (
@@ -62,7 +63,7 @@ export default function BaseSelect({
               data-[focus=true]:!bg-primary 
               data-[hover=true]:!text-white 
               data-[selected=true]:!text-white
-               aria-[selected=true]:!text-white
+              aria-[selected=true]:!text-white
             `,
             selectedIcon: "!text-white",
           }}

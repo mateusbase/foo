@@ -19,7 +19,7 @@ export default function IntegrativeMedicineScreen(): JSX.Element {
       title="Medicina integrativa"
       subtitle="A medicina integrativa na oncologia é responsável pela mente, o estado de espírito e outras necessidades do paciente durante o tratamento de câncer, com o objetivo de melhorar a sua qualidade de vida. Saiba mais"
     >
-      <div className="mt-14 flex flex-col gap-10 lg:flex-row">
+      <div className="flex flex-col gap-6 lg:mt-14 lg:flex-row lg:gap-10">
         <div className="text-white lg:w-[398px]">
           <div className="mb-2 block lg:hidden">
             <BaseSelect
@@ -32,8 +32,8 @@ export default function IntegrativeMedicineScreen(): JSX.Element {
               defaultSelectedKey="1"
               labelPlacement="outside"
               options={menuItems.map((item) => ({
-                key: item.id,
-                value: item.id,
+                key: item.key,
+                value: item.id.toString(),
                 label: item.name,
               }))}
               onChange={(value) => setActiveItem(Number(value))}
@@ -44,6 +44,7 @@ export default function IntegrativeMedicineScreen(): JSX.Element {
             {menuItems.map((item, index) => (
               <MenuItem
                 id={item.id}
+                key={item.id}
                 name={item.name}
                 isActive={activeItem === item.id}
                 isFirst={index === 0}
