@@ -40,7 +40,7 @@ export default function BaseSelect({
           ? `bg-transparent border-none shadow-none `
           : `border-${color} border-1`,
         label: `text-${labelColor} text-base`,
-        value: `!text-${labelColor} text-base`,
+        value: `!text-primary text-base`,
       }}
     >
       {options.map((option) => (
