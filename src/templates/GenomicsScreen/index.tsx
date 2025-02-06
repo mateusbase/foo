@@ -25,10 +25,10 @@ const GenomicsScreen = (): JSX.Element => {
               startContent={<IoMenu className="text-primary" size={28} />}
               defaultSelectedKey="1"
               labelPlacement="outside"
-              options={menuItems.map((item) => ({
-                key: item.id,
-                value: item.id,
-                label: item.name,
+              options={genomicsExamsMock.map((item) => ({
+                key: item.value,
+                value: item.value,
+                label: item.label,
               }))}
               onChange={(value) => setActiveItem(Number(value))}
             />
