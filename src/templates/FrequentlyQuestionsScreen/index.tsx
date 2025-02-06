@@ -13,7 +13,7 @@ export default function FrequentlyQuestionsScreen(): JSX.Element {
       title="Perguntas Frequentes"
       subtitle="Confira as perguntas e respostas mais frequentes sobre câncer, seus tipos, tratamentos e tire suas dúvidas navegando entre as categorias."
     >
-      <h1 className="mt-10 text-4xl font-light text-primary">
+      <h1 className="mt-10 text-center text-[25px] font-light text-primary md:text-5xl lg:text-left lg:text-[40px]">
         O que você quer saber?
       </h1>
 
@@ -24,7 +24,7 @@ export default function FrequentlyQuestionsScreen(): JSX.Element {
         />
       </div>
 
-      <div>{renderContent}</div>
+      <div className="mb-28">{renderContent}</div>
     </PageLayout>
   );
 }

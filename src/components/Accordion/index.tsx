@@ -1,7 +1,8 @@
-import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { useState } from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
+import { Selection } from "@heroui/react";
 import { BaseAccordionProps } from "./types";
+import ArrowCicleOutlineIcon from "../Icons/ArrowCicleOutline";
 
 export default function BaseAccordion({
   content,
@@ -10,15 +11,10 @@ export default function BaseAccordion({
     content: "text-2xl",
   },
 }: BaseAccordionProps): JSX.Element {
-  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(
-    new Set<string>(),
-  );
+  const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
 
-  // Tipado como any após a migração de NextUI para HeroUI
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleSelectionChange = (keys: any): void => {
-    const newKeys = new Set<string>(keys as unknown as string[]);
-    setSelectedKeys(newKeys);
+  const handleSelectionChange = (keys: Selection): void => {
+    setSelectedKeys(Array.from(keys as Set<string>));
   };
 
   return (
@@ -28,15 +24,26 @@ export default function BaseAccordion({
       onSelectionChange={handleSelectionChange}
       selectionMode="multiple"
     >
-      {content.map((item) => (
-        <AccordionItem
-          key={item.id.toString()}
-          title={item.title}
-          indicator={<IoArrowBackCircleOutline size={28} color="#00B6AD" />}
-        >
-          <div className={itemClasses.content}>{item.content}</div>
-        </AccordionItem>
-      ))}
+      {content.map((item) => {
+        const isOpen = selectedKeys.includes(item.id.toString());
+
+        return (
+          <AccordionItem
+            key={item.id.toString()}
+            title={item.title}
+            indicator={
+              <ArrowCicleOutlineIcon
+                size={0.8}
+                className={`transition-transform duration-300 ${
+                  isOpen ? "-rotate-90" : "rotate-0"
+                }`}
+              />
+            }
+          >
+            <div>{item.content}</div>
+          </AccordionItem>
+        );
+      })}
     </Accordion>
   );
 }
