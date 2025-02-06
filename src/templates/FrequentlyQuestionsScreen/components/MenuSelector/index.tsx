@@ -19,7 +19,7 @@ export default function MenuSelector({
         <div
           key={option.id}
           className={clsx(
-            "flex h-24 w-full items-center gap-5 rounded-3xl border-1 border-primary-foreground px-6 transition-colors md:justify-center lg:h-32",
+            "flex h-20 w-full items-center gap-5 rounded-3xl border-1 border-primary-foreground px-6 transition-colors md:h-24 md:justify-center lg:h-32",
             {
               "border-primary bg-primary text-white": activeId === option.id,
               "bg-white text-darkGray hover:bg-primary hover:text-white":
