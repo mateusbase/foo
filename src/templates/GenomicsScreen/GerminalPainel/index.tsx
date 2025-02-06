@@ -9,13 +9,13 @@ export default function GerminalPainel(): JSX.Element {
     { id: 4, titleExam: "Painel GS Hereditário" },
   ];
   return (
-    <div className="w-full flex-col">
+    <div className="mb-20 w-full flex-col">
       <div className="w-full">
-        <h1 className="mb-4 font-lato-bold text-xl text-primary md:text-5xl">
+        <h1 className="mb-4 font-lato-bold text-xl text-primary md:text-[40px]">
           Painel NGS Germinativo
         </h1>
 
-        <p className="text-sm text-darkGray md:text-lg">
+        <p className="text-sm text-darkGray md:mt-8 md:text-xl">
           A busca por tratamentos cada vez mais individualizados é o novo
           desafio da oncologia. Anualmente, dezenas de novas moléculas são
           desenvolvidas, voltadas para alterações moleculares oncogênicas das
@@ -32,7 +32,7 @@ export default function GerminalPainel(): JSX.Element {
         </p>
 
         <div className="mt-10">
-          <BaseButton className="w-full text-white md:w-5/12 lg:min-w-60">
+          <BaseButton className="w-full text-white md:w-5/12 lg:w-60 lg:min-w-60">
             Solicitar exame
           </BaseButton>
         </div>
