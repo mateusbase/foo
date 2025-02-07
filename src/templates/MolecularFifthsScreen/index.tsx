@@ -13,7 +13,7 @@ import SliderArrows from "@/components/SliderArrows";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import { options } from "./optionsMock";
 
-export default function MolecularFifthsScreen(): JSX.Element {
+export default function MolecularThursdaysScreen(): JSX.Element {
   const { nextRef, prevRef, onBeforeInit, swiperRef, currentIndex } =
     useSwiperNavigation();
   const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
@@ -61,7 +61,7 @@ export default function MolecularFifthsScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mx-6 mt-6 flex justify-center">
+      <div className="mx-6 mt-6 flex justify-center lg:hidden">
         <BaseSelect
           color="primary"
           variant="bordered"
@@ -123,7 +123,7 @@ export default function MolecularFifthsScreen(): JSX.Element {
             radius="sm"
             className="h-[50px] w-[228px] items-center justify-center pl-3 text-[23px] text-primary lg:flex"
           >
-            [+] Ver maiss
+            [+] Ver mais
           </BaseButton>
         </div>
       </div>
