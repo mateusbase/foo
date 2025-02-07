@@ -24,11 +24,11 @@ const BannerWithVideo = ({
 
       <div className="h-full w-1/2">
         {isVideo ? (
-          <video src={media} controls className="size-full">
+          <video src={media} controls className="size-full object-cover">
             <track kind="captions" />
           </video>
         ) : (
-          <img src={media} alt="Imagem 1" className="size-full" />
+          <img src={media} alt="Imagem 1" className="size-full object-cover" />
         )}
       </div>
     </div>
