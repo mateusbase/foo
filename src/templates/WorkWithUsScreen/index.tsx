@@ -87,15 +87,14 @@ export default function WorkWithUsScreen(): JSX.Element {
 
           <div className="mt-8">
             <h2 className="text-xl font-bold lg:text-2xl">Nossos valores:</h2>
-            <div className="mt-4 grid grid-cols-1 gap-4 gap-x-20 text-lg sm:grid-cols-2">
-              <ul className="list-inside list-disc leading-5">
+            <div className="mb-8 mt-4 grid grid-cols-1 gap-4 gap-x-20 text-lg sm:grid-cols-2">
+              <ul className="list-outside list-disc space-y-2 pl-5 leading-5">
                 <li>Integridade</li>
                 <li>Trabalho em equipe</li>
                 <li>Espírito de dono</li>
-                <li>Simplicidade, objetividade e </li>
-                <p className="ml-6">resolutividade (SOR)</p>
+                <li>Simplicidade, objetividade e resolutividade (SOR)</li>
               </ul>
-              <ul className="list-inside list-disc leading-5">
+              <ul className="list-outside list-disc space-y-2 pl-5 leading-5">
                 <li>Resultado</li>
                 <li>Respeito</li>
                 <li>Meritocracia</li>
