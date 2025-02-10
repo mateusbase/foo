@@ -16,6 +16,10 @@ export default function BaseInput({
   endContent,
   startContent,
   onBlur,
+  register,
+  error,
+  name,
+  maxLength,
 }: BaseInputProps): JSX.Element {
   return (
     <div className="w-full">
@@ -33,14 +37,38 @@ export default function BaseInput({
         size={size}
         radius={radius}
         variant={variant}
-        onBlur={onBlur}
         className={`${className}`}
         value={value}
-        onChange={onChange}
         color={color}
         endContent={endContent}
         startContent={startContent}
+        maxLength={maxLength}
+        {...(register && name
+          ? {
+              ...register(name),
+              onChange: (e) => {
+                register(name).onChange(e);
+                onChange?.(e);
+              },
+              onBlur: (e) => {
+                register(name).onBlur(e);
+                onBlur?.();
+              },
+            }
+          : {
+              onChange: (e) => {
+                onChange?.(e);
+              },
+              onBlur: () => {
+                onBlur?.();
+              },
+            })}
       />
+      {error && (
+        <p className="ml-5 mt-2 text-sm text-danger">
+          {typeof error === "string" ? error : error.message}
+        </p>
+      )}
     </div>
   );
 }

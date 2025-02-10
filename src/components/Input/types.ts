@@ -1,3 +1,6 @@
+import { FormValues } from "@/hooks/useValidation";
+import { FieldError, UseFormRegister } from "react-hook-form";
+
 export interface BaseInputProps {
   color?:
     | "primary"
@@ -19,4 +22,8 @@ export interface BaseInputProps {
   startContent?: React.ReactNode;
   borderStyle?: string;
   onBlur?: () => void;
+  register?: UseFormRegister<FormValues>;
+  name?: "name" | "email" | "phone";
+  error?: string | FieldError;
+  maxLength?: number;
 }

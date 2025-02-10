@@ -5,25 +5,47 @@ import BaseInput from "@/components/Input";
 import PageLayout from "@/components/PageLayout";
 import { useState } from "react";
 import { format } from "@react-input/mask";
+import { FormValues, useValidation } from "@/hooks/useValidation";
+import { useForm } from "react-hook-form";
 
 export default function ScheduleYourConsultationScreen(): JSX.Element {
   const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState("");
+  const resolve = useValidation({ validateEmail: true, validatePhone: true });
+
+  const {
+    register,
+    formState: { errors },
+    setValue,
+    trigger,
+  } = useForm<FormValues>({
+    resolver: resolve,
+    mode: "onChange",
+    reValidateMode: "onBlur",
+  });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const inputValue = event.target.value.replace(/\D/g, "");
+    if (inputValue.length > 11) return;
+
+    setValue("phone", inputValue);
+    trigger("phone");
     setPhoneNumber(inputValue);
   };
 
-  const handleBlur = (): void => {
-    const inputValue = phoneNumber;
+  const handleBlur = async (): Promise<void> => {
+    const rawPhoneNumber = phoneNumber.replace(/\D/g, "");
 
     const dynamicMask =
-      inputValue.length > 10 ? "(__) _____-____" : "(__) ____-____";
+      rawPhoneNumber.length > 10 ? "(__) _____-____" : "(__) ____-____";
+    const formattedPhone = format(rawPhoneNumber, {
+      mask: dynamicMask,
+      replacement: { _: /\d/ },
+    });
 
-    setPhoneNumber(
-      format(inputValue, { mask: dynamicMask, replacement: { _: /\d/ } }),
-    );
+    setPhoneNumber(formattedPhone);
+    setValue("phone", rawPhoneNumber);
+    await trigger("phone");
   };
 
   return (
@@ -58,6 +80,9 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               variant="bordered"
               placeholderColor="darkGray"
               borderStyle="border-default"
+              register={register}
+              name="name"
+              error={errors.name?.message}
             />
           </div>
 
@@ -69,6 +94,9 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               variant="bordered"
               placeholderColor="darkGray"
               borderStyle="border-default"
+              register={register}
+              name="email"
+              error={errors.email?.message}
             />
             <BaseInput
               placeholder={t("pages.scheduleYourConsultation.telephone")}
@@ -80,6 +108,10 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
               value={phoneNumber}
               onChange={handleChange}
               onBlur={handleBlur}
+              maxLength={15}
+              register={register}
+              name="phone"
+              error={errors.phone?.message}
             />
           </div>
 
