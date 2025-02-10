@@ -40,7 +40,9 @@ export default function BaseAccordion({
               />
             }
           >
-            <div>{item.content}</div>
+            <div className="mx-8 text-base md:text-xl lg:text-2xl">
+              {item.content}
+            </div>
           </AccordionItem>
         );
       })}
