@@ -22,8 +22,8 @@ const pacientSupportMock: PacientSupport[] = [
     criteria:
       "Câncer de mama metastático, RH positivo, HER2 negativo após uso de terapia endócrino + inibidor CDK4/6",
     informationText: "Para mais informações:",
-    whatsappContact: "WhatsApp: (11) 2847-5900",
-    emailContact: "E-mail: psp@ocpmedicine.com",
+    whatsappContact: "(11) 2847-5900",
+    emailContact: "psp@ocpmedicine.com",
   },
   {
     id: 2,
@@ -36,8 +36,8 @@ const pacientSupportMock: PacientSupport[] = [
     criteria:
       "Câncer de pulmão não pequenas células, EGFR positivo, ALK positivo ou ROS1 positivo",
     informationText: "Para mais informações:",
-    whatsappContact: "WhatsApp: (21) 9876-5432",
-    emailContact: "E-mail: psp@ocpmedicine.com",
+    whatsappContact: "(21) 9876-5432",
+    emailContact: "psp@ocpmedicine.com",
   },
   {
     id: 3,
@@ -49,8 +49,8 @@ const pacientSupportMock: PacientSupport[] = [
       "Critérios de elegibilidade do programa ID Colorretal (KRAS/NRAS/BRAF):",
     criteria: "Câncer colorretal metastático, KRAS/NRAS/BRAF positivo",
     informationText: "Para mais informações:",
-    whatsappContact: "WhatsApp: (31) 9123-4567",
-    emailContact: "E-mail: psp@ocpmedicine.com",
+    whatsappContact: "(31) 9123-4567",
+    emailContact: "psp@ocpmedicine.com",
   },
 ];
 
