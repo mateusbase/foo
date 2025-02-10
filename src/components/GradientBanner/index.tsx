@@ -8,7 +8,7 @@ export default function GradientBanner({
   backgroundType = "gradient",
 }: GradientBannerProps): JSX.Element {
   return (
-    <div className="full-bleed-md flex w-full justify-between text-white md:my-10 lg:h-[536px]">
+    <div className="full-bleed-md flex w-full justify-between text-white md:my-10 lg:min-h-[536px]">
       {sideImage === "left" ? (
         <div className="flex w-full flex-row">
           <div
