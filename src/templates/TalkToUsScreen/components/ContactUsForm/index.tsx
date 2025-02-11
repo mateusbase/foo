@@ -2,13 +2,53 @@ import BaseButton from "@/components/Button";
 import BaseInput from "@/components/Input";
 import BaseRadio from "@/components/Radio";
 import BaseSelect from "@/components/Select";
+import { FormValues, useValidation } from "@/hooks/useValidation";
 import { RadioGroup, Textarea } from "@heroui/react";
+import { format } from "@react-input/mask";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function ContactUsForm(): JSX.Element {
   const [selected, setSelected] = useState("no");
   const [fileName, setFileName] = useState<string>("");
   const [topicSelected, setTopicSelected] = useState<string | number>();
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const resolve = useValidation({ validateEmail: true, validatePhone: true });
+
+  const {
+    register,
+    formState: { errors },
+    setValue,
+    trigger,
+  } = useForm<FormValues>({
+    resolver: resolve,
+    mode: "onChange",
+    reValidateMode: "onBlur",
+  });
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const inputValue = event.target.value.replace(/\D/g, "");
+    if (inputValue.length > 11) return;
+
+    setValue("phone", inputValue);
+    trigger("phone");
+    setPhoneNumber(inputValue);
+  };
+
+  const handleBlur = async (): Promise<void> => {
+    const rawPhoneNumber = phoneNumber.replace(/\D/g, "");
+
+    const dynamicMask =
+      rawPhoneNumber.length > 10 ? "(__) _____-____" : "(__) ____-____";
+    const formattedPhone = format(rawPhoneNumber, {
+      mask: dynamicMask,
+      replacement: { _: /\d/ },
+    });
+
+    setPhoneNumber(formattedPhone);
+    setValue("phone", rawPhoneNumber);
+    await trigger("phone");
+  };
 
   const handleFileChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -39,11 +79,31 @@ export default function ContactUsForm(): JSX.Element {
         </RadioGroup>
       </div>
 
-      <BaseInput className="" placeholder="Nome" />
+      <BaseInput
+        className=""
+        placeholder="Nome"
+        register={register}
+        name="name"
+        error={errors.name?.message}
+      />
 
       <div className="flex flex-col gap-6 md:flex-row lg:flex-row">
-        <BaseInput placeholder="E-mail" />
-        <BaseInput placeholder="Telefone" />
+        <BaseInput
+          placeholder="E-mail"
+          register={register}
+          name="email"
+          error={errors.email?.message}
+        />
+        <BaseInput
+          placeholder="Telefone"
+          value={phoneNumber}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          maxLength={15}
+          register={register}
+          name="phone"
+          error={errors.phone?.message}
+        />
       </div>
 
       <div className="flex flex-col gap-6 md:flex-row lg:flex-row">
