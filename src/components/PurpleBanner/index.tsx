@@ -20,17 +20,19 @@ const PurpleBanner = ({
         </p>
       </div>
 
-      <div className="relative left-1/2 w-screen -translate-x-1/2 lg:w-auto lg:flex-1 lg:translate-x-0">
-        <video className="size-full object-cover" controls>
-          <source src={video} type="video/mp4" />
-          <track
-            src="captions_en.vtt"
-            kind="captions"
-            srcLang="en"
-            label="English"
-          />
-        </video>
-      </div>
+      {video && (
+        <div className="relative left-1/2 w-screen -translate-x-1/2 lg:w-auto lg:flex-1 lg:translate-x-0">
+          <video className="size-full object-cover" controls>
+            <source src={video} type="video/mp4" />
+            <track
+              src="captions_en.vtt"
+              kind="captions"
+              srcLang="en"
+              label="English"
+            />
+          </video>
+        </div>
+      )}
     </div>
   );
 };

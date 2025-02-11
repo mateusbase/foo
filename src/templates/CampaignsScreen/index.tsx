@@ -19,7 +19,7 @@ const CampaignsScreen = (): JSX.Element => {
       <YouthBanner />
 
       <div className="container mt-14">
-        <h2 className="mb-6 w-[90%] text-wrap font-lato-thin text-3xl text-primary">
+        <h2 className="mb-14 w-[90%] text-wrap font-lato-thin text-3xl text-primary">
           Campanhas de conscientização de câncer
         </h2>
         <div className="mb-16 flex flex-col items-center gap-6 font-lato-regular text-base text-darkGray">
@@ -65,10 +65,10 @@ const CampaignsScreen = (): JSX.Element => {
         </div>
       </div>
 
-      <h1 className="mb-6 w-full text-center text-3xl text-primary md:text-4xl lg:text-left">
-        Conheça nossas campanhas
-      </h1>
-      <div className="mb-16 lg:hidden">
+      <div className="mb-16">
+        <h1 className="mb-6 w-full text-center text-3xl text-primary md:text-4xl lg:text-left">
+          Conheça nossas campanhas
+        </h1>
         <Swiper
           loop
           modules={[Navigation]}
@@ -79,6 +79,10 @@ const CampaignsScreen = (): JSX.Element => {
             },
             "640": {
               slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            "768": {
+              slidesPerView: 3,
               spaceBetween: 20,
             },
           }}
@@ -92,23 +96,13 @@ const CampaignsScreen = (): JSX.Element => {
         </Swiper>
 
         <SliderArrows
+          className="self-center"
           currentIndex={currentIndex}
           showSwiperPagination
           nextRef={nextRef}
           prevRef={prevRef}
           swiperRef={swiperRef}
         />
-      </div>
-
-      <div className="hidden w-full lg:flex lg:flex-row lg:gap-10">
-        {bannerImages.map((banner) => (
-          <img
-            key={banner.id}
-            src={banner.image}
-            alt={`Imagem número ${banner.id}`}
-            className="h-auto w-[31%]"
-          />
-        ))}
       </div>
     </PageLayout>
   );
