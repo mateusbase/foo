@@ -26,7 +26,7 @@ const SliderArrows = ({
 
   return (
     <div
-      className={`flex items-center justify-center space-x-4 align-middle lg:justify-end ${className}`}
+      className={`flex items-center justify-center space-x-4 align-middle ${className}`}
     >
       <button
         ref={prevRef}
