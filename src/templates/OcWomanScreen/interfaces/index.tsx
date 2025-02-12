@@ -1,6 +1,12 @@
 export interface WomanBenefitsMock {
-  id?: number;
+  id: number;
   title: string;
+  description: string;
+}
+
+export interface VideoProps {
+  id: number;
+  src: string;
   description: string;
 }
 
