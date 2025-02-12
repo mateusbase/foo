@@ -62,6 +62,13 @@ export const healthServices1 = [
     serviceDescription:
       "Cuidados paliativos são realizados por uma equipe multidisciplinar que promove assistência para melhoria da qualidade de vida e também no alívio e prevenção do sofrimento dos pacientes com doenças avançadas. Saiba mais.",
   },
+  {
+    id: 10,
+    slug: "oc-mulher",
+    serviceTitle: "OC Mulher",
+    serviceDescription:
+      "O OC Mulher é um programa dedicado a saúde da mulher para o cuidado integral. O objetivo é o controle dos cânceres femininos com estratégias de prevenção, diagnóstico precoce, tratamento e suporte multiprofissional continuado.",
+  },
 ];
 
 export const healthServices2 = [

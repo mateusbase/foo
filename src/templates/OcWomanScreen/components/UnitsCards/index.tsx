@@ -1,7 +1,7 @@
 import BaseButton from "@/components/Button";
 import { useRouter } from "next/router";
 import { MarkerCircleIcon } from "@/components/Icons";
-import { UnitsCardProps } from "./types";
+import { UnitCardProps } from "../../interfaces";
 
 export default function UnitsCard({
   unitName,
@@ -10,8 +10,7 @@ export default function UnitsCard({
   city,
   hours,
   src,
-  width = "450px",
-}: UnitsCardProps): JSX.Element {
+}: UnitCardProps): JSX.Element {
   const router = useRouter();
 
   const handleUnitClick = (): void => {
@@ -28,39 +27,39 @@ export default function UnitsCard({
   };
 
   return (
-    // eslint-disable-next-line tailwindcss/classnames-order
-    <main className={`flex flex-col justify-between gap-8 max-w-[${width}] `}>
+    <main className="flex min-h-[715px] w-full flex-col items-center justify-between gap-6 p-6">
       <div className="w-full">
         <img
           src={src || "assets/images/cancer-center/cancer-center-units.jpg"}
           alt="Imagem de unidade"
-          className="block size-full lg:hidden"
+          className="block h-[250px] w-full object-cover"
         />
       </div>
-      <section>
-        <section className="flex items-center gap-1">
-          <MarkerCircleIcon className="text-secondary" />
-          <h1 className="ml-2 text-[26px] text-primary">{unitName}</h1>
-        </section>
 
-        <section className="mt-6 flex flex-col text-lg text-darkGray">
+      <section className="flex min-h-[220px] w-full grow flex-col gap-7">
+        <div className="flex items-center gap-2">
+          <MarkerCircleIcon className="text-secondary" />
+          <h1 className="text-[26px] font-semibold text-primary">{unitName}</h1>
+        </div>
+
+        <div className="mt-4 text-lg text-darkGray">
           <p>{address}</p>
           <p>{complement}</p>
           <p className="font-bold">{city}</p>
-        </section>
+        </div>
 
-        <section className="mt-8">
+        <div className="mt-4">
           <p className="text-lightGray">{hours}</p>
-        </section>
+        </div>
       </section>
 
-      <section className="flex flex-col items-center gap-2 lg:flex-row">
-        <BaseButton className="w-3/5 text-white lg:w-52" color="primary">
+      <section className="mt-auto flex w-full flex-col items-center gap-4 lg:flex-row lg:justify-center">
+        <BaseButton className="w-1/2 text-white" color="primary">
           Agende uma consulta
         </BaseButton>
 
         <BaseButton
-          className="w-3/5 font-bold lg:w-44"
+          className="w-1/2 font-bold"
           color="primary"
           variant="bordered"
           onClick={handleUnitClick}

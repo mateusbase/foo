@@ -21,4 +21,9 @@ export interface BaseSelectProps {
   labelPlacement?: "inside" | "outside" | "outside-left";
   defaultSelectedKey?: string | number;
   noBorder?: boolean;
+  classNames?: {
+    trigger?: string;
+    label?: string;
+    value?: string;
+  };
 }
