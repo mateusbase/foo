@@ -11,6 +11,7 @@ const OncoPdoTestScreen = dynamic(
 const OcPalliativeCareScreen = dynamic(
   () => import("@/templates/OcPalliativeCareScreen"),
 );
+const OCAccess = dynamic(() => import("@/templates/OCAccess"));
 
 const Service = (): JSX.Element => {
   const router = useRouter();
@@ -32,6 +33,8 @@ const Service = (): JSX.Element => {
         return <OncoPdoTestScreen />;
       case "oc-cuidados-paliativos":
         return <OcPalliativeCareScreen />;
+      case "oc-acesso":
+        return <OCAccess />;
       default:
         return <ServiceScreen />;
     }
