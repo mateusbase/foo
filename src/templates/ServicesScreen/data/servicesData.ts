@@ -62,6 +62,13 @@ export const healthServices1 = [
     serviceDescription:
       "Cuidados paliativos são realizados por uma equipe multidisciplinar que promove assistência para melhoria da qualidade de vida e também no alívio e prevenção do sofrimento dos pacientes com doenças avançadas. Saiba mais.",
   },
+  {
+    id: 11,
+    slug: "oc-acesso",
+    serviceTitle: "OC Acesso",
+    serviceDescription:
+      "Conheça OC ACESSO. A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.",
+  },
 ];
 
 export const healthServices2 = [
