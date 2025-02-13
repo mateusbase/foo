@@ -1,3 +1,5 @@
+import ServiceText from "@/components/ServicesSection/components/ServiceText";
+
 export const healthServices1 = [
   {
     id: 1,
@@ -63,6 +65,13 @@ export const healthServices1 = [
       "Cuidados paliativos são realizados por uma equipe multidisciplinar que promove assistência para melhoria da qualidade de vida e também no alívio e prevenção do sofrimento dos pacientes com doenças avançadas. Saiba mais.",
   },
   {
+    id: 10,
+    slug: "veinviewer",
+    serviceTitle: "Veinviewer",
+    serviceDescription:
+      "Visualizador de veia que utiliza luz infravermelha para detectar o mapa vascular do paciente em alta definição e reduz o número de punções nos pacientes.",
+  },
+  {
     id: 11,
     slug: "oc-acesso",
     serviceTitle: "OC Acesso",
@@ -80,14 +89,14 @@ export const healthServices2 = [
       "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
   },
   {
-    id: 4,
+    id: 2,
     slug: "analise-patologica",
     serviceTitle: "Jornada Molecular",
     serviceDescription:
       "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
   },
   {
-    id: 5,
+    id: 3,
     slug: "analise-patologica",
     serviceTitle: "Cuidados Paliativos",
     serviceDescription:
