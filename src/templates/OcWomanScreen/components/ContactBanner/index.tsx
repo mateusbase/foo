@@ -12,16 +12,16 @@ const ContactBanner = (): JSX.Element => {
         height={1080}
       />
 
-      <div className="mb-5 flex flex-col gap-12 bg-custom-gradient-light px-10 pb-40 pt-12 font-lato-regular text-white md:py-14 md:pl-7 md:pr-20">
-        <h1 className="text-center text-4xl">
+      <div className="mb-5 flex flex-col gap-12 bg-custom-gradient-light px-10 pb-40 pt-12 font-lato-regular text-white md:pb-[99px] md:pl-[138px] md:pr-[140px] md:pt-[90px]">
+        <h1 className="text-center text-4xl md:text-5xl">
           Ficou interessada em saber mais sobre o OC Mulher?
         </h1>
-        <p className="text-center text-xl">
+        <p className="text-center text-xl md:text-2xl">
           Entre em contato para tirar dúvidas e entender como médicos e
           pacientes acessam o programa com nossos especialistas na prevenção e
           tratamento de tumores femininos.
         </p>
-        <BaseButton className="border border-white bg-transparent text-white">
+        <BaseButton className="mx-auto border border-white bg-transparent text-white md:w-3/5">
           <span className="text-lg">Conversar pelo WhatsApp</span>
         </BaseButton>
       </div>

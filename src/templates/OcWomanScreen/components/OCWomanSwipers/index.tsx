@@ -9,6 +9,7 @@ import { UnitCardProps, VideoProps, WomanBenefitsMock } from "../../interfaces";
 const CardsSwiper = (): JSX.Element => (
   <BaseSwiper<WomanBenefitsMock>
     data={womanBenefitsMock}
+    className="md:hidden"
     renderItem={(benefit) => (
       <BenefitsCards
         id={benefit.id}
@@ -24,6 +25,11 @@ const VideosSwiper = (): JSX.Element => (
     data={[
       {
         id: 1,
+        src: "https://www.youtube.com/embed/GoHN_plQBqs",
+        description: "OC Mulher",
+      },
+      {
+        id: 2,
         src: "https://www.youtube.com/embed/GoHN_plQBqs",
         description: "OC Mulher",
       },

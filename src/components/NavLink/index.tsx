@@ -12,7 +12,7 @@ export default function NavLink({ route }: NavLinkProps): JSX.Element {
         color="success"
         href={route.pathname}
         size="md"
-        className={`text-primary ${isSelected && "font-bold"}`}
+        className={`text-primary lg:text-sm xl:text-base ${isSelected && "font-bold"}`}
       >
         {route.label}
       </Link>

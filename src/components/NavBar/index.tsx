@@ -186,7 +186,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
                 alt="Logo"
-                className="w-[250px] max-w-none xl2:w-[300px]"
+                className="w-[250px] max-w-none lg:w-[180px] xl:w-[300px]"
               />
             </NavbarBrand>
 
@@ -270,12 +270,14 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
 
                 <div className="flex size-full flex-row items-center justify-center gap-2 bg-secondary text-white xl2:p-6">
                   <Link
-                    className="flex w-full min-w-44 items-center justify-center text-white xl2:min-w-80 xl2:text-lg"
+                    className="flex w-full min-w-44 items-center justify-center text-white lg:w-[90%] lg:min-w-12 xl2:min-w-80 xl2:text-lg"
                     href="/agende-sua-consulta"
                   >
                     <CalendarIcon size={1} className="mr-2 text-white" />
 
-                    <span className="lg:block xl2:hidden">Agendamento</span>
+                    <span className="lg:block lg:text-sm xl2:hidden">
+                      Agendamento
+                    </span>
 
                     <span className="hidden xl2:block">
                       Agende uma consulta ou exame

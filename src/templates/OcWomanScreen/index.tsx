@@ -7,6 +7,8 @@ import {
   VideosSwiper,
 } from "./components/OCWomanSwipers";
 import ServicesLocations from "./components/ServicesLocations";
+import womanBenefitsMock from "./data/woman-benefits.mock";
+import BenefitsCards from "./components/benefitsCards";
 
 export default function OcWomanScreen(): JSX.Element {
   return (
@@ -16,6 +18,44 @@ export default function OcWomanScreen(): JSX.Element {
       showBreadcrumb
     >
       <HealthSpaceBanner />
+
+      <div className="hidden md:block lg:hidden">
+        <div className="-mb-20 md:flex md:flex-row">
+          {womanBenefitsMock.slice(0, 2).map((benefit) => (
+            <div key={benefit.id} className="md:w-1/2">
+              <BenefitsCards
+                id={benefit.id}
+                title={benefit.title}
+                description={benefit.description}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="md:flex md:justify-center">
+          {womanBenefitsMock.slice(2, 3).map((benefit) => (
+            <div key={benefit.id} className="md:w-1/2">
+              <BenefitsCards
+                id={benefit.id}
+                title={benefit.title}
+                description={benefit.description}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="hidden lg:flex lg:flex-row lg:justify-between">
+        {womanBenefitsMock.map((benefit) => (
+          <div key={benefit.id} className="lg:w-1/3">
+            <BenefitsCards
+              id={benefit.id}
+              title={benefit.title}
+              description={benefit.description}
+            />
+          </div>
+        ))}
+      </div>
 
       {CardsSwiper()}
 
