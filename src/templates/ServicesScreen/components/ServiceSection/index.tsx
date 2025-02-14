@@ -42,6 +42,7 @@ export default function ServiceSection({
       const matchesLetter = service.serviceTitle
         .toUpperCase()
         .startsWith(selectedLetter);
+
       const matchesSearch = valueSearch
         ? service.serviceTitle.toLowerCase().includes(valueSearch.toLowerCase())
         : true;
