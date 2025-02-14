@@ -16,6 +16,7 @@ export interface BaseSelectProps {
   onChange?: (value: string | number) => void;
   width?: string;
   borderStyle?: string;
+  selectedKey?: string;
   startContent?: React.ReactNode;
   endContent?: React.ReactNode;
   labelPlacement?: "inside" | "outside" | "outside-left";
