@@ -28,9 +28,12 @@ const BaseSwiper = <T extends { id: number }>({
           nextEl: nextRef.current,
         }}
         onBeforeInit={onBeforeInit}
+        className="w-full"
       >
         {data.map((item) => (
-          <SwiperSlide key={item.id}>{renderItem(item)}</SwiperSlide>
+          <SwiperSlide key={item.id} className="w-full">
+            {renderItem(item)}
+          </SwiperSlide>
         ))}
       </Swiper>
 
@@ -40,7 +43,7 @@ const BaseSwiper = <T extends { id: number }>({
         nextRef={nextRef}
         showSwiperPagination
         currentIndex={currentIndex}
-        className="my-7"
+        className="my-7 lg:my-1"
       />
     </div>
   );

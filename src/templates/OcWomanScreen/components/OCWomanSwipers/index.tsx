@@ -64,9 +64,9 @@ const LocationsSwiper = (): JSX.Element => (
     spaceBetween={20}
     breakpoints={{
       768: { slidesPerView: 2, spaceBetween: 10 },
-      1024: { slidesPerView: 3, spaceBetween: 20 },
+      1024: { slidesPerView: 2, spaceBetween: 30 },
     }}
-    className="w-full"
+    className="lg:w-3/5"
   />
 );
 
