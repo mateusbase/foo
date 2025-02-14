@@ -1,4 +1,7 @@
+import BaseSwiper from "@/components/BaswSwiper";
 import PageLayout from "@/components/PageLayout";
+import { specialtiesMock } from "./data/specialtyDataMock";
+import SpecialtyCard from "./components/SpecialtyCards";
 
 const OcImmunologyScreen = (): JSX.Element => {
   return (
@@ -11,6 +14,12 @@ const OcImmunologyScreen = (): JSX.Element => {
         <h1 className="text-2xl text-primary lg:text-[40px]">
           Especialidades atendidas
         </h1>
+
+        <BaseSwiper
+          data={specialtiesMock}
+          renderItem={(specialty) => <SpecialtyCard specialty={specialty} />}
+          className="md:hidden"
+        />
       </div>
     </PageLayout>
   );

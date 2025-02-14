@@ -6,39 +6,33 @@ type DermatologyIconProps = React.SVGProps<SVGSVGElement> & {
   className?: string;
 };
 
-const DermatologyIcon = ({
-  size = 1,
-  color = "text-primary",
-  className = "",
-  ...props
-}: DermatologyIconProps): JSX.Element => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size * 63}
-      height={size * 38}
-      fill="none"
-      viewBox="0 0 63 38"
-      className={`${color} ${className}`}
-      {...props}
-    >
-      <mask
-        id="mask0_3726_13270"
-        width="63"
-        height="38"
-        x="0"
-        y="0"
-        maskUnits="userSpaceOnUse"
-        style={{ maskType: "luminance" }}
+const SVGComponent = (props: DermatologyIconProps): JSX.Element => (
+  <svg
+    width={56}
+    height={57}
+    viewBox="0 0 56 57"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    {...props}
+  >
+    <rect y={0.5} width={56} height={56} fill="url(#pattern0_6481_32382)" />
+    <defs>
+      <pattern
+        id="pattern0_6481_32382"
+        patternContentUnits="objectBoundingBox"
+        width={1}
+        height={1}
       >
-        <path fill="#fff" d="M62.339 0h-62v38h62z" />
-      </mask>
-      <g fill="currentColor" mask="url(#mask0_3726_13270)">
-        <path d="M46.819 10.338c-7.374 0-15.572-5.071-15.918-5.287A42 42 0 0 0 25.94 2.51 27.3 27.3 0 0 0 15.805 0c-.422 0-.854.02-1.284.059h-.042C7.875.617.779 5.007.709 5.051a.77.77 0 0 1-.411.117v12.795a46 46 0 0 1 5.009-2.507 27.4 27.4 0 0 1 10.5-2.533c7.374 0 15.572 5.071 15.918 5.287a42 42 0 0 0 4.96 2.541 27.3 27.3 0 0 0 10.136 2.51c3.421-.15 6.78-.967 9.888-2.408a43 43 0 0 0 5.209-2.644.77.77 0 0 1 .41-.116V5.3a44.7 44.7 0 0 1-7.32 3.411 24.6 24.6 0 0 1-8.19 1.627" />
-        <path d="M15.805 27.395c7.374 0 15.572 5.071 15.918 5.287a42 42 0 0 0 4.96 2.541 27.3 27.3 0 0 0 10.136 2.51c.422 0 .854-.02 1.284-.059h.042c6.6-.556 13.7-4.945 13.77-4.99a.77.77 0 0 1 .41-.117V19.773a46 46 0 0 1-5.008 2.507 27.4 27.4 0 0 1-10.5 2.533c-7.374 0-15.572-5.071-15.918-5.287a42 42 0 0 0-4.961-2.541 27.3 27.3 0 0 0-10.133-2.512c-3.422.15-6.781.967-9.888 2.408a43 43 0 0 0-5.21 2.644.77.77 0 0 1-.41.116v12.794a44.7 44.7 0 0 1 7.319-3.413 24.6 24.6 0 0 1 8.189-1.627" />
-      </g>
-    </svg>
-  );
-};
-
-export default DermatologyIcon;
+        <use xlinkHref="#image0_6481_32382" transform="scale(0.0113636)" />
+      </pattern>
+      <image
+        id="image0_6481_32382"
+        width={88}
+        height={88}
+        xlinkHref="data:image/png;base64,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"
+      />
+    </defs>
+  </svg>
+);
+export default SVGComponent;

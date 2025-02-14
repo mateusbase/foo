@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const AllergySPecialty = (
+const AllergySpecialty = (
   props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>,
 ): JSX.Element => (
   <svg
@@ -31,4 +31,5 @@ const AllergySPecialty = (
     </defs>
   </svg>
 );
-export default AllergySPecialty;
+
+export default AllergySpecialty;
