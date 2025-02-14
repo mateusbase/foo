@@ -66,13 +66,20 @@ export const healthServices1 = [
   },
   {
     id: 10,
+    slug: "oc-mulher",
+    serviceTitle: "OC Mulher",
+    serviceDescription:
+      "O OC Mulher é um programa dedicado a saúde da mulher para o cuidado integral. O objetivo é o controle dos cânceres femininos com estratégias de prevenção, diagnóstico precoce, tratamento e suporte multiprofissional continuado.",
+  },
+  {
+    id: 11,
     slug: "veinviewer",
     serviceTitle: "Veinviewer",
     serviceDescription:
       "Visualizador de veia que utiliza luz infravermelha para detectar o mapa vascular do paciente em alta definição e reduz o número de punções nos pacientes.",
   },
   {
-    id: 11,
+    id: 12,
     slug: "oc-acesso",
     serviceTitle: "OC Acesso",
     serviceDescription:
