@@ -15,6 +15,7 @@ const OcPalliativeCareScreen = dynamic(
 const OCWomanScreen = dynamic(() => import("@/templates/OcWomanScreen"));
 
 const OCAccess = dynamic(() => import("@/templates/OCAccess"));
+const VeinviewerScreen = dynamic(() => import("@/templates/VeinviewerScreen"));
 
 
 const Service = (): JSX.Element => {
@@ -41,6 +42,8 @@ const Service = (): JSX.Element => {
         return <OCWomanScreen />;    
       case "oc-acesso":
         return <OCAccess />;
+      case "veinviewer":
+        return <VeinviewerScreen />;
       default:
         return <ServiceScreen />;
     }
