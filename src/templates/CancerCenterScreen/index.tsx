@@ -12,7 +12,7 @@ export default function CancerCenterScreen(): JSX.Element {
   return (
     <PageLayout title="Primeiro Cancer Center Oncoclínicas como Membro Colaborativo Internacional do Dana-Farber Cancer Institute">
       <div className="flex flex-col-reverse lg:mt-10 lg:h-[688px] lg:flex-row">
-        <div className="full-bleed bg-custom-gradient-dark p-10 lg:w-3/5 lg:rounded-bl-[100px] lg:px-16 lg:py-20">
+        <div className="full-bleed bg-custom-gradient-dark p-10 lg:w-3/5 lg:rounded-bl-[100px] lg:px-16 xl:py-20">
           <h1 className="text-4xl text-white lg:text-5xl">
             Sobre a parceria colaborativa
           </h1>
@@ -144,9 +144,8 @@ export default function CancerCenterScreen(): JSX.Element {
             }}
           >
             {unitsMock.map((unit) => (
-              <SwiperSlide>
+              <SwiperSlide key={unit.id}>
                 <UnitsCard
-                  key={unit.id}
                   id={unit.id}
                   address={unit.address}
                   unitName={unit.name}

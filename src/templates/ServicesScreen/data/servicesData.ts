@@ -69,6 +69,13 @@ export const healthServices1 = [
     serviceDescription:
       "O OC Mulher é um programa dedicado a saúde da mulher para o cuidado integral. O objetivo é o controle dos cânceres femininos com estratégias de prevenção, diagnóstico precoce, tratamento e suporte multiprofissional continuado.",
   },
+  {
+    id: 11,
+    slug: "oc-acesso",
+    serviceTitle: "OC Acesso",
+    serviceDescription:
+      "Conheça OC ACESSO. A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.",
+  },
 ];
 
 export const healthServices2 = [
