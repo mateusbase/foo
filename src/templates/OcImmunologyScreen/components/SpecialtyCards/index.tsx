@@ -10,7 +10,7 @@ const SpecialtyCard = ({
       key={specialty.id}
       className="mt-8 flex flex-row items-center gap-6 rounded-[20px] border border-primary py-[30.5px] pl-8 align-middle"
     >
-      {specialty.image}
+      {specialty.image2}
       <p className="text-2xl text-primary md:text-xl">{specialty.name}</p>
     </div>
   );
