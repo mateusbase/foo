@@ -25,6 +25,12 @@ const OcImmunologyScreen = (): JSX.Element => {
         />
       </div>
 
+      <div className="hidden md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+        {specialtiesMock.map((specialty) => (
+          <SpecialtyCard specialty={specialty} />
+        ))}
+      </div>
+
       <div className="mt-16">
         <h1 className="mb-14 text-2xl text-primary lg:text-[40px]">
           Fluxo de atendimento
@@ -35,6 +41,12 @@ const OcImmunologyScreen = (): JSX.Element => {
           renderItem={(service) => <ServiceFLuxCards services={service} />}
           className="md:hidden"
         />
+      </div>
+
+      <div className="mb-28 hidden flex-col gap-7 md:flex lg:flex-row">
+        {ServiceFluxMock.map((service) => (
+          <ServiceFLuxCards services={service} />
+        ))}
       </div>
 
       <ServicesLocations />

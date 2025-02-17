@@ -9,7 +9,7 @@ const ServicesLocations = (): JSX.Element => {
   return (
     <div className="mb-10 flex w-full flex-col lg:h-[694px] lg:flex-row lg:gap-8">
       <div className="full-bleed mb-11 bg-custom-gradient-light pb-10 pl-10 pr-7 pt-9 text-white lg:mb-0 lg:w-2/5 lg:pb-[256px] lg:pl-16 lg:pr-24 lg:pt-16">
-        <span className="text-2xl">
+        <span className="text-2xl lg:text-5xl">
           Um serviço contínuo que acompanha o paciente do início ao final do
           tratamento.
         </span>
@@ -28,6 +28,7 @@ const ServicesLocations = (): JSX.Element => {
           ]}
         />
       </div>
+
       <BaseSwiper<UnitCardProps>
         data={unitsData}
         renderItem={(unit) => (

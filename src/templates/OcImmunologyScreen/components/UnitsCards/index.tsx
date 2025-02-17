@@ -39,12 +39,12 @@ export default function UnitsCard({
       <section className="flex w-full flex-1 flex-col justify-between gap-4 lg:flex-none lg:gap-10">
         <div className="flex items-start gap-2">
           <MarkerCircleIcon className="shrink-0 text-secondary" />
-          <h1 className="text-xl font-semibold text-primary lg:text-xl xl:text-[26px]">
+          <h1 className="h-[62px] text-xl font-semibold text-primary lg:text-xl xl:text-[26px]">
             {unitName}
           </h1>
         </div>
 
-        <div className="text-lg text-darkGray">
+        <div className="h-[82px] text-lg text-darkGray">
           <p>{address}</p>
           <p>{complement}</p>
           <p className="font-bold">{city}</p>
