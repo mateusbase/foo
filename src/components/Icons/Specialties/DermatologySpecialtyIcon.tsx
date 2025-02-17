@@ -1,12 +1,8 @@
 import * as React from "react";
 
-type DermatologyIconProps = React.SVGProps<SVGSVGElement> & {
-  size?: number;
-  color?: string;
-  className?: string;
-};
-
-const SVGComponent = (props: DermatologyIconProps): JSX.Element => (
+const DermatologySpecialtyIcon = (
+  props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>,
+): JSX.Element => (
   <svg
     width={56}
     height={57}
@@ -35,4 +31,4 @@ const SVGComponent = (props: DermatologyIconProps): JSX.Element => (
     </defs>
   </svg>
 );
-export default SVGComponent;
+export default DermatologySpecialtyIcon;

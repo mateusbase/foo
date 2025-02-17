@@ -85,6 +85,13 @@ export const healthServices1 = [
     serviceDescription:
       "Conheça OC ACESSO. A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.",
   },
+  {
+    id: 13,
+    slug: "oc-imunologia",
+    serviceTitle: "OC Imunologia e centro de infusões",
+    serviceDescription:
+      "Unidades especializadas no tratamento de doenças autoimunes, inflamatórias e metabólicas, que proporcionam ao paciente um atendimento individual e acolhedor em uma estrutura completa, composta por equipamentos de alta tecnologia.",
+  },
 ];
 
 export const healthServices2 = [
