@@ -1,7 +1,10 @@
-import BaseSwiper from "@/components/BaswSwiper";
+import BaseSwiper from "@/components/BaseSwiper";
 import PageLayout from "@/components/PageLayout";
 import { specialtiesMock } from "./data/specialtyDataMock";
 import SpecialtyCard from "./components/SpecialtyCards";
+import ServiceFluxMock from "./data/serviceFluxData";
+import ServiceFLuxCards from "./components/ServiceFLuxCards";
+import ServicesLocations from "./components/ServiceLocations";
 
 const OcImmunologyScreen = (): JSX.Element => {
   return (
@@ -21,6 +24,20 @@ const OcImmunologyScreen = (): JSX.Element => {
           className="md:hidden"
         />
       </div>
+
+      <div className="mt-16">
+        <h1 className="mb-14 text-2xl text-primary lg:text-[40px]">
+          Fluxo de atendimento
+        </h1>
+
+        <BaseSwiper
+          data={ServiceFluxMock}
+          renderItem={(service) => <ServiceFLuxCards services={service} />}
+          className="md:hidden"
+        />
+      </div>
+
+      <ServicesLocations />
     </PageLayout>
   );
 };

@@ -1,4 +1,4 @@
-import BaseSwiper from "@/components/BaswSwiper";
+import BaseSwiper from "@/components/BaseSwiper";
 import womanBenefitsMock from "../../data/woman-benefits.mock";
 import BenefitsCards from "../benefitsCards";
 import VideoCard from "../videoCard";
