@@ -20,11 +20,9 @@ const OcCelullarTherapyScreen = (): JSX.Element => {
   const [activeItem, setActiveItem] = useState<string>(options[0].key);
 
   const handleSelectChange = (value: string | number): void => {
-    console.log("Item selecionado:", value);
     setActiveItem(value.toString());
 
-    const offset = window.innerWidth >= 1024 ? -50 : -110;
-    console.log("Offset aplicado:", offset);
+    const offset = -50;
 
     scroller.scrollTo(`section-${value}`, {
       duration: 800,
@@ -58,13 +56,13 @@ const OcCelullarTherapyScreen = (): JSX.Element => {
       showBreadcrumb
     >
       <div className="mb-14 flex flex-col items-start lg:mt-20 lg:flex-row">
-        <div className="mt-16 self-center md:self-start lg:hidden">
+        <div className="mt-16 w-full self-center md:self-start lg:hidden">
           <BaseSelect
             options={options}
             defaultSelectedKey={options[0].key}
             onChange={handleSelectChange}
             color="primary"
-            className="flex h-14 w-[400px] items-center justify-center rounded-full border border-primary py-[15.5px] text-center text-lg font-bold md:w-[321px]"
+            className="flex h-14 w-full items-center justify-center rounded-full border border-primary py-[15.5px] text-center text-lg font-bold md:w-2/5"
             labelPlacement="outside"
             noBorder
             startContent={<IoMenu className="mr-3 text-primary" size={24} />}
