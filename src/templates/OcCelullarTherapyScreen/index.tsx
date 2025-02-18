@@ -4,6 +4,9 @@ import { IoMenu } from "react-icons/io5";
 import { scroller } from "react-scroll";
 import MenuItem from "@/components/MenuItem";
 import { useState } from "react";
+import { Image } from "@heroui/react";
+import ShareOptions from "@/components/ShareOptions";
+import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import {
   FirstParagraph,
   SecondParagraph,
@@ -88,6 +91,14 @@ const OcCelullarTherapyScreen = (): JSX.Element => {
             <FirstParagraph />
             <SecondParagraph />
             <ThirdParagraph />
+            <Image
+              src="/assets/images/ocCellularTherapy/oc_therapy_big.png"
+              alt="Banner OC Terapia Celular"
+              className="mb-40 mt-10"
+              width={1134}
+            />
+
+            <ShareOptions options={socialNetwork} />
           </div>
         </div>
 
@@ -96,6 +107,24 @@ const OcCelullarTherapyScreen = (): JSX.Element => {
           <SecondParagraph />
           <ThirdParagraph />
         </div>
+      </div>
+
+      <div className="mb-20 flex items-center justify-center md:hidden">
+        <Image
+          src="/assets/images/ocCellularTherapy/oc_therapy_small.png"
+          alt="Banner OC Terapia Celular"
+          width={350}
+        />
+      </div>
+      <div className="mb-20 hidden items-center justify-center md:flex lg:hidden">
+        <Image
+          src="/assets/images/ocCellularTherapy/oc_therapy_medium.png"
+          alt="Banner OC Terapia Celular"
+          width={1134}
+        />
+      </div>
+      <div className="mb-24 w-full lg:hidden">
+        <ShareOptions options={socialNetwork} />
       </div>
     </PageLayout>
   );
