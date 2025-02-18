@@ -1,0 +1,25 @@
+import FullbleedBanner from "@/components/FullbleedBanner";
+import PageLayout from "@/components/PageLayout";
+
+export default function OcNavigationScreen(): JSX.Element {
+  let imageSrc = "/assets/images/oc-navigation/navigation_banner_sm.png";
+  if (window.innerWidth > 1024) {
+    imageSrc = "/assets/images/oc-navigation/navigation_banner_lg.png";
+  } else if (window.innerWidth > 640) {
+    imageSrc = "/assets/images/oc-navigation/navigation_banner_md.png";
+  }
+
+  return (
+    <PageLayout
+      title="OC Navegação"
+      subtitle="Em busca de oferecer assistência individualizada aos pacientes, apresentamos o programa OC Navegação, proporcionando suporte, acolhimento e monitoramento clínico durante todas as etapas do tratamento.
+"
+    >
+      <FullbleedBanner
+        title="O que é o programa OC Navegação do paciente?"
+        description="Assistência individualizada oferecida a pacientes, familiares e cuidadores, a fim de apoiá-los em todas as fases do tratamento, oferecendo acolhimento, suporte clínico durante toda a trajetória, apoiando e direcionando para equipe médica e multidisciplinar de referência."
+        src={imageSrc}
+      />
+    </PageLayout>
+  );
+}
