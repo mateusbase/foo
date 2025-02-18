@@ -92,6 +92,13 @@ export const healthServices1 = [
     serviceDescription:
       "Unidades especializadas no tratamento de doenças autoimunes, inflamatórias e metabólicas, que proporcionam ao paciente um atendimento individual e acolhedor em uma estrutura completa, composta por equipamentos de alta tecnologia.",
   },
+  {
+    id: 15,
+    slug: "oc-terapia-celular",
+    serviceTitle: "OC Terapia Celular",
+    serviceDescription:
+      "Para alcançar o futuro da medicina personalizada, expandimos fronteiras",
+  },
 ];
 
 export const healthServices2 = [
