@@ -61,7 +61,7 @@ export default function TypesOfCancerScreen(): JSX.Element {
               id={cancer.id}
               name={cancer.name}
               description={cancer.description}
-              icon={cancer.icon}
+              icon={cancer.icon2}
             />
           ))}
         </div>
