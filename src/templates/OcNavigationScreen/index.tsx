@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import BaseSwiper from "@/components/BaseSwiper";
 import ServicesLocations from "@/components/ServicesLocation";
 import SimpleCard from "@/components/SimpleCard";
+import SimpleIconCard from "@/components/SimpleIconCards";
 import benefitsMock from "./benefitsMock";
 import BenefitsCard from "./BenefitsCard";
 
@@ -40,7 +41,7 @@ export default function OcNavigationScreen(): JSX.Element {
           <BaseSwiper
             data={benefitsMock}
             renderItem={(benefit) => (
-              <BenefitsCard
+              <SimpleIconCard
                 key={benefit.id}
                 description={benefit.description}
                 icon={benefit.icon}
@@ -52,7 +53,7 @@ export default function OcNavigationScreen(): JSX.Element {
 
         <div className="mb-11 hidden grid-cols-1 items-stretch md:mt-8 md:grid md:auto-rows-fr md:gap-4 lg:mt-12 lg:grid-cols-3 lg:gap-7">
           {benefitsMock.map((benefit) => (
-            <BenefitsCard
+            <SimpleIconCard
               key={benefit.id}
               description={benefit.description}
               icon={benefit.icon}
