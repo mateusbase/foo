@@ -14,7 +14,7 @@ const BenefitsCard = ({
   return (
     <div
       key={key}
-      className="flex h-[190px] flex-row items-center gap-4 rounded-[20px] border border-lightGray py-[53.5px] pl-5 pr-6 md:my-2 md:h-[110px] md:py-[25.5px] lg:my-0 lg:h-[143px]"
+      className="flex h-full flex-row items-center gap-4 rounded-[20px] border border-lightGray py-[53.5px] pl-5 pr-6 md:my-4 md:py-[25.5px] lg:my-0"
     >
       <Image
         src={icon}

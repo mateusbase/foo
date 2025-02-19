@@ -1,8 +1,15 @@
 import FullbleedBanner from "@/components/FullbleedBanner";
 import PageLayout from "@/components/PageLayout";
 import BaseSwiper from "@/components/BaseSwiper";
+import ServicesLocations from "@/components/ServicesLocation";
 import benefitsMock from "./benefitsMock";
 import BenefitsCard from "./BenefitsCard";
+
+const informationArray = [
+  "Estamos com você durante todo o tratamento",
+  " Na Oncoclínicas, assumimos o compromisso de estar ao seu lado durante toda a jornada do tratamento oncológico. Nosso propósito é claro: cuidar sem limites.",
+  "Encontre a unidade mais próxima e entre em contato:",
+];
 
 export default function OcNavigationScreen(): JSX.Element {
   let imageSrc = "/assets/images/oc-navigation/navigation_banner_sm.png";
@@ -42,7 +49,7 @@ export default function OcNavigationScreen(): JSX.Element {
           />
         </div>
 
-        <div className="mb-11 hidden grid-cols-1 md:mt-8 md:grid lg:mt-12 lg:grid-cols-3 lg:gap-7">
+        <div className="mb-11 hidden grid-cols-1 items-stretch md:mt-8 md:grid md:auto-rows-fr md:gap-4 lg:mt-12 lg:grid-cols-3 lg:gap-7">
           {benefitsMock.map((benefit) => (
             <BenefitsCard
               key={benefit.id}
@@ -52,6 +59,8 @@ export default function OcNavigationScreen(): JSX.Element {
           ))}
         </div>
       </div>
+
+      <ServicesLocations content={informationArray} />
     </PageLayout>
   );
 }
