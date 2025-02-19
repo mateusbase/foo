@@ -99,6 +99,13 @@ export const healthServices1 = [
     serviceDescription:
       "Para alcançar o futuro da medicina personalizada, expandimos fronteiras",
   },
+  {
+    id: 16,
+    slug: "oc-navegacao",
+    serviceTitle: "OC Navegação",
+    serviceDescription:
+      "Em busca de oferecer assistência individualizada aos pacientes, apresentamos o programa OC Navegação, proporcionando suporte, acolhimento e monitoramento clínico durante todas as etapas do tratamento.",
+  },
 ];
 
 export const healthServices2 = [

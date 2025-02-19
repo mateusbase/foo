@@ -26,6 +26,10 @@ const CelullarTherapyScreen = dynamic(
   () => import("@/templates/OcCelullarTherapyScreen"),
 );
 
+const OcNavigationScreen = dynamic(
+  () => import("@/templates/OcNavigationScreen"),
+);
+
 const Service = (): JSX.Element => {
   const router = useRouter();
   const { slug } = router.query;
@@ -56,6 +60,8 @@ const Service = (): JSX.Element => {
         return <ImmunologyScreen />;
       case "oc-terapia-celular":
         return <CelullarTherapyScreen />;
+      case "oc-navegacao":
+        return <OcNavigationScreen />;
       default:
         return <ServiceScreen />;
     }

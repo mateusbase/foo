@@ -27,21 +27,19 @@ export default function UnitsCard({
   };
 
   return (
-    <main className="flex min-h-[715px] w-full flex-col items-center gap-6 p-6 lg:h-[560px] lg:min-h-[650px] lg:p-0">
-      <div className="w-full">
+    <main className="rounded-lgp-6 flex h-[650px] w-full flex-col items-center gap-6 lg:mb-10 lg:h-[600px]">
+      <div className="h-[250px] w-full">
         <img
           src={src || "assets/images/cancer-center/cancer-center-units.jpg"}
           alt="Imagem de unidade"
-          className="block h-[250px] w-full shrink-0 object-cover xl:w-full"
+          className="size-full object-cover"
         />
       </div>
 
-      <section className="flex w-full flex-1 flex-col justify-between gap-4 lg:flex-none lg:gap-10">
+      <section className="flex w-full flex-1 flex-col justify-between gap-4">
         <div className="flex items-start gap-2">
           <MarkerCircleIcon className="shrink-0 text-secondary" />
-          <h1 className="text-[26px] font-semibold text-primary lg:text-xl xl:text-[26px]">
-            {unitName}
-          </h1>
+          <h1 className="text-[22px] font-semibold text-primary">{unitName}</h1>
         </div>
 
         <div className="text-lg text-darkGray">
@@ -50,12 +48,10 @@ export default function UnitsCard({
           <p className="font-bold">{city}</p>
         </div>
 
-        <div>
-          <p className="text-lightGray">{hours}</p>
-        </div>
+        <p className="text-lightGray">{hours}</p>
       </section>
 
-      <section className="mt-auto flex w-full flex-col items-center gap-4 lg:mt-0 lg:flex-row lg:justify-center">
+      <section className="mt-auto flex w-full flex-col items-center gap-4 lg:flex-row lg:justify-center">
         <BaseButton
           className="w-3/5 text-white lg:text-sm xl:text-base"
           color="primary"
