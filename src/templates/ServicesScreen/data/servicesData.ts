@@ -106,6 +106,13 @@ export const healthServices1 = [
     serviceDescription:
       "Em busca de oferecer assistência individualizada aos pacientes, apresentamos o programa OC Navegação, proporcionando suporte, acolhimento e monitoramento clínico durante todas as etapas do tratamento.",
   },
+  {
+    id: 17,
+    slug: "de-life",
+    serviceTitle: "DeLife",
+    serviceDescription:
+      "A DeLife é uma empresa da Oncoclínicas&Co que fornece medicação oncológica oral para pacientes oferecendo apoio continuado durante seu tratamento.",
+  },
 ];
 
 export const healthServices2 = [

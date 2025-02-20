@@ -46,6 +46,10 @@ body {
   .full-bleed-md{
     @apply relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 md:static md:left-0 md:w-full md:max-w-full md:translate-x-0;
   }
+
+  .full-bleed-lg {
+    @apply relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 ;
+  }
 }
 
 @layer base {

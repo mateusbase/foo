@@ -17,7 +17,7 @@ const SimpleCard = ({
   icon,
 }: SimpleCardProps): JSX.Element => {
   return (
-    <div className="flex min-h-[314px] w-full flex-col justify-between gap-6 rounded-2xl border border-darkGray bg-white px-[27px] pt-6 md:min-h-[314px] md:w-1/2 lg:w-1/4">
+    <div className="flex min-h-[314px] w-full flex-col justify-between gap-6 rounded-2xl border border-darkGray bg-white px-[27px] pt-6 md:min-h-[314px] lg:w-1/4 lg:pb-11">
       <div className="flex grow flex-col">
         <div className="flex flex-row items-center gap-6">
           {icon && (
