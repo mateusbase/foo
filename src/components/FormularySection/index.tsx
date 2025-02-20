@@ -12,17 +12,21 @@ interface Field {
   options?: { key: string; value: string; label: string }[];
 }
 
-interface GenericFormProps {
+interface FormularySectionProps {
+  title?: string;
+  subtitle?: string;
   additionalFields?: Field[];
   background?: boolean;
-  onSubmit: (data: Record<string, string>) => void;
+  onSubmit?: (data: Record<string, string>) => void;
   className?: string;
   hasTelephone?: boolean;
   buttonStyle?: string;
   buttonText?: string;
 }
 
-export default function GenericForm({
+export default function FormularySection({
+  title = "",
+  subtitle = "",
   additionalFields = [],
   background = false,
   onSubmit,
@@ -30,7 +34,7 @@ export default function GenericForm({
   hasTelephone = false,
   buttonStyle = "",
   buttonText = "Enviar",
-}: GenericFormProps): JSX.Element {
+}: FormularySectionProps): JSX.Element {
   const [formData, setFormData] = useState<Record<string, string>>({});
 
   const handleChange = (
@@ -43,50 +47,79 @@ export default function GenericForm({
 
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
-    onSubmit(formData);
+    if (onSubmit) {
+      onSubmit(formData);
+    }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className={`w-full max-w-lg p-6 ${background ? "bg-gray-foreground" : "bg-white"} ${className}`}
+      className={`flex w-full max-w-lg flex-col items-center gap-7 p-8 pt-16 text-center ${background ? "bg-gray-foreground" : "bg-white"} ${className}`}
     >
+      {title && <h1 className="mb-4 text-4xl text-primary">{title}</h1>}
+      {subtitle && (
+        <p className="mb-9 text-xl font-light text-darkGray">{subtitle}</p>
+      )}
       <div className="mb-4">
-        <BaseInput label="Nome Completo" onChange={handleChange} />
-      </div>
-
-      <div className="mb-4">
-        <BaseInput label="E-mail" onChange={handleChange} />
+        <BaseInput
+          placeholder="Nome completo"
+          backgroundColor="white"
+          onChange={handleChange}
+          borderColor="darkGray"
+          className="w-[322px] md:w-[676px]"
+        />
       </div>
 
       {hasTelephone && (
         <div className="mb-4">
-          <BaseInput label="Telefone" onChange={handleChange} />
+          <BaseInput
+            placeholder="Telefone"
+            borderColor="darkGray"
+            className="w-[322px] md:w-[676px]"
+            backgroundColor="white"
+            onChange={handleChange}
+          />
         </div>
       )}
 
+      <div className="mb-4">
+        <BaseInput
+          placeholder="E-mail"
+          backgroundColor="white"
+          borderColor="darkGray"
+          className="w-[322px] md:w-[676px]"
+          onChange={handleChange}
+        />
+      </div>
+
       {additionalFields.map((field) => (
         <div key={field.name} className="mb-4">
-          <label className="block text-gray-700">{field.label}</label>
-
           {(() => {
             switch (field.type) {
               case "textarea":
                 return (
                   <Textarea
                     name={field.name}
-                    placeholder="Digite sua mensagem"
+                    placeholder="Mensagem"
                     onChange={handleChange}
-                    className="mt-1 w-full rounded-md border border-gray-300 p-2"
+                    className="mt-1 h-[257px] w-[322px] rounded-[13px] border border-darkGray bg-white p-2 md:w-[676px]"
+                    classNames={{
+                      input:
+                        "text-[16px] text-darkGray placeholder:text-darkGray bg-white",
+                      inputWrapper: "bg-white",
+                    }}
                   />
                 );
 
               case "select":
                 return (
                   <BaseSelect
-                    labelPlacement="outside"
+                    labelPlacement="inside"
+                    label={field.label}
                     labelColor="darkGray"
                     defaultSelectedKey="1"
+                    className="w-[322px] md:w-[676px]"
                     endContent={<ArrowDownIcon color="text-primary" />}
                     options={field.options || []}
                   />
@@ -95,14 +128,22 @@ export default function GenericForm({
               case "input":
               default:
                 return (
-                  <BaseInput label={field.label} onChange={handleChange} />
+                  <BaseInput
+                    placeholder={field.label}
+                    borderColor="darkGray"
+                    backgroundColor="white"
+                    className="w-[322px] md:w-[676px]"
+                    onChange={handleChange}
+                  />
                 );
             }
           })()}
         </div>
       ))}
 
-      <BaseButton className={`mt-4 ${buttonStyle}`}>{buttonText}</BaseButton>
+      <BaseButton className={`mb-14 mt-4 w-[322px] text-white ${buttonStyle}`}>
+        {buttonText}
+      </BaseButton>
     </form>
   );
 }

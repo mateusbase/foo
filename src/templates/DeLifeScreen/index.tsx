@@ -2,7 +2,10 @@ import BaseSwiper from "@/components/BaseSwiper";
 import FullbleedBanner from "@/components/FullbleedBanner";
 import PageLayout from "@/components/PageLayout";
 import SimpleCard from "@/components/SimpleCard";
+import ColoredCard from "@/components/ColoredCard";
+import FormularySection from "@/components/FormularySection";
 import assistencyMock from "./assistencyMock";
+import coloredCardMock from "./coloredCardMock";
 
 export default function DeLifeScreen(): JSX.Element {
   let imageSrc = "/assets/images/delife/fullbleed_banner_sm.png";
@@ -57,6 +60,33 @@ export default function DeLifeScreen(): JSX.Element {
           />
         ))}
       </div>
+
+      <div className="mb-20 flex flex-col gap-14 lg:flex-row">
+        {coloredCardMock.map((item) => (
+          <ColoredCard
+            key={item.id}
+            title={item.title}
+            background={item.background}
+            description={item.description}
+            buttons={item.buttons}
+          />
+        ))}
+      </div>
+
+      <FormularySection
+        background
+        title="Seja um parceiro"
+        subtitle="Quer fazer parte desta iniciativa? Preencha o formulário abaixo para receber outras informações sobre como se tornar um parceiro DeLife."
+        className="full-bleed-lg w-full lg:-mb-12"
+        hasTelephone
+        additionalFields={[
+          {
+            name: "message",
+            type: "textarea",
+            label: "Mensagem",
+          },
+        ]}
+      />
     </PageLayout>
   );
 }

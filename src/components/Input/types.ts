@@ -26,4 +26,10 @@ export interface BaseInputProps {
   name?: "name" | "email" | "phone";
   error?: string | FieldError;
   maxLength?: number;
+  backgroundColor?: string;
+  borderColor?: string;
+  classNames?: {
+    input?: string;
+    inputWrapper?: string;
+  };
 }
