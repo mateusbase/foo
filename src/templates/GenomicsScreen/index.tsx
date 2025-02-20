@@ -1,7 +1,7 @@
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
 import { useState } from "react";
-import { menuContent, menuItems } from "@/templates/GenomicsScreen/helper";
+import { menuContent } from "@/templates/GenomicsScreen/helper";
 import BaseSelect from "@/components/Select";
 import { IoMenu } from "react-icons/io5";
 import genomicsExamsMock from "./genomicsExamsMock";
