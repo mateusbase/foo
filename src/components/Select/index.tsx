@@ -17,11 +17,14 @@ export default function BaseSelect({
   defaultSelectedKey,
   onChange,
   noBorder = false,
+  classNames,
+  placeholder,
 }: BaseSelectProps): JSX.Element {
   return (
     <Select
       color={color}
       variant={variant}
+      placeholder={placeholder || undefined}
       label={label}
       radius={radius}
       size={size}
@@ -41,6 +44,7 @@ export default function BaseSelect({
           : `border-${color} border-1`,
         label: `text-${labelColor} text-base`,
         value: `!text-primary text-base`,
+        ...classNames,
       }}
     >
       {options.map((option) => (
