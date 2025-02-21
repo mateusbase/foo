@@ -29,6 +29,9 @@ const CelullarTherapyScreen = dynamic(
 const OcNavigationScreen = dynamic(
   () => import("@/templates/OcNavigationScreen"),
 );
+const OCAboutLivingScreen = dynamic(
+  () => import("@/templates/OCAboutLivingScreen"),
+);
 
 const Service = (): JSX.Element => {
   const router = useRouter();
@@ -62,6 +65,8 @@ const Service = (): JSX.Element => {
         return <CelullarTherapyScreen />;
       case "oc-navegacao":
         return <OcNavigationScreen />;
+      case "oc-sobre-viver":
+        return <OCAboutLivingScreen />;
       default:
         return <ServiceScreen />;
     }
