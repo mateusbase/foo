@@ -35,7 +35,7 @@ const CardSwiper = (): JSX.Element => {
         loop
         style={{ width: "100%", height: "100%" }}
       >
-        {Array.from({ length: Math.ceil(10 / visibleCards) }).map((_) => (
+        {Array.from({ length: Math.ceil(10 / visibleCards) }).map(() => (
           <SwiperSlide
             style={{
               display: "flex",
