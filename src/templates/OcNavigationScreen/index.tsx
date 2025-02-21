@@ -2,10 +2,8 @@ import FullbleedBanner from "@/components/FullbleedBanner";
 import PageLayout from "@/components/PageLayout";
 import BaseSwiper from "@/components/BaseSwiper";
 import ServicesLocations from "@/components/ServicesLocation";
-import SimpleCard from "@/components/SimpleCard";
 import SimpleIconCard from "@/components/SimpleIconCards";
 import benefitsMock from "./benefitsMock";
-import BenefitsCard from "./BenefitsCard";
 
 const informationArray = [
   "Estamos com você durante todo o tratamento",

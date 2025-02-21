@@ -11,27 +11,23 @@ const OncoPdoTestScreen = dynamic(
 const OcPalliativeCareScreen = dynamic(
   () => import("@/templates/OcPalliativeCareScreen"),
 );
-
 const OCWomanScreen = dynamic(() => import("@/templates/OcWomanScreen"));
-
 const OCAccess = dynamic(() => import("@/templates/OCAccess"));
-
 const VeinviewerScreen = dynamic(() => import("@/templates/VeinviewerScreen"));
-
 const ImmunologyScreen = dynamic(
   () => import("@/templates/OcImmunologyScreen"),
 );
-
 const CelullarTherapyScreen = dynamic(
   () => import("@/templates/OcCelullarTherapyScreen"),
 );
-
 const OcNavigationScreen = dynamic(
   () => import("@/templates/OcNavigationScreen"),
 );
 const OCAboutLivingScreen = dynamic(
   () => import("@/templates/OCAboutLivingScreen"),
 );
+const DeLifeScreen = dynamic(() => import("@/templates/DeLifeScreen"));
+
 
 const Service = (): JSX.Element => {
   const router = useRouter();
@@ -67,6 +63,8 @@ const Service = (): JSX.Element => {
         return <OcNavigationScreen />;
       case "oc-sobre-viver":
         return <OCAboutLivingScreen />;
+      case "de-life":
+        return <DeLifeScreen />;
       default:
         return <ServiceScreen />;
     }

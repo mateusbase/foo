@@ -27,10 +27,14 @@ export default function ColoredCard({
     <div
       className={`border-purpleMedium ${
         background ? "bg-purpleMedium text-white" : "bg-white text-darkGray"
-      } min-h-72 w-full content-center justify-center rounded-xl border-3 p-4 md:p-16 ${className || ""}`}
+      } min-h-72 w-full content-center justify-center rounded-xl border-3 p-4 md:h-[343px] ${className || ""}`}
     >
-      <p className="mb-6 text-center font-lato-black text-4xl">{title}</p>
-      <p className="text-center font-lato-thin">{description}</p>
+      <p className="mb-6 px-6 py-9 text-center font-lato-black text-2xl font-bold md:text-4xl lg:text-2xl xl:text-4xl">
+        {title}
+      </p>
+      <p className="px-9 text-center font-lato-thin text-xl md:text-2xl lg:text-lg xl:text-2xl">
+        {description}
+      </p>
 
       {inputPlaceholder && (
         <input
@@ -40,12 +44,12 @@ export default function ColoredCard({
         />
       )}
 
-      <div className="mt-6 flex w-full flex-col items-center gap-4">
+      <div className="mt-9 flex w-full flex-col items-center gap-4 pb-8 lg:pb-11">
         {buttons.map((button) => (
           <BaseButton
             key={button.text}
             onClick={button.onClick}
-            className={`w-[85%] rounded-full px-12 py-3 text-lg md:w-64 ${button.className}`}
+            className={`mb-6 w-[85%] rounded-md px-12 py-3 text-lg md:mb-9 md:w-[322px] lg:mb-[41.5px] ${button.className}`}
           >
             {button.text}
           </BaseButton>

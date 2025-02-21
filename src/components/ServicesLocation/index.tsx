@@ -8,7 +8,7 @@ import InfoSection from "@/components/ServicesLocation/components/InfoSection";
 
 interface ServicesLocationsProps {
   title?: string;
-  content: string | string[];
+  content?: string | string[];
 }
 
 const ServicesLocations = ({
@@ -17,7 +17,7 @@ const ServicesLocations = ({
 }: ServicesLocationsProps): JSX.Element => {
   return (
     <div className="mb-10 flex w-full flex-col lg:h-[694px] lg:flex-row lg:gap-8">
-      <InfoSection title={title} content={content}>
+      <InfoSection title={title} content={content || ""}>
         <BaseSelect
           color="default"
           labelPlacement="outside"
