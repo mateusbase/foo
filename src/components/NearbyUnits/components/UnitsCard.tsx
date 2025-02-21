@@ -12,6 +12,7 @@ export default function UnitsCard({
   city,
   hours,
   specialties = [],
+  isPartner,
 }: UnitsCardProps): JSX.Element {
   const router = useRouter();
 
@@ -32,6 +33,9 @@ export default function UnitsCard({
   return (
     <main className="flex flex-col justify-between gap-8">
       <section>
+        {isPartner && (
+          <p className="bg-purpleDark text-xs text-white">UNIDADE PARCEIRA</p>
+        )}
         <section className="flex items-center gap-1">
           <MarkerCircleIcon className="-ml-2 text-secondary" />
           <h1 className="text-2xl font-bold uppercase text-primary">

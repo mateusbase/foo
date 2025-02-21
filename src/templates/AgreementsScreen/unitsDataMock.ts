@@ -1,4 +1,15 @@
-export const unitsDataMock = [
+export interface Unit {
+  id: number;
+  unitName: string;
+  address: string;
+  complement: string;
+  city: string;
+  hours: string;
+  specialties: string[];
+  isPartner?: boolean;
+}
+
+export const unitsData: Unit[] = [
   {
     id: 1,
     unitName: "Oc Faria Lima",
@@ -6,6 +17,7 @@ export const unitsDataMock = [
     complement: "6º e 10º Andar - Vila Olímpia",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
+    isPartner: true,
     specialties: [
       "Cardiologia oncológica",
       "Dermatologia",
@@ -23,6 +35,7 @@ export const unitsDataMock = [
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
     specialties: ["Anatomia Patológica", "Genômica"],
+    isPartner: false,
   },
   {
     id: 3,
@@ -31,6 +44,7 @@ export const unitsDataMock = [
     complement: "2º e 8º Andar - Higienópolis",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
+    isPartner: false,
     specialties: [
       "Cardiologia oncológica",
       "Dermatologia",
@@ -44,6 +58,7 @@ export const unitsDataMock = [
     id: 4,
     unitName: "Oc Morumbi",
     address: "Avenida Giovanni Gronchi, 5930",
+    isPartner: false,
     complement: "Morumbi",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
@@ -53,6 +68,7 @@ export const unitsDataMock = [
     id: 5,
     unitName: "Oc Vila Mariana",
     address: "Rua Domingos de Morais, 348",
+    isPartner: true,
     complement: "Vila Mariana",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
@@ -63,6 +79,7 @@ export const unitsDataMock = [
     unitName: "Oc Paulista",
     address: "Avenida Paulista, 1009",
     complement: "Bela Vista",
+    isPartner: true,
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
     specialties: ["Cardiologia oncológica", "Dermatologia"],
@@ -72,6 +89,7 @@ export const unitsDataMock = [
     unitName: "Oc Pinheiros",
     address: "Rua dos Pinheiros, 1256",
     complement: "Pinheiros",
+    isPartner: false,
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
     specialties: ["Genética Médica", "Oncologia clínica"],
@@ -81,6 +99,7 @@ export const unitsDataMock = [
     unitName: "Oc Ibirapuera",
     address: "Avenida Ibirapuera, 2332",
     complement: "Moema",
+    isPartner: false,
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
     specialties: ["Medicina paliativa", "Radioterapia"],
@@ -91,6 +110,7 @@ export const unitsDataMock = [
     address: "Rua Tuiuti, 1234",
     complement: "Tatuapé",
     city: "São Paulo - SP",
+    isPartner: true,
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
     specialties: ["Dermatologia", "Hematologia"],
   },

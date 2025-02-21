@@ -27,4 +27,5 @@ export interface BaseSelectProps {
     label?: string;
     value?: string;
   };
+  placeholder?: string;
 }
