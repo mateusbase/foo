@@ -6,7 +6,12 @@ export default function InfoCard({
   backgroundImageUrl,
   customPadding,
   children,
+  isBackgroundUrl = false,
 }: MedicalServiceCardProps): JSX.Element {
+  const backgroundUrl = isBackgroundUrl
+    ? backgroundImageUrl
+    : `url('/assets/images/${backgroundImageUrl}')`;
+
   return (
     <div
       className={`flex w-auto flex-col overflow-hidden ${
@@ -18,7 +23,7 @@ export default function InfoCard({
         style={{
           backgroundImage: `url('${
             backgroundImageUrl
-              ? `/assets/images/${backgroundImageUrl}`
+              ? backgroundUrl
               : "https://i.postimg.cc/3xkfhr8J/Captura-de-tela-2024-09-27-134021.png"
           }')`,
         }}

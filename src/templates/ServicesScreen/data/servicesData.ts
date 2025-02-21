@@ -93,6 +93,11 @@ export const healthServices1 = [
       "Unidades especializadas no tratamento de doenças autoimunes, inflamatórias e metabólicas, que proporcionam ao paciente um atendimento individual e acolhedor em uma estrutura completa, composta por equipamentos de alta tecnologia.",
   },
   {
+    id: 14,
+    slug: "oc-sobre-viver",
+    serviceTitle: "OC sobre VIVER",
+  },
+  {
     id: 15,
     slug: "oc-terapia-celular",
     serviceTitle: "OC Terapia Celular",
