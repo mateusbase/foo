@@ -1,4 +1,4 @@
-export const unitsDataMock = [
+export const unitsData = [
   {
     id: 1,
     unitName: "Oc Faria Lima",

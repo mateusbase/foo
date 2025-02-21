@@ -3,6 +3,7 @@ import BaseSelect from "@/components/Select";
 import { RxHamburgerMenu } from "react-icons/rx";
 import BaseButton from "@/components/Button";
 import AlertComponent from "./components/Alert";
+import CardSwiper from "./components/CardSwiper";
 
 export default function AgreementsScreen(): JSX.Element {
   return (
@@ -11,11 +12,11 @@ export default function AgreementsScreen(): JSX.Element {
       subtitle="Veja abaixo todas as operadoras credenciadas para a Oncoclínicas. Para saber sobre as coberturas do seu plano de saúde, entre em contato com seu convênio."
     >
       <AlertComponent />
-      <div className="mb-16 flex flex-col lg:flex-row">
+      <div className="mb-16 flex flex-col items-center lg:flex-row lg:items-center lg:gap-4">
         <BaseSelect
           color="primary"
           variant="bordered"
-          className="w-full lg:max-w-[300px]"
+          className="w-full lg:max-w-[255px]"
           labelPlacement="outside"
           placeholder="Convênio"
           radius="full"
@@ -24,7 +25,7 @@ export default function AgreementsScreen(): JSX.Element {
           }
           size="sm"
           classNames={{
-            trigger: "h-[52px] pl-[23px]  border-primary-foreground",
+            trigger: "h-[54px] pl-[23px] border-primary-foreground",
           }}
           options={[
             { key: 1, value: "1", label: "Unimed" },
@@ -35,7 +36,7 @@ export default function AgreementsScreen(): JSX.Element {
         <BaseSelect
           color="primary"
           variant="bordered"
-          className="w-full lg:max-w-[300px]"
+          className="w-full lg:max-w-[130px]"
           labelPlacement="outside"
           placeholder="UF"
           radius="full"
@@ -44,7 +45,7 @@ export default function AgreementsScreen(): JSX.Element {
           }
           size="sm"
           classNames={{
-            trigger: "h-[52px] pl-[23px] border-primary-foreground",
+            trigger: "h-[54px] pl-[23px] border-primary-foreground",
           }}
           options={[
             { key: 1, value: "1", label: "SP" },
@@ -55,7 +56,7 @@ export default function AgreementsScreen(): JSX.Element {
         <BaseSelect
           color="primary"
           variant="bordered"
-          className="w-full lg:max-w-[300px]"
+          className="w-full lg:max-w-[255px]"
           labelPlacement="outside"
           placeholder="Cidade"
           radius="full"
@@ -64,7 +65,7 @@ export default function AgreementsScreen(): JSX.Element {
           }
           size="sm"
           classNames={{
-            trigger: "h-[52px] pl-[23px] border-primary-foreground",
+            trigger: "h-[54px] pl-[23px] border-primary-foreground",
           }}
           options={[
             { key: 1, value: "1", label: "São Paulo" },
@@ -79,11 +80,14 @@ export default function AgreementsScreen(): JSX.Element {
           color="primary"
           size="md"
           radius="sm"
-          className="mt-4 w-full text-white"
+          className="mt-4 w-full text-lg text-white lg:h-[54px] lg:w-[239px]"
         >
           <span>Buscar</span>
         </BaseButton>
       </div>
+
+      <CardSwiper />
+      <AlertComponent />
     </PageLayout>
   );
 }

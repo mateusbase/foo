@@ -9,7 +9,7 @@ export interface Unit {
   isPartner?: boolean;
 }
 
-export const unitsData: Unit[] = [
+export const unitsDataMock: Unit[] = [
   {
     id: 1,
     unitName: "Oc Faria Lima",
@@ -113,5 +113,35 @@ export const unitsData: Unit[] = [
     isPartner: true,
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
     specialties: ["Dermatologia", "Hematologia"],
+  },
+  {
+    id: 10,
+    unitName: "Oc Barra Funda",
+    address: "Avenida Marquês de São Vicente, 1619",
+    complement: "Barra Funda",
+    city: "São Paulo - SP",
+    hours: "Segunda a sexta-feira das 08:00 às 18:00",
+    isPartner: false,
+    specialties: ["Oncologia clínica", "Genética Médica"],
+  },
+  {
+    id: 11,
+    unitName: "Oc Santo Amaro",
+    address: "Avenida Santo Amaro, 1234",
+    complement: "Santo Amaro",
+    city: "São Paulo - SP",
+    hours: "Segunda a sexta-feira das 08:00 às 18:00",
+    isPartner: true,
+    specialties: ["Cardiologia oncológica", "Radioterapia"],
+  },
+  {
+    id: 12,
+    unitName: "Oc Liberdade",
+    address: "Rua Galvão Bueno, 456",
+    complement: "Liberdade",
+    city: "São Paulo - SP",
+    hours: "Segunda a sexta-feira das 08:00 às 18:00",
+    isPartner: false,
+    specialties: ["Dermatologia", "Medicina paliativa"],
   },
 ];
