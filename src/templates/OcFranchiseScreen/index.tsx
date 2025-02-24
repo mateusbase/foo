@@ -7,6 +7,7 @@ import FormularySection from "@/components/FormularySection";
 import RightFullbleedBanner from "./components/RightFullbleedBanner";
 import PurpleFullbleedBanner from "./components/PurpleFullBleedBanner";
 import formInputs from "./formInputs";
+import CountrySection from "./components/CountrySection";
 
 export default function OcFranchiseScreen(): JSX.Element {
   const deviceType = useDeviceType();
@@ -32,34 +33,7 @@ export default function OcFranchiseScreen(): JSX.Element {
         src="/assets/images/oc-franquia/banner/image (3).png"
       />
 
-      <div>
-        <h1 className="w-3/5 text-2xl text-primary">
-          Grande presença em território nacional
-        </h1>
-        <p className="mt-6 text-darkGray">
-          A OC Franquias foi criada para concretizar o modelo inovador de
-          cuidado oncológico da Oncoclínicas&CO, e levar o tratamento de
-          qualidade a todo o Brasil, tornando-o acessível em qualquer cidade
-          como oportunidade para médicos especialistas interessados em investir.
-        </p>
-
-        <Image
-          src="/assets/images/oc-franquia/country-info/image 66 (1).png"
-          alt="OC Franquia"
-          width={1920}
-          height={1080}
-          className="mt-8 size-full object-cover"
-        />
-
-        <div className="mb-16 mt-10 flex flex-col text-center text-3xl text-primary">
-          <span>39 cidades brasileiras</span>
-          <span>15 estados</span>
-          <span>+ Distrito Federal</span>
-          <BaseButton className="mt-10 rounded-md bg-purpleMedium text-white">
-            Faça o download
-          </BaseButton>
-        </div>
-      </div>
+      <CountrySection />
 
       <PurpleFullbleedBanner
         title="Dedicação para vencer o câncer, por meio de uma sólida equação de valor"

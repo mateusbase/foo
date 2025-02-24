@@ -4,7 +4,7 @@ import BaseInput from "../Input";
 import BaseButton from "../Button";
 import BaseSelect from "../Select";
 
-interface Field {
+export interface Field {
   name: string;
   label: string;
   type?: "input" | "textarea" | "select";

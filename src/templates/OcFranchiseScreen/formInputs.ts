@@ -1,4 +1,6 @@
-const formInputs = [
+import { Field } from "@/components/FormularySection";
+
+const formInputs: Field[] = [
   { name: "document", type: "input", label: "CPF" },
   { name: "city", type: "input", label: "Cidade" },
   {
