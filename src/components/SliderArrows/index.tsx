@@ -41,7 +41,7 @@ const SliderArrows = ({
         />
       </button>
       {showSwiperPagination && (
-        <span className="text-sm text-primary">{currentIndex}</span>
+        <span className="text-xl text-primary">{currentIndex}</span>
       )}
       <button
         ref={nextRef}
