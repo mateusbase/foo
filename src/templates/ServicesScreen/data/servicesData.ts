@@ -1,5 +1,3 @@
-import ServiceText from "@/components/ServicesSection/components/ServiceText";
-
 export const healthServices1 = [
   {
     id: 1,
@@ -117,6 +115,13 @@ export const healthServices1 = [
     serviceTitle: "DeLife",
     serviceDescription:
       "A DeLife é uma empresa da Oncoclínicas&Co que fornece medicação oncológica oral para pacientes oferecendo apoio continuado durante seu tratamento.",
+  },
+  {
+    id: 18,
+    slug: "telemedicina",
+    serviceTitle: "Telemedicina",
+    serviceDescription:
+      "A telemedicina é uma modalidade da medicina que realiza consultas, diagnósticos e monitoramentos de pacientes de forma remota garantindo conforto e proteção aos pacientes.",
   },
 ];
 

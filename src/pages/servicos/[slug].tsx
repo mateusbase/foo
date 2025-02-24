@@ -27,7 +27,9 @@ const OCAboutLivingScreen = dynamic(
   () => import("@/templates/OCAboutLivingScreen"),
 );
 const DeLifeScreen = dynamic(() => import("@/templates/DeLifeScreen"));
-
+const TelemedicineScreen = dynamic(
+  () => import("@/templates/TelemedicineScreen"),
+);
 
 const Service = (): JSX.Element => {
   const router = useRouter();
@@ -65,6 +67,8 @@ const Service = (): JSX.Element => {
         return <OCAboutLivingScreen />;
       case "de-life":
         return <DeLifeScreen />;
+      case "telemedicina":
+        return <TelemedicineScreen />;
       default:
         return <ServiceScreen />;
     }

@@ -7,6 +7,7 @@ interface FullbleedBannerProps {
   src: string;
   hasButton?: boolean;
   buttonText?: string;
+  isVideo?: boolean;
 }
 
 const FullbleedBanner = ({
@@ -15,18 +16,29 @@ const FullbleedBanner = ({
   src,
   hasButton = false,
   buttonText,
+  isVideo = false,
 }: FullbleedBannerProps): JSX.Element => {
   return (
     <div className="full-bleed mb-14 lg:mt-12 lg:flex lg:flex-row lg:items-stretch">
       <div className="lg:w-[55%]">
         <div className="size-full">
-          <Image
-            src={src}
-            alt={title}
-            width={1920}
-            height={1080}
-            className="size-full object-fill lg:rounded-bl-[100px]"
-          />
+          {isVideo ? (
+            <video
+              src={src}
+              controls
+              className="size-full object-cover lg:rounded-bl-[100px]"
+            >
+              <track kind="captions" srcLang="en" label="English" />
+            </video>
+          ) : (
+            <Image
+              src={src}
+              alt={title}
+              width={1920}
+              height={1080}
+              className="size-full object-fill lg:rounded-bl-[100px]"
+            />
+          )}
         </div>
       </div>
 
