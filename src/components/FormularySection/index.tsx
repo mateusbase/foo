@@ -3,7 +3,6 @@ import { Textarea } from "@heroui/react";
 import BaseInput from "../Input";
 import BaseButton from "../Button";
 import BaseSelect from "../Select";
-import { ArrowDownIcon } from "../Icons";
 
 interface Field {
   name: string;
@@ -103,7 +102,7 @@ export default function FormularySection({
                     name={field.name}
                     placeholder="Mensagem"
                     onChange={handleChange}
-                    className="mt-1 h-[257px] w-[322px] rounded-[13px] border border-darkGray bg-white p-2 md:w-[676px]"
+                    className="h-[257px] w-[322px] rounded-[13px] border border-darkGray bg-white p-2 md:w-[676px]"
                     classNames={{
                       input:
                         "text-[16px] text-darkGray placeholder:text-darkGray bg-white",
@@ -115,12 +114,15 @@ export default function FormularySection({
               case "select":
                 return (
                   <BaseSelect
-                    labelPlacement="inside"
-                    label={field.label}
-                    labelColor="darkGray"
-                    defaultSelectedKey="1"
-                    className="w-[322px] md:w-[676px]"
-                    endContent={<ArrowDownIcon color="text-primary" />}
+                    placeholder={field.label}
+                    labelPlacement="outside-left"
+                    className="-ml-4 w-[322px] md:w-[676px]"
+                    classNames={{
+                      trigger:
+                        "bg-white h-[50px] w-[322px] md:w-[676px] text-darkGray placeholder:text-darkGray ",
+                      value: "text-lightGray",
+                      label: "hidden",
+                    }}
                     options={field.options || []}
                   />
                 );
