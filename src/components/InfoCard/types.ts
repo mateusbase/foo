@@ -10,4 +10,5 @@ export interface MedicalServiceCardProps {
   customPadding?: number;
   backgroundImageUrl?: string;
   children: ReactNode;
+  isBackgroundUrl?: boolean;
 }
