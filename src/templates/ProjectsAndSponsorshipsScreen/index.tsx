@@ -4,6 +4,8 @@ import BaseSwiper from "@/components/BaseSwiper";
 import { Image } from "@heroui/react";
 import FullbleedBanner from "./components/Fullbleed Banner";
 import fronts from "./fronts";
+import projectCardMocks from "./projectCardsMock";
+import ProjectCards from "./components/ProljectCards";
 
 export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
   const deviceType = useDeviceType();
@@ -48,10 +50,15 @@ export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
         </div>
       </div>
 
-      <div>
+      <div className="my-20">
         <h1 className="mb-3 text-2xl text-primary md:text-4xl">
           Investimentos
         </h1>
+        <p className="mt-4 text-base text-darkGray md:text-xl">
+          No último ano, incentivamos diversas frentes.
+        </p>
+
+        <ProjectCards projects={projectCardMocks} />
       </div>
     </PageLayout>
   );
