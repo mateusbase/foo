@@ -6,6 +6,8 @@ import FullbleedBanner from "./components/Fullbleed Banner";
 import fronts from "./fronts";
 import projectCardMocks from "./projectCardsMock";
 import ProjectCards from "./components/ProljectCards";
+import RoundedCards from "./components/RoundedCards";
+import supportedProjects from "./supportedProjects";
 
 export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
   const deviceType = useDeviceType();
@@ -59,6 +61,12 @@ export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
         </p>
 
         <ProjectCards projects={projectCardMocks} />
+      </div>
+      <div>
+        <h1 className="mb-10 text-2xl text-primary md:text-4xl">
+          Alguns projetos apoiados
+        </h1>
+        <RoundedCards data={supportedProjects} />
       </div>
     </PageLayout>
   );
