@@ -1,21 +1,14 @@
 import Image from "next/image";
-import BaseButton from "../Button";
 
 interface FullbleedBannerProps {
-  title: string;
   description?: string;
   src: string;
-  hasButton?: boolean;
-  buttonText?: string;
   isVideo?: boolean;
 }
 
 const FullbleedBanner = ({
-  title,
   description,
   src,
-  hasButton = false,
-  buttonText,
   isVideo = false,
 }: FullbleedBannerProps): JSX.Element => {
   return (
@@ -33,7 +26,7 @@ const FullbleedBanner = ({
           ) : (
             <Image
               src={src}
-              alt={title}
+              alt="Imagem banner"
               width={1920}
               height={1080}
               className="size-full object-fill lg:rounded-bl-[100px]"
@@ -42,14 +35,10 @@ const FullbleedBanner = ({
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 bg-custom-gradient-light px-10 pb-40 pt-12 font-lato-regular text-white md:py-14 md:pl-7 md:pr-20 lg:h-auto lg:w-[45%] lg:shrink-0 lg:pb-24 lg:pl-14 lg:pr-24 lg:pt-[72px]">
-        <h1 className="mb-8 text-5xl lg:text-xl xl:text-5xl">{title}</h1>
-        <p className="text-xl lg:text-base xl:text-xl">{description}</p>
-        {hasButton && (
-          <BaseButton className="mt-4 rounded bg-blue-500 px-6 py-2 text-white">
-            {buttonText}
-          </BaseButton>
-        )}
+      <div className="flex flex-col gap-5 bg-custom-gradient-light px-10 pb-10 pt-12 font-lato-regular text-white md:py-14 md:pl-7 md:pr-20 lg:h-auto lg:w-[45%] lg:shrink-0 lg:pb-24 lg:pl-14 lg:pr-24 lg:pt-[96px]">
+        <p className="text-center text-4xl lg:text-left lg:text-xl xl:text-4xl">
+          {description}
+        </p>
       </div>
     </div>
   );
