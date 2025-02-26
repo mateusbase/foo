@@ -2,12 +2,18 @@ import PageLayout from "@/components/PageLayout";
 import { useDeviceType } from "@/hooks/useDeviceType";
 import BaseSwiper from "@/components/BaseSwiper";
 import { Image } from "@heroui/react";
+import ShareOptions from "@/components/ShareOptions";
+import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import FullbleedBanner from "./components/Fullbleed Banner";
 import fronts from "./fronts";
 import projectCardMocks from "./projectCardsMock";
 import ProjectCards from "./components/ProljectCards";
 import RoundedCards from "./components/RoundedCards";
 import supportedProjects from "./supportedProjects";
+import ProjectsDescriptionCards from "./components/ProjectsDescriptionCards";
+import projectDescriptions from "./projectsdescription";
+import RightFullbleedBanner from "./components/RighFullbleedBanner";
+import LatestNewsSection from "./components/LatestNewsSection";
 
 export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
   const deviceType = useDeviceType();
@@ -15,6 +21,7 @@ export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
     deviceType !== "desktop"
       ? "/assets/images/projetos-e-patrocinios/image (4).png"
       : "/assets/images/projetos-e-patrocinios/image (5).png";
+
   return (
     <PageLayout title="Projetos & Patrocínios">
       <FullbleedBanner
@@ -40,7 +47,7 @@ export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
             renderItem={(item) => (
               <Image
                 src={item.image}
-                className="mb-6 h-full w-[350px] md:ml-0"
+                className="mb-6 h-full w-[350px] md:ml-0 lg:mb-10"
                 alt={item.alt}
               />
             )}
@@ -62,12 +69,46 @@ export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
 
         <ProjectCards projects={projectCardMocks} />
       </div>
-      <div>
-        <h1 className="mb-10 text-2xl text-primary md:text-4xl">
-          Alguns projetos apoiados
-        </h1>
-        <RoundedCards data={supportedProjects} />
+
+      <h1 className="mb-10 text-2xl text-primary md:text-4xl">
+        Alguns projetos apoiados
+      </h1>
+
+      <RoundedCards data={supportedProjects} />
+
+      <BaseSwiper
+        data={projectDescriptions}
+        renderItem={(project) => (
+          <ProjectsDescriptionCards
+            key={project.id}
+            description={project.description}
+            icon={project.icon}
+            title={project.title}
+          />
+        )}
+        className="mt-20 md:hidden"
+      />
+
+      <div className="mb-20 mt-10 hidden w-full flex-col justify-center gap-6 md:flex lg:grid lg:grid-cols-2">
+        {projectDescriptions.map((project) => (
+          <ProjectsDescriptionCards
+            key={project.id}
+            description={project.description}
+            icon={project.icon}
+            title={project.title}
+          />
+        ))}
       </div>
+
+      <RightFullbleedBanner
+        src="/assets/images/projetos-e-patrocinios/Imagem.png"
+        title="OC ACESSO"
+        description="O OC Acesso chegou para democratizar o acesso dos pacientes a consultas, exames e tratamentos com valores acessíveis e condições de pagamento facilitadas."
+        hasButton
+      />
+
+      <ShareOptions options={socialNetwork} />
+      <LatestNewsSection />
     </PageLayout>
   );
 }

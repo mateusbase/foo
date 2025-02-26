@@ -11,6 +11,7 @@ const BaseSwiper = <T extends { id: number }>({
   spaceBetween = 30,
   breakpoints,
   className = "",
+  hasArrows = true,
 }: BaseSwiperProps<T>): JSX.Element => {
   const { prevRef, nextRef, swiperRef, onBeforeInit, currentIndex } =
     useSwiperNavigation();
@@ -31,20 +32,22 @@ const BaseSwiper = <T extends { id: number }>({
         className="w-full"
       >
         {data.map((item) => (
-          <SwiperSlide key={item.id} className="w-full">
+          <SwiperSlide key={item.id} className="flex w-full justify-center">
             {renderItem(item)}
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <SliderArrows
-        swiperRef={swiperRef}
-        prevRef={prevRef}
-        nextRef={nextRef}
-        showSwiperPagination
-        currentIndex={currentIndex}
-        className="my-7 lg:my-1"
-      />
+      {hasArrows && (
+        <SliderArrows
+          swiperRef={swiperRef}
+          prevRef={prevRef}
+          nextRef={nextRef}
+          showSwiperPagination
+          currentIndex={currentIndex}
+          className="my-7 lg:my-1"
+        />
+      )}
     </div>
   );
 };

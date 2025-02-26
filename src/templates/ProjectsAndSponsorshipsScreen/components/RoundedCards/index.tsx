@@ -8,7 +8,7 @@ interface CardsData {
 
 const RoundedCards = ({ data }: CardsData): JSX.Element => {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
       {data.map((item) => (
         <InfoCard
           key={item.id}
