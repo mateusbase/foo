@@ -30,6 +30,9 @@ const DeLifeScreen = dynamic(() => import("@/templates/DeLifeScreen"));
 const TelemedicineScreen = dynamic(
   () => import("@/templates/TelemedicineScreen"),
 );
+const CryotherapyScreen = dynamic(
+  () => import("@/templates/CryotherapyScreen"),
+);
 
 const Service = (): JSX.Element => {
   const router = useRouter();
@@ -69,6 +72,8 @@ const Service = (): JSX.Element => {
         return <DeLifeScreen />;
       case "telemedicina":
         return <TelemedicineScreen />;
+      case "crioterapia":
+        return <CryotherapyScreen />;
       default:
         return <ServiceScreen />;
     }

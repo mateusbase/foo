@@ -123,6 +123,13 @@ export const healthServices1 = [
     serviceDescription:
       "A telemedicina é uma modalidade da medicina que realiza consultas, diagnósticos e monitoramentos de pacientes de forma remota garantindo conforto e proteção aos pacientes.",
   },
+  {
+    id: 19,
+    slug: "crioterapia",
+    serviceTitle: "Crioterapia",
+    serviceDescription:
+      "Método que realiza o resfriamento do couro cabeludo utilizado durante o tratamento oncológico para diminuir a queda do cabelo.",
+  },
 ];
 
 export const healthServices2 = [
