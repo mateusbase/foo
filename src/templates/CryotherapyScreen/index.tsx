@@ -4,6 +4,8 @@ import BaseSwiper from "@/components/BaseSwiper";
 import RightFullbleedBanner from "./components/RightFullbleedBanner";
 import CryotherapyCard from "./components/CryotherapyCard";
 import { cryotherapyMediumMock, cryotherapyMock } from "./cryotherapyMock";
+import CryotherapyExplanation from "./components/CryotherapyExplanation";
+import PurpleFullbleedBanner from "./components/PurpleFullbleedBanner";
 
 export default function CryotherapyScreen(): JSX.Element {
   const deviceType = useDeviceType();
@@ -44,7 +46,7 @@ export default function CryotherapyScreen(): JSX.Element {
               icon={item.icon}
             />
           )}
-          className="md:hidden"
+          className="mb-11 md:hidden"
         />
 
         <div className="mb-28 hidden flex-col gap-10 md:flex lg:hidden">
@@ -57,7 +59,7 @@ export default function CryotherapyScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="hidden flex-row gap-10 lg:flex">
+        <div className="mb-16 hidden flex-row gap-10 lg:flex">
           {cryotherapyMock.map((item) => (
             <CryotherapyCard
               key={item.id}
@@ -67,6 +69,24 @@ export default function CryotherapyScreen(): JSX.Element {
           ))}
         </div>
       </div>
+
+      <CryotherapyExplanation />
+
+      <PurpleFullbleedBanner
+        src="/assets/images/crioterapia/image (5).png"
+        title={
+          deviceType === "mobile"
+            ? "É superespecializado, é excelente, é pra mim"
+            : "Fazer mais pela vida, fazer o melhor pelo paciente."
+        }
+        description={
+          deviceType === "mobile"
+            ? "Estrutura completa, equipe especializada, pronta para me acolher e oferecer a melhor experiência em saúde."
+            : "A Oncoclínicas oferece serviços de diagnóstico, tratamento e atendimento especializado com suporte também para familiares, cuidadores e amigos através de equipe multidisciplinar."
+        }
+        hasButton
+        buttonText={deviceType === "mobile" ? "Saiba mais" : "Conheça"}
+      />
     </PageLayout>
   );
 }
