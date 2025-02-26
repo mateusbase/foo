@@ -8,4 +8,5 @@ export interface BaseSwiperProps<T> {
     { slidesPerView: number; spaceBetween?: number }
   >;
   className?: string;
+  hasArrows?: boolean;
 }

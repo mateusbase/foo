@@ -6,7 +6,6 @@ interface FullbleedBannerProps {
   src: string;
   description?: string;
   hasButton?: boolean;
-  buttonText?: string;
 }
 
 const RightFullbleedBanner = ({
@@ -14,16 +13,17 @@ const RightFullbleedBanner = ({
   src,
   hasButton = false,
   description,
-  buttonText,
 }: FullbleedBannerProps): JSX.Element => {
   return (
     <div className="full-bleed mb-14 flex flex-col-reverse md:flex-row md:items-stretch lg:mt-12">
-      <div className="flex h-[173px] flex-col gap-5 bg-custom-gradient-light py-11 pl-8 pr-16 font-lato-regular text-white md:h-[228px] md:w-1/2 md:pl-8 md:pr-20 md:pt-14 lg:h-[266px] lg:rounded-bl-[100px] lg:pb-12 lg:pl-16 lg:pr-11 lg:pt-[71px]">
-        <h1 className="mb-8 text-2xl lg:text-3xl xl:text-5xl">{title}</h1>
-        {description && <p className="text-lg lg:text-xl">{description}</p>}
+      <div className="flex h-[285px] flex-col gap-5 bg-custom-gradient-light py-11 pl-8 pr-16 font-lato-regular text-white md:w-1/2 md:pl-8 md:pr-20 md:pt-8 lg:h-[418px] lg:rounded-bl-[100px] lg:pb-12 lg:pl-16 lg:pr-11 lg:pt-[71px]">
+        <h1 className="text-2xl lg:text-2xl xl:text-5xl">{title}</h1>
+        {description && (
+          <p className="text-sm lg:mt-8 lg:text-xl">{description}</p>
+        )}
         {hasButton && (
-          <BaseButton className="mt-4 rounded bg-blue-500 px-6 py-2 text-white">
-            {buttonText}
+          <BaseButton className="h-12 w-60 border border-white bg-transparent px-16 py-3 text-lg text-white lg:mt-8">
+            Saiba mais
           </BaseButton>
         )}
       </div>
@@ -35,7 +35,7 @@ const RightFullbleedBanner = ({
             alt={title}
             width={1920}
             height={1080}
-            className="size-full object-cover md:h-[228px] lg:h-[266px]"
+            className="size-full object-cover"
           />
         </div>
       </div>
