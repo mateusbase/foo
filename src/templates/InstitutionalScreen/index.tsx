@@ -1,12 +1,12 @@
-// components/InstitutionalLayout.tsx
 import { IoMenu } from "react-icons/io5";
 import BaseSelect from "@/components/Select";
 import { useInstitutionalRouter } from "@/hooks/useInstitutionalRouter";
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
+import Footer from "@/components/Footer";
 import { InstitutionalOption } from "./data/institucionalOptions";
 
-function InstitutionalScreen({
+export default function InstitutionalScreen({
   options,
 }: {
   options: InstitutionalOption[];
@@ -15,7 +15,7 @@ function InstitutionalScreen({
     useInstitutionalRouter(options);
 
   return (
-    <PageLayout title="Institucional">
+    <PageLayout title="Institucional" showHeader mainOptions showSections>
       <div className="mt-2 flex flex-col lg:flex-row">
         <div className="mb-10 block w-full md:w-1/2 lg:hidden">
           <BaseSelect
@@ -25,6 +25,7 @@ function InstitutionalScreen({
             size="lg"
             startContent={<IoMenu className="text-primary" size={28} />}
             selectedKey={activeSlug}
+            defaultSelectedKey={activeSlug}
             labelPlacement="outside"
             options={options.map((opt) => ({
               key: opt.slug,
@@ -56,5 +57,3 @@ function InstitutionalScreen({
     </PageLayout>
   );
 }
-
-export default InstitutionalScreen;
