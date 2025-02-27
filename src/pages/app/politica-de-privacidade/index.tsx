@@ -1,5 +1,5 @@
-import PrivacyPolicyScreen from "@/templates/PrivacyPolicyScreen";
 import Page from "@/components/Page";
+import PrivacyPolicyScreen from "@/templates/PrivacyPolicyScreen";
 
 const PrivacyPolicy = (): JSX.Element => {
   return (
