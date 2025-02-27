@@ -1,7 +1,12 @@
 import PageLayout from "@/components/PageLayout";
 import { useDeviceType } from "@/hooks/useDeviceType";
 import { Image } from "@heroui/react";
+import BaseSwiper from "@/components/BaseSwiper";
+import BaseButton from "@/components/Button";
 import SpecialistCard from "./SpecialistCards";
+import reasonsMock from "./reasonsMock";
+import ReasonsCard from "./ReasonsCards";
+import ResidenceFullBanner from "./ResidenceFullBanner";
 
 export default function ResidenceScreen(): JSX.Element {
   const deviceType = useDeviceType();
@@ -65,7 +70,50 @@ export default function ResidenceScreen(): JSX.Element {
         <h1 className="mb-7 text-2xl text-primary md:mb-8 md:text-4xl lg:text-6xl">
           Por que escolher OC residência - Oncologia clínica?
         </h1>
+
+        <BaseSwiper
+          className="md:hidden"
+          data={reasonsMock}
+          renderItem={(item) => (
+            <ReasonsCard
+              key={item.id}
+              icon={item.icon}
+              description={item.description}
+              alt={item.alt}
+            />
+          )}
+        />
+
+        <div className="hidden flex-col md:flex lg:grid lg:grid-cols-3 lg:gap-7">
+          {reasonsMock.map((item) => (
+            <ReasonsCard
+              key={item.id}
+              icon={item.icon}
+              description={item.description}
+              alt={item.alt}
+            />
+          ))}
+        </div>
+        <div className="mb-10 flex flex-col gap-4 md:mb-16 md:flex-row lg:mb-20 lg:mt-8">
+          <BaseButton
+            className={`text-white md:w-[341px] ${deviceType !== "desktop" ? "bg-primary" : "bg-darkGray"}`}
+          >
+            Inscrições encerradas
+          </BaseButton>
+          <BaseButton className="border border-primary bg-white text-primary md:w-[341px]">
+            Ler edital completo
+          </BaseButton>
+        </div>
       </div>
+
+      <ResidenceFullBanner src="/assets/images/residencia/image (4).png" />
+
+      <h1 className="mb-3 text-2xl text-primary md:mb-4 md:text-[40px] lg:mb-2">
+        Para mais informações, envie e-mail para:
+      </h1>
+      <p className="mb-16 text-lg text-darkGray md:text-2xl">
+        coordenacao.posgraduacao@instituto-oncoclinicas.org.br
+      </p>
     </PageLayout>
   );
 }
