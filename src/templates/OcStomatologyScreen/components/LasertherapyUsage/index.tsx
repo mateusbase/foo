@@ -1,3 +1,5 @@
+import { Element } from "react-scroll";
+
 const benefitItems = [
   {
     id: 1,
@@ -27,7 +29,11 @@ const benefitItems = [
 
 const LasertherapyUsage = (): JSX.Element => {
   return (
-    <section className="text-darkGray lg:mb-6">
+    <Element
+      name="lasertherapy-usage"
+      id="lasertherapy-usage"
+      className="text-darkGray lg:mb-6"
+    >
       <h1 className="text-2xl text-primary md:text-[40px]">
         O uso da laserterapia e seus benefícios
       </h1>
@@ -50,7 +56,7 @@ const LasertherapyUsage = (): JSX.Element => {
         colaterais, realizado por um laser que acelera o processo de
         cicatrização e analgesia, atuando como ação anti-inflamatória.
       </p>
-    </section>
+    </Element>
   );
 };
 

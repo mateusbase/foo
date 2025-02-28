@@ -1,6 +1,8 @@
+import { Element } from "react-scroll";
+
 const HowProgramWorksSection = (): JSX.Element => {
   return (
-    <section className="text-darkGray">
+    <Element name="how-works" id="how-works" className="text-darkGray">
       <h1 className="text-2xl text-primary md:text-[40px]">
         Como o programa atua
       </h1>
@@ -10,7 +12,7 @@ const HowProgramWorksSection = (): JSX.Element => {
         ajuda na recuperação completa da saúde bucal do paciente, garantindo
         mais qualidade de vida e bem-estar físico, emocional e social.
       </p>
-    </section>
+    </Element>
   );
 };
 

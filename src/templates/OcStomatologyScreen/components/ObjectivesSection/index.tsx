@@ -1,3 +1,5 @@
+import { Element } from "react-scroll";
+
 const cardData = [
   {
     id: 1,
@@ -13,7 +15,7 @@ const cardData = [
 
 const ObjectivesSection = (): JSX.Element => {
   return (
-    <section className="mb-8 text-darkGray">
+    <Element name="objectives" id="objectives" className="mb-8 text-darkGray">
       <h1 className="mb-6 text-2xl text-primary md:text-[40px]">Objetivos</h1>
       <div className="flex flex-col gap-6 lg:flex-row">
         {cardData.map((card) => (
@@ -30,7 +32,7 @@ const ObjectivesSection = (): JSX.Element => {
           </div>
         ))}
       </div>
-    </section>
+    </Element>
   );
 };
 
