@@ -5,10 +5,15 @@ import ShareOptions from "@/components/ShareOptions";
 import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
+import BaseSwiper from "@/components/BaseSwiper";
 import WhatIsSection from "./components/WhatIsSection";
 import HowProgramWorksSection from "./components/HowProgramWorksSection";
 import LasertherapyUsage from "./components/LasertherapyUsage";
 import ObjectivesSection from "./components/ObjectivesSection";
+import LasertherapyBenefits from "./components/LasertherapyBenefits";
+import { laserBenefitsMock } from "./laserBenefitsMock";
+import BenefitsCards from "./components/BenefitsCards";
+import ComprovatedEficacy from "./components/ComprovatedEficacy";
 
 const menuItems = [
   { id: 1, name: "O que é?", key: 1 },
@@ -66,6 +71,34 @@ export default function OcStomatologyScreen(): JSX.Element {
           <HowProgramWorksSection />
           <LasertherapyUsage />
           <ObjectivesSection />
+          <LasertherapyBenefits />
+          <BaseSwiper
+            data={laserBenefitsMock}
+            renderItem={(benefit) => (
+              <BenefitsCards
+                key={benefit.id}
+                title={benefit.title}
+                icon={benefit.icon}
+                text={benefit.text}
+                isList={benefit.isList}
+                listItems={benefit.listItems}
+              />
+            )}
+            className="md:hidden"
+          />
+          <div className="hidden gap-5 md:flex">
+            {laserBenefitsMock.map((benefit) => (
+              <BenefitsCards
+                key={benefit.id}
+                title={benefit.title}
+                icon={benefit.icon}
+                text={benefit.text}
+                isList={benefit.isList}
+                listItems={benefit.listItems}
+              />
+            ))}
+          </div>
+          <ComprovatedEficacy />
 
           <ShareOptions options={socialNetwork} />
         </div>

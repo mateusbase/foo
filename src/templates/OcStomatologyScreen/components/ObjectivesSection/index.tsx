@@ -19,7 +19,7 @@ const ObjectivesSection = (): JSX.Element => {
         {cardData.map((card) => (
           <div
             key={card.id}
-            className="mb-8 flex h-[270px] flex-col items-center justify-center rounded-2xl border border-primary px-[31px] py-[41.5px] text-center md:h-[310px] lg:h-[350px] lg:w-1/2 xl:h-[282px]"
+            className="mb-8 flex h-[270px] flex-col items-center justify-center rounded-2xl border-4 border-primary px-[31px] py-[41.5px] text-center md:h-[310px] lg:h-[350px] lg:w-1/2 xl:h-[282px]"
           >
             <h2 className="mb-4 text-xl font-bold md:w-4/5 md:text-3xl lg:text-lg xl:text-2xl">
               {card.title}
