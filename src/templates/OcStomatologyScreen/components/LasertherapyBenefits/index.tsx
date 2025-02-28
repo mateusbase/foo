@@ -1,6 +1,12 @@
+import { Element } from "react-scroll";
+
 const LasertherapyBenefits = (): JSX.Element => {
   return (
-    <section className="text-darkGray">
+    <Element
+      name="lasertherapy-benefits"
+      id="lasertherapy-benefits"
+      className="text-darkGray"
+    >
       <h1 className="text-2xl text-primary md:text-[40px]">
         O uso da laserterapia e seus benefícios
       </h1>
@@ -8,7 +14,7 @@ const LasertherapyBenefits = (): JSX.Element => {
         Avaliações minuciosas detectam alterações na cavidade bucal para
         minimizar complicações em todas as fases do tratamento:
       </p>
-    </section>
+    </Element>
   );
 };
 
