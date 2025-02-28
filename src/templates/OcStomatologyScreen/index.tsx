@@ -49,10 +49,8 @@ export default function OcStomatologyScreen(): JSX.Element {
     const selectedMenuItem = menuItems.find(
       (item) => item.id === Number(value),
     );
-    console.log(value);
     setActiveItem(value.toString());
     const offset = -100;
-    console.log(selectedMenuItem);
     if (!selectedMenuItem) return;
 
     scroller.scrollTo(selectedMenuItem?.sectionName, {
