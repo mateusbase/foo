@@ -130,6 +130,12 @@ export const healthServices1 = [
     serviceDescription:
       "Método que realiza o resfriamento do couro cabeludo utilizado durante o tratamento oncológico para diminuir a queda do cabelo.",
   },
+  {
+    id: 20,
+    slug: "oc-estomatologia",
+    serviceTitle: "OC Estomatologia",
+    serviceDescription: "Saúde bucal durante todo o tratamento oncológico",
+  },
 ];
 
 export const healthServices2 = [
