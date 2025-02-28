@@ -1,7 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import ShareOptions from "@/components/ShareOptions";
 import socialNetwork from "@/components/ShareOptions/socialNetwork";
-import SimpleIconCard from "@/components/SimpleIconCards";
 import OCAboutLivingCard from "./components/OcAboutLivingCard";
 import CancerCardMock from "./components/CancerCard/CancerCardMock";
 import CancerCard from "./components/CancerCard";

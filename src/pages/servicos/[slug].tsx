@@ -33,6 +33,9 @@ const TelemedicineScreen = dynamic(
 const CryotherapyScreen = dynamic(
   () => import("@/templates/CryotherapyScreen"),
 );
+const OcStomatologyScreen = dynamic(
+  () => import("@/templates/OcStomatologyScreen"),
+);
 
 const Service = (): JSX.Element => {
   const router = useRouter();
@@ -74,6 +77,8 @@ const Service = (): JSX.Element => {
         return <TelemedicineScreen />;
       case "crioterapia":
         return <CryotherapyScreen />;
+      case "oc-estomatologia":
+        return <OcStomatologyScreen />;
       default:
         return <ServiceScreen />;
     }
