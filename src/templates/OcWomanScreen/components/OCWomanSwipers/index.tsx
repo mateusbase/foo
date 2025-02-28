@@ -38,10 +38,11 @@ const VideosSwiper = (): JSX.Element => (
       <VideoCard src={video.src} description={video.description} />
     )}
     slidesPerView={1}
+    className="mb-7"
     spaceBetween={30}
     breakpoints={{
       768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
+      1024: { slidesPerView: 3, spaceBetween: 10 },
     }}
   />
 );
@@ -66,7 +67,7 @@ const LocationsSwiper = (): JSX.Element => (
       768: { slidesPerView: 2, spaceBetween: 10 },
       1024: { slidesPerView: 2, spaceBetween: 30 },
     }}
-    className="lg:w-3/5"
+    className="mt-14 lg:w-3/5"
   />
 );
 
