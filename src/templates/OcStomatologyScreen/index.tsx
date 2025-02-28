@@ -1,8 +1,14 @@
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
 import BaseSelect from "@/components/Select";
+import ShareOptions from "@/components/ShareOptions";
+import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
+import WhatIsSection from "./components/WhatIsSection";
+import HowProgramWorksSection from "./components/HowProgramWorksSection";
+import LasertherapyUsage from "./components/LasertherapyUsage";
+import ObjectivesSection from "./components/ObjectivesSection";
 
 const menuItems = [
   { id: 1, name: "O que é?", key: 1 },
@@ -53,6 +59,15 @@ export default function OcStomatologyScreen(): JSX.Element {
               />
             ))}
           </div>
+        </div>
+
+        <div className="flex w-full flex-col gap-14 text-darkGray lg:w-[1061px]">
+          <WhatIsSection />
+          <HowProgramWorksSection />
+          <LasertherapyUsage />
+          <ObjectivesSection />
+
+          <ShareOptions options={socialNetwork} />
         </div>
       </div>
     </PageLayout>
