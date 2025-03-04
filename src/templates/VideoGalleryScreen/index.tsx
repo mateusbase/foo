@@ -4,6 +4,8 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import menuOptions from "./menuOptions";
 import SelectButtons from "./components/SelectButtons";
+import videoSectionsMock from "./videosMock";
+import VideoCardSection from "./components/VideoCardsSection";
 
 export default function VideoGalleryScreen(): JSX.Element {
   const [selectedOption, setSelectedOption] = useState<string | number>(1);
@@ -25,7 +27,7 @@ export default function VideoGalleryScreen(): JSX.Element {
         <BaseSelect
           defaultSelectedKey="1"
           labelPlacement="outside"
-          color="success"
+          color="primary"
           startContent={
             <RxHamburgerMenu size={25} className="mr-4 text-primary" />
           }
@@ -53,6 +55,14 @@ export default function VideoGalleryScreen(): JSX.Element {
           ))}
         </div>
       </div>
+      {videoSectionsMock.map((section) => (
+        <VideoCardSection
+          key={section.id}
+          title={section.title}
+          subtitle={section.subtitle}
+          videos={section.videos}
+        />
+      ))}
     </PageLayout>
   );
 }
