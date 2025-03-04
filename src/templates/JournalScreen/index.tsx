@@ -6,6 +6,9 @@ import PageHeader from "@/components/PageHeader";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import Breadcrumb from "@/components/Breadcrumb";
+import ShareOptions from "@/components/ShareOptions";
+import socialNetwork from "@/components/ShareOptions/socialNetwork";
+import FormularySection from "@/components/FormularySection";
 import NewsPreviewCard from "./components/NewsPreviewCard";
 import { newsItems } from "./optionsMock";
 
@@ -86,16 +89,62 @@ export default function JournalScreen(): JSX.Element {
             ))}
           </div>
         </div>
+        <div className="mb-10 flex flex-col justify-center gap-16 md:justify-start">
+          <BaseButton className="w-full bg-purpleLight text-white md:w-[322px]">
+            Faça o download
+          </BaseButton>
+          <ShareOptions options={socialNetwork} />
+        </div>
+        <div className="flex items-center justify-center">
+          <FormularySection
+            title="Para receber as próximas edições, cadastre-se aqui."
+            buttonText="Cadastrar"
+            additionalFields={[
+              {
+                label: "CRM",
+                type: "input",
+                name: "crm",
+              },
+              {
+                label: "UF",
+                type: "select",
+                name: "uf",
+                options: [
+                  {
+                    value: "SP",
+                    label: "SP",
+                    key: "1",
+                  },
+                  {
+                    value: "RJ",
+                    label: "RJ",
+                    key: "1",
+                  },
+                  {
+                    value: "MG",
+                    label: "MG",
+                    key: "1",
+                  },
+                ],
+              },
+              {
+                label: "Especialidade",
+                type: "input",
+                name: "especialidade",
+              },
+            ]}
+          />
+        </div>
       </BaseContainer>
 
-      <div className="hidden bg-gray-foreground py-20 lg:flex">
+      <div className="flex bg-gray-foreground py-20">
         <BaseContainer>
           <div>
             <p className="text-6xl font-light text-primary">
               Itens Relacionados
             </p>
           </div>
-          <div className="mt-10 grid w-full grid-cols-4">
+          <div className="mt-10 grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             {newsItems.map((news) => (
               <NewsPreviewCard
                 key={news.id}
