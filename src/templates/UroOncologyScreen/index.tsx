@@ -1,8 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import BaseButton from "@/components/Button";
-import { Image } from "@heroui/react";
 import BaseSwiper from "@/components/BaseSwiper";
-import SimpleIconCard from "@/components/SimpleIconCards";
 import cancerTypesMock from "./CancerTypesMock";
 import CancerTypesCard from "./CancerTypesCard";
 import PurpleFullBleedBanner from "./components/PurpleFullbleedBanner";

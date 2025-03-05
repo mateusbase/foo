@@ -9,6 +9,7 @@ import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import { LogoIcon } from "@/components/Icons";
 import { Image } from "@heroui/react";
+import Link from "next/link";
 import AcademyCard from "./components/AcademyCard";
 import EducationalCard from "./components/EducationalCard";
 import SliderVideos from "./components/SliderVideos";
@@ -19,7 +20,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import SliderMedicalService from "./components/SliderMedicalService";
 import Agenda from "./components/Agenda";
-import Link from "next/link";
 
 export default function OcInstitute(): JSX.Element {
   const { t } = useTranslation();

@@ -3,10 +3,9 @@ import { IoChevronForwardCircleOutline } from "react-icons/io5";
 
 interface ComplianceProps {
   title: string;
-  icon: string;
 }
 
-const ComplianceCards = ({ title, icon }: ComplianceProps): JSX.Element => {
+const ComplianceCards = ({ title }: ComplianceProps): JSX.Element => {
   return (
     <div className="flex flex-row items-center gap-2 rounded-[20px] border border-lightGray py-[19.5px] pl-5 pr-3 lg:h-[118] lg:w-[756px]">
       <Image

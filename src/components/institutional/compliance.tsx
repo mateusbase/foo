@@ -51,11 +51,7 @@ const Compliance: React.FC = () => {
         </h1>
         <div className="mt-11 grid grid-cols-1 gap-4 md:mx-8 lg:ml-[52px]">
           {complianceCardMock.map((card) => (
-            <ComplianceCards
-              key={card.id}
-              title={card.title}
-              icon={card.icon}
-            />
+            <ComplianceCards key={card.id} title={card.title} />
           ))}
         </div>
         <div className="full-bleed mb-10 mt-16 flex flex-col items-center bg-custom-gradient-dark-145deg pb-11 pl-[37px] pr-[29px] pt-[52px] text-white md:mb-16 md:mt-24 md:px-14 md:py-[130px] lg:mb-[141px] lg:h-[425px] lg:w-[1027px] lg:items-start lg:py-[50px] lg:pl-14 lg:pr-16">
