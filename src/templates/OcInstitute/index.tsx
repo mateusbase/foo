@@ -8,6 +8,7 @@ import BaseContainer from "@/components/Container";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import { LogoIcon } from "@/components/Icons";
+import { Image } from "@heroui/react";
 import AcademyCard from "./components/AcademyCard";
 import EducationalCard from "./components/EducationalCard";
 import SliderVideos from "./components/SliderVideos";
@@ -18,6 +19,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import SliderMedicalService from "./components/SliderMedicalService";
 import Agenda from "./components/Agenda";
+import Link from "next/link";
 
 export default function OcInstitute(): JSX.Element {
   const { t } = useTranslation();
@@ -31,6 +33,20 @@ export default function OcInstitute(): JSX.Element {
         subtitle={t("oc_institute.subtitle")}
         mainOptions={false}
       >
+        <div className="mt-[52px] grid grid-cols-1 gap-6 md:mt-11 md:grid-cols-2 md:gap-8 lg:mb-8 lg:flex lg:flex-row lg:gap-20">
+          <Link href="/instituto-oc/get-on-pro">
+            <Image src="/assets/images/oc-institute/Banner 1.png" />
+          </Link>
+          <Link href="/instituto-oc/especializacao-medica/fellowship">
+            <Image src="/assets/images/oc-institute/Banner 2.png" />
+          </Link>
+          <Link
+            href="/instituto-oc/especializacao-medica/residencia
+"
+          >
+            <Image src="/assets/images/oc-institute/Banner 3.png" />
+          </Link>
+        </div>
         <div className="mt-10 w-full">
           <EducationalCard />
         </div>
