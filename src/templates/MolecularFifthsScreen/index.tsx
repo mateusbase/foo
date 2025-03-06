@@ -29,7 +29,7 @@ export default function MolecularThursdaysScreen(): JSX.Element {
           />
         </div>
 
-        <div className="flex max-h-[604px] items-center bg-custom-gradient-light p-12 lg:w-3/6 lg:p-12">
+        <div className="flex max-h-[604px] items-center bg-custom-gradient-dark p-12 lg:w-3/6 lg:p-12">
           <p className="text-center leading-tight text-white md:text-[32px] lg:text-left xl:text-4xl">
             São reuniões Multidisciplinares que ocorrem por videoconferência que
             permitem discussões de casos, a fim de educar a comunidade médica a

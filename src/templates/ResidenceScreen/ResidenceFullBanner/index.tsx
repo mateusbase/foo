@@ -26,7 +26,7 @@ const ResidenceFullBanner = ({
         </div>
       </div>
 
-      <div className="flex min-h-[355px] flex-col justify-center bg-custom-gradient-light px-9 pb-12 pt-14 font-lato-regular text-white md:px-32 md:py-14 lg:h-[460px] lg:w-3/5 lg:shrink-0 lg:py-6 lg:pl-14 lg:pr-24">
+      <div className="flex min-h-[355px] flex-col justify-center bg-custom-gradient-dark px-9 pb-12 pt-14 font-lato-regular text-white md:px-32 md:py-14 lg:h-[460px] lg:w-3/5 lg:shrink-0 lg:py-6 lg:pl-14 lg:pr-24">
         <div className="flex h-full flex-col items-center justify-center lg:items-start">
           <h1 className="mb-12 text-3xl lg:text-xl xl:text-3xl">
             Quem é o grupo Oncoclínicas?
