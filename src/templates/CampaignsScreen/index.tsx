@@ -70,7 +70,6 @@ const CampaignsScreen = (): JSX.Element => {
           Conheça nossas campanhas
         </h1>
         <Swiper
-          loop
           modules={[Navigation]}
           breakpoints={{
             "320": {
