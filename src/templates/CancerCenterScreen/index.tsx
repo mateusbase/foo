@@ -3,27 +3,30 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import { Navigation } from "swiper/modules";
 import SliderArrows from "@/components/SliderArrows";
+import Image from "next/image";
 import UnitsCard from "./components/UnitsCard";
 import { unitsMock } from "./components/unitsMock";
 
 export default function CancerCenterScreen(): JSX.Element {
   const { nextRef, prevRef, onBeforeInit, swiperRef, currentIndex } =
     useSwiperNavigation();
+
   return (
     <PageLayout title="Primeiro Cancer Center Oncoclínicas como Membro Colaborativo Internacional do Dana-Farber Cancer Institute">
-      <div className="flex flex-col-reverse lg:mt-10 lg:h-[688px] lg:flex-row">
-        <div className="full-bleed bg-custom-gradient-dark p-10 lg:w-3/5 lg:rounded-bl-[100px] lg:px-16 xl:py-20">
+      <div className="flex flex-col-reverse lg:mt-10 lg:min-h-[650px] lg:flex-row">
+        <div className="full-bleed bg-custom-gradient-dark p-10 lg:w-3/5 lg:rounded-bl-[100px] lg:px-16 lg:pb-10 lg:pt-20 xl:py-20">
           <h1 className="text-4xl text-white lg:text-5xl">
             Sobre a parceria colaborativa
           </h1>
-          <p className="mt-10 !leading-6 text-white md:text-xl xl:text-2xl xl:!leading-7">
+          <p className="mt-10 !leading-6 text-white md:text-xl lg:text-base xl:text-2xl xl:!leading-7">
             A Oncoclínicas&Co, maior grupo dedicado ao tratamento do câncer na
             América Latina, e o Dana-Farber Cancer Institute, hospital de ensino
             afiliado à Faculdade de Medicina de Harvard e uma das principais
             instituições de tratamento do câncer e pesquisa oncológica do mundo,
             anunciam a expansão de sua colaboração com a inauguração do primeiro
             Cancer Center Oncoclínicas em parceria colaborativa com o
-            Dana-Farber fora dos Estados Unidos. <br />
+            Dana-Farber fora dos Estados Unidos.
+            <br />
             <br />
             Belo Horizonte, em Minas Gerais, é a primeira cidade fora dos
             Estados Unidos a receber uma unidade de tratamento certificada como
@@ -33,11 +36,13 @@ export default function CancerCenterScreen(): JSX.Element {
           </p>
         </div>
 
-        <div className="full-bleed size-full lg:w-2/4">
-          <img
+        <div className="full-bleed md:h-[688.25px] lg:w-2/5">
+          <Image
             alt="Banner cancer center"
-            src="assets/images/cancer-center/cancer-center-banner.png"
-            className="h-[689px] w-full object-cover"
+            width={1920}
+            height={1080}
+            src="/assets/images/cancer-center/cancer-center-banner.png"
+            className="size-full object-cover"
           />
         </div>
       </div>
@@ -46,7 +51,6 @@ export default function CancerCenterScreen(): JSX.Element {
         <img
           src="assets/images/cancer-center/cancer-center-logo-with-certificate.png"
           alt="Logo e certificado cancer center"
-          className=""
         />
       </div>
 
@@ -81,10 +85,10 @@ export default function CancerCenterScreen(): JSX.Element {
         />
 
         <div className="w-full items-center justify-center rounded-none bg-custom-gradient-dark px-10 py-12 md:rounded-bl-[100px] lg:h-[562px] lg:w-full lg:rounded-none">
-          <h1 className="text-[32px] text-white">
+          <h1 className="text-[32px] text-white lg:text-lg xl:text-2xl">
             Sobre o Dana-Farber Cancer Institute
           </h1>
-          <p className="mt-10 !leading-6 text-white md:text-xl">
+          <p className="mt-10 !leading-6 text-white md:text-xl lg:mt-4 lg:text-xs xl:mt-10 xl:text-base">
             O Dana-Farber Cancer Institute, afiliado à Harvard Medical School
             para ensino, é um dos principais centros mundiais de pesquisa e
             tratamento de câncer. É o único Cancer Center classificado entre os
@@ -106,9 +110,11 @@ export default function CancerCenterScreen(): JSX.Element {
       </div>
 
       <div className="my-14 flex w-full flex-col items-center justify-center gap-10">
-        <h2 className="text-4xl text-primary">Nossas unidades</h2>
+        <h2 className="text-4xl text-primary lg:text-[62px]">
+          Nossas unidades
+        </h2>
 
-        <div className="hidden lg:grid lg:grid-cols-2 lg:gap-28">
+        <div className="hidden lg:grid lg:grid-cols-2 lg:gap-[101px]">
           {unitsMock.map((unit) => (
             <UnitsCard
               key={unit.id}
@@ -121,7 +127,7 @@ export default function CancerCenterScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="relative mt-20 flex w-full lg:hidden">
+        <div className="relative mt-8 flex w-full lg:hidden">
           <Swiper
             modules={[Navigation]}
             spaceBetween={20}

@@ -9,8 +9,7 @@ export default function UnitsCard({
   complement,
   city,
   hours,
-  src,
-  width = "450px",
+  width = "452px",
 }: UnitsCardProps): JSX.Element {
   const router = useRouter();
 
@@ -28,15 +27,10 @@ export default function UnitsCard({
   };
 
   return (
-    // eslint-disable-next-line tailwindcss/classnames-order
-    <main className={`flex flex-col justify-between gap-8 max-w-[${width}] `}>
-      <div className="w-full">
-        <img
-          src={src || "assets/images/cancer-center/cancer-center-units.jpg"}
-          alt="Imagem de unidade"
-          className="block size-full lg:hidden"
-        />
-      </div>
+    <main
+      // eslint-disable-next-line tailwindcss/classnames-order
+      className={`flex flex-col justify-between gap-8 max-w-[${width}]`}
+    >
       <section>
         <section className="flex items-center gap-1">
           <MarkerCircleIcon className="text-secondary" />
@@ -54,8 +48,8 @@ export default function UnitsCard({
         </section>
       </section>
 
-      <section className="flex flex-col items-center gap-2 lg:flex-row">
-        <BaseButton className="w-3/5 text-white lg:w-52" color="primary">
+      <section className="flex flex-col items-center gap-2 lg:mr-[52px] lg:flex-row">
+        <BaseButton className="w-3/5 text-white lg:w-[215px]" color="primary">
           Agende uma consulta
         </BaseButton>
 
