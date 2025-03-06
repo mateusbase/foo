@@ -1,7 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import MenuItem from "@/components/MenuItem";
 import { useState } from "react";
-import Link from "next/link";
 import BaseSelect from "@/components/Select";
 import { IoMenu } from "react-icons/io5";
 import pacientSupportMock from "./pacientSupportMock";

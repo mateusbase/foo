@@ -69,6 +69,7 @@ export const useInstitutionalRouter = (
 
   useEffect(() => {
     loadComponent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
 
   return {

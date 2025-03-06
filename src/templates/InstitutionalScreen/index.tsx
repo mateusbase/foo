@@ -3,7 +3,6 @@ import BaseSelect from "@/components/Select";
 import { useInstitutionalRouter } from "@/hooks/useInstitutionalRouter";
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
-import Footer from "@/components/Footer";
 import { InstitutionalOption } from "./data/institucionalOptions";
 
 export default function InstitutionalScreen({
