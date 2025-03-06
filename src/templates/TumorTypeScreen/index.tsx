@@ -20,7 +20,7 @@ const TumorTypeScreen = (): JSX.Element => {
       options={tumorTypes}
       color="primary"
       startContent={<RxHamburgerMenu size={20} className="text-primary" />}
-      className="mb-7 mt-11 w-[321px] self-center lg:hidden"
+      className="mb-7 mt-11 w-[321px] self-center md:self-start lg:hidden"
       variant="bordered"
       labelPlacement="outside-left"
       labelColor="primary"
@@ -70,7 +70,7 @@ const TumorTypeScreen = (): JSX.Element => {
 
   const renderMethodologies = (): JSX.Element => (
     <div className="mb-5 flex w-full flex-col border border-primary-foreground lg:h-[224px] lg:w-1/2">
-      <h2 className="border-b bg-primary pb-2 text-xl font-bold text-white">
+      <h2 className="border-b bg-primary pb-2 pl-2 text-xl font-bold text-white">
         Metodologias
       </h2>
       <div className="grow overflow-auto">
