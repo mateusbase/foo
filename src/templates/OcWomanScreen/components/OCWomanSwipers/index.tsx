@@ -33,6 +33,11 @@ const VideosSwiper = (): JSX.Element => (
         src: "https://www.youtube.com/embed/GoHN_plQBqs",
         description: "OC Mulher",
       },
+      {
+        id: 3,
+        src: "https://www.youtube.com/embed/GoHN_plQBqs",
+        description: "OC Mulher",
+      },
     ]}
     renderItem={(video) => (
       <VideoCard src={video.src} description={video.description} />
