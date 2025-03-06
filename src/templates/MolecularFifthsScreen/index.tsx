@@ -50,7 +50,7 @@ export default function MolecularThursdaysScreen(): JSX.Element {
           </p>
         </div>
 
-        <div className="flex w-full flex-col gap-6 lg:w-2/6">
+        <div className="mb-9 flex w-full flex-col gap-6 md:mb-[52px] lg:my-auto lg:w-2/6">
           <BaseInput
             placeholder="Digite aqui o seu melhor e-mail"
             className="rounded-3xl bg-white"
