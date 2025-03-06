@@ -81,7 +81,7 @@ export default function UroOncology(): JSX.Element {
           ))}
         </div>
         <div className="hidden md:hidden lg:block">
-          <div className="lg:-mt-6 lg:flex lg:w-3/4 lg:gap-7 lg:justify-self-center">
+          <div className="lg:-mt-6 lg:flex lg:gap-7 lg:justify-self-center">
             {cancerTechsMock.slice(3, 5).map((type) => (
               <CancerTechsCard
                 key={type.id}
@@ -93,7 +93,7 @@ export default function UroOncology(): JSX.Element {
           </div>
         </div>
 
-        <div className="mb-10 mt-20 text-center text-2xl text-primary md:mb-16 md:mt-12 md:text-5xl lg:mt-24 lg:text-6xl">
+        <div className="mb-10 mt-12 text-center text-2xl text-primary md:mb-16 md:mt-12 md:text-5xl lg:mt-24 lg:text-6xl">
           Conheça alguns dos nossos tratamentos disponíveis
         </div>
 
