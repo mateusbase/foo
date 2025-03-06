@@ -27,16 +27,18 @@ Este material pertence ao Grupo Oncoclínicas e não possui o objetivo de fornec
 
   return (
     <div>
-      <h1 className="text-[40px] text-primary">Conheça seus direitos</h1>
+      <h1 className="text-2xl leading-10 text-primary md:text-[40px]">
+        Conheça seus direitos
+      </h1>
 
       {paragraphs.map((paragraph) => (
-        <p className="mt-6 text-lg text-darkGray">{paragraph}</p>
+        <p className="mt-3 text-lg text-darkGray md:mt-6">{paragraph}</p>
       ))}
 
-      <div className="my-12 flex h-48 flex-col items-center rounded-xl border-3 border-purpleMedium p-6 md:w-3/4 lg:w-1/2">
+      <div className="my-12 flex h-48 flex-col items-center rounded-xl border-3 border-purpleMedium p-6 md:w-1/2">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-xl font-bold text-darkGray">Material de Apoio</h2>
-          <p className="my-2 text-center text-base text-darkGray">
+          <p className="my-2 text-center text-base text-darkGray lg:block">
             Faça o download da cartilha de Direitos e Deveres do Paciente em
             PDF.
           </p>
