@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Button } from "@heroui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -34,11 +34,29 @@ export default function ServiceSection({
   const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
     useSwiperNavigation();
 
-  const [selectedLetter, setSelectedLetter] = useState("A");
+  const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [valueSearch, setValueSearch] = useState("");
+  const [visibleCards, setVisibleCards] = useState(4);
+
+  useEffect(() => {
+    const updateVisibleCards = (): void => {
+      if (window.innerWidth >= 1024) {
+        setVisibleCards(8);
+      } else {
+        setVisibleCards(4);
+      }
+    };
+
+    updateVisibleCards();
+    window.addEventListener("resize", updateVisibleCards);
+
+    return () => window.removeEventListener("resize", updateVisibleCards);
+  }, []);
 
   const filteredHealthServices = useMemo(() => {
-    return healthServices.filter((service) => {
+    if (!selectedLetter) return healthServices;
+
+    return healthServices?.filter((service) => {
       const matchesLetter = service.serviceTitle
         .toUpperCase()
         .startsWith(selectedLetter);
@@ -46,6 +64,7 @@ export default function ServiceSection({
       const matchesSearch = valueSearch
         ? service.serviceTitle.toLowerCase().includes(valueSearch.toLowerCase())
         : true;
+
       return matchesLetter && matchesSearch;
     });
   }, [selectedLetter, valueSearch, healthServices]);
@@ -62,8 +81,22 @@ export default function ServiceSection({
     tratamentos: "tratamentos ",
   };
 
+  const handleShowMore = (): void => {
+    setVisibleCards((prev) => prev + (window.innerWidth >= 1024 ? 8 : 4));
+  };
+
+  const handleLetterSelect = (letter: string): void => {
+    if (selectedLetter === letter) {
+      setSelectedLetter(null);
+    } else {
+      setSelectedLetter(letter);
+    }
+  };
+
+  const displayedServices = filteredHealthServices?.slice(0, visibleCards);
+
   return (
-    <div id={id} className="pt-8">
+    <div id={id}>
       <SectionHeader title={title} description={description} />
       <div className="mt-10 flex w-full lg:hidden">
         <BaseInput
@@ -80,19 +113,20 @@ export default function ServiceSection({
       </div>
       <div className="hidden lg:block">
         <AlphabetSelector
-          selectedLetter={selectedLetter}
-          onLetterSelect={setSelectedLetter}
+          selectedLetter={selectedLetter || ""}
+          onLetterSelect={handleLetterSelect}
           searchPlaceholder={`Buscar ${titleService[id]}`}
           handleSearchChange={handleSearchChange}
           valueSearch={valueSearch}
         />
       </div>
       <div className="mt-10 hidden grid-cols-4 gap-[26px] md:grid">
-        {filteredHealthServices.map((service) => (
+        {displayedServices?.map((service) => (
           <Link key={service.id} href={`/servicos/${service.slug}`} passHref>
             <ServiceCard
               serviceTitle={service.serviceTitle}
               serviceDescription={service.serviceDescription}
+              showButton
             />
           </Link>
         ))}
@@ -108,18 +142,8 @@ export default function ServiceSection({
           }}
           loop
           onBeforeInit={(swiper) => onBeforeInitCard(swiper)}
-          breakpoints={{
-            640: {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 20,
-            },
-          }}
         >
-          {filteredHealthServices.map((service) => (
+          {displayedServices?.map((service) => (
             <SwiperSlide key={service.id}>
               <Link
                 href={`/servicos/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
@@ -145,17 +169,21 @@ export default function ServiceSection({
           />
         </div>
       </div>
-      <div className="flex w-full justify-center">
-        <Button
-          color="primary"
-          variant="bordered"
-          radius="sm"
-          className="mt-8 h-[50px] w-full rounded-md border-1 pl-3 text-left text-sm leading-[22px] text-primary md:w-[322px] lg:text-[18px]"
-        >
-          [+] Ver todos
-        </Button>
-      </div>
-      <div className="relative mb-10 mt-20 w-full lg:hidden">
+      {filteredHealthServices &&
+        visibleCards < filteredHealthServices.length && (
+          <div className="flex w-full justify-center">
+            <Button
+              color="primary"
+              variant="bordered"
+              radius="sm"
+              onClick={handleShowMore}
+              className="mt-8 h-[50px] w-full rounded-md border-1 pl-3 text-left text-sm leading-[22px] text-primary md:w-[322px] lg:text-[18px]"
+            >
+              [+] Ver mais
+            </Button>
+          </div>
+        )}
+      <div className="relative mt-20 w-full lg:hidden">
         <Swiper
           modules={[Navigation]}
           spaceBetween={30}
@@ -177,7 +205,7 @@ export default function ServiceSection({
             },
           }}
         >
-          {medicalServices.map((service) => (
+          {medicalServices?.map((service) => (
             <SwiperSlide key={service.id}>
               <MedicalServiceCard
                 serviceTitle={service.serviceTitle}
@@ -199,7 +227,7 @@ export default function ServiceSection({
         </div>
       </div>
       <div className="mt-28 hidden grid-cols-3 gap-[26px] lg:grid">
-        {medicalServices.map((service) => (
+        {medicalServices?.map((service) => (
           <Link
             key={service.id}
             href={`/servicos/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
