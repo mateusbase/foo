@@ -9,10 +9,6 @@ export function useSwiperNavigation(): UseSwiperNavigationReturn {
   const [currentIndex, setCurrentIndex] = useState<number>(1);
 
   const onBeforeInit = useCallback((swiper: SwiperType) => {
-    console.log("Swiper inicializado:", swiper);
-    console.log("PrevRef:", prevRef.current);
-    console.log("NextRef:", nextRef.current);
-
     swiperRef.current = swiper;
     swiper.on("slideChange", () => {
       setCurrentIndex(swiper.realIndex + 1);
