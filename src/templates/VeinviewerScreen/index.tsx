@@ -10,11 +10,11 @@ export default function VeinviewerScreen(): JSX.Element {
       title="Veinviewer"
       subtitle="Visualizador de veia que utiliza luz infravermelha para detectar o mapa vascular do paciente em alta definição e reduz o número de punções nos pacientes."
     >
-      <div className="lg:flexlg: relative left-1/2 mt-0 w-screen -translate-x-1/2 md:-mt-5 md:w-full lg:mt-11">
+      <div>
         <VeinviewerBanner />
       </div>
 
-      <div className="mx-20 mt-20 sm:mb-20">
+      <div className="mt-20 sm:mb-20">
         <h1 className="text-4xl text-primary md:text-[40px]">
           Conforto e segurança no tratamento.{" "}
         </h1>
