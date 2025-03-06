@@ -28,7 +28,7 @@ const FellowshipFullBanner = ({
         </div>
       </div>
 
-      <div className="flex min-h-[355px] flex-col justify-center bg-custom-gradient-light pb-12 pl-8 pr-6 pt-14 font-lato-regular text-white md:px-32 md:py-14 lg:h-auto lg:w-[45%] lg:shrink-0 lg:pb-24 lg:pl-14 lg:pr-24 lg:pt-[72px]">
+      <div className="flex min-h-[355px] flex-col justify-center bg-custom-gradient-dark pb-12 pl-8 pr-6 pt-14 font-lato-regular text-white md:px-32 md:py-14 lg:h-auto lg:w-[45%] lg:shrink-0 lg:pb-24 lg:pl-14 lg:pr-24 lg:pt-[72px]">
         <div className="flex h-full flex-col items-center justify-center">
           {opportunityText ? (
             <p className="mb-12 text-center text-xl md:text-2xl lg:text-left xl:text-2xl">

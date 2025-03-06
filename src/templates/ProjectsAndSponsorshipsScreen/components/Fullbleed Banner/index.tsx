@@ -35,7 +35,7 @@ const FullbleedBanner = ({
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 bg-custom-gradient-light px-10 pb-10 pt-12 font-lato-regular text-white md:py-14 md:pl-7 md:pr-20 lg:h-auto lg:w-[45%] lg:shrink-0 lg:pb-24 lg:pl-14 lg:pr-24 lg:pt-[96px]">
+      <div className="flex flex-col gap-5 bg-custom-gradient-dark px-10 pb-10 pt-12 font-lato-regular text-white md:py-14 md:pl-7 md:pr-20 lg:h-auto lg:w-[45%] lg:shrink-0 lg:pb-24 lg:pl-14 lg:pr-24 lg:pt-[96px]">
         <p className="text-center text-4xl lg:text-left lg:text-xl xl:text-4xl">
           {description}
         </p>
