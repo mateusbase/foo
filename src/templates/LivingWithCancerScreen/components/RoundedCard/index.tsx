@@ -14,7 +14,7 @@ const RoundedCard: React.FC<RoundedCardProps> = ({
   image,
 }) => {
   return (
-    <InfoCard roundedSide="left" backgroundImageUrl={image}>
+    <InfoCard roundedSide="left" backgroundImageUrl={image} isBackgroundUrl>
       <div className="flex min-h-[300px] w-full flex-col justify-between py-6 pb-11 pt-7 md:min-h-[380px] lg:max-h-[800px] lg:min-h-[530px] lg:pb-[73.75px] lg:pt-12">
         <h3 className="font-lato-thin text-2xl text-white lg:text-xl xl:text-3xl">
           {title}
