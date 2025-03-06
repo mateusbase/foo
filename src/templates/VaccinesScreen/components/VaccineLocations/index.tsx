@@ -27,7 +27,7 @@ const VaccineLocations = (): JSX.Element => {
 
   return (
     <div className="mb-8 mt-2 flex w-full flex-col md:mt-12 lg:mt-28">
-      <div className="flex w-full flex-col items-center md:flex-row md:gap-3">
+      <div className="flex w-full flex-col items-center md:flex-row md:gap-20">
         <h1 className="mb-4 w-full text-center font-lato-bold text-3xl leading-relaxed text-primary md:mb-0 md:w-[45%] md:text-3xl lg:mx-auto lg:w-full lg:text-6xl">
           Consulte as vacinas oferecidas na sua cidade
         </h1>
