@@ -12,8 +12,7 @@ export default function RightsAndDutiesScreen(): JSX.Element {
   return (
     <PageLayout
       title="Direitos e Deveres do paciente"
-      subtitle="Diante das circunstâncias enfrentadas pelos pacientes oncológicos, a legislação brasileira possui dispositivos que os ajudam a passar com mais tranquilidade pelo tratamento e reintegração à rotina após a alta médica.
-"
+      subtitle="Diante das circunstâncias enfrentadas pelos pacientes oncológicos, a legislação brasileira possui dispositivos que os ajudam a passar com mais tranquilidade pelo tratamento e reintegração à rotina após a alta médica."
     >
       <div className="flex flex-col gap-14 lg:mt-16 lg:flex-row">
         <div className="flex w-full md:w-1/2 lg:hidden">
@@ -49,7 +48,9 @@ export default function RightsAndDutiesScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="w-full lg:w-[826px]">{activeContent}</div>
+        <div className="-mt-10 w-full md:-mt-6 lg:mt-0 lg:w-[826px]">
+          {activeContent}
+        </div>
       </div>
     </PageLayout>
   );
