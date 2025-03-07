@@ -14,9 +14,9 @@ const OCAboutLivingCardRounded = ({
       backgroundImageUrl={backgroundImageUrl}
       isBackgroundUrl={isBackgroundUrl}
     >
-      <div className="flex min-h-[353px] flex-col justify-between p-6 px-8 md:min-h-[380px] lg:min-h-[530px]">
-        <div className="mt-10 grid flex-1 grid-cols-1 gap-4 text-2xl md:mt-14">
-          <span className="md:text-2x1 mb-4 font-lato-light text-2xl text-white lg:text-3xl">
+      <div className="flex min-h-[250px] flex-col justify-between px-8 md:min-h-[300px] lg:min-h-[270px]">
+        <div className="grid flex-1 grid-cols-1 gap-4 text-2xl">
+          <span className="mb-4 font-lato-light text-xl text-white lg:text-xl xl:text-2xl">
             {description}
           </span>
         </div>
