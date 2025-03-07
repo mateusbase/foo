@@ -12,9 +12,10 @@ export default function GetOnPro(): JSX.Element {
           src="/assets/images/get-on-pro/get-on-pro.svg"
           alt="Get On Pro"
           className="h-[79px] w-[310px] md:h-[127px] md:w-[498px]"
+          radius="none"
         />
       </div>
-      <div className="ml-9 mr-11 md:ml-7 md:mr-14">
+      <div className=" ">
         <div className="mt-10 text-xl text-darkGray lg:mt-8 lg:text-[26px]">
           <p>
             As equipes médicas são desafiadas continuamente a atualizar os seus
@@ -70,18 +71,18 @@ export default function GetOnPro(): JSX.Element {
             médicos oncologistas e hematologistas de todo o Brasil.
           </p>
           <p className="mt-10">
-            <span className="text-black">
+            <span className="font-bold text-darkGray">
               As inscrições estarão abertas a partir de 1º de setembro de 2024 e
               se encerrarão em 30 de setembro de 2024.
             </span>
           </p>
           <p className="mt-10">
-            <span className="text-black">
+            <span className="font-bold text-darkGray">
               O processo seletivo ocorrerá de 1 a 11 de outubro de 2024.
             </span>
           </p>
           <p className="mt-10">
-            <span className="text-black">
+            <span className="font-bold text-darkGray">
               Previsto para iniciar em 28 de outubro, o curso terá uma duração
               total de 16 meses.
             </span>
