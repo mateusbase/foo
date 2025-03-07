@@ -27,7 +27,7 @@ export default function UnitsCard({
   };
 
   return (
-    <main className="flex min-h-[715px] w-full flex-col items-center gap-6 p-6 lg:h-[560px] lg:min-h-[650px] lg:p-0">
+    <main className="flex min-h-[715px] w-full flex-col items-center gap-6 lg:h-[560px] lg:min-h-[650px]">
       <div className="w-full">
         <img
           src={src || "assets/images/cancer-center/cancer-center-units.jpg"}

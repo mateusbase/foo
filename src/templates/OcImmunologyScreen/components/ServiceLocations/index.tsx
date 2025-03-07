@@ -43,9 +43,9 @@ const ServicesLocations = (): JSX.Element => {
           />
         )}
         slidesPerView={1}
-        spaceBetween={20}
+        spaceBetween={1}
         breakpoints={{
-          768: { slidesPerView: 2, spaceBetween: 10 },
+          768: { slidesPerView: 2, spaceBetween: 30 },
           1024: { slidesPerView: 2, spaceBetween: 30 },
         }}
         className="lg:w-3/5"

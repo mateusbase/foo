@@ -8,10 +8,10 @@ const SpecialtyCard = ({
   return (
     <div
       key={specialty.id}
-      className="mt-8 flex flex-row items-center gap-6 rounded-[20px] border border-primary py-[30.5px] pl-8 align-middle"
+      className="flex w-full flex-row items-center gap-6 rounded-[20px] border border-primary py-[30.5px] pl-8 align-middle"
     >
       {specialty.image2}
-      <p className="text-2xl text-primary md:text-xl">{specialty.name}</p>
+      <p className="text-xl text-primary">{specialty.name}</p>
     </div>
   );
 };
