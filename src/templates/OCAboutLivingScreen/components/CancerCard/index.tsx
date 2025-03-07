@@ -18,7 +18,7 @@ const CancerCard = ({
         height={70}
         className="shrink-0"
       />
-      <p className="text-xl text-primary md:text-xl">{description}</p>
+      <p className="text-xl text-primary md:text-2xl">{description}</p>
     </div>
   );
 };

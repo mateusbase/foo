@@ -15,7 +15,7 @@ export default function OCAboutLivingCard(): JSX.Element {
         spaceBetween={16}
         slidesPerView={1}
         breakpoints={{
-          1024: { slidesPerView: 3 },
+          1025: { slidesPerView: 3 },
           768: { slidesPerView: 2 },
         }}
         loop
