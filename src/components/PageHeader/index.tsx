@@ -24,9 +24,9 @@ const PageHeader = ({
   };
 
   return (
-    <div className="relative h-[155px] w-full bg-[linear-gradient(170deg,_var(--tw-gradient-stops))] from-primary via-primary to-secondary to-75% md:h-[243px] lg:h-[343px]">
-      <div className="absolute inset-0 flex justify-center">
-        <div className="flex w-full max-w-screen-2xl flex-col items-start justify-center px-4">
+    <div className="relative min-h-[155px] w-full bg-[linear-gradient(170deg,_var(--tw-gradient-stops))] from-primary via-primary to-secondary to-75% md:min-h-[243px] lg:min-h-[343px]">
+      <div className="relative flex min-h-[155px] w-full flex-col justify-center bg-[linear-gradient(170deg,_var(--tw-gradient-stops))] from-primary via-primary to-secondary to-75% px-4 md:min-h-[243px] lg:min-h-[343px]">
+        <div className="flex w-full max-w-screen-2xl flex-col items-start">
           <div className="flex w-full flex-col sm:flex-row sm:items-center sm:justify-between lg:justify-start">
             <div className="w-full">
               {preTitle && (
