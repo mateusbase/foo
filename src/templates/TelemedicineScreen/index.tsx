@@ -18,6 +18,7 @@ export default function TelemedicineScreen(): JSX.Element {
         src="https://www.youtube.com/watch?v=0FzG0AWPsSA"
         title="Uma empresa da Oncoclínicas&Co"
         description="Foi para garantir que as drogas orais cheguem até os pacientes e para que recebam todas as orientações para a segurança no uso do quimioterápico, que a Oncoclínicas criou a DeLife. A proposta é realizar a gestão de medicamentos oncológicos orais com eficiência por meio de um exclusivo Programa de Suporte ao Paciente (PSP), assegurando que os pacientes recebam o medicamento em casa, sendo orientados de forma correta sobre sua utilização."
+        videoPoster="/assets/images/telemedicina/image (8).png"
       />
       <div className="flex flex-col lg:flex-row lg:gap-7">
         {telemedicineMock.map((item) => (
@@ -51,9 +52,10 @@ export default function TelemedicineScreen(): JSX.Element {
                 textPrimary
               />
             )}
+            className="mb-20"
           />
         </div>
-        <div className="mb-14 hidden md:grid md:grid-cols-2 md:gap-8 lg:mb-32 lg:flex lg:flex-row lg:gap-3">
+        <div className="mb-14 hidden md:grid md:grid-cols-2 md:gap-8 lg:mb-24 lg:flex lg:flex-row lg:gap-3">
           {teleconsultPreparations.map((teleconsult) => (
             <SimpleCard
               key={teleconsult.id}
@@ -62,7 +64,6 @@ export default function TelemedicineScreen(): JSX.Element {
               textPrimary
             />
           ))}
-          {}
         </div>
       </div>
     </PageLayout>
