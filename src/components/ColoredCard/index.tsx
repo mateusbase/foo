@@ -46,7 +46,7 @@ export default function ColoredCard({
         )}
       </div>
 
-      <div className="mt-10 flex w-full flex-col items-center gap-4">
+      <div className="mb-6 mt-10 flex w-full flex-col items-center gap-4">
         {buttons.map((button) => (
           <BaseButton
             key={button.text}
