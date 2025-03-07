@@ -41,6 +41,7 @@ const config: Config = {
         xl2: "1472px",
       },
       fontSize: {
+        "title-lg": "40px",
         "title-xl": "3.875rem",
       },
       backgroundImage: {
