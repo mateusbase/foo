@@ -1,12 +1,11 @@
-import FullbleedBanner from "@/components/FullbleedBanner";
 import PageLayout from "@/components/PageLayout";
 import BaseSwiper from "@/components/BaseSwiper";
-import ServicesLocations from "@/components/ServicesLocation";
 import SimpleIconCard from "@/components/SimpleIconCards";
 import benefitsMock from "./benefitsMock";
+import ServicesLocations from "./components/ServiceLocations";
+import FullbleedBanner from "./components/FullbleedBanner";
 
 const informationArray = [
-  "Estamos com você durante todo o tratamento",
   " Na Oncoclínicas, assumimos o compromisso de estar ao seu lado durante toda a jornada do tratamento oncológico. Nosso propósito é claro: cuidar sem limites.",
   "Encontre a unidade mais próxima e entre em contato:",
 ];
@@ -60,7 +59,10 @@ export default function OcNavigationScreen(): JSX.Element {
         </div>
       </div>
 
-      <ServicesLocations content={informationArray} />
+      <ServicesLocations
+        title="Estamos com você durante todo o tratamento"
+        content={informationArray}
+      />
     </PageLayout>
   );
 }
