@@ -27,10 +27,10 @@ export default function MenuSelector({
         <div
           key={option.id}
           className={clsx(
-            "flex size-36 flex-col items-center rounded-[20px] border-1 border-darkGray px-8 py-3 transition-colors md:size-[205px] md:justify-center md:gap-5 md:px-4 lg:size-[160px]",
+            "flex size-36 flex-col items-center rounded-[20px] border-1 border-darkGray px-8 py-3 transition-colors hover:border-purple-500 md:size-[205px] md:justify-center md:gap-5 md:px-4 lg:size-[180px]",
             {
               "border-darkGray bg-secondary text-white": activeId === option.id,
-              "bg-white text-darkGray hover:bg-secondary-foreground hover:text-white":
+              "bg-white text-darkGray hover:border-2 hover:border-purpleLight":
                 activeId !== option.id,
             },
           )}

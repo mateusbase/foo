@@ -27,7 +27,7 @@ const CardSwiper = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="mb-20">
+    <div className="mb-14">
       <Swiper
         spaceBetween={16}
         slidesPerView={1}
