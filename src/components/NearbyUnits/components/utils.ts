@@ -6,7 +6,7 @@ export const unitsData = [
     complement: "6º e 10º Andar - Vila Olímpia",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
-    isPartner: Math.random() < 0.5,
+    isPartner: true,
     specialties: [
       "Cardiologia oncológica",
       "Dermatologia",
@@ -23,7 +23,7 @@ export const unitsData = [
     complement: "Vila Nova Conceição",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
-    isPartner: Math.random() < 0.5,
+    isPartner: false,
     specialties: ["Anatomia Patológica", "Genômica"],
   },
   {
@@ -33,7 +33,7 @@ export const unitsData = [
     complement: "2º e 8º Andar - Higienópolis",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
-    isPartner: Math.random() < 0.5,
+    isPartner: false,
     specialties: [
       "Cardiologia oncológica",
       "Dermatologia",
@@ -50,7 +50,7 @@ export const unitsData = [
     complement: "Morumbi",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
-    isPartner: Math.random() < 0.5,
+    isPartner: false,
     specialties: ["Oncologia clínica", "Radioterapia"],
   },
   {
@@ -60,7 +60,7 @@ export const unitsData = [
     complement: "Vila Mariana",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
-    isPartner: Math.random() < 0.5,
+    isPartner: false,
     specialties: ["Hematologia", "Medicina paliativa"],
   },
   {
@@ -70,7 +70,7 @@ export const unitsData = [
     complement: "Bela Vista",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
-    isPartner: Math.random() < 0.5,
+    isPartner: false,
     specialties: ["Cardiologia oncológica", "Dermatologia"],
   },
   {
@@ -80,7 +80,7 @@ export const unitsData = [
     complement: "Pinheiros",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
-    isPartner: Math.random() < 0.5,
+    isPartner: true,
     specialties: ["Genética Médica", "Oncologia clínica"],
   },
   {
@@ -90,7 +90,7 @@ export const unitsData = [
     complement: "Moema",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
-    isPartner: Math.random() < 0.5,
+    isPartner: true,
     specialties: ["Medicina paliativa", "Radioterapia"],
   },
   {
@@ -100,7 +100,7 @@ export const unitsData = [
     complement: "Tatuapé",
     city: "São Paulo - SP",
     hours: "Segunda a sexta-feira das 08:00 às 18:00",
-    isPartner: Math.random() < 0.5,
+    isPartner: false,
     specialties: ["Dermatologia", "Hematologia"],
   },
 ];

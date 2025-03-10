@@ -14,12 +14,20 @@ export default function MenuSelector({
   };
 
   return (
-    <div className="grid w-full grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-7">
+    <div
+      className={clsx(
+        "mx-auto grid w-full grid-cols-2 justify-items-center gap-4 align-middle md:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-7",
+        {
+          "md:flex md:flex-wrap md:justify-center lg:grid lg:justify-items-start":
+            options.length % 3 === 1,
+        },
+      )}
+    >
       {options.map((option) => (
         <div
           key={option.id}
           className={clsx(
-            "flex size-full flex-col items-center rounded-3xl border-1 border-darkGray transition-colors md:size-[195px] md:justify-center md:gap-5 md:px-4",
+            "flex size-36 flex-col items-center rounded-[20px] border-1 border-darkGray px-8 py-3 transition-colors md:size-[205px] md:justify-center md:gap-5 md:px-4 lg:size-[160px]",
             {
               "border-darkGray bg-secondary text-white": activeId === option.id,
               "bg-white text-darkGray hover:bg-secondary-foreground hover:text-white":
@@ -29,7 +37,7 @@ export default function MenuSelector({
           onClick={() => handleClick(option.id)}
         >
           {option.icon}
-          <p className="text-base lg:text-2xl">{option.label}</p>
+          <p className="mt-3 text-nowrap text-sm lg:text-2xl">{option.label}</p>
         </div>
       ))}
     </div>
