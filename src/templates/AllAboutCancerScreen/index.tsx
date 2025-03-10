@@ -47,7 +47,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
       <div className="mt-8 flex flex-col md:flex-row lg:mt-20">
         <div className="w-full md:w-1/2 md:pr-3">
-          <h2 className="text-2xl text-primary md:text-[40px] md:leading-[48px]">
+          <h2 className="text-2xl text-primary md:text-title-lg md:leading-[48px]">
             O câncer?
           </h2>
           <p className="mt-4 text-base text-darkGray md:text-[20px] md:leading-[30px]">

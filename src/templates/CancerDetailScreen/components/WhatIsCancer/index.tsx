@@ -1,7 +1,7 @@
 export default function WhatIsCancer(): JSX.Element {
   return (
     <div>
-      <h2 className="text-3xl text-primary lg:text-[40px]">
+      <h2 className="text-3xl text-primary lg:text-title-lg">
         O que é o câncer de mama
       </h2>
       <p className="mt-6 text-darkGray lg:text-xl">

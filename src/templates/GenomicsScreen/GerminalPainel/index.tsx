@@ -11,7 +11,7 @@ export default function GerminalPainel(): JSX.Element {
   return (
     <div className="mb-20 w-full flex-col">
       <div className="w-full">
-        <h1 className="mb-4 font-lato-bold text-xl text-primary md:text-[40px]">
+        <h1 className="mb-4 font-lato-bold text-xl text-primary md:text-title-lg">
           Painel NGS Germinativo
         </h1>
 
@@ -39,7 +39,7 @@ export default function GerminalPainel(): JSX.Element {
       </div>
 
       <div className="mt-10 lg:mt-36">
-        <h2 className="text-primary md:text-[40px] lg:text-2xl">
+        <h2 className="text-primary md:text-title-lg lg:text-2xl">
           Painéis NGS Germinativos
         </h2>
 

@@ -34,7 +34,7 @@ const LasertherapyUsage = (): JSX.Element => {
       id="lasertherapy-usage"
       className="text-darkGray lg:mb-6"
     >
-      <h1 className="text-2xl text-primary md:text-[40px]">
+      <h1 className="text-2xl text-primary md:text-title-lg">
         O uso da laserterapia e seus benefícios
       </h1>
       <p className="mt-3 text-xl md:mt-6 lg:mt-4">

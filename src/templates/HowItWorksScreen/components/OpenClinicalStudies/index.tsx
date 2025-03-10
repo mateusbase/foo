@@ -56,7 +56,7 @@ export default function OpenClinicalStudies(): JSX.Element {
       </div>
 
       <div className="mt-10">
-        <h2 className="text-2xl text-primary md:text-3xl 2xl:text-[40px]">
+        <h2 className="text-2xl text-primary md:text-3xl 2xl:text-title-lg">
           Estudos clínicos abertos
         </h2>
         {clinicalResearchs.map((research) => (

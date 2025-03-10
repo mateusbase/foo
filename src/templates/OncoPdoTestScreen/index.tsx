@@ -19,7 +19,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
       subtitle="Teste in-vitro que, a partir de modelos 3D obtidos do próprio tumor do paciente, avalia e quantifica a resposta das células tumorais a diferentes combinações de agentes quimioterápicos e terapias-alvo moleculares."
     >
       <div className="mt-10">
-        <h1 className="text-4xl text-primary md:text-[40px]">
+        <h1 className="text-4xl text-primary md:text-title-lg">
           Onco-PDO<sup>&trade;</sup> é o que há de mais moderno em Oncologia de
           Precisão
         </h1>
@@ -39,7 +39,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
       </div>
 
       <div className="mt-14 md:mt-11 lg:mt-20">
-        <h1 className="text-4xl text-primary md:text-[40px]">
+        <h1 className="text-4xl text-primary md:text-title-lg">
           Os diferenciais do Teste Onco-PDO<sup>&trade;</sup>
         </h1>
 
@@ -79,7 +79,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
       </div>
 
       <div className="mt-14 lg:mt-32">
-        <h1 className="text-4xl text-primary md:text-[40px]">
+        <h1 className="text-4xl text-primary md:text-title-lg">
           Etapas do Teste Onco-PDO<sup>&trade;</sup>
         </h1>
         <div className="my-10 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
@@ -94,7 +94,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
       </div>
 
       <div className="my-8 w-5/6">
-        <h1 className="text-4xl text-primary md:text-[40px]">
+        <h1 className="text-4xl text-primary md:text-title-lg">
           Em quais tumores pode ser aplicado o Teste Onco-PDO<sup>&trade;</sup>
         </h1>
         <p className="mt-5 text-xl text-darkGray">

@@ -11,7 +11,7 @@ const ProvenEfficacy = (): JSX.Element => {
       id="proven-efficacy"
       className="mb-8 text-darkGray"
     >
-      <h1 className="mb-6 text-2xl text-primary md:text-[40px]">
+      <h1 className="mb-6 text-2xl text-primary md:text-title-lg">
         Eficácia comprovada cientificamente
       </h1>
       <p className="mt-3 text-xl md:mt-6 lg:mt-4">

@@ -3,7 +3,7 @@ import { Image } from "@heroui/react";
 export default function CareLineAdditionalServices(): JSX.Element {
   return (
     <div className="my-20 w-full">
-      <h1 className="px-6 text-4xl text-primary md:px-0 md:text-[40px]">
+      <h1 className="px-6 text-4xl text-primary md:px-0 md:text-title-lg">
         E demais serviços que completam o cuidado com a jornada do paciente
       </h1>
 

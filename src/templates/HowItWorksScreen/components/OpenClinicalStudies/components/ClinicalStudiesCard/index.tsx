@@ -13,7 +13,7 @@ export default function ClinicalStudiesCard({
     <Link href={`/estudos/${newSlug}`}>
       <div className="my-10 flex flex-col lg:my-6 lg:flex-row">
         <div className="flex flex-col justify-center rounded-t-3xl bg-custom-gradient-dark p-7 lg:w-[375px] lg:items-center lg:rounded-br-3xl lg:rounded-tr-none lg:p-0">
-          <p className="text-[26px] text-white 2xl:text-[40px]">{title}</p>
+          <p className="text-[26px] text-white 2xl:text-title-lg">{title}</p>
           <p className="text-lg text-white 2xl:text-2xl">{unity}</p>
         </div>
 

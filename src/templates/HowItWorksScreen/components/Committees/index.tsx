@@ -5,7 +5,7 @@ export default function Committees(): JSX.Element {
   return (
     <div className="w-full">
       <div>
-        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
+        <h2 className="text-2xl text-primary md:text-3xl lg:text-title-lg">
           Comitê nacional de pesquisa clínica
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-1">
@@ -21,7 +21,7 @@ export default function Committees(): JSX.Element {
         </div>
       </div>
       <div className="mt-9 lg:mt-32">
-        <h2 className="text-2xl text-primary md:text-3xl lg:text-[40px]">
+        <h2 className="text-2xl text-primary md:text-3xl lg:text-title-lg">
           Equipe de abrangência nacional
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-1">

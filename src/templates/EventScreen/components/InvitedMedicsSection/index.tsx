@@ -5,7 +5,7 @@ import InvitedMedicCard from "../InvitedMedicCard";
 export default function InvitedMedicsSection(): JSX.Element {
   return (
     <div>
-      <h1 className="text-2xl text-primary lg:text-[40px]">
+      <h1 className="text-2xl text-primary lg:text-title-lg">
         Médicos convidados
       </h1>
       <div className="flex flex-wrap gap-4">

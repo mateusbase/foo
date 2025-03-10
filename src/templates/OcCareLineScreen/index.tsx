@@ -11,7 +11,7 @@ export default function OcCareLineScreen(): JSX.Element {
         subtitle="Um serviço ágil e seguro que acompanha o paciente oncológico durante toda a sua jornada: do diagnóstico ao desfecho clínico, dentro do acolhimento e estrutura da Oncoclínicas."
       >
         <div className="mt-10">
-          <h1 className="text-4xl text-primary md:text-[40px]">
+          <h1 className="text-4xl text-primary md:text-title-lg">
             Na OC Linha de cuidado, oferecemos resolutividade e agilidade em:
           </h1>
 

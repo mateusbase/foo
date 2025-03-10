@@ -9,10 +9,10 @@ const valores = (): JSX.Element => {
   return (
     <div>
       <div className="mx-8">
-        <h1 className="text-2xl text-primary md:text-[40px]">
+        <h1 className="text-2xl text-primary md:text-title-lg">
           Acolhimento e inovação
         </h1>
-        <h1 className="text-2xl text-primary md:mt-2 md:text-[40px]">
+        <h1 className="text-2xl text-primary md:mt-2 md:text-title-lg">
           Atenção integral e personalizada
         </h1>
         <p className="mt-7 text-base text-darkGray md:text-xl">
@@ -37,7 +37,7 @@ const valores = (): JSX.Element => {
           qualidade de vida dos pacientes.
         </p>
       </div>
-      <h1 className="mx-8 mb-4 mt-10 text-2xl text-primary lg:-mb-6 lg:text-[40px]">
+      <h1 className="mx-8 mb-4 mt-10 text-2xl text-primary lg:-mb-6 lg:text-title-lg">
         Nossa essência
       </h1>
       <ValuesFullbleedBanner

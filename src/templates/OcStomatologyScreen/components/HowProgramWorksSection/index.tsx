@@ -3,7 +3,7 @@ import { Element } from "react-scroll";
 const HowProgramWorksSection = (): JSX.Element => {
   return (
     <Element name="how-works" id="how-works" className="text-darkGray">
-      <h1 className="text-2xl text-primary md:text-[40px]">
+      <h1 className="text-2xl text-primary md:text-title-lg">
         Como o programa atua
       </h1>
       <p className="mt-3 text-xl md:mt-6 lg:mt-4">

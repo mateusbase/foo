@@ -27,7 +27,7 @@ Este material pertence ao Grupo Oncoclínicas e não possui o objetivo de fornec
 
   return (
     <div>
-      <h1 className="text-2xl leading-10 text-primary md:text-[40px]">
+      <h1 className="text-2xl leading-10 text-primary md:text-title-lg">
         Conheça seus direitos
       </h1>
 

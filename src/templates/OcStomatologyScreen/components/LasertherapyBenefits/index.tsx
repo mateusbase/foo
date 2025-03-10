@@ -7,7 +7,7 @@ const LasertherapyBenefits = (): JSX.Element => {
       id="lasertherapy-benefits"
       className="text-darkGray"
     >
-      <h1 className="text-2xl text-primary md:text-[40px]">
+      <h1 className="text-2xl text-primary md:text-title-lg">
         O uso da laserterapia e seus benefícios
       </h1>
       <p className="mt-3 text-xl md:mt-6 lg:mt-4">

@@ -59,7 +59,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
       </div>
 
       <div className="mt-10">
-        <h1 className="text-4xl text-primary md:text-[40px]">
+        <h1 className="text-4xl text-primary md:text-title-lg">
           Pilares dos cuidados paliativos
         </h1>
 
@@ -101,7 +101,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
       </div>
 
       <div className="mt-10">
-        <h1 className="text-4xl text-primary md:text-[40px]">
+        <h1 className="text-4xl text-primary md:text-title-lg">
           Conheça o Programa de Cuidados Paliativos da Oncoclínicas
         </h1>
 
@@ -115,7 +115,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
       </div>
 
       <div className="mt-20">
-        <h1 className="text-4xl text-primary md:text-[40px]">
+        <h1 className="text-4xl text-primary md:text-title-lg">
           Quando o cuidado paliativo deve ser iniciado no paciente com câncer{" "}
         </h1>
         <p className="mt-4 text-xl text-darkGray">
@@ -152,7 +152,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
       </div>
 
       <div className="mt-20">
-        <h1 className="text-4xl text-primary md:text-[40px]">
+        <h1 className="text-4xl text-primary md:text-title-lg">
           Quais pacientes oncológicos devem ser encaminhados aos cuidados
           paliativos
         </h1>
@@ -190,7 +190,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
       <div className="full-bleed mt-10 flex w-full text-white lg:h-[794px]">
         <div className="flex w-full flex-col lg:flex-row">
           <div className="flex flex-col gap-2 bg-gradient-to-t from-purpleAccent from-5% via-30% to-primary-foreground p-10 py-20 lg:h-[794px] lg:w-1/2 lg:rounded-bl-[100px] lg:px-16">
-            <h1 className="text-4xl leading-none md:text-[40px] lg:text-5xl">
+            <h1 className="text-4xl leading-none md:text-title-lg lg:text-5xl">
               Quais os benefícios dos cuidados paliativos na oncologia
             </h1>
             <p className="mt-5 text-xl font-bold">

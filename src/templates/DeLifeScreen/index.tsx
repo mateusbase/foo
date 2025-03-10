@@ -27,7 +27,7 @@ export default function DeLifeScreen(): JSX.Element {
         description="Foi para garantir que as drogas orais cheguem até os pacientes e para que recebam todas as orientações para a segurança no uso do quimioterápico, que a Oncoclínicas criou a DeLife. A proposta é realizar a gestão de medicamentos oncológicos orais com eficiência por meio de um exclusivo Programa de Suporte ao Paciente (PSP), assegurando que os pacientes recebam o medicamento em casa, sendo orientados de forma correta sobre sua utilização."
       />
 
-      <h1 className="mb-4 text-4xl text-primary md:text-[40px]">
+      <h1 className="mb-4 text-4xl text-primary md:text-title-lg">
         Assistência ao paciente
       </h1>
       <p className="mb-9 text-xl text-darkGray md:mb-16 lg:mb-9">
