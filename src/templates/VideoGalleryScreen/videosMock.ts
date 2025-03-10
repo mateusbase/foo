@@ -3,6 +3,7 @@ interface VideoCard {
   cardTitle: string;
   description: string;
   src: string;
+  poster?: string;
 }
 
 interface VideoSection {
@@ -23,6 +24,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "João Leite Ferreira, músico aposentado, compartilha como o acompanhamento médico e os exames regulares...",
         src: "https://example.com/video1.mp4",
+        poster: "/assets/images/galeria-de-videos/image (9).png",
       },
       {
         id: 2,
@@ -31,6 +33,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "No 4º episódio do OC Cast, edição especial SBOC 2024, o Dr. Daniel Vargas, da Oncoclínicas de Brasília...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (10).png",
       },
       {
         id: 3,
@@ -39,6 +42,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (11).png",
       },
       {
         id: 4,
@@ -47,6 +51,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (11).png",
       },
       {
         id: 5,
@@ -55,6 +60,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (11).png",
       },
     ],
   },
@@ -70,6 +76,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "João Leite Ferreira, músico aposentado, compartilha como o acompanhamento médico e os exames regulares...",
         src: "https://example.com/video1.mp4",
+        poster: "/assets/images/galeria-de-videos/image (9).png",
       },
       {
         id: 7,
@@ -78,6 +85,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "No 4º episódio do OC Cast, edição especial SBOC 2024, o Dr. Daniel Vargas, da Oncoclínicas de Brasília...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (10).png",
       },
       {
         id: 8,
@@ -86,6 +94,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (11).png",
       },
       {
         id: 9,
@@ -94,6 +103,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (11).png",
       },
       {
         id: 10,
@@ -102,6 +112,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (11).png",
       },
     ],
   },
@@ -117,6 +128,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "João Leite Ferreira, músico aposentado, compartilha como o acompanhamento médico e os exames regulares...",
         src: "https://example.com/video1.mp4",
+        poster: "/assets/images/galeria-de-videos/image (9).png",
       },
       {
         id: 12,
@@ -125,6 +137,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "No 4º episódio do OC Cast, edição especial SBOC 2024, o Dr. Daniel Vargas, da Oncoclínicas de Brasília...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (10).png",
       },
       {
         id: 13,
@@ -141,6 +154,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (11).png",
       },
       {
         id: 15,
@@ -149,6 +163,7 @@ const videoSectionsMock: VideoSection[] = [
         description:
           "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
         src: "https://example.com/video2.mp4",
+        poster: "/assets/images/galeria-de-videos/image (11).png",
       },
     ],
   },

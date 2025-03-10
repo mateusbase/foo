@@ -8,6 +8,7 @@ interface VideoCard {
   cardTitle: string;
   description: string;
   src: string;
+  poster?: string;
 }
 
 interface VideoCardSectionProps {
@@ -67,7 +68,7 @@ const VideoCardSection = ({
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {videos
           .slice(0, visibleCount)
-          .map(({ id, src, cardTitle, description }) => (
+          .map(({ id, src, cardTitle, description, poster }) => (
             <div
               key={id}
               className="rounded-bl-[40px] bg-custom-gradient-dark text-white"
@@ -76,7 +77,8 @@ const VideoCardSection = ({
                 <video
                   id={`video-${id}`}
                   src={src}
-                  className="block h-[193px] w-full bg-black lg:h-[306px]"
+                  poster={poster}
+                  className="block h-[193px] w-full object-cover md:h-[306px]"
                 >
                   <track kind="captions" />
                 </video>
