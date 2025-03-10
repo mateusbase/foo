@@ -1,0 +1,32 @@
+import Image from "next/image";
+
+interface SimpleIconCardProps {
+  description: string;
+  icon: string;
+  textPrimary?: boolean;
+}
+
+const SimpleIconCard = ({
+  description,
+  icon,
+  textPrimary = false,
+}: SimpleIconCardProps): JSX.Element => {
+  return (
+    <div className="flex min-h-[274px] w-full flex-row items-center gap-4 rounded-[20px] border border-lightGray p-6 md:min-h-[96px] lg:min-h-[200px]">
+      <Image
+        src={icon}
+        alt="Ícone"
+        width={70}
+        height={70}
+        className="shrink-0"
+      />
+      <p
+        className={`flex-1 break-words text-xl md:text-base lg:text-lg ${textPrimary ? "text-primary" : "text-darkGray"}`}
+      >
+        {description}
+      </p>
+    </div>
+  );
+};
+
+export default SimpleIconCard;
