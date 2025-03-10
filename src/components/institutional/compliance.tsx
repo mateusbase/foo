@@ -8,27 +8,33 @@ import socialNetwork from "../ShareOptions/socialNetwork";
 const Compliance: React.FC = () => {
   return (
     <div>
-      <div className="ml-8 mr-[23px] md:mr-8 lg:ml-[52px]">
+      <div>
         <h1 className="text-4xl text-primary lg:text-5xl">
           Princípios fundamentais de respeito à vida
         </h1>
         <p className="mt-11 text-sm text-darkGray md:mt-12 md:text-xl lg:mt-11">
-          Para a <span className="text-black">Oncoclínicas&Co</span>, conduzir
-          as atividades de forma ética, defendendo princípios fundamentais de
-          respeito à vida, transparência e honestidade é parte imprescindível do
-          trabalho e da forma de conduzir dia a dia.
+          Para a{" "}
+          <span className="font-bold text-darkGray">Oncoclínicas&Co</span>,
+          conduzir as atividades de forma ética, defendendo princípios
+          fundamentais de respeito à vida, transparência e honestidade é parte
+          imprescindível do trabalho e da forma de conduzir dia a dia.
         </p>
         <p className="mt-8 text-sm text-darkGray md:text-xl">
           Em consonância com esses princípios, empreendemos a implementação de
           um
-          <span className="text-black"> programa de compliance</span> que
-          estabelece diretrizes e orienta nossos colaboradores sobre as condutas
-          esperadas, desenvolvendo e fortalecendo as condutas esperadas no
-          exercício de suas funções.
+          <span className="font-bold text-darkGray">
+            {" "}
+            programa de compliance
+          </span>{" "}
+          que estabelece diretrizes e orienta nossos colaboradores sobre as
+          condutas esperadas, desenvolvendo e fortalecendo as condutas esperadas
+          no exercício de suas funções.
         </p>
         <p className="mt-8 text-sm text-darkGray md:text-xl">
           Os{" "}
-          <span className="text-black">pilares do programa de compliance</span>{" "}
+          <span className="font-bold text-darkGray">
+            pilares do programa de compliance
+          </span>{" "}
           deste programa são a estrita observância das leis e de regulamentos
           aplicáveis às atividades do Grupo e a adoção fundamentado nos em
           princípios dos mais elevados padrões de ética empresarial.
@@ -46,15 +52,15 @@ const Compliance: React.FC = () => {
         </p>
       </div>
       <div>
-        <h1 className="mt-16 text-4xl text-primary md:mx-8 md:mt-11 lg:ml-[52px] lg:mt-12 lg:text-5xl">
+        <h1 className="mt-16 text-4xl text-primary md:mt-11 lg:mt-12 lg:text-5xl">
           Conheca as políticas de compliance da Oncoclínicas
         </h1>
-        <div className="mt-11 grid grid-cols-1 gap-4 md:mx-8 lg:ml-[52px]">
+        <div className="mt-11 grid grid-cols-1 gap-4">
           {complianceCardMock.map((card) => (
             <ComplianceCards key={card.id} title={card.title} />
           ))}
         </div>
-        <div className="full-bleed mb-10 mt-16 flex flex-col items-center bg-custom-gradient-dark-145deg pb-11 pl-[37px] pr-[29px] pt-[52px] text-white md:mb-16 md:mt-24 md:px-14 md:py-[130px] lg:mb-[141px] lg:h-[425px] lg:w-[1027px] lg:items-start lg:py-[50px] lg:pl-14 lg:pr-16">
+        <div className="full-bleed mb-10 mt-16 flex flex-col items-center bg-custom-gradient-dark-145deg pb-11 pl-[37px] pr-[29px] pt-[52px] text-white md:mb-16 md:mt-24 md:px-14 md:py-[130px] lg:mb-[141px] lg:items-start lg:py-[50px] lg:pl-14 lg:pr-16">
           <h1 className="text-center text-4xl md:text-5xl lg:text-start">
             Sua contribuição é muito importante
           </h1>
@@ -72,7 +78,7 @@ const Compliance: React.FC = () => {
           </BaseButton>
         </div>
       </div>
-      <div className="md:md-[139px] mb-20 md:ml-[45px] lg:mb-40">
+      <div className="mb-20 md:mb-[139px] lg:mb-40">
         <ShareOptions options={socialNetwork} />
       </div>
     </div>
