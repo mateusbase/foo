@@ -62,7 +62,7 @@ const PrivacyPolicyScreen = (): JSX.Element => {
   return (
     <PageLayout title='Política de privacidade e tratamento de dados do Oncoclínicas Por Você ("política")'>
       <div className="mb-14 flex flex-col items-start lg:mt-20 lg:flex-row">
-        <div className="mt-16 w-full self-center md:self-start lg:hidden">
+        <div className="w-full self-center md:self-start lg:hidden">
           <BaseSelect
             options={options}
             defaultSelectedKey={options[0].key}
@@ -100,7 +100,7 @@ const PrivacyPolicyScreen = (): JSX.Element => {
             <ShareOptions options={socialNetwork} />
           </div>
         </div>
-        <div className="ml-9 mr-10 md:ml-8 md:mr-12 lg:hidden">
+        <div className="lg:hidden">
           <FirstParagraph />
           <SecondParagraph />
           <ThirdParagraph />

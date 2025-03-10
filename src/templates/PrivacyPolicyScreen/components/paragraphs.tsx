@@ -4,7 +4,7 @@ import { Element } from "react-scroll";
 const FirstParagraph = (): JSX.Element => {
   return (
     <Element
-      className="mt-20 text-base text-darkGray md:text-xl lg:mt-0"
+      className="mt-6 text-base text-darkGray md:text-xl lg:mt-0"
       name="section-1"
       id="section-1"
     >
