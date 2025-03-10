@@ -16,39 +16,31 @@ interface VideoCardSectionProps {
   videos: VideoCard[];
 }
 
-const getInitialVisibleCount = (): number => {
-  if (typeof window !== "undefined") {
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 768) return 2;
-  }
-  return 1;
-};
-
 const VideoCardSection = ({
   title,
   subtitle,
   videos,
 }: VideoCardSectionProps): JSX.Element => {
-  const [visibleCount, setVisibleCount] = useState(getInitialVisibleCount);
-  const [itemsPerClick, setItemsPerClick] = useState(getInitialVisibleCount);
+  const [visibleCount, setVisibleCount] = useState(1);
+  const [itemsPerClick, setItemsPerClick] = useState(1);
   const [playingVideos, setPlayingVideos] = useState<{
     [key: string]: boolean;
   }>({});
 
   useEffect(() => {
-    const updateItemsPerClick = (): void => {
-      if (window.innerWidth >= 1024) {
-        setVisibleCount(3);
-        setItemsPerClick(3);
-      } else if (window.innerWidth >= 768) {
-        setVisibleCount(2);
-        setItemsPerClick(2);
-      } else {
-        setVisibleCount(1);
-        setItemsPerClick(1);
-      }
+    const getVisibleCount = (): number => {
+      if (window.innerWidth >= 1025) return 3;
+      if (window.innerWidth >= 768) return 2;
+      return 1;
     };
 
+    const updateItemsPerClick = (): void => {
+      const count = getVisibleCount();
+      setVisibleCount(count);
+      setItemsPerClick(count);
+    };
+
+    updateItemsPerClick();
     window.addEventListener("resize", updateItemsPerClick);
     return () => window.removeEventListener("resize", updateItemsPerClick);
   }, []);
@@ -82,9 +74,9 @@ const VideoCardSection = ({
             >
               <div className="relative">
                 <video
-                  id={`video-${id}`} // Adiciona o ID único ao vídeo
+                  id={`video-${id}`}
                   src={src}
-                  className="block h-[193px] w-full lg:h-[306px]"
+                  className="block h-[193px] w-full bg-black lg:h-[306px]"
                 >
                   <track kind="captions" />
                 </video>
