@@ -1,8 +1,6 @@
 import PageLayout from "@/components/PageLayout";
-import BaseButton from "@/components/Button";
 import Image from "next/image";
 import { useDeviceType } from "@/hooks/useDeviceType";
-import { useState } from "react";
 import FormularySection from "@/components/FormularySection";
 import RightFullbleedBanner from "./components/RightFullbleedBanner";
 import PurpleFullbleedBanner from "./components/PurpleFullBleedBanner";
@@ -12,20 +10,14 @@ import CountrySection from "./components/CountrySection";
 export default function OcFranchiseScreen(): JSX.Element {
   const deviceType = useDeviceType();
 
-  const [isOpen, setIsOpen] = useState(false);
-
   const imageSrc =
     deviceType === "desktop"
       ? "/assets/images/oc-franquia/dedication-banner/image (3).png"
       : "/assets/images/oc-franquia/dedication-banner/image (4).png";
 
-  const toggleOpen = (): void => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <PageLayout
-      title="OC Franquia"
+      title="OC Franquias"
       subtitle="Uma oportunidade transformadora para você, para a sua região e para os seus pacientes"
     >
       <RightFullbleedBanner
@@ -41,32 +33,26 @@ export default function OcFranchiseScreen(): JSX.Element {
         src={imageSrc}
       />
 
-      <div className="mb-8 flex flex-col items-center">
+      <div className="mb-8 flex flex-col items-center self-center lg:mb-16 lg:flex-row">
         <Image
           src="/assets/images/oc-franquia/excellence-wheel/image 67.png"
           alt="Linhas de excelência em cuidados"
           width={1920}
           height={1080}
-          className="size-[311px] md:size-[480px] lg:size-[480px]"
+          className="size-[311px] md:size-[480px] lg:mr-20 lg:size-[350px] xl:mr-[180px] xl:size-[480px]"
         />
-        <BaseButton
-          onClick={toggleOpen}
-          className={`mt-16 bg-transparent text-6xl text-primary transition-transform duration-300 ${
-            isOpen ? "rotate-90" : "rotate-0"
-          }`}
-        >
-          {">"}
-        </BaseButton>
 
-        {isOpen && (
-          <Image
-            src="/assets/images/oc-franquia/excellence-wheel/image 68.png"
-            alt="Linhas de excelência em cuidados"
-            width={1920}
-            height={1080}
-            className="w-311px h-325px md:h-[501px] md:w-[481px]"
-          />
-        )}
+        <span className="mt-16 bg-transparent text-6xl text-primary lg:my-auto lg:text-8xl xl:text-9xl">
+          {">"}
+        </span>
+
+        <Image
+          src="/assets/images/oc-franquia/excellence-wheel/image 68.png"
+          alt="Linhas de excelência em cuidados"
+          width={1920}
+          height={1080}
+          className="h-325px w-[311px] md:h-[501px] md:w-[481px] lg:h-[450px] lg:w-[390px] xl:h-[501px] xl:w-[481px]"
+        />
       </div>
 
       <FormularySection

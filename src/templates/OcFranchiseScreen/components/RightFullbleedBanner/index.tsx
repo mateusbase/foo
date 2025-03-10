@@ -18,7 +18,7 @@ const RightFullbleedBanner = ({
 }: FullbleedBannerProps): JSX.Element => {
   return (
     <div className="full-bleed mb-14 flex flex-col-reverse md:flex-row md:items-stretch lg:mt-12">
-      <div className="flex h-[173px] flex-col gap-5 bg-custom-gradient-dark py-11 pl-8 pr-16 font-lato-regular text-white md:h-[228px] md:w-1/2 md:pl-8 md:pr-20 md:pt-14 lg:h-[266px] lg:rounded-bl-[100px] lg:pb-12 lg:pl-16 lg:pr-11 lg:pt-[71px]">
+      <div className="flex h-[173px] flex-col gap-5 bg-custom-gradient-dark pl-8 pr-16 font-lato-regular text-white md:h-[228px] md:w-1/2 md:items-center md:justify-center md:pl-8 md:pr-20 lg:h-[266px] lg:rounded-bl-[100px] lg:pl-16 lg:pr-11">
         <h1 className="mb-8 text-2xl lg:text-3xl xl:text-5xl">{title}</h1>
         {description && <p className="text-lg lg:text-xl">{description}</p>}
         {hasButton && (
