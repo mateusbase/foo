@@ -30,7 +30,7 @@ export default function TypesOfCancerScreen(): JSX.Element {
       subtitle="Conheça os tipos de câncer mais incidentes no Brasil, como são feitos seus diagnósticos, tratamentos e prevenção."
     >
       <div className="mt-10 flex flex-col gap-6">
-        <h1 className="text-2xl font-bold text-primary md:text-3xl lg:text-[40px]">
+        <h1 className="text-2xl font-bold text-primary md:text-3xl lg:text-title-lg">
           Existem diversos tipos de câncer e, a doença pode se desenvolver em
           qualquer órgão do corpo.
         </h1>
@@ -140,7 +140,7 @@ export default function TypesOfCancerScreen(): JSX.Element {
           />
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-64 gap-y-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-40 mt-10 grid w-full grid-cols-1 gap-x-6 gap-y-1 md:mb-28 md:grid-cols-2 lg:mb-64 lg:grid-cols-3">
           {filteredCancers.map((cancer) => (
             <p key={cancer.id} className="text-xl text-darkGray">
               {cancer.name}
