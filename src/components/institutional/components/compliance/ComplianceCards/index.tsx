@@ -7,7 +7,7 @@ interface ComplianceProps {
 
 const ComplianceCards = ({ title }: ComplianceProps): JSX.Element => {
   return (
-    <div className="flex flex-row items-center gap-2 rounded-[20px] border border-lightGray py-[19.5px] pl-5 pr-3 lg:h-[118] lg:w-[756px]">
+    <div className="flex flex-row items-center gap-2 rounded-[20px] border border-lightGray py-[19.5px] pl-5 pr-3 lg:h-[118] xl:w-[756px]">
       <Image
         src="/assets/images/compliance/compliance-icon.svg"
         alt="Ícone de arquivo"
