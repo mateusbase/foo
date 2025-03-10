@@ -5,7 +5,7 @@ import React from "react";
 export default function SignupForm(): JSX.Element {
   return (
     <div className="flex h-auto flex-col justify-between bg-primary p-6 md:w-[328px] md:rounded-[20px] lg:w-[493px] lg:p-16">
-      <h2 className="text-left text-[40px] text-white">Inscreva-se</h2>
+      <h2 className="text-left text-title-lg text-white">Inscreva-se</h2>
 
       <div className="mt-10 flex grow flex-col justify-between">
         <div className="space-y-4">

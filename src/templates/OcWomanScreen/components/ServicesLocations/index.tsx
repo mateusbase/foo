@@ -4,7 +4,7 @@ import { ArrowDownIcon } from "lucide-react";
 const ServicesLocations = (): JSX.Element => {
   return (
     <div className="full-bleed mb-11 bg-custom-gradient-dark pb-10 pl-10 pr-7 pt-9 text-white lg:mb-0 lg:w-2/5 lg:pb-[256px] lg:pl-16 lg:pr-24 lg:pt-16">
-      <h1 className="mb-12 text-2xl md:text-[40px] lg:text-3xl xl:text-4xl">
+      <h1 className="mb-12 text-2xl md:text-title-lg lg:text-3xl xl:text-4xl">
         Conheça os locais de atendimento
       </h1>
       <span className="text-xl">

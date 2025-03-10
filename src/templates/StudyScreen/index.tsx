@@ -18,7 +18,7 @@ export default function StudyScreen(): JSX.Element {
         mainOptions={false}
       >
         <div className="mt-10 flex flex-col items-start">
-          <p className="text-2xl text-primary md:text-[40px]">BGB-11417-201 </p>
+          <p className="text-2xl text-primary md:text-title-lg">BGB-11417-201 </p>
           <p className="text-[15px] text-lightGray md:text-xl">
             OC Oncoclínicas RJ
           </p>
@@ -41,7 +41,7 @@ export default function StudyScreen(): JSX.Element {
           <ResearchCentersList center={researchCentersMock} />
         </div>
 
-        <p className="mt-10 text-2xl text-primary md:text-[40px]">
+        <p className="mt-10 text-2xl text-primary md:text-title-lg">
           Critérios de inclusão
         </p>
         <p className="mt-4 text-sm text-lightGray md:text-xl lg:mt-12">
@@ -57,7 +57,7 @@ export default function StudyScreen(): JSX.Element {
           Group.Ter função adequada do órgão.
         </p>
 
-        <p className="mt-10 text-2xl text-primary md:text-[40px]">
+        <p className="mt-10 text-2xl text-primary md:text-title-lg">
           Critérios de exclusão
         </p>
         <p className="mt-4 text-sm text-lightGray md:text-xl lg:mt-12">
@@ -81,14 +81,14 @@ export default function StudyScreen(): JSX.Element {
           </p>
         </p>
 
-        <p className="mt-4 text-2xl text-primary md:text-[40px] lg:mt-10">
+        <p className="mt-4 text-2xl text-primary md:text-title-lg lg:mt-10">
           Coordenador(es)
         </p>
         <p className="mt-2 text-sm text-lightGray md:text-xl lg:mt-8">
           Thamires Almeida
         </p>
 
-        <p className="mt-4 text-2xl text-primary md:text-[40px] lg:mt-10">
+        <p className="mt-4 text-2xl text-primary md:text-title-lg lg:mt-10">
           Entre em contato
         </p>
         <p className="mt-2 text-sm text-lightGray md:text-xl lg:mt-8">

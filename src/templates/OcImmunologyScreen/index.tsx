@@ -14,7 +14,7 @@ const OcImmunologyScreen = (): JSX.Element => {
       subtitle="Unidades especializadas no tratamento de doenças autoimunes, inflamatórias e metabólicas, que proporcionam ao paciente um atendimento individual e acolhedor em uma estrutura completa, composta por equipamentos de alta tecnologia."
     >
       <div className="mt-20">
-        <h1 className="text-2xl text-primary md:text-[40px]">
+        <h1 className="text-2xl text-primary md:text-title-lg">
           Especialidades atendidas
         </h1>
 
@@ -32,7 +32,7 @@ const OcImmunologyScreen = (): JSX.Element => {
       </div>
 
       <div className="mt-16">
-        <h1 className="mb-14 text-2xl text-primary md:text-[40px]">
+        <h1 className="mb-14 text-2xl text-primary md:text-title-lg">
           Fluxo de atendimento
         </h1>
 

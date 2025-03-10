@@ -15,7 +15,7 @@ export default function VeinviewerScreen(): JSX.Element {
       </div>
 
       <div className="mt-20 sm:mb-20">
-        <h1 className="text-4xl text-primary md:text-[40px]">
+        <h1 className="text-4xl text-primary md:text-title-lg">
           Conforto e segurança no tratamento.{" "}
         </h1>
         <p className="mt-20 text-base text-darkGray md:text-xl">

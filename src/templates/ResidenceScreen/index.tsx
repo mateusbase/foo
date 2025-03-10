@@ -108,7 +108,7 @@ export default function ResidenceScreen(): JSX.Element {
 
       <ResidenceFullBanner src="/assets/images/residencia/image (4).png" />
 
-      <h1 className="mb-3 text-2xl text-primary md:mb-4 md:text-[40px] lg:mb-2">
+      <h1 className="mb-3 text-2xl text-primary md:mb-4 md:text-title-lg lg:mb-2">
         Para mais informações, envie e-mail para:
       </h1>
       <p className="mb-16 text-lg text-darkGray md:text-2xl">

@@ -56,7 +56,7 @@ const TumorTypeScreen = (): JSX.Element => {
           alt="Ícone do tipo de tumor"
           className="size-14"
         />
-        <h1 className="mt-4 text-2xl text-primary lg:mt-0 2xl:text-[40px]">
+        <h1 className="mt-4 text-2xl text-primary lg:mt-0 2xl:text-title-lg">
           {currentTumor?.title}
         </h1>
       </div>

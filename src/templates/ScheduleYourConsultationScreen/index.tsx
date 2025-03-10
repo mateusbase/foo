@@ -25,12 +25,19 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const inputValue = event.target.value.replace(/\D/g, "");
-    if (inputValue.length > 11) return;
+    const rawValue = event.target.value.replace(/\D/g, "");
+    if (rawValue.length > 11) return;
 
-    setValue("phone", inputValue);
+    const dynamicMask =
+      rawValue.length > 10 ? "(__) _____-____" : "(__) ____-____";
+    const formattedValue = format(rawValue, {
+      mask: dynamicMask,
+      replacement: { _: /\d/ },
+    });
+
+    setPhoneNumber(formattedValue);
+    setValue("phone", rawValue);
     trigger("phone");
-    setPhoneNumber(inputValue);
   };
 
   const handleBlur = async (): Promise<void> => {
@@ -65,7 +72,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
           </p>
         </div>
         <div className="w-full lg:w-1/2">
-          <h1 className="text-[40px] text-primary">
+          <h1 className="text-title-lg text-primary">
             {t("pages.scheduleYourConsultation.heading")}
           </h1>
           <p className="mt-2 text-2xl text-primary">

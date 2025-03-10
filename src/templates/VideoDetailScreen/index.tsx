@@ -18,7 +18,7 @@ Inscreva-se gratuitamente no link: https://bit.ly/45QknF5`;
       title="Galeria de vídeos"
       subtitle="Fique por dentro de todas as novidades da Oncoclínicas e acompanhe a cobertura dos nossos eventos."
     >
-      <h1 className="mt-10 text-[40px] text-primary">
+      <h1 className="mt-10 text-title-lg text-primary">
         Marcelo Gleiser ministra palestra no 11º Congresso Internacional
         Oncoclínicas Dana-Farber
       </h1>

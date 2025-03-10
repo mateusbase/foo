@@ -29,7 +29,7 @@ export default function OCAccess(): JSX.Element {
       subtitle="Conheça OC ACESSO. A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.
 "
     >
-      <h1 className="my-4 text-2xl leading-8 text-primary md:my-11 md:text-[40px] md:leading-10">
+      <h1 className="my-4 text-2xl leading-8 text-primary md:my-11 md:text-title-lg md:leading-10">
         Agora, os pacientes que
         <b className="ml-1">
           não tem cobertura por um plano de saúde e que não podem esperar por
@@ -64,7 +64,7 @@ export default function OCAccess(): JSX.Element {
       </div>
 
       <div className="my-14">
-        <h1 className="text-2xl text-primary md:text-[40px]">
+        <h1 className="text-2xl text-primary md:text-title-lg">
           É diferente, é inovador, é pra mim
         </h1>
         <p className="mt-5 text-xl text-darkGray">
@@ -128,7 +128,7 @@ export default function OCAccess(): JSX.Element {
         </div>
 
         <div className="px-10 lg:h-[590px] lg:w-3/5 lg:px-0">
-          <h1 className="leading-10 text-primary lg:text-4xl 2xl:text-[40px]">
+          <h1 className="leading-10 text-primary lg:text-4xl 2xl:text-title-lg">
             Simples, rápido, acessível e sem complicação
           </h1>
 
@@ -144,7 +144,7 @@ export default function OCAccess(): JSX.Element {
                   key={option.id}
                   className={`flex h-32 flex-col rounded-2xl p-4 pl-6 pt-5 md:h-[233px] lg:p-7 ${bgColor}`}
                 >
-                  <p className="mb-3 text-sm font-semibold md:text-[40px] lg:mb-0 lg:text-lg lg:leading-10 xl:mb-3 xl:text-[40px]">
+                  <p className="mb-3 text-sm font-semibold md:text-title-lg lg:mb-0 lg:text-lg lg:leading-10 xl:mb-3 xl:text-title-lg">
                     {option.step}
                   </p>
                   <p className="text-sm font-semibold !leading-3 md:mt-6 md:text-2xl md:!leading-8 lg:mt-2 lg:text-lg lg:font-semibold 2xl:text-2xl">

@@ -14,7 +14,7 @@ export default function IncomingEventsSection(): JSX.Element {
 
   return (
     <div className="my-10">
-      <h1 className="flex justify-center text-[32px] text-primary md:justify-start md:text-[40px]">
+      <h1 className="flex justify-center text-[32px] text-primary md:justify-start md:text-title-lg">
         Próximos eventos
       </h1>
       <Swiper

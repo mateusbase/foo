@@ -36,7 +36,7 @@ export default function HowItWorks(): JSX.Element {
       </p>
 
       <div className="mt-20">
-        <h2 className="text-2xl !leading-snug text-primary md:text-3xl lg:text-[40px]">
+        <h2 className="text-2xl !leading-snug text-primary md:text-3xl lg:text-title-lg">
           Importância da medicina integrativa durante o tratamento de câncer
         </h2>
         <p className="mt-8 text-base font-medium text-darkGray lg:text-xl lg:font-normal">

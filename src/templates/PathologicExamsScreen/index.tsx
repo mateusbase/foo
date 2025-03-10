@@ -54,7 +54,7 @@ const PathologicExamsScreen = (): JSX.Element => {
         <div className="mb-10 flex w-full flex-col gap-7 lg:w-3/4">
           {selectedItem && (
             <>
-              <h1 className="mb-4 font-lato-bold text-2xl text-primary md:text-[40px]">
+              <h1 className="mb-4 font-lato-bold text-2xl text-primary md:text-title-lg">
                 {selectedItem.label}
               </h1>
               <p className="font-lato-regular text-sm text-darkGray md:text-xl">
