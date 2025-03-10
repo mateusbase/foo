@@ -39,7 +39,7 @@ export default function UnitsCard({
           </p>
         )}
 
-        <section className="flex items-center gap-1">
+        <section className="flex items-center gap-3">
           <MarkerCircleIcon className="text-secondary" />
           <h1 className="text-2xl font-bold uppercase text-primary">
             {unitName}

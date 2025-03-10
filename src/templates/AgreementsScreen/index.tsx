@@ -21,7 +21,7 @@ export default function AgreementsScreen(): JSX.Element {
           placeholder="Convênio"
           radius="full"
           startContent={
-            <RxHamburgerMenu size={25} className="mr-4 text-primary" />
+            <RxHamburgerMenu size={25} className="mr-4 shrink-0 text-primary" />
           }
           size="sm"
           classNames={{
@@ -36,12 +36,12 @@ export default function AgreementsScreen(): JSX.Element {
         <BaseSelect
           color="primary"
           variant="bordered"
-          className="w-full lg:max-w-[130px]"
+          className="w-full lg:max-w-[160px]"
           labelPlacement="outside"
           placeholder="UF"
           radius="full"
           startContent={
-            <RxHamburgerMenu size={25} className="mr-4 text-primary" />
+            <RxHamburgerMenu size={25} className="mr-4 shrink-0 text-primary" />
           }
           size="sm"
           classNames={{
@@ -61,7 +61,7 @@ export default function AgreementsScreen(): JSX.Element {
           placeholder="Cidade"
           radius="full"
           startContent={
-            <RxHamburgerMenu size={25} className="mr-4 text-primary" />
+            <RxHamburgerMenu size={25} className="mr-4 shrink-0 text-primary" />
           }
           size="sm"
           classNames={{
