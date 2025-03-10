@@ -31,13 +31,14 @@ export default function UnitsCard({
   };
 
   return (
-    <main className="flex h-[575px] flex-col justify-between gap-8 md:w-[294px]">
+    <main className="flex h-[575px] w-full flex-col justify-between gap-8 xl:h-[515px]">
       <section>
         {isPartner && (
           <p className="mb-8 flex h-8 w-36 items-center justify-center rounded-[5px] bg-purpleDark text-center text-xs text-white">
             UNIDADE PARCEIRA
           </p>
         )}
+
         <section className="flex items-center gap-1">
           <MarkerCircleIcon className="text-secondary" />
           <h1 className="text-2xl font-bold uppercase text-primary">
@@ -66,15 +67,18 @@ export default function UnitsCard({
       </section>
 
       <section className="flex flex-col gap-2 lg:flex-row">
-        <BaseButton className="text-white lg:w-64" color="primary">
+        <BaseButton
+          className="shrink-0 text-white lg:w-[135px] lg:text-sm xl:w-[215px] xl:text-base"
+          color="primary"
+        >
           Agende uma consulta
         </BaseButton>
 
         <BaseButton
-          className="font-bold"
+          className="shrink-0 font-bold lg:w-[125px] lg:text-sm xl:w-[176px] xl:text-base"
           color="primary"
           variant="bordered"
-          startContent={<TbCodePlus size={20} />}
+          startContent={<TbCodePlus size={16} className="shrink-0" />}
           onClick={handleUnitClick}
         >
           Informações
