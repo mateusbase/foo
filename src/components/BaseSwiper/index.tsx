@@ -45,7 +45,7 @@ const BaseSwiper = <T extends { id: number }>({
           nextRef={nextRef}
           showSwiperPagination
           currentIndex={currentIndex}
-          className="my-7 lg:my-1"
+          className="my-7 lg:my-8"
         />
       )}
     </div>
