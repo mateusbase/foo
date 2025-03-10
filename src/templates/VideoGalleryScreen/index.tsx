@@ -55,6 +55,7 @@ export default function VideoGalleryScreen(): JSX.Element {
           ))}
         </div>
       </div>
+
       {videoSectionsMock.map((section) => (
         <VideoCardSection
           key={section.id}

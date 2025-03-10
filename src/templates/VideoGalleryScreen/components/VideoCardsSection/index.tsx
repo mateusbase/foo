@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import BaseButton from "@/components/Button";
 import { IoChevronForwardCircleOutline } from "react-icons/io5";
+import Image from "next/image";
 
 interface VideoCard {
   id: number;
   cardTitle: string;
   description: string;
   src: string;
+  poster?: string;
 }
 
 interface VideoCardSectionProps {
@@ -15,39 +17,42 @@ interface VideoCardSectionProps {
   videos: VideoCard[];
 }
 
-const getInitialVisibleCount = (): number => {
-  if (typeof window !== "undefined") {
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 768) return 2;
-  }
-  return 1;
-};
-
 const VideoCardSection = ({
   title,
   subtitle,
   videos,
 }: VideoCardSectionProps): JSX.Element => {
-  const [visibleCount, setVisibleCount] = useState(getInitialVisibleCount);
-  const [itemsPerClick, setItemsPerClick] = useState(getInitialVisibleCount);
+  const [visibleCount, setVisibleCount] = useState(1);
+  const [itemsPerClick, setItemsPerClick] = useState(1);
+  const [playingVideos, setPlayingVideos] = useState<{
+    [key: string]: boolean;
+  }>({});
 
   useEffect(() => {
-    const updateItemsPerClick = (): void => {
-      if (window.innerWidth >= 1024) {
-        setVisibleCount(3);
-        setItemsPerClick(3);
-      } else if (window.innerWidth >= 768) {
-        setVisibleCount(2);
-        setItemsPerClick(2);
-      } else {
-        setVisibleCount(1);
-        setItemsPerClick(1);
-      }
+    const getVisibleCount = (): number => {
+      if (window.innerWidth >= 1025) return 3;
+      if (window.innerWidth >= 768) return 2;
+      return 1;
     };
 
+    const updateItemsPerClick = (): void => {
+      const count = getVisibleCount();
+      setVisibleCount(count);
+      setItemsPerClick(count);
+    };
+
+    updateItemsPerClick();
     window.addEventListener("resize", updateItemsPerClick);
     return () => window.removeEventListener("resize", updateItemsPerClick);
   }, []);
+
+  const handlePlay = (id: number): void => {
+    const video = document.getElementById(`video-${id}`) as HTMLVideoElement;
+    if (video) {
+      video.play();
+      setPlayingVideos((prev) => ({ ...prev, [id]: true }));
+    }
+  };
 
   const handleShowMore = (): void => {
     setVisibleCount((prev) => Math.min(prev + itemsPerClick, videos.length));
@@ -63,18 +68,39 @@ const VideoCardSection = ({
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {videos
           .slice(0, visibleCount)
-          .map(({ id, src, cardTitle, description }) => (
+          .map(({ id, src, cardTitle, description, poster }) => (
             <div
               key={id}
               className="rounded-bl-[40px] bg-custom-gradient-dark text-white"
             >
-              <video
-                src={src}
-                className="block h-[193px] w-full lg:h-[306px]"
-                controls
-              >
-                <track kind="captions" srcLang="en" label="English captions" />
-              </video>
+              <div className="relative">
+                <video
+                  id={`video-${id}`}
+                  src={src}
+                  poster={poster}
+                  className="block h-[193px] w-full object-cover md:h-[306px]"
+                >
+                  <track kind="captions" />
+                </video>
+
+                {!playingVideos[id] && (
+                  <button
+                    onClick={() => handlePlay(id)}
+                    type="button"
+                    aria-label="Play video"
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+                  >
+                    <Image
+                      width={89}
+                      height={89}
+                      alt="Botão de play"
+                      src="/assets/images/telemedicina/Group 618.png"
+                      className="size-20"
+                    />
+                  </button>
+                )}
+              </div>
+
               <div className="flex h-[320px] flex-col justify-between p-4 pl-7">
                 <h2 className="text-2xl xl:text-3xl">{cardTitle}</h2>
                 <p className="text-sm xl:text-2xl">{description}</p>
