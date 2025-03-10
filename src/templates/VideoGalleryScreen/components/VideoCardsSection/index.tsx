@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import BaseButton from "@/components/Button";
 import { IoChevronForwardCircleOutline } from "react-icons/io5";
+import Image from "next/image";
 
 interface VideoCard {
   id: number;
@@ -30,6 +31,9 @@ const VideoCardSection = ({
 }: VideoCardSectionProps): JSX.Element => {
   const [visibleCount, setVisibleCount] = useState(getInitialVisibleCount);
   const [itemsPerClick, setItemsPerClick] = useState(getInitialVisibleCount);
+  const [playingVideos, setPlayingVideos] = useState<{
+    [key: string]: boolean;
+  }>({});
 
   useEffect(() => {
     const updateItemsPerClick = (): void => {
@@ -48,6 +52,14 @@ const VideoCardSection = ({
     window.addEventListener("resize", updateItemsPerClick);
     return () => window.removeEventListener("resize", updateItemsPerClick);
   }, []);
+
+  const handlePlay = (id: number): void => {
+    const video = document.getElementById(`video-${id}`) as HTMLVideoElement;
+    if (video) {
+      video.play();
+      setPlayingVideos((prev) => ({ ...prev, [id]: true }));
+    }
+  };
 
   const handleShowMore = (): void => {
     setVisibleCount((prev) => Math.min(prev + itemsPerClick, videos.length));
@@ -68,13 +80,33 @@ const VideoCardSection = ({
               key={id}
               className="rounded-bl-[40px] bg-custom-gradient-dark text-white"
             >
-              <video
-                src={src}
-                className="block h-[193px] w-full lg:h-[306px]"
-                controls
-              >
-                <track kind="captions" srcLang="en" label="English captions" />
-              </video>
+              <div className="relative">
+                <video
+                  id={`video-${id}`} // Adiciona o ID único ao vídeo
+                  src={src}
+                  className="block h-[193px] w-full lg:h-[306px]"
+                >
+                  <track kind="captions" />
+                </video>
+
+                {!playingVideos[id] && (
+                  <button
+                    onClick={() => handlePlay(id)}
+                    type="button"
+                    aria-label="Play video"
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+                  >
+                    <Image
+                      width={89}
+                      height={89}
+                      alt="Botão de play"
+                      src="/assets/images/telemedicina/Group 618.png"
+                      className="size-20"
+                    />
+                  </button>
+                )}
+              </div>
+
               <div className="flex h-[320px] flex-col justify-between p-4 pl-7">
                 <h2 className="text-2xl xl:text-3xl">{cardTitle}</h2>
                 <p className="text-sm xl:text-2xl">{description}</p>

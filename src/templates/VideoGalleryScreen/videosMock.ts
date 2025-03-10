@@ -40,6 +40,22 @@ const videoSectionsMock: VideoSection[] = [
           "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
         src: "https://example.com/video2.mp4",
       },
+      {
+        id: 4,
+        cardTitle:
+          "Arthur Rodrigues e Marco Lessa: Gastrointestinal | Cast Edição Especial SBOC 2024 #3",
+        description:
+          "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
+        src: "https://example.com/video2.mp4",
+      },
+      {
+        id: 5,
+        cardTitle:
+          "Arthur Rodrigues e Marco Lessa: Gastrointestinal | Cast Edição Especial SBOC 2024 #3",
+        description:
+          "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
+        src: "https://example.com/video2.mp4",
+      },
     ],
   },
   {
@@ -49,14 +65,14 @@ const videoSectionsMock: VideoSection[] = [
       "Todo mundo tem uma história e boas histórias merecem ser contadas 🤍 A Oncoclínicas tem uma trajetória de crescimento, importantes avanços científicos e responsabilidade para um cuidado sem limites. A nossa história é composta por muitos personagens: pacientes, médicos, colaboradores. Diariamente, participamos de milhares de histórias e aqui contamos alguns relatos de superação e cuidado vividos na Oncoclínicas. Acompanhe!",
     videos: [
       {
-        id: 4,
+        id: 6,
         cardTitle: "Diagnóstico precoce do câncer de próstata | Episódio 11",
         description:
           "João Leite Ferreira, músico aposentado, compartilha como o acompanhamento médico e os exames regulares...",
         src: "https://example.com/video1.mp4",
       },
       {
-        id: 5,
+        id: 7,
         cardTitle:
           "Daniel Vargas Alessandra: Geniturinário | Cast Edição Especial SBOC 2024 #4",
         description:
@@ -64,7 +80,23 @@ const videoSectionsMock: VideoSection[] = [
         src: "https://example.com/video2.mp4",
       },
       {
-        id: 6,
+        id: 8,
+        cardTitle:
+          "Arthur Rodrigues e Marco Lessa: Gastrointestinal | Cast Edição Especial SBOC 2024 #3",
+        description:
+          "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
+        src: "https://example.com/video2.mp4",
+      },
+      {
+        id: 9,
+        cardTitle:
+          "Arthur Rodrigues e Marco Lessa: Gastrointestinal | Cast Edição Especial SBOC 2024 #3",
+        description:
+          "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
+        src: "https://example.com/video2.mp4",
+      },
+      {
+        id: 10,
         cardTitle:
           "Arthur Rodrigues e Marco Lessa: Gastrointestinal | Cast Edição Especial SBOC 2024 #3",
         description:
@@ -80,14 +112,14 @@ const videoSectionsMock: VideoSection[] = [
       "Todo mundo tem uma história e boas histórias merecem ser contadas 🤍 A Oncoclínicas tem uma trajetória de crescimento, importantes avanços científicos e responsabilidade para um cuidado sem limites. A nossa história é composta por muitos personagens: pacientes, médicos, colaboradores. Diariamente, participamos de milhares de histórias e aqui contamos alguns relatos de superação e cuidado vividos na Oncoclínicas. Acompanhe!",
     videos: [
       {
-        id: 7,
+        id: 11,
         cardTitle: "Diagnóstico precoce do câncer de próstata | Episódio 11",
         description:
           "João Leite Ferreira, músico aposentado, compartilha como o acompanhamento médico e os exames regulares...",
         src: "https://example.com/video1.mp4",
       },
       {
-        id: 8,
+        id: 12,
         cardTitle:
           "Daniel Vargas Alessandra: Geniturinário | Cast Edição Especial SBOC 2024 #4",
         description:
@@ -95,7 +127,23 @@ const videoSectionsMock: VideoSection[] = [
         src: "https://example.com/video2.mp4",
       },
       {
-        id: 9,
+        id: 13,
+        cardTitle:
+          "Arthur Rodrigues e Marco Lessa: Gastrointestinal | Cast Edição Especial SBOC 2024 #3",
+        description:
+          "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
+        src: "https://example.com/video2.mp4",
+      },
+      {
+        id: 14,
+        cardTitle:
+          "Arthur Rodrigues e Marco Lessa: Gastrointestinal | Cast Edição Especial SBOC 2024 #3",
+        description:
+          "Neste episódio do OC Cast, o Dr. Artur Rodrigues Ferreira, oncologista clínico da Oncoclínicas de São Paulo...",
+        src: "https://example.com/video2.mp4",
+      },
+      {
+        id: 15,
         cardTitle:
           "Arthur Rodrigues e Marco Lessa: Gastrointestinal | Cast Edição Especial SBOC 2024 #3",
         description:
