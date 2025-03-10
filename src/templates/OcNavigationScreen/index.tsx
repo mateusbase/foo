@@ -1,12 +1,11 @@
-import FullbleedBanner from "@/components/FullbleedBanner";
 import PageLayout from "@/components/PageLayout";
 import BaseSwiper from "@/components/BaseSwiper";
-import ServicesLocations from "@/components/ServicesLocation";
-import SimpleIconCard from "@/components/SimpleIconCards";
 import benefitsMock from "./benefitsMock";
+import ServicesLocations from "./components/ServiceLocations";
+import FullbleedBanner from "./components/FullbleedBanner";
+import SimpleIconCard from "./components/SimpleIconCards";
 
 const informationArray = [
-  "Estamos com você durante todo o tratamento",
   " Na Oncoclínicas, assumimos o compromisso de estar ao seu lado durante toda a jornada do tratamento oncológico. Nosso propósito é claro: cuidar sem limites.",
   "Encontre a unidade mais próxima e entre em contato:",
 ];
@@ -31,7 +30,7 @@ export default function OcNavigationScreen(): JSX.Element {
         src={imageSrc}
       />
 
-      <div className="mt-8 md:mt-6 lg:mt-12">
+      <div className="">
         <h1 className="text-2xl text-primary md:text-4xl">
           Alguns dos benefícios do programa de navegação
         </h1>
@@ -60,7 +59,10 @@ export default function OcNavigationScreen(): JSX.Element {
         </div>
       </div>
 
-      <ServicesLocations content={informationArray} />
+      <ServicesLocations
+        title="Estamos com você durante todo o tratamento"
+        content={informationArray}
+      />
     </PageLayout>
   );
 }
