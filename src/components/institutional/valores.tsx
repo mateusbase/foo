@@ -8,7 +8,7 @@ import socialNetwork from "../ShareOptions/socialNetwork";
 const valores = (): JSX.Element => {
   return (
     <div>
-      <div className="mx-8">
+      <div>
         <h1 className="text-2xl text-primary md:text-title-lg">
           Acolhimento e inovação
         </h1>
@@ -37,7 +37,7 @@ const valores = (): JSX.Element => {
           qualidade de vida dos pacientes.
         </p>
       </div>
-      <h1 className="mx-8 mb-4 mt-10 text-2xl text-primary lg:-mb-6 lg:text-title-lg">
+      <h1 className="mb-4 mt-10 text-2xl text-primary lg:-mb-6 lg:text-title-lg">
         Nossa essência
       </h1>
       <ValuesFullbleedBanner
