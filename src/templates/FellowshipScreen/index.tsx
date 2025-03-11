@@ -45,7 +45,7 @@ export default function FellowshipScreen(): JSX.Element {
       <h1 className="mb-8 text-2xl text-primary">
         Próximos lançamentos OC Fellowship (março/2025)
       </h1>
-      <ul className="ml-5 list-outside list-disc grid-cols-2 text-xl text-darkGray lg:grid lg:gap-x-12 lg:text-2xl">
+      <ul className="ml-6 list-outside list-disc grid-cols-2 text-xl text-darkGray lg:grid lg:gap-x-12 lg:text-2xl">
         <li>2 vagas para Oncologia de Tórax e Cabeça & Pescoço</li>
         <li>1 vaga para Oncologia do Trato Geniturinário</li>
         <li>1 vaga para Oncologia do Trato Gastrointestinal</li>
