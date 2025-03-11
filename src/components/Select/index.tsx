@@ -44,6 +44,7 @@ export default function BaseSelect({
           : `border-${color} border-1`,
         label: `text-${labelColor} text-base`,
         value: `!text-primary text-base`,
+        base: "text-primary",
         ...classNames,
       }}
     >
