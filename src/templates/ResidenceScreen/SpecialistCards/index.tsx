@@ -6,7 +6,7 @@ const SpecialistCard = (): JSX.Element => {
   const deviceType = useDeviceType();
 
   return (
-    <div className="mb-8 text-xl text-darkGray">
+    <div className="mb-8 text-xl text-darkGray lg:text-base xl:text-xl">
       <section className="flex h-[144px] flex-row items-center gap-4">
         <Image
           src="/assets/images/residencia/icons/inscrições/Vector.svg"
@@ -41,7 +41,7 @@ const SpecialistCard = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="mb-6 flex h-[144px] flex-row items-start gap-4 md:mb-9">
+      <section className="mb-6 flex h-[144px] flex-row items-start gap-4 md:mb-9 lg:mb-4 xl:mb-9">
         <Image
           src="/assets/images/residencia/icons/inscrições/Vector (2).svg"
           radius="none"
@@ -57,11 +57,11 @@ const SpecialistCard = (): JSX.Element => {
       </section>
       <div className="flex flex-col gap-3 md:w-3/5 md:flex-row lg:w-full">
         <BaseButton
-          className={`text-white md:w-[229px] lg:w-1/2 xl:w-[229px] ${deviceType !== "desktop" ? "bg-primary" : "bg-darkGray"}`}
+          className={`text-white md:w-[229px] xl:w-[229px] ${deviceType !== "desktop" ? "bg-primary" : "bg-darkGray"}`}
         >
           Inscrições encerradas
         </BaseButton>
-        <BaseButton className="border border-primary bg-white text-primary md:w-[215px] lg:w-1/2 xl:w-[215px]">
+        <BaseButton className="border border-primary bg-white text-primary md:w-[215px] xl:w-[215px]">
           Ler edital completo
         </BaseButton>
       </div>

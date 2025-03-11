@@ -1,8 +1,8 @@
 import PageLayout from "@/components/PageLayout";
 import { useDeviceType } from "@/hooks/useDeviceType";
-import { Image } from "@heroui/react";
 import BaseSwiper from "@/components/BaseSwiper";
 import BaseButton from "@/components/Button";
+import Image from "next/image";
 import SpecialistCard from "./SpecialistCards";
 import reasonsMock from "./reasonsMock";
 import ReasonsCard from "./ReasonsCards";
@@ -47,12 +47,17 @@ export default function ResidenceScreen(): JSX.Element {
   return (
     <PageLayout title="Instituto Oncoclínicas" subtitle="Residência 2025">
       <div className="mt-10 flex items-center justify-center">
-        <Image src={getBanner()} alt="Banner OC Residência" />
+        <Image
+          width={1920}
+          height={1080}
+          src={getBanner()}
+          alt="Banner OC Residência"
+        />
       </div>
 
       <div className="flex flex-col lg:flex-row">
-        <div className="mt-10 flex flex-col lg:w-1/2">
-          <h1 className="mb-4 text-2xl text-primary md:w-4/5 md:text-3xl">
+        <div className="mt-10 block flex-col lg:my-[89px] lg:h-[555px] lg:w-1/2 lg:justify-center">
+          <h1 className="mb-4 text-2xl text-primary md:w-4/5 md:text-3xl lg:text-xl xl:text-3xl">
             A porta de entrada para se tornar um dos nosso especialistas
             renomados está aberta.
           </h1>
@@ -60,8 +65,11 @@ export default function ResidenceScreen(): JSX.Element {
         </div>
         <div className="flex justify-center md:w-full lg:w-1/2">
           <Image
+            width={1920}
+            alt="Banner enfermeiros sorrindo"
+            height={1080}
             src={getSpecialtyImage()}
-            className="full-bleed-md md:w-[782px] lg:mt-[89px] lg:h-[556px] lg:w-full lg:shrink-0"
+            className="block w-full object-fill lg:mt-[89px] lg:h-[555px] xl:h-[601px]"
           />
         </div>
       </div>
