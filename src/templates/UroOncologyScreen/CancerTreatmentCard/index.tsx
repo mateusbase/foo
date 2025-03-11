@@ -10,7 +10,7 @@ const CancerTreatmentCard = ({
   description,
 }: CancerTreatmentCardProps): JSX.Element => {
   return (
-    <div className="flex h-[397px] w-full flex-col gap-4 rounded-[20px] border border-lightGray p-6 md:min-h-[180px] lg:min-h-[200px]">
+    <div className="flex h-[397px] w-full flex-col gap-4 rounded-[20px] border border-lightGray p-6 md:h-auto md:grow md:auto-rows-fr">
       <div className="flex flex-row items-center gap-10">
         <span className="justify-items-center text-[26px]">{title}</span>
       </div>

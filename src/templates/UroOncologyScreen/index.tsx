@@ -70,7 +70,7 @@ export default function UroOncology(): JSX.Element {
           </div>
         </div>
 
-        <div className="mb-11 hidden grid-cols-1 items-stretch md:hidden lg:mt-12 lg:grid lg:grid-cols-3 lg:gap-7">
+        <div className="mb-11 hidden grid-cols-1 items-stretch md:hidden lg:mt-12 lg:grid lg:grid-cols-3 lg:gap-7 xl:gap-7">
           {cancerTechsMock.slice(0, 3).map((type) => (
             <CancerTechsCard
               key={type.id}
@@ -88,6 +88,7 @@ export default function UroOncology(): JSX.Element {
                 title={type.title}
                 description={type.description}
                 icon={type.icon}
+                className="lg:w-[493px]"
               />
             ))}
           </div>

@@ -4,15 +4,19 @@ interface CancerTechsCardProps {
   title: string;
   description: string;
   icon: string;
+  className?: string;
 }
 
 const CancerTechsCard = ({
   title,
   description,
   icon,
+  className,
 }: CancerTechsCardProps): JSX.Element => {
   return (
-    <div className="flex h-[416px] min-h-[150px] w-full flex-col gap-4 rounded-[20px] border border-lightGray p-6 md:min-h-[180px] lg:min-h-[200px] lg:w-[493px]">
+    <div
+      className={`flex h-[416px] min-h-[150px] w-full flex-col gap-4 rounded-[20px] border border-lightGray p-6 md:h-auto md:grow md:auto-rows-fr ${className}`}
+    >
       <div className="flex flex-row items-center gap-10">
         <Image
           src={icon}
