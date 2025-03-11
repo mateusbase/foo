@@ -1,4 +1,4 @@
-import { Image } from "@heroui/react";
+import Image from "next/image";
 
 interface NewsCardProps {
   image: string;
@@ -14,8 +14,14 @@ const NewsCard = ({
   description,
 }: NewsCardProps): JSX.Element => {
   return (
-    <section className="flex max-w-[312px] flex-col gap-2 md:max-w-[357px]">
-      <Image src={image} alt={title} radius="none" />
+    <section className="flex flex-col gap-2">
+      <Image
+        src={image}
+        alt={title}
+        width={1920}
+        height={1080}
+        className="w-full"
+      />
       <div className="flex w-full flex-col gap-2">
         <h1 className="break-words text-xl text-primary">{title}</h1>
         <h2 className="break-words text-sm text-primary-foreground lg:text-xs">

@@ -25,7 +25,7 @@ const projectDescriptions: ProjectDescription[] = [
   {
     id: 3,
     icon: `${iconPath}image (4).svg`,
-    title: "Din Down Down",
+    title: "Casa de Apoio Solange Fraga",
     description:
       "Crianças e adolescentes em situação de vulnerabilidade social recebem tratamento oncológico e cardíaco no Hospital Santa Izabel, na Bahia",
   },
