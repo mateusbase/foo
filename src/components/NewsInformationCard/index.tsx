@@ -11,7 +11,7 @@ export default function NewsInformationCard({
 
   return (
     <Link href={`/noticias/${newSlug}`}>
-      <div className="mx-auto flex w-full flex-col gap-4 lg:h-full lg:flex-row lg:gap-8">
+      <div className="flex w-full flex-col gap-4 lg:h-full lg:flex-row lg:gap-8">
         <div className="h-auto w-full lg:max-w-[812px]">
           <img
             src={image}
