@@ -5,7 +5,7 @@ import React from "react";
 
 const Seguranca: React.FC = () => {
   return (
-    <div className="mb-10 ml-11 mr-9 flex-1 text-darkGray md:ml-9 md:mr-16 lg:ml-16 lg:mt-4">
+    <div className="mb-10 flex-1 text-darkGray lg:mt-4">
       <p className="text-base md:text-xl">
         {" "}
         A Oncoclínicas do Brasil Serviços Médicos S.A., em seu nome e em nome de
@@ -94,7 +94,7 @@ const Seguranca: React.FC = () => {
         conforme definido na legislação aplicável. Caso atendidas estas
         condições, estes dados poderão ser compartilhados:
       </p>
-      <ul className="ml-8 list-disc text-base md:text-xl">
+      <ul className="ml-6 list-disc text-base md:text-xl">
         <li>
           Com as subsidiárias, controladas, coligadas e empresas que de alguma
           forma integrem a estrutura da Oncoclínicas, assim como suas
@@ -120,7 +120,7 @@ const Seguranca: React.FC = () => {
         Conforme previsto na legislação aplicável e salvo se limitados por esta,
         são direitos dos Usuários em relação a seus dados pessoais:
       </p>
-      <ul className="ml-8 list-disc text-base md:text-xl">
+      <ul className="ml-6 list-disc text-base md:text-xl">
         <li>Direito de confirmação da existência de tratamento de dados;</li>
         <li>Direito de acesso aos dados;</li>
         <li>
