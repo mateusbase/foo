@@ -2,9 +2,9 @@ import ColoredCard from "@/components/ColoredCard";
 import FullbleedBanner from "@/components/FullbleedBanner";
 import PageLayout from "@/components/PageLayout";
 import BaseSwiper from "@/components/BaseSwiper";
-import SimpleCard from "@/components/SimpleCard";
 import telemedicineMock from "./telemedicineMock";
 import teleconsultPreparations from "./teleconsulttPrepatation";
+import SimpleCard from "./components/SimpleCard";
 
 export default function TelemedicineScreen(): JSX.Element {
   return (
@@ -55,7 +55,7 @@ export default function TelemedicineScreen(): JSX.Element {
             className="mb-20"
           />
         </div>
-        <div className="mb-14 hidden md:grid md:grid-cols-2 md:gap-8 lg:mb-24 lg:flex lg:flex-row lg:gap-3">
+        <div className="mb-20 hidden md:mb-12 md:grid md:grid-cols-2 md:gap-8 lg:mb-32 lg:flex lg:flex-row lg:gap-3">
           {teleconsultPreparations.map((teleconsult) => (
             <SimpleCard
               key={teleconsult.id}
