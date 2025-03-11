@@ -61,7 +61,7 @@ export default function MolecularThursdaysScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mx-6 mt-6 flex justify-center lg:hidden">
+      <div className="mt-6 flex justify-center lg:hidden">
         <BaseSelect
           color="primary"
           variant="bordered"
@@ -110,9 +110,7 @@ export default function MolecularThursdaysScreen(): JSX.Element {
 
         <div className="lg:mt-10">
           {options.map((option) => (
-            <div className="mt-10" key={option.id}>
-              <NewsInformationCard options={option} />
-            </div>
+            <NewsInformationCard options={option} />
           ))}
         </div>
 
@@ -128,8 +126,8 @@ export default function MolecularThursdaysScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="flex flex-col lg:hidden">
-        <div className="relative mx-auto w-11/12">
+      <div className="mb-10 flex flex-col md:mb-20 lg:hidden">
+        <div className="relative mx-auto w-full">
           <Swiper
             modules={[Navigation]}
             slidesPerView={1}
