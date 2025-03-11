@@ -1,9 +1,9 @@
 import PageLayout from "@/components/PageLayout";
 import { useDeviceType } from "@/hooks/useDeviceType";
 import BaseSwiper from "@/components/BaseSwiper";
-import { Image } from "@heroui/react";
 import ShareOptions from "@/components/ShareOptions";
 import socialNetwork from "@/components/ShareOptions/socialNetwork";
+import Image from "next/image";
 import FullbleedBanner from "./components/Fullbleed Banner";
 import fronts from "./fronts";
 import projectCardMocks from "./projectCardsMock";
@@ -40,23 +40,24 @@ export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
           que buscam melhorar as condições de vida de pessoas que sofrem com
           situações de vulnerabilidade social, econômica e/ou cultural.
         </p>
-        <div className="flex justify-center">
-          <BaseSwiper
-            data={fronts}
-            className="mx-auto w-full"
-            renderItem={(item) => (
-              <Image
-                src={item.image}
-                className="mb-6 h-full w-[350px] md:ml-0 lg:mb-10"
-                alt={item.alt}
-              />
-            )}
-            breakpoints={{
-              768: { slidesPerView: 2, spaceBetween: 10 },
-              1025: { slidesPerView: 3, spaceBetween: 20 },
-            }}
-          />
-        </div>
+
+        <BaseSwiper
+          data={fronts}
+          className="mx-auto w-full md:mb-14 md:mt-20"
+          renderItem={(item) => (
+            <Image
+              src={item.image}
+              width={1920}
+              height={1080}
+              className="mb-6 w-full lg:mb-10"
+              alt={item.alt}
+            />
+          )}
+          breakpoints={{
+            768: { slidesPerView: 2, spaceBetween: 10 },
+            1025: { slidesPerView: 3, spaceBetween: 20 },
+          }}
+        />
       </div>
 
       <div className="my-20">
@@ -99,6 +100,10 @@ export default function ProjectsAndSponsorshipsScreen(): JSX.Element {
           />
         ))}
       </div>
+
+      <p className="mb-4 text-center text-lg text-lightGray md:text-2xl">
+        A Oncoclínicas não recebe benefícios fiscais
+      </p>
 
       <RightFullbleedBanner
         src="/assets/images/projetos-e-patrocinios/Imagem.png"
