@@ -24,11 +24,11 @@ const PageHeader = ({
   };
 
   return (
-    <div className="relative min-h-[155px] w-full bg-[linear-gradient(170deg,_var(--tw-gradient-stops))] from-primary via-primary to-secondary to-75% md:min-h-[243px] lg:min-h-[343px]">
+    <div className="relative min-h-[200px] w-full bg-[linear-gradient(170deg,_var(--tw-gradient-stops))] from-primary via-primary to-secondary to-75% md:min-h-[263px] lg:min-h-[343px]">
       <div className="absolute inset-0 flex justify-center">
         <div className="flex w-full max-w-screen-2xl flex-col items-start justify-center px-4">
           <div className="flex w-full flex-col sm:flex-row sm:items-center sm:justify-between lg:justify-start">
-            <div className="w-full">
+            <div className="my-5 w-full">
               {preTitle && (
                 <p className="mt-2 max-w-7xl text-sm leading-[20px] text-white sm:text-base sm:leading-[22px] lg:mt-4 lg:text-lg lg:leading-[24px]">
                   {preTitle}
