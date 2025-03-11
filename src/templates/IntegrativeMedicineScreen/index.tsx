@@ -31,6 +31,9 @@ export default function IntegrativeMedicineScreen(): JSX.Element {
               startContent={<IoMenu className="text-primary" size={28} />}
               defaultSelectedKey="1"
               labelPlacement="outside"
+              classNames={{
+                trigger: "border-primary border md:w-[666px] ",
+              }}
               options={menuItems.map((item) => ({
                 key: item.key,
                 value: item.id.toString(),
