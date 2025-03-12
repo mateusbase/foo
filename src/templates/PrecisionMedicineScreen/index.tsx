@@ -107,22 +107,24 @@ export function PrecisionMedicineScreen({
 
       <div className="full-bleed mt-24 hidden min-h-[620px] px-14 py-9 md:flex md:px-3 lg:hidden">
         <InfoCard roundedSide="left">
-          <h2 className="mb-10 mt-7 text-4xl font-bold text-white">
+          <h2 className="mt-7 text-4xl font-bold text-white">
             Programa de Apoio à Pesquisa
           </h2>
-          <p className="mb-28 text-xl text-white">
+          <p className="-mb-6 text-xl text-white">
             Com o objetivo de impulsionar a pesquisa na área de genômica na
             América Latina, a OC Medicina de Precisão fortalece seu compromisso
             ao oferecer o sistema de facilities, um novo serviço desenvolvido
             para oferecer uma solução que alia expertise e tecnologia de ponta,
             para auxiliar no desenvolvimento de pesquisas na área de genômica.
-            <br />
+          </p>
+          <p className="-mb-6 text-xl text-white">
             Nossa equipe especializada e nosso ambiente tecnológico estão à
             disposição para apoiar projetos de pesquisa, fornecendo um ambiente
             propício e recursos avançados para o progresso científico. Este é um
             serviço versátil e eficiente, projetado para impulsionar a
             excelência e a inovação em estudos de diversos campos.
-            <br />
+          </p>
+          <p className="mb-28 text-xl text-white">
             Contamos com um parque tecnológico completo com as plataformas de
             sequenciamento Illumina (MiSeq, NextSeq e NovaSeq), permitindo
             análises do DNA e RNA por metodologias diver
@@ -145,7 +147,7 @@ export function PrecisionMedicineScreen({
             640: {
               slidesPerView: 2,
             },
-            1024: {
+            1025: {
               slidesPerView: 3,
             },
           }}
@@ -161,7 +163,6 @@ export function PrecisionMedicineScreen({
                 city={unit.city}
                 complement={unit.complement}
                 hours={unit.hours}
-                image={unit.image}
                 unitName={unit.unitName}
               />
             </SwiperSlide>
@@ -170,11 +171,13 @@ export function PrecisionMedicineScreen({
 
         <div className="lg:hidden">
           <SliderArrows
+            size={0.7}
             swiperRef={swiperRef}
             currentIndex={currentIndex}
             prevRef={prevRef}
             nextRef={nextRef}
             showSwiperPagination
+            indexSize={13}
           />
         </div>
       </div>

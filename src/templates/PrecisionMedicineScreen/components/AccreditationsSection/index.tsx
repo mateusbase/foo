@@ -1,6 +1,6 @@
 const AccreditationsSection = (): JSX.Element => {
   return (
-    <section className="relative left-1/2 mt-20 flex min-h-[400px] w-screen -translate-x-1/2 flex-col items-center bg-gray-foreground text-center md:-mb-7 md:mt-20 md:h-auto">
+    <section className="full-bleed-lg mt-20 flex min-h-[400px] max-w-screen-2xl flex-col items-center bg-gray-foreground text-center md:-mb-7 md:mt-20 md:h-auto lg:-mb-16">
       <div className="flex flex-col md:mt-8 md:flex-row md:items-center md:gap-2 lg:mt-14">
         <h1 className="mt-14 font-lato-black text-2xl text-primary md:mt-0 lg:text-6xl">
           Acreditações OC
@@ -14,11 +14,11 @@ const AccreditationsSection = (): JSX.Element => {
         <div className="flex min-h-[250px] w-[300px] flex-col items-center justify-center rounded-3xl bg-white px-1 py-9">
           <img
             src="assets/images/image 16.png"
-            alt="Ícone Programa ID Mama (PIK3CA/AKT1/PTEN)"
+            alt="Ícone ONA - nível 3"
             className="mb-4"
           />
           <p className="text-center font-lato-thin text-base text-darkGray">
-            Programa ID Mama (PIK3CA/AKT1/PTEN)
+            ONA - nível 3
           </p>
         </div>
         <div className="flex min-h-[250px] w-[300px] flex-col items-center justify-center rounded-3xl bg-white px-1 py-9">

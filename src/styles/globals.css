@@ -43,18 +43,18 @@ body {
   .full-bleed {
     @apply relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 lg:static lg:left-0 lg:w-full lg:max-w-full lg:translate-x-0;
   }
-  .full-bleed-md{
+  .full-bleed-md {
     @apply relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 md:static md:left-0 md:w-full md:max-w-full md:translate-x-0;
   }
 
   .full-bleed-lg {
-    @apply relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 ;
+    @apply relative left-1/2 w-[100vw] max-w-none overflow-x-hidden -translate-x-1/2;
   }
 }
 
 @layer base {
   li[data-selected="true"][data-selectable="true"] {
-    background-color: var(--tw-bg-primary, #007D77) !important;
+    background-color: var(--tw-bg-primary, #007d77) !important;
   }
 
   li[data-selected="true"][data-selectable="true"] span[data-label="true"] {

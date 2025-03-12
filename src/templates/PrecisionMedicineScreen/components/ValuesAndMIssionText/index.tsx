@@ -1,7 +1,7 @@
 const ValuesAndMissionText = (): JSX.Element => {
   return (
     <div className="flex flex-col lg:mb-10 lg:mt-32 lg:flex-row">
-      <div className="flex flex-col gap-5 lg:w-1/2 lg:flex-col lg:gap-12">
+      <div className="mb-9 flex flex-col gap-5 lg:w-1/2 lg:flex-col lg:gap-12">
         <div className="flex flex-col lg:gap-3">
           <h3 className="mb-2 font-lato-regular text-4xl text-primary md:text-5xl">
             Nossa missão

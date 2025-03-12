@@ -9,4 +9,5 @@ export type SliderArrowsProps = {
   color?: string;
   currentIndex?: number;
   className?: string;
+  indexSize?: number;
 };
