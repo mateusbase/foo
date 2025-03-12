@@ -11,6 +11,7 @@ const SliderArrows = ({
   color = "text-primary-foreground",
   currentIndex,
   className = "",
+  indexSize = 20,
 }: SliderArrowsProps): JSX.Element => {
   const handlePrev = (): void => {
     if (swiperRef.current) {
@@ -41,7 +42,9 @@ const SliderArrows = ({
         />
       </button>
       {showSwiperPagination && (
-        <span className="text-xl text-primary">{currentIndex}</span>
+        <span className={`text-[${indexSize}px] text-primary`}>
+          {currentIndex}
+        </span>
       )}
       <button
         ref={nextRef}

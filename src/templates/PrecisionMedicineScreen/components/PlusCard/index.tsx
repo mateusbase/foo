@@ -18,7 +18,7 @@ const PlusCard = ({ exams }: ExamsCardProps): JSX.Element => {
             {exam.name}
           </span>
 
-          <IoChevronForwardCircleOutline className="shrink-0" size={60} />
+          <IoChevronForwardCircleOutline className="shrink-0" size={29.5} />
         </div>
       ))}
     </div>

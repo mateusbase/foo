@@ -18,10 +18,13 @@ const RoundedRectangle = ({
         >
           <div
             key={element.text}
-            className="flex h-[98px] w-full items-center justify-between rounded-[20px] border-3 border-primary px-7 py-8 align-middle font-lato-black md:h-[106px] md:w-[90%] md:text-4xl lg:w-full lg:gap-2 lg:text-3xl"
+            className="flex h-[98px] w-full items-center justify-between rounded-[20px] border-3 border-primary px-7 py-8 align-middle font-lato-black font-semibold md:h-[106px] md:w-[90%] md:text-4xl lg:w-full lg:gap-2 lg:text-3xl"
           >
-            <span className="text-lg text-primary">{element.text}</span>
-            <IoIosArrowForward className="rounded-full border-2 border-primary align-middle text-2xl text-primary" />
+            <span className="text-lg text-greenDark">{element.text}</span>
+            <IoIosArrowForward
+              size={29.5}
+              className="rounded-full border-2 border-primary align-middle text-greenDark"
+            />
           </div>
         </Link>
       ))}

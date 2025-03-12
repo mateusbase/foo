@@ -1,3 +1,4 @@
+import BaseContainer from "../Container";
 import { PurpleBannerProps } from "./type";
 
 const PurpleBanner = ({
@@ -7,8 +8,8 @@ const PurpleBanner = ({
   video,
 }: PurpleBannerProps): JSX.Element => {
   return (
-    <div className="flex w-full flex-col md:mt-4 lg:flex-row">
-      <div className="relative left-1/2 flex size-full min-h-[302px] w-screen -translate-x-1/2 flex-col justify-center gap-4 bg-gradient-to-t from-purpleDark to-purpleLight px-10 py-4 md:-mt-5 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
+    <BaseContainer>
+      <div className="full-bleed flex size-full min-h-[302px] flex-col justify-center gap-4 bg-gradient-to-t from-purpleDark to-purpleLight py-4 pl-4 pr-6 md:-mt-5 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
         <p className="font-lato-regular text-2xl text-white md:text-4xl">
           {title}
         </p>
@@ -21,7 +22,7 @@ const PurpleBanner = ({
       </div>
 
       {video && (
-        <div className="relative left-1/2 w-screen -translate-x-1/2 lg:w-auto lg:flex-1 lg:translate-x-0">
+        <div className="full-bleed lg:w-auto lg:flex-1 lg:translate-x-0">
           <video className="size-full object-cover" controls>
             <source src={video} type="video/mp4" />
             <track
@@ -33,7 +34,7 @@ const PurpleBanner = ({
           </video>
         </div>
       )}
-    </div>
+    </BaseContainer>
   );
 };
 

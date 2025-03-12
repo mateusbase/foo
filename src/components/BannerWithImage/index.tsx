@@ -13,7 +13,7 @@ interface BannerWithImageProps {
   media: string;
   isLeft?: boolean;
   title: string;
-  description: string;
+  description: string | string[];
   primaryColor?: string;
   secondaryColor?: string;
   isLargeText?: boolean;

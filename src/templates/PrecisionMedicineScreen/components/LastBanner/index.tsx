@@ -52,7 +52,7 @@ const LastBanner = (): JSX.Element => {
                   prevRef={mobileBannerPrevRef}
                   swiperRef={mobileBannerSwiperRef}
                   color="text-white"
-                  size={1}
+                  size={0.9}
                 />
               </div>
             </div>
@@ -91,7 +91,7 @@ const LastBanner = (): JSX.Element => {
                     prevRef={lastBannerPrevRef}
                     swiperRef={lastBannerSwiperRef}
                     color="text-white"
-                    size={1}
+                    size={0.9}
                   />
                 </div>
               </div>
