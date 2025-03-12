@@ -20,7 +20,7 @@ const TumorTypeScreen = (): JSX.Element => {
       options={tumorTypes}
       color="primary"
       startContent={<RxHamburgerMenu size={20} className="text-primary" />}
-      className="mb-7 mt-11 w-[321px] self-center md:self-start lg:hidden"
+      className="mb-7 mt-11 w-[321px] self-start lg:hidden"
       variant="bordered"
       labelPlacement="outside-left"
       labelColor="primary"
@@ -131,7 +131,11 @@ const TumorTypeScreen = (): JSX.Element => {
   );
 
   return (
-    <PageLayout title="Tipos tumorais" showBreadcrumb>
+    <PageLayout
+      title="Jornada Molecular - Tipos tumorais"
+      subtitle="A jornada molecular na oncologia faz parte dos cuidados personalizados no tratamento do câncer. É feita através da realização de testes moleculares, com resultados fundamentais para a escolha do melhor tratamento em cada paciente"
+      showBreadcrumb
+    >
       {renderMobileSelect()}
 
       <div className="flex flex-col lg:mt-12 lg:flex-row lg:gap-8">
