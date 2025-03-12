@@ -1,6 +1,6 @@
 const AccreditationsSection = (): JSX.Element => {
   return (
-    <section className="full-bleed-lg mt-20 flex min-h-[400px] max-w-screen-2xl flex-col items-center bg-gray-foreground text-center md:-mb-7 md:mt-20 md:h-auto lg:-mb-16">
+    <section className="full-bleed-lg mt-20 flex min-h-[400px] flex-col items-center bg-gray-foreground text-center md:-mb-7 md:mt-20 md:h-auto lg:-mb-12">
       <div className="flex flex-col md:mt-8 md:flex-row md:items-center md:gap-2 lg:mt-14">
         <h1 className="mt-14 font-lato-black text-2xl text-primary md:mt-0 lg:text-6xl">
           Acreditações OC

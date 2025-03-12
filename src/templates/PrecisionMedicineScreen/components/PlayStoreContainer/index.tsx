@@ -3,7 +3,7 @@ import Link from "next/link";
 const PlayStoreContainer = (): JSX.Element => {
   return (
     <div className="w-full self-center">
-      <div className="mb-9 mt-20 rounded-bl-3xl border-1 border-black">
+      <div className="mb-9 mt-20 rounded-bl-3xl">
         <div className="flex flex-col md:flex-row">
           <div className="flex flex-col justify-center bg-gradient-to-t from-purpleDark to-purpleLight px-11 py-10 text-left md:w-1/2 md:rounded-bl-[32px]">
             <span className="block text-4xl font-normal text-white lg:hidden">
@@ -24,7 +24,7 @@ const PlayStoreContainer = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="flex w-full flex-col items-center justify-center gap-3 px-6 py-10 md:w-1/2 md:flex-row md:space-x-12 lg:space-x-36">
+          <div className="flex w-full flex-col items-center justify-center gap-3 border border-black px-6 py-10 md:w-1/2 md:flex-row md:space-x-12 lg:space-x-36">
             <div className="flex flex-col items-center gap-4">
               <img
                 src="/assets/images/appstoreqr.png"

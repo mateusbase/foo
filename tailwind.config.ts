@@ -39,6 +39,7 @@ const config: Config = {
         xl: "1280px",
         "2xl": "1536px",
         xl2: "1472px",
+        "3xl": "1903px",
       },
       fontSize: {
         "title-lg": "40px",
