@@ -34,10 +34,8 @@ const LastBanner = (): JSX.Element => {
               alt="Foto banner Programa de suporte ao paciente"
               className="w-full"
             />
-            {/* Corrigindo layout interno */}
             <div className="flex flex-col bg-custom-gradient-dark p-6 font-lato-regular">
-              {/* Ajuste de margens e espaçamento */}
-              <h1 className="mb-4 mt-7 w-[90%] text-3xl font-normal text-white">
+              <h1 className="mb-4 mt-7 w-[90%] text-base font-normal text-white">
                 Teste genético ajuda a guiar tratamento contra câncer e evitar
                 novos tumores
               </h1>
@@ -76,7 +74,7 @@ const LastBanner = (): JSX.Element => {
                 className="w-full md:w-1/2"
               />
               <div className="flex w-full flex-col rounded-bl-[60px] bg-custom-gradient-dark p-6 font-lato-regular md:w-1/2">
-                <h1 className="mb-4 h-[130px] text-3xl font-normal text-white">
+                <h1 className="mb-4 h-[130px] text-base font-normal text-white">
                   Teste genético ajuda a guiar tratamento contra câncer e evitar
                   novos tumores
                 </h1>
@@ -85,6 +83,7 @@ const LastBanner = (): JSX.Element => {
                   importante assegurar aos nossos pacientes acesso à jornada
                   molecular de testes.
                 </p>
+
                 <div className="mb-4 flex justify-start">
                   <SliderArrows
                     nextRef={lastBannerNextRef}

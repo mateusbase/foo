@@ -124,7 +124,7 @@ export function PrecisionMedicineScreen({
             serviço versátil e eficiente, projetado para impulsionar a
             excelência e a inovação em estudos de diversos campos.
           </p>
-          <p className="mb-28 text-xl text-white">
+          <p className="mb-20 text-xl text-white">
             Contamos com um parque tecnológico completo com as plataformas de
             sequenciamento Illumina (MiSeq, NextSeq e NovaSeq), permitindo
             análises do DNA e RNA por metodologias diver
@@ -132,8 +132,8 @@ export function PrecisionMedicineScreen({
         </InfoCard>
       </div>
 
-      <div className="my-8 text-center md:text-left lg:text-center lg:align-middle">
-        <h1 className="mb-8 font-lato-regular text-4xl text-primary md:ml-24 lg:ml-0">
+      <div className="my-8 text-center md:text-left md:align-middle lg:text-center lg:align-middle">
+        <h1 className="mb-8 font-lato-regular text-4xl text-primary lg:ml-0">
           Nossas unidades
         </h1>
 

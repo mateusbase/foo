@@ -33,7 +33,7 @@ export const getImageClasses = (isLargeText: boolean): string =>
   });
 
 export const getDesktopTitleClasses = (isLargeText: boolean): string =>
-  clsx("mb-2 font-lato-light text-2xl  2xl:text-6xl", {
+  clsx(" font-lato-light text-2xl  2xl:text-6xl", {
     "text-xl": isLargeText,
     "lg:text-5xl": isLargeText || !isLargeText,
     "mb-6": isLargeText,
