@@ -10,14 +10,16 @@ export default function InstitutionalScreen({
 }: {
   options: InstitutionalOption[];
 }): JSX.Element {
-  const { activeSlug, component, pushComponent } =
+  const { activeSlug, component, pushComponent, title, subtitle } =
     useInstitutionalRouter(options);
 
   return (
-    <PageLayout title="Institucional" showHeader mainOptions showSections>
+    <PageLayout title={title} subtitle={subtitle}>
       <div className="mt-2 flex flex-col lg:flex-row">
-        <div className="mb-10 block w-full md:w-1/2 lg:hidden">
+        <div className="block w-full md:w-1/2 lg:hidden">
           <BaseSelect
+            key={activeSlug}
+            disableAnimation
             color="default"
             variant="bordered"
             radius="full"
@@ -25,6 +27,7 @@ export default function InstitutionalScreen({
             startContent={<IoMenu className="text-primary" size={28} />}
             selectedKey={activeSlug}
             defaultSelectedKey={activeSlug}
+            onSelectionChange={(key) => pushComponent(key as string)}
             labelPlacement="outside"
             options={options.map((opt) => ({
               key: opt.slug,
@@ -49,7 +52,7 @@ export default function InstitutionalScreen({
           ))}
         </div>
 
-        <div className="flex-1 lg:pl-8">
+        <div className="mt-20 flex-1 md:mt-[52px] lg:mt-6 lg:pl-8">
           {component || <div className="p-4">Carregando...</div>}
         </div>
       </div>

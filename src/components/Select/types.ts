@@ -1,3 +1,5 @@
+import { SharedSelection } from "@heroui/react";
+
 export interface BaseSelectProps {
   color?:
     | "primary"
@@ -22,10 +24,12 @@ export interface BaseSelectProps {
   labelPlacement?: "inside" | "outside" | "outside-left";
   defaultSelectedKey?: string | number;
   noBorder?: boolean;
+  disableAnimation?: boolean;
   classNames?: {
     trigger?: string;
     label?: string;
     value?: string;
   };
   placeholder?: string;
+  onSelectionChange?: (key: SharedSelection) => void;
 }
