@@ -4,7 +4,7 @@ const WhatIsSection = (): JSX.Element => {
   return (
     <Element name="what-is" id="what-is">
       <h1 className="text-2xl text-primary md:text-title-lg">O que é?</h1>
-      <ul className="ml-4 mt-4 list-outside list-disc md:mt-6 md:text-xl">
+      <ul className="ml-5 mt-4 list-outside list-disc md:ml-6 md:mt-6 md:text-xl">
         <li>
           Especialidade odontológica essencial no cuidado de pacientes
           oncológicos.

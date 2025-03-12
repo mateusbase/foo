@@ -16,7 +16,7 @@ const BenefitsCards = ({
   listItems,
 }: BenefitsCardsProps): JSX.Element => {
   return (
-    <div className="flex min-h-[520px] w-[260px] flex-col items-center rounded-[20px] border border-lightGray px-[20px] text-center text-darkGray md:w-1/3">
+    <div className="flex h-[480px] w-full flex-col items-center rounded-[20px] border border-lightGray px-[20px] text-center text-darkGray md:min-h-[520px] md:w-1/3">
       <h2 className="mb-5 mt-7 text-3xl">{title}</h2>
       <Image src={icon} width={130} height={130} alt={title} className="mb-5" />
       {isList ? (

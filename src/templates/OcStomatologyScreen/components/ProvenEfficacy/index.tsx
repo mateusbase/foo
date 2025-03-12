@@ -31,10 +31,11 @@ const ProvenEfficacy = (): JSX.Element => {
           <h1 className="text-xl font-medium md:text-4xl">
             Dra. Renata Ferrari
           </h1>
-          {deviceType === "desktop" && <p className="text-2xl">CRM:</p>}
+          {deviceType === "desktop" && (
+            <p className="text-2xl">CRO: MG 24703</p>
+          )}
           <p className="md:text-2xl">
-            Responsável pelo Programa de Estomatologia da
-            Oncoclínicas&CUnidades:
+            Responsável pelo Programa de Estomatologia da Oncoclínicas&CO:
           </p>
         </div>
       </div>
