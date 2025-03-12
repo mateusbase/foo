@@ -24,7 +24,7 @@ export default function FrequentlyQuestionsScreen(): JSX.Element {
         />
       </div>
 
-      <div className="mb-28">{renderContent}</div>
+      <div className="mb-[50px]">{renderContent}</div>
     </PageLayout>
   );
 }
