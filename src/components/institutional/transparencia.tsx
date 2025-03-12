@@ -6,7 +6,7 @@ const Transparencia: React.FC = () => {
   return (
     <div className="flex flex-col gap-8 p-4">
       {Object.entries(downloadCardsMock).map(([date, cards]) => (
-        <div key={date} className="mt-20 lg:mt-6">
+        <div key={date}>
           <h1 className="mb-11 text-center text-2xl text-primary md:text-left md:text-title-lg lg:mb-7">
             {date}
           </h1>

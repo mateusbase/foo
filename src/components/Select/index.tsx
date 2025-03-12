@@ -19,15 +19,19 @@ export default function BaseSelect({
   noBorder = false,
   classNames,
   placeholder,
+  disableAnimation = false,
+  onSelectionChange,
 }: BaseSelectProps): JSX.Element {
   return (
     <Select
+      disableAnimation={disableAnimation}
       color={color}
       variant={variant}
       placeholder={placeholder || undefined}
       label={label}
       radius={radius}
       size={size}
+      onSelectionChange={onSelectionChange}
       onChange={(e) => onChange?.(e.target.value)}
       defaultSelectedKeys={
         defaultSelectedKey ? [defaultSelectedKey] : undefined
