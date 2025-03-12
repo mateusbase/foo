@@ -58,7 +58,7 @@ export const useInstitutionalRouter = (
       compliance: () => import("@/components/institutional/compliance"),
       "parceria-dana-farber": () =>
         import("@/components/institutional/parceria-dana-farber"),
-      seguranca: () => import("@/components/institutional/seguranca"),
+      "protecao-de-dados": () => import("@/components/institutional/seguranca"),
       "projetos-e-patrocinios": () =>
         import("@/components/institutional/projetos-e-patrocinios"),
       "relatorio-de-transparencia-salarial": () =>

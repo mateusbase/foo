@@ -5,7 +5,7 @@ import React from "react";
 
 const Seguranca: React.FC = () => {
   return (
-    <div className="mb-10 flex-1 text-darkGray lg:mt-4">
+    <div className="mb-10 flex-1 text-darkGray">
       <p className="text-base md:text-xl">
         {" "}
         A Oncoclínicas do Brasil Serviços Médicos S.A., em seu nome e em nome de
