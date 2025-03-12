@@ -1,9 +1,9 @@
 const ValuesAndMissionText = (): JSX.Element => {
   return (
     <div className="flex flex-col lg:mb-10 lg:mt-32 lg:flex-row">
-      <div className="mb-9 flex flex-col gap-5 lg:w-1/2 lg:flex-col lg:gap-12">
+      <div className="mb-9 flex flex-col gap-10 lg:w-1/2 lg:flex-col lg:gap-12">
         <div className="flex flex-col lg:gap-3">
-          <h3 className="mb-2 font-lato-regular text-4xl text-primary md:text-5xl">
+          <h3 className="mb-4 font-lato-regular text-4xl text-primary md:text-5xl">
             Nossa missão
           </h3>
           <span className="font-lato-regular text-lg text-darkGray md:mb-5 md:text-2xl">
@@ -11,10 +11,10 @@ const ValuesAndMissionText = (): JSX.Element => {
           </span>
         </div>
         <div className="flex flex-col lg:gap-3">
-          <h3 className="mb-2 font-lato-regular text-4xl text-primary md:text-5xl">
+          <h3 className="mb-4 font-lato-regular text-4xl text-primary md:text-5xl">
             Nossos valores
           </h3>
-          <span className="text-justify font-lato-regular text-lg text-darkGray md:text-2xl lg:w-[90%]">
+          <span className="text-justify font-lato-regular text-lg text-darkGray md:w-3/4 md:text-2xl lg:w-[90%]">
             Combinar nossa capacidade única de recursos humanos globais,
             pacientes e experiência em oncologia clínica para criar uma
             referência mundial em medicina de precisão.
