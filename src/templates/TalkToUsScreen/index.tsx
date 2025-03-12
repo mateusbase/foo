@@ -14,7 +14,7 @@ export default function TalkToUsScreen(): JSX.Element {
         subtitle="Este canal é exclusivo para você tirar dúvidas, enviar sugestões, elogios, reclamações e buscar informações sobre a Oncoclínicas&Co ou se preferir ligue para 4004-8020."
         mainOptions={false}
       >
-        <div className="mb-10 mt-20 flex w-full flex-col gap-5 lg:flex-row">
+        <div className="mb-10 mt-6 flex w-full flex-col gap-5 lg:flex-row">
           <div
             className="h-[202px] bg-cover bg-no-repeat md:h-[376px] lg:hidden"
             style={{

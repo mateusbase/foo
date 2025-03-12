@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function ContactUsForm(): JSX.Element {
-  const [selected, setSelected] = useState("no");
+  const [selected, setSelected] = useState("");
   const [fileName, setFileName] = useState<string>("");
   const [topicSelected, setTopicSelected] = useState<string | number>();
   const [phoneNumber, setPhoneNumber] = useState("");
