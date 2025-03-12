@@ -18,9 +18,9 @@ export const menuItems = [
     id: 2,
     name: "Valores",
     slug: "valores",
-    title: "Oncoclínicas&Co",
+    title: "Filosofia de excelência",
     subtitle:
-      "Pioneira no país em gestão de serviços oncológicos, a Oncoclínicas&Co foi fundada em 2010 e hoje é um dos maiores centros de oncologia, hematologia e radioterapia da América Latina.",
+      "A Oncoclínicas tem como pilares de atuação o acolhimento, a inovação no tratamento oncológico e a atenção integral e personalizada, com foco no paciente.",
   },
   {
     id: 3,
@@ -53,9 +53,10 @@ export const menuItems = [
   {
     id: 7,
     name: "Segurança",
-    slug: "seguranca",
-    title: "Segurança",
-    subtitle: "Subtitle for Segurança",
+    slug: "protecao-de-dados",
+    title: "Proteção de dados",
+    subtitle:
+      "Todas as práticas de tratamento de dados pessoais realizadas pela Oncoclínicas respeitam à Lei 13.709/2018 (“Lei Geral de Proteção de Dados Pessoais” ou “LGPD”).",
   },
   {
     id: 8,
