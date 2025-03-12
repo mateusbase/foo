@@ -82,7 +82,10 @@ export default function OcStomatologyScreen(): JSX.Element {
   };
 
   return (
-    <PageLayout>
+    <PageLayout
+      title="OC Estomatologia"
+      subtitle="Saúde bucal durante todo o tratamento oncológico"
+    >
       <div className="flex flex-col gap-6 lg:mt-14 lg:flex-row lg:gap-10">
         <div className="text-white lg:w-[398px]">
           <div className="mb-2 block lg:hidden">
@@ -120,7 +123,7 @@ export default function OcStomatologyScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="mb-40 flex w-full flex-col gap-14 text-darkGray lg:w-[1061px]">
+        <div className="mb-24 flex w-full flex-col gap-14 text-darkGray lg:w-[1061px]">
           <WhatIsSection />
           <HowProgramWorksSection />
           <LasertherapyUsage />
