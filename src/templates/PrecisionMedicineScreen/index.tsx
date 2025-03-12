@@ -97,7 +97,11 @@ export function PrecisionMedicineScreen({
       <div className="relative left-1/2 mt-11 w-screen -translate-x-1/2 md:hidden md:w-full lg:flex">
         <BannerWithImage
           title="Programa de Apoio à Pesquisa"
-          description="Com o objetivo de impulsionar a pesquisa na área de genômica na América Latina, a OC Medicina de Precisão fortalece seu compromisso ao oferecer o sistema de facilities, um novo serviço desenvolvido para oferecer uma solução que alia expertise e tecnologia de ponta, para auxiliar no desenvolvimento de pesquisas na área de genômica. Nossa equipe especializada e nosso ambiente tecnológico estão à disposição para apoiar projetos de pesquisa, fornecendo um ambiente propício e recursos avançados para o progresso científico. Este é um serviço versátil e eficiente, projetado para impulsionar a excelência e a inovação em estudos de diversos campos. Contamos com um parque tecnológico completo com as plataformas de sequenciamento Illumina (MiSeq, NextSeq e NovaSeq), permitindo análises do DNA e RNA por metodologias diver"
+          description={[
+            "Com o objetivo de impulsionar a pesquisa na área de genômica na América Latina, a OC Medicina de Precisão fortalece seu compromisso ao oferecer o sistema de facilities, um novo serviço desenvolvido para oferecer uma solução que alia expertise e tecnologia de ponta, para auxiliar no desenvolvimento de pesquisas na área de genômica.",
+            "Nossa equipe especializada e nosso ambiente tecnológico estão à disposição para apoiar projetos de pesquisa, fornecendo um ambiente propício e recursos avançados para o progresso científico. Este é um serviço versátil e eficiente, projetado para impulsionar a excelência e a inovação em estudos de diversos campos.",
+            "Contamos com um parque tecnológico completo com as plataformas de sequenciamento Illumina (MiSeq, NextSeq e NovaSeq), permitindo análises do DNA e RNA por metodologias diver",
+          ]}
           media="/assets/images/image (1).jpg"
           isLeft
           primaryColor="primary-foreground"
@@ -182,8 +186,8 @@ export function PrecisionMedicineScreen({
         </div>
       </div>
 
-      <div className="my-8 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-center">
-        <InformationCard className="min-h-[225px] px-14 py-6 lg:h-[566px] lg:w-[30%]">
+      <div className="my-8 flex flex-col gap-10 lg:grid lg:grid-cols-3 lg:items-center lg:justify-center">
+        <InformationCard className="min-h-[225px] px-14 py-6 lg:h-[566px]">
           <p className="mb-6 text-center font-lato-black text-4xl text-darkGray">
             Fale conosco
           </p>
@@ -192,7 +196,7 @@ export function PrecisionMedicineScreen({
             todo o suporte necessário.
           </p>
           <div className="mt-6 flex w-full justify-center">
-            <BaseButton className="w-full bg-purpleMedium px-32 py-3 text-center font-lato-thin text-lg text-white md:h-14 md:w-64 md:text-xl">
+            <BaseButton className="w-full bg-purpleMedium px-32 py-3 text-center font-lato-thin text-lg text-white md:h-14 md:w-64 md:text-xl lg:w-[250px]">
               Envie uma mensagem
             </BaseButton>
           </div>
@@ -200,7 +204,7 @@ export function PrecisionMedicineScreen({
 
         <InformationCard
           background
-          className="flex min-h-[450px] w-full flex-col gap-4 py-8 md:py-4 lg:h-[566px] lg:w-[30%]"
+          className="flex min-h-[450px] w-full flex-col gap-4 py-8 md:py-4 lg:h-[566px]"
         >
           <p className="mb-6 text-center font-lato-bold text-2xl text-white lg:text-2xl 2xl:text-3xl">
             Participe das Quintas Moleculares
@@ -218,15 +222,15 @@ export function PrecisionMedicineScreen({
 
           <Link
             href="/medicina-de-precisao/quintas-moleculares"
-            className="flex w-[85%] justify-center self-center"
+            className="flex w-[85%] justify-center self-center lg:w-full"
           >
-            <BaseButton className="mb-5 w-full bg-white px-12 py-7 text-center font-lato-thin text-lg text-purpleMedium md:w-64">
+            <BaseButton className="mb-5 w-full bg-white py-7 text-center font-lato-thin text-lg text-purpleMedium md:w-64 lg:w-[250px]">
               Inscreva-se
             </BaseButton>
           </Link>
         </InformationCard>
 
-        <InformationCard className="flex min-h-[450px] w-full flex-col justify-between gap-4 p-6 lg:h-[566px] lg:w-[30%] lg:py-[50px] 2xl:py-[85px]">
+        <InformationCard className="flex min-h-[450px] w-full flex-col justify-between gap-4 p-6 lg:h-[566px] lg:py-[50px] 2xl:py-[85px]">
           <p className="mb-6 text-center font-lato-bold text-2xl text-darkGray lg:mb-3 lg:text-xl 2xl:mb-6 2xl:text-3xl">
             Participe das Quintas Patológicas
           </p>
@@ -241,8 +245,8 @@ export function PrecisionMedicineScreen({
             placeholder="Digite aqui o seu melhor e-mail"
           />
 
-          <div className="flex w-[85%] justify-center self-center">
-            <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64 lg:w-[90%]">
+          <div className="flex w-[85%] justify-center self-center lg:w-full">
+            <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64 lg:w-[250px]">
               Inscreva-se
             </BaseButton>
           </div>

@@ -20,6 +20,7 @@ const LastBanner = (): JSX.Element => {
 
   return (
     <>
+      {/* Telas pequenas */}
       <div className="full-bleed my-11 md:hidden">
         <Swiper
           loop
@@ -58,6 +59,7 @@ const LastBanner = (): JSX.Element => {
         </Swiper>
       </div>
 
+      {/* Telas médias/grandes */}
       <div className="mt-14 hidden md:flex">
         <Swiper
           loop
@@ -74,11 +76,11 @@ const LastBanner = (): JSX.Element => {
                 className="w-full md:w-1/2"
               />
               <div className="flex w-full flex-col rounded-bl-[60px] bg-custom-gradient-dark p-6 font-lato-regular md:w-1/2">
-                <h1 className="mb-4 h-[130px] text-base font-normal text-white">
+                <h1 className="mb-8 w-4/5 text-3xl font-normal text-white">
                   Teste genético ajuda a guiar tratamento contra câncer e evitar
                   novos tumores
                 </h1>
-                <p className="mb-6 h-[130px] text-sm font-light text-white">
+                <p className="mb-6 h-[130px] w-4/5 text-base font-medium text-white">
                   Para garantir o tratamento personalizado e de precisão, é
                   importante assegurar aos nossos pacientes acesso à jornada
                   molecular de testes.

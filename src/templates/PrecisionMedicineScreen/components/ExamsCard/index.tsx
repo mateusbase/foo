@@ -12,7 +12,7 @@ const ExamsCard = ({
 }: ExtendedExamsCardProps): JSX.Element => {
   return (
     <div
-      className={`flex flex-col items-center self-center lg:grid lg:w-full lg:grid-cols-2 lg:gap-8 ${
+      className={`flex flex-col items-center self-center lg:grid lg:w-full lg:grid-cols-2 lg:gap-6 lg:gap-y-2 ${
         isGenomics ? "lg:grid-rows-2" : "lg:grid-rows-3"
       }`}
     >

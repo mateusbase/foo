@@ -31,7 +31,7 @@ const BannerWithImage: React.FC<BannerWithImageProps> = ({
   return (
     <div className="my-1 w-full flex-1 text-white">
       {/* Layout para telas grandes */}
-      <div className="hidden w-full justify-between md:flex">
+      <div className="hidden w-full justify-between lg:flex">
         {isLeft && (
           <img
             src={media}
@@ -51,9 +51,17 @@ const BannerWithImage: React.FC<BannerWithImageProps> = ({
             <p className={getDesktopTitleClasses(isLargeText)}>{title}</p>
           </div>
           <div>
-            <p className={getDesktopDescriptionClasses(isLargeText)}>
-              {description}
-            </p>
+            {Array.isArray(description) ? (
+              description.map((text) => (
+                <p className={`${getDesktopDescriptionClasses(isLargeText)} `}>
+                  {text}
+                </p>
+              ))
+            ) : (
+              <p className={getDesktopDescriptionClasses(isLargeText)}>
+                {description}
+              </p>
+            )}
           </div>
         </div>
 

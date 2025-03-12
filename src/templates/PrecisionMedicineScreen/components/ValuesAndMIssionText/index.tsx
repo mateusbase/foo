@@ -23,7 +23,7 @@ const ValuesAndMissionText = (): JSX.Element => {
       </div>
 
       <div className="flex flex-col lg:w-1/2">
-        <p className="mt-4 w-full text-justify font-lato-regular text-darkGray md:text-2xl">
+        <p className="mt-4 w-full text-justify font-lato-regular text-darkGray md:text-2xl lg:mt-0">
           Para respeitar e valorizar as individualidades dos pacientes com
           câncer, o Grupo Oncoclínicas inovou com a OC Medicina de Precisão, que
           engloba os laboratórios de Anatomia Patológica, Genômica e Big Data,

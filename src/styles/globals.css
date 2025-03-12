@@ -48,7 +48,7 @@ body {
   }
 
   .full-bleed-lg {
-    @apply relative left-1/2 w-[100vw] max-w-none overflow-x-hidden -translate-x-1/2;
+    @apply relative left-1/2 w-[100vw] max-w-screen-3xl -translate-x-1/2;
   }
 }
 
