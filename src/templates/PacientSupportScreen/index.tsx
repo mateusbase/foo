@@ -63,11 +63,11 @@ const PacientSupportScreen = (): JSX.Element => {
               </h1>
               <div className="text-base md:text-xl">
                 <p>{currentItem.description}</p>
-                <ul className="ml-4 list-outside list-disc">
+                <ul className="ml-8 list-outside list-disc">
                   <li>{currentItem.test}</li>
                 </ul>
                 <p>{currentItem.criteriaDescription}</p>
-                <ul className="ml-4 list-outside list-disc">
+                <ul className="ml-8 list-outside list-disc">
                   <li>{currentItem.criteria}</li>
                 </ul>
                 <InformationSection {...currentItem} />
