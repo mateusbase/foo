@@ -7,9 +7,9 @@ const VaccinesCard = ({
   iconUrl,
 }: VaccinesCardProps): JSX.Element => {
   return (
-    <div className="mb-8 mt-3 min-h-[315px] w-full rounded-xl border border-lightGray bg-white p-6 lg:min-h-[330px]">
-      <div className="flex h-full flex-col items-center">
-        <div className="mb-6 flex w-full items-center gap-4">
+    <div className="flex min-h-[337px] flex-col rounded-xl border border-lightGray bg-white px-9 pb-10 pt-7 md:min-h-[227px] lg:h-full lg:min-h-[300px]">
+      <div className="flex flex-1 flex-col">
+        <div className="mb-6 flex items-center gap-4">
           <div className="flex size-[61px] shrink-0 items-center justify-center">
             {iconUrl ? (
               <img src={iconUrl} alt="Icon" className="size-full" />
@@ -22,7 +22,7 @@ const VaccinesCard = ({
           </h3>
         </div>
 
-        <p className="text-ellipsis font-lato-thin text-base leading-relaxed text-darkGray md:text-base">
+        <p className="text-left font-lato-thin text-base leading-relaxed text-darkGray md:text-base lg:flex-1">
           {description}
         </p>
       </div>

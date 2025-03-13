@@ -50,7 +50,7 @@ export default function VaccinesScreen(): JSX.Element {
         />
       </div>
 
-      <div className="mt-12 hidden w-full items-center lg:flex lg:flex-row lg:gap-10">
+      <div className="mt-12 hidden w-full items-stretch lg:grid lg:grid-cols-3 lg:gap-10">
         {vaccineInformation.map((vaccine) => (
           <VaccinesCard
             key={vaccine.id}
