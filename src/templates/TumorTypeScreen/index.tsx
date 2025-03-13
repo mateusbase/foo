@@ -111,15 +111,15 @@ const TumorTypeScreen = (): JSX.Element => {
   );
 
   const renderRelatedTypes = (): JSX.Element => (
-    <div className="my-8 self-center lg:self-start">
-      <h2 className="text-2xl text-primary lg:mb-7">
+    <div className="my-8 w-full self-center md:self-start">
+      <h2 className="text-2xl text-primary md:mb-7 md:text-title-lg lg:text-2xl">
         Tipos Tumorais Relacionados
       </h2>
-      <div className="mt-4 flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap">
+      <div className="mt-4 flex flex-col items-center gap-4 md:grid md:w-full md:grid-cols-2 lg:flex lg:flex-row lg:flex-wrap">
         {currentTumor?.types.map((type) => (
           <div
             key={type.title}
-            className="mx-auto flex h-20 w-[328px] items-center gap-4 rounded-lg border-1 border-primary px-4 py-3 lg:mx-0 lg:h-28 lg:w-[243px]"
+            className="flex h-20 w-[328px] items-center gap-4 rounded-lg border border-primary px-4 py-3 md:w-full lg:h-28 lg:w-[243px]"
           >
             <img src={type.icon} alt="Ícone do tipo" className="size-10" />
             <span className="ml-2 text-2xl text-primary">{type.title}</span>
@@ -148,7 +148,7 @@ const TumorTypeScreen = (): JSX.Element => {
                 {renderTumorHeader()}
               </div>
 
-              <div className="mt-7 flex w-full flex-col items-start justify-between gap-4 lg:w-[689px] lg:flex-row lg:gap-0">
+              <div className="mt-7 flex w-full flex-col items-start justify-between gap-4 md:w-full lg:w-[689px] lg:flex-row lg:gap-0">
                 {renderMethodologies()}
                 {renderExams()}
               </div>
