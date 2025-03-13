@@ -4,10 +4,26 @@ import PageLayout from "@/components/PageLayout";
 import SimpleCard from "@/components/SimpleCard";
 import ColoredCard from "@/components/ColoredCard";
 import FormularySection from "@/components/FormularySection";
+import { useState, useEffect } from "react";
 import assistencyMock from "./assistencyMock";
 import coloredCardMock from "./coloredCardMock";
 
 export default function DeLifeScreen(): JSX.Element {
+  const [maxWidth, setMaxWidth] = useState<string>("100vw");
+
+  useEffect(() => {
+    const updateWidth = (): void => {
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      setMaxWidth(`calc(100vw - ${scrollbarWidth}px)`);
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   let imageSrc = "/assets/images/delife/fullbleed_banner_sm.png";
   if (window.innerWidth > 1024) {
     imageSrc = "/assets/images/delife/fullbleed_banner_md.png";
@@ -19,7 +35,6 @@ export default function DeLifeScreen(): JSX.Element {
     <PageLayout
       title="DeLife"
       subtitle="A DeLife é uma empresa da Oncoclínicas&Co que fornece medicação oncológica oral para pacientes oferecendo apoio continuado durante seu tratamento."
-      showBreadcrumb
     >
       <FullbleedBanner
         src={imageSrc}
@@ -77,7 +92,8 @@ export default function DeLifeScreen(): JSX.Element {
         background
         title="Seja um parceiro"
         subtitle="Quer fazer parte desta iniciativa? Preencha o formulário abaixo para receber outras informações sobre como se tornar um parceiro DeLife."
-        className="full-bleed-lg w-full lg:-mb-12"
+        className="relative left-1/2 w-screen max-w-none -translate-x-1/2 lg:-mb-12"
+        style={{ maxWidth }}
         hasTelephone
         additionalFields={[
           {
