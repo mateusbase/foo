@@ -47,6 +47,7 @@ export default function VaccinesScreen(): JSX.Element {
           currentIndex={currentIndex}
           prevRef={prevRefCard}
           nextRef={nextRefCard}
+          className="mt-10 md:mt-12"
         />
       </div>
 
