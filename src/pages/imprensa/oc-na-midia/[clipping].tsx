@@ -4,7 +4,7 @@ import { NextPageWithLayout } from "@/utils/types";
 
 const Clipping: NextPageWithLayout = () => {
   return (
-    <Page title="Oc na mídia" description="Oncoclínicas - Clipping">
+    <Page title="OC na mídia" description="Oncoclínicas - Clipping">
       <ClippingDetailsScreen />
     </Page>
   );

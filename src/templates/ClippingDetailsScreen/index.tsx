@@ -10,7 +10,7 @@ import { newsItems } from "../NewScreen/optionsMock";
 export default function ClippingDetailsScreen(): JSX.Element {
   return (
     <>
-      <PageLayout title="Oc na mídia" mainOptions={false}>
+      <PageLayout title="OC na mídia" mainOptions={false}>
         <div className="mb-10 mt-20 flex flex-col items-center justify-center px-4 md:px-0">
           <p className="text-xl text-darkGray">10 de outubro de 2025</p>
 
