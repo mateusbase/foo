@@ -50,7 +50,7 @@ export default function TypesOfCancerScreen(): JSX.Element {
         </p>
       </div>
 
-      <div className="mt-10 flex flex-col items-center">
+      <div className="mt-10 flex flex-col items-center lg:mt-24">
         <h1 className="text-3xl font-light text-primary lg:text-6xl">
           Confira os tipos de câncer mais comuns no Brasil
         </h1>
@@ -113,7 +113,7 @@ export default function TypesOfCancerScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col items-center">
+      <div className="mt-10 flex flex-col items-center lg:mt-44">
         <h1 className="text-3xl font-light text-primary lg:text-6xl">
           Todos os tipos de Câncer
         </h1>
