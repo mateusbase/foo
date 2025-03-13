@@ -20,6 +20,7 @@ interface FormularySectionProps {
   className?: string;
   hasTelephone?: boolean;
   buttonStyle?: string;
+  style?: Record<string, string>;
   buttonText?: string;
 }
 
@@ -33,6 +34,7 @@ export default function FormularySection({
   hasTelephone = false,
   buttonStyle = "",
   buttonText = "Enviar",
+  style = {},
 }: FormularySectionProps): JSX.Element {
   const [formData, setFormData] = useState<Record<string, string>>({});
 
@@ -54,6 +56,7 @@ export default function FormularySection({
   return (
     <form
       onSubmit={handleSubmit}
+      style={style}
       className={`flex w-full max-w-lg flex-col items-center gap-7 p-8 pt-16 text-center ${background ? "bg-gray-foreground" : "bg-white"} ${className}`}
     >
       {title && <h1 className="mb-4 text-4xl text-primary">{title}</h1>}

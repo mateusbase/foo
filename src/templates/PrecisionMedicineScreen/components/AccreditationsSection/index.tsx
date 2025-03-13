@@ -1,6 +1,26 @@
+import { useEffect, useState } from "react";
+
 const AccreditationsSection = (): JSX.Element => {
+  const [maxWidth, setMaxWidth] = useState<string>("100vw");
+
+  useEffect(() => {
+    const updateWidth = (): void => {
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      setMaxWidth(`calc(100vw - ${scrollbarWidth}px)`);
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   return (
-    <section className="full-bleed-lg mt-20 flex min-h-[400px] flex-col items-center bg-gray-foreground text-center md:-mb-7 md:mt-20 md:h-auto lg:-mb-12">
+    <section
+      className="relative left-1/2 mt-20 flex min-h-[400px] w-screen max-w-none -translate-x-1/2 flex-col items-center bg-gray-foreground text-center md:-mb-7 md:mt-20 md:h-auto lg:-mb-12"
+      style={{ maxWidth }}
+    >
       <div className="flex flex-col md:mt-8 md:flex-row md:items-center md:gap-2 lg:mt-14">
         <h1 className="mt-14 font-lato-black text-2xl text-primary md:mt-0 lg:text-6xl">
           Acreditações OC

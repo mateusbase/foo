@@ -2,6 +2,7 @@ import PageLayout from "@/components/PageLayout";
 import Image from "next/image";
 import { useDeviceType } from "@/hooks/useDeviceType";
 import FormularySection from "@/components/FormularySection";
+import { useState, useEffect } from "react";
 import RightFullbleedBanner from "./components/RightFullbleedBanner";
 import PurpleFullbleedBanner from "./components/PurpleFullBleedBanner";
 import formInputs from "./formInputs";
@@ -9,6 +10,20 @@ import CountrySection from "./components/CountrySection";
 
 export default function OcFranchiseScreen(): JSX.Element {
   const deviceType = useDeviceType();
+  const [maxWidth, setMaxWidth] = useState<string>("100vw");
+
+  useEffect(() => {
+    const updateWidth = (): void => {
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      setMaxWidth(`calc(100vw - ${scrollbarWidth}px)`);
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
 
   const imageSrc =
     deviceType === "desktop"
@@ -58,7 +73,8 @@ export default function OcFranchiseScreen(): JSX.Element {
       <FormularySection
         background
         title="Entre em contato"
-        className="full-bleed-lg w-full lg:-mb-12"
+        className="relative left-1/2 w-screen max-w-none -translate-x-1/2 lg:-mb-12"
+        style={{ maxWidth }}
         hasTelephone
         additionalFields={formInputs}
       />
