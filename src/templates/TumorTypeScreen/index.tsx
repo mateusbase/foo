@@ -111,7 +111,7 @@ const TumorTypeScreen = (): JSX.Element => {
   );
 
   const renderRelatedTypes = (): JSX.Element => (
-    <div className="my-8 w-full self-center md:self-start">
+    <div className="my-8 w-full self-center md:mb-20 md:self-start">
       <h2 className="text-2xl text-primary md:mb-7 md:text-title-lg lg:text-2xl">
         Tipos Tumorais Relacionados
       </h2>
