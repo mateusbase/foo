@@ -9,18 +9,22 @@ export default function OCAboutLivingScreen(): JSX.Element {
   return (
     <PageLayout title="OC sobre VIVER">
       <div className="mt-10">
-        <h2 className="mb-14 text-wrap font-lato-thin text-4xl text-primary">
+        <h2 className="mb-14 text-wrap font-lato-thin text-2xl text-primary md:text-4xl">
           Pacientes no centro do cuidado
         </h2>
         <p className="text-sm text-darkGray md:text-xl">
-          O <span className="text-gray-900">OC sobre VIVER</span> é um programa
-          especial do Grupo Oncoclínicas que oferece o melhor cuidado ao
-          paciente também após a fase mais intensa do tratamento oncológico.
+          O <span className="font-bold text-darkGray">OC sobre VIVER</span> é um
+          programa programa especial do Grupo Oncoclínicas que oferece o melhor
+          cuidado ao paciente também após a fase mais intensa do tratamento
+          oncológico.
         </p>
         <p className="mt-8 text-sm text-darkGray md:text-xl">
           Essa é uma iniciativa inovadora no Brasil, que busca garantir o{" "}
-          <span className="text-gray-900"> melhor cuidado possível </span> ao
-          paciente, oferecendo uma variedade de serviços focados em suas
+          <span className="font-bold text-darkGray">
+            {" "}
+            melhor cuidado possível{" "}
+          </span>{" "}
+          ao paciente, oferecendo uma variedade de serviços focados em suas
           diversas necessidades e disponibilizando nossa equipe multidisciplinar
           e outras especialidades.
         </p>
@@ -34,7 +38,7 @@ export default function OCAboutLivingScreen(): JSX.Element {
           assistente.
         </p>
         <div>
-          <h2 className="mb-10 mt-14 text-wrap font-lato-thin text-4xl text-primary">
+          <h2 className="mb-10 mt-14 text-wrap font-lato-thin text-2xl text-primary md:text-4xl">
             Participam atualmente:
           </h2>
         </div>
