@@ -96,7 +96,7 @@ export default function OCAccess(): JSX.Element {
           <h2 className="mt-11 text-2xl text-white md:mt-2 lg:text-3xl 2xl:text-5xl">
             É superespecializado, é excelente, é pra mim
           </h2>
-          <p className="3xl:text-2xl text-sm text-white lg:text-xl">
+          <p className="text-sm text-white lg:text-xl 3xl:text-2xl">
             Estrutura completa, equipe especializada, pronta para me acolher e
             oferecer a melhor experiência em saúde.
           </p>

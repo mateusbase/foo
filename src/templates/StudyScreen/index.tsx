@@ -18,7 +18,9 @@ export default function StudyScreen(): JSX.Element {
         mainOptions={false}
       >
         <div className="mt-10 flex flex-col items-start">
-          <p className="text-2xl text-primary md:text-title-lg">BGB-11417-201 </p>
+          <p className="text-2xl text-primary md:text-title-lg">
+            BGB-11417-201{" "}
+          </p>
           <p className="text-[15px] text-lightGray md:text-xl">
             OC Oncoclínicas RJ
           </p>
