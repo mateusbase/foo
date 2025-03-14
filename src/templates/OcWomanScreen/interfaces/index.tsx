@@ -12,7 +12,6 @@ export interface VideoProps {
 
 export interface UnitCardProps {
   id: number;
-  src?: string;
   hours: string;
   unitName: string;
   image?: string;
