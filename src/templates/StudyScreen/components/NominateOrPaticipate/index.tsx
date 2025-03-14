@@ -2,7 +2,7 @@ import BaseButton from "@/components/Button";
 import BaseInput from "@/components/Input";
 import BaseSelect from "@/components/Select";
 import { DateInput, Radio, RadioGroup } from "@heroui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format } from "@react-input/mask";
 
 interface NominateOrPaticipateProps {
@@ -49,8 +49,23 @@ export default function NominateOrPaticipate({
     setPhoneNumber(formattedPhone);
   };
 
+  const [maxWidth, setMaxWidth] = useState<string>("100vw");
+  useEffect(() => {
+    const updateWidth = (): void => {
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      setMaxWidth(`calc(100vw - ${scrollbarWidth}px)`);
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
   return (
-    <div className="w-full bg-gray-200 py-20">
+    <div
+      className="relative left-1/2 w-screen max-w-none -translate-x-1/2 bg-gray-200 py-20"
+      style={{ maxWidth }}
+    >
       <div className="mx-auto max-w-screen-lg px-4 text-center lg:w-1/2">
         <h2 className="text-4xl font-bold text-primary">
           Pacientes, inscrevam-se. Médicos, indiquem um paciente. Utilize o
