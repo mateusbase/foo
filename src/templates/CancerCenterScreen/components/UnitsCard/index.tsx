@@ -7,6 +7,7 @@ export default function UnitsCard({
   unitName,
   address,
   complement,
+  phone,
   city,
   hours,
   width = "452px",
@@ -20,6 +21,7 @@ export default function UnitsCard({
         name: unitName,
         address,
         complement,
+        phone,
         city,
         hours,
       },
@@ -40,6 +42,7 @@ export default function UnitsCard({
         <section className="mt-6 flex flex-col text-lg text-darkGray">
           <p>{address}</p>
           <p>{complement}</p>
+          <p>{phone}</p>
           <p className="font-bold">{city}</p>
         </section>
 
