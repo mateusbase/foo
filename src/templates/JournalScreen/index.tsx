@@ -1,12 +1,12 @@
 import BaseContainer from "@/components/Container";
 import BaseButton from "@/components/Button";
 import { LuArrowUpRight } from "react-icons/lu";
-import { Image } from "@heroui/image";
 import ShareOptions from "@/components/ShareOptions";
 import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import FormularySection from "@/components/FormularySection";
 import PageLayout from "@/components/PageLayout";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import NewsPreviewCard from "./components/NewsPreviewCard";
 import { newsItems } from "./optionsMock";
 
@@ -79,11 +79,11 @@ export default function JournalScreen(): JSX.Element {
 
         <div className="mt-10 w-full">
           <Image
-            width="100%"
-            height={536}
-            radius="none"
+            width={1024}
+            height={1024}
             alt="Imagem da noticia"
-            src="https://i.postimg.cc/nVgm871X/Captura-de-tela-2024-11-13-132910.png"
+            src="/assets/images/detalhes-oc-journal/Captura-de-tela-2024-11-13-132910.png"
+            className="h-[252px] w-full md:h-[227px] lg:h-[538px]"
           />
         </div>
 
@@ -151,7 +151,7 @@ export default function JournalScreen(): JSX.Element {
       >
         <BaseContainer>
           <h1 className="text-6xl font-light text-primary">
-            Itens Relacionados
+            Notícias relacionadas
           </h1>
           <div className="mt-10 grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             {newsItems.map((news) => (
