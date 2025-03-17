@@ -8,7 +8,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SliderArrows from "@/components/SliderArrows";
-import { useRouter } from "next/router";
 
 interface Service {
   id: number;
@@ -24,19 +23,8 @@ interface ListServiceCardsMobileProps {
 export default function ListServiceCardsMobile({
   services,
 }: ListServiceCardsMobileProps): JSX.Element {
-  const router = useRouter();
   const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
     useSwiperNavigation();
-
-  const isMedicPage = router.pathname.startsWith("/medicos");
-  const showPagination = isMedicPage;
-
-  const sliderProps = {
-    size: 1,
-    color: "text-primary-foreground",
-    ...(showPagination && { currentIndex }),
-    ...(showPagination && { showSwiperPagination: true }),
-  };
 
   return (
     <div className="relative w-full">
@@ -56,8 +44,8 @@ export default function ListServiceCardsMobile({
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 4,
-            spaceBetween: 30,
+            slidesPerView: 5,
+            spaceBetween: 20,
           },
         }}
       >
@@ -68,12 +56,13 @@ export default function ListServiceCardsMobile({
         ))}
       </Swiper>
 
-      <div className="mt-4 flex w-full justify-center space-x-4 md:hidden">
+      <div className="mt-4 flex w-full justify-center md:hidden">
         <SliderArrows
           swiperRef={swiperRef}
           prevRef={prevRef}
+          showSwiperPagination
           nextRef={nextRef}
-          {...sliderProps}
+          currentIndex={currentIndex}
         />
       </div>
     </div>

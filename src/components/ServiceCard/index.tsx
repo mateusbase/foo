@@ -8,11 +8,11 @@ export default function ServiceCard({
 }: ServiceCardProps): JSX.Element {
   return path ? (
     <Link href={path}>
-      <div className="flex min-h-28 min-w-24 cursor-pointer flex-col items-start justify-center rounded-2xl border-1 border-primary p-3 opacity-100 lg:size-40 lg:items-center lg:justify-center xl:size-48">
+      <div className="flex min-h-[124px] cursor-pointer flex-col items-start justify-center rounded-2xl border-1 border-primary p-3 opacity-100 lg:size-40 lg:items-center lg:justify-center xl:size-48">
         <div className="mb-4 flex items-start justify-start lg:items-center lg:justify-center">
           {icon}
         </div>
-        <h3 className="text-[13px] text-darkGray lg:text-center lg:text-xl lg:leading-4 lg:text-primary">
+        <h3 className="text-[13px] text-darkGray md:text-base lg:text-center lg:text-xl lg:leading-4 lg:text-primary">
           {title}
         </h3>
       </div>

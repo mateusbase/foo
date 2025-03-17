@@ -38,12 +38,12 @@ export default function ServicesSectionMobile(): JSX.Element {
       id: 5,
       title: "Medicina de precisão",
       icon: <PrecisionMedicineIcon color="text-primary-foreground" size={1} />,
-      path: "/tudo-sobre-o-cancer",
+      path: "/medicina-de-precisao",
     },
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center lg:hidden">
+    <section className="flex flex-col items-center justify-center py-4 lg:hidden">
       <ServiceTextMobile />
 
       <ListServiceCardsMobile services={services} />
