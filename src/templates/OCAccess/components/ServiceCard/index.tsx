@@ -11,7 +11,7 @@ export default function ServiceCard({
         alt={serviceName}
         className="size-14"
       />
-      <p className="text-primary">{serviceName}</p>
+      <p className="text-xl text-primary">{serviceName}</p>
     </div>
   );
 }
