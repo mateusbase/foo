@@ -4,7 +4,7 @@ import JournalScreen from "@/templates/JournalScreen";
 
 const OcJournal: NextPageWithLayout = () => {
   return (
-    <Page title="OcJournal" description="Oncoclínicas - OcJournal">
+    <Page title="OC Journal" description="Oncoclínicas - OcJournal">
       <JournalScreen />
     </Page>
   );

@@ -190,7 +190,7 @@ export default function FormularySection({
                     className="-ml-4 w-[322px] md:w-[676px]"
                     classNames={{
                       trigger:
-                        "bg-white h-[50px] w-[322px] md:w-[676px] text-darkGray placeholder:text-darkGray ",
+                        "bg-white h-[50px] w-[322px] border border-darkGray md:w-[676px] text-darkGray placeholder:text-darkGray ",
                       value: "text-lightGray",
                       label: "hidden",
                     }}
