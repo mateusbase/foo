@@ -1,15 +1,17 @@
 import BaseSwiper from "@/components/BaseSwiper";
-import FullbleedBanner from "@/components/FullbleedBanner";
 import PageLayout from "@/components/PageLayout";
 import SimpleCard from "@/components/SimpleCard";
 import ColoredCard from "@/components/ColoredCard";
 import FormularySection from "@/components/FormularySection";
 import { useState, useEffect } from "react";
+import { useDeviceType } from "@/hooks/useDeviceType";
+import FullbleedBanner from "./components/FullbleedBanner";
 import assistencyMock from "./assistencyMock";
 import coloredCardMock from "./coloredCardMock";
 
 export default function DeLifeScreen(): JSX.Element {
   const [maxWidth, setMaxWidth] = useState<string>("100vw");
+  const deviceType = useDeviceType();
 
   useEffect(() => {
     const updateWidth = (): void => {
@@ -26,9 +28,9 @@ export default function DeLifeScreen(): JSX.Element {
 
   let imageSrc = "/assets/images/delife/fullbleed_banner_sm.png";
   if (window.innerWidth > 1024) {
-    imageSrc = "/assets/images/delife/fullbleed_banner_md.png";
-  } else if (window.innerWidth > 640) {
     imageSrc = "/assets/images/delife/fullbleed_banner_lg.png";
+  } else if (window.innerWidth > 640) {
+    imageSrc = "/assets/images/delife/fullbleed_banner_md.png";
   }
 
   return (
@@ -62,30 +64,34 @@ export default function DeLifeScreen(): JSX.Element {
             textPrimary
           />
         )}
-        className="md:hidden"
+        className="mb-7 md:hidden"
       />
 
-      <div className="mb-28 hidden md:grid md:grid-cols-2 md:gap-8 lg:flex lg:flex-row">
-        {assistencyMock.map((item) => (
-          <SimpleCard
-            key={item.id}
-            title={item.title}
-            description={item.description}
-            textPrimary
-          />
-        ))}
-      </div>
+      <div
+        className={`flex ${deviceType === "desktop" ? "flex-col-reverse" : "flex-col"} `}
+      >
+        <div className="mb-28 hidden md:grid md:grid-cols-2 md:gap-8 lg:flex lg:flex-row">
+          {assistencyMock.map((item) => (
+            <SimpleCard
+              key={item.id}
+              title={item.title}
+              description={item.description}
+              textPrimary
+            />
+          ))}
+        </div>
 
-      <div className="mb-20 flex flex-col gap-14 lg:flex-row">
-        {coloredCardMock.map((item) => (
-          <ColoredCard
-            key={item.id}
-            title={item.title}
-            background={item.background}
-            description={item.description}
-            buttons={item.buttons}
-          />
-        ))}
+        <div className="mb-20 flex flex-col gap-14 lg:flex-row">
+          {coloredCardMock.map((item) => (
+            <ColoredCard
+              key={item.id}
+              title={item.title}
+              background={item.background}
+              description={item.description}
+              buttons={item.buttons}
+            />
+          ))}
+        </div>
       </div>
 
       <FormularySection
