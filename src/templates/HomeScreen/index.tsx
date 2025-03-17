@@ -79,7 +79,7 @@ export default function HomeScreen(): JSX.Element {
         </div>
       </BaseContainer>
 
-      <div className="block md:hidden">
+      <div className="full-bleed block">
         <InformationSliderMobile informations={informationMock} />
       </div>
 

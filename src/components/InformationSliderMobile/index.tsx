@@ -3,7 +3,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState, useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
-import { Image } from "@heroui/react";
+import Image from "next/image";
 import { InformationSliderMobileProps } from "./types";
 
 export default function InformationSliderMobile({
@@ -55,10 +55,11 @@ export default function InformationSliderMobile({
         {informations.map((information) => (
           <SwiperSlide key={information.id}>
             <Image
-              radius="none"
               src={information.image}
-              alt={information.description}
-              className="size-full object-cover"
+              alt={information.description || ''}
+              width={1000}
+              height={500}
+              className="w-full object-cover md:h-[320px]"
             />
           </SwiperSlide>
         ))}
