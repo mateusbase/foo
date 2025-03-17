@@ -22,11 +22,13 @@ export interface BaseInputProps {
   startContent?: React.ReactNode;
   borderStyle?: string;
   onBlur?: () => void;
+  defaultValue?: string;
   register?: UseFormRegister<FormValues>;
   name?: "name" | "email" | "phone";
   error?: string | FieldError;
   maxLength?: number;
   backgroundColor?: string;
+  disabled?: boolean;
   borderColor?: string;
   classNames?: {
     input?: string;
