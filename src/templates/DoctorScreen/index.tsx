@@ -28,8 +28,8 @@ export default function DoctorScreen(): JSX.Element {
         />
       </div>
 
-      <div className="mt-14 flex flex-col items-center justify-center lg:mt-14 lg:flex-row lg:items-start lg:justify-between">
-        <div className="relative flex flex-col items-center lg:bottom-48">
+      <div className="mt-14 flex flex-col items-center justify-center lg:mt-14 lg:flex-row lg:items-start lg:gap-14">
+        <div className="relative flex flex-col items-center lg:bottom-48 lg:ml-5">
           <img
             src={
               (imgSrc as string) ||
@@ -49,15 +49,15 @@ export default function DoctorScreen(): JSX.Element {
 
             <BaseButton
               color="secondary"
-              className="mt-8 w-[390px] rounded-md text-white lg:w-[322px]"
-              startContent={<IoIosCalendar size={24} className="mr-2" />}
+              className="mt-8 w-[322px] gap-3 rounded-md text-white lg:w-[322px]"
+              startContent={<IoIosCalendar size={24} />}
             >
               Agende uma consulta
             </BaseButton>
           </div>
         </div>
 
-        <div className="mt-8 text-center md:mt-0 md:text-left lg:ml-24 lg:mt-0 lg:flex-1">
+        <div className="mt-8 text-center md:mt-0 md:text-left lg:mt-0 lg:flex-1">
           <h1 className="hidden text-[62px] text-primary lg:block">
             {name
               ? `Dra. ${decodeURIComponent(name as string)}`
@@ -81,7 +81,7 @@ export default function DoctorScreen(): JSX.Element {
                 Local de atendimento
               </h1>
               {locations.map((location) => (
-                <ul key={location.id} className="list-inside list-disc">
+                <ul key={location.id} className="ml-6 list-outside list-disc">
                   <li className="text-left text-sm text-darkGray md:text-base">
                     {location.name}
                   </li>
@@ -94,7 +94,10 @@ export default function DoctorScreen(): JSX.Element {
                 Especialização
               </h1>
               {especializations.map((especialization) => (
-                <ul key={especialization.id} className="list-inside list-disc">
+                <ul
+                  key={especialization.id}
+                  className="ml-6 list-outside list-disc"
+                >
                   <li className="text-left text-base text-darkGray">
                     {especialization.name}
                   </li>
