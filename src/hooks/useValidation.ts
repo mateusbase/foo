@@ -26,11 +26,9 @@ const getValidationSchema = (options?: {
     phone: options?.validatePhone
       ? yup
           .string()
-          .matches(/^\d{10,11}$/, "Telefone inválido")
           .required("Telefone obrigatório")
           .transform((value) => (value ? value.replace(/\D/g, "") : value))
           .min(10, "Telefone inválido")
-          .max(11, "Telefone inválido")
       : yup.string().notRequired(),
   });
 };
