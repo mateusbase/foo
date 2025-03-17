@@ -8,11 +8,11 @@ export interface VideoProps {
   id: number;
   src: string;
   description: string;
+  imageSrc?: string;
 }
 
 export interface UnitCardProps {
   id: number;
-  src?: string;
   hours: string;
   unitName: string;
   image?: string;

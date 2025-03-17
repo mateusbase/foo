@@ -9,7 +9,7 @@ import { UnitCardProps, VideoProps, WomanBenefitsMock } from "../../interfaces";
 const CardsSwiper = (): JSX.Element => (
   <BaseSwiper<WomanBenefitsMock>
     data={womanBenefitsMock}
-    className="md:hidden"
+    className="mb-12 md:hidden"
     renderItem={(benefit) => (
       <BenefitsCards
         id={benefit.id}
@@ -27,27 +27,33 @@ const VideosSwiper = (): JSX.Element => (
         id: 1,
         src: "https://www.youtube.com/embed/GoHN_plQBqs",
         description: "OC Mulher",
+        imageSrc: "/assets/images/ocMulher/image (13).png",
       },
       {
         id: 2,
         src: "https://www.youtube.com/embed/GoHN_plQBqs",
         description: "OC Mulher",
+        imageSrc: "/assets/images/ocMulher/image (13).png",
       },
       {
         id: 3,
         src: "https://www.youtube.com/embed/GoHN_plQBqs",
         description: "OC Mulher",
+        imageSrc: "/assets/images/ocMulher/image (13).png",
       },
     ]}
     renderItem={(video) => (
-      <VideoCard src={video.src} description={video.description} />
+      <VideoCard
+        src={video.src}
+        description={video.description}
+        imageSrc={video.imageSrc}
+      />
     )}
+    className="mb-[69px] md:mb-2"
     slidesPerView={1}
-    className="mb-7"
-    spaceBetween={30}
     breakpoints={{
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3, spaceBetween: 10 },
+      768: { slidesPerView: 2, spaceBetween: 40 },
+      1025: { slidesPerView: 3, spaceBetween: 40 },
     }}
   />
 );
@@ -59,7 +65,6 @@ const LocationsSwiper = (): JSX.Element => (
       <UnitsCard
         id={unit.id}
         address={unit.address}
-        src={unit.image}
         complement={unit.complement}
         unitName={unit.unitName}
         city={unit.city}
@@ -72,7 +77,7 @@ const LocationsSwiper = (): JSX.Element => (
       768: { slidesPerView: 2, spaceBetween: 10 },
       1024: { slidesPerView: 2, spaceBetween: 30 },
     }}
-    className="mt-14 lg:w-3/5"
+    className="mt-[45px] md:-mt-3 lg:mt-0 lg:w-3/5"
   />
 );
 
