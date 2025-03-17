@@ -63,7 +63,7 @@ export default function OcWomanScreen(): JSX.Element {
 
       {VideosSwiper()}
 
-      <div className="mb-48 flex w-full flex-col lg:h-[694px] lg:flex-row lg:gap-8">
+      <div className="mb-10 flex w-full flex-col lg:h-[694px] lg:flex-row lg:gap-8">
         <ServicesLocations />
 
         {LocationsSwiper()}

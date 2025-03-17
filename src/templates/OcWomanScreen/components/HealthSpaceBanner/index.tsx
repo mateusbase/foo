@@ -15,7 +15,7 @@ export const HealthSpaceBanner = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 bg-custom-gradient-dark px-10 pb-20 pt-12 font-lato-regular text-white md:py-14 md:pl-7 md:pr-20 lg:h-auto lg:w-[45%] lg:shrink-0 lg:pb-24 lg:pl-14 lg:pr-24 lg:pt-[72px]">
+      <div className="flex flex-col gap-5 bg-custom-gradient-dark pb-20 pl-4 pr-10 pt-12 font-lato-regular text-white md:py-14 md:pr-20 lg:h-auto lg:w-[45%] lg:shrink-0 lg:pb-24 lg:pl-14 lg:pr-24 lg:pt-[72px]">
         <h1 className="mb-8 text-5xl">Espaço Saúde</h1>
         <p className="text-xl">
           O OC Mulher – Espaço Saúde é uma das iniciativas do programa.
