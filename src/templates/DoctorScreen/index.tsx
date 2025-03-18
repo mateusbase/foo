@@ -20,7 +20,7 @@ export default function DoctorScreen(): JSX.Element {
           : specialty || "Especialidade"
       }
     >
-      <div className="relative mt-14 hidden lg:block">
+      <div className="relative mt-14 hidden lg:mt-0 lg:block">
         <img
           src="https://i2.wp.com/robertopestana.com.br/wp-content/uploads/2022/02/891351.png?w=750&quality=90&strip=all&ssl=1"
           alt="Imagem descritiva"
