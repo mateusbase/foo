@@ -8,7 +8,7 @@ const OcJournalItems = ({ options }: NewsInformationCardProps): JSX.Element => {
 
   return (
     <Link href={`/medicos/oc-journal/${newSlug}`}>
-      <div className="mx-auto flex size-full flex-col gap-4 md:min-h-[649px] lg:flex-row lg:gap-8">
+      <div className="mx-auto flex size-full flex-col gap-4 md:min-h-[325px] lg:min-h-[649px] lg:flex-row lg:gap-8">
         <div className="h-auto shrink-0 lg:w-[812px]">
           <img
             src={image}
@@ -17,26 +17,27 @@ const OcJournalItems = ({ options }: NewsInformationCardProps): JSX.Element => {
           />
         </div>
 
-        <div className="flex size-full flex-col justify-between">
-          <div className="flex h-full flex-col gap-4">
+        <div className="flex flex-1 flex-col">
+          <div className="flex flex-col gap-4 md:gap-6 lg:gap-10">
             <h1 className="text-left text-xl font-light text-darkGray lg:text-[48px] lg:leading-[48px]">
               {title}
             </h1>
             <p className="text-left text-sm font-medium leading-[19px] text-primary lg:text-[16px]">
               {date}
             </p>
-            <p className="text-left text-sm font-medium text-darkGray lg:text-[22px] lg:leading-[27px]">
+            <p className="mb-4 text-left text-sm font-medium text-darkGray md:mb-6 lg:mb-0 lg:text-[22px] lg:leading-[27px]">
               {description}
             </p>
-            <div className="flex grow items-end lg:items-start">
-              <p className="mb-2 text-sm font-medium text-darkGray lg:text-[22px]">
-                Acesse o artigo completo deste estudo.
-              </p>
-            </div>
           </div>
 
-          <div className="flex w-full lg:mt-10 lg:size-full">
-            <BaseButton color="primary" className="w-full text-white lg:w-40">
+          <div className="mt-4 md:mt-auto lg:mb-16 lg:mt-10">
+            <p className="mb-4 text-sm font-medium text-darkGray md:mb-2 lg:mb-10 lg:text-[22px]">
+              Acesse o artigo completo deste estudo.
+            </p>
+            <BaseButton
+              color="primary"
+              className="mt-2 w-full text-white lg:mt-4 lg:w-40"
+            >
               Saiba mais
             </BaseButton>
           </div>
