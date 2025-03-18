@@ -29,7 +29,7 @@ export default function OCAccess(): JSX.Element {
       subtitle="Conheça OC ACESSO. A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.
 "
     >
-      <h1 className="mb-4 text-2xl leading-8 text-primary md:my-11 md:text-title-lg md:leading-10 lg:leading-[50px]">
+      <h1 className="my-4 text-2xl leading-8 text-primary md:my-11 md:text-title-lg md:leading-10 lg:mt-0 lg:leading-[50px]">
         Agora, os pacientes que
         <b className="ml-2">
           não tem cobertura por um plano de saúde e que não podem esperar por

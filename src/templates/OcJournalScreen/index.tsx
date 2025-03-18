@@ -15,41 +15,39 @@ export default function OcJournalScreen(): JSX.Element {
       title="OC Journal"
       subtitle="A newsletter científica do Grupo Oncoclínicas"
     >
-      <div className="lg:mt-20">
-        <div className="full-bleed flex w-full flex-col-reverse justify-between text-white lg:h-[536px] lg:flex-row">
-          <div className="flex h-full flex-col items-center justify-between gap-2 bg-custom-gradient-dark p-10 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
-            <div className="flex w-full flex-col gap-4 md:w-3/4 lg:w-full">
-              <div>
-                <p className="text-left text-4xl font-light md:text-center lg:text-left lg:text-4xl xl:text-5xl">
-                  Faça o download da edição mais recente do OC Journal
-                </p>
-              </div>
+      <div className="full-bleed flex w-full flex-col-reverse justify-between text-white lg:h-[536px] lg:flex-row">
+        <div className="flex h-full flex-col items-center justify-between gap-2 bg-custom-gradient-dark p-10 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
+          <div className="flex w-full flex-col gap-4 md:w-3/4 lg:w-full">
+            <div>
+              <p className="text-left text-4xl font-light md:text-center lg:text-left lg:text-4xl xl:text-5xl">
+                Faça o download da edição mais recente do OC Journal
+              </p>
+            </div>
 
-              <div>
-                <p className="text-left text-xl font-bold md:text-center lg:text-left lg:text-xl xl:text-2xl">
-                  Novidades do universo médico-científico com reportagens e
-                  análises de especialistas em oncologia.
-                </p>
-              </div>
+            <div>
+              <p className="text-left text-xl font-bold md:text-center lg:text-left lg:text-xl xl:text-2xl">
+                Novidades do universo médico-científico com reportagens e
+                análises de especialistas em oncologia.
+              </p>
+            </div>
 
-              <div className="flex gap-2">
-                <BaseButton
-                  className="mb-4 mt-10 h-16 w-full justify-center border-white text-lg text-white lg:w-80 lg:text-2xl"
-                  variant="bordered"
-                >
-                  Download
-                </BaseButton>
-              </div>
+            <div className="flex gap-2">
+              <BaseButton
+                className="mb-4 mt-10 h-16 w-full justify-center border-white text-lg text-white lg:w-80 lg:text-2xl"
+                variant="bordered"
+              >
+                Download
+              </BaseButton>
             </div>
           </div>
+        </div>
 
-          <div className="h-full lg:w-1/2">
-            <img
-              src="/assets/images/oc-journal/oc-journal-banner.png"
-              alt="Imagem 1"
-              className="size-full object-cover"
-            />
-          </div>
+        <div className="h-full lg:w-1/2">
+          <img
+            src="/assets/images/oc-journal/oc-journal-banner.png"
+            alt="Imagem 1"
+            className="size-full object-cover"
+          />
         </div>
       </div>
 
