@@ -94,7 +94,7 @@ export function PrecisionMedicineScreen({
 
       <PlusCard exams={pacientSupport} />
 
-      <div className="relative left-1/2 mt-11 w-screen -translate-x-1/2 md:hidden md:w-full lg:flex">
+      <div className="relative left-1/2 mt-11 w-screen -translate-x-1/2 md:hidden lg:flex">
         <BannerWithImage
           title="Programa de Apoio à Pesquisa"
           description={[
