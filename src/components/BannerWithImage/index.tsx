@@ -84,9 +84,17 @@ const BannerWithImage: React.FC<BannerWithImageProps> = ({
           )}
         >
           <p className={getMobileTitleClasses(isLargeText)}>{title}</p>
-          <p className={getMobileDescriptionClasses(isLargeText)}>
-            {description}
-          </p>
+          {Array.isArray(description) ? (
+            description.map((text) => (
+              <p className={`${getMobileDescriptionClasses(isLargeText)} mb-4`}>
+                {text}
+              </p>
+            ))
+          ) : (
+            <p className={getMobileDescriptionClasses(isLargeText)}>
+              {description}
+            </p>
+          )}
         </div>
 
         <div className="w-full">
