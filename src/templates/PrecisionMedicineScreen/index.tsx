@@ -224,7 +224,7 @@ export function PrecisionMedicineScreen({
             href="/medicina-de-precisao/quintas-moleculares"
             className="flex w-[85%] justify-center self-center lg:w-full"
           >
-            <BaseButton className="mb-5 w-full bg-white py-7 text-center font-lato-thin text-lg text-purpleMedium md:w-64 lg:w-[250px]">
+            <BaseButton className="mb-5 w-full bg-white py-7 text-center font-lato-thin text-lg text-purpleMedium md:w-64 lg:w-[90%]">
               Inscreva-se
             </BaseButton>
           </Link>
@@ -246,7 +246,7 @@ export function PrecisionMedicineScreen({
           />
 
           <div className="flex w-[85%] justify-center self-center lg:w-full">
-            <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64 lg:w-[250px]">
+            <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64 lg:w-[90%]">
               Inscreva-se
             </BaseButton>
           </div>
