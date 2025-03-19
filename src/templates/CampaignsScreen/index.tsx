@@ -1,16 +1,9 @@
 import PageLayout from "@/components/PageLayout";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
-import { Navigation } from "swiper/modules";
-import SliderArrows from "@/components/SliderArrows";
 import BaseSwiper from "@/components/BaseSwiper";
 import YouthBanner from "./components/YouthBanner";
 import bannerImages from "./bannerImages";
 
 const CampaignsScreen = (): JSX.Element => {
-  const { currentIndex, nextRef, onBeforeInit, prevRef, swiperRef } =
-    useSwiperNavigation();
-
   return (
     <PageLayout
       title="Campanhas de prevenção contra o câncer"
