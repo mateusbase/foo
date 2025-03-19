@@ -29,9 +29,9 @@ export function useSwiperNavigation(): UseSwiperNavigationReturn {
           swiperRef.current.navigation.init();
           swiperRef.current.navigation.update();
         }
-      }, 0);
+      }, 5000);
     }
-  }, [prevRef, nextRef]);
+  }, [prevRef, nextRef, swiperRef]);
 
   return { prevRef, nextRef, swiperRef, onBeforeInit, currentIndex };
 }

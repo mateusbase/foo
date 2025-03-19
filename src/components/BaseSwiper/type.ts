@@ -9,4 +9,5 @@ export interface BaseSwiperProps<T> {
   >;
   className?: string;
   hasArrows?: boolean;
+  shouldLoop?: boolean;
 }
