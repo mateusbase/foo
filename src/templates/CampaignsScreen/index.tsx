@@ -68,7 +68,7 @@ const CampaignsScreen = (): JSX.Element => {
           data={bannerImages}
           shouldLoop={false}
           breakpoints={{
-            "640": {
+            "768": {
               slidesPerView: 2,
               spaceBetween: 20,
             },

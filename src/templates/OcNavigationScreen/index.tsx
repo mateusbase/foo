@@ -14,7 +14,7 @@ export default function OcNavigationScreen(): JSX.Element {
   let imageSrc = "/assets/images/oc-navigation/navigation_banner_sm.png";
   if (window.innerWidth > 1024) {
     imageSrc = "/assets/images/oc-navigation/navigation_banner_lg.png";
-  } else if (window.innerWidth > 640) {
+  } else if (window.innerWidth >= 768) {
     imageSrc = "/assets/images/oc-navigation/navigation_banner_md.png";
   }
 
