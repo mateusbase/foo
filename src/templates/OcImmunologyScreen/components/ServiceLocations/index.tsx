@@ -35,7 +35,6 @@ const ServicesLocations = (): JSX.Element => {
           <UnitsCard
             id={unit.id}
             address={unit.address}
-            src={unit.image}
             complement={unit.complement}
             unitName={unit.unitName}
             city={unit.city}
