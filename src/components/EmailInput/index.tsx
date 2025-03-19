@@ -2,7 +2,15 @@ import { FormValues, useValidation } from "@/hooks/useValidation";
 import { useForm } from "react-hook-form";
 import BaseInput from "../Input";
 
-const EmailInput = (): JSX.Element => {
+interface EmailInputProps {
+  placeholder?: string;
+  className?: string;
+}
+
+const EmailInput = ({
+  placeholder,
+  className,
+}: EmailInputProps): JSX.Element => {
   const resolve = useValidation({ validateEmail: true });
 
   const {
@@ -16,7 +24,8 @@ const EmailInput = (): JSX.Element => {
 
   return (
     <BaseInput
-      placeholder="E-mail"
+      placeholder={placeholder || "E-mail"}
+      className={className}
       register={register}
       name="email"
       error={errors.email?.message}
