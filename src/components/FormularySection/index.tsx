@@ -1,8 +1,5 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { Textarea } from "@heroui/react";
-import { format } from "@react-input/mask";
-import { FormValues, useValidation } from "@/hooks/useValidation";
-import { useForm } from "react-hook-form";
 import BaseInput from "../Input";
 import BaseButton from "../Button";
 import BaseSelect from "../Select";
@@ -42,61 +39,6 @@ export default function FormularySection({
   style = {},
 }: FormularySectionProps): JSX.Element {
   const [formData, setFormData] = useState<Record<string, string>>({});
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const resolve = useValidation({ validateEmail: true, validatePhone: true });
-
-  const {
-    register,
-    formState: { errors },
-    setValue,
-    trigger,
-  } = useForm<FormValues>({
-    resolver: resolve,
-    mode: "onChange",
-    reValidateMode: "onBlur",
-  });
-
-  const handlePhoneChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>): void => {
-      let rawValue = event.target.value.replace(/\D/g, "");
-      if (rawValue.length > 11) return;
-
-      if (rawValue.length > 11) {
-        rawValue = rawValue.slice(0, 11);
-      }
-
-      const dynamicMask =
-        rawValue.length > 10 ? "(__) _____-____" : "(__) ____-____";
-
-      const formattedValue = format(rawValue, {
-        mask: dynamicMask,
-        replacement: { _: /\d/ },
-      });
-
-      setPhoneNumber(formattedValue);
-      setValue("phone", rawValue);
-      if (rawValue.length < 11) {
-        trigger("phone");
-      }
-    },
-    [setValue, trigger],
-  );
-
-  const handlePhoneBlur = useCallback(async (): Promise<void> => {
-    const rawPhoneNumber = phoneNumber.replace(/\D/g, "");
-
-    const dynamicMask =
-      rawPhoneNumber.length > 10 ? "(__) _____-____" : "(__) ____-____";
-
-    const formattedPhone = format(rawPhoneNumber, {
-      mask: dynamicMask,
-      replacement: { _: /\d/ },
-    });
-
-    setPhoneNumber(formattedPhone);
-    setValue("phone", rawPhoneNumber);
-    await trigger("phone");
-  }, [phoneNumber, setValue, trigger]);
 
   const handleChange = (
     e: React.ChangeEvent<

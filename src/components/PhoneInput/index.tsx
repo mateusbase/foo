@@ -3,7 +3,15 @@ import { useForm } from "react-hook-form";
 import { usePhoneMask } from "@/hooks/usePhoneMask";
 import BaseInput from "../Input";
 
-const PhoneInput = (): JSX.Element => {
+interface PhoneInputProps {
+  placeholder?: string;
+  className?: string;
+}
+
+const PhoneInput = ({
+  placeholder,
+  className,
+}: PhoneInputProps): JSX.Element => {
   const resolve = useValidation({ validatePhone: true });
   const { phoneNumber, handlePhoneChange, handlePhoneBlur } = usePhoneMask();
 
@@ -18,7 +26,7 @@ const PhoneInput = (): JSX.Element => {
 
   return (
     <BaseInput
-      placeholder="Telefone"
+      placeholder={placeholder || "Telefone"}
       value={phoneNumber}
       onChange={handlePhoneChange}
       onBlur={handlePhoneBlur}
@@ -26,6 +34,7 @@ const PhoneInput = (): JSX.Element => {
       register={register}
       name="phone"
       error={errors.phone?.message}
+      className={className}
     />
   );
 };
