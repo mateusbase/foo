@@ -41,7 +41,7 @@ export default function JournalScreen(): JSX.Element {
       subtitle="A newsletter científica do Grupo Oncoclínicas"
     >
       <div className="flex flex-col items-center">
-        <p className="text-sm text-lightGray md:text-xl">
+        <p className="mt-10 text-sm text-lightGray md:text-xl lg:mt-0">
           10 de outubro de 2025
         </p>
         <BaseButton
