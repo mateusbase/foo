@@ -127,12 +127,12 @@ export default function JournalScreen(): JSX.Element {
                 {
                   value: "RJ",
                   label: "RJ",
-                  key: "1",
+                  key: "2",
                 },
                 {
                   value: "MG",
                   label: "MG",
-                  key: "1",
+                  key: "3",
                 },
               ],
             },
