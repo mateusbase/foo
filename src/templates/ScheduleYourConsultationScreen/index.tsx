@@ -12,6 +12,8 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
   const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState("");
   const resolve = useValidation({ validateEmail: true, validatePhone: true });
+  const dynamicMask = "(__) _____-____";
+  const replacementeMask = { _: /\d/ };
 
   const {
     register,
@@ -28,11 +30,9 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
     const rawValue = event.target.value.replace(/\D/g, "");
     if (rawValue.length > 11) return;
 
-    const dynamicMask =
-      rawValue.length > 10 ? "(__) _____-____" : "(__) ____-____";
     const formattedValue = format(rawValue, {
       mask: dynamicMask,
-      replacement: { _: /\d/ },
+      replacement: replacementeMask,
     });
 
     setPhoneNumber(formattedValue);
@@ -43,11 +43,9 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
   const handleBlur = async (): Promise<void> => {
     const rawPhoneNumber = phoneNumber.replace(/\D/g, "");
 
-    const dynamicMask =
-      rawPhoneNumber.length > 10 ? "(__) _____-____" : "(__) ____-____";
     const formattedPhone = format(rawPhoneNumber, {
       mask: dynamicMask,
-      replacement: { _: /\d/ },
+      replacement: replacementeMask,
     });
 
     setPhoneNumber(formattedPhone);

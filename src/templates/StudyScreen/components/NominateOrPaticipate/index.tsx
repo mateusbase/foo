@@ -3,7 +3,7 @@ import BaseInput from "@/components/Input";
 import BaseSelect from "@/components/Select";
 import { DateInput, Radio, RadioGroup } from "@heroui/react";
 import { useEffect, useState } from "react";
-import { format } from "@react-input/mask";
+import PhoneInput from "@/components/PhoneInput";
 
 interface NominateOrPaticipateProps {
   location: string;
@@ -14,42 +14,14 @@ export default function NominateOrPaticipate({
   location,
   studyName,
 }: NominateOrPaticipateProps): JSX.Element {
-  const [phoneNumber, setPhoneNumber] = useState("");
   const [selected, setSelected] = useState("0");
 
   const toggleRadio = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSelected(e.target.value);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const { value } = e.target;
-    const rawValue = value.replace(/\D/g, "");
-    if (rawValue.length > 11) return;
-
-    const dynamicMask =
-      rawValue.length > 10 ? "(__) _____-____" : "(__) ____-____";
-    const formattedValue = format(rawValue, {
-      mask: dynamicMask,
-      replacement: { _: /\d/ },
-    });
-
-    setPhoneNumber(formattedValue);
-  };
-
-  const handleBlur = async (): Promise<void> => {
-    const rawPhoneNumber = phoneNumber.replace(/\D/g, "");
-
-    const dynamicMask =
-      rawPhoneNumber.length > 10 ? "(__) _____-____" : "(__) ____-____";
-    const formattedPhone = format(rawPhoneNumber, {
-      mask: dynamicMask,
-      replacement: { _: /\d/ },
-    });
-
-    setPhoneNumber(formattedPhone);
-  };
-
   const [maxWidth, setMaxWidth] = useState<string>("100vw");
+
   useEffect(() => {
     const updateWidth = (): void => {
       const scrollbarWidth =
@@ -105,16 +77,7 @@ export default function NominateOrPaticipate({
             errorMessage="Data inválida"
           />
 
-          <BaseInput
-            placeholder="Telefone"
-            size="lg"
-            radius="full"
-            variant="bordered"
-            value={phoneNumber}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            className="w-full overflow-hidden rounded-full border-1 border-darkGray bg-white"
-          />
+          <PhoneInput />
 
           <BaseInput
             placeholder="Localidade"
