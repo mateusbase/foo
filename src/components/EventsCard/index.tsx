@@ -35,21 +35,21 @@ export default function EventCard({
             <div className="flex items-center text-lg font-normal text-darkGray md:text-xl">
               <CalendarIcon color="text-primary-foreground" className="mr-2" />
 
-              <span>{event.date}</span>
+              <span className="ml-1">{event.date}</span>
             </div>
 
             <div className="flex items-center text-[18px] font-normal text-darkGray md:text-xl">
               <PinIcon color="text-primary-foreground" className="mr-2" />
-              <span>{event.location}</span>
+              <span className="ml-1">{event.location}</span>
             </div>
 
-            <div className="ml-7 text-left text-base font-normal text-lightGray">
-              <span>{event.address}</span>
+            <div className="pl-11 text-left text-base font-normal text-lightGray lg:pl-0">
+              <span className="lg:ml-11">{event.address}</span>
             </div>
 
             <div className="flex items-center text-[18px] font-normal text-darkGray md:text-xl">
               <ClockIcon color="text-primary-foreground" className="mr-2" />
-              <span>{event.time}</span>
+              <span className="ml-3">{event.time}</span>
             </div>
           </div>
 

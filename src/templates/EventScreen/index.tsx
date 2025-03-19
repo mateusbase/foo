@@ -29,23 +29,29 @@ export default function EventScreen(): JSX.Element {
               className="size-44 rounded-2xl object-cover md:h-[316px] md:w-[320px]"
             />
 
-            <h1 className="mt-10 block w-5/6 text-2xl font-medium leading-none text-primary md:hidden lg:text-[62px] lg:font-light">
+            <h1 className="mt-10 block text-2xl font-medium leading-none text-primary md:hidden lg:text-[62px] lg:font-light">
               Novas tecnologias no combate ao câncer de mama
             </h1>
 
             <div className="mt-8 text-left">
               <div className="flex items-center text-lg text-darkGray">
-                <CalendarIcon className="mr-2 text-primary" />
+                <CalendarIcon className="ml-[-100px] mr-2 text-primary md:ml-0" />
                 <p>23/09/2023 a 07/10/2023</p>
               </div>
 
               <div className="mt-4 flex items-center text-lg text-darkGray">
-                <PinIcon size={1} className="mr-2 text-primary" />
+                <PinIcon
+                  size={1}
+                  className="ml-[-100px] mr-2 text-primary md:ml-0"
+                />
                 <p>Evento Online</p>
               </div>
 
               <div className="mt-4 flex items-center text-lg text-darkGray">
-                <ClockIcon size={1} className="mr-4 text-primary" />
+                <ClockIcon
+                  size={1}
+                  className="ml-[-100px] mr-4 text-primary md:ml-0"
+                />
                 <p>Das 9h às 19h</p>
               </div>
             </div>
@@ -55,7 +61,7 @@ export default function EventScreen(): JSX.Element {
             </div>
           </div>
 
-          <div className="mt-8 text-center md:ml-20 md:mt-0 md:text-left lg:ml-24 lg:flex-1">
+          <div className="mt-8 text-center md:ml-11 md:mt-0 md:text-left lg:ml-24 lg:flex-1">
             <h1 className="hidden text-4xl font-medium leading-none text-primary md:block lg:text-[62px] lg:font-light">
               Novas tecnologias no combate ao câncer de mama
             </h1>
@@ -91,7 +97,7 @@ export default function EventScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 md:flex-row md:gap-8 lg:hidden">
+        <div className="flex flex-col gap-6 md:-mt-32 md:flex-row md:gap-8 lg:hidden">
           <section className="flex-1">
             <InvitedMedicsSection />
           </section>
