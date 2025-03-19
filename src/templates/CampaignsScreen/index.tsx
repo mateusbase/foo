@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import { Navigation } from "swiper/modules";
 import SliderArrows from "@/components/SliderArrows";
+import BaseSwiper from "@/components/BaseSwiper";
 import YouthBanner from "./components/YouthBanner";
 import bannerImages from "./bannerImages";
 
@@ -69,38 +70,23 @@ const CampaignsScreen = (): JSX.Element => {
         <h1 className="mb-6 w-full text-center text-3xl text-primary md:text-4xl lg:text-left">
           Conheça nossas campanhas
         </h1>
-        <Swiper
-          modules={[Navigation]}
+
+        <BaseSwiper
+          data={bannerImages}
+          shouldLoop={false}
           breakpoints={{
-            "320": {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
             "640": {
               slidesPerView: 2,
               spaceBetween: 20,
             },
-            "768": {
+            "1025": {
               slidesPerView: 3,
               spaceBetween: 20,
             },
           }}
-          onBeforeInit={(swiper) => onBeforeInit(swiper)}
-        >
-          {bannerImages.map((banner) => (
-            <SwiperSlide key={banner.id} className="mb-10">
-              <img src={banner.image} alt={`Imagem número ${banner.id}`} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <SliderArrows
-          className="self-center"
-          currentIndex={currentIndex}
-          showSwiperPagination
-          nextRef={nextRef}
-          prevRef={prevRef}
-          swiperRef={swiperRef}
+          renderItem={(banner) => (
+            <img src={banner.image} alt={`Imagem número ${banner.id}`} />
+          )}
         />
       </div>
     </PageLayout>

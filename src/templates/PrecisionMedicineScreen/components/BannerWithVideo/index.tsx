@@ -5,7 +5,7 @@ const BannerWithVideo = ({
   isVideo,
 }: BannerWithVideoProps): JSX.Element => {
   return (
-    <div className="mt-4 hidden h-[480px] w-full justify-between text-white lg:flex">
+    <div className="hidden h-[480px] w-full justify-between text-white lg:flex">
       <div className="flex h-full w-1/2 flex-col justify-between gap-2 rounded-bl-[100px] bg-gradient-to-t from-purpleDark to-purpleLight p-20">
         <div>
           <p className="text-6xl font-light">

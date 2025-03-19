@@ -1,5 +1,10 @@
 import Page from "@/components/Page";
 import CampaignsScreen from "@/templates/CampaignsScreen";
+import dynamic from "next/dynamic";
+
+const NoSSRSwiper = dynamic(() => import("@/templates/CampaignsScreen"), {
+  ssr: false,
+});
 
 const Campaigns = (): JSX.Element => {
   return (
