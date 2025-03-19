@@ -12,7 +12,7 @@ const SimpleIconCard = ({
   textPrimary = false,
 }: SimpleIconCardProps): JSX.Element => {
   return (
-    <div className="flex min-h-[274px] w-full flex-row items-center gap-4 rounded-[20px] border border-lightGray p-6 md:min-h-[96px] lg:min-h-[200px]">
+    <div className="flex min-h-[180px] w-full flex-row items-center gap-4 rounded-[20px] border border-lightGray px-[22px] py-4 md:min-h-[96px] md:px-9 md:py-3 lg:min-h-[123px]">
       <Image
         src={icon}
         alt="Ícone"
@@ -21,7 +21,7 @@ const SimpleIconCard = ({
         className="shrink-0"
       />
       <p
-        className={`flex-1 break-words text-xl md:text-base lg:text-lg ${textPrimary ? "text-primary" : "text-darkGray"}`}
+        className={`flex-1 break-words text-base xl:text-lg ${textPrimary ? "text-primary" : "text-darkGray"}`}
       >
         {description}
       </p>
