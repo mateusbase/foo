@@ -27,7 +27,7 @@ const FullbleedBanner = ({
   };
 
   return (
-    <div className="full-bleed mb-8 md:mt-6 lg:my-12 lg:flex lg:flex-row lg:items-stretch">
+    <div className="full-bleed mb-8 lg:mb-12 lg:flex lg:flex-row lg:items-stretch">
       <div className="relative aspect-video lg:w-[55%]">
         <div className="size-full">
           {isVideo ? (

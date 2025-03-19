@@ -50,9 +50,9 @@ export default function PageLayout({
         />
       )}
 
-      <BaseContainer className="flex w-full flex-col py-0 md:py-0 lg:py-12">
+      <BaseContainer className="flex w-full flex-col py-0 md:py-0 lg:pt-5">
         {showBreadcrumb && (
-          <div className="hidden px-10 md:px-0 lg:block">
+          <div className="hidden px-10 md:px-0 lg:mb-10 lg:block">
             <Breadcrumb />
           </div>
         )}
