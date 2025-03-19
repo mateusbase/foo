@@ -28,7 +28,7 @@ const getValidationSchema = (options?: {
           .string()
           .required("Telefone obrigatório")
           .transform((value) => (value ? value.replace(/\D/g, "") : value))
-          .min(10, "Telefone inválido")
+          .min(11, "Telefone inválido")
       : yup.string().notRequired(),
   });
 };

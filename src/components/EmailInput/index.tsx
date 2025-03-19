@@ -1,0 +1,27 @@
+import { FormValues, useValidation } from "@/hooks/useValidation";
+import { useForm } from "react-hook-form";
+import BaseInput from "../Input";
+
+const EmailInput = (): JSX.Element => {
+  const resolve = useValidation({ validateEmail: true });
+
+  const {
+    register,
+    formState: { errors },
+  } = useForm<FormValues>({
+    resolver: resolve,
+    mode: "onChange",
+    reValidateMode: "onBlur",
+  });
+
+  return (
+    <BaseInput
+      placeholder="E-mail"
+      register={register}
+      name="email"
+      error={errors.email?.message}
+    />
+  );
+};
+
+export default EmailInput;

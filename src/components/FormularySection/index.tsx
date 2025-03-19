@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import BaseInput from "../Input";
 import BaseButton from "../Button";
 import BaseSelect from "../Select";
+import PhoneInput from "../PhoneInput";
+import EmailInput from "../EmailInput";
 
 export interface Field {
   name: string;
@@ -133,32 +135,12 @@ export default function FormularySection({
 
       {hasTelephone && (
         <div className="mb-4">
-          <BaseInput
-            placeholder="Telefone"
-            borderColor="darkGray"
-            className="w-[322px] md:w-[676px]"
-            backgroundColor="white"
-            onChange={handlePhoneChange}
-            onBlur={handlePhoneBlur}
-            register={register}
-            name="phone"
-            error={errors.phone?.message}
-            value={phoneNumber}
-          />
+          <PhoneInput />
         </div>
       )}
 
       <div className="mb-4">
-        <BaseInput
-          placeholder="E-mail"
-          backgroundColor="white"
-          borderColor="darkGray"
-          className="w-[322px] md:w-[676px]"
-          register={register}
-          name="email"
-          error={errors.email?.message}
-          onChange={handleChange}
-        />
+        <EmailInput />
       </div>
 
       {additionalFields.map((field) => (
