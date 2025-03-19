@@ -56,7 +56,7 @@ export default function OncoclinicasAppScreen(): JSX.Element {
         <BaseSwiper<VideoCardProps>
           data={videoCardMocks}
           renderItem={({ src, description }) => (
-            <VideoCard src={src} description={description} />
+            <VideoCard videoId={src} description={description} />
           )}
           breakpoints={{
             768: { slidesPerView: 2, spaceBetween: 10 },
@@ -76,7 +76,7 @@ export default function OncoclinicasAppScreen(): JSX.Element {
         <BaseSwiper<VideoCardProps>
           data={videoCardMocks}
           renderItem={({ src, description }) => (
-            <VideoCard src={src} description={description} />
+            <VideoCard videoId={src} description={description} />
           )}
           breakpoints={{
             768: { slidesPerView: 2, spaceBetween: 10 },

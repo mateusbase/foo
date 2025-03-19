@@ -7,17 +7,17 @@ export interface VideoCardProps {
 const videoCardMocks: VideoCardProps[] = [
   {
     id: 1,
-    src: "https://www.youtube.com/watch?v=GoHN_plQBqs&t=3s",
+    src: "GoHN_plQBqs",
     description: "Agenda",
   },
   {
     id: 2,
-    src: "https://www.youtube.com/watch?v=GoHN_plQBqs&t=3s",
+    src: "GoHN_plQBqs",
     description: "Visão Geral",
   },
   {
     id: 3,
-    src: "https://www.youtube.com/watch?v=GoHN_plQBqs&t=3s",
+    src: "GoHN_plQBqs",
     description: "Primeiro acesso",
   },
 ];
