@@ -9,10 +9,12 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function ContactUsForm(): JSX.Element {
-  const [selected, setSelected] = useState("");
   const [fileName, setFileName] = useState<string>("");
   const [topicSelected, setTopicSelected] = useState<string | number>();
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [isPatient, setIsPatient] = useState<string>("");
+  const [shouldReturn, setShouldReturn] = useState<string>("");
+
   const resolve = useValidation({ validateEmail: true, validatePhone: true });
 
   const {
@@ -71,8 +73,8 @@ export default function ContactUsForm(): JSX.Element {
         <RadioGroup
           label="Você é paciente da Oncoclínicas?"
           orientation="horizontal"
-          value={selected}
-          onValueChange={setSelected}
+          value={isPatient}
+          onValueChange={setIsPatient}
           classNames={{
             label: "text-lg font-bold mb-2",
           }}
@@ -174,8 +176,8 @@ export default function ContactUsForm(): JSX.Element {
             <RadioGroup
               label="Deseja receber retorno de sua manifestação?"
               orientation="horizontal"
-              value={selected}
-              onValueChange={setSelected}
+              value={shouldReturn}
+              onValueChange={setShouldReturn}
               classNames={{
                 label: "text-base font-bold mb-2",
               }}
@@ -190,7 +192,6 @@ export default function ContactUsForm(): JSX.Element {
           </div>
           <div className="flex lg:w-1/2">
             <BaseInput
-              label="Nome completo do paciente"
               placeholder="Digite o seu nome completo"
               className="text-base font-bold"
             />
