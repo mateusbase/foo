@@ -99,7 +99,7 @@ export default function ServiceScreen(): JSX.Element {
             significativas na cavidade oral. As principais manifestações são:
           </p>
 
-          <ul className="mt-4 list-inside list-disc text-[20px] font-normal leading-[26px] text-darkGray">
+          <ul className="ml-3 mt-4 list-outside list-disc pl-3 text-[20px] font-normal leading-[26px] text-darkGray">
             <li>Infecções dentárias e periodontais;</li>
             <li>Infecções oportunistas com candidíase oral;</li>
             <li>Herpes;</li>
