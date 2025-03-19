@@ -1,5 +1,7 @@
 import BaseButton from "@/components/Button";
+import EmailInput from "@/components/EmailInput";
 import BaseInput from "@/components/Input";
+import PhoneInput from "@/components/PhoneInput";
 import React from "react";
 
 export default function SignupForm(): JSX.Element {
@@ -17,18 +19,11 @@ export default function SignupForm(): JSX.Element {
           />
           <p className="font-medium text-white">E-mail</p>
 
-          <BaseInput
-            placeholder="Preencha seu e-mail"
-            className="rounded-full bg-white"
-            radius="full"
-          />
+          <EmailInput className="rounded-full bg-white" />
           <p className="font-medium text-white">Telefone</p>
 
-          <BaseInput
-            placeholder="(xx) xxxxx-xxxx"
-            className="rounded-full bg-white"
-            radius="full"
-          />
+          <PhoneInput className="rounded-full bg-white" />
+
           <p className="font-medium text-white">CRM</p>
 
           <BaseInput
