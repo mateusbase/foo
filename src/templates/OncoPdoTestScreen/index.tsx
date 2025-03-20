@@ -57,7 +57,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
             Além disso, o Teste Onco-PDO<sup>&trade;</sup> também se destacada
             por:
           </p>
-          <ul className="ml-8 list-disc text-xl text-darkGray">
+          <ul className="ml-8 mt-4 list-disc text-xl text-darkGray">
             <li>
               Os medicamentos a serem testados em laboratório são escolhidos
               pelo próprio oncologista, com a possibilidade do uso de esquemas
