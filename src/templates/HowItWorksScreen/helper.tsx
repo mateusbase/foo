@@ -1,3 +1,4 @@
+import EthicsCommittee from "../EthicsCommittee";
 import Committees from "./components/Committees";
 import FAQ from "./components/FAQ";
 import HowItWorks from "./components/HowItWorks";
@@ -10,7 +11,7 @@ type MenuContent = {
 export const menuContent: MenuContent = {
   1: <HowItWorks />,
   2: <OpenClinicalStudies />,
-  3: <div />,
+  3: <EthicsCommittee />,
   4: <Committees />,
   5: <div />,
   6: <div />,

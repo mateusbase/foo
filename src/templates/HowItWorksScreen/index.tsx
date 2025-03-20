@@ -1,29 +1,68 @@
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import BaseSelect from "@/components/Select";
 import { IoMenu } from "react-icons/io5";
+import { useRouter } from "next/router";
 import { menuContent } from "./helper";
 
 export default function HowItWorksScreen(): JSX.Element {
+  const router = useRouter();
+  const { slug } = router.query;
+
   const [activeItem, setActiveItem] = useState<number>(1);
 
-  const menuItems = [
-    { id: 1, name: "Como funciona" },
-    { id: 2, name: "Estudos clínicos abertos" },
-    { id: 3, name: "Comitê de ética em pesquisa" },
-    { id: 4, name: "Comitês" },
-    { id: 5, name: "Fases de um estudo clínico" },
-    { id: 6, name: "Termos de consentimento" },
-    { id: 7, name: "Benefícios da pesquisa clínica" },
-    { id: 8, name: "Perguntas frequentes" },
-  ];
+  const menuItems = useMemo(
+    () => [
+      { id: 1, name: "Como funciona", slug: "como-funciona" },
+      {
+        id: 2,
+        name: "Estudos clínicos abertos",
+        slug: "estudos-clinicos-abertos",
+      },
+      { id: 3, name: "Comitê de ética em pesquisa", slug: "comite-de-etica" },
+      { id: 4, name: "Comitês", slug: "comites" },
+      {
+        id: 5,
+        name: "Fases de um estudo clínico",
+        slug: "fases-estudo-clinico",
+      },
+      { id: 6, name: "Termos de consentimento", slug: "termos-consentimento" },
+      {
+        id: 7,
+        name: "Benefícios da pesquisa clínica",
+        slug: "beneficios-pesquisa-clinica",
+      },
+      { id: 8, name: "Perguntas frequentes", slug: "perguntas-frequentes" },
+    ],
+    [],
+  );
+
+  useEffect(() => {
+    if (slug) {
+      const foundItem = menuItems.find((item) => item.slug === slug);
+      if (foundItem) {
+        setActiveItem(foundItem.id);
+      }
+    }
+  }, [slug, menuItems]);
 
   const activeContent = menuContent[activeItem];
 
   const titleSelectedMenu =
     menuItems.find((item) => item.id === activeItem)?.name ||
     "Item não encontrado";
+
+  const handleMenuItemClick = (id: number): void => {
+    const selectedItem = menuItems.find((item) => item.id === id);
+    if (selectedItem) {
+      setActiveItem(id);
+      router.push(`/medicos/pesquisa-clinica/${selectedItem.slug}`, undefined, {
+        shallow: true,
+        scroll: false,
+      });
+    }
+  };
 
   return (
     <PageLayout
@@ -46,7 +85,7 @@ export default function HowItWorksScreen(): JSX.Element {
               value: item.id,
               label: item.name,
             }))}
-            onChange={(value) => setActiveItem(Number(value))}
+            onChange={(value) => handleMenuItemClick(Number(value))}
           />
         </div>
         <div className="hidden w-[398px] text-white lg:block">
@@ -58,7 +97,7 @@ export default function HowItWorksScreen(): JSX.Element {
               isActive={activeItem === item.id}
               isFirst={index === 0}
               isLast={index === menuItems.length - 1}
-              onClick={setActiveItem}
+              onClick={handleMenuItemClick}
             />
           ))}
         </div>
