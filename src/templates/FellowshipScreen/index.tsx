@@ -7,7 +7,7 @@ import PurpleFullbleedBanner from "./components/PurpleFullBleedBanner";
 
 export default function FellowshipScreen(): JSX.Element {
   const deviceType = useDeviceType();
-  const smallBanner = "/assets/images/fellowship/image (6).png";
+  const smallBanner = "/assets/images/fellowship/Mask group.png";
   const mediumBanner = "/assets/images/fellowship/image (8).png";
   const largeBanner = "/assets/images/fellowship/image (9).png";
 

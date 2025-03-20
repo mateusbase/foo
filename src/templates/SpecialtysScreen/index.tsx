@@ -90,7 +90,7 @@ export default function SpecialtysScreen(): JSX.Element {
         )}
       </div>
 
-      <div className="mb-20 lg:mb-0">
+      <div className="mb-20 lg:mb-10">
         <ShareOptions options={socialNetwork} />
       </div>
     </PageLayout>
