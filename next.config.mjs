@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     // loader: "imgix",
     // path: "https://grupooncoclinicas.com/",
-    domains: ["i.postimg.cc"],
+    domains: ["i.postimg.cc", "merriam-webster.com"],
   },
 };
 

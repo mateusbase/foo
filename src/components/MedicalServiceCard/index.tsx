@@ -1,6 +1,7 @@
 import { Plus } from "lucide-react";
 import { IoIosArrowDropright } from "react-icons/io";
 import Link from "next/link";
+import Image from "next/image";
 import { MedicalServiceCardProps } from "./types";
 import BaseButton from "../Button";
 
@@ -11,25 +12,27 @@ export default function MedicalServiceCard({
   actionButtonText,
   actionLink = "/default-link",
   serviceIcon = <Plus size={22} />,
-  backgroundImageUrl,
+  backgroundImageUrl = "https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg",
   shouldShowButton = true,
+  isClinicalResearch = false,
 }: MedicalServiceCardProps): JSX.Element {
   const hasActionButton = !!actionButtonText;
   const hasSubtitle = !!subtitle;
 
   return (
-    <div className="flex h-fit w-auto flex-col overflow-hidden rounded-br-[100px] border bg-white">
-      <div
-        className="h-[430px] bg-cover bg-no-repeat"
-        style={{
-          backgroundImage:
-            backgroundImageUrl ??
-            "url('https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg')",
-        }}
-      />
+    <div className="flex h-fit w-auto flex-col overflow-hidden rounded-br-[100px] bg-white">
+      <div className="relative w-full">
+        <Image
+          src={backgroundImageUrl}
+          alt="Background"
+          className={`h-[207px] lg:h-[274px] ${!isClinicalResearch ? "h-[430px] md:h-[430px] lg:h-[430px]" : ""}`}
+          width={1080}
+          height={207}
+        />
+      </div>
       <div className="flex h-[289px] min-w-[322px] flex-col rounded-br-[100px] bg-custom-gradient-dark p-8 md:px-9 lg:h-[342px] lg:min-h-[515px] lg:gap-12">
         {hasSubtitle && (
-          <p className="mt-4 text-left text-lg leading-[30px] text-white md:text-[20px] lg:text-[24px]">
+          <p className="my-2 text-left text-lg leading-[30px] text-white md:text-[20px] lg:text-[24px]">
             {subtitle}
           </p>
         )}
