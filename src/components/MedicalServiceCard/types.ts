@@ -7,4 +7,5 @@ export interface MedicalServiceCardProps {
   serviceIcon?: JSX.Element;
   backgroundImageUrl?: string;
   shouldShowButton?: boolean;
+  isClinicalResearch?: boolean;
 }
