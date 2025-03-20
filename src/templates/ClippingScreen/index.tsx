@@ -17,8 +17,8 @@ export default function ClippingScreen(): JSX.Element {
     useSwiperNavigation();
 
   return (
-    <PageLayout title="Clipping">
-      <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-20 md:flex-row md:items-center md:justify-between md:px-0">
+    <PageLayout title="OC na mídia">
+      <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-20 md:flex-row md:items-center md:justify-between md:px-0 lg:mt-0">
         <div className="flex flex-col items-center gap-4 sm:flex-row">
           <BaseInput
             color="primary"

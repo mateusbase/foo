@@ -13,8 +13,8 @@ export default function ClippingCard({
   const handleCardClick = (isReleaseCard: boolean): void => {
     const slug = title.toLowerCase().replace(/\s+/g, "-");
     isReleaseCard
-      ? router.push(`/releases/${slug}`)
-      : router.push(`/clipping/${slug}`);
+      ? router.push(`/imprensa/releases/${slug}`)
+      : router.push(`/imprensa/oc-na-midia/${slug}`);
   };
 
   return (
