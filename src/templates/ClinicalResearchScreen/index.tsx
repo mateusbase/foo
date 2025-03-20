@@ -101,10 +101,6 @@ export default function ClinicalResearchScreen(): JSX.Element {
                     slidesPerView: 2,
                     spaceBetween: 20,
                   },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 10,
-                  },
                 }}
               >
                 {services.map((service) => (
