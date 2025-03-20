@@ -109,7 +109,7 @@ export default function EventsScreen(): JSX.Element {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-4 border-gray-300 pb-4 md:mt-0 md:flex-row md:items-center md:justify-between md:border-b md:px-0 lg:mt-20">
+      <div className="mt-10 flex flex-col gap-4 border-gray-300 pb-4 md:flex-row md:items-center md:justify-between md:border-b md:px-0 lg:mt-20">
         <div className="flex w-full flex-col items-center gap-2 sm:flex-row">
           <div className="flex w-full flex-col gap-4 sm:flex-row">
             <BaseSelect
