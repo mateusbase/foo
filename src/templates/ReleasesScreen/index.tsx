@@ -15,11 +15,12 @@ import clippingCardData, {
 
 export default function ReleasesScreen(): JSX.Element {
   const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
-  const { prevRef, nextRef, swiperRef, onBeforeInit } = useSwiperNavigation();
+  const { prevRef, nextRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   return (
     <PageLayout title="Releases">
-      <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-20 md:flex-row md:items-center md:justify-between md:px-0">
+      <div className="mt-10 flex flex-col gap-4 border-b border-gray-300 pb-4 md:mt-20 md:flex-row md:items-center md:justify-between md:px-0 lg:mt-0">
         <div className="flex flex-col items-center gap-4 sm:flex-row">
           <BaseInput
             color="primary"
@@ -91,6 +92,8 @@ export default function ReleasesScreen(): JSX.Element {
             swiperRef={swiperRef}
             prevRef={prevRef}
             nextRef={nextRef}
+            currentIndex={currentIndex}
+            showSwiperPagination
           />
         </div>
       </div>
