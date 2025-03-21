@@ -1,12 +1,15 @@
 import { DynamicNavigationScreen } from "@/components/DynamicNavigationMenu";
+import Page from "@/components/Page";
 import { clinicalResearchMenuItems } from "@/utils/menuItems";
 
 export default function HowItWorksScreen(): JSX.Element {
   return (
-    <DynamicNavigationScreen
-      menuItems={clinicalResearchMenuItems}
-      basePath="/medicos/pesquisa-clinica"
-      enableRouting
-    />
+    <Page title="Pesquisa Clínica" description="Pesquisa Clínica">
+      <DynamicNavigationScreen
+        menuItems={clinicalResearchMenuItems}
+        basePath="/medicos/pesquisa-clinica"
+        enableRouting
+      />
+    </Page>
   );
 }

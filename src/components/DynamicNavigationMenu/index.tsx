@@ -1,4 +1,3 @@
-import { useState, useMemo } from "react";
 import { useDynamicNavigation } from "@/hooks/useDynamicNavigation";
 import MenuItem from "@/components/MenuItem";
 import PageLayout from "@/components/PageLayout";
@@ -17,54 +16,44 @@ interface DynamicNavigationOptions {
 interface DynamicNavigationScreenProps {
   menuItems: DynamicNavigationOptions[];
   basePath?: string;
-  enableRouting?: boolean;
   subtitle?: string;
 }
 
 export const DynamicNavigationScreen = ({
   menuItems,
   basePath = "",
-  enableRouting = false,
   subtitle = "",
 }: DynamicNavigationScreenProps): JSX.Element => {
-  const [activeItem, setActiveItem] = useState<number>(menuItems[0]?.id || 1);
-
-  const routing = useDynamicNavigation(menuItems, basePath);
-  const { activeContent, title, handleMenuItemClick } = enableRouting
-    ? routing
-    : {
-        activeContent: menuItems.find((item) => item.id === activeItem)
-          ?.component,
-        title:
-          menuItems.find((item) => item.id === activeItem)?.name ||
-          "Item não encontrado",
-        handleMenuItemClick: (id: number) => setActiveItem(id),
-      };
-
-  const componentSubtitle = useMemo(() => {
-    const item = menuItems.find((menuItem) => menuItem.id === activeItem);
-    return item?.subtitle || subtitle;
-  }, [activeItem, menuItems, subtitle]);
+  const {
+    activeSlug,
+    activeContent,
+    pushComponent,
+    title,
+    subtitle: activeSubtitle,
+  } = useDynamicNavigation(menuItems, basePath);
 
   return (
-    <PageLayout title={title} subtitle={componentSubtitle}>
-      <div className="flex flex-col md:gap-12 lg:mt-10 lg:flex-row">
+    <PageLayout title={title} subtitle={activeSubtitle || subtitle}>
+      <div className="flex flex-col md:gap-12 lg:mb-10 lg:flex-row">
         <div className="mb-2 block lg:hidden">
           <BaseSelect
-            color="primary"
+            key={activeSlug}
+            disableAnimation
+            color="default"
             variant="bordered"
-            labelColor="primary"
             radius="full"
             size="lg"
             startContent={<IoMenu className="text-primary" size={28} />}
-            defaultSelectedKey={activeItem.toString()}
+            selectedKey={activeSlug}
+            defaultSelectedKey={activeSlug}
+            onSelectionChange={(key) => pushComponent(key as string)}
             labelPlacement="outside"
             options={menuItems.map((item) => ({
-              key: item.id.toString(),
-              value: item.id,
+              key: item.slug,
+              value: item.slug,
               label: item.name,
             }))}
-            onChange={(value) => handleMenuItemClick(Number(value))}
+            onChange={(value) => pushComponent(value as string)}
           />
         </div>
         <div className="mb-10 hidden w-[398px] text-white lg:block">
@@ -73,10 +62,10 @@ export const DynamicNavigationScreen = ({
               key={item.id}
               id={item.id}
               name={item.name}
-              isActive={item.id === activeItem}
+              isActive={item.slug === activeSlug}
               isFirst={index === 0}
               isLast={index === menuItems.length - 1}
-              onClick={() => handleMenuItemClick(item.id)}
+              onClick={() => pushComponent(item.slug)}
             />
           ))}
         </div>

@@ -65,7 +65,8 @@ const ComoFunciona = (): JSX.Element => {
           “critérios de elegibilidade”) poderá ser voluntária e potencial
           participante de uma pesquisa clínica.
           <br />
-          <br /> Se você é um paciente, apresenta os principais critérios de um
+          <br />
+          Se você é um paciente, apresenta os principais critérios de um
           determinado estudo e sente vontade em ser um voluntário de pesquisa,
           sua participação é totalmente voluntária. Isso significa que poderá
           haver reembolso de despesas com deslocamento e refeições nos dias de
@@ -73,7 +74,7 @@ const ComoFunciona = (): JSX.Element => {
           participação.
         </p>
       </div>
-      <div className="my-14 lg:my-20">
+      <div className="my-14 lg:mb-0 lg:mt-20">
         <h2 className="text-2xl text-primary md:text-3xl lg:text-title-lg">
           Como participar
         </h2>
@@ -82,8 +83,9 @@ const ComoFunciona = (): JSX.Element => {
           de atendimento. Nossa equipe fará um primeiro atendimento para checar
           se você pode participar de algum estudo no qual seu perfil se encaixe.
           <br />
-          <br /> É importante frisar que sua participação é totalmente
-          voluntária. <br />
+          <br />
+          É importante frisar que sua participação é totalmente voluntária.
+          <br />
           <br />
           Você também pode procurar a Unidade de Pesquisa Oncoclínicas mais
           próxima de você.

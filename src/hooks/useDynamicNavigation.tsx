@@ -10,10 +10,11 @@ interface DynamicNavigationOptions {
 }
 
 interface UseDynamicNavigationReturn {
+  activeSlug: string;
   activeContent: React.ReactNode;
+  pushComponent: (newSlug: string) => void;
   title: string;
-  handleMenuItemClick: (id: number) => void;
-  activeItem: number;
+  subtitle: string;
 }
 
 export const useDynamicNavigation = (
@@ -21,47 +22,39 @@ export const useDynamicNavigation = (
   basePath: string,
 ): UseDynamicNavigationReturn => {
   const router = useRouter();
-  const { slug } = router.query;
+  const { query, isReady } = router;
+  const { slug } = query;
 
-  const [activeItem, setActiveItem] = useState<number>(menuItems[0]?.id || 1);
+  const [activeSlug, setActiveSlug] = useState<string>(() => {
+    if (isReady && slug) {
+      return slug.toString();
+    }
+    return menuItems[0]?.slug || "";
+  });
 
   useEffect(() => {
-    if (slug) {
-      const matchedItem = menuItems.find((menuItem) => menuItem.slug === slug);
-      if (matchedItem) {
-        setActiveItem(matchedItem.id);
-      }
+    if (isReady && slug) {
+      setActiveSlug(slug.toString());
     }
-  }, [slug, menuItems]);
+  }, [slug, isReady]);
 
-  const activeContent = useMemo(() => {
-    const currentItem = menuItems.find(
-      (menuItem) => menuItem.id === activeItem,
-    );
-    return currentItem ? currentItem.component : null;
-  }, [activeItem, menuItems]);
+  const activeItem = useMemo(() => {
+    return menuItems.find((item) => item.slug === activeSlug) || menuItems[0];
+  }, [activeSlug, menuItems]);
 
-  const title = useMemo(() => {
-    const currentItem = menuItems.find(
-      (menuItem) => menuItem.id === activeItem,
-    );
-    return currentItem ? currentItem.name : "Item não encontrado";
-  }, [activeItem, menuItems]);
-
-  const handleMenuItemClick = (id: number): void => {
-    const selectedItem = menuItems.find((menuItem) => menuItem.id === id);
-    if (selectedItem) {
-      setActiveItem(id);
-      router.push(`${basePath}/${selectedItem.slug}`, undefined, {
-        shallow: true,
-      });
-    }
+  const pushComponent = (newSlug: string): void => {
+    setActiveSlug(newSlug);
+    router.push(`${basePath}/${newSlug}`, undefined, {
+      shallow: true,
+      scroll: false,
+    });
   };
 
   return {
-    activeContent,
-    title,
-    handleMenuItemClick,
-    activeItem,
+    activeSlug,
+    activeContent: activeItem.component,
+    pushComponent,
+    title: activeItem.name,
+    subtitle: activeItem.subtitle || "",
   };
 };
