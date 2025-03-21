@@ -8,7 +8,6 @@ export default function HowItWorksScreen(): JSX.Element {
       <DynamicNavigationScreen
         menuItems={clinicalResearchMenuItems}
         basePath="/medicos/pesquisa-clinica"
-        enableRouting
       />
     </Page>
   );
