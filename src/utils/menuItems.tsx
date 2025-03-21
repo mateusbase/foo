@@ -1,3 +1,9 @@
+import BeneficiosTributarios from "@/components/direitos-e-deveres/beneficios-tributarios";
+import Diretrizes from "@/components/direitos-e-deveres/diretrizes";
+import Facilidades from "@/components/direitos-e-deveres/faclidades";
+import Geral from "@/components/direitos-e-deveres/geral";
+import Saude from "@/components/direitos-e-deveres/saude";
+import Trabalho from "@/components/direitos-e-deveres/trabalho";
 import BeneficiosPesquisaClinica from "@/components/pesquisa-clinica/beneficios-pesquisa-clinica";
 import ComiteDeEtica from "@/components/pesquisa-clinica/comite-de-etica";
 import Comites from "@/components/pesquisa-clinica/comites";
@@ -58,4 +64,23 @@ export const clinicalResearchMenuItems: MenuItem[] = [
     slug: "perguntas-frequentes",
     component: <PerguntasFrequentes />,
   },
+];
+
+export const rightsAndDutiesMenuItems: MenuItem[] = [
+  { id: 1, name: "Geral", slug: "geral", component: <Geral /> },
+  { id: 2, name: "Saúde", slug: "saude", component: <Saude /> },
+  {
+    id: 3,
+    name: "Facilidades",
+    slug: "facilidades",
+    component: <Facilidades />,
+  },
+  {
+    id: 4,
+    name: "Benefícios tributários",
+    slug: "beneficios-tributarios",
+    component: <BeneficiosTributarios />,
+  },
+  { id: 5, name: "Trabalho", slug: "trabalho", component: <Trabalho /> },
+  { id: 6, name: "Diretrizes", slug: "diretrizes", component: <Diretrizes /> },
 ];
