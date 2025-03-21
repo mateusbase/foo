@@ -1,13 +1,13 @@
 import BaseButton from "@/components/Button";
 import BaseSelect from "@/components/Select";
-import Link from "next/link";
 import SortingFilterDropdown from "@/components/SortingFilterDropdown";
+import { clinicalResearchs } from "@/templates/HowItWorksScreen/helper";
 import { sortingFilterOptions } from "@/utils/sortingOptions";
+import Link from "next/link";
 import { useSortingFilter } from "@/hooks/useSortingFilter";
-import { clinicalResearchs } from "../../helper";
 import ClinicalStudiesCard from "./components/ClinicalStudiesCard";
 
-export default function OpenClinicalStudies(): JSX.Element {
+const EstudosClinicosAbertos = (): JSX.Element => {
   const { handleChange } = useSortingFilter(sortingFilterOptions[0].value);
 
   return (
@@ -81,4 +81,6 @@ export default function OpenClinicalStudies(): JSX.Element {
       </div>
     </div>
   );
-}
+};
+
+export default EstudosClinicosAbertos;

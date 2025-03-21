@@ -1,8 +1,8 @@
-export default function HowItWorks(): JSX.Element {
+const ComoFunciona = (): JSX.Element => {
   return (
-    <div className="w-full">
-      <div>
-        <h2 className="mt-10 text-2xl text-primary md:mt-0 md:text-3xl lg:text-title-lg">
+    <>
+      <div className="w-full">
+        <h2 className="mt-6 text-2xl text-primary md:mt-0 md:text-3xl lg:text-title-lg">
           O que é a pesquisa clínica
         </h2>
         <p className="mt-2 text-base font-medium text-darkGray lg:mt-10 lg:text-xl lg:font-normal">
@@ -42,7 +42,6 @@ export default function HowItWorks(): JSX.Element {
           atendimento e distribuição de estudos.
         </p>
       </div>
-
       <div className="mt-16 lg:mt-20">
         <h2 className="text-2xl text-primary md:text-3xl lg:text-title-lg">
           Missão e visão
@@ -57,7 +56,6 @@ export default function HowItWorks(): JSX.Element {
           nacional e internacional em Programa de Pesquisa em Oncologia.
         </p>
       </div>
-
       <div className="mt-16 lg:mt-20">
         <h2 className="text-2xl text-primary md:text-3xl lg:text-title-lg">
           Quem pode participar
@@ -67,7 +65,8 @@ export default function HowItWorks(): JSX.Element {
           “critérios de elegibilidade”) poderá ser voluntária e potencial
           participante de uma pesquisa clínica.
           <br />
-          <br /> Se você é um paciente, apresenta os principais critérios de um
+          <br />
+          Se você é um paciente, apresenta os principais critérios de um
           determinado estudo e sente vontade em ser um voluntário de pesquisa,
           sua participação é totalmente voluntária. Isso significa que poderá
           haver reembolso de despesas com deslocamento e refeições nos dias de
@@ -75,8 +74,7 @@ export default function HowItWorks(): JSX.Element {
           participação.
         </p>
       </div>
-
-      <div className="my-14 lg:my-20">
+      <div className="my-14 lg:mb-0 lg:mt-20">
         <h2 className="text-2xl text-primary md:text-3xl lg:text-title-lg">
           Como participar
         </h2>
@@ -85,13 +83,16 @@ export default function HowItWorks(): JSX.Element {
           de atendimento. Nossa equipe fará um primeiro atendimento para checar
           se você pode participar de algum estudo no qual seu perfil se encaixe.
           <br />
-          <br /> É importante frisar que sua participação é totalmente
-          voluntária. <br />
+          <br />
+          É importante frisar que sua participação é totalmente voluntária.
+          <br />
           <br />
           Você também pode procurar a Unidade de Pesquisa Oncoclínicas mais
           próxima de você.
         </p>
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default ComoFunciona;
