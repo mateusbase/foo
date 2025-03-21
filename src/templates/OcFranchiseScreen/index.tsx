@@ -73,7 +73,7 @@ export default function OcFranchiseScreen(): JSX.Element {
       <FormularySection
         background
         title="Entre em contato"
-        className="relative left-1/2 w-screen max-w-none -translate-x-1/2 lg:-mb-12"
+        className="relative left-1/2 w-screen max-w-none -translate-x-1/2"
         style={{ maxWidth }}
         hasTelephone
         additionalFields={formInputs}

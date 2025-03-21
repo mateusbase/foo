@@ -77,12 +77,12 @@ export default function FormularySection({
 
       {hasTelephone && (
         <div className="mb-4">
-          <PhoneInput />
+          <PhoneInput className="w-[322px] rounded-full border border-darkGray bg-white md:w-[676px]" />
         </div>
       )}
 
       <div className="mb-4">
-        <EmailInput />
+        <EmailInput className="w-[322px] rounded-full border border-darkGray bg-white md:w-[676px]" />
       </div>
 
       {additionalFields.map((field) => (
