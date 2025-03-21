@@ -1,4 +1,4 @@
-const comoFunciona = (): JSX.Element => {
+const ComoFunciona = (): JSX.Element => {
   return (
     <>
       <div className="w-full">
@@ -93,4 +93,4 @@ const comoFunciona = (): JSX.Element => {
   );
 };
 
-export default comoFunciona;
+export default ComoFunciona;

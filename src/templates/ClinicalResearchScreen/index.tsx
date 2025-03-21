@@ -9,7 +9,7 @@ import SliderArrows from "@/components/SliderArrows";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import { Swiper as SwiperInstance } from "swiper/types";
-import { services } from "./mock";
+import { services } from "../../components/pesquisa-clinica/estudos-clinicos-abertos/mock";
 import TermsOfConsentBanner from "./components/TermsOfConsentBanner";
 
 export default function ClinicalResearchScreen(): JSX.Element {

@@ -1,7 +1,7 @@
 import InvitedMedicCard from "@/templates/EventScreen/components/InvitedMedicCard";
 import { listMedics } from "@/templates/EventScreen/medicsMock";
 
-export default function Committees(): JSX.Element {
+export default function Comites(): JSX.Element {
   return (
     <div className="w-full">
       <div>
