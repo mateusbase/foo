@@ -18,19 +18,19 @@ Inscreva-se gratuitamente no link: https://bit.ly/45QknF5`;
       title="Galeria de vídeos"
       subtitle="Fique por dentro de todas as novidades da Oncoclínicas e acompanhe a cobertura dos nossos eventos."
     >
-      <h1 className="mt-10 text-title-lg text-primary">
+      <h1 className="mt-10 text-2xl text-primary md:text-title-lg md:leading-[45px] lg:leading-none">
         Marcelo Gleiser ministra palestra no 11º Congresso Internacional
         Oncoclínicas Dana-Farber
       </h1>
 
       {paragraphs.map((paragraph) => (
-        <p className="mt-5 text-xl text-darkGray">{paragraph}</p>
+        <p className="mt-5 text-base text-darkGray md:text-xl">{paragraph}</p>
       ))}
 
       <div className="mb-20">
         <div className="relative my-12 w-full overflow-hidden rounded-2xl">
           <iframe
-            className="aspect-video w-full rounded-2xl"
+            className="aspect-video w-full rounded-2xl md:mx-auto md:h-[438px] md:w-[738px] lg:h-[939px] lg:w-[1583px]"
             title="Video player"
             src="https://www.youtube.com/embed/rLMq6NYcseM"
             allowFullScreen
