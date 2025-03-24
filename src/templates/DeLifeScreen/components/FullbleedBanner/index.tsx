@@ -12,7 +12,7 @@ const FullbleedBanner = ({
   src,
 }: FullbleedBannerProps): JSX.Element => {
   return (
-    <div className="full-bleed mb-14 lg:mt-12 lg:flex lg:flex-row lg:items-stretch">
+    <div className="full-bleed mb-14 lg:mt-0 lg:flex lg:flex-row lg:items-stretch">
       <div className="relative aspect-video lg:w-2/5">
         <div className="size-full">
           <Image
