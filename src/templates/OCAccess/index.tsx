@@ -127,7 +127,7 @@ export default function OCAccess(): JSX.Element {
           </p>
         </div>
 
-        <div className="px-10 lg:h-[590px] lg:w-3/5 lg:px-0">
+        <div className="h-full px-10 lg:w-3/5 lg:px-0">
           <h1 className="leading-10 text-primary lg:text-4xl 2xl:text-title-lg">
             Simples, rápido, acessível e sem complicação
           </h1>
@@ -142,7 +142,7 @@ export default function OCAccess(): JSX.Element {
               return (
                 <div
                   key={option.id}
-                  className={`flex h-32 flex-col rounded-2xl p-4 pl-6 pt-5 md:h-[255px] md:pt-11 lg:p-7 ${bgColor}`}
+                  className={`flex h-32 flex-col rounded-2xl p-4 pl-6 pt-5 md:h-[255px] md:pt-11 lg:h-[233px] lg:p-7 ${bgColor}`}
                 >
                   <p className="mb-3 text-sm font-semibold md:text-title-lg lg:mb-0 lg:text-lg lg:leading-10 xl:mb-3 xl:text-title-lg">
                     {option.step}

@@ -1,7 +1,6 @@
 import BaseContainer from "@/components/Container";
 import BaseButton from "@/components/Button";
 import { LuArrowUpRight } from "react-icons/lu";
-import { Image } from "@heroui/image";
 import PageHeader from "@/components/PageHeader";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
@@ -12,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SliderArrows from "@/components/SliderArrows";
 import { Navigation } from "swiper/modules";
+import Image from "next/image";
 import NewsPreviewCard from "./components/NewsPreviewCard";
 import { newsItems } from "./optionsMock";
 
@@ -42,7 +42,10 @@ export default function NewScreen(): JSX.Element {
         <Breadcrumb />
       </div>
 
-      <PageHeader title="Notícias" subtitle="Oncoclínicas" />
+      <PageHeader
+        title="Notícias"
+        subtitle="Acompanhe as principais notícias sobre oncologia e fique por dentro da participação da Oncoclínicas e de seus especialistas na mídia."
+      />
       <BaseContainer className="px-10 lg:px-0">
         <div className="hidden px-10 py-6 md:px-0 lg:block">
           <Breadcrumb />
@@ -86,11 +89,11 @@ export default function NewScreen(): JSX.Element {
 
           <div className="mt-10 w-full">
             <Image
-              width="100%"
-              height={536}
-              radius="none"
+              width={1800}
+              height={1200}
               alt="Imagem da noticia"
               src="https://i.postimg.cc/nVgm871X/Captura-de-tela-2024-11-13-132910.png"
+              className="h-[227px] w-full object-cover md:h-[380px] lg:h-[536px]"
             />
           </div>
 

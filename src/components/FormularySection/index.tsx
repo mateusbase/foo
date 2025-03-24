@@ -111,11 +111,11 @@ export default function FormularySection({
                   <BaseSelect
                     placeholder={field.label}
                     labelPlacement="outside-left"
-                    className="-ml-4 w-[322px] md:w-[676px]"
+                    className="w-[322px] md:w-[676px]"
                     classNames={{
                       trigger:
                         "bg-white h-[50px] w-[322px] border border-darkGray md:w-[676px] text-darkGray placeholder:text-darkGray ",
-                      value: "text-lightGray",
+                      value: "text-darkGray ml-[8px]",
                       label: "hidden",
                     }}
                     options={field.options || []}
