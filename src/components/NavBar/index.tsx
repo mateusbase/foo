@@ -77,7 +77,7 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
   ];
 
   const isHomePage = router.pathname === "/";
-  const isMedicPage = router.pathname.includes("/medicos");
+  const isMedicPage = router.pathname === "/medicos";
 
   const handleLogoClick = (): void => {
     router.push("/");

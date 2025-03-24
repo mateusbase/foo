@@ -8,7 +8,7 @@ export default function PerguntasFrequentes(): JSX.Element {
   };
 
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center">
+    <div className="mx-auto mb-5 flex w-full max-w-5xl flex-col items-center justify-center">
       <BaseAccordion content={FaqContent} itemClasses={itemClasses} />
     </div>
   );
