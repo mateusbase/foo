@@ -67,6 +67,7 @@ Como o câncer é uma desafio mundial da humanidade, haverá sempre novos estudo
           [+] Ver todas as especialidades
         </BaseButton>
       </div>
+
       <div className="my-10">
         <ShareOptions options={socialNetwork} />
       </div>
