@@ -1,7 +1,6 @@
 import BaseContainer from "@/components/Container";
 import NewsInformationCard from "@/components/NewsInformationCard";
 import { Button } from "@heroui/react";
-import { Plus } from "lucide-react";
 import { FaRunning } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { GiFlowerStar } from "react-icons/gi";
@@ -16,10 +15,12 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import SortingFilterDropdown from "@/components/SortingFilterDropdown";
 import { sortingFilterOptions } from "@/utils/sortingOptions";
-import { useSortingFilter } from "@/hooks/useSortingFilter";
 import SliderArrows from "@/components/SliderArrows";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import { IoIosArrowDropright } from "react-icons/io";
+import { useSortingFilter } from "@/hooks/useSortingFilter";
+import SportsIcon from "@/components/Icons/SportsIcon";
+import WellbeingIcon from "@/components/Icons/WellbeingIcon";
 import { options } from "./optionsMock";
 
 export default function NewsScreen(): JSX.Element {
@@ -30,21 +31,21 @@ export default function NewsScreen(): JSX.Element {
   return (
     <BaseContainer className="px-0">
       <div className="flex flex-col md:h-[223px] md:flex-row lg:h-[536px]">
-        <div className="flex h-full flex-col items-start justify-center bg-custom-gradient-dark-145deg p-8 md:w-1/2 md:pl-[65px]">
+        <div className="flex h-full flex-col items-start justify-center bg-custom-gradient-dark-145deg p-8 md:w-1/2 md:pl-[30px] md:pt-6">
           <Button
             color="primary"
             variant="bordered"
-            radius="sm"
-            startContent={<Plus />}
-            className="border-white pl-3 text-left font-normal leading-[60px] text-white md:text-sm lg:mt-8 lg:h-[71px] lg:w-[297px] lg:text-2xl"
+            radius="lg"
+            startContent={<SportsIcon />}
+            className="border-2 border-white px-4 py-2 text-left font-normal leading-[60px] text-white md:text-sm lg:mt-8 lg:h-[71px] lg:w-[297px] lg:text-2xl"
           >
             Prática de Esportes
           </Button>
 
-          <h1 className="mt-12 text-left text-3xl leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
+          <h1 className="mt-6 text-left text-3xl leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
             Benefícios da corrida
           </h1>
-          <p className="mt-4 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
+          <p className="mt-1 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
             Novas pesquisas mostram os benefícios da corrida para o apoio no
             pós-tratamento de câncer e na recuperação dos pacientes.
           </p>
@@ -72,20 +73,20 @@ export default function NewsScreen(): JSX.Element {
           />
         </div>
 
-        <div className="flex h-full flex-col items-start justify-center bg-gradient-to-br from-secondary via-secondary to-secondary-foreground p-8 md:w-1/2 md:pl-[65px]">
+        <div className="flex h-full flex-col items-start justify-center bg-gradient-to-br from-secondary via-secondary to-secondary-foreground p-8 md:w-1/2 md:pl-[30px] md:pt-6">
           <Button
             color="primary"
             variant="bordered"
-            radius="sm"
-            startContent={<Plus />}
-            className="border-white pl-3 text-left font-normal leading-[60px] text-white md:text-sm lg:mt-8 lg:h-[71px] lg:w-[297px] lg:text-2xl"
+            radius="lg"
+            startContent={<WellbeingIcon />}
+            className="border-white px-4 py-2 text-left font-normal leading-[60px] text-white md:text-sm lg:mt-8 lg:h-[71px] lg:w-[297px] lg:text-2xl"
           >
             Saúde e Bem-Estar
           </Button>
-          <h1 className="mt-12 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
+          <h1 className="mt-6 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
             Meditação Guiada
           </h1>
-          <p className="mt-4 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
+          <p className="mt-1 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
             Novas pesquisas mostram os benefícios da corrida para o apoio no
             pós-tratamento de câncer e na recuperação dos pacientes.
           </p>
@@ -97,20 +98,20 @@ export default function NewsScreen(): JSX.Element {
       </div>
 
       <div className="mb-10 flex flex-col md:h-[223px] md:flex-row lg:h-[536px]">
-        <div className="flex h-full flex-col items-start justify-center bg-darkGray p-8 md:w-1/2 md:pl-[65px] lg:rounded-bl-[80px]">
+        <div className="flex h-full flex-col items-start justify-center bg-darkGray p-8 md:w-1/2 md:pl-[30px] md:pt-6 lg:rounded-bl-[80px]">
           <Button
             color="primary"
             variant="bordered"
-            radius="sm"
-            startContent={<LuArrowUpRight />}
-            className="border-white pl-3 text-left font-normal leading-[60px] text-white md:text-sm lg:mt-8 lg:h-[71px] lg:w-[297px] lg:text-2xl"
+            radius="lg"
+            startContent={<LuArrowUpRight size={20} />}
+            className="border-white px-4 py-2 text-left font-normal leading-[60px] text-white md:text-sm lg:mt-8 lg:h-[71px] lg:w-[297px] lg:text-2xl"
           >
             Inovação & Oncologia
           </Button>
-          <h1 className="mt-12 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
+          <h1 className="mt-6 text-left text-3xl font-bold leading-[60px] text-white md:text-2xl md:font-normal lg:text-6xl">
             Uso de IA na medicina
           </h1>
-          <p className="mt-4 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
+          <p className="mt-1 max-w-[625px] text-left font-bold text-white md:text-sm md:font-bold lg:text-2xl">
             Novas pesquisas mostram os benefícios da corrida para o apoio no
             pós-tratamento de câncer e na recuperação dos pacientes.
           </p>

@@ -42,3 +42,4 @@ export { default as ThoraxBackIcon } from "./ThoraxBackIcon";
 export { default as MouthIcon } from "./MouthIcon";
 export { default as BreastCancerIcon } from "./BreastCancerIcon";
 export { default as AlertTriangleIcon } from "./AlertTriangleIcon";
+export { default as SportIcon } from "./SportsIcon";
