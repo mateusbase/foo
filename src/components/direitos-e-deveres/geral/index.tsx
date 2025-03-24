@@ -27,7 +27,7 @@ const Geral: React.FC = () => {
     .split("\n\n");
 
   return (
-    <div>
+    <div className="mt-8 md:mt-0">
       <h1 className="text-2xl leading-10 text-primary md:text-title-lg">
         Conheça seus direitos
       </h1>
@@ -51,9 +51,7 @@ const Geral: React.FC = () => {
         </div>
       </div>
 
-      <div className="mb-16">
-        <ShareOptions options={socialNetwork} />
-      </div>
+      <ShareOptions options={socialNetwork} />
     </div>
   );
 };

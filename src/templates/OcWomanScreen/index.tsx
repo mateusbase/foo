@@ -20,9 +20,9 @@ export default function OcWomanScreen(): JSX.Element {
       <HealthSpaceBanner />
 
       <div className="hidden md:block lg:hidden">
-        <div className="-mb-20 md:flex md:flex-row">
+        <div className="-mb-20 md:grid md:grid-cols-2">
           {womanBenefitsMock.slice(0, 2).map((benefit) => (
-            <div key={benefit.id} className="md:w-1/2">
+            <div key={benefit.id}>
               <BenefitsCards
                 id={benefit.id}
                 title={benefit.title}
@@ -32,7 +32,7 @@ export default function OcWomanScreen(): JSX.Element {
           ))}
         </div>
 
-        <div className="md:flex md:justify-center">
+        <div className="mt-6 md:flex md:justify-center">
           {womanBenefitsMock.slice(2, 3).map((benefit) => (
             <div key={benefit.id} className="md:w-1/2">
               <BenefitsCards
