@@ -98,7 +98,7 @@ export default function DeLifeScreen(): JSX.Element {
         background
         title="Seja um parceiro"
         subtitle="Quer fazer parte desta iniciativa? Preencha o formulário abaixo para receber outras informações sobre como se tornar um parceiro DeLife."
-        className="relative left-1/2 w-screen max-w-none -translate-x-1/2 lg:-mb-12"
+        className="relative left-1/2 w-screen max-w-none -translate-x-1/2"
         style={{ maxWidth }}
         hasTelephone
         additionalFields={[

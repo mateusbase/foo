@@ -12,7 +12,7 @@ const SimpleIconCard = ({
   textPrimary = false,
 }: SimpleIconCardProps): JSX.Element => {
   return (
-    <div className="flex min-h-[180px] w-full flex-row items-center gap-4 rounded-[20px] border border-lightGray px-[22px] py-4 md:min-h-[96px] md:px-9 md:py-3 lg:min-h-[123px]">
+    <div className="flex min-h-[170px] w-full flex-row items-center gap-4 rounded-[20px] border border-lightGray px-[22px] md:min-h-[96px] md:px-9 md:py-3 lg:min-h-[123px]">
       <Image
         src={icon}
         alt="Ícone"
