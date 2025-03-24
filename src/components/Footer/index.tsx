@@ -137,7 +137,7 @@ export default function Footer(): JSX.Element {
                 </li>
                 <li>
                   <Link
-                    href="/fale-conosco"
+                    href="/contato"
                     className="text-[13px] hover:text-white lg:text-base"
                   >
                     Fale conosco

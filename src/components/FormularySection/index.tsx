@@ -3,6 +3,8 @@ import { Textarea } from "@heroui/react";
 import BaseInput from "../Input";
 import BaseButton from "../Button";
 import BaseSelect from "../Select";
+import PhoneInput from "../PhoneInput";
+import EmailInput from "../EmailInput";
 
 export interface Field {
   name: string;
@@ -75,24 +77,12 @@ export default function FormularySection({
 
       {hasTelephone && (
         <div className="mb-4">
-          <BaseInput
-            placeholder="Telefone"
-            borderColor="darkGray"
-            className="w-[322px] md:w-[676px]"
-            backgroundColor="white"
-            onChange={handleChange}
-          />
+          <PhoneInput className="w-[322px] rounded-full border border-darkGray bg-white md:w-[676px]" />
         </div>
       )}
 
       <div className="mb-4">
-        <BaseInput
-          placeholder="E-mail"
-          backgroundColor="white"
-          borderColor="darkGray"
-          className="w-[322px] md:w-[676px]"
-          onChange={handleChange}
-        />
+        <EmailInput className="w-[322px] rounded-full border border-darkGray bg-white md:w-[676px]" />
       </div>
 
       {additionalFields.map((field) => (
@@ -105,11 +95,13 @@ export default function FormularySection({
                     name={field.name}
                     placeholder="Mensagem"
                     onChange={handleChange}
-                    className="h-[257px] w-[322px] rounded-[13px] border border-darkGray bg-white p-2 md:w-[676px]"
+                    className="h-[257px] w-[322px] rounded-[13px] border border-darkGray !bg-white p-2 md:w-[676px]"
                     classNames={{
                       input:
-                        "text-[16px] text-darkGray placeholder:text-darkGray bg-white",
-                      inputWrapper: "bg-white",
+                        "!bg-white text-[16px] text-darkGray placeholder:text-darkGray hover:!bg-white focus:!bg-white active:!bg-white focus:ring-0 focus:outline-none",
+                      inputWrapper:
+                        "!bg-white hover:!bg-white focus:!bg-white active:!bg-white",
+                      base: "!bg-white",
                     }}
                   />
                 );
@@ -122,7 +114,7 @@ export default function FormularySection({
                     className="-ml-4 w-[322px] md:w-[676px]"
                     classNames={{
                       trigger:
-                        "bg-white h-[50px] w-[322px] md:w-[676px] text-darkGray placeholder:text-darkGray ",
+                        "bg-white h-[50px] w-[322px] border border-darkGray md:w-[676px] text-darkGray placeholder:text-darkGray ",
                       value: "text-lightGray",
                       label: "hidden",
                     }}

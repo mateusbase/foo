@@ -14,10 +14,12 @@ const AppScreen = (): JSX.Element => {
           video="https://www.youtube.com/watch?v=0FzG0AWPsSA"
         />
       </div>
+
       <BannerWithVideo
         media="https://www.youtube.com/watch?v=0FzG0AWPsSA"
         isVideo
       />
+
       <main className="mb-8 mt-12 flex w-[95%] flex-col gap-7 self-center text-justify text-xl text-darkGray lg:w-full">
         <p>
           Para respeitar e valorizar as individualidades dos pacientes com

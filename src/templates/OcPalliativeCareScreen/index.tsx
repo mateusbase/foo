@@ -1,23 +1,16 @@
 import PageLayout from "@/components/PageLayout";
-import { Image } from "@heroui/react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SliderArrows from "@/components/SliderArrows";
-import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
-import { Navigation } from "swiper/modules";
+
 import { palliativeCareData } from "./data/palliativeCareData";
 import PalliativeCareCard from "./components/PalliativeCareCard";
 
 export default function OcPalliativeCareScreen(): JSX.Element {
-  const { prevRef, nextRef, swiperRef, currentIndex, onBeforeInit } =
-    useSwiperNavigation();
-
   return (
     <PageLayout
       title="OC Cuidados Paliativos"
       subtitle="Cuidados paliativos são realizados por uma equipe multidisciplinar que promove assistência para melhoria da qualidade de vida e também no alívio e prevenção do sofrimento dos pacientes com doenças avançadas. Saiba mais."
     >
-      <div className="lg:mt-10">
-        <p className="mt-5 text-xl text-darkGray">
+      <div className="mt-12 md:mt-9 lg:mt-0">
+        <p className="text-xl text-darkGray">
           O cuidado paliativo é uma parte fundamental dos serviços de saúde
           integrados e com foco no paciente. Nada é mais centrado no paciente do
           que o alívio do seu sofrimento, seja ele físico, psicológico, social
@@ -58,64 +51,41 @@ export default function OcPalliativeCareScreen(): JSX.Element {
         </p>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 lg:mt-20">
         <h1 className="text-4xl text-primary md:text-title-lg">
           Pilares dos cuidados paliativos
         </h1>
 
-        <div className="mt-10 hidden gap-5 md:grid lg:grid-cols-2">
+        <div className="mt-10 grid gap-5 md:grid lg:grid-cols-2">
           {palliativeCareData.map((care) => (
-            <PalliativeCareCard serviceName={care.title} />
-          ))}
-        </div>
-
-        <div className="relative mt-10 md:hidden">
-          <Swiper
-            loop
-            spaceBetween={20}
-            slidesPerView={1}
-            modules={[Navigation]}
-            onBeforeInit={(swiper) => onBeforeInit(swiper)}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-          >
-            {palliativeCareData.map((care) => (
-              <SwiperSlide key={care.id}>
-                <PalliativeCareCard serviceName={care.title} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="mt-2 flex justify-center">
-            <SliderArrows
-              swiperRef={swiperRef}
-              prevRef={prevRef}
-              nextRef={nextRef}
-              size={0.6}
-              showSwiperPagination
-              currentIndex={currentIndex}
+            <PalliativeCareCard
+              serviceName={care.title}
+              iconCard={care.icon || ""}
             />
-          </div>
+          ))}
         </div>
       </div>
 
-      <div className="mt-10">
-        <h1 className="text-4xl text-primary md:text-title-lg">
+      <div className="mt-10 lg:mt-24">
+        <h1 className="mb-11 text-4xl text-primary md:mb-9 md:text-title-lg lg:mb-14">
           Conheça o Programa de Cuidados Paliativos da Oncoclínicas
         </h1>
 
-        <div className="full-bleed">
-          <Image
-            src="/assets/images/preview-video-palliative.png"
-            aria-label="Preview de vídeo"
-            className="mt-16 w-full rounded-none"
+        <div className="flex justify-center">
+          <iframe
+            width="852"
+            height="500"
+            src="https://www.youtube.com/embed/cbAIEvKPpn4"
+            title="Programa de Cuidados Paliativos da Oncoclínicas"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="h-[178px] w-[326px] rounded-3xl md:h-[417px] md:w-[763px] lg:h-[839px] lg:w-[1536px]"
           />
         </div>
       </div>
 
-      <div className="mt-20">
-        <h1 className="text-4xl text-primary md:text-title-lg">
+      <div className="mt-20 lg:mt-24">
+        <h1 className="text-4xl text-primary md:mb-8 md:text-title-lg lg:mb-14">
           Quando o cuidado paliativo deve ser iniciado no paciente com câncer{" "}
         </h1>
         <p className="mt-4 text-xl text-darkGray">
@@ -152,7 +122,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
       </div>
 
       <div className="mt-20">
-        <h1 className="text-4xl text-primary md:text-title-lg">
+        <h1 className="text-4xl text-primary md:text-title-lg lg:mb-14">
           Quais pacientes oncológicos devem ser encaminhados aos cuidados
           paliativos
         </h1>
@@ -162,7 +132,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
           acompanhamento dos cuidados paliativos. São eles:
         </p>
 
-        <ul className="ml-4 mt-4 list-disc text-xl text-darkGray">
+        <ul className="ml-5 mt-4 list-disc text-xl text-darkGray">
           <li>Paciente oncológicos em estádio avançado (com metástases);</li>
           <li>
             Pessoas em tratamento do câncer com sintomas de difícil controle em
@@ -187,9 +157,16 @@ export default function OcPalliativeCareScreen(): JSX.Element {
         </p>
       </div>
 
-      <div className="full-bleed mt-10 flex w-full text-white lg:h-[794px]">
+      <div className="full-bleed mt-10 flex w-full text-white lg:mb-10 lg:h-[794px]">
         <div className="flex w-full flex-col lg:flex-row">
-          <div className="flex flex-col gap-2 bg-gradient-to-t from-purpleAccent from-5% via-30% to-primary-foreground p-10 py-20 lg:h-[794px] lg:w-1/2 lg:rounded-bl-[100px] lg:px-16">
+          <div className="size-full h-[209px] md:h-[439px] lg:hidden">
+            <img
+              src="/assets/images/banner-palliative-care.png"
+              alt="Imagem 1"
+              className="size-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col gap-2 bg-custom-gradient-dark p-10 py-20 lg:h-[794px] lg:w-1/2 lg:rounded-bl-[100px] lg:px-16">
             <h1 className="text-4xl leading-none md:text-title-lg lg:text-5xl">
               Quais os benefícios dos cuidados paliativos na oncologia
             </h1>
@@ -221,8 +198,7 @@ export default function OcPalliativeCareScreen(): JSX.Element {
               </li>
             </ul>
           </div>
-
-          <div className="size-full h-full lg:w-1/2">
+          <div className="hidden lg:flex lg:size-full lg:h-full lg:w-1/2">
             <img
               src="/assets/images/banner-palliative-care.png"
               alt="Imagem 1"

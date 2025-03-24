@@ -84,7 +84,7 @@ export default function CancerCenterScreen(): JSX.Element {
           className="block w-full object-cover md:hidden"
         />
 
-        <div className="w-full items-center justify-center rounded-none bg-custom-gradient-dark px-10 py-12 md:rounded-bl-[100px] lg:h-[562px] lg:w-full lg:rounded-none">
+        <div className="w-full items-center justify-center rounded-none bg-custom-gradient-dark px-4 py-12 md:rounded-bl-[100px] md:px-10 lg:h-[562px] lg:w-full lg:rounded-none">
           <h1 className="text-[32px] text-white lg:text-lg xl:text-2xl">
             Sobre o Dana-Farber Cancer Institute
           </h1>
@@ -120,6 +120,7 @@ export default function CancerCenterScreen(): JSX.Element {
               key={unit.id}
               id={unit.id}
               address={unit.address}
+              phone={unit.phone}
               unitName={unit.name}
               city={unit.cityState}
               hours={unit.openingHours}
@@ -155,6 +156,7 @@ export default function CancerCenterScreen(): JSX.Element {
                   id={unit.id}
                   address={unit.address}
                   unitName={unit.name}
+                  phone={unit.phone}
                   city={unit.cityState}
                   hours={unit.openingHours}
                 />

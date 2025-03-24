@@ -21,8 +21,10 @@ export default function BaseInput({
   name,
   maxLength,
   backgroundColor,
+  defaultValue,
   borderColor,
   classNames = {},
+  disabled = false,
 }: BaseInputProps): JSX.Element {
   return (
     <div className="w-full">
@@ -33,8 +35,8 @@ export default function BaseInput({
       )}
       <Input
         classNames={{
-          input: `text-${color} placeholder:text-${placeholderColor} bg-${backgroundColor}`,
-          inputWrapper: `border-1 ${borderColor ? `border-${borderColor}` : `border-${color}`} ${backgroundColor ? `bg-${backgroundColor}` : ""}`,
+          input: `text-${color} placeholder:text-${placeholderColor} bg-${backgroundColor} ${disabled ? "cursor-not-allowed" : ""}`,
+          inputWrapper: `border-1 ${disabled ? "bg-gray-300 " : ""} ${borderColor ? `border-${borderColor}` : `border-${color}`} ${backgroundColor ? `bg-${backgroundColor}` : ""}`,
           ...(classNames || {}),
         }}
         placeholder={placeholder}
@@ -42,6 +44,8 @@ export default function BaseInput({
         radius={radius}
         variant={variant}
         className={`${className}`}
+        defaultValue={defaultValue}
+        disabled={disabled}
         value={value}
         color={color}
         endContent={endContent}

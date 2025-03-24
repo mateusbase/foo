@@ -10,11 +10,12 @@ import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SliderArrows from "@/components/SliderArrows";
 
 export default function IncomingEventsSection(): JSX.Element {
-  const { nextRef, prevRef, swiperRef } = useSwiperNavigation();
+  const { nextRef, prevRef, swiperRef, onBeforeInit, currentIndex } =
+    useSwiperNavigation();
 
   return (
-    <div className="my-10">
-      <h1 className="flex justify-center text-[32px] text-primary md:justify-start md:text-title-lg">
+    <div className="mb-10 mt-5">
+      <h1 className="mb-5 flex justify-center text-[32px] text-primary md:mb-10 md:justify-start md:text-title-lg">
         Próximos eventos
       </h1>
       <Swiper
@@ -26,9 +27,7 @@ export default function IncomingEventsSection(): JSX.Element {
           nextEl: nextRef.current,
         }}
         loop
-        onInit={(swiper) => {
-          swiperRef.current = swiper;
-        }}
+        onBeforeInit={(swiper) => onBeforeInit(swiper)}
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -58,6 +57,8 @@ export default function IncomingEventsSection(): JSX.Element {
           nextRef={nextRef}
           size={1}
           color="text-primary"
+          currentIndex={currentIndex}
+          showSwiperPagination
         />
       </div>
     </div>

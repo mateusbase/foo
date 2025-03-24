@@ -1,7 +1,7 @@
 import BaseAccordion from "@/components/Accordion";
 import { FaqContent } from "./FaqData";
 
-export default function FAQ(): JSX.Element {
+export default function PerguntasFrequentes(): JSX.Element {
   const itemClasses = {
     title: "text-primary text-sm md:text-2xl ",
     content: "text-darkGray text-2xl px-2",

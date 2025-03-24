@@ -5,13 +5,11 @@ const YouthBanner = (): JSX.Element => {
         src="/assets/images/campaigns_banner.png"
         alt="Diagnóstico precoce em crianças"
         className="w-full lg:hidden"
-        fetchPriority="high"
       />
       <img
         src="/assets/images/lg_campaigns_banner.png"
         alt="Diagnóstico precoce em crianças"
         className="hidden w-1/2 lg:block"
-        fetchPriority="high"
       />
       <div className="flex h-[375px] flex-col justify-around bg-custom-gradient-dark p-9 text-center text-white lg:h-[402px]">
         <h1 className="font-lato-bold text-4xl">Setembro Dourado</h1>

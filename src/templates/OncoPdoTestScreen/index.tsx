@@ -18,8 +18,8 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
       title="Teste ONCO-PDO&trade;"
       subtitle="Teste in-vitro que, a partir de modelos 3D obtidos do próprio tumor do paciente, avalia e quantifica a resposta das células tumorais a diferentes combinações de agentes quimioterápicos e terapias-alvo moleculares."
     >
-      <div className="mt-10">
-        <h1 className="text-4xl text-primary md:text-title-lg">
+      <div>
+        <h1 className="mt-10 text-4xl text-primary md:text-title-lg lg:mt-0">
           Onco-PDO<sup>&trade;</sup> é o que há de mais moderno em Oncologia de
           Precisão
         </h1>
@@ -57,7 +57,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
             Além disso, o Teste Onco-PDO<sup>&trade;</sup> também se destacada
             por:
           </p>
-          <ul className="ml-8 list-disc text-xl text-darkGray">
+          <ul className="ml-8 mt-4 list-disc text-xl text-darkGray">
             <li>
               Os medicamentos a serem testados em laboratório são escolhidos
               pelo próprio oncologista, com a possibilidade do uso de esquemas
@@ -107,7 +107,7 @@ A partir disso, são criados modelos in-vitro em 3D aos quais são aplicadas as 
         <p className="mt-5 text-xl text-darkGray">
           O teste está disponível para os seguintes tumores:
         </p>
-        <ul className="ml-8 mt-4 list-disc text-xl text-darkGray">
+        <ul className="ml-8 mt-4 list-disc text-xl text-darkGray lg:mb-10">
           <li>Mama</li>
           <li>Ovário</li>
           <li>Pulmão</li>

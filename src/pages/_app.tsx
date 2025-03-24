@@ -13,6 +13,7 @@ import { SearchProvider } from "@/contexts/search.context";
 import { AppPropsWithLayout } from "@/utils/types";
 import "../../i18n.js";
 import { LanguageProvider } from "@/contexts/language.context";
+import { useForm, FormProvider } from "react-hook-form";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function App({
   pageProps,
 }: AppPropsWithLayout): JSX.Element {
   const getLayout = Component.getLayout ?? ((page) => page);
+  const methods = useForm();
 
   const apolloClient = useApollo(pageProps.initialApolloState);
 
@@ -33,14 +35,16 @@ export default function App({
         <ApolloProvider client={apolloClient}>
           <LanguageProvider>
             <SearchProvider>
-              <ErrorBoundary>
-                {getLayout(
-                  <main className={lato.className}>
-                    <Component {...pageProps} />
-                  </main>,
-                )}
-              </ErrorBoundary>
-              {/* {process.env.NODE_ENV === "production" && <VLibras forceOnload />} */}
+              <FormProvider {...methods}>
+                <ErrorBoundary>
+                  {getLayout(
+                    <main className={lato.className}>
+                      <Component {...pageProps} />
+                    </main>,
+                  )}
+                </ErrorBoundary>
+                {/* {process.env.NODE_ENV === "production" && <VLibras forceOnload />} */}
+              </FormProvider>
             </SearchProvider>
           </LanguageProvider>
         </ApolloProvider>

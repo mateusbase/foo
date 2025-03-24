@@ -58,21 +58,12 @@ export default function ListNearbyUnitCardsMobile({
           ))}
         </Swiper>
 
-        <div className="mt-4 hidden justify-center space-x-4 md:flex">
+        <div className="my-4 flex justify-center space-x-4 md:my-7">
           <SliderArrows
             swiperRef={swiperRef}
-            prevRef={prevRef}
-            nextRef={nextRef}
-            size={1}
-            color="text-primary-foreground"
             showSwiperPagination
-            currentIndex={currentIndex}
-          />
-        </div>
-        <div className="mt-4 flex justify-center space-x-4 md:hidden">
-          <SliderArrows
-            swiperRef={swiperRef}
             prevRef={prevRef}
+            currentIndex={currentIndex}
             nextRef={nextRef}
             size={1}
             color="text-primary-foreground"

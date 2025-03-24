@@ -18,7 +18,7 @@ const AccreditationsSection = (): JSX.Element => {
 
   return (
     <section
-      className="relative left-1/2 mt-20 flex min-h-[400px] w-screen max-w-none -translate-x-1/2 flex-col items-center bg-gray-foreground text-center md:-mb-7 md:mt-20 md:h-auto lg:-mb-12"
+      className="relative left-1/2 mt-20 flex min-h-[400px] w-screen max-w-none -translate-x-1/2 flex-col items-center bg-gray-foreground text-center md:-mb-7 md:mt-20 md:h-auto lg:mb-0"
       style={{ maxWidth }}
     >
       <div className="flex flex-col md:mt-8 md:flex-row md:items-center md:gap-2 lg:mt-14">

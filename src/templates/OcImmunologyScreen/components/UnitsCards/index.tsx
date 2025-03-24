@@ -9,7 +9,6 @@ export default function UnitsCard({
   complement,
   city,
   hours,
-  src,
 }: UnitCardProps): JSX.Element {
   const router = useRouter();
 
@@ -30,7 +29,6 @@ export default function UnitsCard({
     <main className="flex min-h-[715px] w-full flex-col items-center gap-6 lg:h-[560px] lg:min-h-[650px]">
       <div className="w-full">
         <img
-          src={src || "assets/images/cancer-center/cancer-center-units.jpg"}
           alt="Imagem de unidade"
           className="block h-[250px] w-full shrink-0 object-cover xl:w-full"
         />

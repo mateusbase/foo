@@ -17,7 +17,7 @@ export default function ResearchCenterCard({
 }: ResearchCenterProps): JSX.Element {
   return (
     <div className="flex flex-col gap-4 rounded-[80px] border border-darkGray p-10 md:flex-row lg:w-1/2">
-      <div className="flex w-1/2 flex-col gap-10">
+      <div className="flex flex-col gap-10 md:w-1/2">
         <div>
           <h2 className="text-xl text-primary">Centro</h2>
           <p className="text-base text-gray-700">{center.center}</p>
@@ -30,10 +30,10 @@ export default function ResearchCenterCard({
         </div>
       </div>
 
-      <div className="flex w-1/2 flex-col gap-10">
+      <div className="flex flex-col gap-10 md:w-1/2">
         <div>
           <h2 className="text-xl text-primary">E-mail</h2>
-          <p className="text-base text-gray-700">{center.email}</p>
+          <p className="break-words text-base text-gray-700">{center.email}</p>
         </div>
         <div>
           <h2 className="text-xl text-primary">Telefone</h2>

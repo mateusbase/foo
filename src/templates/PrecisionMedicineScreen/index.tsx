@@ -52,7 +52,7 @@ export function PrecisionMedicineScreen({
         )}
       </div>
 
-      <div className="mt-4 hidden lg:flex">
+      <div className="mt-0 hidden lg:flex">
         <BannerWithVideo isVideo={isVideo} media={media} />
       </div>
 
@@ -94,7 +94,7 @@ export function PrecisionMedicineScreen({
 
       <PlusCard exams={pacientSupport} />
 
-      <div className="relative left-1/2 mt-11 w-screen -translate-x-1/2 md:hidden md:w-full lg:flex">
+      <div className="full-bleed mt-11 md:hidden lg:flex">
         <BannerWithImage
           title="Programa de Apoio à Pesquisa"
           description={[
@@ -187,7 +187,7 @@ export function PrecisionMedicineScreen({
       </div>
 
       <div className="my-8 flex flex-col gap-10 lg:grid lg:grid-cols-3 lg:items-center lg:justify-center">
-        <InformationCard className="min-h-[225px] px-14 py-6 lg:h-[566px]">
+        <InformationCard className="min-h-[225px] px-14 py-6 lg:h-[450px] 2xl:h-[566px]">
           <p className="mb-6 text-center font-lato-black text-4xl text-darkGray">
             Fale conosco
           </p>
@@ -204,7 +204,7 @@ export function PrecisionMedicineScreen({
 
         <InformationCard
           background
-          className="flex min-h-[450px] w-full flex-col gap-4 py-8 md:py-4 lg:h-[566px]"
+          className="flex min-h-[350px] w-full flex-col gap-4 py-8 md:py-4 lg:h-[450px] 2xl:h-[566px]"
         >
           <p className="mb-6 text-center font-lato-bold text-2xl text-white lg:text-2xl 2xl:text-3xl">
             Participe das Quintas Moleculares
@@ -216,7 +216,7 @@ export function PrecisionMedicineScreen({
           </p>
 
           <BaseInput
-            className="mx-auto mb-4 w-[85%] rounded-full bg-white md:w-64 lg:w-[90%]"
+            className="mx-auto w-[85%] rounded-full bg-white md:w-64 lg:w-[90%]"
             placeholder="Digite aqui o seu melhor e-mail"
           />
 
@@ -224,14 +224,14 @@ export function PrecisionMedicineScreen({
             href="/medicina-de-precisao/quintas-moleculares"
             className="flex w-[85%] justify-center self-center lg:w-full"
           >
-            <BaseButton className="mb-5 w-full bg-white py-7 text-center font-lato-thin text-lg text-purpleMedium md:w-64 lg:w-[250px]">
+            <BaseButton className="mb-5 w-full bg-white py-7 text-center font-lato-thin text-lg text-purpleMedium md:w-64 lg:w-[90%]">
               Inscreva-se
             </BaseButton>
           </Link>
         </InformationCard>
 
-        <InformationCard className="flex min-h-[450px] w-full flex-col justify-between gap-4 p-6 lg:h-[566px] lg:py-[50px] 2xl:py-[85px]">
-          <p className="mb-6 text-center font-lato-bold text-2xl text-darkGray lg:mb-3 lg:text-xl 2xl:mb-6 2xl:text-3xl">
+        <InformationCard className="flex min-h-[350px] w-full flex-col gap-4 p-6 md:h-[350px] lg:h-[450px] lg:py-[50px] 2xl:h-[566px] 2xl:py-[85px]">
+          <p className="mb-6 text-center font-lato-bold text-2xl text-darkGray md:mt-6 lg:mb-3 lg:text-2xl 2xl:mb-6 2xl:text-3xl">
             Participe das Quintas Patológicas
           </p>
           <p className="mb-6 text-center font-lato-thin text-darkGray lg:mb-3 lg:text-sm 2xl:mb-6 2xl:text-base">
@@ -246,7 +246,7 @@ export function PrecisionMedicineScreen({
           />
 
           <div className="flex w-[85%] justify-center self-center lg:w-full">
-            <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64 lg:w-[250px]">
+            <BaseButton className="mb-9 bg-purpleMedium px-32 py-7 font-lato-thin text-lg text-white md:w-64 lg:w-[90%]">
               Inscreva-se
             </BaseButton>
           </div>

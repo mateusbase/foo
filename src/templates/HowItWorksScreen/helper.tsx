@@ -1,23 +1,3 @@
-import Committees from "./components/Committees";
-import FAQ from "./components/FAQ";
-import HowItWorks from "./components/HowItWorks";
-import OpenClinicalStudies from "./components/OpenClinicalStudies";
-
-type MenuContent = {
-  [key: number]: JSX.Element;
-};
-
-export const menuContent: MenuContent = {
-  1: <HowItWorks />,
-  2: <OpenClinicalStudies />,
-  3: <div />,
-  4: <Committees />,
-  5: <div />,
-  6: <div />,
-  7: <div />,
-  8: <FAQ />,
-};
-
 export const clinicalResearchs = [
   {
     id: 1,

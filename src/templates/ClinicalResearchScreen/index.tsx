@@ -9,7 +9,7 @@ import SliderArrows from "@/components/SliderArrows";
 import MainOptionsActions from "@/components/MainOptionsActions";
 import { options } from "@/utils/objectUtils";
 import { Swiper as SwiperInstance } from "swiper/types";
-import { services } from "./mock";
+import { services } from "../../components/pesquisa-clinica/estudos-clinicos-abertos/mock";
 import TermsOfConsentBanner from "./components/TermsOfConsentBanner";
 
 export default function ClinicalResearchScreen(): JSX.Element {
@@ -23,7 +23,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
         subtitle="Programa de Pesquisa Clínica do Grupo Oncoclínicas"
         mainOptions={false}
       >
-        <div className="mt-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 lg:flex-row">
+        <div className="mt-10 flex w-full flex-col-reverse justify-between gap-10 md:mt-20 lg:mt-0 lg:flex-row">
           <div className="flex w-full flex-col">
             <h1 className="max-w-full text-5xl font-light text-primary 2xl:text-6xl">
               Pesquisa Clínica Oncoclínicas
@@ -76,13 +76,14 @@ export default function ClinicalResearchScreen(): JSX.Element {
         </div>
 
         <div className="mb-10">
-          <div className="mx-auto mt-20 hidden w-full grid-cols-1 gap-8 lg:grid lg:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-20 hidden gap-4 lg:grid lg:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => (
               <MedicalServiceCard
                 key={service.subtitle}
                 subtitle={service.subtitle}
                 serviceTitle={service.serviceTitle}
                 serviceDescription={service.serviceDescription}
+                isClinicalResearch
               />
             ))}
           </div>
@@ -100,10 +101,6 @@ export default function ClinicalResearchScreen(): JSX.Element {
                     slidesPerView: 2,
                     spaceBetween: 20,
                   },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                  },
                 }}
               >
                 {services.map((service) => (
@@ -112,6 +109,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
                       subtitle={service.subtitle}
                       serviceTitle={service.serviceTitle}
                       serviceDescription={service.serviceDescription}
+                      isClinicalResearch
                     />
                   </SwiperSlide>
                 ))}
@@ -132,7 +130,7 @@ export default function ClinicalResearchScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="mt-20 hidden lg:flex">
+        <div className="mb-10 mt-20 hidden lg:flex">
           <TermsOfConsentBanner />
         </div>
       </PageLayout>

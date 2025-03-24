@@ -1,61 +1,30 @@
 import BaseButton from "@/components/Button";
+import EmailInput from "@/components/EmailInput";
 import BaseInput from "@/components/Input";
+import PhoneInput from "@/components/PhoneInput";
 import BaseRadio from "@/components/Radio";
 import BaseSelect from "@/components/Select";
 import { FormValues, useValidation } from "@/hooks/useValidation";
 import { RadioGroup, Textarea } from "@heroui/react";
-import { format } from "@react-input/mask";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function ContactUsForm(): JSX.Element {
-  const [selected, setSelected] = useState("");
   const [fileName, setFileName] = useState<string>("");
   const [topicSelected, setTopicSelected] = useState<string | number>();
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const resolve = useValidation({ validateEmail: true, validatePhone: true });
+  const [isPatient, setIsPatient] = useState<string>("");
+  const [shouldReturn, setShouldReturn] = useState<string>("");
+
+  const resolve = useValidation({ validateEmail: true });
 
   const {
     register,
     formState: { errors },
-    setValue,
-    trigger,
   } = useForm<FormValues>({
     resolver: resolve,
     mode: "onChange",
     reValidateMode: "onBlur",
   });
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const rawValue = event.target.value.replace(/\D/g, "");
-    if (rawValue.length > 11) return;
-
-    const dynamicMask =
-      rawValue.length > 10 ? "(__) _____-____" : "(__) ____-____";
-    const formattedValue = format(rawValue, {
-      mask: dynamicMask,
-      replacement: { _: /\d/ },
-    });
-
-    setPhoneNumber(formattedValue);
-    setValue("phone", rawValue);
-    trigger("phone");
-  };
-
-  const handleBlur = async (): Promise<void> => {
-    const rawPhoneNumber = phoneNumber.replace(/\D/g, "");
-
-    const dynamicMask =
-      rawPhoneNumber.length > 10 ? "(__) _____-____" : "(__) ____-____";
-    const formattedPhone = format(rawPhoneNumber, {
-      mask: dynamicMask,
-      replacement: { _: /\d/ },
-    });
-
-    setPhoneNumber(formattedPhone);
-    setValue("phone", rawPhoneNumber);
-    await trigger("phone");
-  };
 
   const handleFileChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -71,8 +40,8 @@ export default function ContactUsForm(): JSX.Element {
         <RadioGroup
           label="Você é paciente da Oncoclínicas?"
           orientation="horizontal"
-          value={selected}
-          onValueChange={setSelected}
+          value={isPatient}
+          onValueChange={setIsPatient}
           classNames={{
             label: "text-lg font-bold mb-2",
           }}
@@ -95,22 +64,9 @@ export default function ContactUsForm(): JSX.Element {
       />
 
       <div className="flex flex-col gap-6 md:flex-row lg:flex-row">
-        <BaseInput
-          placeholder="E-mail"
-          register={register}
-          name="email"
-          error={errors.email?.message}
-        />
-        <BaseInput
-          placeholder="Telefone"
-          value={phoneNumber}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          maxLength={15}
-          register={register}
-          name="phone"
-          error={errors.phone?.message}
-        />
+        <EmailInput />
+
+        <PhoneInput />
       </div>
 
       <div className="flex flex-col gap-6 md:flex-row lg:flex-row">
@@ -174,8 +130,8 @@ export default function ContactUsForm(): JSX.Element {
             <RadioGroup
               label="Deseja receber retorno de sua manifestação?"
               orientation="horizontal"
-              value={selected}
-              onValueChange={setSelected}
+              value={shouldReturn}
+              onValueChange={setShouldReturn}
               classNames={{
                 label: "text-base font-bold mb-2",
               }}
@@ -190,7 +146,6 @@ export default function ContactUsForm(): JSX.Element {
           </div>
           <div className="flex lg:w-1/2">
             <BaseInput
-              label="Nome completo do paciente"
               placeholder="Digite o seu nome completo"
               className="text-base font-bold"
             />

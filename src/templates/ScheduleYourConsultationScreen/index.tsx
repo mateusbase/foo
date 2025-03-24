@@ -3,57 +3,23 @@ import BaseButton from "@/components/Button";
 import BaseSelect from "@/components/Select";
 import BaseInput from "@/components/Input";
 import PageLayout from "@/components/PageLayout";
-import { useState } from "react";
-import { format } from "@react-input/mask";
 import { FormValues, useValidation } from "@/hooks/useValidation";
 import { useForm } from "react-hook-form";
+import EmailInput from "@/components/EmailInput";
+import PhoneInput from "@/components/PhoneInput";
 
 export default function ScheduleYourConsultationScreen(): JSX.Element {
   const { t } = useTranslation();
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const resolve = useValidation({ validateEmail: true, validatePhone: true });
+  const resolve = useValidation();
 
   const {
     register,
     formState: { errors },
-    setValue,
-    trigger,
   } = useForm<FormValues>({
     resolver: resolve,
     mode: "onChange",
     reValidateMode: "onBlur",
   });
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const rawValue = event.target.value.replace(/\D/g, "");
-    if (rawValue.length > 11) return;
-
-    const dynamicMask =
-      rawValue.length > 10 ? "(__) _____-____" : "(__) ____-____";
-    const formattedValue = format(rawValue, {
-      mask: dynamicMask,
-      replacement: { _: /\d/ },
-    });
-
-    setPhoneNumber(formattedValue);
-    setValue("phone", rawValue);
-    trigger("phone");
-  };
-
-  const handleBlur = async (): Promise<void> => {
-    const rawPhoneNumber = phoneNumber.replace(/\D/g, "");
-
-    const dynamicMask =
-      rawPhoneNumber.length > 10 ? "(__) _____-____" : "(__) ____-____";
-    const formattedPhone = format(rawPhoneNumber, {
-      mask: dynamicMask,
-      replacement: { _: /\d/ },
-    });
-
-    setPhoneNumber(formattedPhone);
-    setValue("phone", rawPhoneNumber);
-    await trigger("phone");
-  };
 
   return (
     <PageLayout
@@ -94,31 +60,12 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
           </div>
 
           <div className="mt-6 flex gap-4">
-            <BaseInput
+            <EmailInput
               placeholder={t("pages.scheduleYourConsultation.email")}
-              size="lg"
-              radius="full"
-              variant="bordered"
-              placeholderColor="darkGray"
-              borderStyle="border-default"
-              register={register}
-              name="email"
-              error={errors.email?.message}
             />
-            <BaseInput
+
+            <PhoneInput
               placeholder={t("pages.scheduleYourConsultation.telephone")}
-              size="lg"
-              radius="full"
-              variant="bordered"
-              placeholderColor="darkGray"
-              borderStyle="border-default"
-              value={phoneNumber}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              maxLength={15}
-              register={register}
-              name="phone"
-              error={errors.phone?.message}
             />
           </div>
 

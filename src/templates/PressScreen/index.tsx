@@ -15,19 +15,21 @@ export default function PresScreen(): JSX.Element {
         mainOptions={false}
       >
         <div className="mb-10 mt-20 flex flex-col gap-5 md:flex-row">
-          <Link href="/clipping" passHref>
+          <Link href="/imprensa/oc-na-midia" passHref>
             <MedicalServiceCard
               subtitle="Saiba mais"
               serviceTitle="OC na mídia"
               serviceDescription="Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet"
+              actionLink="/imprensa/oc-na-midia"
             />
           </Link>
 
-          <Link href="/releases" passHref>
+          <Link href="/imprensa/releases" passHref>
             <MedicalServiceCard
               subtitle="Leia"
               serviceTitle="Releases"
               serviceDescription="Confira o nosso clipping, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis rutrum varius. Vestibulum molestie laoreet"
+              actionLink="/imprensa/releases"
             />
           </Link>
         </div>

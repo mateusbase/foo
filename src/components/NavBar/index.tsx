@@ -180,13 +180,13 @@ export default function NavBar({ children }: NavBarProps): JSX.Element {
             />
 
             <NavbarBrand
-              className="shrink-0 cursor-pointer md:ml-5 xl2:ml-0"
+              className="shrink-0 cursor-pointer md:ml-5 lg:ml-0"
               onClick={handleLogoClick}
             >
               <Image
                 src="https://grupooncoclinicas.com/wp-content/themes/grupo-oncoclinicas/assets/imgs/header/oncoclinicas.svg"
                 alt="Logo"
-                className="w-[250px] max-w-none lg:w-[180px] xl:w-[300px]"
+                className="w-[250px] max-w-none lg:w-[200px] xl:w-[300px]"
               />
             </NavbarBrand>
 

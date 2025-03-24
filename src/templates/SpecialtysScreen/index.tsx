@@ -36,7 +36,7 @@ export default function SpecialtysScreen(): JSX.Element {
       subtitle="Trabalhamos e nos dedicamos oferecendo atendimento integral e multidisciplinar, sempre com foco em tratamentos individualizados, seguros e menos invasivos."
     >
       <div>
-        <h1 className="md:text-title-lg my-10 text-2xl text-primary md:my-12">
+        <h1 className="my-10 text-2xl text-primary md:my-12 md:text-title-lg">
           Encontre as especialidades médicas
         </h1>
         <div className="hidden lg:block">
@@ -90,7 +90,7 @@ export default function SpecialtysScreen(): JSX.Element {
         )}
       </div>
 
-      <div className="mb-20 lg:mb-0">
+      <div className="mb-20 lg:mb-10">
         <ShareOptions options={socialNetwork} />
       </div>
     </PageLayout>

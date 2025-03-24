@@ -29,9 +29,9 @@ export default function OCAccess(): JSX.Element {
       subtitle="Conheça OC ACESSO. A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.
 "
     >
-      <h1 className="my-4 text-2xl leading-8 text-primary md:my-11 md:text-title-lg md:leading-10">
+      <h1 className="my-4 text-2xl leading-8 text-primary md:my-11 md:text-title-lg md:leading-10 lg:mt-0 lg:leading-[50px]">
         Agora, os pacientes que
-        <b className="ml-1">
+        <b className="ml-2">
           não tem cobertura por um plano de saúde e que não podem esperar por
           atendimento
         </b>
@@ -41,16 +41,16 @@ export default function OCAccess(): JSX.Element {
 
       <div className="full-bleed flex flex-col-reverse md:h-[285px] md:flex-row lg:h-[418px]">
         <div className="flex flex-col bg-custom-gradient-dark p-6 md:w-1/2 md:px-8 md:pt-8 lg:w-full lg:rounded-bl-[100px] lg:p-12">
-          <h2 className="text-2xl text-white xl:text-3xl">
+          <h2 className="text-2xl text-white xl:text-5xl xl:leading-[60px]">
             É para pacientes oncológicos, com custo acessível, é pra mim
           </h2>
-          <p className="mt-5 text-sm text-white lg:mt-10 lg:text-xl xl:text-2xl">
+          <p className="mt-5 text-sm text-white lg:mt-10 lg:text-xl xl:text-2xl xl:leading-10">
             O cuidado completo do maior grupo de oncologia da América Latina,
             agora está acessível a todos.
           </p>
           <BaseButton
             variant="bordered"
-            className="mt-5 w-60 shrink-0 border-1 border-white text-white lg:mt-10 lg:w-80"
+            className="mt-5 w-60 shrink-0 border border-white text-center text-white lg:mt-10 lg:w-80"
           >
             Saiba Mais
           </BaseButton>
@@ -93,10 +93,10 @@ export default function OCAccess(): JSX.Element {
         />
 
         <div className="flex flex-col justify-between gap-5 bg-gradient-to-b from-secondary via-secondary to-purpleLight p-6 md:w-1/2 lg:px-10 lg:py-12">
-          <h2 className="mt-11 text-2xl text-white md:mt-2 lg:text-3xl 2xl:text-5xl">
+          <h2 className="mt-11 text-2xl text-white md:mt-2 lg:text-3xl xl:text-5xl xl:leading-[68px]">
             É superespecializado, é excelente, é pra mim
           </h2>
-          <p className="3xl:text-2xl text-sm text-white lg:text-xl">
+          <p className="text-sm text-white lg:text-xl 3xl:text-2xl">
             Estrutura completa, equipe especializada, pronta para me acolher e
             oferecer a melhor experiência em saúde.
           </p>
@@ -112,7 +112,7 @@ export default function OCAccess(): JSX.Element {
       </div>
 
       <div className="full-bleed my-14 flex flex-col gap-6 lg:h-[590px] lg:flex-row">
-        <div className="roundend-full bg-gradient-to-b from-purpleLight via-secondary to-purpleDark px-12 py-20 lg:w-3/4 lg:rounded-bl-[100px]">
+        <div className="roundend-full bg-gradient-to-b from-purpleLight via-secondary to-purpleDark px-6 py-[70px] lg:w-3/4 lg:rounded-bl-[100px]">
           <h1 className="text-5xl font-light text-white">
             É pra mim, é pra você, é pra todos nós
           </h1>
@@ -132,17 +132,17 @@ export default function OCAccess(): JSX.Element {
             Simples, rápido, acessível e sem complicação
           </h1>
 
-          <div className="mt-4 flex flex-col gap-6 md:grid md:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-6 md:grid md:grid-cols-2">
             {options.map((option, index) => {
-              const isEven = Math.floor(index / 2) % 2 === index % 2;
+              const isEven = index % 2 === 0;
               const bgColor = isEven
                 ? "bg-primary text-white"
-                : "bg-primary-foreground text-greenDark";
+                : "bg-white text-greenDark border-2 border-primary";
 
               return (
                 <div
                   key={option.id}
-                  className={`flex h-32 flex-col rounded-2xl p-4 pl-6 pt-5 md:h-[233px] lg:p-7 ${bgColor}`}
+                  className={`flex h-32 flex-col rounded-2xl p-4 pl-6 pt-5 md:h-[255px] md:pt-11 lg:p-7 ${bgColor}`}
                 >
                   <p className="mb-3 text-sm font-semibold md:text-title-lg lg:mb-0 lg:text-lg lg:leading-10 xl:mb-3 xl:text-title-lg">
                     {option.step}

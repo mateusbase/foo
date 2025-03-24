@@ -12,6 +12,7 @@ const BaseSwiper = <T extends { id: number }>({
   breakpoints,
   className = "",
   hasArrows = true,
+  shouldLoop = true,
 }: BaseSwiperProps<T>): JSX.Element => {
   const { prevRef, nextRef, swiperRef, onBeforeInit, currentIndex } =
     useSwiperNavigation();
@@ -22,7 +23,7 @@ const BaseSwiper = <T extends { id: number }>({
         modules={[Navigation]}
         spaceBetween={spaceBetween}
         slidesPerView={slidesPerView}
-        loop
+        loop={shouldLoop}
         breakpoints={breakpoints}
         navigation={{
           prevEl: prevRef.current,
