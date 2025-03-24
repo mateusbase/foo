@@ -77,7 +77,7 @@ export default function NominateOrPaticipate({
             errorMessage="Data inválida"
           />
 
-          <PhoneInput />
+          <PhoneInput className="rounded-full border border-darkGray bg-white" />
 
           <BaseInput
             placeholder="Localidade"
