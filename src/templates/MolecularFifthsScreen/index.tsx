@@ -147,7 +147,7 @@ export default function MolecularThursdaysScreen(): JSX.Element {
                 slidesPerView: 2,
                 spaceBetween: 10,
               },
-              1024: {
+              1025: {
                 slidesPerView: 2,
                 spaceBetween: 10,
               },
