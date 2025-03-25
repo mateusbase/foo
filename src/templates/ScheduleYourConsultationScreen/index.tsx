@@ -59,7 +59,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             />
           </div>
 
-          <div className="mt-6 flex gap-4">
+          <div className="mt-6 flex flex-col gap-4 md:flex-row">
             <EmailInput
               placeholder={t("pages.scheduleYourConsultation.email")}
             />
@@ -69,7 +69,7 @@ export default function ScheduleYourConsultationScreen(): JSX.Element {
             />
           </div>
 
-          <div className="mt-6 flex gap-4">
+          <div className="mt-6 flex flex-col gap-4 md:flex-row">
             <BaseSelect
               variant="bordered"
               label={t("pages.scheduleYourConsultation.selectUfLabel")}

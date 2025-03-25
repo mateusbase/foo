@@ -226,7 +226,7 @@ export default function ServiceSection({
           />
         </div>
       </div>
-      <div className="mt-28 hidden grid-cols-3 gap-[26px] lg:grid">
+      <div className="mt-28 hidden grid-cols-3 gap-[26px] lg:mb-10 lg:grid">
         {medicalServices?.map((service) => (
           <Link
             key={service.id}

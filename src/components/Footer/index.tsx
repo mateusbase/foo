@@ -385,7 +385,7 @@ export default function Footer(): JSX.Element {
           <div className="mt-8 flex flex-col items-center justify-between text-center lg:flex-row lg:text-left">
             <div className="mb-4 flex flex-col lg:mb-0 lg:flex-row">
               <p className="text-[13px] text-white lg:text-base">
-                © 2024 Grupo Oncoclínicas - RT: Dra. Mariana Laloni
+                © 2025 Grupo Oncoclínicas - RT: Dra. Mariana Laloni
               </p>
               <p className="mx-2 hidden text-[13px] lg:flex lg:text-base">-</p>
               <p className="text-[13px] lg:text-base">CRM-SP 102379</p>
