@@ -109,7 +109,7 @@ export default function GlossaryScreen(): JSX.Element {
       </div>
 
       {/* Telas grandes */}
-      <div className="hidden flex-col lg:flex">
+      <div className="mb-10 hidden flex-col lg:flex">
         <AlphabetSelector
           onLetterSelect={(letter: string) => {
             setSelectedLetter(letter);

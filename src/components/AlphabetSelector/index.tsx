@@ -14,7 +14,7 @@ export default function AlphabetSelector({
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   return (
-    <div className="mt-20 flex w-[90%] items-center justify-between">
+    <div className="mt-20 flex w-[90%] items-center justify-between lg:mt-0">
       <div className="flex items-center justify-center xl:gap-1">
         {alphabet.map((letter: string) => (
           <Button
