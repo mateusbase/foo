@@ -10,6 +10,7 @@ export default function UnitsCardMobile({
   city,
   hours,
   specialties = [],
+  isPartner = false,
 }: UnitsCardProps): JSX.Element {
   const router = useRouter();
 
@@ -30,8 +31,13 @@ export default function UnitsCardMobile({
 
   return (
     <NextUILink onClick={handleUnitClick} href="#" style={{ display: "block" }}>
-      <div className="flex min-h-24 w-full flex-col justify-between gap-2 rounded-xl border-1 border-primary p-4">
-        <div className="flex items-center gap-1">
+      <div className="relative flex min-h-24 w-full flex-col justify-between gap-2 rounded-xl border-1 border-primary p-4">
+        {isPartner && (
+          <p className="absolute -top-0 left-0 flex items-center justify-center rounded-full bg-purpleDark px-3 py-1 text-center text-xs text-white">
+            UNIDADE PARCEIRA
+          </p>
+        )}
+        <div className="mt-4 flex items-center gap-1">
           <FaLocationDot className="-ml-2 text-primary-foreground" size={30} />
           <h1 className="text-sm font-bold uppercase text-primary">
             {unitName}
