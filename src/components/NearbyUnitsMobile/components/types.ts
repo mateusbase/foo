@@ -6,4 +6,5 @@ export interface UnitsCardProps {
   city: string;
   hours: string;
   specialties: string[];
+  isPartner?: boolean;
 }
