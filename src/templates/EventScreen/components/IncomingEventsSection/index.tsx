@@ -37,7 +37,7 @@ export default function IncomingEventsSection(): JSX.Element {
             slidesPerView: 2,
             spaceBetween: 20,
           },
-          1024: {
+          1025: {
             slidesPerView: 3,
             spaceBetween: 20,
           },

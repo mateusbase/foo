@@ -22,12 +22,14 @@ export default function EventScreen(): JSX.Element {
         </div>
 
         <div className="-mt-20 flex flex-col items-center justify-center md:mt-10 md:flex-row md:items-start md:justify-between">
-          <div className="relative flex flex-col items-center md:bottom-48 md:items-start">
-            <img
-              src="https://www.clubenoticias.com/images/noticias/8693/7d3c47363b7ee2b12f9204895d4b369b.jpg"
-              alt="Foto"
-              className="ml-4 size-44 rounded-2xl object-cover md:h-[200px] md:w-[202px]"
-            />
+          <div className="relative flex flex-col md:bottom-48 md:items-start">
+            <div className="self-center md:self-start">
+              <img
+                src="https://www.clubenoticias.com/images/noticias/8693/7d3c47363b7ee2b12f9204895d4b369b.jpg"
+                alt="Foto"
+                className="ml-4 size-44 rounded-2xl object-cover md:h-[200px] md:w-[202px]"
+              />
+            </div>
 
             <h1 className="mt-10 block text-2xl font-medium leading-none text-primary md:hidden lg:text-[62px] lg:font-light">
               Novas tecnologias no combate ao câncer de mama
@@ -35,23 +37,17 @@ export default function EventScreen(): JSX.Element {
 
             <div className="mt-8 text-left">
               <div className="flex items-center text-lg text-darkGray">
-                <CalendarIcon className="ml-[-100px] mr-2 text-primary md:ml-0" />
+                <CalendarIcon className="mr-2 text-primary" />
                 <p>23/09/2023 a 07/10/2023</p>
               </div>
 
               <div className="mt-4 flex items-center text-lg text-darkGray">
-                <PinIcon
-                  size={1}
-                  className="ml-[-100px] mr-2 text-primary md:ml-0"
-                />
+                <PinIcon size={1} className="mr-2 text-primary" />
                 <p>Evento Online</p>
               </div>
 
               <div className="mt-4 flex items-center text-lg text-darkGray">
-                <ClockIcon
-                  size={1}
-                  className="ml-[-100px] mr-4 text-primary md:ml-0"
-                />
+                <ClockIcon size={1} className="mr-4 text-primary" />
                 <p>Das 9h às 19h</p>
               </div>
             </div>
@@ -61,7 +57,7 @@ export default function EventScreen(): JSX.Element {
             </div>
           </div>
 
-          <div className="mt-8 text-center md:ml-11 md:mt-0 md:text-left lg:ml-24 lg:flex-1">
+          <div className="mt-8 text-center md:ml-11 md:mt-0 md:text-left lg:ml-14 lg:flex-1">
             <h1 className="hidden text-4xl font-medium leading-none text-primary md:block lg:text-[62px] lg:font-light">
               Novas tecnologias no combate ao câncer de mama
             </h1>
