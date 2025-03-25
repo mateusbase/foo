@@ -2,12 +2,14 @@ import { IoIosArrowDropright } from "react-icons/io";
 import { RiMentalHealthLine } from "react-icons/ri";
 import Link from "next/link";
 import { IconCardProps } from "./types";
+import { GradientRightChevronIcon } from "../Icons";
 
 export default function IconCard({
   cardTitle,
   cardDescription,
   cardIcon = <RiMentalHealthLine size={34} color="white" />,
   showButton = true,
+  hasGradientButton = false,
 }: IconCardProps): JSX.Element {
   const cardSlug = cardTitle.toLowerCase().replace(/\s+/g, "-");
 
@@ -31,11 +33,15 @@ export default function IconCard({
         </p>
 
         {showButton && (
-          <div className="mt-10 hidden items-center justify-start rounded-full lg:flex">
-            <IoIosArrowDropright
-              size={29}
-              className="text-primary-foreground"
-            />
+          <div className="mt-10 items-center justify-start rounded-full lg:flex">
+            {hasGradientButton ? (
+              <GradientRightChevronIcon />
+            ) : (
+              <IoIosArrowDropright
+                size={29}
+                className="text-primary-foreground"
+              />
+            )}
           </div>
         )}
       </div>

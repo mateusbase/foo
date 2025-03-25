@@ -3,4 +3,6 @@ export interface HealthServiceCardProps {
   serviceDescription: string;
   serviceIcon?: JSX.Element;
   showButton?: boolean;
+  hasGradientButton?: boolean;
+  isRow?: boolean;
 }

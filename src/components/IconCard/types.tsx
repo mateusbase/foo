@@ -3,4 +3,5 @@ export interface IconCardProps {
   cardDescription: string;
   cardIcon?: JSX.Element;
   showButton?: boolean;
+  hasGradientButton?: boolean;
 }
