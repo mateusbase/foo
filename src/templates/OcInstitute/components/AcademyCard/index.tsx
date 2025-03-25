@@ -24,7 +24,7 @@ export default function AcademyCard(): JSX.Element {
           const isEven = Math.floor(index / 2) % 2 === index % 2;
           const bgColor = isEven
             ? "bg-primary text-white"
-            : "bg-primary-foreground text-greenDark";
+            : "bg-white border border-[3px] border-primary text-primary";
 
           return (
             <div
