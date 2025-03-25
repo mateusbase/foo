@@ -113,13 +113,12 @@ export default function NewScreen(): JSX.Element {
         </div>
       </BaseContainer>
 
-      <div className="hidden bg-gray-foreground py-20 lg:flex">
+      <div className="hidden bg-gray-foreground py-10 lg:flex">
         <BaseContainer>
-          <div>
-            <p className="text-6xl font-light text-primary">
-              Itens relacionados
-            </p>
-          </div>
+          <p className="mb-10 text-6xl font-light text-primary">
+            Noticias Relacionadas
+          </p>
+
           <div className="mt-10 grid w-full grid-cols-4">
             {newsItems.map((news) => (
               <NewsPreviewCard
@@ -134,11 +133,11 @@ export default function NewScreen(): JSX.Element {
         </BaseContainer>
       </div>
 
-      <div className="flex w-full bg-gray-foreground py-20 lg:hidden">
+      <div className="flex w-full bg-gray-foreground pb-8 pt-5 md:py-12 lg:hidden">
         <BaseContainer className="w-full">
           <div>
-            <p className="text-3xl font-light text-primary">
-              Itens relacionados
+            <p className="mb-10 text-3xl font-light text-primary">
+              Noticias Relacionadas
             </p>
           </div>
 
