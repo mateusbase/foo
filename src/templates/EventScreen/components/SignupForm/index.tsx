@@ -47,11 +47,11 @@ export default function SignupForm(): JSX.Element {
           <input
             type="checkbox"
             id="terms"
-            className="size-5 rounded border-white text-primary focus:ring-primary"
+            className="after:mask-checkbox after:mask-size-contain relative h-7 w-[95px] appearance-none rounded border-2 border-white bg-transparent after:absolute after:left-1/2 after:top-1/2 after:hidden after:size-4 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-white after:content-[''] checked:bg-transparent checked:after:block focus:ring-0 focus:ring-offset-0"
           />
           <label
             htmlFor="terms"
-            className="text-left text-[14px] leading-[18px] text-white"
+            className="-mt-1 text-left text-[14px] leading-[18px] text-white"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             pellentesque nunc lectus, vitae lacinia ex hendrerit in. Fusce id ex

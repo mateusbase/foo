@@ -22,11 +22,11 @@ export default function EventScreen(): JSX.Element {
         </div>
 
         <div className="-mt-20 flex flex-col items-center justify-center md:mt-10 md:flex-row md:items-start md:justify-between">
-          <div className="relative flex flex-col items-center md:bottom-48 md:left-5 md:items-start">
+          <div className="relative flex flex-col items-center md:bottom-48 md:items-start">
             <img
               src="https://www.clubenoticias.com/images/noticias/8693/7d3c47363b7ee2b12f9204895d4b369b.jpg"
               alt="Foto"
-              className="size-44 rounded-2xl object-cover md:h-[316px] md:w-[320px]"
+              className="ml-4 size-44 rounded-2xl object-cover md:h-[200px] md:w-[202px]"
             />
 
             <h1 className="mt-10 block text-2xl font-medium leading-none text-primary md:hidden lg:text-[62px] lg:font-light">
