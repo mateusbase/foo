@@ -26,7 +26,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
 
   return (
     <PageLayout title="Tudo sobre o câncer" subtitle="Oncoclínicas">
-      <div className="mt-10 flex justify-start md:mt-20">
+      <div className="mt-10 flex justify-start md:mt-20 lg:mt-0">
         <div className="flex w-full flex-col items-center text-left md:text-center">
           <h2 className="text-2xl text-primary md:text-title-xl md:leading-[74px]">
             O que é o câncer?
@@ -74,6 +74,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
               cardTitle={categorie.title}
               cardDescription={categorie.description}
               showButton={false}
+              hasGradientButton
             />
           ))}
         </div>
@@ -95,6 +96,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
                 <HealthServiceCard
                   serviceTitle="Análise Patológica"
                   serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
+                  hasGradientButton
                 />
               </SwiperSlide>
             ))}
@@ -131,12 +133,13 @@ export default function AllAboutCancerScreen(): JSX.Element {
       </div>
 
       <div className="flex flex-col justify-between gap-5 md:mt-20 lg:mt-10">
-        <div className="hidden w-full grid-cols-2 gap-6 sm:grid-cols-2 md:hidden lg:grid lg:grid-cols-4">
+        <div className="hidden w-full grid-cols-2 gap-6 sm:grid-cols-2 lg:grid lg:grid-cols-4">
           {categories.map((categorie) => (
             <IconCard
               key={categorie.title}
               cardTitle="Próstata "
               cardDescription="É o segundo tipo mais comum entre os homens e atinge principalmente pessoas com mais de 65 anos."
+              hasGradientButton
             />
           ))}
         </div>
@@ -149,28 +152,28 @@ export default function AllAboutCancerScreen(): JSX.Element {
               color="primary"
               className="w-full text-white md:w-[224px]"
             >
-              Ver todos os tipos de câncer
+              Ver mais tipos de câncer
             </BaseButton>
           </Link>
         </div>
       </div>
 
-      <div className="mt-28 hidden grid-cols-3 gap-[26px] lg:grid">
+      <div className="mb-10 mt-28 hidden grid-cols-3 gap-[26px] lg:grid">
         <MedicalServiceCard
           serviceTitle="Tratamentos"
           serviceDescription="As possibilidades e a diversidade no tratamento para o câncer vêm crescendo, conheça."
-          // actionButtonText="Exclusividade Oncoclínicas"
+          subtitle="Cuide-se"
         />
         <MedicalServiceCard
           serviceTitle="Convivendo com o câncer"
           serviceDescription="Durante e após o tratamento, a Oncoclínicas oferece diversos serviços e tratamentos."
           actionLink="/tudo-sobre-o-cancer/convivendo-com-o-cancer/medicina-integrativa/"
-          // actionButtonText="Exclusividade Oncoclínicas"
+          subtitle="Durante o tratamento"
         />
         <MedicalServiceCard
           serviceTitle="Prevenção ao Câncer"
           serviceDescription="O Grupo Oncoclínicas desenvolve uma série de importantes ações e campanhas de conscientização e prevenção contra o câncer."
-          // actionButtonText="Exclusividade Oncoclínicas"
+          subtitle="Especial Oncoclínicas"
         />
       </div>
 
@@ -183,6 +186,11 @@ export default function AllAboutCancerScreen(): JSX.Element {
           navigation={{
             nextEl: nextRef.current,
             prevEl: prevRef.current,
+          }}
+          breakpoints={{
+            "768": {
+              slidesPerView: 2,
+            },
           }}
           onInit={(swiper) => {
             onBeforeInit(swiper);
@@ -199,7 +207,7 @@ export default function AllAboutCancerScreen(): JSX.Element {
           ))}
         </Swiper>
 
-        <div className="mr-10 mt-6 flex justify-center space-x-4 md:justify-end lg:hidden">
+        <div className="mr-10 mt-6 flex justify-center space-x-4 lg:hidden">
           <SliderArrows
             swiperRef={swiperRef}
             prevRef={prevRef}

@@ -37,6 +37,8 @@ const CommonCancers = (): JSX.Element => {
               serviceTitle="Análise Patológica"
               serviceDescription="Técnica responsável pela análise de células e tecidos com alterações oncológicas."
               showButton
+              isRow
+              hasGradientButton
             />
           </SwiperSlide>
         ))}
