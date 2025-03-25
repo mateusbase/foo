@@ -31,19 +31,18 @@ export default function EventCard({
             {event.title}
           </h3>
 
-          <div className="space-y-4">
+          <div className="flex w-[90%] flex-col gap-8">
             <div className="flex items-center text-lg font-normal text-darkGray md:text-xl">
               <CalendarIcon className="mr-2 text-primary" />
               <span className="ml-1">{event.date}</span>
             </div>
 
-            <div className="flex items-center text-[18px] font-normal text-darkGray md:text-xl">
-              <PinIcon className="mr-2 text-primary" />
-              <span className="ml-1">{event.location}</span>
-            </div>
-
-            <div className="pl-11 text-left text-base font-normal text-lightGray lg:pl-0">
-              <span className="lg:ml-11">{event.address}</span>
+            <div className="flex items-start gap-2 text-[18px] font-normal text-darkGray md:text-xl">
+              <PinIcon className="text-primary" />
+              <div className="flex flex-col">
+                <span>{event.location}</span>
+                <span className="text-lightGray">{event.address}</span>
+              </div>
             </div>
 
             <div className="flex items-center text-[18px] font-normal text-darkGray md:text-xl">
@@ -52,7 +51,7 @@ export default function EventCard({
             </div>
           </div>
 
-          <p className="line-clamp-3 text-left text-base font-medium leading-[24px] text-lightGray md:text-xl md:leading-[28px]">
+          <p className="line-clamp-3 w-[90%] text-left text-base font-medium leading-[24px] text-lightGray md:text-xl md:leading-[28px]">
             {event.description}
           </p>
 
