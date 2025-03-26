@@ -2,7 +2,8 @@ export interface ServiceSectionProps {
   id: string;
   title: string;
   description: string;
-  cardHeight?: number;
+  shouldShowButton?: boolean;
+  cardClassName?: string;
   healthServices?: Array<{
     id: number;
     slug?: string;

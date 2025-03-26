@@ -3,5 +3,5 @@ export interface ServiceCardProps {
   serviceDescription: string;
   serviceIcon?: JSX.Element | string;
   showButton?: boolean;
-  height?: number;
+  className?: string;
 }

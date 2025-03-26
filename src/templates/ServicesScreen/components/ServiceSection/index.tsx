@@ -23,7 +23,8 @@ export default function ServiceSection({
   description,
   healthServices,
   medicalServices,
-  cardHeight,
+  shouldShowButton = false,
+  cardClassName = "",
 }: ServiceSectionProps): JSX.Element {
   const {
     nextRef: nextRefCard,
@@ -85,7 +86,7 @@ export default function ServiceSection({
 
   const handleShowMore = (): void => {
     setTimeout(() => {
-      setVisibleCards((prev) => prev + (window.innerWidth >= 1024 ? 8 : 4));
+      setVisibleCards((prev) => prev + (window.innerWidth >= 1025 ? 8 : 4));
     }, 100);
   };
 
@@ -127,14 +128,14 @@ export default function ServiceSection({
         />
       </div>
 
-      <div className="mt-10 hidden grid-cols-4 gap-[26px] md:grid">
+      <div className="mt-10 hidden grid-cols-4 gap-[26px] md:grid lg:grid lg:gap-3">
         {displayedServices?.map((service) => (
           <Link key={service.id} href={`/servicos/${service.slug}`} passHref>
             <ServiceCard
               serviceTitle={service.serviceTitle}
               serviceDescription={service.serviceDescription}
-              showButton
-              height={cardHeight}
+              showButton={shouldShowButton}
+              className={cardClassName}
             />
           </Link>
         ))}
@@ -143,7 +144,7 @@ export default function ServiceSection({
       <div className="relative mb-10 mt-20 w-full md:hidden">
         <Swiper
           modules={[Navigation]}
-          spaceBetween={30}
+          spaceBetween={10}
           slidesPerView={2}
           navigation={{
             prevEl: prevRefCard.current,
@@ -161,6 +162,8 @@ export default function ServiceSection({
                 <ServiceCard
                   serviceTitle={service.serviceTitle}
                   serviceDescription={service.serviceDescription}
+                  showButton={shouldShowButton}
+                  className={cardClassName}
                 />
               </Link>
             </SwiperSlide>
@@ -180,13 +183,13 @@ export default function ServiceSection({
 
       {filteredHealthServices &&
         visibleCards < filteredHealthServices.length && (
-          <div className="z-10 mt-12 flex w-full justify-center">
+          <div className="z-10 mt-12 flex w-full justify-center lg:justify-start">
             <Button
               color="primary"
               variant="bordered"
               radius="sm"
               onPress={handleShowMore}
-              className="z-10 h-[50px] w-full rounded-md border-1 pl-3 text-left text-sm leading-[22px] text-primary md:w-[322px] lg:text-lg"
+              className="z-10 h-[50px] w-full rounded-md border-1 pl-3 text-left text-sm leading-[22px] text-primary md:w-[322px] lg:w-[176px] lg:text-lg"
             >
               [+] Ver mais
             </Button>
