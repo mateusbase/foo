@@ -2,6 +2,7 @@ export interface ServiceSectionProps {
   id: string;
   title: string;
   description: string;
+  cardHeight?: number;
   healthServices?: Array<{
     id: number;
     slug?: string;

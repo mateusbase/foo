@@ -23,6 +23,7 @@ export default function ServiceSection({
   description,
   healthServices,
   medicalServices,
+  cardHeight,
 }: ServiceSectionProps): JSX.Element {
   const {
     nextRef: nextRefCard,
@@ -31,6 +32,7 @@ export default function ServiceSection({
     currentIndex: currentIndexCard,
     onBeforeInit: onBeforeInitCard,
   } = useSwiperNavigation();
+
   const { nextRef, prevRef, swiperRef, currentIndex, onBeforeInit } =
     useSwiperNavigation();
 
@@ -82,7 +84,9 @@ export default function ServiceSection({
   };
 
   const handleShowMore = (): void => {
-    setVisibleCards((prev) => prev + (window.innerWidth >= 1024 ? 8 : 4));
+    setTimeout(() => {
+      setVisibleCards((prev) => prev + (window.innerWidth >= 1024 ? 8 : 4));
+    }, 100);
   };
 
   const handleLetterSelect = (letter: string): void => {
@@ -98,6 +102,7 @@ export default function ServiceSection({
   return (
     <div id={id}>
       <SectionHeader title={title} description={description} />
+
       <div className="mt-10 flex w-full lg:hidden">
         <BaseInput
           color="primary"
@@ -111,6 +116,7 @@ export default function ServiceSection({
           endContent={<SearchIcon className="text-primary" />}
         />
       </div>
+
       <div className="hidden lg:block">
         <AlphabetSelector
           selectedLetter={selectedLetter || ""}
@@ -120,6 +126,7 @@ export default function ServiceSection({
           valueSearch={valueSearch}
         />
       </div>
+
       <div className="mt-10 hidden grid-cols-4 gap-[26px] md:grid">
         {displayedServices?.map((service) => (
           <Link key={service.id} href={`/servicos/${service.slug}`} passHref>
@@ -127,10 +134,12 @@ export default function ServiceSection({
               serviceTitle={service.serviceTitle}
               serviceDescription={service.serviceDescription}
               showButton
+              height={cardHeight}
             />
           </Link>
         ))}
       </div>
+
       <div className="relative mb-10 mt-20 w-full md:hidden">
         <Swiper
           modules={[Navigation]}
@@ -149,16 +158,15 @@ export default function ServiceSection({
                 href={`/servicos/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
                 passHref
               >
-                <div className="cursor-pointer">
-                  <ServiceCard
-                    serviceTitle={service.serviceTitle}
-                    serviceDescription={service.serviceDescription}
-                  />
-                </div>
+                <ServiceCard
+                  serviceTitle={service.serviceTitle}
+                  serviceDescription={service.serviceDescription}
+                />
               </Link>
             </SwiperSlide>
           ))}
         </Swiper>
+
         <div className="mt-4 flex justify-center space-x-4 md:hidden">
           <SliderArrows
             swiperRef={swiperRefCard}
@@ -169,20 +177,22 @@ export default function ServiceSection({
           />
         </div>
       </div>
+
       {filteredHealthServices &&
         visibleCards < filteredHealthServices.length && (
-          <div className="flex w-full justify-center">
+          <div className="z-10 mt-12 flex w-full justify-center">
             <Button
               color="primary"
               variant="bordered"
               radius="sm"
-              onClick={handleShowMore}
-              className="mt-8 h-[50px] w-full rounded-md border-1 pl-3 text-left text-sm leading-[22px] text-primary md:w-[322px] lg:text-[18px]"
+              onPress={handleShowMore}
+              className="z-10 h-[50px] w-full rounded-md border-1 pl-3 text-left text-sm leading-[22px] text-primary md:w-[322px] lg:text-lg"
             >
               [+] Ver mais
             </Button>
           </div>
         )}
+
       <div className="relative mt-20 w-full lg:hidden">
         <Swiper
           modules={[Navigation]}
@@ -199,7 +209,7 @@ export default function ServiceSection({
               slidesPerView: 2,
               spaceBetween: 20,
             },
-            1024: {
+            1025: {
               slidesPerView: 4,
               spaceBetween: 30,
             },
@@ -226,6 +236,7 @@ export default function ServiceSection({
           />
         </div>
       </div>
+
       <div className="mt-28 hidden grid-cols-3 gap-[26px] lg:mb-10 lg:grid">
         {medicalServices?.map((service) => (
           <Link
