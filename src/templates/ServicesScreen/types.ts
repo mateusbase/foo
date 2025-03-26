@@ -4,6 +4,8 @@ export interface ServiceSectionProps {
   description: string;
   shouldShowButton?: boolean;
   cardClassName?: string;
+  imageClassName?: string;
+  backgroundImageUrl?: string;
   healthServices?: Array<{
     id: number;
     slug?: string;
@@ -14,6 +16,8 @@ export interface ServiceSectionProps {
     id: number;
     serviceTitle: string;
     serviceDescription: string;
-    actionButtonText: string;
+    actionButtonText?: string;
+    subtitle?: string;
+    imageUrl?: string;
   }>;
 }

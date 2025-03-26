@@ -10,6 +10,7 @@ export default function MedicalServiceCard({
   actionButtonText,
   serviceIcon = <Plus size={22} />,
   backgroundImageUrl,
+  imageClassName,
   shouldShowButton = true,
 }: MedicalServiceCardProps): JSX.Element {
   const hasActionButton = !!actionButtonText;
@@ -18,7 +19,7 @@ export default function MedicalServiceCard({
   return (
     <div className="flex h-fit w-auto flex-col overflow-hidden rounded-bl-[50px] border bg-white lg:rounded-bl-none lg:rounded-br-[100px]">
       <div
-        className="h-[322px] bg-cover bg-no-repeat md:h-[376px]"
+        className={`${imageClassName} bg-contain bg-no-repeat`}
         style={{
           backgroundImage:
             backgroundImageUrl ??

@@ -177,9 +177,9 @@ export const medicalServices1 = [
     id: 1,
     slug: "analise-patologica",
     serviceTitle: "OC Acesso",
+    subtitle: "Exclusividade Oncoclínicas",
     serviceDescription:
       "A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.",
-    actionButtonText: "Exclusividade Oncoclínicas",
   },
   {
     id: 2,
@@ -202,6 +202,14 @@ export const medicalServices1 = [
 export const medicalServices2 = [
   {
     id: 3,
+    slug: "analise-patologica",
+    serviceTitle: "Testes Germinativos",
+    serviceDescription:
+      "Os testes germinativos analisam genes associados a predisposição hereditária a diversos tipos de câncer.",
+    actionButtonText: "Genômica",
+  },
+  {
+    id: 4,
     slug: "analise-patologica",
     serviceTitle: "Testes Germinativos",
     serviceDescription:

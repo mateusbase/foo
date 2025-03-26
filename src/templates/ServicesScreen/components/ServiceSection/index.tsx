@@ -24,6 +24,7 @@ export default function ServiceSection({
   healthServices,
   medicalServices,
   shouldShowButton = false,
+  imageClassName = "",
   cardClassName = "",
 }: ServiceSectionProps): JSX.Element {
   const {
@@ -170,7 +171,7 @@ export default function ServiceSection({
           ))}
         </Swiper>
 
-        <div className="mt-4 flex justify-center space-x-4 md:hidden">
+        <div className="mt-6 flex justify-center space-x-4 md:hidden">
           <SliderArrows
             swiperRef={swiperRefCard}
             prevRef={prevRefCard}
@@ -221,15 +222,18 @@ export default function ServiceSection({
           {medicalServices?.map((service) => (
             <SwiperSlide key={service.id}>
               <MedicalServiceCard
+                subtitle={service.subtitle}
                 serviceTitle={service.serviceTitle}
                 serviceDescription={service.serviceDescription}
                 actionButtonText={service.actionButtonText}
+                backgroundImageUrl={service.imageUrl}
+                imageClassName={imageClassName}
               />
             </SwiperSlide>
           ))}
         </Swiper>
 
-        <div className="mt-4 flex justify-center space-x-4">
+        <div className="mb-10 mt-4 flex justify-center space-x-4">
           <SliderArrows
             swiperRef={swiperRef}
             prevRef={prevRef}
@@ -248,9 +252,12 @@ export default function ServiceSection({
             passHref
           >
             <MedicalServiceCard
-              subtitle="Exclusividade Oncoclínicas"
+              subtitle={service.subtitle}
               serviceTitle={service.serviceTitle}
               serviceDescription={service.serviceDescription}
+              actionButtonText={service.actionButtonText}
+              backgroundImageUrl={service.imageUrl}
+              imageClassName={imageClassName}
             />
           </Link>
         ))}

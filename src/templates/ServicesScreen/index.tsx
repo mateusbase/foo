@@ -48,6 +48,7 @@ export default function ServiceScreen(): JSX.Element {
         medicalServices={medicalServices1}
         shouldShowButton={deviceType === "desktop"}
         cardClassName="lg:h-[280px] h-[221px] md:min-h-[255px]"
+        imageClassName="h-[207px] lg:h-[304px]"
       />
 
       <ServiceSection
@@ -58,6 +59,7 @@ export default function ServiceScreen(): JSX.Element {
         medicalServices={medicalServices2}
         shouldShowButton={deviceType === "desktop"}
         cardClassName="h-[233px] md:h-[265px]"
+        imageClassName="h-[270px] md:h-[216px] lg:h-[306px]"
       />
 
       <ServiceSection
@@ -68,6 +70,7 @@ export default function ServiceScreen(): JSX.Element {
         medicalServices={medicalServices1}
         shouldShowButton
         cardClassName="h-[266px] md:h-[285px] lg:h-[275px] xl:h-[272px]"
+        imageClassName="h-[250px] md:h-[216px] lg:h-[306px]"
       />
     </PageLayout>
   );
