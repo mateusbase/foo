@@ -55,7 +55,7 @@ const InsuranceGrid = (): JSX.Element => {
   const groupedInsurances = chunkArray(insurances, 8);
 
   return (
-    <div className="lg:mt-72">
+    <div className="lg:mt-40">
       <div className="mt-20 flex flex-col justify-between gap-6 md:mt-32 lg:flex-row">
         <h2 className="text-2xl text-primary md:text-3xl md:leading-[50px]">
           Convênios atendidos nesta unidade

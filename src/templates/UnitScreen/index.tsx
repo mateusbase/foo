@@ -1,11 +1,18 @@
 import { House, UserIcon } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { useRouter } from "next/router";
-import { LunchIcon, ParkingIcon, PinIcon } from "@/components/Icons";
+import {
+  LunchIcon,
+  ParkingIcon,
+  PinIcon,
+  RouteIcon,
+  TourGuideIcon,
+} from "@/components/Icons";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { RiWhatsappFill } from "react-icons/ri";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import WifiIcon from "@/components/Icons/WifiIcon";
+import BaseButton from "@/components/Button";
 import ClinicalBody from "./components/ClinicalBody";
 import MapCard from "./components/MapCard";
 import InsuranceGrid from "./components/InsuranceGrid";
@@ -13,6 +20,8 @@ import { Section } from "./components/MapCard/components/Section";
 import { locationData } from "./components/MapCard/mocks";
 import { mapIconsBySpeciality } from "./utils";
 import AlertComponent from "../AgreementsScreen/components/Alert";
+import certificationsData from "./certicicationsData";
+import CertificationCard from "./components/CertificationCard";
 
 export default function UnitScreen(): JSX.Element {
   const router = useRouter();
@@ -82,7 +91,7 @@ export default function UnitScreen(): JSX.Element {
       subtitle={`${decodedAddress}, ${decodedComplement}, ${decodedCity}`}
       showSections
       sections={sections}
-      buttonText="Ver no mapa"
+      buttonText="Traçar rota"
       buttonIcon={<FaMapMarkedAlt size={40} />}
     >
       <AlertComponent
@@ -95,8 +104,9 @@ export default function UnitScreen(): JSX.Element {
         title="Avisos e Informações"
         subtitle="Fique atento a possíveis golpes nas Redes SociaisSeja cauteloso com pedidos de doações, pagamentos e contatos suspeitos.Em caso de dúvida, entre em contato com a unidade pelos canais oficiais disponibilizados em nosso site."
       />
+
       <div className="mt-10 flex flex-col gap-10 lg:flex-row">
-        <div className="mb-10 flex-1">
+        <div className="mb-10 flex-1 lg:w-[59%]">
           <div>
             <h2 className="text-2xl font-normal text-primary md:leading-[50px] 2xl:text-[32px]">
               Especialidades e Serviços {decodedUnitName}
@@ -117,13 +127,31 @@ export default function UnitScreen(): JSX.Element {
                 );
               })}
             </div>
+
             <div className="md:full-bleed mt-10 flex items-center justify-center lg:hidden">
               <MapCard />
             </div>
-          </div>
 
-          <div>
-            <h2 className="mt-20 text-2xl font-normal text-primary md:leading-[50px] 2xl:text-[32px]">
+            <div className="md:hidden">
+              <BaseButton
+                className="mt-6 flex h-[44px] w-full items-center justify-center border border-primary bg-white text-primary md:hidden"
+                startContent={<RouteIcon className="shrink-0" />}
+              >
+                <p className="text-wrap">Traçar rota</p>
+              </BaseButton>
+
+              <BaseButton
+                className="mb-10 mt-6 h-[65px] w-full items-center justify-center pb-2 pt-3 md:hidden"
+                startContent={<TourGuideIcon className="shrink-0" />}
+              >
+                <p className="text-wrap text-white">
+                  Faça um tour virtual e conheça nossa unidade
+                </p>
+              </BaseButton>
+            </div>
+          </div>
+          <div className="lg:w-full">
+            <h2 className="mt-10 text-2xl font-normal text-primary md:leading-[50px] 2xl:text-[32px]">
               Facilidades e Comodidades
             </h2>
 
@@ -141,11 +169,8 @@ export default function UnitScreen(): JSX.Element {
               </div>
             </div>
           </div>
-
           <InsuranceGrid />
-
           <ClinicalBody />
-
           <div>
             <h2 className="mt-20 text-2xl font-normal text-primary md:text-3xl md:leading-[50px]">
               Sobre a unidade {decodedUnitName}
@@ -179,27 +204,43 @@ export default function UnitScreen(): JSX.Element {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-4 lg:flex-row lg:justify-start">
+            <div className="mt-8 flex flex-wrap justify-center gap-8 md:justify-between lg:grid lg:grid-flow-row-dense lg:grid-cols-2">
               <img
                 src="/assets/images/units/unit-banner-1.jpg"
                 alt="Imagem 1"
-                className="h-[169px] w-full rounded object-cover md:w-[300px]"
+                className="h-[169px] w-full rounded object-cover md:w-[calc(50%-16px)] lg:w-[352px]"
               />
               <img
                 src="/assets/images/units/unit-banner-2.jpg"
                 alt="Imagem 2"
-                className="h-[169px] w-full rounded object-cover md:w-[300px]"
+                className="h-[169px] w-full rounded object-cover md:w-[calc(50%-16px)] lg:w-[352px]"
               />
               <img
                 src="/assets/images/units/unit-banner-3.jpg"
                 alt="Imagem 3"
-                className="h-[169px] w-full rounded object-cover md:w-[300px]"
+                className="h-[169px] w-full rounded object-cover lg:col-span-2 lg:w-[290px]"
               />
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-col">
+            <h1 className="mb-5 text-2xl text-primary md:text-3xl">
+              Certificações
+            </h1>
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
+              {certificationsData.map((certification) => (
+                <CertificationCard
+                  key={certification.id}
+                  imageSrc={certification.imageSrc}
+                  shouldShowMore={certification.shouldShowMore}
+                  name={certification.name}
+                />
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="hidden lg:flex">
+        <div className="hidden h-full lg:flex lg:w-[37%]">
           <MapCard />
         </div>
       </div>

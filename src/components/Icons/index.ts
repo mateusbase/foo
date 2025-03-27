@@ -44,3 +44,5 @@ export { default as BreastCancerIcon } from "./BreastCancerIcon";
 export { default as AlertTriangleIcon } from "./AlertTriangleIcon";
 export { default as SportIcon } from "./SportsIcon";
 export { default as GradientRightChevronIcon } from "./GradientRightChevronIcon";
+export { default as TourGuideIcon } from "./TourGuideIcon";
+export { default as RouteIcon } from "./RouteIcon";

@@ -12,7 +12,7 @@ export default function AlertComponent({
   subtitle = "Para saber se o seu convênio e plano são aceitos na unidade onde deseja atendimento, entre em contato com a sua operadora de saúde ou com a nossa Central de Atendimento.",
 }: AlertComponentProps): JSX.Element {
   return (
-    <div className="my-10 w-full rounded-3xl border-5 bg-gray-50 p-4 md:px-8">
+    <div className="my-4 w-full rounded-3xl border-5 bg-gray-50 p-4 md:px-8 lg:my-10">
       <div className="flex flex-col items-center justify-between md:flex-row">
         <div
           className={`my-3 flex w-full max-w-72 items-center ${

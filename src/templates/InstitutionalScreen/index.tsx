@@ -38,7 +38,7 @@ export default function InstitutionalScreen({
           />
         </div>
 
-        <div className="mt-4 hidden w-[398px] text-white lg:block">
+        <div className="mb-10 mt-4 hidden w-[398px] text-white lg:block">
           {options.map((item, index) => (
             <MenuItem
               key={item.slug}
