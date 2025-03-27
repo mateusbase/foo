@@ -4,138 +4,84 @@ export const healthServices1 = [
     slug: "analise-patologica",
     serviceTitle: "Análise Patológica",
     serviceDescription:
-      "Técnica responsável pela análise de células e tecidos com alterações oncológicas.",
+      "Técnica responsável pela análise de células e tecidos com alterações oncológicas",
   },
   {
     id: 2,
     slug: "analise-patologica",
-    serviceTitle: "Cuidados Paliativos",
+    serviceTitle: "Car-T Cell",
     serviceDescription:
-      "Serviços realizados por equipe multidisciplinar para pacientes, familiares e cuidadores.",
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
   },
   {
     id: 3,
-    slug: "oc-linha-de-cuidado",
-    serviceTitle: "OC Linha de cuidado",
+    slug: "crioterapia",
+    serviceTitle: "Crioterapia",
     serviceDescription:
-      "Um serviço ágil e seguro que acompanha o paciente oncológico durante toda a sua jornada: do diagnóstico ao desfecho clínico, dentro do acolhimento e estrutura da Oncoclínicas.",
+      "Método que diminui a queda do cabelo, usado durante o tratamento pelo resfriamento do couro cabeludo.",
   },
   {
     id: 4,
+    slug: "de-life",
+    serviceTitle: "DeLife",
+    serviceDescription:
+      "A DeLife é uma empresa do Grupo que fornece medicação oncológica oral para pacientes.",
+  },
+  {
+    id: 5,
+    slug: "analise-patologica",
+    serviceTitle: "Hiloterapia",
+    serviceDescription:
+      "Técnica para a prevenção e alívio de efeitos adversos do tratamento nos pés e mãos.",
+  },
+  {
+    id: 6,
     slug: "analise-patologica",
     serviceTitle: "Jornada Molecular",
     serviceDescription:
       "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
   },
   {
-    id: 5,
-    slug: "analise-patologica",
-    serviceTitle: "Análise Clínica",
-    serviceDescription:
-      "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
-  },
-  {
-    id: 6,
-    slug: "analise-patologica",
-    serviceTitle: "Análise Clínica",
-    serviceDescription:
-      "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
-  },
-  {
     id: 7,
     slug: "analise-patologica",
-    serviceTitle: "Laserterapia",
+    serviceTitle: "Análise Patológica",
     serviceDescription:
-      "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
+      "Técnica responsável pela análise de células e tecidos com alterações oncológicas",
   },
   {
     id: 8,
-    slug: "teste-onco-pdo",
-    serviceTitle: "Teste ONCO-PDO™️",
+    slug: "analise-patologica",
+    serviceTitle: "Car-T Cell",
     serviceDescription:
-      "Teste in-vitro que, a partir de modelos 3D obtidos do próprio tumor do paciente, avalia e quantifica a resposta das células tumorais a diferentes combinações de agentes quimioterápicos e terapias-alvo moleculares.",
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
   },
   {
     id: 9,
-    slug: "oc-cuidados-paliativos",
-    serviceTitle: "OC Cuidados Paliativos",
-    serviceDescription:
-      "Cuidados paliativos são realizados por uma equipe multidisciplinar que promove assistência para melhoria da qualidade de vida e também no alívio e prevenção do sofrimento dos pacientes com doenças avançadas. Saiba mais.",
-  },
-  {
-    id: 10,
-    slug: "oc-mulher",
-    serviceTitle: "OC Mulher",
-    serviceDescription:
-      "O OC Mulher é um programa dedicado a saúde da mulher para o cuidado integral. O objetivo é o controle dos cânceres femininos com estratégias de prevenção, diagnóstico precoce, tratamento e suporte multiprofissional continuado.",
-  },
-  {
-    id: 11,
-    slug: "veinviewer",
-    serviceTitle: "Veinviewer",
-    serviceDescription:
-      "Visualizador de veia que utiliza luz infravermelha para detectar o mapa vascular do paciente em alta definição e reduz o número de punções nos pacientes.",
-  },
-  {
-    id: 12,
-    slug: "oc-acesso",
-    serviceTitle: "OC Acesso",
-    serviceDescription:
-      "Conheça OC ACESSO. A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.",
-  },
-  {
-    id: 13,
-    slug: "oc-imunologia",
-    serviceTitle: "OC Imunologia e centro de infusões",
-    serviceDescription:
-      "Unidades especializadas no tratamento de doenças autoimunes, inflamatórias e metabólicas, que proporcionam ao paciente um atendimento individual e acolhedor em uma estrutura completa, composta por equipamentos de alta tecnologia.",
-  },
-  {
-    id: 14,
-    slug: "oc-sobre-viver",
-    serviceTitle: "OC sobre VIVER",
-    serviceDescription: "",
-  },
-  {
-    id: 15,
-    slug: "oc-terapia-celular",
-    serviceTitle: "OC Terapia Celular",
-    serviceDescription:
-      "Para alcançar o futuro da medicina personalizada, expandimos fronteiras",
-  },
-  {
-    id: 16,
-    slug: "oc-navegacao",
-    serviceTitle: "OC Navegação",
-    serviceDescription:
-      "Em busca de oferecer assistência individualizada aos pacientes, apresentamos o programa OC Navegação, proporcionando suporte, acolhimento e monitoramento clínico durante todas as etapas do tratamento.",
-  },
-  {
-    id: 17,
-    slug: "de-life",
-    serviceTitle: "DeLife",
-    serviceDescription:
-      "A DeLife é uma empresa da Oncoclínicas&Co que fornece medicação oncológica oral para pacientes oferecendo apoio continuado durante seu tratamento.",
-  },
-  {
-    id: 18,
-    slug: "telemedicina",
-    serviceTitle: "Telemedicina",
-    serviceDescription:
-      "A telemedicina é uma modalidade da medicina que realiza consultas, diagnósticos e monitoramentos de pacientes de forma remota garantindo conforto e proteção aos pacientes.",
-  },
-  {
-    id: 19,
     slug: "crioterapia",
     serviceTitle: "Crioterapia",
     serviceDescription:
-      "Método que realiza o resfriamento do couro cabeludo utilizado durante o tratamento oncológico para diminuir a queda do cabelo.",
+      "Método que diminui a queda do cabelo, usado durante o tratamento pelo resfriamento do couro cabeludo.",
   },
   {
-    id: 20,
-    slug: "oc-estomatologia",
-    serviceTitle: "OC Estomatologia",
-    serviceDescription: "Saúde bucal durante todo o tratamento oncológico",
+    id: 10,
+    slug: "de-life",
+    serviceTitle: "DeLife",
+    serviceDescription:
+      "A DeLife é uma empresa do Grupo que fornece medicação oncológica oral para pacientes.",
+  },
+  {
+    id: 11,
+    slug: "analise-patologica",
+    serviceTitle: "Hiloterapia",
+    serviceDescription:
+      "Técnica para a prevenção e alívio de efeitos adversos do tratamento nos pés e mãos.",
+  },
+  {
+    id: 12,
+    slug: "analise-patologica",
+    serviceTitle: "Jornada Molecular",
+    serviceDescription:
+      "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
   },
 ];
 
@@ -143,23 +89,86 @@ export const healthServices2 = [
   {
     id: 1,
     slug: "analise-patologica",
-    serviceTitle: "Análise Molecular",
+    serviceTitle: "Nome Diagnóstico",
     serviceDescription:
-      "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
   },
   {
     id: 2,
     slug: "analise-patologica",
-    serviceTitle: "Jornada Molecular",
+    serviceTitle: "Nome Diagnóstico",
     serviceDescription:
-      "Testes moleculares para a escolha do melhor tratamento em cada paciente.",
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
   },
   {
     id: 3,
     slug: "analise-patologica",
-    serviceTitle: "Cuidados Paliativos",
+    serviceTitle: "Nome Diagnóstico",
     serviceDescription:
-      "Serviços realizados por equipe multidisciplinar para pacientes, familiares e cuidadores.",
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
+  },
+  {
+    id: 4,
+    slug: "analise-patologica",
+    serviceTitle: "Nome Diagnóstico",
+    serviceDescription:
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
+  },
+  {
+    id: 5,
+    slug: "analise-patologica",
+    serviceTitle: "Nome Diagnóstico",
+    serviceDescription:
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
+  },
+  {
+    id: 6,
+    slug: "analise-patologica",
+    serviceTitle: "Nome Diagnóstico",
+    serviceDescription:
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
+  },
+  {
+    id: 7,
+    slug: "analise-patologica",
+    serviceTitle: "Nome Diagnóstico",
+    serviceDescription:
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
+  },
+  {
+    id: 8,
+    slug: "analise-patologica",
+    serviceTitle: "Nome Diagnóstico",
+    serviceDescription:
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
+  },
+  {
+    id: 9,
+    slug: "analise-patologica",
+    serviceTitle: "Nome Diagnóstico",
+    serviceDescription:
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
+  },
+  {
+    id: 10,
+    slug: "analise-patologica",
+    serviceTitle: "Nome Diagnóstico",
+    serviceDescription:
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
+  },
+  {
+    id: 11,
+    slug: "analise-patologica",
+    serviceTitle: "Nome Diagnóstico",
+    serviceDescription:
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
+  },
+  {
+    id: 12,
+    slug: "analise-patologica",
+    serviceTitle: "Nome Diagnóstico",
+    serviceDescription:
+      "Tratamento que usa as próprias células de defesa do sistema imunológico para combater alguns tipos de câncer.",
   },
 ];
 
@@ -168,9 +177,9 @@ export const medicalServices1 = [
     id: 1,
     slug: "analise-patologica",
     serviceTitle: "OC Acesso",
+    subtitle: "Exclusividade Oncoclínicas",
     serviceDescription:
       "A solução da Oncoclínicas que surgiu para facilitar o acesso dos pacientes a um tratamento de excelência.",
-    actionButtonText: "Exclusividade Oncoclínicas",
   },
   {
     id: 2,
@@ -193,6 +202,14 @@ export const medicalServices1 = [
 export const medicalServices2 = [
   {
     id: 3,
+    slug: "analise-patologica",
+    serviceTitle: "Testes Germinativos",
+    serviceDescription:
+      "Os testes germinativos analisam genes associados a predisposição hereditária a diversos tipos de câncer.",
+    actionButtonText: "Genômica",
+  },
+  {
+    id: 4,
     slug: "analise-patologica",
     serviceTitle: "Testes Germinativos",
     serviceDescription:

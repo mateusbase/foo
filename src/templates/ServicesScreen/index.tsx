@@ -1,4 +1,5 @@
 import PageLayout from "@/components/PageLayout";
+import { useDeviceType } from "@/hooks/useDeviceType";
 import ServiceSection from "./components/ServiceSection";
 import {
   headerProps,
@@ -9,6 +10,8 @@ import {
 } from "./data/servicesData";
 
 export default function ServiceScreen(): JSX.Element {
+  const deviceType = useDeviceType();
+
   return (
     <PageLayout
       title={headerProps.title}
@@ -43,6 +46,9 @@ export default function ServiceScreen(): JSX.Element {
         description="Comodidade e priorização da vida em toda a jornada do tratamento do câncer. Conheça nossos serviços."
         healthServices={healthServices1}
         medicalServices={medicalServices1}
+        shouldShowButton={deviceType === "desktop"}
+        cardClassName="lg:h-[280px] h-[221px] md:min-h-[255px]"
+        imageClassName="h-[207px] lg:h-[304px]"
       />
 
       <ServiceSection
@@ -51,6 +57,9 @@ export default function ServiceScreen(): JSX.Element {
         description="Corpo clínico altamente especializado e os mais variados tipos de exames. Conheça a OC Diagnóstico."
         healthServices={healthServices2}
         medicalServices={medicalServices2}
+        shouldShowButton={deviceType === "desktop"}
+        cardClassName="h-[233px] md:h-[265px]"
+        imageClassName="h-[270px] md:h-[216px] lg:h-[306px]"
       />
 
       <ServiceSection
@@ -59,6 +68,9 @@ export default function ServiceScreen(): JSX.Element {
         description="As terapias mais eficazes para o tratamento do câncer. Conheça nossos métodos."
         healthServices={healthServices1}
         medicalServices={medicalServices1}
+        shouldShowButton
+        cardClassName="h-[266px] md:h-[285px] lg:h-[275px] xl:h-[272px]"
+        imageClassName="h-[250px] md:h-[216px] lg:h-[306px]"
       />
     </PageLayout>
   );
