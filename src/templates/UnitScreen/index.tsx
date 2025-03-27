@@ -12,6 +12,7 @@ import InsuranceGrid from "./components/InsuranceGrid";
 import { Section } from "./components/MapCard/components/Section";
 import { locationData } from "./components/MapCard/mocks";
 import { mapIconsBySpeciality } from "./utils";
+import AlertComponent from "../AgreementsScreen/components/Alert";
 
 export default function UnitScreen(): JSX.Element {
   const router = useRouter();
@@ -84,6 +85,16 @@ export default function UnitScreen(): JSX.Element {
       buttonText="Ver no mapa"
       buttonIcon={<FaMapMarkedAlt size={40} />}
     >
+      <AlertComponent
+        shouldShowIcon={false}
+        title="Parceria"
+        subtitle="As parcerias do Grupo Oncoclínicas com empresas pelo Brasil tem como principal objetivo ampliar a oferta de serviços em toda a linha de cuidado tendo o paciente sempre como centro de tudo. Saiba mais"
+      />
+
+      <AlertComponent
+        title="Avisos e Informações"
+        subtitle="Fique atento a possíveis golpes nas Redes SociaisSeja cauteloso com pedidos de doações, pagamentos e contatos suspeitos.Em caso de dúvida, entre em contato com a unidade pelos canais oficiais disponibilizados em nosso site."
+      />
       <div className="mt-10 flex flex-col gap-10 lg:flex-row">
         <div className="mb-10 flex-1">
           <div>
@@ -98,7 +109,7 @@ export default function UnitScreen(): JSX.Element {
                 return (
                   <div
                     key={specialty}
-                    className="flex items-center gap-2 text-base text-primary lg:text-[20px]"
+                    className="flex items-center gap-2 text-base text-primary lg:text-xl"
                   >
                     {iconSpeciality}
                     {specialty}

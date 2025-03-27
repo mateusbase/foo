@@ -93,7 +93,7 @@ const InsuranceGrid = (): JSX.Element => {
             768: {
               slidesPerView: 3,
             },
-            1024: {
+            1025: {
               slidesPerView: 3,
             },
           }}
