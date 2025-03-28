@@ -15,20 +15,16 @@ export default function GlossaryScreen(): JSX.Element {
   const router = useRouter();
   const { query, isReady } = router;
   const [selectedLetter, setSelectedLetter] = useState(glossaryData[0].letter);
-
-  const [selectedTerm, setSelectedTerm] = useState<string>(() => {
+  const [selectedTermId, setSelectedTermId] = useState<string>(() => {
     if (isReady && query.slug) {
       const decodedTerm = decodeURIComponent(query.slug.toString());
-
       const matchingTerm = glossaryData
         .flatMap((glossary) => glossary.terms)
         .find((t) => t.term.toLowerCase().replace(/\s+/g, "-") === decodedTerm);
 
-      return matchingTerm
-        ? matchingTerm.id.toString()
-        : glossaryData[0].terms[0]?.id.toString();
+      return matchingTerm?.id || glossaryData[0].terms[0]?.id;
     }
-    return glossaryData[0].terms[0]?.id.toString();
+    return glossaryData[0].terms[0]?.id;
   });
 
   useEffect(() => {
@@ -40,11 +36,14 @@ export default function GlossaryScreen(): JSX.Element {
       .find((t) => t.term.toLowerCase().replace(/\s+/g, "-") === decodedTerm);
 
     if (matchingTerm) {
-      setSelectedTerm(matchingTerm.id.toString());
-      setSelectedLetter(
-        glossaryData.find((g) => g.terms.some((t) => t.id === matchingTerm.id))
-          ?.letter || glossaryData[0].letter,
+      const glossaryItem = glossaryData.find((g) =>
+        g.terms.some((t) => t.id === matchingTerm.id),
       );
+
+      if (glossaryItem) {
+        setSelectedLetter(glossaryItem.letter);
+        setSelectedTermId(matchingTerm.id.toString());
+      }
     }
   }, [query.slug, isReady]);
 
@@ -53,17 +52,25 @@ export default function GlossaryScreen(): JSX.Element {
   );
 
   const filteredTerm = filteredGlossary?.terms.find(
-    (term) => term.id.toString() === selectedTerm,
+    (term) => term.id === selectedTermId,
   );
 
   const handleLetterChange = (letter: string): void => {
     setSelectedLetter(letter);
+    const newGlossary = glossaryData.find((g) => g.letter === letter);
+    if (newGlossary?.terms.length) {
+      setSelectedTermId(newGlossary.terms[0].id.toString());
+      const termSlug = newGlossary.terms[0].term
+        .toLowerCase()
+        .replace(/\s+/g, "-");
+      router.replace(`/glossario/${termSlug}`, undefined, { shallow: true });
+    }
   };
 
   const handleTermChange = (termId: string): void => {
-    setSelectedTerm(termId);
+    setSelectedTermId(termId);
     const term = filteredGlossary?.terms.find(
-      (newTerm) => newTerm.id.toString() === termId,
+      (newTerm) => newTerm.id === termId,
     );
 
     if (term) {
@@ -94,11 +101,12 @@ export default function GlossaryScreen(): JSX.Element {
           <BaseSelect
             color="primary"
             variant="bordered"
+            key={`letter-select-${selectedLetter}`}
             labelPlacement="outside"
             label=""
             labelColor="primary"
             radius="full"
-            defaultSelectedKey={glossaryData[0].letter}
+            defaultSelectedKey={selectedLetter}
             size="lg"
             className="w-full text-primary md:w-[330px]"
             borderStyle="border-primary"
@@ -118,6 +126,7 @@ export default function GlossaryScreen(): JSX.Element {
           <BaseSelect
             color="primary"
             variant="bordered"
+            key={`term-select-${selectedTermId}`}
             label=""
             labelPlacement="outside"
             labelColor="primary"
@@ -125,7 +134,7 @@ export default function GlossaryScreen(): JSX.Element {
             size="lg"
             className="w-full text-primary md:w-[330px]"
             borderStyle="border-primary"
-            selectedKey={selectedTerm}
+            defaultSelectedKey={selectedTermId}
             options={
               filteredGlossary?.terms.map((term) => ({
                 key: term.id,
@@ -171,13 +180,13 @@ export default function GlossaryScreen(): JSX.Element {
             {filteredGlossary?.terms.map((terms, index, array) => (
               <MenuItem
                 key={terms.id}
-                id={terms.id}
+                id={parseInt(terms.id.replace(/\D/g, ""), 10)}
                 name={terms.term}
-                isActive={selectedTerm === terms.id.toString()}
+                isActive={selectedTermId === terms.id}
                 isFirst={index === 0}
                 isLast={index === array.length - 1}
                 onClick={(value) => {
-                  handleTermChange(value.toString());
+                  handleTermChange(`${selectedLetter.toUpperCase()}${value}`);
                 }}
               />
             ))}
