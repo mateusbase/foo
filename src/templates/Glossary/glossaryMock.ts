@@ -1,4 +1,16 @@
-export const glossaryData = [
+export interface GlossaryTerm {
+  id: number;
+  term: string;
+  definition: string;
+}
+
+export interface GlossaryLetter {
+  id: number;
+  letter: string;
+  terms: GlossaryTerm[];
+}
+
+export const glossaryData: GlossaryLetter[] = [
   {
     id: 1,
     letter: "A",

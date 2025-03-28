@@ -1,6 +1,7 @@
+import { useRouter } from "next/router";
 import AlphabetSelector from "@/components/AlphabetSelector";
 import PageLayout from "@/components/PageLayout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuItem from "@/components/MenuItem";
 import BaseInput from "@/components/Input";
 import { SearchIcon } from "lucide-react";
@@ -11,8 +12,41 @@ import socialNetwork from "@/components/ShareOptions/socialNetwork";
 import { glossaryData } from "./glossaryMock";
 
 export default function GlossaryScreen(): JSX.Element {
+  const router = useRouter();
+  const { query, isReady } = router;
   const [selectedLetter, setSelectedLetter] = useState(glossaryData[0].letter);
-  const [selectedTerm, setSelectedTerm] = useState("1");
+
+  const [selectedTerm, setSelectedTerm] = useState<string>(() => {
+    if (isReady && query.slug) {
+      const decodedTerm = decodeURIComponent(query.slug.toString());
+
+      const matchingTerm = glossaryData
+        .flatMap((glossary) => glossary.terms)
+        .find((t) => t.term.toLowerCase().replace(/\s+/g, "-") === decodedTerm);
+
+      return matchingTerm
+        ? matchingTerm.id.toString()
+        : glossaryData[0].terms[0]?.id.toString();
+    }
+    return glossaryData[0].terms[0]?.id.toString();
+  });
+
+  useEffect(() => {
+    if (!isReady || !query.slug) return;
+
+    const decodedTerm = decodeURIComponent(query.slug as string);
+    const matchingTerm = glossaryData
+      .flatMap((glossary) => glossary.terms)
+      .find((t) => t.term.toLowerCase().replace(/\s+/g, "-") === decodedTerm);
+
+    if (matchingTerm) {
+      setSelectedTerm(matchingTerm.id.toString());
+      setSelectedLetter(
+        glossaryData.find((g) => g.terms.some((t) => t.id === matchingTerm.id))
+          ?.letter || glossaryData[0].letter,
+      );
+    }
+  }, [query.slug, isReady]);
 
   const filteredGlossary = glossaryData.find(
     (glossary) => glossary.letter === selectedLetter,
@@ -21,6 +55,22 @@ export default function GlossaryScreen(): JSX.Element {
   const filteredTerm = filteredGlossary?.terms.find(
     (term) => term.id.toString() === selectedTerm,
   );
+
+  const handleLetterChange = (letter: string): void => {
+    setSelectedLetter(letter);
+  };
+
+  const handleTermChange = (termId: string): void => {
+    setSelectedTerm(termId);
+    const term = filteredGlossary?.terms.find(
+      (newTerm) => newTerm.id.toString() === termId,
+    );
+
+    if (term) {
+      const termSlug = term.term.toLowerCase().replace(/\s+/g, "-");
+      router.replace(`/glossario/${termSlug}`, undefined, { shallow: true });
+    }
+  };
 
   return (
     <PageLayout
@@ -61,7 +111,7 @@ export default function GlossaryScreen(): JSX.Element {
               <RxHamburgerMenu size={20} className="text-primary" />
             }
             onChange={(selectedValue: string | number) => {
-              setSelectedLetter(selectedValue.toString());
+              handleLetterChange(selectedValue.toString());
             }}
           />
 
@@ -75,6 +125,7 @@ export default function GlossaryScreen(): JSX.Element {
             size="lg"
             className="w-full text-primary md:w-[330px]"
             borderStyle="border-primary"
+            selectedKey={selectedTerm}
             options={
               filteredGlossary?.terms.map((term) => ({
                 key: term.id,
@@ -86,7 +137,7 @@ export default function GlossaryScreen(): JSX.Element {
               <RxHamburgerMenu size={20} className="text-primary" />
             }
             onChange={(selectedValue: string | number) => {
-              setSelectedTerm(selectedValue.toString());
+              handleTermChange(selectedValue.toString());
             }}
           />
         </div>
@@ -111,9 +162,7 @@ export default function GlossaryScreen(): JSX.Element {
       {/* Telas grandes */}
       <div className="mb-10 hidden flex-col lg:flex">
         <AlphabetSelector
-          onLetterSelect={(letter: string) => {
-            setSelectedLetter(letter);
-          }}
+          onLetterSelect={handleLetterChange}
           selectedLetter={selectedLetter.toString()}
           searchPlaceholder="Busque pelo termo"
         />
@@ -128,7 +177,7 @@ export default function GlossaryScreen(): JSX.Element {
                 isFirst={index === 0}
                 isLast={index === array.length - 1}
                 onClick={(value) => {
-                  setSelectedTerm(value.toString());
+                  handleTermChange(value.toString());
                 }}
               />
             ))}
