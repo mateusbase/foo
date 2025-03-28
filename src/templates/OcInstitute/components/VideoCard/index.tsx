@@ -1,4 +1,4 @@
-import { Image } from "@heroui/react";
+import Image from "next/image";
 import { VideoCardProps } from "./types";
 
 export default function VideoCard({
@@ -11,12 +11,12 @@ export default function VideoCard({
         <Image
           width={502}
           height={502}
-          radius="none"
           src="https://i.postimg.cc/1RTmQXy4/Captura-de-tela-2024-11-18-150147.png"
           alt="Preview do vídeo"
+          className="mx-auto size-[319px] md:h-[286px] lg:h-[446px] lg:w-[502px]"
         />
         <div className="mt-5">
-          <p className="text-left text-2xl text-primary lg:text-[42px]">
+          <p className="mb-3 text-left text-2xl text-primary lg:text-[42px]">
             {title}
           </p>
           <p className="text-left text-base text-darkGray lg:text-2xl">

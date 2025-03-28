@@ -112,7 +112,7 @@ export default function OcInstitute(): JSX.Element {
                     slidesPerView: 3,
                     spaceBetween: 10,
                   },
-                  1024: {
+                  1025: {
                     slidesPerView: 3,
                     spaceBetween: 5,
                   },

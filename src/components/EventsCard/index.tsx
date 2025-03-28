@@ -39,7 +39,7 @@ export default function EventCard({
 
             <div className="flex items-start gap-2 text-[18px] font-normal text-darkGray md:text-xl">
               <PinIcon className="text-primary" />
-              <div className="flex flex-col">
+              <div className="flex flex-col text-left">
                 <span>{event.location}</span>
                 <span className="text-lightGray">{event.address}</span>
               </div>

@@ -112,7 +112,7 @@ export default function UnitScreen(): JSX.Element {
               Especialidades e Serviços {decodedUnitName}
             </h2>
 
-            <div className="mt-10 grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-2">
+            <div className="mt-10 grid grid-cols-2 gap-10 md:grid-cols-3">
               {decodedSpecialties.map((specialty) => {
                 const iconSpeciality = mapIconsBySpeciality(specialty);
 

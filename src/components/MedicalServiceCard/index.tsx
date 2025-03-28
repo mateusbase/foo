@@ -14,7 +14,6 @@ export default function MedicalServiceCard({
   serviceIcon = <Plus size={22} />,
   backgroundImageUrl = "https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/alt-5ae892611bf1a-5168-68b2575aab38f2c97ce8846381d07044@1x.jpg",
   shouldShowButton = true,
-  isClinicalResearch = false,
 }: MedicalServiceCardProps): JSX.Element {
   const hasActionButton = !!actionButtonText;
   const hasSubtitle = !!subtitle;
@@ -25,7 +24,7 @@ export default function MedicalServiceCard({
         <Image
           src={backgroundImageUrl}
           alt="Background"
-          className={`h-[207px] lg:h-[274px] ${!isClinicalResearch ? "h-[430px] md:h-[430px] lg:h-[430px]" : ""}`}
+          className="h-[207px] lg:h-[274px]"
           width={1080}
           height={207}
         />
