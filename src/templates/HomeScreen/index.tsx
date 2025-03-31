@@ -77,11 +77,10 @@ export default function HomeScreen(): JSX.Element {
 
           <NearbyUnits />
         </div>
+        <div className="full-bleed block">
+          <InformationSliderMobile informations={informationMock} />
+        </div>
       </BaseContainer>
-
-      <div className="full-bleed block">
-        <InformationSliderMobile informations={informationMock} />
-      </div>
 
       <FaqSection />
 
