@@ -19,7 +19,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function NewScreen(): JSX.Element {
+interface NewScreenProps {
+  title?: string;
+  subtitle?: string;
+}
+
+export default function NewScreen({
+  title,
+  subtitle,
+}: NewScreenProps): JSX.Element {
   const { nextRef, prevRef, swiperRef, onBeforeInit, currentIndex } =
     useSwiperNavigation();
 
@@ -42,10 +50,7 @@ export default function NewScreen(): JSX.Element {
         <Breadcrumb />
       </div>
 
-      <PageHeader
-        title="Notícias"
-        subtitle="Acompanhe as principais notícias sobre oncologia e fique por dentro da participação da Oncoclínicas e de seus especialistas na mídia."
-      />
+      <PageHeader title={title ?? ""} subtitle={subtitle} />
       <BaseContainer className="px-10 lg:px-0">
         <div className="hidden px-10 py-6 md:px-0 lg:block">
           <Breadcrumb />

@@ -108,9 +108,9 @@ export default function MolecularThursdaysScreen(): JSX.Element {
           </div>
         </div>
 
-        <div className="lg:mt-10">
+        <div className="flex flex-col lg:mt-10 lg:gap-8">
           {options.map((option) => (
-            <NewsInformationCard options={option} />
+            <NewsInformationCard link="quintas-moleculares/" options={option} />
           ))}
         </div>
 
@@ -119,7 +119,7 @@ export default function MolecularThursdaysScreen(): JSX.Element {
             color="primary"
             variant="bordered"
             radius="sm"
-            className="h-[50px] w-[228px] items-center justify-center pl-3 text-[23px] text-primary lg:flex"
+            className="h-[50px] w-[228px] items-center justify-center pl-3 text-[23px] text-primary lg:mb-10 lg:flex"
           >
             [+] Ver mais
           </BaseButton>
