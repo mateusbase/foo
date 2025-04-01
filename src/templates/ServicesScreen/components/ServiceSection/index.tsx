@@ -233,15 +233,14 @@ export default function ServiceSection({
           ))}
         </Swiper>
 
-        <div className="mb-10 mt-4 flex justify-center space-x-4">
-          <SliderArrows
-            swiperRef={swiperRef}
-            prevRef={prevRef}
-            nextRef={nextRef}
-            showSwiperPagination
-            currentIndex={currentIndex}
-          />
-        </div>
+        <SliderArrows
+          swiperRef={swiperRef}
+          prevRef={prevRef}
+          nextRef={nextRef}
+          showSwiperPagination
+          currentIndex={currentIndex}
+          className="mt-8"
+        />
       </div>
 
       <div className="mt-28 hidden grid-cols-3 gap-[26px] lg:mb-10 lg:grid">

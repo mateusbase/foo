@@ -4,13 +4,14 @@ import BaseButton from "../Button";
 import { NewsInformationCardProps } from "./types";
 
 export default function NewsInformationCard({
+  link,
   options,
 }: NewsInformationCardProps): JSX.Element {
   const { title, date, description, image } = options;
   const newSlug = title.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <Link href={`/noticias/${newSlug}`}>
+    <Link href={`${link}${newSlug}`}>
       <div className="flex w-full flex-col gap-4 lg:h-full lg:flex-row lg:gap-8">
         <div className="h-auto w-full lg:max-w-[812px]">
           <img

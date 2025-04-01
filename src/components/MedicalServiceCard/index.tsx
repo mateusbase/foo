@@ -29,6 +29,7 @@ export default function MedicalServiceCard({
           height={207}
         />
       </div>
+
       <div className="flex h-[289px] min-w-[322px] flex-col rounded-br-[100px] bg-custom-gradient-dark p-8 md:px-9 lg:h-[342px] lg:min-h-[515px] lg:gap-12">
         {hasSubtitle && (
           <p className="my-2 text-left text-lg leading-[30px] text-white md:text-[20px] lg:text-[24px]">
