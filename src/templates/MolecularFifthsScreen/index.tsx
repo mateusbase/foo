@@ -20,7 +20,7 @@ export default function MolecularThursdaysScreen(): JSX.Element {
 
   return (
     <PageLayout title="Quintas moleculares">
-      <div className="full-bleed flex flex-col lg:mt-14 lg:flex-row">
+      <div className="full-bleed flex flex-col lg:mt-0 lg:flex-row">
         <div className="overflow-hidden lg:h-[499px] lg:w-5/6">
           <img
             src="/assets/images/molecularFifths/molecular-banner.png"

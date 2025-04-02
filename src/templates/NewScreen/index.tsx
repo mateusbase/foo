@@ -56,9 +56,10 @@ export default function NewScreen({
           <Breadcrumb />
         </div>
         <div className="mt-10 flex flex-col items-center">
-          <p className="text-sm text-lightGray md:text-xl">
+          <h4 className="text-sm text-lightGray md:text-xl">
             10 de outubro de 2025
-          </p>
+          </h4>
+
           <BaseButton
             className="mt-10 max-h-9 text-sm md:w-52"
             variant="bordered"
@@ -68,39 +69,35 @@ export default function NewScreen({
             Inovação & Oncologia
           </BaseButton>
 
-          <div className="mt-10 text-center text-xl font-light text-darkGray md:text-4xl md:text-primary lg:w-3/4 lg:text-5xl">
+          <h1 className="mt-10 text-center text-xl font-light text-darkGray md:text-4xl md:text-primary lg:w-3/4 lg:text-5xl">
             A Inteligência Artificial está presente em diversos exames para
             apoiar o médico no diagnóstico.
-          </div>
+          </h1>
 
-          <div className="mt-10">
-            <p className="text-sm font-bold text-lightGray md:text-base lg:text-2xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est
-              laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+          <p className="mt-10 text-sm font-bold text-lightGray md:text-base lg:text-2xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
 
-          <div className="mt-10 w-full">
-            <Image
-              width={1800}
-              height={1200}
-              alt="Imagem da noticia"
-              src="https://i.postimg.cc/nVgm871X/Captura-de-tela-2024-11-13-132910.png"
-              className="h-[227px] w-full object-cover md:h-[380px] lg:h-[536px]"
-            />
-          </div>
+          <Image
+            width={1800}
+            height={1200}
+            alt="Imagem da noticia"
+            src="https://i.postimg.cc/nVgm871X/Captura-de-tela-2024-11-13-132910.png"
+            className="mt-10 h-[227px] w-full object-cover md:h-[380px] lg:h-[536px]"
+          />
 
           <div className="my-10 w-full">
             {paragraphs.map((paragraph) => (
@@ -113,6 +110,7 @@ export default function NewScreen({
             ))}
           </div>
         </div>
+
         <div className="mb-10 flex lg:my-10">
           <ShareOptions options={socialNetwork} />
         </div>
@@ -120,9 +118,9 @@ export default function NewScreen({
 
       <div className="hidden bg-gray-foreground py-10 lg:flex">
         <BaseContainer>
-          <p className="mb-10 text-6xl font-light text-primary">
-            Noticias Relacionadas
-          </p>
+          <h1 className="mb-10 text-6xl font-light text-primary">
+            Notícias Relacionadas
+          </h1>
 
           <div className="mt-10 grid w-full grid-cols-4">
             {newsItems.map((news) => (
@@ -140,11 +138,9 @@ export default function NewScreen({
 
       <div className="flex w-full bg-gray-foreground pb-8 pt-5 md:py-12 lg:hidden">
         <BaseContainer className="w-full">
-          <div>
-            <p className="mb-10 text-3xl font-light text-primary">
-              Noticias Relacionadas
-            </p>
-          </div>
+          <h1 className="mb-10 text-3xl font-light text-primary">
+            Notícias Relacionadas
+          </h1>
 
           <div>
             <Swiper
@@ -157,7 +153,7 @@ export default function NewScreen({
                   slidesPerView: 1,
                   spaceBetween: 10,
                 },
-                760: {
+                768: {
                   slidesPerView: 2,
                   spaceBetween: 10,
                 },
