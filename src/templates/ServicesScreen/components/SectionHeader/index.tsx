@@ -5,7 +5,7 @@ export default function SectionHeader({
   description,
 }: SectionHeaderProps): JSX.Element {
   return (
-    <div className="mt-10 flex justify-center md:mt-20">
+    <div className="mb-8 mt-10 flex justify-center md:mt-20">
       <div className="w-full text-left lg:text-center">
         <h2 className="text-2xl text-primary lg:text-6xl lg:leading-[74px]">
           {title}

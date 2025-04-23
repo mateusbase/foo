@@ -131,7 +131,11 @@ export default function ServiceSection({
 
       <div className="mt-10 hidden grid-cols-4 gap-[26px] md:grid lg:grid lg:gap-3">
         {displayedServices?.map((service) => (
-          <Link key={service.id} href={`/servicos/${service.slug}`} passHref>
+          <Link
+            key={service.id}
+            href={`/servicos-tratamentos-e-diagnosticos/${service.slug}`}
+            passHref
+          >
             <ServiceCard
               serviceTitle={service.serviceTitle}
               serviceDescription={service.serviceDescription}
@@ -157,7 +161,7 @@ export default function ServiceSection({
           {displayedServices?.map((service) => (
             <SwiperSlide key={service.id}>
               <Link
-                href={`/servicos/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
+                href={`/servicos-tratamentos-e-diagnosticos/${service.serviceTitle.replace(/\s+/g, "-").toLowerCase()}`}
                 passHref
               >
                 <ServiceCard
