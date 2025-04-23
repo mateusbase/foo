@@ -5,10 +5,12 @@ import PageLayout from "@/components/PageLayout";
 import BaseSelect from "@/components/Select";
 import { IoMenu } from "react-icons/io5";
 
+const SCROLL_OFFSET = 100;
+
 const menuItems = [
-  { id: 1, name: "O que é a laserterapia" },
-  { id: 2, name: "Quando é usada" },
-  { id: 3, name: "Como é realizada" },
+  { id: 1, name: "O que é a laserterapia", anchor: "oque-e" },
+  { id: 2, name: "Quando é usada", anchor: "quando" },
+  { id: 3, name: "Como é realizada", anchor: "como" },
 ];
 
 export default function ServiceScreen(): JSX.Element {
@@ -21,9 +23,21 @@ export default function ServiceScreen(): JSX.Element {
     const selectedItem = menuItems.find((item) => item.id === Number(value));
     if (selectedItem) {
       setActiveItem(selectedItem.id);
+
+      const element = document.getElementById(selectedItem.anchor);
+      if (element) {
+        const top =
+          element.getBoundingClientRect().top +
+          window.pageYOffset -
+          SCROLL_OFFSET;
+
+        window.scrollTo({
+          top,
+          behavior: "smooth",
+        });
+      }
     }
   };
-
   const capitalizeFirstLetter = (text: string): string => {
     return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
   };
@@ -65,13 +79,31 @@ export default function ServiceScreen(): JSX.Element {
               isActive={activeItem === item.id}
               isFirst={index === 0}
               isLast={index === menuItems.length - 1}
-              onClick={setActiveItem}
+              onClick={() => {
+                setActiveItem(item.id);
+
+                const element = document.getElementById(item.anchor);
+                if (element) {
+                  const top =
+                    element.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    SCROLL_OFFSET;
+
+                  window.scrollTo({
+                    top,
+                    behavior: "smooth",
+                  });
+                }
+              }}
             />
           ))}
         </div>
 
         <div className="flex-1 lg:ml-16">
-          <h1 className="text-4xl font-bold leading-[48px] text-primary">
+          <h1
+            id="oque-e"
+            className="text-4xl font-bold leading-[48px] text-primary"
+          >
             O que é a laserterapia
           </h1>
           <p className="mt-6 text-[20px] font-normal leading-[26px] text-darkGray">
@@ -86,7 +118,10 @@ export default function ServiceScreen(): JSX.Element {
             <br />
           </p>
 
-          <h1 className="text-4xl font-bold leading-[48px] text-primary">
+          <h1
+            id="quando"
+            className="text-4xl font-bold leading-[48px] text-primary"
+          >
             Quando é usada
           </h1>
 
@@ -125,7 +160,10 @@ export default function ServiceScreen(): JSX.Element {
           <br />
           <br />
 
-          <h1 className="text-4xl font-bold leading-[48px] text-primary">
+          <h1
+            id="como"
+            className="text-4xl font-bold leading-[48px] text-primary"
+          >
             Como é realizada
           </h1>
 

@@ -4,7 +4,7 @@ export const cardElements: RoundedRectangleProps = {
   cardElements: [
     {
       text: "Tipo de exame por tumor",
-      url: "medicina-de-precisao/tipos-tumorais",
+      url: "medicina-de-precisao/jornada-molecular/tipos-tumorais",
     },
     {
       text: "Solicitar um exame",

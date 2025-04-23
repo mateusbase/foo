@@ -40,23 +40,25 @@ const QrCodeContainer = (): JSX.Element => {
               <div className="flex flex-col gap-6 md:flex-row md:gap-8">
                 <Link
                   target="_blank"
-                  href="https://www.apple.com/br/app-store/"
+                  rel="noopener noreferrer"
+                  href="https://play.google.com/store/games?hl=pt_BR"
                 >
                   <img
                     src="https://i.postimg.cc/289cwVpF/Imagem-6.png"
-                    alt="App Store"
-                    className="h-[55px] w-[185px] md:h-[45px] md:w-[153px]"
+                    alt="Google Play"
+                    className="shrink-0 object-cover"
                   />
                 </Link>
 
                 <Link
                   target="_blank"
-                  href="https://play.google.com/store/games?hl=pt_BR"
+                  rel="noopener noreferrer"
+                  href="https://www.apple.com/br/app-store/"
                 >
                   <img
                     src="https://i.postimg.cc/Mph9CNpn/Imagem-5.png"
-                    alt="Google Play"
-                    className="h-[55px] w-[185px] md:h-[45px] md:w-[153px]"
+                    alt="App Store"
+                    className="h-[44px] w-[142px] shrink-0 object-cover"
                   />
                 </Link>
               </div>
@@ -73,12 +75,12 @@ const QrCodeContainer = (): JSX.Element => {
                   />
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://www.apple.com/br/app-store/"
                   >
                     <img
                       src="https://i.postimg.cc/289cwVpF/Imagem-6.png"
                       alt="App Store"
-                      className="h-14 w-44 shrink-0 md:h-[45px] md:w-[153px] lg:h-[55px] lg:w-[185px] xl:h-14 xl:w-44"
                     />
                   </Link>
                 </div>
@@ -101,12 +103,12 @@ const QrCodeContainer = (): JSX.Element => {
                   />
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://play.google.com/store/games?hl=pt_BR"
                   >
                     <img
                       src="https://i.postimg.cc/Mph9CNpn/Imagem-5.png"
                       alt="Google Play"
-                      className="h-[55px] w-[185px] shrink-0 md:h-[45px] md:w-[153px] lg:h-[55px] lg:w-[185px] xl:h-14 xl:w-44"
                     />
                   </Link>
                 </div>

@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import BaseSelect from "@/components/Select";
 import tumorTypes from "@/templates/TumorTypeScreen/mocks";
 import { useState } from "react";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDropright } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 const TumorTypeScreen = (): JSX.Element => {
@@ -119,11 +119,11 @@ const TumorTypeScreen = (): JSX.Element => {
         {currentTumor?.types.map((type) => (
           <div
             key={type.title}
-            className="flex h-20 w-[328px] items-center gap-4 rounded-lg border border-primary px-4 py-3 md:w-full lg:h-28 lg:w-[243px]"
+            className="flex h-20 w-[328px] items-center gap-4 rounded-lg border border-primary px-4 py-3 md:w-full lg:h-28 lg:w-[280px]"
           >
             <img src={type.icon} alt="Ícone do tipo" className="size-10" />
-            <span className="ml-2 text-2xl text-primary">{type.title}</span>
-            <IoIosArrowForward className="ml-auto rounded-full border-3 border-primary text-2xl text-primary" />
+            <span className="ml-2 text-xl text-primary">{type.title}</span>
+            <IoIosArrowDropright className="ml-auto shrink-0 text-2xl text-primary" />
           </div>
         ))}
       </div>

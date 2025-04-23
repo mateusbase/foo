@@ -10,13 +10,11 @@ const PurpleBanner = ({
   return (
     <BaseContainer>
       <div className="full-bleed flex size-full min-h-[302px] flex-col justify-center gap-4 bg-gradient-to-t from-purpleDark to-purpleLight py-4 pl-4 pr-6 md:-mt-5 lg:w-1/2 lg:rounded-bl-[100px] lg:p-20">
-        <p className="font-lato-regular text-2xl text-white md:text-4xl">
-          {title}
-        </p>
-        <p className="mt-6 font-lato-light text-3xl text-white md:text-4xl lg:text-5xl">
+        <p className="text-2xl font-light text-white md:text-4xl">{title}</p>
+        <p className="mt-6 text-3xl font-light text-white md:text-4xl lg:text-5xl">
           {subtitle}
         </p>
-        <p className="mt-4 font-lato-bold text-lg text-white md:text-xl lg:text-2xl">
+        <p className="mt-4 text-lg font-bold text-white md:text-xl lg:text-2xl">
           {description}
         </p>
       </div>

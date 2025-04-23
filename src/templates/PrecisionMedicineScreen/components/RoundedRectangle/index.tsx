@@ -8,14 +8,7 @@ const RoundedRectangle = ({
   return (
     <div className="mt-5 flex flex-col items-center gap-4 lg:mb-9 lg:flex-row">
       {cardElements.map((element: cardElementsProps) => (
-        <Link
-          href={element.url}
-          key={element.text}
-          target="_blank"
-          rel="noopener noreferrer"
-          passHref
-          className="w-full"
-        >
+        <Link href={element.url} key={element.text} passHref className="w-full">
           <div
             key={element.text}
             className="flex h-[98px] w-full items-center justify-between rounded-[20px] border-3 border-primary px-7 py-8 align-middle font-lato-black text-lg font-semibold md:h-[106px] md:text-[32px] lg:w-full lg:gap-2 lg:text-2xl xl:text-3xl"

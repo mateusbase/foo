@@ -38,7 +38,7 @@ export default function MedicalServiceCard({
             <BaseButton
               className="h-10 rounded-2xl border-2 border-white text-center text-[13px] text-white"
               variant="bordered"
-              startContent={serviceIcon}
+              startContent={serviceIcon || undefined}
             >
               {actionButtonText}
             </BaseButton>
