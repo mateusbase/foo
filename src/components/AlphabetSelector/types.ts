@@ -4,4 +4,5 @@ export interface AlphabetSelectorProps {
   searchPlaceholder?: string;
   handleSearchChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   valueSearch?: string;
+  loading?: boolean;
 }

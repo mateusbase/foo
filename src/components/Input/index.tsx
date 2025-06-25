@@ -1,55 +1,61 @@
-import { Input } from "@heroui/react";
-import React from "react";
+import { cn } from "@/styles/classes";
+import { cva } from "class-variance-authority";
 import { BaseInputProps } from "./types";
 
+const inputVariants = cva(
+  [
+    "border border-lightGray bg-white disabled:cursor-not-allowed w-full rounded-full border-gray-300 hover:border-gray-500 placeholder:text-darkGray outline-current",
+  ].join(" "),
+  {
+    variants: {
+      size: {
+        sm: "h-8 min-h-8 px-2",
+        md: "h-10 min-h-10 px-4",
+        lg: "h-[54px] min-h-[54px] px-4",
+      },
+    },
+
+    defaultVariants: {
+      size: "md",
+    },
+  },
+);
+
 export default function BaseInput({
-  color = "default",
   label,
   placeholder = "Digite aqui",
-  placeholderColor = "darkGray",
   size = "lg",
-  radius = "full",
-  variant = "bordered",
   className = "w-full",
   value,
   onChange,
-  endContent,
-  startContent,
   onBlur,
   register,
   error,
   name,
   maxLength,
-  backgroundColor,
   defaultValue,
-  borderColor,
-  classNames = {},
   disabled = false,
+  endContent,
 }: BaseInputProps): JSX.Element {
   return (
-    <div className="w-full">
+    <div className="relative w-full">
       {label && (
         <label className="mb-2 ml-5 block text-left text-base font-bold text-lightGray">
           {label}
         </label>
       )}
-      <Input
-        classNames={{
-          input: `text-${color} placeholder:text-${placeholderColor} bg-${backgroundColor} ${disabled ? "cursor-not-allowed" : ""}`,
-          inputWrapper: `border-1 ${disabled ? "bg-gray-300 " : ""} ${borderColor ? `border-${borderColor}` : `border-${color}`} ${backgroundColor ? `bg-${backgroundColor}` : ""}`,
-          ...(classNames || {}),
-        }}
+
+      <input
         placeholder={placeholder}
-        size={size}
-        radius={radius}
-        variant={variant}
-        className={`${className}`}
+        className={cn(
+          inputVariants({
+            size,
+            className: cn(className, endContent && "pr-10"),
+          }),
+        )}
         defaultValue={defaultValue}
         disabled={disabled}
         value={value}
-        color={color}
-        endContent={endContent}
-        startContent={startContent}
         maxLength={maxLength}
         {...(register && name
           ? {
@@ -72,8 +78,15 @@ export default function BaseInput({
               },
             })}
       />
+
+      {endContent && (
+        <div className="absolute right-4 top-1/2 -translate-y-1/2">
+          {endContent}
+        </div>
+      )}
+
       {error && (
-        <p className="ml-5 mt-2 text-sm text-danger">
+        <p className="text-danger ml-5 mt-2 text-sm text-red-500">
           {typeof error === "string" ? error : error.message}
         </p>
       )}

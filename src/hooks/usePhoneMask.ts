@@ -6,6 +6,7 @@ const dynamicMask = "(__) _____-____";
 
 export const usePhoneMask = (): {
   phoneNumber: string;
+  setPhoneNumber: React.Dispatch<React.SetStateAction<string>>;
   handlePhoneChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handlePhoneBlur: () => Promise<void>;
 } => {
@@ -42,5 +43,6 @@ export const usePhoneMask = (): {
     await trigger("phone");
   };
 
-  return { phoneNumber, handlePhoneChange, handlePhoneBlur };
+  // ✅ adicione setPhoneNumber aqui
+  return { phoneNumber, setPhoneNumber, handlePhoneChange, handlePhoneBlur };
 };

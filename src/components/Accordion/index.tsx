@@ -1,51 +1,44 @@
-import { useState } from "react";
-import { Accordion, AccordionItem } from "@heroui/accordion";
-import { Selection } from "@heroui/react";
+import { cn } from "@/styles/classes";
+import {
+  Accordion as AccordionRoot,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./Base";
 import { BaseAccordionProps } from "./types";
 import ArrowCicleOutlineIcon from "../Icons/ArrowCicleOutline";
 
-export default function BaseAccordion({
+export function Accordion({
   content,
-  itemClasses = {
-    title: "text-primary text-sm md:text-xl ",
-    content: "text-2xl",
-  },
+  titleClassName,
+  contentClassName,
+  indicator,
 }: BaseAccordionProps): JSX.Element {
-  const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
-
-  const handleSelectionChange = (keys: Selection): void => {
-    setSelectedKeys(Array.from(keys as Set<string>));
-  };
-
   return (
-    <Accordion
-      itemClasses={itemClasses}
-      selectedKeys={selectedKeys}
-      onSelectionChange={handleSelectionChange}
-      selectionMode="multiple"
-    >
-      {content.map((item) => {
-        const isOpen = selectedKeys.includes(item.id.toString());
-
-        return (
-          <AccordionItem
-            key={item.id.toString()}
-            title={item.title}
+    <AccordionRoot type="multiple" className="w-full">
+      {content.map((item) => (
+        <AccordionItem key={item.id.toString()} value={item.id.toString()}>
+          <AccordionTrigger
+            className={titleClassName}
             indicator={
-              <ArrowCicleOutlineIcon
-                size={0.8}
-                className={`transition-transform duration-300 ${
-                  isOpen ? "-rotate-90" : "rotate-0"
-                }`}
-              />
+              indicator ?? (
+                <ArrowCicleOutlineIcon
+                  size={0.8}
+                  className="shrink-0 transition-transform duration-300 group-data-[state=closed]:rotate-0 group-data-[state=open]:-rotate-90"
+                />
+              )
             }
           >
-            <div className="mx-8 text-base md:text-xl lg:text-2xl">
-              {item.content}
-            </div>
-          </AccordionItem>
-        );
-      })}
-    </Accordion>
+            {item.title}
+          </AccordionTrigger>
+
+          <AccordionContent
+            className={cn("pl-2 text-base text-darkGray", contentClassName)}
+          >
+            {item.content}
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </AccordionRoot>
   );
 }

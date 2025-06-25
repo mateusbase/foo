@@ -2,57 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 768px) {
-  header {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+.swiper-slide {
+  height: auto !important;
 }
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+#kloeWidgetFloat {
+  display: none !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.swiper-wrapper {
+  align-items: stretch;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 
 @layer utilities {
   .full-bleed {
-    @apply relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 lg:static lg:left-0 lg:w-full lg:max-w-full lg:translate-x-0;
+    @apply relative left-1/2 w-screen max-w-none -translate-x-1/2 lg:static lg:left-0 lg:w-full lg:max-w-full lg:translate-x-0;
   }
+
   .full-bleed-md {
-    @apply relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 md:static md:left-0 md:w-full md:max-w-full md:translate-x-0;
+    @apply relative left-1/2 w-screen max-w-none -translate-x-1/2 md:static md:left-0 md:w-full md:max-w-full md:translate-x-0;
   }
 
   .full-bleed-lg {
-    @apply relative left-1/2 w-[100vw] max-w-screen-3xl -translate-x-1/2;
+    @apply relative left-1/2 w-screen max-w-screen-3xl -translate-x-1/2;
   }
 }
 
 @layer base {
+  html {
+    @apply font-lato;
+  }
+
   li[data-selected="true"][data-selectable="true"] {
     background-color: var(--tw-bg-primary, #007d77) !important;
   }
@@ -66,7 +46,6 @@ body {
     color: var(--tw-text-primary, #fff);
   }
 }
-
 
 @layer components {
   .mask-checkbox {

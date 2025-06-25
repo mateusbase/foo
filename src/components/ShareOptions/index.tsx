@@ -21,6 +21,7 @@ export default function ShareOptions({
                 <div className="flex size-9 items-center justify-center rounded-full bg-gray-50 text-primary md:size-12">
                   {socialNetwork.icon}
                 </div>
+
                 <span className="mt-2 text-xs font-bold text-darkGray">
                   {socialNetwork.name}
                 </span>

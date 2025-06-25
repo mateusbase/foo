@@ -13,6 +13,7 @@ const PhoneInput = ({
   className,
 }: PhoneInputProps): JSX.Element => {
   const resolve = useValidation({ validatePhone: true });
+
   const { phoneNumber, handlePhoneChange, handlePhoneBlur } = usePhoneMask();
 
   const {
@@ -38,4 +39,5 @@ const PhoneInput = ({
     />
   );
 };
+
 export default PhoneInput;

@@ -9,12 +9,8 @@ const SortingFilterDropdown = ({
 }: SortingFilterDropdownProps): JSX.Element => {
   return (
     <BaseSelect
-      label=""
-      labelColor="darkGray"
-      className={`w-[170px] text-primary ${className}`}
-      noBorder
-      color="primary"
-      defaultSelectedKey={defaultSelectedKey}
+      className={`w-[200px] border-transparent text-primary ${className}`}
+      value={defaultSelectedKey as string}
       options={options}
       onChange={onChange}
     />

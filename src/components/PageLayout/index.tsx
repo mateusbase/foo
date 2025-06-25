@@ -1,10 +1,7 @@
-import PageHeader from "@/components/PageHeader";
 import BaseContainer from "@/components/Container";
-import { useRouter } from "next/router";
-import { options } from "@/utils/objectUtils";
 import { PageLayoutProps } from "./types";
-import MainOptionsActions from "../MainOptionsActions";
 import Breadcrumb from "../Breadcrumb";
+import PageHeader from "./components/PageHeader";
 
 export default function PageLayout({
   children,
@@ -14,33 +11,27 @@ export default function PageLayout({
   subtitle,
   showSections = false,
   sections,
-  mainOptions = true,
   showIcons = true,
   buttonText,
   buttonIcon,
+  breadcrumbs,
 }: PageLayoutProps): JSX.Element {
-  const router = useRouter();
-  const pathSegments = router.asPath.split("/").filter(Boolean);
-  const lastSegment = pathSegments[pathSegments.length - 1];
-
-  const capitalizeFirstLetter = (text: string): string => {
-    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
-  };
-
-  const pageTitle =
-    title || capitalizeFirstLetter(decodeURIComponent(lastSegment));
-
   return (
     <main>
       {showBreadcrumb && (
         <div className="block bg-gray-200 p-6 lg:hidden">
-          <Breadcrumb />
+          <Breadcrumb
+            breadcrumbs={breadcrumbs?.map(({ name, path }) => ({
+              name,
+              path,
+            }))}
+          />
         </div>
       )}
 
       {showHeader && (
         <PageHeader
-          title={pageTitle}
+          title={title}
           subtitle={subtitle}
           showSections={showSections}
           sections={sections}
@@ -50,18 +41,20 @@ export default function PageLayout({
         />
       )}
 
-      <BaseContainer className="flex w-full flex-col py-0 md:py-0 lg:pt-5">
+      <BaseContainer className="flex w-full flex-col py-0 md:py-0 lg:py-8">
         {showBreadcrumb && (
           <div className="hidden px-10 md:px-0 lg:mb-10 lg:block">
-            <Breadcrumb />
+            <Breadcrumb
+              breadcrumbs={breadcrumbs?.map(({ name, path }) => ({
+                name,
+                path,
+              }))}
+            />
           </div>
         )}
+
         {children}
       </BaseContainer>
-
-      {mainOptions && (
-        <MainOptionsActions options={options} rounded="rounded-none" />
-      )}
     </main>
   );
 }

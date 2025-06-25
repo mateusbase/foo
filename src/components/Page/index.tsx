@@ -1,23 +1,30 @@
-import Head from "next/head";
-import Layout from "../layout";
-import { PageProps } from "./types";
+import { GetPageByPathResult } from "@/types/page";
+import Footer from "../Footer";
+import Header from "../Header";
+import { RenderTemplate } from "./templates";
 
-export default function Page({
-  children,
-  title,
-  description = "Oncoclínicas - Referência em tratamento oncológico",
-}: PageProps): JSX.Element {
+type RenderPageProps = Omit<GetPageByPathResult, "meta">;
+
+export function RenderPage({
+  id,
+  data,
+  header,
+  footer,
+  type,
+  breadcrumbs,
+}: RenderPageProps): JSX.Element {
   return (
-    <Layout>
-      <>
-        <Head>
-          <title>{`${title}`}</title>
-          <meta name="description" content={description} />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <main>{children}</main>
-      </>
-    </Layout>
+    <>
+      {header && <Header data={header} />}
+
+      <RenderTemplate
+        type={type}
+        id={id}
+        data={data}
+        breadcrumbs={breadcrumbs}
+      />
+
+      {footer && <Footer data={footer} />}
+    </>
   );
 }

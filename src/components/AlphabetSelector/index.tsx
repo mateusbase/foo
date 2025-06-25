@@ -1,8 +1,7 @@
-import { Button } from "@heroui/react";
 import clsx from "clsx";
-import BaseInput from "../Input";
+import BaseInput from "@/components/Input";
+import { LoaderCircle, SearchIcon } from "lucide-react";
 import { AlphabetSelectorProps } from "./types";
-import { SearchIcon } from "../Icons";
 
 export default function AlphabetSelector({
   selectedLetter,
@@ -10,21 +9,25 @@ export default function AlphabetSelector({
   searchPlaceholder,
   handleSearchChange,
   valueSearch,
+  loading,
 }: AlphabetSelectorProps): JSX.Element {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const activeLetter = selectedLetter ?? "";
 
   return (
-    <div className="mt-20 flex w-[90%] items-center justify-between lg:mt-0">
+    <div className="flex items-center justify-between">
       <div className="flex items-center justify-center xl:gap-1">
         {alphabet.map((letter: string) => (
-          <Button
+          <button
+            type="button"
             key={letter}
             onClick={() => onLetterSelect(letter)}
             className={clsx(
               "flex size-8 items-center justify-center rounded-full p-0 text-lg leading-5",
               {
-                "bg-primary text-white": selectedLetter === letter,
-                "bg-white text-primary": selectedLetter !== letter,
+                "bg-primary text-white": activeLetter === letter,
+                "bg-white text-primary hover:text-primary-foreground":
+                  activeLetter !== letter,
               },
             )}
             style={{
@@ -35,20 +38,22 @@ export default function AlphabetSelector({
             }}
           >
             {letter}
-          </Button>
+          </button>
         ))}
       </div>
 
       <div className="ml-8 flex">
         <BaseInput
-          color="primary"
           placeholder={searchPlaceholder}
-          placeholderColor="primary"
           size="lg"
-          radius="full"
-          variant="bordered"
-          endContent={<SearchIcon className="text-2xl text-primary" />}
-          className="w-full min-w-40"
+          endContent={
+            loading ? (
+              <LoaderCircle className="size-5 animate-spin text-primary" />
+            ) : (
+              <SearchIcon className="text-2xl text-primary" />
+            )
+          }
+          className="w-full min-w-40 border-primary text-primary placeholder:text-primary"
           onChange={handleSearchChange}
           value={valueSearch}
         />

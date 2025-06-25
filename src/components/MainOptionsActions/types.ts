@@ -1,9 +1,15 @@
+import { MediaImage } from "@/types/page";
+
 export interface MainOptionsActionsProps {
   options: {
     id: number;
-    title: string;
-    icon: React.ComponentType;
-    link?: string | undefined;
+    text: string;
+    icon: MediaImage;
+    link?: {
+      url?: string;
+      path?: string;
+      external: boolean;
+    };
   }[];
   rounded?: string;
 }

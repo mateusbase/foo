@@ -1,9 +1,10 @@
 export interface MenuItemProps {
-  id: number;
+  id: string;
   name: string;
   isActive: boolean;
   isFirst: boolean;
   isLast: boolean;
-  onClick: (id: number) => void;
+  onClick: (id: string, targetId: string) => void;
   textSize?: string;
+  targetId?: string;
 }

@@ -1,85 +1,66 @@
-import { Select, SelectItem } from "@heroui/react";
+import { cva } from "class-variance-authority";
 import { BaseSelectProps } from "./types";
-import ArrowDownIcon from "../Icons/ArrowDownIcon";
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./Base";
+
+const inputVariants = cva(
+  [
+    "disabled:cursor-not-allowed w-full rounded-full border-gray-300 outline-current",
+  ].join(" "),
+  {
+    variants: {
+      size: {
+        sm: "h-8 min-h-8 px-2",
+        md: "h-10 min-h-10 px-4",
+        lg: "h-[54px] min-h-[54px] px-4",
+      },
+    },
+
+    defaultVariants: {
+      size: "lg",
+    },
+  },
+);
 
 export default function BaseSelect({
-  color = "default",
-  variant = "bordered",
-  label = " ",
-  labelColor = "darkGray",
-  radius = "full",
-  size = "sm",
   className = "w-full",
   options,
   startContent,
-  endContent,
-  labelPlacement,
-  defaultSelectedKey,
   onChange,
-  noBorder = false,
-  classNames,
   placeholder,
-  disableAnimation = false,
-  onSelectionChange,
+  defaultValue,
+  value,
+  size,
+  disabled = false,
 }: BaseSelectProps): JSX.Element {
   return (
     <Select
-      disableAnimation={disableAnimation}
-      color={color}
-      variant={variant}
-      placeholder={placeholder || undefined}
-      label={label}
-      radius={radius}
-      size={size}
-      onSelectionChange={onSelectionChange}
-      onChange={(e) => onChange?.(e.target.value)}
-      defaultSelectedKeys={
-        defaultSelectedKey ? [defaultSelectedKey] : undefined
-      }
-      startContent={startContent}
-      endContent={endContent}
-      labelPlacement={labelPlacement}
-      selectorIcon={<ArrowDownIcon color={`text-${color}`} />}
-      className={`${className}`}
-      onTouchStart={(e) => e.stopPropagation()}
-      classNames={{
-        trigger: noBorder
-          ? `bg-transparent border-none shadow-none `
-          : `border-${color} border-1`,
-        label: `text-${labelColor} text-base`,
-        value: `!text-primary text-base`,
-        base: "text-primary",
-        ...classNames,
-      }}
+      value={value}
+      defaultValue={defaultValue}
+      onValueChange={onChange}
+      disabled={disabled}
     >
-      {options.map((option) => (
-        <SelectItem
-          key={option.key}
-          value={option.value}
-          classNames={{
-            base: `
-              data-[hover=true]:!bg-primary 
-              data-[hover=true]:!text-white 
-              data-[focus=true]:!bg-primary 
-              data-[focus=true]:!text-white
-              data-[selected=true]:!bg-primary
-              data-[selected=true]:!text-white
-              aria-[selected=true]:!bg-primary
-              aria-[selected=true]:!text-white
-            `,
-            title: `
-              text-darkGray
-              data-[focus=true]:!bg-primary 
-              data-[hover=true]:!text-white 
-              data-[selected=true]:!text-white
-              aria-[selected=true]:!text-white
-            `,
-            selectedIcon: "!text-white",
-          }}
-        >
-          {option.label}
-        </SelectItem>
-      ))}
+      <SelectTrigger
+        className={inputVariants({ className, size })}
+        disabled={disabled}
+      >
+        {startContent}
+        <SelectValue placeholder={placeholder} />
+      </SelectTrigger>
+
+      <SelectContent>
+        {options?.map((option) => (
+          <SelectItem key={option.value} value={`${option.value}`}>
+            {option.label}
+          </SelectItem>
+        ))}
+      </SelectContent>
     </Select>
   );
 }

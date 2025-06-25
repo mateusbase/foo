@@ -1,6 +1,10 @@
+import { ReactNode } from "react";
+
 export interface BaseAccordionProps {
   content: ContentAccordion[];
-  itemClasses?: AccordionItemClasses;
+  titleClassName?: string;
+  contentClassName?: string;
+  indicator?: ReactNode;
 }
 
 export interface AccordionItemClasses {
@@ -10,8 +14,8 @@ export interface AccordionItemClasses {
 }
 
 export interface ContentAccordion {
-  id: number;
+  id: string;
   title: string;
   subtitle?: string;
-  content: string;
+  content: string | ReactNode;
 }

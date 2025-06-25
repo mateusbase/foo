@@ -69,3 +69,48 @@ export const options = [
     link: "/resultados",
   },
 ];
+
+type FormData = {
+  name: string;
+  phone: string;
+  email: string;
+  cpf: string;
+  birthday: string;
+  optIn: boolean;
+};
+
+export function isFormDataValid(formData: FormData): boolean {
+  return (
+    formData.name.trim() !== "" &&
+    formData.phone.replace(/\D/g, "").length >= 10 &&
+    /\S+@\S+\.\S+/.test(formData.email) &&
+    formData.cpf.replace(/\D/g, "").length === 11 &&
+    /^\d{2}\/\d{2}\/\d{4}$/.test(formData.birthday) &&
+    formData.optIn
+  );
+}
+
+export function isValidDate(dateString: string): boolean {
+  if (!/^\d{2}\/\d{2}\/\d{4}$/.test(dateString)) return false;
+
+  const [day, month, year] = dateString.split("/").map(Number);
+  const currentYear = new Date().getFullYear();
+
+  if (/^(\d)\1{3}$/.test(String(year))) return false;
+
+  if (year < 1900 || year > currentYear) return false;
+
+  const date = new Date(year, month - 1, day);
+
+  return (
+    date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day
+  );
+}
+
+export const localeMap = {
+  pt: "pt_BR",
+  en: "en_US",
+  es: "es_ES",
+};

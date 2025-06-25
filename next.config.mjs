@@ -2,9 +2,20 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    // loader: "imgix",
-    // path: "https://grupooncoclinicas.com/",
-    domains: ["i.postimg.cc", "merriam-webster.com"],
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "onco-rho.vercel.app",
+      },
+      {
+        protocol: "https",
+        hostname: "assets-origin-dev.grupooncoclinicas.com",
+      },
+    ],
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 

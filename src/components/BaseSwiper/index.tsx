@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
-import SliderArrows from "@/components/SliderArrows";
+import SliderArrows from "@/components/BaseSwiper/components/SliderArrows";
 import { BaseSwiperProps } from "./type";
 
-const BaseSwiper = <T extends { id: number }>({
+const BaseSwiper = <T extends { id?: number | string }>({
   data,
   renderItem,
   slidesPerView = 1,
@@ -18,7 +18,7 @@ const BaseSwiper = <T extends { id: number }>({
     useSwiperNavigation();
 
   return (
-    <div className={className}>
+    <div className={`${className} w-full`}>
       <Swiper
         modules={[Navigation]}
         spaceBetween={spaceBetween}
@@ -32,8 +32,11 @@ const BaseSwiper = <T extends { id: number }>({
         onBeforeInit={onBeforeInit}
         className="w-full"
       >
-        {data.map((item) => (
-          <SwiperSlide key={item.id} className="flex w-full justify-center">
+        {data?.map((item, index) => (
+          <SwiperSlide
+            key={item.id ?? `slide-${index}`}
+            className="flex size-full"
+          >
             {renderItem(item)}
           </SwiperSlide>
         ))}

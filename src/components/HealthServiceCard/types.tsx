@@ -1,8 +1,0 @@
-export interface HealthServiceCardProps {
-  serviceTitle: string;
-  serviceDescription: string;
-  serviceIcon?: JSX.Element;
-  showButton?: boolean;
-  hasGradientButton?: boolean;
-  isRow?: boolean;
-}

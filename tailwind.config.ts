@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { heroui } from "@heroui/react";
 
 const config: Config = {
   content: [
@@ -7,8 +6,6 @@ const config: Config = {
     "./src/templates/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@heroui/theme/dist/components/(button|snippet|code|input).js",
-    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     container: {
@@ -20,6 +17,7 @@ const config: Config = {
       "lato-regular": ["Lato", "sans-serif"],
       "lato-bold": ["Lato", "sans-serif"],
       "lato-black": ["Lato", "sans-serif"],
+      lato: ["Lato", "sans-serif"],
     },
     safelist: [
       "data-[hover=true]:bg-primary",
@@ -32,6 +30,9 @@ const config: Config = {
       "aria-[selected=true]:text-white",
     ],
     extend: {
+      fontFamily: {
+        lato: ["Lato", "sans-serif"],
+      },
       screens: {
         sm: "640px",
         md: "768px",
@@ -82,20 +83,26 @@ const config: Config = {
         "secondary-foreground": "#BA99E7",
         "gray-foreground": "#F0F0F0",
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 300ms ease-out",
+        "accordion-up": "accordion-up 300ms ease-out",
+      },
     },
   },
   darkMode: "class",
   plugins: [
-    heroui({
-      prefix: "nextui",
-      addCommonColors: false,
-      themes: {
-        light: {
-          layout: {},
-          colors: {},
-        },
-      },
-    }),
+    // eslint-disable-next-line
+    require("tailwindcss-animate"),
   ],
 };
 
