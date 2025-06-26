@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper-slide {
+  height: auto !important;
+}
+
+#kloeWidgetFloat {
+  display: none !important;
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+@layer utilities {
+  .full-bleed {
+    @apply relative left-1/2 w-screen max-w-none -translate-x-1/2 lg:static lg:left-0 lg:w-full lg:max-w-full lg:translate-x-0;
+  }
+
+  .full-bleed-md {
+    @apply relative left-1/2 w-screen max-w-none -translate-x-1/2 md:static md:left-0 md:w-full md:max-w-full md:translate-x-0;
+  }
+
+  .full-bleed-lg {
+    @apply relative left-1/2 w-screen max-w-screen-3xl -translate-x-1/2;
+  }
+}
+
+@layer base {
+  html {
+    @apply font-lato;
+  }
+
+  li[data-selected="true"][data-selectable="true"] {
+    background-color: var(--tw-bg-primary, #007d77) !important;
+  }
+
+  li[data-selected="true"][data-selectable="true"] span[data-label="true"] {
+    color: #fff !important;
+  }
+
+  li[data-hover="true"] span[data-label="true"],
+  li[data-focus="true"] span[data-label="true"] {
+    color: var(--tw-text-primary, #fff);
+  }
+}
+
+@layer components {
+  .mask-checkbox {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+  }
+}

@@ -1,0 +1,43 @@
+import * as React from "react";
+
+type NeckIconProps = React.SVGProps<SVGSVGElement> & {
+  size?: number;
+  color?: string;
+  className?: string;
+};
+
+const NeckIcon = ({
+  size = 1,
+  color = "text-primary",
+  className = "",
+  ...props
+}: NeckIconProps): JSX.Element => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size * 116}
+    height={size * 116}
+    className={`${color} ${className}`}
+    fill="none"
+    viewBox="0 0 116 116"
+    {...props}
+  >
+    <path fill="url(#pattern0_6419_11050)" d="M0 0h116v116H0z" opacity="0.4" />
+    <defs>
+      <pattern
+        id="pattern0_6419_11050"
+        width="1"
+        height="1"
+        patternContentUnits="objectBoundingBox"
+      >
+        <use xlinkHref="#image0_6419_11050" transform="scale(.00781)" />
+      </pattern>
+      <image
+        xlinkHref="data:image/png;base64,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"
+        id="image0_6419_11050"
+        width="128"
+        height="128"
+      />
+    </defs>
+  </svg>
+);
+export default NeckIcon;
