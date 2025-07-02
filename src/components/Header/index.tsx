@@ -223,8 +223,9 @@ export default function Header({
           <div className="hidden size-full sm:flex lg:w-auto">
             {cta && (
               <div
-                className={`flex size-full flex-row items-center justify-center gap-2 text-white xl2:p-6 ${isMedicPage ? "bg-darkGray" : "bg-secondary"
-                  }`}
+                className={`flex size-full flex-row items-center justify-center gap-2 text-white xl2:p-6 ${
+                  isMedicPage ? "bg-darkGray" : "bg-secondary"
+                }`}
               >
                 <Link
                   className="flex w-full min-w-44 cursor-pointer items-center justify-center gap-2 text-white lg:min-w-48 xl2:min-w-[310px] xl2:text-lg"

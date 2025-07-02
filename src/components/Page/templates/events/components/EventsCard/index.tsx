@@ -31,7 +31,7 @@ export default function EventsCard(event: EventsCardProps): JSX.Element {
           alt={images?.background.alt}
           width={images?.background.width}
           height={images?.background.height}
-          className="h-[220px] w-full object-cover"
+          className="h-[220px] w-full rounded-xl object-cover"
         />
 
         <div className="mt-6 flex flex-1 flex-col justify-between space-y-6">
