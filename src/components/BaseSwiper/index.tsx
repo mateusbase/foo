@@ -1,8 +1,19 @@
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useSwiperNavigation } from "@/hooks/useSwiperNavigation";
 import SliderArrows from "@/components/BaseSwiper/components/SliderArrows";
 import { BaseSwiperProps } from "./type";
+
+function getMaxSlidesPerView(
+  breakpoints?: Record<number, { slidesPerView: number }>,
+  defaultSlidesPerView = 1,
+): number {
+  if (!breakpoints) return defaultSlidesPerView;
+  return Object.values(breakpoints)
+    .map((bp) => bp.slidesPerView)
+    .reduce((max, curr) => Math.max(max, curr), defaultSlidesPerView);
+}
 
 const BaseSwiper = <T extends { id?: number | string }>({
   data,
@@ -12,10 +23,16 @@ const BaseSwiper = <T extends { id?: number | string }>({
   breakpoints,
   className = "",
   hasArrows = true,
-  shouldLoop = true,
+  shouldLoop,
 }: BaseSwiperProps<T>): JSX.Element => {
   const { prevRef, nextRef, swiperRef, onBeforeInit, currentIndex } =
     useSwiperNavigation();
+
+  const maxSlidesPerView = getMaxSlidesPerView(breakpoints, slidesPerView);
+  const loop =
+    typeof shouldLoop === "boolean"
+      ? shouldLoop
+      : (data?.length ?? 0) > maxSlidesPerView;
 
   return (
     <div className={`${className} w-full`}>
@@ -23,7 +40,7 @@ const BaseSwiper = <T extends { id?: number | string }>({
         modules={[Navigation]}
         spaceBetween={spaceBetween}
         slidesPerView={slidesPerView}
-        loop={shouldLoop}
+        loop={loop}
         breakpoints={breakpoints}
         navigation={{
           prevEl: prevRef.current,
