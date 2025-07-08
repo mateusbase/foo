@@ -215,6 +215,14 @@ interface ClinicalStudyData {
   execution: Execution;
   cancerTypes: CancerTypeEntry[];
   content: string;
+  moreInfo?: {
+    text: string;
+    link: {
+      external: boolean;
+      url: string;
+      openOnNewTab: boolean;
+    };
+  };
 }
 
 interface Form {

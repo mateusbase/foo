@@ -40,8 +40,13 @@ export function SingleDoctor({
                 ))}
               </p>
 
-              <p className="mt-1 text-lg text-darkGray">
-                {data.references.specialties[0]?.basicInfo.name}
+              <p className="mt-1 max-w-52 text-lg text-darkGray">
+                {data.professionalNumbers.rqes.map((rqe) => (
+                  <span key={rqe.name}>
+                    {rqe.name}
+                    <br />
+                  </span>
+                ))}
               </p>
 
               <Button
@@ -85,10 +90,10 @@ export function SingleDoctor({
                   Especialização
                 </h1>
 
-                {data.references.specialties.map((spec) => (
-                  <ul key={spec.path} className="ml-6 list-outside list-disc">
+                {data.professionalNumbers.rqes.map((rqe) => (
+                  <ul key={rqe.number} className="ml-6 list-outside list-disc">
                     <li className="text-left text-base text-darkGray">
-                      {spec.basicInfo.name}
+                      {rqe.name}
                     </li>
                   </ul>
                 ))}

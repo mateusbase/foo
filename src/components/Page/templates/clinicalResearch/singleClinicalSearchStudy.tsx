@@ -17,13 +17,15 @@ export function SingleClinicalSearchStudyRoot({
   data,
   breadcrumbs,
 }: SingleClinicalSearchStudyRootProps): JSX.Element {
-  const { name, cancerTypes, shortDescription, execution, content } = data;
+  const { name, cancerTypes, shortDescription, execution, content, moreInfo } =
+    data;
 
   const [userType, setUserType] = useState("");
 
   const [inputName, setInputName] = useState("");
 
   const [birthDate, setBirthDate] = useState("");
+
   const [birthDateInput, setBirthDateInput] = useState("");
 
   const [phone, setPhone] = useState("");
@@ -49,9 +51,11 @@ export function SingleClinicalSearchStudyRoot({
     if (cleaned.length === 11) {
       return cleaned.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
     }
+
     if (cleaned.length === 10) {
       return cleaned.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
     }
+
     return phoneNumber;
   };
 
@@ -164,33 +168,15 @@ export function SingleClinicalSearchStudyRoot({
         <RichText content={content} className="mt-10" />
 
         <div className="mb-7 mt-10 flex flex-col gap-7 md:mb-16">
-          <div className="flex flex-col gap-6">
-            <h3 className="text-2xl text-primary md:text-title-lg lg:mt-10">
-              Coordenador(es)
-            </h3>
-
-            {execution.unit.technicalGroup?.map((group) => (
-              <span className="text-sm text-lightGray md:text-xl">{group}</span>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-6">
-            <h3 className="text-2xl text-primary md:text-title-lg lg:mt-10">
-              Entre em contato
-            </h3>
-
-            <span className="text-sm text-lightGray md:text-xl">
-              {execution.email}
-            </span>
-
-            <span className="text-sm text-lightGray md:text-xl">
-              {formatPhoneNumber(execution.phone)}
-            </span>
-          </div>
-
-          <Button className="text-white md:w-80">
-            Clique aqui para mais informações
-          </Button>
+          {moreInfo?.link?.url && (
+            <a
+              href={moreInfo.link.url}
+              target={moreInfo.link.openOnNewTab ? "_blank" : "_self"}
+              rel={moreInfo.link.external ? "noopener noreferrer" : undefined}
+            >
+              <Button className="text-white md:w-80">{moreInfo.text}</Button>
+            </a>
+          )}
 
           <ShareOptions options={socialNetwork} />
         </div>
@@ -222,6 +208,7 @@ export function SingleClinicalSearchStudyRoot({
                 value={inputName}
                 onChange={(e) => setInputName(e.target.value)}
               />
+
               {errors.name && (
                 <p className="mt-1 text-sm text-red-500">{errors.name}</p>
               )}
@@ -234,6 +221,7 @@ export function SingleClinicalSearchStudyRoot({
                 value={birthDateInput}
                 onChange={(e) => {
                   const input = e.target.value;
+
                   const raw = input.replace(/\D/g, "");
 
                   let formatted = input;
@@ -250,14 +238,18 @@ export function SingleClinicalSearchStudyRoot({
 
                   if (raw.length === 8) {
                     const dd = raw.slice(0, 2);
+
                     const mm = raw.slice(2, 4);
+
                     const yyyy = raw.slice(4, 8);
-                    setBirthDate(`${yyyy}-${mm}-${dd}`); // ISO format para enviar
+
+                    setBirthDate(`${yyyy}-${mm}-${dd}`);
                   } else {
-                    setBirthDate(""); // valor ainda incompleto
+                    setBirthDate("");
                   }
                 }}
               />
+
               {errors.birthDate && (
                 <p className="mt-1 text-sm text-red-500">{errors.birthDate}</p>
               )}
@@ -270,6 +262,7 @@ export function SingleClinicalSearchStudyRoot({
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
+
               {errors.phone && (
                 <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
               )}
@@ -282,6 +275,7 @@ export function SingleClinicalSearchStudyRoot({
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               />
+
               {errors.location && (
                 <p className="mt-1 text-sm text-red-500">{errors.location}</p>
               )}
@@ -294,6 +288,7 @@ export function SingleClinicalSearchStudyRoot({
                 value={cancerType}
                 onChange={(e) => setCancerType(e.target.value)}
               />
+
               {errors.cancerType && (
                 <p className="mt-1 text-sm text-red-500">{errors.cancerType}</p>
               )}
@@ -316,6 +311,7 @@ export function SingleClinicalSearchStudyRoot({
                 disabled
               />
             </div>
+
             <RadioGroup>
               <Radio value="1" size="md" className="-mt-1">
                 <p className="text-xs font-normal leading-5 md:text-[15px]">

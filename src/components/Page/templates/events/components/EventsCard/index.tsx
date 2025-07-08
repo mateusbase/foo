@@ -74,11 +74,13 @@ export default function EventsCard(event: EventsCardProps): JSX.Element {
           <div className="flex flex-col gap-4 lg:flex-row">
             <Button className="lg:text-xs xl:text-base">
               <CheckIcon className="shrink-0" />
+
               {subscribeButtonText ?? "Quero me inscrever"}
             </Button>
 
             <Button variant="outlined" className="lg:text-xs xl:text-base">
               <CalendarIcon className="shrink-0" />
+
               {calendarButtonText ?? "Adicionar a agenda"}
             </Button>
           </div>
