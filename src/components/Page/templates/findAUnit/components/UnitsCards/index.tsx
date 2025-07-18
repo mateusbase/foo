@@ -97,6 +97,7 @@ function UnitsCard(props: UnitsCardProps): JSX.Element {
                 className="flex items-center"
               >
                 <RiArrowRightSLine />
+
                 <span>{specialty.basicInfo?.name}</span>
               </div>
             ))}

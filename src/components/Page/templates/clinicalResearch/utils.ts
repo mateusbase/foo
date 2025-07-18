@@ -36,18 +36,20 @@ export const validate = (
     isValid = false;
   }
 
-  const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+  if (userType === "PATIENT") {
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 
-  if (!dateRegex.test(birthDate.trim())) {
-    newErrors.birthDate = "Data de nascimento inválida.";
-    isValid = false;
-  } else {
-    const dateObj = new Date(birthDate.trim());
-    const isValidDate = !Number.isNaN(dateObj.getTime());
-
-    if (!isValidDate) {
+    if (!dateRegex.test(birthDate.trim())) {
       newErrors.birthDate = "Data de nascimento inválida.";
       isValid = false;
+    } else {
+      const dateObj = new Date(birthDate.trim());
+      const isValidDate = !Number.isNaN(dateObj.getTime());
+
+      if (!isValidDate) {
+        newErrors.birthDate = "Data de nascimento inválida.";
+        isValid = false;
+      }
     }
   }
 

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { RichText } from "@/components/Blocks/RichText";
 import BaseInput from "@/components/Input";
 import apiClient from "@/services/apiClient";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BaseSelect from "@/components/Select";
 import { Radio, RadioGroup } from "@/components/Radio";
 import ResearchCenterCard from "./components/ResearchCenterCard";
@@ -17,13 +17,15 @@ export function SingleClinicalSearchStudyRoot({
   data,
   breadcrumbs,
 }: SingleClinicalSearchStudyRootProps): JSX.Element {
-  const { name, cancerTypes, shortDescription, execution, content } = data;
+  const { name, cancerTypes, shortDescription, execution, content, moreInfo } =
+    data;
 
   const [userType, setUserType] = useState("");
 
   const [inputName, setInputName] = useState("");
 
   const [birthDate, setBirthDate] = useState("");
+
   const [birthDateInput, setBirthDateInput] = useState("");
 
   const [phone, setPhone] = useState("");
@@ -49,9 +51,11 @@ export function SingleClinicalSearchStudyRoot({
     if (cleaned.length === 11) {
       return cleaned.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
     }
+
     if (cleaned.length === 10) {
       return cleaned.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
     }
+
     return phoneNumber;
   };
 
@@ -80,7 +84,7 @@ export function SingleClinicalSearchStudyRoot({
         payload: {
           type: userType,
           name: inputName.trim(),
-          birthdate: birthDate.trim(),
+          ...(userType === "PATIENT" && { birthdate: birthDate.trim() }),
           phone: phone.trim(),
           city: location.trim(),
           cancer: cancerType.trim(),
@@ -95,7 +99,6 @@ export function SingleClinicalSearchStudyRoot({
       setBirthDate("");
       setPhone("");
       setLocation("");
-      setCancerType("");
 
       setErrors({
         name: "",
@@ -107,6 +110,7 @@ export function SingleClinicalSearchStudyRoot({
       });
     } catch (err) {
       setIsLoading(false);
+
       setErrors({
         name: "",
         birthDate: "",
@@ -117,6 +121,12 @@ export function SingleClinicalSearchStudyRoot({
       });
     }
   };
+
+  useEffect(() => {
+    if (cancerTypes && cancerTypes.length > 0) {
+      setCancerType(cancerTypes[0].cancerType.name);
+    }
+  }, [cancerTypes]);
 
   return (
     <>
@@ -164,33 +174,15 @@ export function SingleClinicalSearchStudyRoot({
         <RichText content={content} className="mt-10" />
 
         <div className="mb-7 mt-10 flex flex-col gap-7 md:mb-16">
-          <div className="flex flex-col gap-6">
-            <h3 className="text-2xl text-primary md:text-title-lg lg:mt-10">
-              Coordenador(es)
-            </h3>
-
-            {execution.unit.technicalGroup?.map((group) => (
-              <span className="text-sm text-lightGray md:text-xl">{group}</span>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-6">
-            <h3 className="text-2xl text-primary md:text-title-lg lg:mt-10">
-              Entre em contato
-            </h3>
-
-            <span className="text-sm text-lightGray md:text-xl">
-              {execution.email}
-            </span>
-
-            <span className="text-sm text-lightGray md:text-xl">
-              {formatPhoneNumber(execution.phone)}
-            </span>
-          </div>
-
-          <Button className="text-white md:w-80">
-            Clique aqui para mais informações
-          </Button>
+          {moreInfo?.link?.url && (
+            <a
+              href={moreInfo.link.url}
+              target={moreInfo.link.openOnNewTab ? "_blank" : "_self"}
+              rel={moreInfo.link.external ? "noopener noreferrer" : undefined}
+            >
+              <Button className="text-white md:w-80">{moreInfo.text}</Button>
+            </a>
+          )}
 
           <ShareOptions options={socialNetwork} />
         </div>
@@ -222,54 +214,70 @@ export function SingleClinicalSearchStudyRoot({
                 value={inputName}
                 onChange={(e) => setInputName(e.target.value)}
               />
+
               {errors.name && (
                 <p className="mt-1 text-sm text-red-500">{errors.name}</p>
               )}
             </div>
 
-            <div>
-              <BaseInput
-                placeholder="Data de nascimento"
-                size="lg"
-                value={birthDateInput}
-                onChange={(e) => {
-                  const input = e.target.value;
-                  const raw = input.replace(/\D/g, "");
+            {userType === "PATIENT" && (
+              <div>
+                <BaseInput
+                  placeholder="Data de nascimento"
+                  size="lg"
+                  value={birthDateInput}
+                  onChange={(e) => {
+                    const input = e.target.value;
+                    const raw = input.replace(/\D/g, "");
 
-                  let formatted = input;
+                    let formatted = input;
 
-                  if (raw.length <= 2) {
-                    formatted = raw;
-                  } else if (raw.length <= 4) {
-                    formatted = `${raw.slice(0, 2)}/${raw.slice(2)}`;
-                  } else if (raw.length <= 8) {
-                    formatted = `${raw.slice(0, 2)}/${raw.slice(2, 4)}/${raw.slice(4)}`;
-                  }
+                    if (raw.length <= 2) {
+                      formatted = raw;
+                    } else if (raw.length <= 4) {
+                      formatted = `${raw.slice(0, 2)}/${raw.slice(2)}`;
+                    } else if (raw.length <= 8) {
+                      formatted = `${raw.slice(0, 2)}/${raw.slice(2, 4)}/${raw.slice(4)}`;
+                    }
 
-                  setBirthDateInput(formatted);
+                    setBirthDateInput(formatted);
 
-                  if (raw.length === 8) {
-                    const dd = raw.slice(0, 2);
-                    const mm = raw.slice(2, 4);
-                    const yyyy = raw.slice(4, 8);
-                    setBirthDate(`${yyyy}-${mm}-${dd}`); // ISO format para enviar
-                  } else {
-                    setBirthDate(""); // valor ainda incompleto
-                  }
-                }}
-              />
-              {errors.birthDate && (
-                <p className="mt-1 text-sm text-red-500">{errors.birthDate}</p>
-              )}
-            </div>
+                    if (raw.length === 8) {
+                      const dd = raw.slice(0, 2);
+
+                      const mm = raw.slice(2, 4);
+
+                      const yyyy = raw.slice(4, 8);
+
+                      setBirthDate(`${yyyy}-${mm}-${dd}`);
+                    } else {
+                      setBirthDate("");
+                    }
+                  }}
+                />
+
+                {errors.birthDate && (
+                  <p className="mt-1 text-sm text-red-500">
+                    {errors.birthDate}
+                  </p>
+                )}
+              </div>
+            )}
 
             <div>
               <BaseInput
                 placeholder="Telefone"
                 size="lg"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                onChange={(e) => {
+                  const input = e.target.value;
+
+                  const cleaned = input.replace(/\D/g, "").slice(0, 11);
+
+                  setPhone(formatPhoneNumber(cleaned));
+                }}
               />
+
               {errors.phone && (
                 <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
               )}
@@ -282,6 +290,7 @@ export function SingleClinicalSearchStudyRoot({
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               />
+
               {errors.location && (
                 <p className="mt-1 text-sm text-red-500">{errors.location}</p>
               )}
@@ -293,7 +302,9 @@ export function SingleClinicalSearchStudyRoot({
                 size="lg"
                 value={cancerType}
                 onChange={(e) => setCancerType(e.target.value)}
+                disabled
               />
+
               {errors.cancerType && (
                 <p className="mt-1 text-sm text-red-500">{errors.cancerType}</p>
               )}
@@ -316,20 +327,41 @@ export function SingleClinicalSearchStudyRoot({
                 disabled
               />
             </div>
+
             <RadioGroup>
               <Radio value="1" size="md" className="-mt-1">
                 <p className="text-xs font-normal leading-5 md:text-[15px]">
-                  Ao disparar este formulário, seus dados pessoais estarão sendo
-                  compartilhados com terceiros, conforme Lei Geral de Proteção
-                  de Dados n 13.709/2018. Faz-se necessário que você tenha
-                  ciência deste compartilhamento e o autorize. Seus dados não
-                  serão, em nenhum momento, tornados públicos pelo profissional
-                  que o receber. A finalidade deste compartilhamento é apenas
-                  para possibilitar que a coordenação de pesquisa consiga
-                  informações para entrar em contato com o(a) senhor(a) para
-                  melhor entender sua história e de sua doença e verificar se
-                  temos alguma alternativa de tratamento através de alguma
-                  pesquisa para o(a) senhor(a).
+                  {userType === "PHYSICIAN" ? (
+                    <>
+                      Ao enviar este formulário, seus dados pessoais serão
+                      compartilhados com terceiros, conforme disposto na Lei
+                      Geral de Proteção de Dados (Lei nº 13.709/2018). É
+                      necessário que você tenha ciência desse compartilhamento e
+                      o autorize. Ressaltamos que, em nenhum momento, seus dados
+                      serão tornados públicos pelo profissional que os receber.
+                      O objetivo desse compartilhamento é exclusivamente
+                      permitir que a coordenação de pesquisa obtenha informações
+                      para entrar em contato com o(a) senhor(a), a fim de
+                      compreender melhor a história e a condição de saúde do seu
+                      paciente, e avaliar se há alguma alternativa de tratamento
+                      disponível por meio de pesquisas para o(a) senhor(a).
+                    </>
+                  ) : (
+                    <>
+                      Ao enviar este formulário, seus dados pessoais serão
+                      compartilhados com terceiros, conforme disposto na Lei
+                      Geral de Proteção de Dados (Lei nº 13.709/2018). É
+                      necessário que você esteja ciente desse compartilhamento e
+                      o autorize. Ressaltamos que, em nenhum momento, seus dados
+                      serão tornados públicos pelo profissional que os receber.
+                      O objetivo desse compartilhamento é exclusivamente
+                      permitir que a coordenação de pesquisa entre em contato
+                      com o(a) senhor(a) para compreender melhor sua história e
+                      condição de saúde, a fim de avaliar a possibilidade de
+                      participação em alguma pesquisa que ofereça alternativas
+                      de tratamento.
+                    </>
+                  )}
                 </p>
               </Radio>
             </RadioGroup>
