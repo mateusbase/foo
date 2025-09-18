@@ -14,6 +14,7 @@
     "release:minor": "yarn version --minor && node commit-version.ts",
     "release:major": "yarn version --major && node commit-version.ts"
   },
+  "packageManager": "yarn@1.22.22",
   "dependencies": {
     "@hookform/resolvers": "^4.0.0",
     "@radix-ui/react-accordion": "^1.2.8",
